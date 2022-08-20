@@ -1,0 +1,158 @@
+name: Generate
+
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        type: choice
+        description: What version to generate
+        default: preview
+        options:
+        - preview
+        - build8193.35
+        - build8193.34
+        - build8193.33
+        - build8193.32
+        - build8193.31
+        - build8193.30
+        - build8193.29
+        - build8193.28
+        - build8193.27
+        - build8193.26
+        - build8193.25
+        required: true
+
+jobs:
+  generate:
+    name: Generate ${{ github.event.inputs.release }} nwn files
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: "Checkout source code"
+        uses: "actions/checkout@v3"
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_ACCESS_TOKEN  }}
+      - uses: jiro4989/setup-nim-action@v1
+      - uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+      - name: Clone SteamRE/DepotDownloader
+        run: |
+          gh repo clone SteamRE/DepotDownloader
+      - name: Download preview nwn:ee files
+        if: github.event.inputs.release == 'preview'
+        run: |
+          cd DepotDownloader/DepotDownloader
+          dotnet run -app 704450 -depot 704451 -beta ${{ github.event.inputs.release }} -betapassword ${{ github.event.inputs.release }}${{ github.event.inputs.release }} -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
+          cd ${{ env.GITHUB_WORKSPACE }}
+          mkdir out
+      - name: Download nwn:ee files
+        if: github.event.inputs.release != 'preview'
+        run: |
+          cd DepotDownloader/DepotDownloader
+          dotnet run -app 704450 -depot 704451 -beta ${{ github.event.inputs.release }} -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
+          cd ${{ env.GITHUB_WORKSPACE }}
+          mkdir unpacked
+      - run: nimble install neverwinter -y
+      - name: unpack preview keyfile
+        if: github.event.inputs.release == 'preview'
+        run: |
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/9334745/data/nwn_base.key unpacked
+      - name: unpack build8193.35 keyfile
+        if: github.event.inputs.release == 'build8193.35'
+        run: |
+          echo "Not stabalized yet"
+      - name: unpack build8193.34 keyfile
+        if: github.event.inputs.release == 'build8193.34'
+        run: |
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7437906/data/nwn_base.key unpacked/
+      - name: unpack build8193.32 keyfile
+        if: github.event.inputs.release == 'build8193.32'
+        run: |
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7398767/data/nwn_base.key unpacked/
+      - name: unpack build8193.31 keyfile
+        if: github.event.inputs.release == 'build8193.31'
+        run: |
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7370737/data/nwn_base.key unpacked/
+      - name: unpack build8193.30 keyfile
+        if: github.event.inputs.release == 'build8193.30'
+        run: |
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7070152/data/nwn_base.key unpacked/
+      - name: unpack build8193.29 keyfile
+        if: github.event.inputs.release == 'build8193.29'
+        run: |
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6999455/data/nwn_base.key unpacked/
+      - name: unpack build8193.28 keyfile
+        if: github.event.inputs.release == 'build8193.28'
+        run: |
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6952603/data/nwn_base.key unpacked/
+      - name: unpack build8193.27 keyfile
+        if: github.event.inputs.release == 'build8193.27'
+        run: |
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6933430/data/nwn_base.key unpacked/
+      - name: unpack build8193.26 keyfile
+        if: github.event.inputs.release == 'build8193.26'
+        run: |
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6925985/data/nwn_base.key unpacked/
+      - name: unpack build8193.25 keyfile
+        if: github.event.inputs.release == 'build8193.25'
+        run: |
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6907248/data/nwn_base.key unpacked/
+      # 2da
+      # gather 2da files
+      - name: Gather 2da files
+        run: |
+          # clean repo folder
+          find . -mindepth 1 -maxdepth 1 ! - name 'unpacked' ! - name '.gitattributes' ! - name '.gitignore' ! - name '.git' -exec echo rm rf {} +
+
+      # commit
+      #- uses: EndBug/add-and-commit@v9
+      #  with:
+      #    add: "-- . ':!unpacked'"
+      #    message: 'CI: ${{ github.event.inputs.release }}'
+      #    tag: '${{ github.event.inputs.release }}/2da'
+      #    tag_push: '--force'
+      #    new_branch: '${{ github.event.inputs.release }}/2da'
+      #    committer_name: GitHub Actions
+      #    committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+      # reset head for dds
+      - name: "Checkout source code"
+        uses: "actions/checkout@v3"
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+
+#2da
+#dds
+#dlg
+#doc
+#dwk
+#gff
+#gui
+#ids
+#ini
+#itp
+#ltr
+#mdl
+#mod
+#mtr
+#nss
+#ovr
+#plt
+#ptt
+#pwk
+#set
+#shd
+#ssf
+#tga
+#tlk
+#ute
+#uti
+#utm
+#utp
+#uts
+#utt
+#utw
+#wok

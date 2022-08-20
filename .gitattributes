@@ -1,0 +1,29 @@
+* text eol=lf
+
+*.dds	binary
+*.dlg	binary
+*.gff	binary
+*.gui	binary
+*.itp	binary
+*.mdl	binary
+*.plt	binary
+*.ptt	binary
+*.ssf	binary
+*.tga	binary
+*.ute	binary
+*.uti	binary
+*.utm	binary
+*.utp	binary
+*.uts	binary
+*.utt	binary
+*.utw	binary
+
+*.2da	text eol=crlf working-tree-encoding=windows-1252
+*.dwk	text eol=crlf working-tree-encoding=windows-1252
+*.ids	text eol=crlf working-tree-encoding=windows-1252
+*.ini	text eol=crlf working-tree-encoding=windows-1252
+*.ilr	text eol=crlf working-tree-encoding=windows-1252
+*.nss	text eol=crlf working-tree-encoding=windows-1252
+*.pwk	text eol=crlf working-tree-encoding=windows-1252
+*.set	text eol=crlf working-tree-encoding=windows-1252
+*.wok	text eol=crlf working-tree-encoding=windows-1252
