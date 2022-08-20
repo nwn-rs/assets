@@ -175,8 +175,30 @@ jobs:
           find . -type f -iname '*.dlg' -delete
           find . -type f -iname '*.zip' -delete
           git checkout main
-
-
+      # doc
+      # gather doc files
+      - name: Gather doc files
+        run: |
+          cp -r unpacked/lang/en/docs .
+      # commit
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: "-- . ':!unpacked'"
+          message: 'CI: ${{ github.event.inputs.release }}'
+          new_branch: '${{ github.event.inputs.release }}/doc'
+          committer_name: GitHub Actions
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+      - run: zip doc.zip `find . -name "*.doc"` -x unpacked/
+      - uses: actions/upload-artifact@v2
+        with:
+          name: doc
+          path: doc.zip
+      - name: Cleanup
+        run: |
+          //find . -type d ! -name "*" -delete
+          find . -type f -iname '*.dlg' -delete
+          find . -type f -iname '*.zip' -delete
+          git checkout main
 
       # At the very end, create a release with all artifacts
       - uses: actions/download-artifact@v3
@@ -188,9 +210,9 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: dlg
-      #- uses: actions/download-artifact@v3
-      #  with:
-      #    name: doc
+      - uses: actions/download-artifact@v3
+        with:
+          name: doc
       #- uses: actions/download-artifact@v3
       #  with:
       #    name: dwk
@@ -287,7 +309,7 @@ jobs:
             2da.zip
             dds.zip
             dlg.zip
-#doc.zip
+            doc.zip
 #dwk.zip
 #gff.zip
 #gui.zip
@@ -328,7 +350,7 @@ jobs:
             2da.zip
             dds.zip
             dlg.zip
-#doc.zip
+            doc.zip
 #dwk.zip
 #gff.zip
 #gui.zip
