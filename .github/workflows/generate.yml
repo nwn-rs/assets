@@ -150,9 +150,31 @@ jobs:
         run: |
           find . -type f -iname '*.dds' -delete
           find . -type f -iname '*.zip' -delete
-          git reset --hard
           git checkout main
 
+      # dlg
+      # gather dlg files
+      - name: Gather dlg files
+        run: |
+          find ./ -name '*.dlg' -exec cp -prv '{}' '.' ';'
+      # commit
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: "-- . ':!unpacked'"
+          message: 'CI: ${{ github.event.inputs.release }}'
+          new_branch: '${{ github.event.inputs.release }}/dlg'
+          committer_name: GitHub Actions
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+      - run: zip dlg.zip `find . -name "*.dlg"` -x unpacked/
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dlg
+          path: dlg.zip
+      - name: Cleanup
+        run: |
+          find . -type f -iname '*.dlg' -delete
+          find . -type f -iname '*.zip' -delete
+          git checkout main
 
 
 
@@ -163,9 +185,9 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: dds
-      #- uses: actions/download-artifact@v3
-      #  with:
-      #    name: dlg
+      - uses: actions/download-artifact@v3
+        with:
+          name: dlg
       #- uses: actions/download-artifact@v3
       #  with:
       #    name: doc
@@ -264,7 +286,7 @@ jobs:
           files: |
             2da.zip
             dds.zip
-#dlg.zip
+            dlg.zip
 #doc.zip
 #dwk.zip
 #gff.zip
@@ -305,7 +327,7 @@ jobs:
           files: |
             2da.zip
             dds.zip
-#dlg.zip
+            dlg.zip
 #doc.zip
 #dwk.zip
 #gff.zip
