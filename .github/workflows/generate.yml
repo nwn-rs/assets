@@ -105,18 +105,17 @@ jobs:
       - name: Gather 2da files
         run: |
           # clean repo folder
-          find . -mindepth 1 -maxdepth 1 ! - name 'unpacked' ! - name '.gitattributes' ! - name '.gitignore' ! - name '.git' -exec echo rm rf {} +
-
+          find ./ -name '*.2da' -exec cp -prv '{}' '.' ';'
       # commit
-      #- uses: EndBug/add-and-commit@v9
-      #  with:
-      #    add: "-- . ':!unpacked'"
-      #    message: 'CI: ${{ github.event.inputs.release }}'
-      #    tag: '${{ github.event.inputs.release }}/2da'
-      #    tag_push: '--force'
-      #    new_branch: '${{ github.event.inputs.release }}/2da'
-      #    committer_name: GitHub Actions
-      #    committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: "-- . ':!unpacked'"
+          message: 'CI: ${{ github.event.inputs.release }}'
+          tag: '${{ github.event.inputs.release }}/2da'
+          tag_push: '--force'
+          new_branch: '${{ github.event.inputs.release }}/2da'
+          committer_name: GitHub Actions
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
       # reset head for dds
       - name: "Checkout source code"
         uses: "actions/checkout@v3"
