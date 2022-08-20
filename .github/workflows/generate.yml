@@ -195,8 +195,6 @@ jobs:
           path: doc.zip
       - name: Cleanup
         run: |
-          //find . -type d ! -name "*" -delete
-          find . -type f -iname '*.dlg' -delete
           find . -type f -iname '*.zip' -delete
           git checkout main
 
