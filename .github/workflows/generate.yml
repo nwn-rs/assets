@@ -124,8 +124,8 @@ jobs:
           path: 2da.zip
       - name: Cleanup 2da files
         run: |
-          find /path/to/directory -type f -iname '*.2da' -delete
-          find /path/to/directory -type f -iname '*.zip' -delete
+          find . -type f -iname '*.2da' -delete
+          find. -type f -iname '*.zip' -delete
 
       # reset head for dds
       - name: "Checkout source code"
