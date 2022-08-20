@@ -126,11 +126,8 @@ jobs:
         run: |
           find . -type f -iname '*.2da' -delete
           find . -type f -iname '*.zip' -delete
-      - name: "Checkout source code"
-        uses: "actions/checkout@v3"
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GH_ACCESS_TOKEN  }}
+          git reset --hard
+          git checkout main
 
       # dds
       # gather dds files
@@ -154,11 +151,9 @@ jobs:
         run: |
           find . -type f -iname '*.dds' -delete
           find . -type f -iname '*.zip' -delete
-      - name: "Checkout source code"
-        uses: "actions/checkout@v3"
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GH_ACCESS_TOKEN  }}
+          git reset --hard
+          git checkout main
+
 
 
 
