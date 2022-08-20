@@ -126,15 +126,139 @@ jobs:
         run: |
           find . -type f -iname '*.2da' -delete
           find . -type f -iname '*.zip' -delete
-          git checkout main
+      - name: "Checkout source code"
+        uses: "actions/checkout@v3"
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_ACCESS_TOKEN  }}
 
       # dds
-      - run: |
-          echo ${ls}
+      # gather dds files
+      - name: Gather dds files
+        run: |
+          find ./ -name '*.dds' -exec cp -prv '{}' '.' ';'
+      # commit
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: "-- . ':!unpacked'"
+          message: 'CI: ${{ github.event.inputs.release }}'
+          new_branch: '${{ github.event.inputs.release }}/dds'
+          committer_name: GitHub Actions
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+      - run: zip dds.zip `find . -name "*.dds"` -x unpacked/
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dds
+          path: dds.zip
+      - name: Cleanup
+        run: |
+          find . -type f -iname '*.dds' -delete
+          find . -type f -iname '*.zip' -delete
+      - name: "Checkout source code"
+        uses: "actions/checkout@v3"
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_ACCESS_TOKEN  }}
+
 
 
       # At the very end, create a release with all artifacts
       - uses: actions/download-artifact@v3
+        with:
+          name: 2da
+      - uses: actions/download-artifact@v3
+        with:
+          name: dds
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: dlg
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: doc
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: dwk
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: gff
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: gui
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: ids
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: ini
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: itp
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: ltr
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: mdl
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: mod
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: mtr
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: nss
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: ovr
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: plt
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: ptt
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: pwk
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: set
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: shd
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: ssf
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: tga
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: tlk
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: ute
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: uti
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: utm
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: utp
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: uts
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: utt
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: utw
+      #- uses: actions/download-artifact@v3
+      #  with:
+      #    name: wok
       - name: prerelease
         if: github.event.inputs.release == 'preview'
         uses: softprops/action-gh-release@v1
@@ -145,7 +269,7 @@ jobs:
           prerelease: true
           files: |
             2da.zip
-#dds.zip
+            dds.zip
 #dlg.zip
 #doc.zip
 #dwk.zip
@@ -186,7 +310,7 @@ jobs:
           tag_name: release/v${{ github.event.inputs.release }}
           files: |
             2da.zip
-#dds.zip
+            dds.zip
 #dlg.zip
 #doc.zip
 #dwk.zip
