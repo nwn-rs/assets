@@ -126,7 +126,6 @@ jobs:
         run: |
           find . -type f -iname '*.2da' -delete
           find . -type f -iname '*.zip' -delete
-          git reset --hard
           git checkout main
 
       # dds
