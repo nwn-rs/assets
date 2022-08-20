@@ -179,7 +179,7 @@ jobs:
       # gather doc files
       - name: Gather doc files
         run: |
-          cp -r unpacked/lang/en/docs .
+          cp -r unpacked/lang/en/docs/ ./
       # commit
       - uses: EndBug/add-and-commit@v9
         with:
