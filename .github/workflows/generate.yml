@@ -117,30 +117,24 @@ jobs:
           new_branch: '${{ github.event.inputs.release }}/2da'
           committer_name: GitHub Actions
           committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip 2da.zip `find . -name "*.2da"`
+      - run: zip 2da.zip `find . -name "*.2da"` -x unpacked/
       - uses: actions/upload-artifact@v2
         with:
           name: 2da
           path: 2da.zip
-      - name: Cleanup 2da files
+      - name: Cleanup
         run: |
           find . -type f -iname '*.2da' -delete
           find . -type f -iname '*.zip' -delete
+          git checkout main
 
-      # reset head for dds
-      - name: "Checkout source code"
-        uses: "actions/checkout@v3"
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
+      # dds
       - run: |
           echo ${ls}
+
+
       # At the very end, create a release with all artifacts
-      - uses: actions/download-artifact@v2
-        with:
-          name: 2da
-
-
+      - uses: actions/download-artifact@v3
       - name: prerelease
         if: github.event.inputs.release == 'preview'
         uses: softprops/action-gh-release@v1
@@ -151,6 +145,37 @@ jobs:
           prerelease: true
           files: |
             2da.zip
+#dds.zip
+#dlg.zip
+#doc.zip
+#dwk.zip
+#gff.zip
+#gui.zip
+#ids.zip
+#ini.zip
+#itp.zip
+#ltr.zip
+#mdl.zip
+#mod.zip
+#mtr.zip
+#nss.zip
+#ovr.zip
+#plt.zip
+#ptt.zip
+#pwk.zip
+#set.zip
+#shd.zip
+#ssf.zip
+#tga.zip
+#tlk.zip
+#ute.zip
+#uti.zip
+#utm.zip
+#utp.zip
+#uts.zip
+#utt.zip
+#utw.zip
+#wok.zip
 
       - name: Release
         if: github.event.inputs.release != 'preview'
@@ -161,35 +186,34 @@ jobs:
           tag_name: release/v${{ github.event.inputs.release }}
           files: |
             2da.zip
-#2da
-#dds
-#dlg
-#doc
-#dwk
-#gff
-#gui
-#ids
-#ini
-#itp
-#ltr
-#mdl
-#mod
-#mtr
-#nss
-#ovr
-#plt
-#ptt
-#pwk
-#set
-#shd
-#ssf
-#tga
-#tlk
-#ute
-#uti
-#utm
-#utp
-#uts
-#utt
-#utw
-#wok
+#dds.zip
+#dlg.zip
+#doc.zip
+#dwk.zip
+#gff.zip
+#gui.zip
+#ids.zip
+#ini.zip
+#itp.zip
+#ltr.zip
+#mdl.zip
+#mod.zip
+#mtr.zip
+#nss.zip
+#ovr.zip
+#plt.zip
+#ptt.zip
+#pwk.zip
+#set.zip
+#shd.zip
+#ssf.zip
+#tga.zip
+#tlk.zip
+#ute.zip
+#uti.zip
+#utm.zip
+#utp.zip
+#uts.zip
+#utt.zip
+#utw.zip
+#wok.zip
