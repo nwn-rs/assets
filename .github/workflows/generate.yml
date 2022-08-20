@@ -100,11 +100,14 @@ jobs:
         if: github.event.inputs.release == 'build8193.25'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6907248/data/nwn_base.key unpacked/
+      - name: cleanup repo
+        run: |
+          rm -r DepotDownloader
+
       # 2da
       # gather 2da files
       - name: Gather 2da files
         run: |
-          # clean repo folder
           find ./ -name '*.2da' -exec cp -prv '{}' '.' ';'
       # commit
       - uses: EndBug/add-and-commit@v9
@@ -114,19 +117,53 @@ jobs:
           new_branch: '${{ github.event.inputs.release }}/2da'
           committer_name: GitHub Actions
           committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - name: Release
-        uses: softprops/action-gh-release@v1
+
+
+      - uses: montudor/action-zip@v1
         with:
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
-          generate_release_notes: true
-          tag_name: release/v${{ github.event.inputs.release }}/2da
+          args: zip 2da.zip *2da
+      - uses: actions/upload-artifact@v2
+        with:
+          name: 2da.zip
+      - name: Cleanup files
+        run: |
+          find /path/to/directory -type f -iname '*.2da' -delete
+          find /path/to/directory -type f -iname '*.zip' -delete
+
       # reset head for dds
       - name: "Checkout source code"
         uses: "actions/checkout@v3"
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_ACCESS_TOKEN }}
+      - run: |
+          echo ${ls}
+      # At the very end, create a release with all artifacts
+      - uses: actions/download-artifact@v2
+        with:
+          name: 2da.zip
 
+
+      - name: prerelease
+        if: github.event.inputs.release == 'preview'
+        uses: softprops/action-gh-release@v1
+        with:
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+          generate_release_notes: true
+          tag_name: release/${{ github.event.inputs.release }}
+          prerelease: true
+          files: |
+            2da.zip
+
+      - name: Release
+        if: github.event.inputs.release != 'preview'
+        uses: softprops/action-gh-release@v1
+        with:
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+          generate_release_notes: true
+          tag_name: release/v${{ github.event.inputs.release }}
+          files: |
+            2da.zip
 #2da
 #dds
 #dlg
