@@ -120,7 +120,8 @@ jobs:
       - run: zip 2da.zip `find . -name "*.2da"`
       - uses: actions/upload-artifact@v2
         with:
-          name: 2da.zip
+          name: 2da
+          path: 2da.zip
       - name: Cleanup 2da files
         run: |
           find /path/to/directory -type f -iname '*.2da' -delete
@@ -137,7 +138,7 @@ jobs:
       # At the very end, create a release with all artifacts
       - uses: actions/download-artifact@v2
         with:
-          name: 2da.zip
+          name: 2da
 
 
       - name: prerelease
