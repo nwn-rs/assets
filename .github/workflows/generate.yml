@@ -111,11 +111,15 @@ jobs:
         with:
           add: "-- . ':!unpacked'"
           message: 'CI: ${{ github.event.inputs.release }}'
-          tag: '${{ github.event.inputs.release }}/2da'
-          tag_push: '--force'
           new_branch: '${{ github.event.inputs.release }}/2da'
           committer_name: GitHub Actions
           committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+          generate_release_notes: true
+          tag_name: release/v${{ github.event.inputs.release }}/2da
       # reset head for dds
       - name: "Checkout source code"
         uses: "actions/checkout@v3"
