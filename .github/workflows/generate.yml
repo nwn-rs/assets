@@ -100,6 +100,52 @@ jobs:
         if: github.event.inputs.release == 'build8193.25'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6907248/data/nwn_base.key unpacked/
+      # doc
+      # gather doc files
+      - name: Gather doc files
+        run: |
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/lang/en/docs/ ./
+      # commit
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: "-- . ':!unpacked' ':!DepotDownloader'"
+          message: 'CI: ${{ github.event.inputs.release }}'
+          new_branch: '${{ github.event.inputs.release }}/doc'
+          committer_name: GitHub Actions
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+      - run: zip doc.zip . -x unpacked/ -x DepotDownloader/
+      - uses: actions/upload-artifact@v2
+        with:
+          name: doc
+          path: doc.zip
+      - name: Cleanup
+        run: |
+          find . -type f -iname '*.zip' -delete
+          git checkout main
+      # doc
+      # gather ovr files
+      - name: Gather ovr files
+        run: |
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/lang/en/data/ovr/ ./
+      # commit
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: "-- . ':!unpacked'"
+          message: 'CI: ${{ github.event.inputs.release }}'
+          new_branch: '${{ github.event.inputs.release }}/ovr'
+          committer_name: GitHub Actions
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+      - run: zip ovr.zip . -x unpacked/ -x DepotDownloader/
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ovr
+          path: ovr.zip
+      - name: Cleanup
+        run: |
+          find . -type f -iname '*.zip' -delete
+          git checkout main
+
+
       - name: cleanup repo
         run: |
           rm -r DepotDownloader
@@ -175,28 +221,7 @@ jobs:
           find . -type f -iname '*.dlg' -delete
           find . -type f -iname '*.zip' -delete
           git checkout main
-      # doc
-      # gather doc files
-      - name: Gather doc files
-        run: |
-          cp -r unpacked/lang/en/docs/ ./
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/doc'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip doc.zip . -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: doc
-          path: doc.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.zip' -delete
-          git checkout main
+
 
       # At the very end, create a release with all artifacts
       - uses: actions/download-artifact@v3
