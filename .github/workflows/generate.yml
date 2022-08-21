@@ -135,7 +135,7 @@ jobs:
           new_branch: '${{ github.event.inputs.release }}/doc'
           committer_name: GitHub Actions
           committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip doc.zip . -r -x unpacked/ -x DepotDownloader/
+      - run: zip doc.zip . -r -x unpacked/* -x DepotDownloader/* -x ovr/*
       - uses: actions/upload-artifact@v2
         with:
           name: doc
@@ -155,6 +155,7 @@ jobs:
         run: |
           cp -r ovr/* .
           rm -r ovr
+          rm -r DepotDownloader
       # commit
       - uses: EndBug/add-and-commit@v9
         with:
@@ -163,7 +164,7 @@ jobs:
           new_branch: '${{ github.event.inputs.release }}/ovr'
           committer_name: GitHub Actions
           committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip ovr.zip . -x unpacked/ -x DepotDownloader/
+      - run: zip ovr.zip . -x zip doc.zip . -r -x unpacked/*
       - uses: actions/upload-artifact@v2
         with:
           name: ovr
