@@ -135,7 +135,7 @@ jobs:
           new_branch: '${{ github.event.inputs.release }}/doc'
           committer_name: GitHub Actions
           committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip -r doc.zip . -x '*/.git/*' -x '.gitattributes' -x 'README.md' -x '*/unpacked/*' -x '*/DepotDownloader/*' -x '*/ovr/*'
+      - run: zip -r doc.zip . -x '.git/*' -x '.gitattributes' -x 'README.md' -x 'unpacked/*' -x 'DepotDownloader/*' -x 'ovr/*'
       - uses: actions/upload-artifact@v2
         with:
           name: doc
@@ -164,7 +164,7 @@ jobs:
           new_branch: '${{ github.event.inputs.release }}/ovr'
           committer_name: GitHub Actions
           committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip -r ovr.zip . -x -x '*/.git/*' -x '.gitattributes' -x 'README.md' -x '*/unpacked/*' -x '*/DepotDownloader/*'
+      - run: zip -r ovr.zip . -x -x '.git/*' -x '.gitattributes' -x 'README.md' -x 'unpacked/*' -x 'DepotDownloader/*'
       - uses: actions/upload-artifact@v2
         with:
           name: ovr
