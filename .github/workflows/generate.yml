@@ -60,8 +60,8 @@ jobs:
         if: github.event.inputs.release == 'preview'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/9334745/data/nwn_base.key unpacked
-          cp -r DepotDownloader/DepotDownloader/depots/704451/9334745/lang/en/docs/ ../docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/9334745/ovr/ ../ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/9334745/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/9334745/ovr/ ovr/
       - name: unpack build8193.35 keyfile
         if: github.event.inputs.release == 'build8193.35'
         run: |
@@ -70,220 +70,220 @@ jobs:
         if: github.event.inputs.release == 'build8193.34'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7437906/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7437906/lang/en/docs/ ../docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7437906/ovr/ ../ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7437906/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7437906/ovr/ ovr/
       - name: unpack build8193.32 keyfile
         if: github.event.inputs.release == 'build8193.32'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7398767/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7398767/lang/en/docs/ ../docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7398767/ovr/ ../ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7398767/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7398767/ovr/ ovr/
       - name: unpack build8193.31 keyfile
         if: github.event.inputs.release == 'build8193.31'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7370737/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7370737/lang/en/docs/ ../docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7370737/ovr/ ../ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7370737/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7370737/ovr/ ovr/
       - name: unpack build8193.30 keyfile
         if: github.event.inputs.release == 'build8193.30'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7070152/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7070152/lang/en/docs/ ../docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7070152/ovr/ ../ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7070152/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7070152/ovr/ ovr/
       - name: unpack build8193.29 keyfile
         if: github.event.inputs.release == 'build8193.29'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6999455/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6999455/lang/en/docs/ ../docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6999455/ovr/ ../ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6999455/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6999455/ovr/ ovr/
       - name: unpack build8193.28 keyfile
         if: github.event.inputs.release == 'build8193.28'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6952603/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6952603/lang/en/docs/ ../docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6952603/ovr/ ../ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6952603/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6952603/ovr/ ovr/
       - name: unpack build8193.27 keyfile
         if: github.event.inputs.release == 'build8193.27'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6933430/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6933430/lang/en/docs/ ../docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6933430/ovr/ ../ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6933430/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6933430/ovr/ ovr/
       - name: unpack build8193.26 keyfile
         if: github.event.inputs.release == 'build8193.26'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6925985/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6925985/lang/en/docs/ ../docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6925985/ovr/ ../ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6925985/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6925985/ovr/ ovr/
       - name: unpack build8193.25 keyfile
         if: github.event.inputs.release == 'build8193.25'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6907248/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/lang/en/docs/ ../docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/ovr/ ../ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/ovr/ ovr/
 
       # docs and ovr folders are in place
       - name: Gather files
         if: github.event.inputs.release == 'preview' || github.event.inputs.release == 'build8193.25'
         run: |
-          find ./ -name '*.2da' -exec cp -prv '{}' '../2da' ';'
-          find ./ -name '*.dds' -exec cp -prv '{}' '../dds' ';'
-          find ./ -name '*.dlg' -exec cp -prv '{}' '../dlg' ';'
-          find ./ -name '*.dwk' -exec cp -prv '{}' '../dwk' ';'
-          find ./ -name '*.gff' -exec cp -prv '{}' '../gff' ';'
-          find ./ -name '*.gui' -exec cp -prv '{}' '../gui' ';'
-          find ./ -name '*.ids' -exec cp -prv '{}' '../ids' ';'
-          find ./ -name '*.ini' -exec cp -prv '{}' '../ini' ';'
-          find ./ -name '*.itp' -exec cp -prv '{}' '../itp' ';'
-          find ./ -name '*.ltr' -exec cp -prv '{}' '../ltr' ';'
-          find ./ -name '*.mdl' -exec cp -prv '{}' '../mdl' ';'
-          find ./ -name '*.mod' -exec cp -prv '{}' '../mod' ';'
-          find ./ -name '*.mtr' -exec cp -prv '{}' '../mtr' ';'
-          find ./ -name '*.nss' -exec cp -prv '{}' '../nss' ';'
-          find ./ -name '*.plt' -exec cp -prv '{}' '../plt' ';'
-          find ./ -name '*.ptt' -exec cp -prv '{}' '../ptt' ';'
-          find ./ -name '*.pwk' -exec cp -prv '{}' '../pwk' ';'
-          find ./ -name '*.set' -exec cp -prv '{}' '../set' ';'
-          find ./ -name '*.shd' -exec cp -prv '{}' '../shd' ';'
-          find ./ -name '*.ssf' -exec cp -prv '{}' '../ssf' ';'
-          find ./ -name '*.tga' -exec cp -prv '{}' '../tga' ';'
-          find ./ -name '*.tlk' -exec cp -prv '{}' '../tlk' ';'
-          find ./ -name '*.ute' -exec cp -prv '{}' '../ute' ';'
-          find ./ -name '*.uti' -exec cp -prv '{}' '../uti' ';'
-          find ./ -name '*.utm' -exec cp -prv '{}' '../utm' ';'
-          find ./ -name '*.utp' -exec cp -prv '{}' '../utp' ';'
-          find ./ -name '*.uts' -exec cp -prv '{}' '../uts' ';'
-          find ./ -name '*.utt' -exec cp -prv '{}' '../utt' ';'
-          find ./ -name '*.utw' -exec cp -prv '{}' '../utw' ';'
-          find ./ -name '*.wok' -exec cp -prv '{}' '../wok' ';'
+          find ./ -name '*.2da' -exec cp -prv '{}' '2da' ';'
+          find ./ -name '*.dds' -exec cp -prv '{}' 'dds' ';'
+          find ./ -name '*.dlg' -exec cp -prv '{}' 'dlg' ';'
+          find ./ -name '*.dwk' -exec cp -prv '{}' 'dwk' ';'
+          find ./ -name '*.gff' -exec cp -prv '{}' 'gff' ';'
+          find ./ -name '*.gui' -exec cp -prv '{}' 'gui' ';'
+          find ./ -name '*.ids' -exec cp -prv '{}' 'ids' ';'
+          find ./ -name '*.ini' -exec cp -prv '{}' 'ini' ';'
+          find ./ -name '*.itp' -exec cp -prv '{}' 'itp' ';'
+          find ./ -name '*.ltr' -exec cp -prv '{}' 'ltr' ';'
+          find ./ -name '*.mdl' -exec cp -prv '{}' 'mdl' ';'
+          find ./ -name '*.mod' -exec cp -prv '{}' 'mod' ';'
+          find ./ -name '*.mtr' -exec cp -prv '{}' 'mtr' ';'
+          find ./ -name '*.nss' -exec cp -prv '{}' 'nss' ';'
+          find ./ -name '*.plt' -exec cp -prv '{}' 'plt' ';'
+          find ./ -name '*.ptt' -exec cp -prv '{}' 'ptt' ';'
+          find ./ -name '*.pwk' -exec cp -prv '{}' 'pwk' ';'
+          find ./ -name '*.set' -exec cp -prv '{}' 'set' ';'
+          find ./ -name '*.shd' -exec cp -prv '{}' 'shd' ';'
+          find ./ -name '*.ssf' -exec cp -prv '{}' 'ssf' ';'
+          find ./ -name '*.tga' -exec cp -prv '{}' 'tga' ';'
+          find ./ -name '*.tlk' -exec cp -prv '{}' 'tlk' ';'
+          find ./ -name '*.ute' -exec cp -prv '{}' 'ute' ';'
+          find ./ -name '*.uti' -exec cp -prv '{}' 'uti' ';'
+          find ./ -name '*.utm' -exec cp -prv '{}' 'utm' ';'
+          find ./ -name '*.utp' -exec cp -prv '{}' 'utp' ';'
+          find ./ -name '*.uts' -exec cp -prv '{}' 'uts' ';'
+          find ./ -name '*.utt' -exec cp -prv '{}' 'utt' ';'
+          find ./ -name '*.utw' -exec cp -prv '{}' 'utw' ';'
+          find ./ -name '*.wok' -exec cp -prv '{}' 'wok' ';'
 
       - uses: actions/upload-artifact@v2
         with:
           name: 2da
-          path: ../2da
+          path: 2da
       - uses: actions/upload-artifact@v2
         with:
           name: dds
-          path: ../dds
+          path: dds
       - uses: actions/upload-artifact@v2
         with:
           name: dlg
-          path: ../dlg
+          path: dlg
       - uses: actions/upload-artifact@v2
         with:
           name: doc
-          path: ../doc
+          path: doc
       - uses: actions/upload-artifact@v2
         with:
           name: dwk
-          path: ../dwk
+          path: dwk
       - uses: actions/upload-artifact@v2
         with:
           name: gff
-          path: ../gff
+          path: gff
       - uses: actions/upload-artifact@v2
         with:
           name: gui
-          path: ../gui
+          path: gui
       - uses: actions/upload-artifact@v2
         with:
           name: ids
-          path: ../ids
+          path: ids
       - uses: actions/upload-artifact@v2
         with:
           name: ini
-          path: ../ini
+          path: ini
       - uses: actions/upload-artifact@v2
         with:
           name: itp
-          path: ../itp
+          path: itp
       - uses: actions/upload-artifact@v2
         with:
           name: ltr
-          path: ../ltr
+          path: ltr
       - uses: actions/upload-artifact@v2
         with:
           name: mdl
-          path: ../mdl
+          path: mdl
       - uses: actions/upload-artifact@v2
         with:
           name: mod
-          path: ../mod
+          path: mod
       - uses: actions/upload-artifact@v2
         with:
           name: mtr
-          path: ../mtr
+          path: mtr
       - uses: actions/upload-artifact@v2
         with:
           name: nss
-          path: ../nss
+          path: nss
       - uses: actions/upload-artifact@v2
         with:
           name: ovr
-          path: ../ovr
+          path: ovr
       - uses: actions/upload-artifact@v2
         with:
           name: plt
-          path: ../plt
+          path: plt
       - uses: actions/upload-artifact@v2
         with:
           name: ptt
-          path: ../ptt
+          path: ptt
       - uses: actions/upload-artifact@v2
         with:
           name: pwk
-          path: ../pwk
+          path: pwk
       - uses: actions/upload-artifact@v2
         with:
           name: set
-          path: ../set
+          path: set
       - uses: actions/upload-artifact@v2
         with:
           name: shd
-          path: ../shd
+          path: shd
       - uses: actions/upload-artifact@v2
         with:
           name: ssf
-          path: ../ssf
+          path: ssf
       - uses: actions/upload-artifact@v2
         with:
           name: tga
-          path: ../tga
+          path: tga
       - uses: actions/upload-artifact@v2
         with:
           name: tlk
-          path: ../tlk
+          path: tlk
       - uses: actions/upload-artifact@v2
         with:
           name: ute
-          path: ../ute
+          path: ute
       - uses: actions/upload-artifact@v2
         with:
           name: uti
-          path: ../uti
+          path: uti
       - uses: actions/upload-artifact@v2
         with:
           name: utm
-          path: ../utm
+          path: utm
       - uses: actions/upload-artifact@v2
         with:
           name: utp
-          path: ../utp
+          path: utp
       - uses: actions/upload-artifact@v2
         with:
           name: uts
-          path: ../uts
+          path: uts
       - uses: actions/upload-artifact@v2
         with:
           name: utt
-          path: ../utt
+          path: utt
       - uses: actions/upload-artifact@v2
         with:
           name: utw
-          path: ../utw
+          path: utw
       - uses: actions/upload-artifact@v2
         with:
           name: wok
-          path: ../wok
+          path: wok
 
       - uses: actions/download-artifact@v3
         with:
