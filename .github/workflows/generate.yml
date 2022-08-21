@@ -124,7 +124,7 @@ jobs:
       # gather doc files
       - name: Gather doc files
         run: |
-          cp -r docs/ .
+          cp -r docs/* .
       # commit
       - uses: EndBug/add-and-commit@v9
         with:
@@ -141,14 +141,13 @@ jobs:
       - name: Cleanup
         run: |
           find . -type f -iname '*.zip' -delete
-          rm -r docs/
+          rm -r docs
           git checkout main
       # doc
       # gather ovr files
       - name: Gather ovr files
         run: |
-          cp -r ovr/ .
-          rm -r ovr/
+          cp -r ovr/* .
       # commit
       - uses: EndBug/add-and-commit@v9
         with:
@@ -165,7 +164,7 @@ jobs:
       - name: Cleanup
         run: |
           find . -type f -iname '*.zip' -delete
-          rm -r ovr/
+          rm -r ovr
           git checkout main
       - name: cleanup repo
         run: |
