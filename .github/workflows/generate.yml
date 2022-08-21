@@ -123,7 +123,7 @@ jobs:
 
       # docs and ovr folders are in place
       - name: Gather files
-        if: github.event.inputs.release == 'preview'
+        if: github.event.inputs.release == 'preview' || github.event.inputs.release == 'build8193.25'
         run: |
           find ./ -name '*.2da' -exec cp -prv '{}' '../2da' ';'
           find ./ -name '*.dds' -exec cp -prv '{}' '../dds' ';'
@@ -155,6 +155,316 @@ jobs:
           find ./ -name '*.utt' -exec cp -prv '{}' '../utt' ';'
           find ./ -name '*.utw' -exec cp -prv '{}' '../utw' ';'
           find ./ -name '*.wok' -exec cp -prv '{}' '../wok' ';'
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: 2da
+          path: 2da
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dds
+          path: dds
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dlg
+          path: dlg
+      - uses: actions/upload-artifact@v2
+        with:
+          name: doc
+          path: doc
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dwk
+          path: dwk
+      - uses: actions/upload-artifact@v2
+        with:
+          name: gff
+          path: gff
+      - uses: actions/upload-artifact@v2
+        with:
+          name: gui
+          path: gui
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ids
+          path: ids
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ini
+          path: ini
+      - uses: actions/upload-artifact@v2
+        with:
+          name: itp
+          path: itp
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ltr
+          path: ltr
+      - uses: actions/upload-artifact@v2
+        with:
+          name: mdl
+          path: mdl
+      - uses: actions/upload-artifact@v2
+        with:
+          name: mod
+          path: mod
+      - uses: actions/upload-artifact@v2
+        with:
+          name: mtr
+          path: mtr
+      - uses: actions/upload-artifact@v2
+        with:
+          name: nss
+          path: nss
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ovr
+          path: ovr
+      - uses: actions/upload-artifact@v2
+        with:
+          name: plt
+          path: plt
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ptt
+          path: ptt
+      - uses: actions/upload-artifact@v2
+        with:
+          name: pwk
+          path: pwk
+      - uses: actions/upload-artifact@v2
+        with:
+          name: set
+          path: set
+      - uses: actions/upload-artifact@v2
+        with:
+          name: shd
+          path: shd
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ssf
+          path: ssf
+      - uses: actions/upload-artifact@v2
+        with:
+          name: tga
+          path: tga
+      - uses: actions/upload-artifact@v2
+        with:
+          name: tlk
+          path: tlk
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ute
+          path: ute
+      - uses: actions/upload-artifact@v2
+        with:
+          name: uti
+          path: uti
+      - uses: actions/upload-artifact@v2
+        with:
+          name: utm
+          path: utm
+      - uses: actions/upload-artifact@v2
+        with:
+          name: utp
+          path: utp
+      - uses: actions/upload-artifact@v2
+        with:
+          name: uts
+          path: uts
+      - uses: actions/upload-artifact@v2
+        with:
+          name: utt
+          path: utt
+      - uses: actions/upload-artifact@v2
+        with:
+          name: utw
+          path: utw
+      - uses: actions/upload-artifact@v2
+        with:
+          name: wok
+          path: wok
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: 2da
+      - uses: actions/download-artifact@v3
+        with:
+          name: dds
+      - uses: actions/download-artifact@v3
+        with:
+          name: dlg
+      - uses: actions/download-artifact@v3
+        with:
+          name: doc
+      - uses: actions/download-artifact@v3
+        with:
+          name: dwk
+      - uses: actions/download-artifact@v3
+        with:
+          name: gff
+      - uses: actions/download-artifact@v3
+        with:
+          name: gui
+      - uses: actions/download-artifact@v3
+        with:
+          name: ids
+      - uses: actions/download-artifact@v3
+        with:
+          name: ini
+      - uses: actions/download-artifact@v3
+        with:
+          name: itp
+      - uses: actions/download-artifact@v3
+        with:
+          name: ltr
+      - uses: actions/download-artifact@v3
+        with:
+          name: mdl
+      - uses: actions/download-artifact@v3
+        with:
+          name: mod
+      - uses: actions/download-artifact@v3
+        with:
+          name: mtr
+      - uses: actions/download-artifact@v3
+        with:
+          name: nss
+      - uses: actions/download-artifact@v3
+        with:
+          name: ovr
+      - uses: actions/download-artifact@v3
+        with:
+          name: plt
+      - uses: actions/download-artifact@v3
+        with:
+          name: ptt
+      - uses: actions/download-artifact@v3
+        with:
+          name: pwk
+      - uses: actions/download-artifact@v3
+        with:
+          name: set
+      - uses: actions/download-artifact@v3
+        with:
+          name: shd
+      - uses: actions/download-artifact@v3
+        with:
+          name: ssf
+      - uses: actions/download-artifact@v3
+        with:
+          name: tga
+      - uses: actions/download-artifact@v3
+        with:
+          name: tlk
+      - uses: actions/download-artifact@v3
+        with:
+          name: ute
+      - uses: actions/download-artifact@v3
+        with:
+          name: uti
+      - uses: actions/download-artifact@v3
+        with:
+          name: utm
+      - uses: actions/download-artifact@v3
+        with:
+          name: utp
+      - uses: actions/download-artifact@v3
+        with:
+          name: uts
+      - uses: actions/download-artifact@v3
+        with:
+          name: utt
+      - uses: actions/download-artifact@v3
+        with:
+          name: utw
+      - uses: actions/download-artifact@v3
+        with:
+          name: wok
+
+      - name: prerelease
+        if: github.event.inputs.release == 'preview'
+        uses: softprops/action-gh-release@v1
+        with:
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+          generate_release_notes: true
+          tag_name: release/${{ github.event.inputs.release }}
+          prerelease: true
+          files: |
+            2da.zip
+            dds.zip
+            dlg.zip
+            doc.zip
+            dwk.zip
+            gff.zip
+            gui.zip
+            ids.zip
+            ini.zip
+            itp.zip
+            ltr.zip
+            mdl.zip
+            mod.zip
+            mtr.zip
+            nss.zip
+            ovr.zip
+            plt.zip
+            ptt.zip
+            pwk.zip
+            set.zip
+            shd.zip
+            ssf.zip
+            tga.zip
+            tlk.zip
+            ute.zip
+            uti.zip
+            utm.zip
+            utp.zip
+            uts.zip
+            utt.zip
+            utw.zip
+            wok.zip
+
+      - name: Release
+        if: github.event.inputs.release != 'preview'
+        uses: softprops/action-gh-release@v1
+        with:
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+          generate_release_notes: true
+          tag_name: release/v${{ github.event.inputs.release }}
+          files: |
+            2da.zip
+            dds.zip
+            dlg.zip
+            doc.zip
+            dwk.zip
+            gff.zip
+            gui.zip
+            ids.zip
+            ini.zip
+            itp.zip
+            ltr.zip
+            mdl.zip
+            mod.zip
+            mtr.zip
+            nss.zip
+            ovr.zip
+            plt.zip
+            ptt.zip
+            pwk.zip
+            set.zip
+            shd.zip
+            ssf.zip
+            tga.zip
+            tlk.zip
+            ute.zip
+            uti.zip
+            utm.zip
+            utp.zip
+            uts.zip
+            utt.zip
+            utw.zip
+            wok.zip
+
 
 #      # doc
 #      # gather doc files
@@ -933,182 +1243,6 @@ jobs:
 #          git checkout main
 #
 #      # At the very end, create a release with all artifacts
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: 2da
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: dds
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: dlg
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: doc
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: dwk
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: gff
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: gui
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: ids
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: ini
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: itp
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: ltr
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: mdl
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: mod
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: mtr
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: nss
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: ovr
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: plt
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: ptt
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: pwk
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: set
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: shd
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: ssf
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: tga
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: tlk
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: ute
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: uti
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: utm
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: utp
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: uts
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: utt
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: utw
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: wok
-#      - name: prerelease
-#        if: github.event.inputs.release == 'preview'
-#        uses: softprops/action-gh-release@v1
-#        with:
-#          token: ${{ secrets.GH_ACCESS_TOKEN }}
-#          generate_release_notes: true
-#          tag_name: release/${{ github.event.inputs.release }}
-#          prerelease: true
-#          files: |
-#            2da.zip
-#            dds.zip
-#            dlg.zip
-#            doc.zip
-#            dwk.zip
-#            gff.zip
-#            gui.zip
-#            ids.zip
-#            ini.zip
-#            itp.zip
-#            ltr.zip
-#            mdl.zip
-#            mod.zip
-#            mtr.zip
-#            nss.zip
-#            ovr.zip
-#            plt.zip
-#            ptt.zip
-#            pwk.zip
-#            set.zip
-#            shd.zip
-#            ssf.zip
-#            tga.zip
-#            tlk.zip
-#            ute.zip
-#            uti.zip
-#            utm.zip
-#            utp.zip
-#            uts.zip
-#            utt.zip
-#            utw.zip
-#            wok.zip
-#
-#      - name: Release
-#        if: github.event.inputs.release != 'preview'
-#        uses: softprops/action-gh-release@v1
-#        with:
-#          token: ${{ secrets.GH_ACCESS_TOKEN }}
-#          generate_release_notes: true
-#          tag_name: release/v${{ github.event.inputs.release }}
-#          files: |
-#            2da.zip
-#            dds.zip
-#            dlg.zip
-#            doc.zip
-#            dwk.zip
-#            gff.zip
-#            gui.zip
-#            ids.zip
-#            ini.zip
-#            itp.zip
-#            ltr.zip
-#            mdl.zip
-#            mod.zip
-#            mtr.zip
-#            nss.zip
-#            ovr.zip
-#            plt.zip
-#            ptt.zip
-#            pwk.zip
-#            set.zip
-#            shd.zip
-#            ssf.zip
-#            tga.zip
-#            tlk.zip
-#            ute.zip
-#            uti.zip
-#            utm.zip
-#            utp.zip
-#            uts.zip
-#            utt.zip
-#            utw.zip
-#            wok.zip
+
+
 #
