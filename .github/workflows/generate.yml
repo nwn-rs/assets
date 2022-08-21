@@ -133,7 +133,7 @@ jobs:
           new_branch: '${{ github.event.inputs.release }}/doc'
           committer_name: GitHub Actions
           committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip doc.zip . -x unpacked/ -x DepotDownloader/
+      - run: zip doc.zip . -r -x unpacked/ -x DepotDownloader/
       - uses: actions/upload-artifact@v2
         with:
           name: doc
@@ -143,7 +143,7 @@ jobs:
           find . -type f -iname '*.zip' -delete
           rm -r docs
           git checkout main
-      # doc
+      # ovr
       # gather ovr files
       - name: Gather ovr files
         run: |
