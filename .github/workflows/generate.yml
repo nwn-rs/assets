@@ -148,7 +148,6 @@ jobs:
           find . -type f -iname '*.md' -delete
           rm -r legacy
           rm -r licences
-          rm -r docs
           rm init.sh
           git checkout main
       # ovr
