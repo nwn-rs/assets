@@ -130,7 +130,7 @@ jobs:
       # commit
       - uses: EndBug/add-and-commit@v9
         with:
-          add: "-- . ':!unpacked' ':!DepotDownloader' ':!ovr' ':!docs'"
+          add: "-- . ':!unpacked/' ':!DepotDownloader/' ':!ovr/' ':!docs/'"
           message: 'CI: ${{ github.event.inputs.release }}'
           new_branch: '${{ github.event.inputs.release }}/doc'
           committer_name: GitHub Actions
