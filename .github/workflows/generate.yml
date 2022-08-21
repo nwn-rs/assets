@@ -147,6 +147,7 @@ jobs:
           rm -r legacy
           rm -r licences
           rm -r docs
+          rm init.sh
           git checkout main
       # ovr
       # gather ovr files
