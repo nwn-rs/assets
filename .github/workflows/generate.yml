@@ -141,6 +141,11 @@ jobs:
       - name: Cleanup
         run: |
           find . -type f -iname '*.zip' -delete
+          find . -type f -iname '*.pdf' -delete
+          find . -type f -iname '*.txt' -delete
+          find . -type f -iname '*.md' -delete
+          rm -r legacy
+          rm -r licences
           rm -r docs
           git checkout main
       # ovr
