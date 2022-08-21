@@ -124,7 +124,7 @@ jobs:
       # gather doc files
       - name: Gather doc files
         run: |
-          cp -r docs/ ../
+          cp -r docs/ .
       # commit
       - uses: EndBug/add-and-commit@v9
         with:
@@ -147,7 +147,7 @@ jobs:
       # gather ovr files
       - name: Gather ovr files
         run: |
-          cp -r ovr/ ../
+          cp -r ovr/ .
           rm -r ovr/
       # commit
       - uses: EndBug/add-and-commit@v9
