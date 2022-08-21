@@ -170,8 +170,8 @@ jobs:
           path: dlg
       - uses: actions/upload-artifact@v2
         with:
-          name: doc
-          path: doc
+          name: docs
+          path: docs
       - uses: actions/upload-artifact@v2
         with:
           name: dwk
@@ -296,7 +296,7 @@ jobs:
           name: dlg
       - uses: actions/download-artifact@v3
         with:
-          name: doc
+          name: docs
       - uses: actions/download-artifact@v3
         with:
           name: dwk
@@ -394,7 +394,7 @@ jobs:
             2da.zip
             dds.zip
             dlg.zip
-            doc.zip
+            docs.zip
             dwk.zip
             gff.zip
             gui.zip
@@ -435,7 +435,7 @@ jobs:
             2da.zip
             dds.zip
             dlg.zip
-            doc.zip
+            docs.zip
             dwk.zip
             gff.zip
             gui.zip
