@@ -60,8 +60,8 @@ jobs:
         if: github.event.inputs.release == 'preview'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/9334745/data/nwn_base.key unpacked
-          cp -r DepotDownloader/DepotDownloader/depots/704451/9334745/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/9334745/ovr/ ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/9334745/lang/en/docs/ ../docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/9334745/ovr/ ../ovr/
       - name: unpack build8193.35 keyfile
         if: github.event.inputs.release == 'build8193.35'
         run: |
@@ -70,1012 +70,1045 @@ jobs:
         if: github.event.inputs.release == 'build8193.34'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7437906/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7437906/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7437906/ovr/ ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7437906/lang/en/docs/ ../docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7437906/ovr/ ../ovr/
       - name: unpack build8193.32 keyfile
         if: github.event.inputs.release == 'build8193.32'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7398767/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7398767/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7398767/ovr/ ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7398767/lang/en/docs/ ../docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7398767/ovr/ ../ovr/
       - name: unpack build8193.31 keyfile
         if: github.event.inputs.release == 'build8193.31'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7370737/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7370737/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7370737/ovr/ ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7370737/lang/en/docs/ ../docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7370737/ovr/ ../ovr/
       - name: unpack build8193.30 keyfile
         if: github.event.inputs.release == 'build8193.30'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7070152/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7070152/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7070152/ovr/ ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7070152/lang/en/docs/ ../docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7070152/ovr/ ../ovr/
       - name: unpack build8193.29 keyfile
         if: github.event.inputs.release == 'build8193.29'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6999455/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6999455/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6999455/ovr/ ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6999455/lang/en/docs/ ../docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6999455/ovr/ ../ovr/
       - name: unpack build8193.28 keyfile
         if: github.event.inputs.release == 'build8193.28'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6952603/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6952603/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6952603/ovr/ ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6952603/lang/en/docs/ ../docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6952603/ovr/ ../ovr/
       - name: unpack build8193.27 keyfile
         if: github.event.inputs.release == 'build8193.27'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6933430/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6933430/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6933430/ovr/ ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6933430/lang/en/docs/ ../docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6933430/ovr/ ../ovr/
       - name: unpack build8193.26 keyfile
         if: github.event.inputs.release == 'build8193.26'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6925985/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6925985/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6925985/ovr/ ovr/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6925985/lang/en/docs/ ../docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6925985/ovr/ ../ovr/
       - name: unpack build8193.25 keyfile
         if: github.event.inputs.release == 'build8193.25'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6907248/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/ovr/ ovr/
-      # doc
-      # gather doc files
-      - name: Gather doc files
-        run: |
-          cp -r docs/* .
-          rm -r docs
-          rm init.sh
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked/' ':!DepotDownloader/' ':!ovr/' ':!docs/'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/doc'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip -r doc.zip . -x '.git/*' -x '.gitattributes' -x 'README.md' -x 'unpacked/*' -x 'DepotDownloader/*' -x 'ovr/*' -x '.github/*'
-      - uses: actions/upload-artifact@v2
-        with:
-          name: doc
-          path: doc.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.zip' -delete
-          find . -type f -iname '*.pdf' -delete
-          find . -type f -iname '*.txt' -delete
-          find . -type f -iname '*.md' -delete
-          rm -r legacy
-          rm -r licences
-          git checkout main
-      # ovr
-      # gather ovr files
-      - name: Gather ovr files
-        run: |
-          cp -r ovr/* .
-          rm -r ovr
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked' ':!DepotDownloader'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/ovr'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip -r ovr.zip . -x -x '.git/*' -x '.gitattributes' -x 'README.md' -x 'unpacked/*' -x 'DepotDownloader/*' -x '.github/*'
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ovr
-          path: ovr.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.zip' -delete
-          find . -type f -iname '*.2da' -delete
-          find . -type f -iname '*.shd' -delete
-          find . -type f -iname '*.nss' -delete
-          find . -type f -iname '*.ncs' -delete
-          find . -type f -iname '*.mdl' -delete
-          git checkout main
-      - name: cleanup repo
-        run: |
-          rm -r DepotDownloader
-      # 2da
-      # gather 2da files
-      - name: Gather 2da files
-        run: |
-          find ./ -name '*.2da' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/2da'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip 2da.zip `find . -name "*.2da"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: 2da
-          path: 2da.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.2da' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/lang/en/docs/ ../docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/ovr/ ../ovr/
 
-      # dds
-      # gather dds files
-      - name: Gather dds files
-        run: |
-          find ./ -name '*.dds' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/dds'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip dds.zip `find . -name "*.dds"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: dds
-          path: dds.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.dds' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # dlg
-      # gather dlg files
-      - name: Gather dlg files
-        run: |
-          find ./ -name '*.dlg' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/dlg'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip dlg.zip `find . -name "*.dlg"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: dlg
-          path: dlg.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.dlg' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # dwk
-      # gather dwk files
-      - name: Gather dwk files
-        run: |
-          find ./ -name '*.dwk' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/dwk'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip dwk.zip `find . -name "*.dwk"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: dwk
-          path: dwk.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.dwk' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # gff
-      # gather gff files
-      - name: Gather gff files
-        run: |
-          find ./ -name '*.gff' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/gff'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip gff.zip `find . -name "*.gff"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: gff
-          path: gff.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.gff' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # gui
-      # gather gui files
-      - name: Gather gui files
-        run: |
-          find ./ -name '*.gui' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/gui'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip gui.zip `find . -name "*.gui"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: gui
-          path: gui.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.gui' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # ids
-      # gather ids files
-      - name: Gather ids files
-        run: |
-          find ./ -name '*.ids' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/ids'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip ids.zip `find . -name "*.ids"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ids
-          path: ids.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.ids' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # ini
-      # gather ini files
-      - name: Gather ini files
-        run: |
-          find ./ -name '*.ini' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/ini'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip ini.zip `find . -name "*.ini"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ini
-          path: ini.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.ini' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # itp
-      # gather itp files
-      - name: Gather itp files
-        run: |
-          find ./ -name '*.itp' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/itp'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip itp.zip `find . -name "*.itp"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: itp
-          path: itp.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.itp' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # ltr
-      # gather ltr files
-      - name: Gather ltr files
-        run: |
-          find ./ -name '*.ltr' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/ltr'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip ltr.zip `find . -name "*.ltr"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ltr
-          path: ltr.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.ltr' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # mdl
-      # gather mdl files
-      - name: Gather mdl files
-        run: |
-          find ./ -name '*.mdl' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/mdl'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip mdl.zip `find . -name "*.mdl"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: mdl
-          path: mdl.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.mdl' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # mod
-      # gather mod files
-      - name: Gather mod files
-        run: |
-          find ./ -name '*.mod' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/mod'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip mod.zip `find . -name "*.mod"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: mod
-          path: mod.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.mod' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # mtr
-      # gather mtr files
-      - name: Gather mtr files
-        run: |
-          find ./ -name '*.mtr' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/mtr'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip mtr.zip `find . -name "*.mtr"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: mtr
-          path: mtr.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.mtr' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # nss
-      # gather nss files
-      - name: Gather nss files
-        run: |
-          find ./ -name '*.nss' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/nss'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip nss.zip `find . -name "*.nss"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: nss
-          path: nss.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.nss' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # plt
-      # gather plt files
-      - name: Gather plt files
-        run: |
-          find ./ -name '*.plt' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/plt'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip plt.zip `find . -name "*.plt"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: plt
-          path: plt.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.plt' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # ptt
-      # gather ptt files
-      - name: Gather ptt files
-        run: |
-          find ./ -name '*.ptt' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/ptt'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip ptt.zip `find . -name "*.ptt"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ptt
-          path: ptt.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.ptt' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # pwk
-      # gather pwk files
-      - name: Gather pwk files
-        run: |
-          find ./ -name '*.pwk' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/pwk'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip pwk.zip `find . -name "*.pwk"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: pwk
-          path: pwk.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.pwk' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # set
-      # gather set files
-      - name: Gather set files
-        run: |
-          find ./ -name '*.set' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/set'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip set.zip `find . -name "*.set"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: set
-          path: set.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.set' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # shd
-      # gather shd files
-      - name: Gather shd files
-        run: |
-          find ./ -name '*.shd' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/shd'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip shd.zip `find . -name "*.shd"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: shd
-          path: shd.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.shd' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # ssf
-      # gather ssf files
-      - name: Gather ssf files
-        run: |
-          find ./ -name '*.ssf' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/ssf'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip ssf.zip `find . -name "*.ssf"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ssf
-          path: ssf.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.ssf' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # tga
-      # gather tga files
-      - name: Gather tga files
-        run: |
-          find ./ -name '*.tga' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/tga'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip tga.zip `find . -name "*.tga"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: tga
-          path: tga.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.tga' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # tlk
-      # gather tlk files
-      - name: Gather tlk files
-        run: |
-          find ./ -name '*.tlk' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/tlk'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip tlk.zip `find . -name "*.tlk"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: tlk
-          path: tlk.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.tlk' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # ute
-      # gather ute files
-      - name: Gather ute files
-        run: |
-          find ./ -name '*.ute' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/ute'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip ute.zip `find . -name "*.ute"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ute
-          path: ute.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.ute' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # uti
-      # gather uti files
-      - name: Gather uti files
-        run: |
-          find ./ -name '*.uti' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/uti'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip uti.zip `find . -name "*.uti"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: uti
-          path: uti.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.uti' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # utm
-      # gather utm files
-      - name: Gather utm files
-        run: |
-          find ./ -name '*.utm' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/utm'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip utm.zip `find . -name "*.utm"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: utm
-          path: utm.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.utm' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # utp
-      # gather utp files
-      - name: Gather utp files
-        run: |
-          find ./ -name '*.utp' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/utp'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip utp.zip `find . -name "*.utp"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: utp
-          path: utp.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.utp' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # uts
-      # gather uts files
-      - name: Gather uts files
-        run: |
-          find ./ -name '*.uts' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/uts'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip uts.zip `find . -name "*.uts"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: uts
-          path: uts.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.uts' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # utt
-      # gather utt files
-      - name: Gather utt files
-        run: |
-          find ./ -name '*.utt' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/utt'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip utt.zip `find . -name "*.utt"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: utt
-          path: utt.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.utt' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # utw
-      # gather utw files
-      - name: Gather utw files
-        run: |
-          find ./ -name '*.utw' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/utw'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip utw.zip `find . -name "*.utw"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: utw
-          path: utw.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.utw' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # wok
-      # gather wok files
-      - name: Gather wok files
-        run: |
-          find ./ -name '*.wok' -exec cp -prv '{}' '.' ';'
-      # commit
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: "-- . ':!unpacked'"
-          message: 'CI: ${{ github.event.inputs.release }}'
-          new_branch: '${{ github.event.inputs.release }}/wok'
-          committer_name: GitHub Actions
-          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip wok.zip `find . -name "*.wok"` -x unpacked/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: wok
-          path: wok.zip
-      - name: Cleanup
-        run: |
-          find . -type f -iname '*.wok' -delete
-          find . -type f -iname '*.zip' -delete
-          git checkout main
-
-      # At the very end, create a release with all artifacts
-      - uses: actions/download-artifact@v3
-        with:
-          name: 2da
-      - uses: actions/download-artifact@v3
-        with:
-          name: dds
-      - uses: actions/download-artifact@v3
-        with:
-          name: dlg
-      - uses: actions/download-artifact@v3
-        with:
-          name: doc
-      - uses: actions/download-artifact@v3
-        with:
-          name: dwk
-      - uses: actions/download-artifact@v3
-        with:
-          name: gff
-      - uses: actions/download-artifact@v3
-        with:
-          name: gui
-      - uses: actions/download-artifact@v3
-        with:
-          name: ids
-      - uses: actions/download-artifact@v3
-        with:
-          name: ini
-      - uses: actions/download-artifact@v3
-        with:
-          name: itp
-      - uses: actions/download-artifact@v3
-        with:
-          name: ltr
-      - uses: actions/download-artifact@v3
-        with:
-          name: mdl
-      - uses: actions/download-artifact@v3
-        with:
-          name: mod
-      - uses: actions/download-artifact@v3
-        with:
-          name: mtr
-      - uses: actions/download-artifact@v3
-        with:
-          name: nss
-      - uses: actions/download-artifact@v3
-        with:
-          name: ovr
-      - uses: actions/download-artifact@v3
-        with:
-          name: plt
-      - uses: actions/download-artifact@v3
-        with:
-          name: ptt
-      - uses: actions/download-artifact@v3
-        with:
-          name: pwk
-      - uses: actions/download-artifact@v3
-        with:
-          name: set
-      - uses: actions/download-artifact@v3
-        with:
-          name: shd
-      - uses: actions/download-artifact@v3
-        with:
-          name: ssf
-      - uses: actions/download-artifact@v3
-        with:
-          name: tga
-      - uses: actions/download-artifact@v3
-        with:
-          name: tlk
-      - uses: actions/download-artifact@v3
-        with:
-          name: ute
-      - uses: actions/download-artifact@v3
-        with:
-          name: uti
-      - uses: actions/download-artifact@v3
-        with:
-          name: utm
-      - uses: actions/download-artifact@v3
-        with:
-          name: utp
-      - uses: actions/download-artifact@v3
-        with:
-          name: uts
-      - uses: actions/download-artifact@v3
-        with:
-          name: utt
-      - uses: actions/download-artifact@v3
-        with:
-          name: utw
-      - uses: actions/download-artifact@v3
-        with:
-          name: wok
-      - name: prerelease
+      # docs and ovr folders are in place
+      - name: Gather files
         if: github.event.inputs.release == 'preview'
-        uses: softprops/action-gh-release@v1
-        with:
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
-          generate_release_notes: true
-          tag_name: release/${{ github.event.inputs.release }}
-          prerelease: true
-          files: |
-            2da.zip
-            dds.zip
-            dlg.zip
-            doc.zip
-            dwk.zip
-            gff.zip
-            gui.zip
-            ids.zip
-            ini.zip
-            itp.zip
-            ltr.zip
-            mdl.zip
-            mod.zip
-            mtr.zip
-            nss.zip
-            ovr.zip
-            plt.zip
-            ptt.zip
-            pwk.zip
-            set.zip
-            shd.zip
-            ssf.zip
-            tga.zip
-            tlk.zip
-            ute.zip
-            uti.zip
-            utm.zip
-            utp.zip
-            uts.zip
-            utt.zip
-            utw.zip
-            wok.zip
+        run: |
+          find ./ -name '*.2da' -exec cp -prv '{}' '../2da' ';'
+          find ./ -name '*.dds' -exec cp -prv '{}' '../dds' ';'
+          find ./ -name '*.dlg' -exec cp -prv '{}' '../dlg' ';'
+          find ./ -name '*.dwk' -exec cp -prv '{}' '../dwk' ';'
+          find ./ -name '*.gff' -exec cp -prv '{}' '../gff' ';'
+          find ./ -name '*.gui' -exec cp -prv '{}' '../gui' ';'
+          find ./ -name '*.ids' -exec cp -prv '{}' '../ids' ';'
+          find ./ -name '*.ini' -exec cp -prv '{}' '../ini' ';'
+          find ./ -name '*.itp' -exec cp -prv '{}' '../itp' ';'
+          find ./ -name '*.ltr' -exec cp -prv '{}' '../ltr' ';'
+          find ./ -name '*.mdl' -exec cp -prv '{}' '../mdl' ';'
+          find ./ -name '*.mod' -exec cp -prv '{}' '../mod' ';'
+          find ./ -name '*.mtr' -exec cp -prv '{}' '../mtr' ';'
+          find ./ -name '*.nss' -exec cp -prv '{}' '../nss' ';'
+          find ./ -name '*.plt' -exec cp -prv '{}' '../plt' ';'
+          find ./ -name '*.ptt' -exec cp -prv '{}' '../ptt' ';'
+          find ./ -name '*.pwk' -exec cp -prv '{}' '../pwk' ';'
+          find ./ -name '*.set' -exec cp -prv '{}' '../set' ';'
+          find ./ -name '*.shd' -exec cp -prv '{}' '../shd' ';'
+          find ./ -name '*.ssf' -exec cp -prv '{}' '../ssf' ';'
+          find ./ -name '*.tga' -exec cp -prv '{}' '../tga' ';'
+          find ./ -name '*.tlk' -exec cp -prv '{}' '../tlk' ';'
+          find ./ -name '*.ute' -exec cp -prv '{}' '../ute' ';'
+          find ./ -name '*.uti' -exec cp -prv '{}' '../uti' ';'
+          find ./ -name '*.utm' -exec cp -prv '{}' '../utm' ';'
+          find ./ -name '*.utp' -exec cp -prv '{}' '../utp' ';'
+          find ./ -name '*.uts' -exec cp -prv '{}' '../uts' ';'
+          find ./ -name '*.utt' -exec cp -prv '{}' '../utt' ';'
+          find ./ -name '*.utw' -exec cp -prv '{}' '../utw' ';'
+          find ./ -name '*.wok' -exec cp -prv '{}' '../wok' ';'
 
-      - name: Release
-        if: github.event.inputs.release != 'preview'
-        uses: softprops/action-gh-release@v1
-        with:
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
-          generate_release_notes: true
-          tag_name: release/v${{ github.event.inputs.release }}
-          files: |
-            2da.zip
-            dds.zip
-            dlg.zip
-            doc.zip
-            dwk.zip
-            gff.zip
-            gui.zip
-            ids.zip
-            ini.zip
-            itp.zip
-            ltr.zip
-            mdl.zip
-            mod.zip
-            mtr.zip
-            nss.zip
-            ovr.zip
-            plt.zip
-            ptt.zip
-            pwk.zip
-            set.zip
-            shd.zip
-            ssf.zip
-            tga.zip
-            tlk.zip
-            ute.zip
-            uti.zip
-            utm.zip
-            utp.zip
-            uts.zip
-            utt.zip
-            utw.zip
-            wok.zip
+#      # doc
+#      # gather doc files
+#      - name: Gather doc files
+#        run: |
+#          cp -r docs/* .
+#          rm init.sh
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked/' ':!DepotDownloader/' ':!docs' ':!ovr'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/doc'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: doc
+#          path: doc/
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.zip' -delete
+#          find . -type f -iname '*.pdf' -delete
+#          find . -type f -iname '*.txt' -delete
+#          find . -type f -iname '*.md' -delete
+#          rm -r legacy
+#          rm -r licences
+#          git checkout main
+#      # ovr
+#      # gather ovr files
+#      - name: Gather ovr files
+#        run: |
+#          cp -r ovr/* .
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked' ':!DepotDownloader' ':!docs' ':!ovr'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/ovr'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: ovr
+#          path: ovr/
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.zip' -delete
+#          find . -type f -iname '*.2da' -delete
+#          find . -type f -iname '*.shd' -delete
+#          find . -type f -iname '*.nss' -delete
+#          find . -type f -iname '*.ncs' -delete
+#          find . -type f -iname '*.mdl' -delete
+#          git checkout main
+#      - name: cleanup repo
+#        run: |
+#          rm -r DepotDownloader
+#      # 2da
+#      # gather 2da files
+#      - name: Gather 2da files
+#        run: |
+#          find ./ -name '*.2da' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/2da'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip 2da.zip `find . -name "*.2da"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: 2da
+#          path: 2da.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.2da' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # dds
+#      # gather dds files
+#      - name: Gather dds files
+#        run: |
+#          find ./ -name '*.dds' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/dds'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip dds.zip `find . -name "*.dds"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: dds
+#          path: dds.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.dds' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # dlg
+#      # gather dlg files
+#      - name: Gather dlg files
+#        run: |
+#          find ./ -name '*.dlg' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/dlg'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip dlg.zip `find . -name "*.dlg"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: dlg
+#          path: dlg.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.dlg' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # dwk
+#      # gather dwk files
+#      - name: Gather dwk files
+#        run: |
+#          find ./ -name '*.dwk' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/dwk'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip dwk.zip `find . -name "*.dwk"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: dwk
+#          path: dwk.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.dwk' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # gff
+#      # gather gff files
+#      - name: Gather gff files
+#        run: |
+#          find ./ -name '*.gff' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/gff'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip gff.zip `find . -name "*.gff"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: gff
+#          path: gff.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.gff' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # gui
+#      # gather gui files
+#      - name: Gather gui files
+#        run: |
+#          find ./ -name '*.gui' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/gui'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip gui.zip `find . -name "*.gui"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: gui
+#          path: gui.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.gui' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # ids
+#      # gather ids files
+#      - name: Gather ids files
+#        run: |
+#          find ./ -name '*.ids' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/ids'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip ids.zip `find . -name "*.ids"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: ids
+#          path: ids.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.ids' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # ini
+#      # gather ini files
+#      - name: Gather ini files
+#        run: |
+#          find ./ -name '*.ini' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/ini'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip ini.zip `find . -name "*.ini"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: ini
+#          path: ini.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.ini' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # itp
+#      # gather itp files
+#      - name: Gather itp files
+#        run: |
+#          find ./ -name '*.itp' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/itp'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip itp.zip `find . -name "*.itp"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: itp
+#          path: itp.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.itp' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # ltr
+#      # gather ltr files
+#      - name: Gather ltr files
+#        run: |
+#          find ./ -name '*.ltr' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/ltr'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip ltr.zip `find . -name "*.ltr"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: ltr
+#          path: ltr.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.ltr' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # mdl
+#      # gather mdl files
+#      - name: Gather mdl files
+#        run: |
+#          find ./ -name '*.mdl' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/mdl'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip mdl.zip `find . -name "*.mdl"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: mdl
+#          path: mdl.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.mdl' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # mod
+#      # gather mod files
+#      - name: Gather mod files
+#        run: |
+#          find ./ -name '*.mod' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/mod'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip mod.zip `find . -name "*.mod"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: mod
+#          path: mod.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.mod' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # mtr
+#      # gather mtr files
+#      - name: Gather mtr files
+#        run: |
+#          find ./ -name '*.mtr' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/mtr'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip mtr.zip `find . -name "*.mtr"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: mtr
+#          path: mtr.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.mtr' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # nss
+#      # gather nss files
+#      - name: Gather nss files
+#        run: |
+#          find ./ -name '*.nss' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/nss'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip nss.zip `find . -name "*.nss"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: nss
+#          path: nss.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.nss' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # plt
+#      # gather plt files
+#      - name: Gather plt files
+#        run: |
+#          find ./ -name '*.plt' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/plt'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip plt.zip `find . -name "*.plt"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: plt
+#          path: plt.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.plt' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # ptt
+#      # gather ptt files
+#      - name: Gather ptt files
+#        run: |
+#          find ./ -name '*.ptt' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/ptt'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip ptt.zip `find . -name "*.ptt"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: ptt
+#          path: ptt.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.ptt' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # pwk
+#      # gather pwk files
+#      - name: Gather pwk files
+#        run: |
+#          find ./ -name '*.pwk' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/pwk'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip pwk.zip `find . -name "*.pwk"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: pwk
+#          path: pwk.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.pwk' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # set
+#      # gather set files
+#      - name: Gather set files
+#        run: |
+#          find ./ -name '*.set' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/set'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip set.zip `find . -name "*.set"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: set
+#          path: set.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.set' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # shd
+#      # gather shd files
+#      - name: Gather shd files
+#        run: |
+#          find ./ -name '*.shd' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/shd'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip shd.zip `find . -name "*.shd"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: shd
+#          path: shd.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.shd' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # ssf
+#      # gather ssf files
+#      - name: Gather ssf files
+#        run: |
+#          find ./ -name '*.ssf' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/ssf'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip ssf.zip `find . -name "*.ssf"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: ssf
+#          path: ssf.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.ssf' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # tga
+#      # gather tga files
+#      - name: Gather tga files
+#        run: |
+#          find ./ -name '*.tga' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/tga'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip tga.zip `find . -name "*.tga"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: tga
+#          path: tga.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.tga' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # tlk
+#      # gather tlk files
+#      - name: Gather tlk files
+#        run: |
+#          find ./ -name '*.tlk' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/tlk'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip tlk.zip `find . -name "*.tlk"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: tlk
+#          path: tlk.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.tlk' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # ute
+#      # gather ute files
+#      - name: Gather ute files
+#        run: |
+#          find ./ -name '*.ute' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/ute'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip ute.zip `find . -name "*.ute"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: ute
+#          path: ute.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.ute' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # uti
+#      # gather uti files
+#      - name: Gather uti files
+#        run: |
+#          find ./ -name '*.uti' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/uti'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip uti.zip `find . -name "*.uti"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: uti
+#          path: uti.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.uti' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # utm
+#      # gather utm files
+#      - name: Gather utm files
+#        run: |
+#          find ./ -name '*.utm' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/utm'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip utm.zip `find . -name "*.utm"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: utm
+#          path: utm.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.utm' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # utp
+#      # gather utp files
+#      - name: Gather utp files
+#        run: |
+#          find ./ -name '*.utp' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/utp'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip utp.zip `find . -name "*.utp"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: utp
+#          path: utp.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.utp' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # uts
+#      # gather uts files
+#      - name: Gather uts files
+#        run: |
+#          find ./ -name '*.uts' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/uts'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip uts.zip `find . -name "*.uts"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: uts
+#          path: uts.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.uts' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # utt
+#      # gather utt files
+#      - name: Gather utt files
+#        run: |
+#          find ./ -name '*.utt' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/utt'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip utt.zip `find . -name "*.utt"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: utt
+#          path: utt.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.utt' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # utw
+#      # gather utw files
+#      - name: Gather utw files
+#        run: |
+#          find ./ -name '*.utw' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/utw'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip utw.zip `find . -name "*.utw"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: utw
+#          path: utw.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.utw' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # wok
+#      # gather wok files
+#      - name: Gather wok files
+#        run: |
+#          find ./ -name '*.wok' -exec cp -prv '{}' '.' ';'
+#      # commit
+#      - uses: EndBug/add-and-commit@v9
+#        with:
+#          add: "-- . ':!unpacked'"
+#          message: 'CI: ${{ github.event.inputs.release }}'
+#          new_branch: '${{ github.event.inputs.release }}/wok'
+#          committer_name: GitHub Actions
+#          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+#      - run: zip wok.zip `find . -name "*.wok"` -x unpacked/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: wok
+#          path: wok.zip
+#      - name: Cleanup
+#        run: |
+#          find . -type f -iname '*.wok' -delete
+#          find . -type f -iname '*.zip' -delete
+#          git checkout main
+#
+#      # At the very end, create a release with all artifacts
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: 2da
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: dds
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: dlg
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: doc
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: dwk
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: gff
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: gui
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: ids
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: ini
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: itp
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: ltr
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: mdl
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: mod
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: mtr
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: nss
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: ovr
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: plt
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: ptt
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: pwk
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: set
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: shd
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: ssf
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: tga
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: tlk
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: ute
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: uti
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: utm
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: utp
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: uts
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: utt
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: utw
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: wok
+#      - name: prerelease
+#        if: github.event.inputs.release == 'preview'
+#        uses: softprops/action-gh-release@v1
+#        with:
+#          token: ${{ secrets.GH_ACCESS_TOKEN }}
+#          generate_release_notes: true
+#          tag_name: release/${{ github.event.inputs.release }}
+#          prerelease: true
+#          files: |
+#            2da.zip
+#            dds.zip
+#            dlg.zip
+#            doc.zip
+#            dwk.zip
+#            gff.zip
+#            gui.zip
+#            ids.zip
+#            ini.zip
+#            itp.zip
+#            ltr.zip
+#            mdl.zip
+#            mod.zip
+#            mtr.zip
+#            nss.zip
+#            ovr.zip
+#            plt.zip
+#            ptt.zip
+#            pwk.zip
+#            set.zip
+#            shd.zip
+#            ssf.zip
+#            tga.zip
+#            tlk.zip
+#            ute.zip
+#            uti.zip
+#            utm.zip
+#            utp.zip
+#            uts.zip
+#            utt.zip
+#            utw.zip
+#            wok.zip
+#
+#      - name: Release
+#        if: github.event.inputs.release != 'preview'
+#        uses: softprops/action-gh-release@v1
+#        with:
+#          token: ${{ secrets.GH_ACCESS_TOKEN }}
+#          generate_release_notes: true
+#          tag_name: release/v${{ github.event.inputs.release }}
+#          files: |
+#            2da.zip
+#            dds.zip
+#            dlg.zip
+#            doc.zip
+#            dwk.zip
+#            gff.zip
+#            gui.zip
+#            ids.zip
+#            ini.zip
+#            itp.zip
+#            ltr.zip
+#            mdl.zip
+#            mod.zip
+#            mtr.zip
+#            nss.zip
+#            ovr.zip
+#            plt.zip
+#            ptt.zip
+#            pwk.zip
+#            set.zip
+#            shd.zip
+#            ssf.zip
+#            tga.zip
+#            tlk.zip
+#            ute.zip
+#            uti.zip
+#            utm.zip
+#            utp.zip
+#            uts.zip
+#            utt.zip
+#            utw.zip
+#            wok.zip
+#
