@@ -188,7 +188,7 @@ jobs:
           new_branch: '${{ github.event.inputs.release }}/doc'
           committer_name: GitHub Actions
           committer_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - run: zip doc.zip `find . -name "*.doc"` -x unpacked/
+      - run: zip doc.zip . -x unpacked/
       - uses: actions/upload-artifact@v2
         with:
           name: doc
