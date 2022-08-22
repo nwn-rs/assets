@@ -123,7 +123,6 @@ jobs:
 
       # docs and ovr folders are in place
       - name: Gather files
-        if: github.event.inputs.release == 'preview' || github.event.inputs.release == 'build8193.25'
         run: |
           find ./ -name '*.2da' -exec cp -prv '{}' '2da' ';'
           find ./ -name '*.dds' -exec cp -prv '{}' 'dds' ';'
@@ -155,38 +154,38 @@ jobs:
           find ./ -name '*.utt' -exec cp -prv '{}' 'utt' ';'
           find ./ -name '*.utw' -exec cp -prv '{}' 'utw' ';'
           find ./ -name '*.wok' -exec cp -prv '{}' 'wok' ';'
-          zip -r 2da.zip 2da/*
-          zip -r dds.zip dds/*
-          zip -r dlg.zip dlg/*
-          zip -r docs.zip docs/*
-          zip -r dwk.zip dwk/*
-          zip -r gff.zip gff/*
-          zip -r gui.zip gui/*
-          zip -r ids.zip ids/*
-          zip -r ini.zip ini/*
-          zip -r itp.zip itp/*
-          zip -r ltr.zip ltr/*
-          zip -r mdl.zip mdl/*
-          zip -r mod.zip mod/*
-          zip -r mtr.zip mtr/*
-          zip -r nss.zip nss/*
-          zip -r ovr.zip ovr/*
-          zip -r plt.zip plt/*
-          zip -r ptt.zip ptt/*
-          zip -r pwk.zip pwk/*
-          zip -r set.zip set/*
-          zip -r shd.zip shd/*
-          zip -r ssf.zip ssf/*
-          zip -r tga.zip tga/*
-          zip -r tlk.zip tlk/*
-          zip -r ute.zip ute/*
-          zip -r uti.zip uti/*
-          zip -r utm.zip utm/*
-          zip -r utp.zip utp/*
-          zip -r uts.zip uts/*
-          zip -r utt.zip utt/*
-          zip -r utw.zip utw/*
-          zip -r wok.zip wok/*
+          cd .. && cd 2da && zip -r ../2da.zip .
+          cd .. && cd dds && zip -r ../dds.zip .
+          cd .. && cd dlg && zip -r ../dlg.zip .
+          cd .. && cd docs && zip -r ../docs.zip .
+          cd .. && cd dwk && zip -r ../dwk.zip .
+          cd .. && cd gff && zip -r ../gff.zip .
+          cd .. && cd gui && zip -r ../gui.zip .
+          cd .. && cd ids && zip -r ../ids.zip .
+          cd .. && cd ini && zip -r ../ini.zip .
+          cd .. && cd itp && zip -r ../itp.zip .
+          cd .. && cd ltr && zip -r ../ltr.zip .
+          cd .. && cd mdl && zip -r ../mdl.zip .
+          cd .. && cd mod && zip -r ../mod.zip .
+          cd .. && cd mtr && zip -r ../mtr.zip .
+          cd .. && cd nss && zip -r ../nss.zip .
+          cd .. && cd ovr && zip -r ../ovr.zip .
+          cd .. && cd plt && zip -r ../plt.zip .
+          cd .. && cd ptt && zip -r ../ptt.zip .
+          cd .. && cd pwk && zip -r ../pwk.zip .
+          cd .. && cd set && zip -r ../set.zip .
+          cd .. && cd shd && zip -r ../shd.zip .
+          cd .. && cd ssf && zip -r ../ssf.zip .
+          cd .. && cd tga && zip -r ../tga.zip .
+          cd .. && cd tlk && zip -r ../tlk.zip .
+          cd .. && cd ute && zip -r ../ute.zip .
+          cd .. && cd uti && zip -r ../uti.zip .
+          cd .. && cd utm && zip -r ../utm.zip .
+          cd .. && cd utp && zip -r ../utp.zip .
+          cd .. && cd uts && zip -r ../uts.zip .
+          cd .. && cd utt && zip -r ../utt.zip .
+          cd .. && cd utw && zip -r ../utw.zip .
+          cd .. && cd wok && zip -r ../wok.zip .
 
       - name: prerelease
         if: github.event.inputs.release == 'preview'
