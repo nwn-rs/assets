@@ -154,7 +154,7 @@ jobs:
           find ./ -name '*.utt' -exec cp -prv '{}' 'utt' ';'
           find ./ -name '*.utw' -exec cp -prv '{}' 'utw' ';'
           find ./ -name '*.wok' -exec cp -prv '{}' 'wok' ';'
-          cd .. && cd 2da && zip -r ../2da.zip .
+          cd 2da && zip -r ../2da.zip .
           cd .. && cd dds && zip -r ../dds.zip .
           cd .. && cd dlg && zip -r ../dlg.zip .
           cd .. && cd docs && zip -r ../docs.zip .
