@@ -123,129 +123,129 @@ jobs:
 
       - name: Gather 2da files
         run: |
-          find ./ -name '*.2da' -exec cp -prv '{}' '2da' ';'
+          find ./ -name '*.2da' -exec cp -prv '{}' '2da/' ';'
           cd 2da && zip -r ../2da.zip .
       - name: Gather dds files
         run: |
-          find ./ -name '*.dds' -exec cp -prv '{}' 'dds' ';'
+          find ./ -name '*.dds' -exec cp -prv '{}' 'dds/' ';'
           cd dds && zip -r ../dds.zip .
       - name: Gather dlg files
         run: |
-          find ./ -name '*.dlg' -exec cp -prv '{}' 'dlg' ';'
+          find ./ -name '*.dlg' -exec cp -prv '{}' 'dlg/' ';'
           cd dlg && zip -r ../dlg.zip .
       - name: Gather docs
         run: |
           cd docs && zip -r ../docs.zip .
       - name: Gather dwk files
         run: |
-          find ./ -name '*.dwk' -exec cp -prv '{}' 'dwk' ';'
+          find ./ -name '*.dwk' -exec cp -prv '{}' 'dwk/' ';'
           cd dwk && zip -r ../dwk.zip .
       - name: Gather gff files
         run: |
-          find ./ -name '*.gff' -exec cp -prv '{}' 'gff' ';'
+          find ./ -name '*.gff' -exec cp -prv '{}' 'gff/' ';'
           cd gff && zip -r ../gff.zip .
       - name: Gather gui files
         run: |
-          find ./ -name '*.gui' -exec cp -prv '{}' 'gui' ';'
+          find ./ -name '*.gui' -exec cp -prv '{}' 'gui/' ';'
           cd gui && zip -r ../gui.zip .
       - name: Gather ids files
         run: |
-          find ./ -name '*.ids' -exec cp -prv '{}' 'ids' ';'
+          find ./ -name '*.ids' -exec cp -prv '{}' 'ids/' ';'
           cd ids && zip -r ../ids.zip .
       - name: Gather ini files
         run: |
-          find ./ -name '*.ini' -exec cp -prv '{}' 'ini' ';'
+          find ./ -name '*.ini' -exec cp -prv '{}' 'ini/' ';'
           cd ini && zip -r ../ini.zip .
       - name: Gather itp files
         run: |
-          find ./ -name '*.itp' -exec cp -prv '{}' 'itp' ';'
+          find ./ -name '*.itp' -exec cp -prv '{}' 'itp/' ';'
           cd itp && zip -r ../itp.zip .
       - name: Gather ltr files
         run: |
-          find ./ -name '*.ltr' -exec cp -prv '{}' 'ltr' ';'
+          find ./ -name '*.ltr' -exec cp -prv '{}' 'ltr/' ';'
           cd ltr && zip -r ../ltr.zip .
       - name: Gather mdl files
         run: |
-          find ./ -name '*.mdl' -exec cp -prv '{}' 'mdl' ';'
+          find ./ -name '*.mdl' -exec cp -prv '{}' 'mdl/' ';'
           cd mdl && zip -r ../mdl.zip .
       - name: Gather mod files
         run: |
-          find ./ -name '*.mod' -exec cp -prv '{}' 'mod' ';'
+          find ./ -name '*.mod' -exec cp -prv '{}' 'mod/' ';'
           cd mod && zip -r ../mod.zip .
       - name: Gather mtr files
         run: |
-          find ./ -name '*.mtr' -exec cp -prv '{}' 'mtr' ';'
+          find ./ -name '*.mtr' -exec cp -prv '{}' 'mtr/' ';'
           cd mtr && zip -r ../mtr.zip .
       - name: Gather nss files
         run: |
-          find ./ -name '*.nss' -exec cp -prv '{}' 'nss' ';'
+          find ./ -name '*.nss' -exec cp -prv '{}' 'nss/' ';'
           cd nss && zip -r ../nss.zip .
       - name: Gather plt files
         run: |
-          find ./ -name '*.plt' -exec cp -prv '{}' 'plt' ';'
+          find ./ -name '*.plt' -exec cp -prv '{}' 'plt/' ';'
           cd plt && zip -r ../plt.zip .
       - name: Gather ovr files
         run: |
           cd ovr && zip -r ../ovr.zip .
       - name: Gather ptt files
         run: |
-          find ./ -name '*.ptt' -exec cp -prv '{}' 'ptt' ';'
+          find ./ -name '*.ptt' -exec cp -prv '{}' 'ptt/' ';'
           cd ptt && zip -r ../ptt.zip .
       - name: Gather pwk files
         run: |
-          find ./ -name '*.pwk' -exec cp -prv '{}' 'pwk' ';'
+          find ./ -name '*.pwk' -exec cp -prv '{}' 'pwk/' ';'
           cd pwk && zip -r ../pwk.zip .
       - name: Gather dwk files
         run: |
-          find ./ -name '*.set' -exec cp -prv '{}' 'set' ';'
+          find ./ -name '*.set' -exec cp -prv '{}' 'set/' ';'
           cd set && zip -r ../set.zip .
       - name: Gather shd files
         run: |
-          find ./ -name '*.shd' -exec cp -prv '{}' 'shd' ';'
+          find ./ -name '*.shd' -exec cp -prv '{}' 'shd/' ';'
           cd shd && zip -r ../shd.zip .
       - name: Gather ssf files
         run: |
-          find ./ -name '*.ssf' -exec cp -prv '{}' 'ssf' ';'
+          find ./ -name '*.ssf' -exec cp -prv '{}' 'ssf/' ';'
           cd ssf && zip -r ../ssf.zip .
       - name: Gather tga files
         run: |
-          find ./ -name '*.tga' -exec cp -prv '{}' 'tga' ';'
+          find ./ -name '*.tga' -exec cp -prv '{}' 'tga/' ';'
           cd tga && zip -r ../tga.zip .
       - name: Gather tlk files
         run: |
-          find ./ -name '*.tlk' -exec cp -prv '{}' 'tlk' ';'
+          find ./ -name '*.tlk' -exec cp -prv '{}' 'tlk/' ';'
           cd tlk && zip -r ../tlk.zip .
       - name: Gather ute files
         run: |
-          find ./ -name '*.ute' -exec cp -prv '{}' 'ute' ';'
+          find ./ -name '*.ute' -exec cp -prv '{}' 'ute/' ';'
           cd ute && zip -r ../ute.zip .
       - name: Gather uti files
         run: |
-          find ./ -name '*.uti' -exec cp -prv '{}' 'uti' ';'
+          find ./ -name '*.uti' -exec cp -prv '{}' 'uti/' ';'
           cd uti && zip -r ../uti.zip .
       - name: Gather utm files
         run: |
-          find ./ -name '*.utm' -exec cp -prv '{}' 'utm' ';'
+          find ./ -name '*.utm' -exec cp -prv '{}' 'utm/' ';'
           cd utm && zip -r ../utm.zip .
       - name: Gather utp files
         run: |
-          find ./ -name '*.utp' -exec cp -prv '{}' 'utp' ';'
+          find ./ -name '*.utp' -exec cp -prv '{}' 'utp/' ';'
           cd utp && zip -r ../utp.zip .
       - name: Gather uts files
         run: |
-          find ./ -name '*.uts' -exec cp -prv '{}' 'uts' ';'
+          find ./ -name '*.uts' -exec cp -prv '{}' 'uts/' ';'
           cd uts && zip -r ../uts.zip .
       - name: Gather utt files
         run: |
-          find ./ -name '*.utt' -exec cp -prv '{}' 'utt' ';'
+          find ./ -name '*.utt' -exec cp -prv '{}' 'utt/' ';'
           cd utt && zip -r ../utt.zip .
       - name: Gather utw files
         run: |
-          find ./ -name '*.utw' -exec cp -prv '{}' 'utw' ';'
+          find ./ -name '*.utw' -exec cp -prv '{}' 'utw/' ';'
           cd utw && zip -r ../utw.zip .
       - name: Gather wok files
         run: |
-          find ./ -name '*.wok' -exec cp -prv '{}' 'wok' ';'
+          find ./ -name '*.wok' -exec cp -prv '{}' 'wok/' ';'
           cd wok && zip -r ../wok.zip .
 
       - name: prerelease
