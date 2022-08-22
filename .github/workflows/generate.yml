@@ -11,7 +11,6 @@ on:
         - preview
         - build8193.35
         - build8193.34
-        - build8193.33
         - build8193.32
         - build8193.31
         - build8193.30
@@ -69,9 +68,9 @@ jobs:
       - name: unpack build8193.34 keyfile
         if: github.event.inputs.release == 'build8193.34'
         run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7437906/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7437906/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7437906/ovr/ ovr/
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7843474/data/nwn_base.key unpacked/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7843474/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/7843474/ovr/ ovr/
       - name: unpack build8193.32 keyfile
         if: github.event.inputs.release == 'build8193.32'
         run: |
