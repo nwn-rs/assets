@@ -121,6 +121,8 @@ jobs:
           cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/lang/en/docs/ docs/
           cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/ovr/ ovr/
 
+      - run: mkdir 2da dds dlg dwk gff gui ids ini itp ltr mdl mtr nss ovr plt ptt pwk set shd ssf tga tlk ute uti utm utp uts utt utw wok
+
       - name: Gather 2da files
         run: |
           find ./ -name '*.2da' -exec cp -prv '{}' '2da/' ';'
