@@ -43,7 +43,7 @@ jobs:
         if: github.event.inputs.release == 'preview' || github.event.inputs.release == 'build8193.35'
         run: |
           cd DepotDownloader/DepotDownloader
-          dotnet run -app 704450 -depot 704451 -beta ${{ github.event.inputs.release }} -betapassword previewpreview -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
+          dotnet run -app 704450 -depot 704451 -beta preview -betapassword previewpreview -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
           cd ${{ env.GITHUB_WORKSPACE }}
           mkdir out
       - name: Download nwn:ee files
