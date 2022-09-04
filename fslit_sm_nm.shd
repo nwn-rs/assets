@@ -1,0 +1,282 @@
+/*
+
+fslit_sm_nm.shd
+
+*/
+#define PI 3.14159265359
+// Set to one to read roughness from specular map green channel.
+#define ROUGHNESS_MAP 0
+// Set to one to read roughness from specular map blue channel.
+#define GLOW_MAP 0
+
+
+const int MAX_LIGHTS=8;
+
+uniform sampler2D texUnit0;	    // decal
+uniform sampler2D texUnit1;	    // normal map
+uniform sampler2D texUnit2;	    // specular map
+uniform sampler2D texUnitEnv;	// This will contain the environment map
+
+uniform lowp vec4 fogColor;
+uniform int fogEnabled;
+uniform int texture0Bound;
+
+uniform highp mat4 m_mvp;
+uniform highp mat4 m_mv;
+uniform highp mat3 m_normal;
+
+uniform lowp		vec4 lightAmbient			[MAX_LIGHTS];
+uniform lowp		vec4 lightDiffuse			[MAX_LIGHTS];
+uniform mediump		vec4 lightPosition			[MAX_LIGHTS];
+uniform mediump		float lightQuadraticAtten	[MAX_LIGHTS];
+
+uniform mediump	vec4  materialFrontAmbient;
+uniform mediump	vec4  materialFrontDiffuse;
+uniform mediump	vec4  materialFrontSpecular;
+uniform mediump	vec4  materialFrontEmissive;
+uniform mediump	float materialFrontShininess;
+
+uniform lowp		vec4 frontLightModelProductSceneColor;
+
+uniform int numLights;
+
+varying lowp vec4 vColorOut;
+
+varying vec2 vTc;
+varying vec2 vTcEnv;
+
+// Our tangent space basis in camera space.  It has been interpolated, so normalization will be required.
+varying vec3 vTangentOut;
+varying vec3 vNormalOut;
+varying float fTextureHandedness; // Just the handedness attribute passed from the vertex shader. It should always be the same for all vertices of a face so interpolation will not be an issue.
+
+varying vec4 vPosOut;			// This will be in camera space.
+varying float fFogFragCoord;
+varying vec3 vStaticLightDirOut;
+
+uniform vec3 playerPosition;
+uniform float playerCameraDist;
+uniform vec3 cameraPosition;
+
+uniform int screenWidth = 1920;
+uniform int screenHeight = 1080;
+
+varying highp vec3 vWorldCoord;
+
+#include "inc_keyhole"
+
+vec3 AmbientLight = vec3(0.0);
+vec3 DiffuseLight = vec3(0.0);
+vec3 SpecularLight = vec3(0.0);
+
+#define StaticLight vColorOut
+vec3 EyeToSurfaceNorm;
+
+float fSpecularity;
+float fShininess;
+
+const float fShininessMax = 18.0;
+const float fShininessMin = 1.0;
+
+const float fEnvironmentMapMax = 0.5; // Maximum ratio to decal of environment map.
+const float fEnvironmentMapTreshold = 0.5; // Shininess needs to be this much relative to fShininessMax before applying environment map.
+
+
+//=============================================================================
+//
+// staticLight()
+//
+// Method for calculating normalmapping component for static lighting.  To make
+// this work, we have passed in the direction to the brightest static light for
+// each static vertex, which gets transformed to camera space and passed into
+// this shader as vStaticLightDirOut.  We can use this value to approximate
+// normal and specular lighting components for static lights.
+//
+//=============================================================================
+void staticLight(in vec3 normal)
+{
+    float fDotVP;       // normal . light direction
+    float d;            // distance from surface to light source
+    vec3 VP;           // direction from surface to light position
+
+
+	VP = vStaticLightDirOut;
+
+    fDotVP = max(0.0, dot(normal, VP));
+
+    if(fDotVP != 0.0)
+    {
+        DiffuseLight += StaticLight.rgb * fDotVP;
+        vec3 HV = normalize(VP - EyeToSurfaceNorm);
+        float fDotHV = max(0.0, dot(normal, HV));
+        float fSpecularIntensity = pow(fDotHV, fShininess);
+        //Latter is for energy-conservation. Monte Carlo based as (n+2)/(2pi).
+        SpecularLight += min(fDotVP*4.0, 1.0) * StaticLight.rgb * fSpecularIntensity * (fShininess * 0.5 / PI + 1.0 / PI );
+    }
+}
+
+void pointLight(in int i, in vec3 normal, in vec3 viewPosition)
+{
+    float fDotVP;       // normal . light direction
+    float attenuation;  // computed attenuation factor
+    float d;            // distance from surface to light source
+    vec3 VP;           // direction from surface to light position
+
+    // Compute vector from surface to light position
+    VP = vec3(lightPosition[i]) - viewPosition;
+
+    attenuation = 1.0;
+    if(lightQuadraticAtten[i]>0.000000001) // Below is area lighting.
+    {
+        // Compute our squared distance between surface and light position
+        d = dot(VP, VP);
+        attenuation = 1.0 / (1.0 + lightQuadraticAtten[i] * d);
+    }
+
+    VP = normalize(VP);
+    fDotVP = max(0.0, dot(normal, VP));
+
+    if(fDotVP != 0.0)
+    {
+        DiffuseLight += lightDiffuse[i].rgb * fDotVP * attenuation;
+        vec3 HV = normalize(VP - EyeToSurfaceNorm);
+        float fDotHV = max(0.0, dot(normal, HV));
+
+        //Latter is for energy-conservation. Monte Carlo based as (n+2)/(2pi)
+        float fSpecularIntensity = pow(fDotHV, fShininess) * (fShininess * 0.5 / PI + 1.0 / PI );
+        SpecularLight += min(fDotVP*4.0, 1.0) * lightDiffuse[i].rgb * fSpecularIntensity * attenuation;
+    }
+    AmbientLight += lightAmbient[i].rgb * attenuation;
+}
+
+//=============================================================================
+//
+// computeLighting()
+//
+// Calculates lighting contribution all lights.
+//
+//=============================================================================
+vec4 computeLighting(in vec3 normal, in vec3 viewPosition3, float alphaFade)
+{
+    vec4 color;
+
+    EyeToSurfaceNorm = normalize(viewPosition3);
+
+    if (dot(abs(vStaticLightDirOut), vec3(1.0, 1.0, 1.0)) != 0.0)
+    {
+        staticLight(normal);
+    }
+    else
+    {
+        AmbientLight = StaticLight.rgb;
+    }
+
+    for (int i = 0; i < numLights; i++) {
+        pointLight(i, normal, viewPosition3);
+    }
+
+
+    color.rgb =
+                frontLightModelProductSceneColor.rgb +
+                materialFrontEmissive.rgb +
+                AmbientLight * materialFrontAmbient.rgb +
+                //mix(DiffuseLight * materialFrontDiffuse.rgb, SpecularLight, fSpecularity);
+                DiffuseLight * materialFrontDiffuse.rgb * (1.0 - fSpecularity);
+
+    color.a = StaticLight.a * alphaFade * materialFrontDiffuse.a;
+
+    // Clamp to reduce over-exposure.
+    color = clamp(color, 0.0, 1.0);
+
+    return color;
+}
+
+
+//=============================================================================
+//
+// BuildTSB()
+//
+// Construct our tangent-space basis matrix from the input data
+//
+//=============================================================================
+mat3 BuildTSB()
+{
+    // Construct our tangent-space basis matrix from the input data.
+    vec3 vNormal = normalize(vNormalOut);
+    vec3 vTangent = vTangentOut;
+    // Gram-Schmidt orthogonalization.
+    vTangent = normalize(vTangent - vNormal * dot(vTangent, vNormal));
+
+    vec3 vBitangent = cross(vNormal, vTangent) * fTextureHandedness;
+    mat3 mTSB;
+    mTSB[0] = vTangent;
+    mTSB[1] = vBitangent;
+    mTSB[2] = vNormal;
+
+    return mTSB;
+}
+
+
+void main (void)
+{
+    lowp vec4 color;
+
+	mat3 mTSB = BuildTSB();
+	vec3 norm = texture2D(texUnit1, vTc.xy).rgb * 2.0 - 1.0;
+
+	// This line is important: we're pre-multiplying by mTSB, which is going to put our normal into camera-space.
+	norm = mTSB * norm;
+    //Normalize. Needed because our mTSB is interpolated but also because some programs use normal length for occlusion mapping or similar.
+    norm = normalize(norm);
+
+    vec4 decal = texture2D(texUnit0, vTc.xy);
+    if(texture0Bound == 0)
+    {
+        decal = vec4(1.0);
+    }
+
+    // Sample our spec map.
+    fSpecularity = texture2D(texUnit2, vTc.xy).r;
+
+
+
+    //For simplicity and ease of use, we derive this from specularity.
+    float fMetallicnessInv = clamp(1.2 - 4.0 * fSpecularity, 0.0, 1.0);
+
+    #if ROUGHNESS_MAP == 1
+    fShininess = mix(fShininessMin, fShininessMax, 1.0-texture2D(texUnit2, vTc.xy).g);
+    #else
+    fShininess = mix(fShininessMin, fShininessMax, clamp(fSpecularity * fSpecularity - 2.0 * decal.a + 2.0, 0.0, 1.0));
+    #endif
+
+    // Last part is to fade in environment map if not set in the decal alpha - won't be needed once we have mipmaps on the environment map, so consider this a temporary solution.
+    decal.a = min(decal.a, clamp(1.0-fEnvironmentMapMax * ((fShininess / fShininessMax) - fEnvironmentMapTreshold) / (1.0-fEnvironmentMapTreshold), 0.0, 1.0));
+
+    color = computeLighting(norm, vPosOut.xyz, 1.0);
+
+    #if GLOW_MAP == 1
+    //Glow.
+    color.rgb = mix(color.rgb, vec3(1.0), texture2D(texUnit2, vTc.xy).b);
+    #endif
+
+    // Sphere mapping coord
+    vec3 vEnvReflect = reflect(EyeToSurfaceNorm, norm);
+	vEnvReflect.z+=1.0;
+	float fOffset = inversesqrt(dot(vEnvReflect, vEnvReflect));
+    vec2 vTcEnv = 0.5 * vEnvReflect.xy * fOffset + 0.5;
+
+	vec4 env = texture2D(texUnitEnv, vTcEnv.xy);
+    vec3 vReflectionColorBase = mix(decal.rgb, vec3(1.0), fMetallicnessInv);
+	decal.rgb = mix(env.rgb*vReflectionColorBase, decal.rgb, decal.a);
+    color.rgb = color.rgb*decal.rgb;
+    color.rgb+= fSpecularity * SpecularLight * vReflectionColorBase;
+
+    color = DrawKeyhole(color);
+
+    if(fogEnabled != 0) color.rgb = mix(color.rgb, fogColor.rgb, clamp(fFogFragCoord, 0.0, 1.0));
+
+    color = clamp(color, 0.0, 1.0);
+
+	gl_FragColor = color;
+
+}

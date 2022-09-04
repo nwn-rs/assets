@@ -1,0 +1,12 @@
+#define SHADER_TYPE 1
+
+#include "inc_postpr"
+
+void main()
+{
+	gl_Position = vec4(vPos.xyz, 1.0);
+	
+	vVertexTexCoords = vTcIn;
+	
+	VS_PostProcess();
+}

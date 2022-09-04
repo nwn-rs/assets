@@ -1,0 +1,21 @@
+/*
+
+fsglu.shd
+
+*/
+
+varying lowp vec4 vColorOut;
+varying mediump float fFogFragCoord;
+
+uniform lowp vec4 fogColor;
+uniform int fogEnabled;
+
+void main() {
+
+	lowp vec4 color;
+	color = vColorOut;
+
+    if(fogEnabled != 0) color.rgb = mix(color.rgb, fogColor.rgb, clamp(fFogFragCoord, 0.0, 1.0));
+
+	gl_FragColor = color;
+}
