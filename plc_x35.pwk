@@ -1,0 +1,34 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x35
+filedependancy plc_x0bigvase.max
+node trimesh NoWalk
+  parent plc_x35_pwk
+  position -0.0225089 -0.0751222 0
+  orientation 0 0 0 0
+  wirecolor 0.34375 0.34375 0.34375
+  ambient 0.339844 0.875 0.558594
+  diffuse 0.339844 0.875 0.558594
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 3
+    -0.483918 -0.0830777 0
+    0.304191 -0.352123 0
+    0.240804 0.453077 0
+  faces 1
+    1 2 0  1  0 0 0  0
+endnode
+node dummy x35_pwk_use01
+  parent plc_x35_pwk
+  position -0.645049 0.00730119 0
+  orientation 0 0 0 0
+  wirecolor 0.878906 0.878906 0.878906
+endnode
+node dummy x35_pwk_use02
+  parent plc_x35_pwk
+  position 0.401912 -0.0106408 0
+  orientation 0 0 0 0
+  wirecolor 0.878906 0.878906 0.878906
+endnode

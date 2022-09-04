@@ -1,0 +1,11 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x13
+filedependancy plc_x0wdthrone.max
+node dummy x13_pwk_use01
+  parent plc_x13_pwk
+  position 0.00646901 -0.902251 0.525324
+  orientation 0 0 1 -1.57492
+  wirecolor 0.34375 0.34375 0.34375
+endnode
