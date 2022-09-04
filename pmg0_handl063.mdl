@@ -1,0 +1,88 @@
+# Exported from NWmax 0.8 b40 at 3/3/2005 10:37:11 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pmg0_handl063
+filedependancy pmg0_handl063.max
+newmodel pmg0_handl063
+setsupermodel pmg0_handl063 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom pmg0_handl063
+node dummy pmg0_handl063
+  parent NULL
+endnode
+node trimesh pmg0_handl063g
+  parent pmg0_handl063
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center -0.704648 1.21937 -5.95357 
+  bitmap pfh0_handl063
+  verts 10
+    0.0473367 0.0687671 -0.0920404
+    0.0295293 0.0325578 -0.00441126
+    0.0332755 -0.0443798 -0.108323
+    0.0329001 -0.0404085 -0.00434387
+    -0.0597124 0.065078 -0.0882933
+    -0.0614297 -0.0412085 -0.0931404
+    -0.0321809 -0.0343183 -0.00364734
+    -0.0407599 0.0390713 -0.00373022
+    0.00910742 0.0362269 -0.125854
+    -0.0235671 -0.00906451 0.00678244
+  faces 16
+    0 1 2  1  0 1 2  2
+    3 2 1  1  3 2 1  2
+    4 5 6  1  4 5 6  1
+    6 7 4  1  6 7 4  1
+    8 2 5  1  8 9 10  5
+    5 4 8  1  10 11 8  5
+    2 3 6  1  12 13 6  4
+    6 5 2  1  6 5 12  4
+    3 1 9  1  14 15 16  6
+    7 6 9  1  17 18 16  6
+    2 8 0  1  9 8 19  3
+    4 7 0  1  4 7 0  3
+    9 1 7  1  16 15 17  6
+    9 6 3  1  16 18 14  6
+    0 8 4  1  19 8 11  3
+    0 7 1  1  0 7 1  3
+  tverts 20
+    0.987486 0.278414 0
+    0.468101 0.32037 0
+    0.984952 0.0207709 0
+    0.491581 0.0207709 0
+    0.98658 0.588874 0
+    0.987486 0.813328 0
+    0.471048 0.809245 0
+    0.468296 0.597539 0
+    0.261868 0.401143 0
+    0.0135715 0.0200654 0
+    0.0205904 0.968364 0
+    0.472911 0.960885 0
+    0.979885 0.992847 0
+    0.473704 0.988385 0
+    0.500833 0.200411 0
+    0.511767 0.212026 0
+    0.501068 0.211999 0
+    0.502591 0.223556 0
+    0.492396 0.211043 0
+    0.453794 0.0326029 0
+endnode
+endmodelgeom pmg0_handl063
+donemodel pmg0_handl063

@@ -1,0 +1,530 @@
+#MAXMODEL ASCII
+# model: PLC_TrgBed 
+filedependancy plc_troglodyte.max
+newmodel PLC_TrgBed 
+setsupermodel PLC_TrgBed NULL
+classification Character
+setanimationscale 1.0
+#MAXGEOM  ASCII
+beginmodelgeom PLC_TrgBed 
+node dummy PLC_TrgBed 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_TrgBed 
+  position 0.0 0.0137917 0.504806
+  orientation  1.0 0.0 0.0  -1.5708
+  wirecolor 0.690196 0.101961 0.101961  
+    colorStart 0.619608 0.717647 0.34902  
+    colorEnd 0.941177 0.870588 0.407843  
+    alphaStart 1.0 
+    alphaEnd 0.0 
+    sizeStart 4.0 
+    sizeEnd 1.0 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 24 
+    birthrate 15 
+    spawnType 0 
+    lifeExp 2.5 
+    mass 0.09 
+    spread 2.96706 
+    particleRot 0.5 
+    velocity 1.5 
+    randvel 0.5 
+    fps 10 
+    random 0 
+    inherit 0 
+    inherit_local 1 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 300 
+    ySize 300 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Explosion 
+    render Normal 
+    Blend Normal 
+    update_sel 2 
+    render_sel 1 
+    blend_sel 1 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.2 
+    blastLength 1.0 
+    twosidedtex 1 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_smoke01 
+    xgrid 4 
+    ygrid 4 
+    affectedByWind false 
+    m_isTinted 1 
+    renderorder 0 
+    Splat 0 
+endnode
+node trimesh damage 
+  parent PLC_TrgBed 
+  position 0.000867307 0.0348657 0.0
+  orientation  0.0 0.0 -1.0  -3.14159
+  wirecolor 0.603922 0.843137 0.898039  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 0
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 25.0 
+     gizmo SubAnim:Gizmo
+  ambient 0.0705882 0.0 1.0  
+  diffuse 1.0 0.501961 0.643137  
+  specular 0.0 0.0 0.0  
+  shininess 25.0 
+    bitmap NULL
+    verts 12
+     0.195415 0.186216 0.0
+     0.195415 -0.186216 0.0
+     -0.195415 -0.186216 0.0
+     -0.195415 0.186216 0.0
+     0.195415 0.186216 0.5
+     -0.195415 0.186216 0.5
+     -0.195415 -0.186216 0.5
+     0.195415 -0.186216 0.5
+     -0.103944 0.0990513 0.25
+     0.103944 0.0990513 0.25
+     -0.103944 -0.0990513 0.25
+     0.103944 -0.0990513 0.25
+    faces 20
+     0 1 2  1  0 0 0  1
+     2 3 0  1  0 0 0  1
+     4 5 6  1  0 0 0  1
+     6 7 4  1  0 0 0  1
+     0 3 8  1  0 0 0  1
+     8 9 0  1  0 0 0  1
+     9 8 5  1  0 0 0  1
+     5 4 9  1  0 0 0  1
+     3 2 10  1  0 0 0  1
+     10 8 3  1  0 0 0  1
+     8 10 6  1  0 0 0  1
+     6 5 8  1  0 0 0  1
+     2 1 11  1  0 0 0  1
+     11 10 2  1  0 0 0  1
+     10 11 7  1  0 0 0  1
+     7 6 10  1  0 0 0  1
+     1 0 9  1  0 0 0  1
+     9 11 1  1  0 0 0  1
+     11 9 4  1  0 0 0  1
+     4 7 11  1  0 0 0  1
+    tverts 1
+     0.0 0.0 0 
+endnode
+node trimesh Nest 
+  parent damage 
+  position -0.042961 0.0328966 0.105375
+  orientation  0.0 0.0 -1.0  -3.14159
+  wirecolor 0.894118 0.839216 0.6  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 1
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 4.76837e-007 
+     gizmo SubAnim:Gizmo
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 1.0 
+    bitmap PLC_TrogNest
+    verts 27
+     -0.0367323 -0.00820694 -0.0514407
+     -0.406527 -0.476124 -0.0223304
+     -0.0558887 -0.658975 -0.0247674
+     0.334879 -0.47974 -0.0141465
+     -0.534726 -0.0387781 0.0419026
+     -0.403407 0.480409 0.0419026
+     -0.0441152 0.708884 0.0719392
+     0.339809 0.458606 0.0816155
+     0.499721 -0.0437224 0.0276186
+     -0.727 -0.845402 -0.0816155
+     -0.087692 -1.05072 -0.0816155
+     0.628395 -0.838477 -0.0816155
+     -0.7881 -0.0756646 -0.0816154
+     -0.624988 0.767449 -0.0816154
+     -0.0867312 1.05768 -0.0816154
+     0.619485 0.852898 -0.0816154
+     0.818933 -0.110015 -0.0816154
+     0.691959 -0.0798923 0.00443591
+     0.457031 0.637841 0.0235185
+     -0.938302 -1.0622 -0.0816155
+     -0.116968 -1.32799 -0.0816155
+     0.797525 -1.0469 -0.0816155
+     -1.02443 -0.186596 -0.0816154
+     -0.839013 0.95419 -0.0816154
+     -0.116968 1.32799 -0.0816154
+     1.02443 -0.186596 -0.0816154
+     0.789731 1.10456 -0.0816154
+    faces 44
+     1 2 0  1  1 2 0  1
+     2 3 0  1  2 3 0  1
+     4 1 0  1  4 1 0  1
+     5 4 0  1  5 4 0  1
+     6 5 0  1  6 5 0  1
+     7 6 0  1  7 6 0  1
+     8 7 0  1  8 7 0  1
+     3 8 0  1  3 8 0  1
+     1 9 2  1  1 9 2  1
+     10 2 9  1  10 2 9  1
+     2 11 3  1  2 11 3  1
+     11 2 10  1  11 2 10  1
+     4 9 1  1  4 9 1  1
+     9 4 12  1  9 4 12  1
+     5 13 4  1  5 13 4  1
+     12 4 13  1  12 4 13  1
+     6 14 13  1  6 14 13  1
+     13 5 6  1  13 5 6  1
+     18 14 6  1  18 14 6  1
+     6 7 18  1  6 7 18  1
+     8 17 7  1  8 17 7  1
+     18 7 17  1  18 7 17  1
+     3 11 17  1  3 11 17  1
+     17 8 3  1  17 8 3  1
+     16 17 11  1  16 17 11  1
+     15 18 17  1  15 18 17  1
+     16 15 17  1  16 15 17  1
+     14 18 15  1  14 18 15  1
+     19 20 10  1  19 20 10  1
+     10 9 19  1  10 9 19  1
+     20 21 11  1  20 21 11  1
+     11 10 20  1  11 10 20  1
+     22 19 9  1  22 19 9  1
+     9 12 22  1  9 12 22  1
+     23 22 12  1  23 22 12  1
+     12 13 23  1  12 13 23  1
+     24 23 13  1  24 23 13  1
+     13 14 24  1  13 14 24  1
+     21 25 16  1  21 25 16  1
+     16 11 21  1  16 11 21  1
+     25 26 15  1  25 26 15  1
+     15 16 25  1  15 16 25  1
+     26 24 14  1  26 24 14  1
+     14 15 26  1  14 15 26  1
+    tverts 27
+     0.5 0.485349 0 
+     0.326442 0.319226 0 
+     0.500912 0.246893 0 
+     0.675381 0.319226 0 
+     0.254109 0.493696 0 
+     0.326442 0.668166 0 
+     0.500912 0.740499 0 
+     0.668088 0.660873 0 
+     0.747715 0.493696 0 
+     0.213595 0.209854 0 
+     0.50187 0.11705 0 
+     0.773311 0.221078 0 
+     0.103956 0.496259 0 
+     0.209854 0.812593 0 
+     0.49813 0.907267 0 
+     0.806981 0.810722 0 
+     0.912879 0.5 0 
+     0.817677 0.497526 0 
+     0.748623 0.749921 0 
+     0.10811 0.10811 0 
+     0.505612 0.00798172 0 
+     0.897502 0.0912747 0 
+     0.000499517 0.5 0 
+     0.0632163 0.931172 0 
+     0.5 0.999501 0 
+     0.999501 0.5 0 
+     0.942395 0.940525 0 
+endnode
+node dummy TrgBed_ground 
+  parent PLC_TrgBed 
+  position 0.00363281 -0.0069873 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.0235294 0.0235294  
+endnode
+node dummy TrgBed_hand 
+  parent PLC_TrgBed 
+  position -0.00398923 0.142288 0.443285
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.878431 0.337255 0.337255  
+endnode
+node dummy TrgBed_head 
+  parent PLC_TrgBed 
+  position -0.00398918 0.0 0.368571
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.768628 0.345098 0.882353  
+endnode
+node dummy TrgBed_head_hit 
+  parent PLC_TrgBed 
+  position -0.00398926 -0.0108251 0.454813
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.101961 0.694118 0.580392  
+endnode
+node dummy TrgBed_impact 
+  parent PLC_TrgBed 
+  position -0.00398926 -0.011001 0.0595727
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+endmodelgeom PLC_TrgBed 
+
+#MAXANIM ASCII
+newanim damage PLC_TrgBed 
+ length 0.133333
+ transtime 0.0
+animroot PLC_TrgBed
+node dummy PLC_TrgBed 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_TrgBed 
+endnode
+node trimesh damage 
+  parent PLC_TrgBed 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0244581
+      0.133333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 1.0  3.14159
+      0.0333333   0.0218142 0.00872452 0.999724  3.14121
+      0.1   -0.017451 -0.0130876 0.999762  3.14114
+      0.133333   1.43389e-007 0.0 1.0  3.14159
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Nest 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy TrgBed_ground 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_hand 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_head 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_head_hit 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_impact 
+  parent PLC_TrgBed 
+endnode
+node dummy PLC_TrgBed_pwk 
+  parent PLC_TrgBed 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_TrgBed_pwk 
+endnode
+doneanim damage PLC_TrgBed 
+
+#MAXANIM ASCII
+newanim die PLC_TrgBed 
+ length 0.166667
+ transtime 0.0
+animroot PLC_TrgBed
+node dummy PLC_TrgBed 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_TrgBed 
+endnode
+node trimesh damage 
+  parent PLC_TrgBed 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.166667  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+      0.0   1.43389e-007 2.4461e-007 1.0  3.14159
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Nest 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy TrgBed_ground 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_hand 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_head 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_head_hit 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_impact 
+  parent PLC_TrgBed 
+endnode
+event 0.0  detonate 
+node dummy PLC_TrgBed_pwk 
+  parent PLC_TrgBed 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_TrgBed_pwk 
+endnode
+doneanim die PLC_TrgBed 
+
+#MAXANIM ASCII
+newanim dead PLC_TrgBed 
+ length 0.0333333
+ transtime 0.0
+animroot PLC_TrgBed
+node dummy PLC_TrgBed 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_TrgBed 
+endnode
+node trimesh damage 
+  parent PLC_TrgBed 
+    positionkey 
+      0.0  0.000867307 0.0348657 -6.95145
+      0.0333333  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Nest 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy TrgBed_ground 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_hand 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_head 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_head_hit 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_impact 
+  parent PLC_TrgBed 
+endnode
+node dummy PLC_TrgBed_pwk 
+  parent PLC_TrgBed 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_TrgBed_pwk 
+endnode
+doneanim dead PLC_TrgBed 
+
+#MAXANIM ASCII
+newanim default PLC_TrgBed 
+ length 0.0
+ transtime 0.25
+animroot PLC_TrgBed
+node dummy PLC_TrgBed 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_TrgBed 
+endnode
+node trimesh damage 
+  parent PLC_TrgBed 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   1.43389e-007 0.0 1.0  3.14159
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Nest 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy TrgBed_ground 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_hand 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_head 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_head_hit 
+  parent PLC_TrgBed 
+endnode
+node dummy TrgBed_impact 
+  parent PLC_TrgBed 
+endnode
+node dummy PLC_TrgBed_pwk 
+  parent PLC_TrgBed 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_TrgBed_pwk 
+endnode
+doneanim default PLC_TrgBed 
+
+donemodel PLC_TrgBed 
+

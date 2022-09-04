@@ -1,0 +1,315 @@
+#MAXMODEL ASCII
+# model: fx_step_stbrdg 
+filedependancy fx_bridge_1.max
+newmodel fx_step_stbrdg 
+setsupermodel fx_step_stbrdg NULL
+classification Effects
+#MAXGEOM  ASCII
+beginmodelgeom fx_step_stbrdg 
+node dummy fx_step_stbrdg 
+  parent NULL 
+endnode
+node emitter AuraEmitter01 
+  parent fx_step_stbrdg 
+  position 0.0 0.0 -0.3
+  orientation  -1.0 0.0 0.0  -3.14159
+  wirecolor 0.839216 0.894118 0.6  
+    colorStart 1.0 1.0 1.0  
+    colorEnd 1.0 1.0 1.0  
+    alphaStart 1.0 
+    alphaEnd 1.0 
+    sizeStart 1.0 
+    sizeEnd 1.0 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 0 
+    birthrate -2 
+    spawnType 0 
+    lifeExp 3.0 
+    mass 1.0 
+    spread 0.0 
+    particleRot 5.0 
+    velocity 0.0 
+    randvel 0.3 
+    fps 16 
+    random 0 
+    inherit 0 
+    inherit_local 1 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 50 
+    ySize 50 
+    bounce 1 
+    bounce_co 50.0 
+    loop 0 
+    update Fountain 
+    render Normal 
+    Blend Normal 
+    update_sel 1 
+    render_sel 1 
+    blend_sel 1 
+    deadspace 0.0 
+    chunkName fx_rockchunksml 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture NULL 
+    xgrid 0 
+    ygrid 0 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+endmodelgeom fx_step_stbrdg 
+
+#MAXANIM ASCII
+newanim impact fx_step_stbrdg 
+ length 0.333333
+ transtime 0.25
+animroot fx_step_stbrdg
+node dummy fx_step_stbrdg 
+  parent NULL 
+endnode
+node emitter AuraEmitter01 
+  parent fx_step_stbrdg 
+    positionkey 
+      0.0  0.0 0.0 -0.3
+      0.333333  0.0 0.0 -0.3
+    endlist 
+    orientationkey 
+      0.0   1.0 0.0 0.0  3.14159
+      0.333333   1.0 0.0 0.0  3.14159
+    endlist 
+    colorStartkey
+      0.0   1.0 1.0 1.0
+      0.333333   1.0 1.0 1.0
+    endlist
+    colorEndkey
+      0.0   1.0 1.0 1.0
+      0.333333   1.0 1.0 1.0
+    endlist
+    alphaStartkey
+      0.0   1.0
+      0.333333   1.0
+    endlist
+    alphaEndkey
+      0.0   1.0
+      0.333333   1.0
+    endlist
+    sizeStartkey
+      0.0   1.0
+      0.333333   1.0
+    endlist
+    sizeEndkey
+      0.0   1.0
+      0.333333   1.0
+    endlist
+    sizeStart_ykey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    sizeEnd_ykey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    lockAxeskey
+      0.0   1.0
+      0.333333   1.0
+    endlist
+    frameStartkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    frameEndkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    birthratekey
+      0.0   1.0
+      0.333333   1.0
+    endlist
+    spawnTypekey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    lifeExpkey
+      0.0   3.0
+      0.333333   3.0
+    endlist
+    masskey
+      0.0   1.0
+      0.333333   1.0
+    endlist
+    spreadkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    particleRotkey
+      0.0   5.0
+      0.333333   5.0
+    endlist
+    velocitykey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    randvelkey
+      0.0   0.3
+      0.333333   0.3
+    endlist
+    fpskey
+      0.0   16.0
+      0.333333   16.0
+    endlist
+    randomkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    inheritkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    inherit_localkey
+      0.0   1.0
+      0.333333   1.0
+    endlist
+    inherit_partkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    inheritvelkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    xSizekey
+      0.0   50.0
+      0.333333   50.0
+    endlist
+    ySizekey
+      0.0   50.0
+      0.333333   50.0
+    endlist
+    bouncekey
+      0.0   1.0
+      0.333333   1.0
+    endlist
+    bounce_cokey
+      0.0   50.0
+      0.333333   50.0
+    endlist
+    loopkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    chunkykey
+      0.0   1.0
+      0.333333   1.0
+    endlist
+    opacitykey
+      0.0   0.5
+      0.333333   0.5
+    endlist
+    blurlengthkey
+      0.0   10.0
+      0.333333   10.0
+    endlist
+    lightningDelaykey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    lightningRadiuskey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    lightningSubDivkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    lightningScalekey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    blastRadiuskey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    blastLengthkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    twosidedtexkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    p2pkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    p2p_bezier2key
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    p2p_bezier3key
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    combinetimekey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    Dragkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    gravkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    thresholdkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    xgridkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    ygridkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    affectedByWindkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    m_isTintedkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    renderorderkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+    Splatkey
+      0.0   0.0
+      0.333333   0.0
+    endlist
+endnode
+doneanim impact fx_step_stbrdg 
+
+donemodel fx_step_stbrdg 
+
