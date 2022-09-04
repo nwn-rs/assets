@@ -1,0 +1,289 @@
+# Exported from NWmax 0.8 b61 at 11/12/2007 6:50:46 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: vfx_whteyesef
+#local file: D:\WORK_NWN\vfx\eyes\vfx_blueeyes.max
+filedependancy vfx_blueeyes.max
+newmodel vfx_whteyesef
+setsupermodel vfx_whteyesef NULL
+classification Effect
+#NWmax GEOM  ASCII
+beginmodelgeom vfx_whteyesef
+node dummy vfx_whteyesef
+  parent NULL
+endnode
+node emitter L_eye
+  parent vfx_whteyesef
+  position -0.0278607 0.0961179 -0.105852
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.647059 0.839216 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawntype_sel 1
+  spawnType 0
+  xSize 0.0
+  ySize 0.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.0 0.0 0.0 
+  colorEnd 0.25098 0.25098 0.25098 
+  alphaStart 0.5
+  alphaEnd 0.0
+  sizeStart 0.075
+  sizeEnd 0.025
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 20
+  lifeExp 0.5
+  mass 0.0
+  spread 0.0
+  particleRot 0.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_Dot01
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter R_eye
+  parent vfx_whteyesef
+  position 0.0292767 0.0965035 -0.105042
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.647059 0.839216 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawntype_sel 1
+  spawnType 0
+  xSize 0.0
+  ySize 0.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.0 0.0 0.0 
+  colorEnd 0.25098 0.25098 0.25098 
+  alphaStart 0.5
+  alphaEnd 0.0
+  sizeStart 0.075
+  sizeEnd 0.025
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 20
+  lifeExp 0.5
+  mass 0.0
+  spread 0.0
+  particleRot 0.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_Dot01
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter L_eye01
+  parent vfx_whteyesef
+  position -0.0278607 0.0968267 -0.105852
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.647059 0.839216 
+  update_sel 2
+  update Single
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawntype_sel 1
+  spawnType 0
+  xSize 0.0
+  ySize 0.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 0.501961 0.501961 0.501961 
+  alphaStart 0.5
+  alphaEnd 0.5
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 1
+  lifeExp -1.0
+  mass 0.0
+  spread 0.0
+  particleRot 0.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_Dot01
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter R_eye01
+  parent vfx_whteyesef
+  position 0.0292767 0.0961059 -0.105042
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.647059 0.839216 
+  update_sel 2
+  update Single
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawntype_sel 1
+  spawnType 0
+  xSize 0.0
+  ySize 0.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 0.501961 0.501961 0.501961 
+  alphaStart 0.5
+  alphaEnd 0.5
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 1
+  lifeExp -1.0
+  mass 0.0
+  spread 0.0
+  particleRot 0.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_Dot01
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+endmodelgeom vfx_whteyesef
+donemodel vfx_whteyesef

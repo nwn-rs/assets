@@ -1,0 +1,656 @@
+#MAXMODEL ASCII
+# model: PLC_Pud01 
+filedependancy IoP-Puddle_01.max
+newmodel PLC_Pud01 
+setsupermodel PLC_Pud01 NULL
+classification Character
+setanimationscale 1.0
+#MAXGEOM  ASCII
+beginmodelgeom PLC_Pud01 
+node dummy PLC_Pud01 
+  parent NULL 
+endnode
+node trimesh damage 
+  parent PLC_Pud01 
+  position 0.000867307 0.0348657 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.603922 0.843137 0.898039  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 0
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 25.0 
+     gizmo SubAnim:Gizmo
+  ambient 0.0705882 0.0 1.0  
+  diffuse 1.0 0.501961 0.643137  
+  specular 0.0 0.0 0.0  
+  shininess 25.0 
+    bitmap NULL
+    verts 12
+     0.195415 0.186216 0.0
+     0.195415 -0.186216 0.0
+     -0.195415 -0.186216 0.0
+     -0.195415 0.186216 0.0
+     0.195415 0.186216 0.5
+     -0.195415 0.186216 0.5
+     -0.195415 -0.186216 0.5
+     0.195415 -0.186216 0.5
+     -0.103944 0.0990513 0.25
+     0.103944 0.0990513 0.25
+     -0.103944 -0.0990513 0.25
+     0.103944 -0.0990513 0.25
+    faces 20
+     0 1 2  1  0 0 0  1
+     2 3 0  1  0 0 0  1
+     4 5 6  1  0 0 0  1
+     6 7 4  1  0 0 0  1
+     0 3 8  1  0 0 0  1
+     8 9 0  1  0 0 0  1
+     9 8 5  1  0 0 0  1
+     5 4 9  1  0 0 0  1
+     3 2 10  1  0 0 0  1
+     10 8 3  1  0 0 0  1
+     8 10 6  1  0 0 0  1
+     6 5 8  1  0 0 0  1
+     2 1 11  1  0 0 0  1
+     11 10 2  1  0 0 0  1
+     10 11 7  1  0 0 0  1
+     7 6 10  1  0 0 0  1
+     1 0 9  1  0 0 0  1
+     9 11 1  1  0 0 0  1
+     11 9 4  1  0 0 0  1
+     4 7 11  1  0 0 0  1
+    tverts 1
+     0.0 0.0 0 
+endnode
+node trimesh Puddle01 
+  parent damage 
+  position -0.000867307 -0.0348657 0.0311502
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.101961 0.694118 0.345098  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 0.6
+     transparencyhint 1
+     tilefade 0
+     scale 1.0
+     render 1
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 4.9564 -1.45792 0.0 
+     gizmo SubAnim:Gizmo
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 1.0 
+    bitmap PLC_Puddle
+    verts 40
+     0.511686 -0.341285 0.0
+     0.552056 -0.277648 0.0
+     0.57665 -0.20748 0.0
+     0.579114 -0.127641 0.0
+     0.553093 -0.0349863 0.0
+     0.508782 0.048128 0.0
+     0.460345 0.104921 0.0
+     0.407384 0.146892 0.0
+     0.349501 0.185544 0.0
+     0.286299 0.232377 0.0
+     0.230789 0.293105 0.0
+     0.187178 0.361093 0.0
+     0.141858 0.429316 0.0
+     0.0812234 0.490748 0.0
+     -0.00833365 0.538364 0.0
+     -0.114728 0.554747 0.0
+     -0.212504 0.534813 0.0
+     -0.295215 0.490041 0.0
+     -0.356415 0.43191 0.0
+     -0.389656 0.371897 0.0
+     -0.390506 0.309752 0.0
+     -0.368071 0.239888 0.0
+     -0.336217 0.165781 0.0
+     -0.308806 0.0909088 0.0
+     -0.299701 0.0187468 0.0
+     -0.326563 -0.0479708 0.0
+     -0.381689 -0.114321 0.0
+     -0.440892 -0.188542 0.0
+     -0.479986 -0.278872 0.0
+     -0.474785 -0.393551 0.0
+     -0.418046 -0.48977 0.0
+     -0.327943 -0.533795 0.0
+     -0.218416 -0.547477 0.0
+     -0.103406 -0.552666 0.0
+     0.003145 -0.571211 0.0
+     0.104985 -0.583905 0.0
+     0.209804 -0.563499 0.0
+     0.309579 -0.519778 0.0
+     0.396283 -0.462528 0.0
+     0.461893 -0.401534 0.0
+    faces 38
+     29 30 31  1  29 30 31  1
+     28 29 31  1  28 29 31  1
+     27 28 31  1  27 28 31  1
+     27 31 32  1  27 31 32  1
+     26 27 32  1  26 27 32  1
+     26 32 33  1  26 32 33  1
+     25 26 33  1  25 26 33  1
+     25 33 34  1  25 33 34  1
+     24 25 34  1  24 25 34  1
+     24 34 35  1  24 34 35  1
+     24 35 36  1  24 35 36  1
+     24 36 37  1  24 36 37  1
+     24 37 38  1  24 37 38  1
+     24 38 39  1  24 38 39  1
+     24 39 0  1  24 39 0  1
+     24 0 1  1  24 0 1  1
+     24 1 2  1  24 1 2  1
+     24 2 3  1  24 2 3  1
+     24 3 4  1  24 3 4  1
+     24 4 5  1  24 4 5  1
+     24 5 6  1  24 5 6  1
+     24 6 7  1  24 6 7  1
+     24 7 8  1  24 7 8  1
+     24 8 9  1  24 8 9  1
+     24 9 10  1  24 9 10  1
+     23 24 10  1  23 24 10  1
+     23 10 11  1  23 10 11  1
+     22 23 11  1  22 23 11  1
+     22 11 12  1  22 11 12  1
+     22 12 13  1  22 12 13  1
+     22 13 14  1  22 13 14  1
+     22 14 15  1  22 14 15  1
+     22 15 16  1  22 15 16  1
+     21 22 16  1  21 22 16  1
+     21 16 17  1  21 16 17  1
+     21 17 18  1  21 17 18  1
+     20 21 18  1  20 21 18  1
+     20 18 19  1  20 18 19  1
+    tverts 40
+     0.935899 0.213363 0 
+     0.973979 0.269195 0 
+     0.997177 0.330757 0 
+     0.9995 0.400805 0 
+     0.974956 0.482096 0 
+     0.93316 0.555016 0 
+     0.887471 0.604844 0 
+     0.837516 0.641668 0 
+     0.782918 0.675579 0 
+     0.723302 0.716668 0 
+     0.670942 0.769948 0 
+     0.629805 0.829598 0 
+     0.587057 0.889453 0 
+     0.529863 0.943351 0 
+     0.445388 0.985127 0 
+     0.345031 0.999501 0 
+     0.252803 0.982011 0 
+     0.174785 0.942731 0 
+     0.117058 0.891729 0 
+     0.0857036 0.839077 0 
+     0.0849022 0.784554 0 
+     0.106063 0.723258 0 
+     0.13611 0.65824 0 
+     0.161966 0.59255 0 
+     0.170554 0.529239 0 
+     0.145216 0.470704 0 
+     0.0932184 0.412491 0 
+     0.0373752 0.347373 0 
+     0.000499547 0.268121 0 
+     0.00540498 0.167507 0 
+     0.0589243 0.0830895 0 
+     0.143915 0.0444636 0 
+     0.247227 0.0324596 0 
+     0.35571 0.0279074 0 
+     0.456215 0.0116369 0 
+     0.552276 0.000499517 0 
+     0.651147 0.0184031 0 
+     0.74526 0.056762 0 
+     0.827045 0.10699 0 
+     0.888931 0.160503 0 
+endnode
+node emitter splash! 
+  parent PLC_Pud01 
+  position 0.0 0.0137917 0.21009
+  orientation  0.0 0.0 0.0  -6.28319
+  wirecolor 0.690196 0.101961 0.101961  
+    colorStart 0.831373 0.82353 1.0  
+    colorEnd 1.0 1.0 1.0  
+    alphaStart 1.0 
+    alphaEnd 0.0 
+    sizeStart 0.25 
+    sizeEnd 1.0 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 24 
+    birthrate 20 
+    spawnType 0 
+    lifeExp 2.5 
+    mass 1.0 
+    spread 2.18166 
+    particleRot 1.0 
+    velocity 2.5 
+    randvel 1.0 
+    fps 10 
+    random 0 
+    inherit 1 
+    inherit_local 0 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 50 
+    ySize 50 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Explosion 
+    render Normal 
+    Blend Lighten 
+    update_sel 2 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.2 
+    blastLength 1.0 
+    twosidedtex 1 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture Fxpa_splash 
+    xgrid 1 
+    ygrid 1 
+    affectedByWind false 
+    m_isTinted 1 
+    renderorder 0 
+    Splat 0 
+endnode
+node dummy Pud01_ground 
+  parent PLC_Pud01 
+  position 0.00363281 -0.0069873 0.0911993
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.0235294 0.0235294  
+endnode
+node dummy Pud01_hand 
+  parent PLC_Pud01 
+  position 0.0 0.0 0.0878876
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.878431 0.337255 0.337255  
+endnode
+node dummy Pud01_head 
+  parent PLC_Pud01 
+  position 0.0 0.0 0.0818087
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.768628 0.345098 0.882353  
+endnode
+node dummy Pud01_head_hit 
+  parent PLC_Pud01 
+  position 0.0 0.0 0.0839389
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.101961 0.694118 0.580392  
+endnode
+node dummy Pud01_impact 
+  parent PLC_Pud01 
+  position 0.0 0.0 0.0966445
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+endmodelgeom PLC_Pud01 
+
+#MAXANIM ASCII
+newanim damage PLC_Pud01 
+ length 0.133333
+ transtime 0.0
+animroot PLC_Pud01
+node dummy PLC_Pud01 
+  parent NULL 
+endnode
+node dummy PLC_Pud01_pwk 
+  parent PLC_Pud01 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Pud01_pwk 
+endnode
+node trimesh damage 
+  parent PLC_Pud01 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0244581
+      0.133333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.371336 -0.928463 -0.00810258  0.0469942
+      0.1   -0.599949 0.799969 -0.0104721  0.0436326
+      0.133333   0.0 0.0 0.0  3.57628e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Puddle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter splash! 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_ground 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_hand 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_head 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_head_hit 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_impact 
+  parent PLC_Pud01 
+endnode
+doneanim damage PLC_Pud01 
+
+#MAXANIM ASCII
+newanim die PLC_Pud01 
+ length 0.166667
+ transtime 0.0
+animroot PLC_Pud01
+node dummy PLC_Pud01 
+  parent NULL 
+endnode
+node dummy PLC_Pud01_pwk 
+  parent PLC_Pud01 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Pud01_pwk 
+endnode
+node trimesh damage 
+  parent PLC_Pud01 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.166667  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  5.67028e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Puddle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+event 0.0  detonate 
+node emitter splash! 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_ground 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_hand 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_head 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_head_hit 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_impact 
+  parent PLC_Pud01 
+endnode
+doneanim die PLC_Pud01 
+
+#MAXANIM ASCII
+newanim dead PLC_Pud01 
+ length 0.0333333
+ transtime 0.0
+animroot PLC_Pud01
+node dummy PLC_Pud01 
+  parent NULL 
+endnode
+node dummy PLC_Pud01_pwk 
+  parent PLC_Pud01 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Pud01_pwk 
+endnode
+node trimesh damage 
+  parent PLC_Pud01 
+    positionkey 
+      0.0  0.000867307 0.0348657 -6.95145
+      0.0333333  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Puddle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter splash! 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_ground 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_hand 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_head 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_head_hit 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_impact 
+  parent PLC_Pud01 
+endnode
+doneanim dead PLC_Pud01 
+
+#MAXANIM ASCII
+newanim default PLC_Pud01 
+ length 0.0
+ transtime 0.25
+animroot PLC_Pud01
+node dummy PLC_Pud01 
+  parent NULL 
+endnode
+node dummy PLC_Pud01_pwk 
+  parent PLC_Pud01 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Pud01_pwk 
+endnode
+node trimesh damage 
+  parent PLC_Pud01 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  3.03925e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Puddle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter splash! 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_ground 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_hand 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_head 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_head_hit 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_impact 
+  parent PLC_Pud01 
+endnode
+doneanim default PLC_Pud01 
+
+#MAXANIM ASCII
+newanim on PLC_Pud01 
+ length 0.0
+ transtime 0.25
+animroot PLC_Pud01
+node dummy PLC_Pud01 
+  parent NULL 
+endnode
+node dummy PLC_Pud01_pwk 
+  parent PLC_Pud01 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Pud01_pwk 
+endnode
+node trimesh damage 
+  parent PLC_Pud01 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Puddle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter splash! 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_ground 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_hand 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_head 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_head_hit 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_impact 
+  parent PLC_Pud01 
+endnode
+doneanim on PLC_Pud01 
+
+#MAXANIM ASCII
+newanim off PLC_Pud01 
+ length 0.0
+ transtime 0.25
+animroot PLC_Pud01
+node dummy PLC_Pud01 
+  parent NULL 
+endnode
+node dummy PLC_Pud01_pwk 
+  parent PLC_Pud01 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Pud01_pwk 
+endnode
+node trimesh damage 
+  parent PLC_Pud01 
+    positionkey 
+      0.0  0.000867307 0.0348657 -0.636623
+    endlist 
+    orientationkey 
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Puddle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter splash! 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_ground 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_hand 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_head 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_head_hit 
+  parent PLC_Pud01 
+endnode
+node dummy Pud01_impact 
+  parent PLC_Pud01 
+endnode
+doneanim off PLC_Pud01 
+
+donemodel PLC_Pud01 
+

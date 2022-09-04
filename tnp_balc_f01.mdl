@@ -1,0 +1,836 @@
+# Exported from NWmax 0.8 b50 at 7/8/2005 3:49:02 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tnp_balc_f01
+#local file: balconies3.maxbalconies3.max
+filedependancy balconies3.max
+newmodel tnp_balc_f01
+setsupermodel tnp_balc_f01 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom tnp_balc_f01
+node dummy tnp_balc_f01
+  parent NULL
+endnode
+node dummy balc_f01_ground
+  parent tnp_balc_f01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.333333 0.109804 0.694118 
+endnode
+node dummy balc_f01_hand
+  parent tnp_balc_f01
+  position 0.0 -0.7 5.9
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.584314 0.694118 
+endnode
+node dummy balc_f01_head
+  parent tnp_balc_f01
+  position 0.0 0.0 7.19
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.584314 0.694118 
+endnode
+node dummy balc_f01_head_hit
+  parent tnp_balc_f01
+  position 0.0 0.0 6.7
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.584314 0.694118 
+endnode
+node dummy balc_f01_impact
+  parent tnp_balc_f01
+  position 0.0 0.0 5.86
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.101961 0.694118 0.101961 
+endnode
+node trimesh base
+  parent tnp_balc_f01
+  position -0.010918 -1.99445 5.24017
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.560784 0.878431 0.341176 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 0.0
+  bitmap tno01_stone11b
+  verts 22
+    -0.489082 -0.505554 -1.24017
+    0.510918 -0.505554 -1.24017
+    -0.489082 -0.505554 0.759827
+    0.510918 -0.505554 0.759827
+    -0.461406 0.47056 0.759827
+    0.510918 0.468286 0.759827
+    -0.489082 0.494446 -0.240173
+    0.510918 0.494446 -0.240173
+    -0.489082 -0.0055542 0.759827
+    0.510918 -0.0208318 0.775104
+    0.510918 -0.0055542 1.24016
+    -0.492704 -0.0085499 1.24016
+    0.510918 0.471529 1.24016
+    -0.489082 0.494446 1.24016
+    0.510918 -0.505554 0.193823
+    0.510918 0.50554 0.387218
+    -0.461406 0.47056 0.361936
+    -0.489082 -0.505554 0.00421643
+    -0.510918 -0.107238 0.146653
+    -0.472764 0.0345166 -0.623714
+    0.484207 -0.0956189 -0.794624
+    0.484207 -0.047561 0.282397
+  faces 34
+    8 2 9  0  0 1 2  1
+    2 3 9  0  1 3 2  1
+    16 4 15  0  4 5 6  1
+    4 5 15  0  5 7 6  1
+    19 20 0  0  8 9 10  1
+    20 1 0  0  9 11 10  1
+    14 21 3  0  12 13 14  1
+    21 9 3  0  13 15 14  1
+    17 2 18  0  16 17 18  1
+    18 2 8  0  18 17 19  1
+    8 9 11  0  0 2 20  1
+    9 10 11  0  2 21 20  1
+    9 5 10  0  15 7 22  1
+    5 12 10  0  7 23 22  1
+    13 12 4  0  24 23 5  1
+    5 4 12  0  7 5 23  1
+    13 4 11  0  24 5 25  1
+    4 8 11  0  5 19 25  1
+    1 20 14  0  26 27 12  1
+    20 21 14  0  27 13 12  1
+    6 16 7  0  28 4 29  1
+    16 15 7  0  4 6 29  1
+    0 17 19  0  30 16 31  1
+    19 17 18  0  31 16 18  1
+    18 8 16  0  18 19 4  1
+    16 8 4  0  4 19 5  1
+    19 18 6  0  31 18 28  1
+    6 18 16  0  28 18 4  1
+    20 19 7  0  9 8 29  1
+    6 7 19  0  28 29 8  1
+    20 7 21  0  27 29 13  1
+    21 7 15  0  13 29 6  1
+    21 15 9  0  13 6 15  1
+    9 15 5  0  15 6 7  1
+  tverts 32
+    0.094186 0.318626 0
+    0.0921779 0.176167 0
+    0.378998 0.318626 0
+    0.376989 0.176167 0
+    0.65362 0.458208 0
+    0.65362 0.571532 0
+    0.365416 0.465492 0
+    0.36011 0.571615 0
+    0.648798 0.177567 0
+    0.376242 0.12889 0
+    0.653446 0.00199199 0
+    0.368635 0.00199211 0
+    0.0742256 0.410411 0
+    0.204667 0.435637 0
+    0.0742256 0.571615 0
+    0.21228 0.575966 0
+    0.939684 0.356243 0
+    0.939684 0.571449 0
+    0.826239 0.396811 0
+    0.797279 0.571449 0
+    0.0951628 0.455483 0
+    0.381006 0.455483 0
+    0.216631 0.708419 0
+    0.360572 0.708419 0
+    0.654159 0.708336 0
+    0.798132 0.708253 0
+    0.0742256 0.00199204 0
+    0.19098 0.12889 0
+    0.654159 0.286721 0
+    0.363836 0.286803 0
+    0.939684 0.00182652 0
+    0.785866 0.177401 0
+endnode
+node trimesh cap
+  parent base
+  position 0.010918 0.249985 1.30762
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.560784 0.878431 0.341176 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 0.0
+  bitmap tno01_bridge01
+  verts 8
+    -0.552109 -0.336842 -0.0679845
+    0.552109 -0.336842 -0.0679845
+    -0.552109 -0.336842 0.0679917
+    0.552109 -0.336842 0.0679917
+    -0.552109 0.336837 0.0679917
+    0.552109 0.336837 0.0679917
+    -0.552109 0.336837 -0.0679845
+    0.552109 0.336837 -0.0679845
+  faces 12
+    0 1 2  0  0 1 2  1
+    1 3 2  0  1 3 2  1
+    2 3 4  0  1 4 3  1
+    3 5 4  0  4 5 3  1
+    4 5 6  0  4 6 7  1
+    5 7 6  0  6 8 7  1
+    6 7 0  0  6 9 10  1
+    7 1 0  0  9 11 10  1
+    1 7 3  0  1 4 3  1
+    7 5 3  0  4 5 3  1
+    6 0 4  0  4 6 7  1
+    0 2 4  0  6 8 7  1
+  tverts 12
+    0.126876 0.490002 0
+    0.250389 0.490002 0
+    0.126876 0.549986 0
+    0.250389 0.549986 0
+    0.376631 0.490002 0
+    0.376631 0.549986 0
+    0.50173 0.490002 0
+    0.376631 0.549986 0
+    0.50173 0.549986 0
+    0.626534 0.490002 0
+    0.50173 0.549986 0
+    0.626534 0.549986 0
+endnode
+node trimesh corner
+  parent base
+  position -9.76562e-006 -0.235519 -0.232513
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.560784 0.878431 0.341176 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 0
+  center 5.72205e-006 6.29425e-005 0.00094223 
+  bitmap tno01_corner01
+  verts 12
+    -0.489571 -0.270035 -1.00763
+    0.511429 -0.270035 -1.00763
+    -0.489571 -0.270035 0.992371
+    0.511429 -0.270035 0.992371
+    -0.489571 0.229965 0.992371
+    0.511429 0.214688 1.00765
+    0.511429 -0.270035 0.426367
+    -0.489571 -0.270035 0.23676
+    -0.511429 0.128281 0.379197
+    -0.473237 0.270036 -0.39117
+    0.484691 0.139901 -0.56208
+    0.484691 0.187958 0.514941
+  faces 8
+    6 11 3  0  0 1 2  1
+    11 5 3  0  1 3 2  1
+    7 2 8  0  4 5 6  1
+    8 2 4  0  6 5 7  1
+    1 10 6  0  8 9 0  1
+    10 11 6  0  9 1 0  1
+    0 7 9  0  10 4 11  1
+    9 7 8  0  11 4 6  1
+  tverts 12
+    0.454106 0.574908 0
+    0.737321 0.580338 0
+    0.454106 0.748863 0
+    0.726201 0.748863 0
+    0.600047 0.544209 0
+    0.613431 0.748863 0
+    0.347509 0.580315 0
+    0.337381 0.748863 0
+    0.454106 0.131202 0
+    0.716819 0.263474 0
+    0.555433 0.168972 0
+    0.292951 0.374289 0
+endnode
+node trimesh stack
+  parent base
+  position -0.197102 0.264877 1.80646
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.560784 0.878431 0.341176 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 0.0
+  bitmap tcn01_evil02
+  verts 13
+    0.0829585 0.123645 -0.467629
+    -0.0777549 0.122494 -0.468825
+    -0.157154 -0.0171847 -0.464604
+    -0.0758325 -0.155714 -0.459187
+    0.0848808 -0.154564 -0.45799
+    0.16428 -0.0148845 -0.462211
+    0.0758327 0.155704 0.459141
+    -0.0848883 0.154554 0.457944
+    -0.16428 0.0148745 0.462165
+    -0.082966 -0.123655 0.467583
+    0.0777473 -0.122504 0.46878
+    0.157146 0.0171747 0.464559
+    -0.000514984 0.00229245 0.0663929
+  faces 18
+    0 1 6  0  0 1 2  1
+    1 7 6  0  1 3 2  1
+    1 2 7  0  1 4 3  1
+    2 8 7  0  4 5 3  1
+    2 3 8  0  4 6 5  1
+    3 9 8  0  6 7 5  1
+    3 4 9  0  6 8 7  1
+    4 10 9  0  8 9 7  1
+    4 5 10  0  8 10 9  1
+    5 11 10  0  10 11 9  1
+    5 0 11  0  10 12 11  1
+    0 6 11  0  12 13 11  1
+    6 7 12  0  2 3 7  1
+    7 8 12  0  3 5 7  1
+    8 9 12  0  5 7 7  1
+    9 10 12  0  7 9 7  1
+    10 11 12  0  9 11 7  1
+    11 6 12  0  11 13 7  1
+  tverts 14
+    0.751717 0.166636 0
+    0.751717 0.2824 0
+    0.251962 0.166636 0
+    0.251962 0.2824 0
+    0.751717 0.398164 0
+    0.251962 0.398164 0
+    0.751717 0.513928 0
+    0.251962 0.513928 0
+    0.751717 0.629691 0
+    0.251962 0.629691 0
+    0.751717 0.745455 0
+    0.251962 0.745455 0
+    0.751717 0.861219 0
+    0.251962 0.861219 0
+endnode
+node trimesh stack1
+  parent base
+  position 0.207192 0.255157 1.69092
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.560784 0.878431 0.341176 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 0.0
+  bitmap tcn01_evil02
+  verts 13
+    0.0773852 0.132963 -0.350094
+    -0.0833281 0.133955 -0.348346
+    -0.16452 -0.00471848 -0.345171
+    -0.0849992 -0.144384 -0.343743
+    0.0757141 -0.145375 -0.345491
+    0.156906 -0.00670195 -0.348667
+    0.0849994 0.144392 0.343781
+    -0.075714 0.145384 0.345529
+    -0.156899 0.00671071 0.348705
+    -0.0773774 -0.132955 0.350132
+    0.0833282 -0.133946 0.348384
+    0.16452 0.00472724 0.345209
+    -0.000549316 -0.000822544 -0.0501837
+  faces 18
+    0 1 6  0  0 1 2  1
+    1 7 6  0  1 3 2  1
+    1 2 7  0  1 4 3  1
+    2 8 7  0  4 5 3  1
+    2 3 8  0  4 6 5  1
+    3 9 8  0  6 7 5  1
+    3 4 9  0  6 8 7  1
+    4 10 9  0  8 9 7  1
+    4 5 10  0  8 10 9  1
+    5 11 10  0  10 11 9  1
+    5 0 11  0  10 12 11  1
+    0 6 11  0  12 13 11  1
+    6 7 12  0  2 3 7  1
+    7 8 12  0  3 5 7  1
+    8 9 12  0  5 7 7  1
+    9 10 12  0  7 9 7  1
+    10 11 12  0  9 11 7  1
+    11 6 12  0  11 13 7  1
+  tverts 14
+    0.751717 0.166636 0
+    0.751717 0.2824 0
+    0.251962 0.166636 0
+    0.251962 0.2824 0
+    0.751717 0.398164 0
+    0.251962 0.398164 0
+    0.751717 0.513928 0
+    0.251962 0.513928 0
+    0.751717 0.629691 0
+    0.251962 0.629691 0
+    0.751717 0.745455 0
+    0.251962 0.745455 0
+    0.751717 0.861219 0
+    0.251962 0.861219 0
+endnode
+node emitter echunkystone01
+  parent tnp_balc_f01
+  position 0.00845215 -1.18583 0.462303
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 5.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName PLC_Chunk_S01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter echunkystone02
+  parent tnp_balc_f01
+  position 0.00845215 -1.18583 0.568524
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.482353 0.435294 0.317647 
+  colorEnd 0.584314 0.533333 0.407843 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 2.9
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName PLC_Chunk_S02
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter esmoke
+  parent tnp_balc_f01
+  position 0.00845215 -1.18583 0.388259
+  orientation 1.0 0.0 0.0 -4.71239
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 100.0
+  ySize 99.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.462745 0.431373 
+  colorEnd 0.72549 0.72549 0.72549 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 0
+  xgrid 4
+  ygrid 4
+  fps 10
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName 
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+endmodelgeom tnp_balc_f01
+
+#NWmax ANIM ASCII
+newanim default tnp_balc_f01
+  length 0.0333333
+  transtime 0.0
+  animroot tnp_balc_f01
+    node dummy tnp_balc_f01
+        parent NULL
+    endnode
+    node dummy balc_f01_ground
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_hand
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_head
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_head_hit
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_impact
+        parent tnp_balc_f01
+    endnode
+    node trimesh base
+        parent tnp_balc_f01
+        positionkey
+            0.0 -0.010918 -1.99445 5.24017
+            0.0333333 -0.010918 -1.99445 5.24017
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh cap
+        parent base
+    endnode
+    node trimesh corner
+        parent base
+    endnode
+    node trimesh stack
+        parent base
+    endnode
+    node trimesh stack1
+        parent base
+    endnode
+    node dummy tnp_balc_f01_pwk
+        parent tnp_balc_f01
+    endnode
+    node dummy f01_pwk_use01
+        parent tnp_balc_f01_pwk
+    endnode
+    node emitter echunkystone01
+        parent tnp_balc_f01
+    endnode
+    node emitter echunkystone02
+        parent tnp_balc_f01
+    endnode
+    node emitter esmoke
+        parent tnp_balc_f01
+    endnode
+doneanim default tnp_balc_f01
+
+
+#NWmax ANIM ASCII
+newanim damage tnp_balc_f01
+  length 0.166667
+  transtime 0.0
+  animroot tnp_balc_f01
+    node dummy tnp_balc_f01
+        parent NULL
+    endnode
+    node dummy balc_f01_ground
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_hand
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_head
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_head_hit
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_impact
+        parent tnp_balc_f01
+    endnode
+    node trimesh base
+        parent tnp_balc_f01
+        positionkey
+            0.0 -0.010918 -1.99445 5.24017
+            0.1 -0.011001 -2.0 5.24
+            0.166667 -0.010918 -1.99445 5.24017
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.166667 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh cap
+        parent base
+    endnode
+    node trimesh corner
+        parent base
+    endnode
+    node trimesh stack
+        parent base
+    endnode
+    node trimesh stack1
+        parent base
+    endnode
+    node dummy tnp_balc_f01_pwk
+        parent tnp_balc_f01
+    endnode
+    node dummy f01_pwk_use01
+        parent tnp_balc_f01_pwk
+    endnode
+    node emitter echunkystone01
+        parent tnp_balc_f01
+    endnode
+    node emitter echunkystone02
+        parent tnp_balc_f01
+    endnode
+    node emitter esmoke
+        parent tnp_balc_f01
+    endnode
+doneanim damage tnp_balc_f01
+
+
+#NWmax ANIM ASCII
+newanim die tnp_balc_f01
+  length 0.5
+  transtime 0.0
+  animroot tnp_balc_f01
+    node dummy tnp_balc_f01
+        parent NULL
+    endnode
+    node dummy balc_f01_ground
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_hand
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_head
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_head_hit
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_impact
+        parent tnp_balc_f01
+    endnode
+    node trimesh base
+        parent tnp_balc_f01
+        positionkey
+            0.0 -0.010918 -1.99445 5.24017
+            0.166667 -0.010918 -1.49766 3.98066
+            0.333333 -0.010918 -1.4456 0.318295
+            0.5 -0.010918 -1.99445 -10.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.166667 1.0 0.0 0.0 -0.682365
+            0.333333 0.653936 0.754383 0.057212 -0.230916
+            0.5 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh cap
+        parent base
+    endnode
+    node trimesh corner
+        parent base
+    endnode
+    node trimesh stack
+        parent base
+    endnode
+    node trimesh stack1
+        parent base
+    endnode
+    node dummy tnp_balc_f01_pwk
+        parent tnp_balc_f01
+    endnode
+    node dummy f01_pwk_use01
+        parent tnp_balc_f01_pwk
+    endnode
+    node emitter echunkystone01
+        parent tnp_balc_f01
+    endnode
+    node emitter echunkystone02
+        parent tnp_balc_f01
+    endnode
+    node emitter esmoke
+        parent tnp_balc_f01
+    endnode
+doneanim die tnp_balc_f01
+
+
+#NWmax ANIM ASCII
+newanim dead tnp_balc_f01
+  length 0.0333333
+  transtime 0.0
+  animroot tnp_balc_f01
+    node dummy tnp_balc_f01
+        parent NULL
+    endnode
+    node dummy balc_f01_ground
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_hand
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_head
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_head_hit
+        parent tnp_balc_f01
+    endnode
+    node dummy balc_f01_impact
+        parent tnp_balc_f01
+    endnode
+    node trimesh base
+        parent tnp_balc_f01
+        positionkey
+            0.0 -0.010918 -1.99445 -10.0
+            0.0333333 -0.010918 -1.99445 -10.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh cap
+        parent base
+    endnode
+    node trimesh corner
+        parent base
+    endnode
+    node trimesh stack
+        parent base
+    endnode
+    node trimesh stack1
+        parent base
+    endnode
+    node dummy tnp_balc_f01_pwk
+        parent tnp_balc_f01
+    endnode
+    node dummy f01_pwk_use01
+        parent tnp_balc_f01_pwk
+    endnode
+    node emitter echunkystone01
+        parent tnp_balc_f01
+    endnode
+    node emitter echunkystone02
+        parent tnp_balc_f01
+    endnode
+    node emitter esmoke
+        parent tnp_balc_f01
+    endnode
+doneanim dead tnp_balc_f01
+
+donemodel tnp_balc_f01

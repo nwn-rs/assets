@@ -1,0 +1,42 @@
+# Exported from NWmax 0.8 b61 at 2/15/2008 12:14:35 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pfh3_cloak_001
+#local file: D:\NWN\override\fixedcloaks\pfh3_cloak_001.max
+filedependancy pfh3_cloak_001.max
+newmodel pfh3_cloak_001
+setsupermodel pfh3_cloak_001 pfh3
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom pfh3_cloak_001
+node dummy pfh3_cloak_001
+  parent NULL
+endnode
+node trimesh rootdummy
+  parent pfh3_cloak_001
+  position 0.000249158 -0.0325529 1.19227
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 0.0 0.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 0
+  center undefined
+  bitmap NULL
+  verts 0
+  faces 0
+endnode
+endmodelgeom pfh3_cloak_001
+donemodel pfh3_cloak_001

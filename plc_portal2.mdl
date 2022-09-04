@@ -1,0 +1,789 @@
+#MAXMODEL ASCII
+# model: PLC_Portal2 
+filedependancy plc_Portal2.max
+newmodel PLC_Portal2 
+setsupermodel PLC_Portal2 NULL
+classification Character
+setanimationscale 1.0
+#MAXGEOM  ASCII
+beginmodelgeom PLC_Portal2 
+node dummy PLC_Portal2 
+  parent NULL 
+endnode
+node trimesh damage 
+  parent PLC_Portal2 
+  position 0.000867307 0.0348657 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.603922 0.843137 0.898039  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 0
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 25.0 
+     gizmo SubAnim:Gizmo
+  ambient 0.0705882 0.0 1.0  
+  diffuse 1.0 0.501961 0.643137  
+  specular 0.0 0.0 0.0  
+  shininess 25.0 
+    bitmap NULL
+    verts 12
+     0.195415 0.186216 0.0
+     0.195415 -0.186216 0.0
+     -0.195415 -0.186216 0.0
+     -0.195415 0.186216 0.0
+     0.195415 0.186216 0.5
+     -0.195415 0.186216 0.5
+     -0.195415 -0.186216 0.5
+     0.195415 -0.186216 0.5
+     -0.103944 0.0990513 0.25
+     0.103944 0.0990513 0.25
+     -0.103944 -0.0990513 0.25
+     0.103944 -0.0990513 0.25
+    faces 20
+     0 1 2  1  0 0 0  1
+     2 3 0  1  0 0 0  1
+     4 5 6  1  0 0 0  1
+     6 7 4  1  0 0 0  1
+     0 3 8  1  0 0 0  1
+     8 9 0  1  0 0 0  1
+     9 8 5  1  0 0 0  1
+     5 4 9  1  0 0 0  1
+     3 2 10  1  0 0 0  1
+     10 8 3  1  0 0 0  1
+     8 10 6  1  0 0 0  1
+     6 5 8  1  0 0 0  1
+     2 1 11  1  0 0 0  1
+     11 10 2  1  0 0 0  1
+     10 11 7  1  0 0 0  1
+     7 6 10  1  0 0 0  1
+     1 0 9  1  0 0 0  1
+     9 11 1  1  0 0 0  1
+     11 9 4  1  0 0 0  1
+     4 7 11  1  0 0 0  1
+    tverts 1
+     0.0 0.0 0 
+endnode
+node emitter AuraEmitter01 
+  parent damage 
+  position -0.0284754 -0.0843314 0.0453155
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.337255 0.337255 0.337255  
+    colorStart 0.462745 0.188235 0.745098  
+    colorEnd 0.462745 0.188235 0.745098  
+    alphaStart 1.0 
+    alphaEnd 0.0 
+    sizeStart 1.0 
+    sizeEnd 0.0 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 3 
+    birthrate 10 
+    spawnType 0 
+    lifeExp 1.0 
+    mass -0.5 
+    spread 0.0 
+    particleRot 0.0 
+    velocity 0.0 
+    randvel 0.0 
+    fps 5 
+    random 1 
+    inherit 0 
+    inherit_local 1 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 26 
+    ySize 41 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Fountain 
+    render Normal 
+    Blend Lighten 
+    update_sel 1 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 1 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_StarBnW 
+    xgrid 2 
+    ygrid 2 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node emitter AuraEmitter02 
+  parent damage 
+  position 0.00629652 -0.050714 0.0749081
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.443137 0.52549 0.0235294  
+    colorStart 0.321569 0.258824 0.721569  
+    colorEnd 0.321569 0.258824 0.721569  
+    alphaStart 0.0 
+    alphaEnd 0.5 
+    sizeStart 8.0 
+    sizeEnd 4.0 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 3 
+    birthrate 5 
+    spawnType 0 
+    lifeExp 2.0 
+    mass 0.0 
+    spread 0.0 
+    particleRot 1.0 
+    velocity 0.0 
+    randvel 0.0 
+    fps 15 
+    random 1 
+    inherit 0 
+    inherit_local 1 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 0 
+    ySize 0 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Fountain 
+    render Billboard_to_World_Z 
+    Blend Lighten 
+    update_sel 1 
+    render_sel 4 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_lensflare 
+    xgrid 1 
+    ygrid 1 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node emitter AuraEmitter03 
+  parent damage 
+  position 0.00582869 -0.0487397 0.0390855
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.690196 0.101961 0.101961  
+    colorStart 0.176471 0.505882 0.87451  
+    colorEnd 0.176471 0.505882 0.87451  
+    alphaStart 1.0 
+    alphaEnd 0.0 
+    sizeStart 1.5 
+    sizeEnd 2.0 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 3 
+    birthrate 3 
+    spawnType 0 
+    lifeExp 1.0 
+    mass 0.0 
+    spread 0.0 
+    particleRot 0.0 
+    velocity 1.0 
+    randvel 0.0 
+    fps 15 
+    random 1 
+    inherit 0 
+    inherit_local 1 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 0 
+    ySize 0 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Fountain 
+    render Billboard_to_World_Z 
+    Blend Lighten 
+    update_sel 1 
+    render_sel 4 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_ring02 
+    xgrid 1 
+    ygrid 1 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node dummy Portal2_ground 
+  parent PLC_Portal2 
+  position 0.00363281 -0.0069873 0.0911993
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.0235294 0.0235294  
+endnode
+node dummy Portal2_hand 
+  parent PLC_Portal2 
+  position 0.0 0.0 0.0878876
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.878431 0.337255 0.337255  
+endnode
+node dummy Portal2_head 
+  parent PLC_Portal2 
+  position 0.0 0.0 0.0818087
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.768628 0.345098 0.882353  
+endnode
+node dummy Portal2_head_hit 
+  parent PLC_Portal2 
+  position 0.0 0.0 0.0839389
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.101961 0.694118 0.580392  
+endnode
+node dummy Portal2_impact 
+  parent PLC_Portal2 
+  position 0.0 0.0 0.0966445
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+endmodelgeom PLC_Portal2 
+
+#MAXANIM ASCII
+newanim damage PLC_Portal2 
+ length 0.133333
+ transtime 0.0
+animroot PLC_Portal2
+node dummy PLC_Portal2 
+  parent NULL 
+endnode
+node trimesh damage 
+  parent PLC_Portal2 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.133333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.133333   0.0 0.0 0.0  3.57628e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter AuraEmitter01 
+  parent damage 
+    birthratekey
+      0.0   10.0
+      0.133333   10.0
+    endlist
+endnode
+node emitter AuraEmitter02 
+  parent damage 
+    birthratekey
+      0.0   5.0
+      0.133333   5.0
+    endlist
+endnode
+node emitter AuraEmitter03 
+  parent damage 
+    birthratekey
+      0.0   3.0
+      0.133333   3.0
+    endlist
+endnode
+node dummy Portal2_ground 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_hand 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head_hit 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_impact 
+  parent PLC_Portal2 
+endnode
+doneanim damage PLC_Portal2 
+
+#MAXANIM ASCII
+newanim die PLC_Portal2 
+ length 0.166667
+ transtime 0.0
+animroot PLC_Portal2
+node dummy PLC_Portal2 
+  parent NULL 
+endnode
+node trimesh damage 
+  parent PLC_Portal2 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.166667  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  5.67028e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter AuraEmitter01 
+  parent damage 
+    birthratekey
+      0.0   10.0
+      0.166667   0.0
+    endlist
+endnode
+node emitter AuraEmitter02 
+  parent damage 
+    birthratekey
+      0.0   5.0
+      0.166667   0.0
+    endlist
+endnode
+node emitter AuraEmitter03 
+  parent damage 
+    birthratekey
+      0.0   3.0
+      0.166667   0.0
+    endlist
+endnode
+node dummy Portal2_ground 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_hand 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head_hit 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_impact 
+  parent PLC_Portal2 
+endnode
+doneanim die PLC_Portal2 
+
+#MAXANIM ASCII
+newanim dead PLC_Portal2 
+ length 0.0333333
+ transtime 0.0
+animroot PLC_Portal2
+node dummy PLC_Portal2 
+  parent NULL 
+endnode
+node trimesh damage 
+  parent PLC_Portal2 
+    positionkey 
+      0.0  0.000867307 0.0348657 -6.95145
+      0.0333333  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter AuraEmitter01 
+  parent damage 
+    birthratekey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+endnode
+node emitter AuraEmitter02 
+  parent damage 
+    birthratekey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+endnode
+node emitter AuraEmitter03 
+  parent damage 
+    birthratekey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+endnode
+node dummy Portal2_ground 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_hand 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head_hit 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_impact 
+  parent PLC_Portal2 
+endnode
+doneanim dead PLC_Portal2 
+
+#MAXANIM ASCII
+newanim default PLC_Portal2 
+ length 0.0
+ transtime 0.25
+animroot PLC_Portal2
+node dummy PLC_Portal2 
+  parent NULL 
+endnode
+node trimesh damage 
+  parent PLC_Portal2 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  3.03925e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter AuraEmitter01 
+  parent damage 
+    birthratekey
+      0.0   10.0
+    endlist
+endnode
+node emitter AuraEmitter02 
+  parent damage 
+    birthratekey
+      0.0   5.0
+    endlist
+endnode
+node emitter AuraEmitter03 
+  parent damage 
+    birthratekey
+      0.0   3.0
+    endlist
+endnode
+node dummy Portal2_ground 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_hand 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head_hit 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_impact 
+  parent PLC_Portal2 
+endnode
+doneanim default PLC_Portal2 
+
+#MAXANIM ASCII
+newanim on PLC_Portal2 
+ length 0.0333333
+ transtime 0.25
+animroot PLC_Portal2
+node dummy PLC_Portal2 
+  parent NULL 
+endnode
+node trimesh damage 
+  parent PLC_Portal2 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter AuraEmitter01 
+  parent damage 
+    birthratekey
+      0.0   10.0
+      0.0333333   10.0
+    endlist
+endnode
+node emitter AuraEmitter02 
+  parent damage 
+    birthratekey
+      0.0   5.0
+      0.0333333   5.0
+    endlist
+endnode
+node emitter AuraEmitter03 
+  parent damage 
+    birthratekey
+      0.0   3.0
+      0.0333333   3.0
+    endlist
+endnode
+node dummy Portal2_ground 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_hand 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head_hit 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_impact 
+  parent PLC_Portal2 
+endnode
+doneanim on PLC_Portal2 
+
+#MAXANIM ASCII
+newanim off PLC_Portal2 
+ length 0.0333333
+ transtime 0.25
+animroot PLC_Portal2
+node dummy PLC_Portal2 
+  parent NULL 
+endnode
+node trimesh damage 
+  parent PLC_Portal2 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter AuraEmitter01 
+  parent damage 
+    birthratekey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+endnode
+node emitter AuraEmitter02 
+  parent damage 
+    birthratekey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+endnode
+node emitter AuraEmitter03 
+  parent damage 
+    birthratekey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+endnode
+node dummy Portal2_ground 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_hand 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head_hit 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_impact 
+  parent PLC_Portal2 
+endnode
+doneanim off PLC_Portal2 
+
+#MAXANIM ASCII
+newanim on2off PLC_Portal2 
+ length 0.0333333
+ transtime 0.25
+animroot PLC_Portal2
+node dummy PLC_Portal2 
+  parent NULL 
+endnode
+node trimesh damage 
+  parent PLC_Portal2 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter AuraEmitter01 
+  parent damage 
+    birthratekey
+      0.0   10.0
+      0.0333333   0.0
+    endlist
+endnode
+node emitter AuraEmitter02 
+  parent damage 
+    birthratekey
+      0.0   5.0
+      0.0333333   0.0
+    endlist
+endnode
+node emitter AuraEmitter03 
+  parent damage 
+    birthratekey
+      0.0   3.0
+      0.0333333   0.0
+    endlist
+endnode
+node dummy Portal2_ground 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_hand 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head_hit 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_impact 
+  parent PLC_Portal2 
+endnode
+doneanim on2off PLC_Portal2 
+
+#MAXANIM ASCII
+newanim off2on PLC_Portal2 
+ length 0.0333333
+ transtime 0.25
+animroot PLC_Portal2
+node dummy PLC_Portal2 
+  parent NULL 
+endnode
+node trimesh damage 
+  parent PLC_Portal2 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter AuraEmitter01 
+  parent damage 
+    birthratekey
+      0.0   0.0
+      0.0333333   10.0
+    endlist
+endnode
+node emitter AuraEmitter02 
+  parent damage 
+    birthratekey
+      0.0   0.0
+      0.0333333   5.0
+    endlist
+endnode
+node emitter AuraEmitter03 
+  parent damage 
+    birthratekey
+      0.0   0.0
+      0.0333333   3.0
+    endlist
+endnode
+node dummy Portal2_ground 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_hand 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_head_hit 
+  parent PLC_Portal2 
+endnode
+node dummy Portal2_impact 
+  parent PLC_Portal2 
+endnode
+doneanim off2on PLC_Portal2 
+
+donemodel PLC_Portal2 
+
