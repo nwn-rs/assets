@@ -1,0 +1,32 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x0_ice
+filedependancy plc_x0ice.max
+node trimesh Line01
+  parent plc_x0_ice_pwk
+  position -0.140949 -0.0344982 0
+  orientation 0 0 0 0
+  wirecolor 0.425781 0.425781 0.425781
+  ambient 0.421875 0.03125 0.53125
+  diffuse 0.421875 0.03125 0.53125
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 8
+    -0.448196 -0.614856 0
+    0.161953 -0.660053 0
+    0.960419 -0.170427 0
+    1.14874 0.319198 0
+    0.139355 0.869085 0
+    -0.583784 0.530114 0
+    -0.885092 -0.00470785 0
+    -0.493392 -0.268352 0
+  faces 6
+    5 6 7  1  0 0 0  0
+    2 3 4  1  0 0 0  0
+    1 2 4  1  0 0 0  0
+    1 4 5  1  0 0 0  0
+    1 5 7  1  0 0 0  0
+    0 1 7  1  0 0 0  0
+endnode

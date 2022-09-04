@@ -1,0 +1,36 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x24
+filedependancy plc_x0lrgbed.max
+node dummy x24_pwk_use01
+  parent plc_x24_pwk
+  position 0.0119377 -2.00774 0.809583
+  orientation 0 0 0 0
+  wirecolor 0.425781 0.425781 0.425781
+endnode
+node trimesh NoWalkArea
+  parent plc_x24_pwk
+  position -0.0134528 0.126575 0
+  orientation 0 0 -1 -3.13982
+  wirecolor 0.722656 0.722656 0.722656
+  ambient 0.71875 0.890625 0.597656
+  diffuse 0.71875 0.890625 0.597656
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 4
+    1.94207 2.10048 0
+    -1.94207 2.10048 0
+    1.94207 -2.10048 0
+    -1.94207 -2.10048 0
+  faces 2
+    2 0 3  1  0 0 0  0
+    1 3 0  1  0 0 0  0
+endnode
+node dummy x24_pwk_use02
+  parent plc_x24_pwk
+  position 0.0119381 2.16093 0.809583
+  orientation 0 0 0 0
+  wirecolor 0.425781 0.425781 0.425781
+endnode

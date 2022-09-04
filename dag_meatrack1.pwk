@@ -1,0 +1,19 @@
+# Exported from NWmax 0.8 b50 at 11/20/2005 11:28:18 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh NoWalkArea
+  parent dag_meatrack1_pwk
+  position 0.0 0.0130751 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.721569 0.721569 0.721569 
+  bitmap NULL
+  verts 4
+    3.0 -0.3 0.0
+    -3.0 -0.3 0.0
+    3.0 -1.4 0.0
+    -3.0 -1.4 0.0
+  faces 2
+    2 0 3  1  0 0 0  7
+    1 3 0  1  0 0 0  7
+endnode

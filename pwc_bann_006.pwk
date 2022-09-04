@@ -1,0 +1,10 @@
+# Exported from NWmax 0.8 b60 at 2/13/2006 7:44:03 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy 006_pwk_use01
+  parent pwc_bann_006_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.721569 0.894118 0.6 
+endnode

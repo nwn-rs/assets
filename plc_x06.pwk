@@ -1,0 +1,24 @@
+#MAXDOOR ASCII
+# model: PLC_X06_pwk 
+filedependancy PlaceableObjects01.max
+node trimesh PLC_X06_wg 
+  parent PLC_X06_pwk 
+  position 0.00544922 0.215675 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0313726 0.239216 0.541176  
+    bitmap NULL
+    verts 4
+     -0.534536 -0.557383 0.0
+     0.534536 -0.557383 0.0
+     -0.534536 0.557383 0.0
+     0.534536 0.557383 0.0
+    faces 2
+     2 0 3  1  0 0 0  7
+     1 3 0  1  0 0 0  7
+endnode
+node dummy X06_pwk_use01 
+  parent PLC_X06_pwk 
+  position 0.0021671 -0.466108 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.694118 0.580392 0.101961  
+endnode
