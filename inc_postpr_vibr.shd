@@ -1,0 +1,57 @@
+////////////////////////////////////////////////////
+//--------------------------------------------------
+//
+//  Vibrance shader for NWN:EE
+//
+//--------------------------------------------------
+//
+//  Description:
+//
+//  Increase the saturation of areas with low
+//  saturation while leaving highly saturated areas 
+//  unaffected.
+//
+////////////////////////////////////////////////////
+
+#if SHADER_TYPE == 1
+
+void VS_PostProcess_Vibrance()
+{
+	// Nothing.
+}
+
+#else
+
+uniform float Vibrance;
+
+void FS_PostProcess_Vibrance(inout vec4 Color)
+{
+    float fLuma = ColorToLuma(Color.rgb);
+
+    if(fLuma>0.0)
+    {
+
+        float fMax = max(Color.r, max(Color.g, Color.b)); // Find the strongest color
+        float fMin = min(Color.r, min(Color.g, Color.b)); // Find the weakest color
+
+        vec3 ColorOffset = Color.rgb - fMax;
+
+        float fSaturation = (fMax-fMin) / (fMax);
+        
+        ColorOffset *= 1.0 + (1.0-fSaturation) * (1.0-fSaturation) * Vibrance;
+
+        //float fSaturation = (fMax-fMin) / (fMax + fMin);
+        //ColorOffset *= 1.0 + (1.0-fSaturation) * (1.0-fSaturation) * Vibrance * 0.25;
+
+
+        Color.rgb = vec3(fMax)+ColorOffset;
+        Color.rgb = clamp(Color.rgb, 0.0, 1.0);
+
+
+        //Restore luma.
+        Color.rgb *= fLuma/ColorToLuma(Color.rgb);
+		//Color.rgb = vec3(fSaturation);
+    }
+}
+
+#endif

@@ -1,0 +1,4 @@
+ttfContrast 1.15
+ttfOutlineOpacity 0.35
+ttfOutlineBrightness 0.1
+spacingR 0.0
