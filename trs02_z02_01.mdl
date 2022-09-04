@@ -1,0 +1,97 @@
+#MAXMODEL ASCII
+# model: trs02_z02_01
+filedependancy trs02_z02_01.max
+newmodel trs02_z02_01
+setsupermodel trs02_z02_01 NULL
+classification TILE
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom trs02_z02_01
+node dummy trs02_z02_01
+  parent NULL
+endnode
+#Tile trimesh node
+node trimesh ground
+  parent trs02_z02_01
+  position 0.0 0.0 1.6
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.521569 0.231373 0.0313726 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 11
+  center 0.0 0.0 0.0 
+  bitmap trs02_gravel
+  verts 9
+    0.0 5.0 0.0
+    -5.0 5.0 0.0
+    0.0 0.0 0.0
+    -5.0 0.0 0.0
+    0.0 -5.0 0.0
+    -5.0 -5.0 0.0
+    5.0 5.0 0.0
+    5.0 0.0 0.0
+    5.0 -5.0 0.0
+  faces 8
+    0 1 2  1  0 1 2  1
+    3 2 1  1  3 2 1  1
+    2 3 4  1  2 3 4  1
+    5 4 3  1  5 4 3  1
+    6 0 7  1  6 0 7  1
+    2 7 0  1  2 7 0  1
+    7 2 8  1  7 2 8  1
+    4 8 2  1  4 8 2  1
+  tverts 9
+    1.0 2.0 0
+    0.0 2.0 0
+    1.0 1.0 0
+    0.0 1.0 0
+    1.0 0.0 0
+    0.0 0.0 0
+    2.0 2.0 0
+    2.0 1.0 0
+    2.0 0.0 0
+endnode
+node trimesh Plane687
+  parent trs02_z02_01
+  ambient 1 1 1
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 1
+  shadow 0
+  transparencyhint 1
+  rotatetexture 1
+  bitmap trs02_water01
+  verts 4
+      -5.0000000    5.0000000    0.0000000
+      -5.0000000   -5.0000000    0.0000000
+       5.0000000    5.0000000    0.0000000
+       5.0000000   -5.0000000    0.0000000
+  tverts 4
+       6.0000401  -56.0005989  0
+       6.0000401  -59.0005989  0
+       9.0000696  -56.0005989  0
+       9.0000696  -59.0005989  0
+  faces 2
+    0 1 2  1  0 1 2   1
+    3 2 1  1  3 2 1   1
+  position 0 0 4
+  orientation 0 0 0 0
+  alpha 1
+  scale 1
+  selfillumcolor 0 0 0
+endnode
+endmodelgeom trs02_z02_01
+
+donemodel trs02_z02_01
+

@@ -1,0 +1,203 @@
+# gaoneng
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: fx_pdkfear
+filedependancy Unknown
+newmodel fx_pdkfear
+setsupermodel fx_pdkfear NULL
+classification Effect
+#NWmax GEOM  ASCII
+beginmodelgeom fx_pdkfear
+node dummy fx_pdkfear
+  parent NULL
+endnode
+node emitter AuroraEmitter01
+  parent fx_pdkfear
+  position 0 0 0
+  orientation 1 0 0 -6.28319
+  wirecolor 0.603922 0.603922 0.898039 
+  update_sel 1
+  update Fountain
+  render_sel 2
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 5.0
+  ySize 5.0
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.533333004 0.329412013 0.952941
+  colorEnd 0.329412013 0.952941 0.372548997
+  alphaStart 1
+  alphaEnd 1
+  sizeStart 0.2
+  sizeEnd 0
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 6
+  lifeExp 1
+  mass -0.1
+  spread 3.14159
+  particleRot 0
+  velocity 0.15
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_flare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter02
+  parent fx_pdkfear
+  position 0 0 0
+  orientation 1 0 0 -6.28319
+  wirecolor 0.603922 0.603922 0.898039 
+  update_sel 1
+  update Fountain
+  render_sel 2
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 5.0
+  ySize 5.0
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.329412013 0.952941 1
+  colorEnd 0.329412013 0.533333004 0.952941
+  alphaStart 1
+  alphaEnd 1
+  sizeStart 0.2
+  sizeEnd 0
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 6
+  lifeExp 1
+  mass -0.1
+  spread 3.14159
+  particleRot 0
+  velocity 0.1
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_flare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+endmodelgeom fx_pdkfear
+
+#NWmax ANIM ASCII
+newanim default fx_pdkfear
+  length 2.0
+  transtime 0.25
+  animroot fx_pdkfear
+    node dummy fx_pdkfear
+        parent NULL
+    endnode
+    node emitter AuroraEmitter01
+        parent fx_pdkfear
+        alphaStartkey
+            0 0 
+            0.2 1 
+            1.8 1 
+            2.0 0 
+        endlist
+        alphaEndkey
+            0 0 
+            0.2 1 
+            1.8 1 
+            2.0 0 
+        endlist
+        birthratekey
+            0 0 
+            0.2 12
+            1.8 12
+            2.0 0 
+        endlist
+    endnode
+    node emitter AuroraEmitter02
+        parent fx_pdkfear
+        alphaStartkey
+            0 0 
+            0.2 1 
+            1.8 1 
+            2.0 0 
+        endlist
+        alphaEndkey
+            0 0 
+            0.2 1 
+            1.8 1 
+            2.0 0 
+        endlist
+        birthratekey
+            0 0 
+            0.2 12
+            1.8 12
+            2.0 0 
+        endlist
+    endnode
+doneanim duration fx_pdkfear
+
+donemodel fx_pdkfear
