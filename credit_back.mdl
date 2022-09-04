@@ -1,0 +1,40 @@
+#MAXMODEL ASCII
+# model: credit_back
+filedependancy credit_back.max
+newmodel credit_back
+setsupermodel credit_back NULL
+classification character
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom credit_back
+node dummy credit_back
+  parent NULL
+  #part-number 0
+endnode
+node trimesh Plane63
+  parent credit_back
+  #part-number 1
+  ambient 0.0640517026 0.158168003 0.181697994
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -42 30 0
+    -42 -30 0
+    42 30 0
+    42 -30 0
+  tverts 4
+    0.0197471008 0.692354023 0
+    0.0197471008 0.0256875996 0
+    0.0270198993 0.692354023 0
+    0.0270198993 0.0256872997 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 0 0 0.0500000007
+  orientation 0 0 0 0
+endnode
+endmodelgeom credit_back
+
+donemodel credit_back

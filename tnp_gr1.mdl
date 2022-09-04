@@ -1,0 +1,568 @@
+# Exported from NWmax 0.8 b47 at 06/02/2006 4:37:19 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tnp_gr1
+filedependancy Unknown
+newmodel tnp_gr1
+setsupermodel tnp_gr1 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom tnp_gr1
+node dummy tnp_gr1
+  parent NULL
+endnode
+node trimesh Box06
+  parent tnp_gr1
+  position 0.0 0.0 0.0
+  orientation -0.707107 0.0 -0.707107 0.0
+  wirecolor 0.337255 0.337255 0.337255 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.588235 0.588235 0.588235 
+  Diffuse 0.588235 0.588235 0.588235 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center undefined
+  bitmap tbw01_stone1
+  verts 20
+    -1.80288 0.513772 0.615714
+    1.67574 -0.715885 0.406223
+    1.98553 0.506933 0.210188
+    -0.285067 -0.734302 0.737209
+    -1.9437 -0.469465 0.591615
+    0.366382 0.720276 0.0
+    -0.0123842 -0.688135 0.0
+    0.875728 -0.0383833 0.908135
+    -1.7741 -0.45257 0.196771
+    -1.53161 0.571203 0.207464
+    1.76468 0.596927 0.606638
+    1.57144 0.292669 0.0
+    1.2517 0.781645 0.169732
+    1.95693 -0.0661808 0.154877
+    -0.373234 -0.181606 0.92166
+    -2.00234 0.0184311 0.643355
+    1.92487 -0.326111 0.533621
+    -0.093955 0.69238 0.610567
+    0.982533 -0.390985 0.0
+    -0.241203 -0.846025 0.574232
+  faces 36
+    17 7 10  1  11 12 2  1
+    5 6 8  1  11 7 1  2
+    6 19 8  1  10 30 9  5
+    7 16 10  1  12 26 2  1
+    8 9 5  1  1 2 11  2
+    15 14 17  1  23 24 11  1
+    17 10 12  1  5 6 21  6
+    6 5 11  1  7 11 19  2
+    13 1 18  1  23 3 29  2
+    1 19 6  1  4 30 10  5
+    14 15 3  1  24 23 7  1
+    3 16 7  1  7 26 12  1
+    9 8 15  2  16 14 25  3
+    19 4 8  1  30 6 9  5
+    15 0 9  2  25 13 16  3
+    5 9 0  1  10 17 8  6
+    10 16 2  1  15 27 14  4
+    2 12 10  1  9 21 6  6
+    18 11 13  1  29 19 23  2
+    11 12 2  1  19 20 0  2
+    12 11 5  1  20 19 11  2
+    0 12 5  1  8 21 10  6
+    13 2 16  1  22 14 27  4
+    2 13 11  1  0 23 19  2
+    7 14 3  1  12 24 7  1
+    7 17 14  1  12 11 24  1
+    4 15 8  2  15 25 14  3
+    3 15 4  1  7 23 3  1
+    3 1 16  1  7 1 26  1
+    1 13 16  1  18 22 27  4
+    17 0 15  1  11 0 23  1
+    0 17 12  1  8 5 21  6
+    6 18 1  1  10 28 4  5
+    11 18 6  1  19 29 7  2
+    1 3 19  1  4 5 30  5
+    3 4 19  1  5 6 30  5
+  tverts 31
+    0.0 1.0 0
+    1.0 0.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.666667 0
+    0.5 1.0 0
+    0.0 1.0 0
+    0.5 0.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    0.5 0.0 0
+    0.5 1.0 0
+    0.75 0.5 0
+    0.0 1.0 0
+    1.0 0.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 0.666667 0
+    0.25 0.5 0
+    0.25 1.0 0
+    0.25 0.0 0
+    0.5 0.0 0
+    0.0 0.5 0
+    0.5 0.5 0
+    0.5 1.0 0
+    1.0 0.25 0
+    0.25 1.0 0
+    0.75 0.0 0
+    0.25 0.0 0
+    0.5 0.666667 0
+endnode
+node emitter ChunkyWood246
+  parent tnp_gr1
+  position -0.209019 -0.0110022 0.738505
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 5.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName PLC_Chunk_S02
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter ChunkyWood247
+  parent tnp_gr1
+  position -0.209019 -0.0110022 1.33648
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 5.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName PLC_Chunk_S01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fire!151
+  parent tnp_gr1
+  position -0.209019 -0.0110022 0.664461
+  orientation 1.0 0.0 0.0 -4.71239
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 100.0
+  ySize 99.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.439216 0.364706 
+  colorEnd 0.819608 0.796079 0.709804 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 1
+  xgrid 4
+  ygrid 4
+  fps 10
+  frameStart 0
+  frameEnd 24
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node dummy gr1_ground
+  parent tnp_gr1
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.603922 0.72549 0.898039 
+endnode
+node dummy gr1_hand
+  parent tnp_gr1
+  position 0.0 -0.95 1.5
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.603922 0.72549 0.898039 
+endnode
+node dummy gr1_head
+  parent tnp_gr1
+  position 0.0 0.0 3.5
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.560784 0.341176 
+endnode
+node dummy gr1_head_hit
+  parent tnp_gr1
+  position 0.0 0.0 2.5
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.560784 0.341176 
+endnode
+node dummy gr1_impact
+  parent tnp_gr1
+  position 0.0 0.0 1.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.560784 0.882353 
+endnode
+endmodelgeom tnp_gr1
+
+#NWmax ANIM ASCII
+newanim default tnp_gr1
+  length 0.0333333
+  transtime 0.25
+  animroot tnp_gr1
+    node dummy tnp_gr1
+        parent NULL
+    endnode
+    node trimesh Box06
+        parent tnp_gr1
+        positionkey
+            0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node emitter ChunkyWood246
+        parent tnp_gr1
+    endnode
+    node emitter ChunkyWood247
+        parent tnp_gr1
+    endnode
+    node emitter fire!151
+        parent tnp_gr1
+    endnode
+    node dummy gr1_ground
+        parent tnp_gr1
+    endnode
+    node dummy gr1_hand
+        parent tnp_gr1
+    endnode
+    node dummy gr1_head
+        parent tnp_gr1
+    endnode
+    node dummy gr1_head_hit
+        parent tnp_gr1
+    endnode
+    node dummy gr1_impact
+        parent tnp_gr1
+    endnode
+    node dummy tnp_gr1_pwk
+        parent tnp_gr1
+    endnode
+    node pwk pwk
+        parent tnp_gr1_pwk
+    endnode
+doneanim default tnp_gr1
+
+
+#NWmax ANIM ASCII
+newanim damage tnp_gr1
+  length 0.333333
+  transtime 0.25
+  animroot tnp_gr1
+    node dummy tnp_gr1
+        parent NULL
+    endnode
+    node trimesh Box06
+        parent tnp_gr1
+        positionkey
+            0.0 0.0 0.0 0.0
+            0.333333 0.0 0.0 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.1 0.707093 0.707093 0.00617071 -0.0246825
+            0.233333 -0.707093 -0.707093 0.00617071 -0.0246825
+            0.333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node emitter ChunkyWood246
+        parent tnp_gr1
+    endnode
+    node emitter ChunkyWood247
+        parent tnp_gr1
+    endnode
+    node emitter fire!151
+        parent tnp_gr1
+    endnode
+    node dummy gr1_ground
+        parent tnp_gr1
+    endnode
+    node dummy gr1_hand
+        parent tnp_gr1
+    endnode
+    node dummy gr1_head
+        parent tnp_gr1
+    endnode
+    node dummy gr1_head_hit
+        parent tnp_gr1
+    endnode
+    node dummy gr1_impact
+        parent tnp_gr1
+    endnode
+    node dummy tnp_gr1_pwk
+        parent tnp_gr1
+    endnode
+    node pwk pwk
+        parent tnp_gr1_pwk
+    endnode
+doneanim damage tnp_gr1
+
+
+#NWmax ANIM ASCII
+newanim die tnp_gr1
+  length 0.666667
+  transtime 0.25
+  animroot tnp_gr1
+  event 0.0 detonate
+    node dummy tnp_gr1
+        parent NULL
+    endnode
+    node trimesh Box06
+        parent tnp_gr1
+        positionkey
+            0.0 0.0 0.0 0.0
+            0.666667 0.0 0.0 -5.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 -1.19209e-007
+        endlist
+    endnode
+    node emitter ChunkyWood246
+        parent tnp_gr1
+    endnode
+    node emitter ChunkyWood247
+        parent tnp_gr1
+    endnode
+    node emitter fire!151
+        parent tnp_gr1
+    endnode
+    node dummy gr1_ground
+        parent tnp_gr1
+    endnode
+    node dummy gr1_hand
+        parent tnp_gr1
+    endnode
+    node dummy gr1_head
+        parent tnp_gr1
+    endnode
+    node dummy gr1_head_hit
+        parent tnp_gr1
+    endnode
+    node dummy gr1_impact
+        parent tnp_gr1
+    endnode
+    node dummy tnp_gr1_pwk
+        parent tnp_gr1
+    endnode
+    node pwk pwk
+        parent tnp_gr1_pwk
+    endnode
+doneanim die tnp_gr1
+
+
+#NWmax ANIM ASCII
+newanim dead tnp_gr1
+  length 0.0333333
+  transtime 0.25
+  animroot tnp_gr1
+    node dummy tnp_gr1
+        parent NULL
+    endnode
+    node trimesh Box06
+        parent tnp_gr1
+        positionkey
+            0.0 0.0 0.0 -5.0
+            0.0333333 0.0 0.0 -5.0
+        endlist
+    endnode
+    node emitter ChunkyWood246
+        parent tnp_gr1
+    endnode
+    node emitter ChunkyWood247
+        parent tnp_gr1
+    endnode
+    node emitter fire!151
+        parent tnp_gr1
+    endnode
+    node dummy gr1_ground
+        parent tnp_gr1
+    endnode
+    node dummy gr1_hand
+        parent tnp_gr1
+    endnode
+    node dummy gr1_head
+        parent tnp_gr1
+    endnode
+    node dummy gr1_head_hit
+        parent tnp_gr1
+    endnode
+    node dummy gr1_impact
+        parent tnp_gr1
+    endnode
+    node dummy tnp_gr1_pwk
+        parent tnp_gr1
+    endnode
+    node pwk pwk
+        parent tnp_gr1_pwk
+    endnode
+doneanim dead tnp_gr1
+
+donemodel tnp_gr1

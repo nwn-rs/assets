@@ -1,0 +1,945 @@
+#MAXMODEL ASCII
+# model: PLC_Cndl03 
+filedependancy plc_candles.max
+newmodel PLC_Cndl03 
+setsupermodel PLC_Cndl03 NULL
+classification Character
+setanimationscale 1.0
+#MAXGEOM  ASCII
+beginmodelgeom PLC_Cndl03 
+node dummy PLC_Cndl03 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Cndl03 
+  position 0.0 0.0137917 0.504806
+  orientation  1.0 0.0 0.0  -1.5708
+  wirecolor 0.690196 0.101961 0.101961  
+    colorStart 0.47451 0.45098 0.392157  
+    colorEnd 0.760784 0.74902 0.694118  
+    alphaStart 1.0 
+    alphaEnd 0.0 
+    sizeStart 1.0 
+    sizeEnd 0.5 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 24 
+    birthrate 8 
+    spawnType 0 
+    lifeExp 2.5 
+    mass 0.09 
+    spread 2.96706 
+    particleRot 0.5 
+    velocity 1.5 
+    randvel 0.5 
+    fps 10 
+    random 0 
+    inherit 0 
+    inherit_local 1 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 92 
+    ySize 73 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Explosion 
+    render Normal 
+    Blend Normal 
+    update_sel 2 
+    render_sel 1 
+    blend_sel 1 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.2 
+    blastLength 1.0 
+    twosidedtex 1 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_smoke01 
+    xgrid 4 
+    ygrid 4 
+    affectedByWind false 
+    m_isTinted 1 
+    renderorder 0 
+    Splat 0 
+endnode
+node trimesh damage 
+  parent PLC_Cndl03 
+  position 0.000867307 0.0348657 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.603922 0.843137 0.898039  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 0
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 25.0 
+     gizmo SubAnim:Gizmo
+  ambient 0.0705882 0.0 1.0  
+  diffuse 1.0 0.501961 0.643137  
+  specular 0.0 0.0 0.0  
+  shininess 25.0 
+    bitmap NULL
+    verts 12
+     0.195415 0.186216 0.0
+     0.195415 -0.186216 0.0
+     -0.195415 -0.186216 0.0
+     -0.195415 0.186216 0.0
+     0.195415 0.186216 0.5
+     -0.195415 0.186216 0.5
+     -0.195415 -0.186216 0.5
+     0.195415 -0.186216 0.5
+     -0.103944 0.0990513 0.25
+     0.103944 0.0990513 0.25
+     -0.103944 -0.0990513 0.25
+     0.103944 -0.0990513 0.25
+    faces 20
+     0 1 2  1  0 0 0  1
+     2 3 0  1  0 0 0  1
+     4 5 6  1  0 0 0  1
+     6 7 4  1  0 0 0  1
+     0 3 8  1  0 0 0  1
+     8 9 0  1  0 0 0  1
+     9 8 5  1  0 0 0  1
+     5 4 9  1  0 0 0  1
+     3 2 10  1  0 0 0  1
+     10 8 3  1  0 0 0  1
+     8 10 6  1  0 0 0  1
+     6 5 8  1  0 0 0  1
+     2 1 11  1  0 0 0  1
+     11 10 2  1  0 0 0  1
+     10 11 7  1  0 0 0  1
+     7 6 10  1  0 0 0  1
+     1 0 9  1  0 0 0  1
+     9 11 1  1  0 0 0  1
+     11 9 4  1  0 0 0  1
+     4 7 11  1  0 0 0  1
+    tverts 1
+     0.0 0.0 0 
+endnode
+node trimesh Candle01 
+  parent damage 
+  position -0.0116937 -0.0163612 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.34902 0.694118  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 1
+     Shadow 1
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 1.3342 4.95911e-005 28.2762 
+     gizmo SubAnim:Gizmo
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 2.0 
+    bitmap plc_bookcover
+    verts 11
+     0.139721 0.0 0.0
+     0.0431762 0.132883 0.0
+     -0.113037 0.0821259 0.0
+     -0.113037 -0.0821259 0.0
+     0.0431761 -0.132882 0.0
+     0.139721 0.0 0.565525
+     0.0431762 0.132883 0.565525
+     -0.113037 0.0821259 0.539144
+     -0.113037 -0.0821259 0.539144
+     0.0431762 -0.132882 0.548807
+     0.0 0.0 0.537762
+    faces 15
+     0 6 5  1  0 3 2  3
+     0 1 6  1  0 1 3  3
+     1 7 6  1  4 5 6  3
+     1 2 7  1  4 7 5  3
+     2 8 7  1  8 6 9  3
+     2 3 8  1  8 10 6  3
+     3 9 8  1  11 12 13  3
+     3 4 9  1  11 14 12  3
+     4 5 9  1  15 6 16  3
+     4 0 5  1  15 17 6  3
+     10 5 6  1  18 19 20  1
+     10 6 7  1  18 20 21  1
+     10 7 8  1  18 21 22  1
+     10 8 9  1  18 22 23  1
+     10 9 5  1  18 23 19  1
+    tverts 24
+     0.00323411 0.000499576 0 
+     -0.186927 0.000499517 0 
+     0.00323402 0.9995 0 
+     -0.186927 0.9995 0 
+     -0.189905 0.000499576 0 
+     0.0 0.952898 0 
+     -0.189905 0.9995 0 
+     0.0 0.000499517 0 
+     0.0 0.000499547 0 
+     0.0 0.9995 0 
+     -0.189905 0.000499487 0 
+     -0.189905 0.000499517 0 
+     0.0 0.999501 0 
+     -0.189905 0.981911 0 
+     0.0 0.000499457 0 
+     0.0 0.000499696 0 
+     0.0 0.969967 0 
+     -0.189905 0.000499636 0 
+     -0.0849806 -0.1 0 
+     -0.189905 -0.1 0 
+     -0.117404 -0.1999 0 
+     0.0 -0.161742 0 
+     0.0 -0.0382583 0 
+     -0.117404 0.0 0 
+endnode
+node emitter Candleflame 
+  parent damage 
+  position 0.00605281 -0.00936947 0.69059
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.223529 0.0313726 0.533333  
+    colorStart 1.0 1.0 1.0  
+    colorEnd 0.0 0.0 0.0  
+    alphaStart 0.0 
+    alphaEnd 1.0 
+    sizeStart 0.4 
+    sizeEnd 0.4 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 8 
+    birthrate 3 
+    spawnType 0 
+    lifeExp 2.0 
+    mass 0.0 
+    spread 0.0 
+    particleRot 0.0 
+    velocity 0.0 
+    randvel 0.0 
+    fps 16 
+    random 1 
+    inherit 1 
+    inherit_local 0 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 0 
+    ySize 0 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Fountain 
+    render Normal 
+    Blend Lighten 
+    update_sel 1 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_cndl01 
+    xgrid 3 
+    ygrid 3 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node dummy Cndl01_ground 
+  parent PLC_Cndl03 
+  position 0.00363281 -0.0069873 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.0235294 0.0235294  
+endnode
+node dummy Cndl01_hand 
+  parent PLC_Cndl03 
+  position -0.00398926 0.71005 0.263208
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.878431 0.337255 0.337255  
+endnode
+node dummy Cndl01_head 
+  parent PLC_Cndl03 
+  position 0.0182565 0.000933087 0.279722
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.768628 0.345098 0.882353  
+endnode
+node dummy Cndl01_head_hit 
+  parent PLC_Cndl03 
+  position -0.00398926 -0.0108251 0.2639
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.101961 0.694118 0.580392  
+endnode
+node dummy Cndl01_impact 
+  parent PLC_Cndl03 
+  position -0.00398926 -0.011001 0.291433
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+endmodelgeom PLC_Cndl03 
+
+#MAXANIM ASCII
+newanim damage PLC_Cndl03 
+ length 0.133333
+ transtime 0.0
+animroot PLC_Cndl03
+node dummy PLC_Cndl03 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Cndl03 
+endnode
+node trimesh damage 
+  parent PLC_Cndl03 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0244581
+      0.133333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.371336 -0.928463 -0.00810258  0.0469942
+      0.1   -0.599949 0.799969 -0.0104721  0.0436326
+      0.133333   0.0 0.0 0.0  3.57628e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Candle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter Candleflame 
+  parent damage 
+    alphaStartkey
+    endlist
+    alphaEndkey
+    endlist
+    sizeStartkey
+    endlist
+    sizeEndkey
+    endlist
+    birthratekey
+    endlist
+endnode
+node dummy Cndl01_ground 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_hand 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head_hit 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_impact 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_pwk 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_wg 
+  parent PLC_Cndl03_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Cndl03_pwk 
+endnode
+doneanim damage PLC_Cndl03 
+
+#MAXANIM ASCII
+newanim die PLC_Cndl03 
+ length 0.166667
+ transtime 0.0
+animroot PLC_Cndl03
+node dummy PLC_Cndl03 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Cndl03 
+endnode
+node trimesh damage 
+  parent PLC_Cndl03 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.166667  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  5.67028e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Candle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter Candleflame 
+  parent damage 
+    alphaStartkey
+    endlist
+    alphaEndkey
+    endlist
+    sizeStartkey
+    endlist
+    sizeEndkey
+    endlist
+    birthratekey
+    endlist
+endnode
+node dummy Cndl01_ground 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_hand 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head_hit 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_impact 
+  parent PLC_Cndl03 
+endnode
+event 0.0  detonate 
+node dummy PLC_Cndl03_pwk 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_wg 
+  parent PLC_Cndl03_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Cndl03_pwk 
+endnode
+doneanim die PLC_Cndl03 
+
+#MAXANIM ASCII
+newanim dead PLC_Cndl03 
+ length 0.0333333
+ transtime 0.0
+animroot PLC_Cndl03
+node dummy PLC_Cndl03 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Cndl03 
+endnode
+node trimesh damage 
+  parent PLC_Cndl03 
+    positionkey 
+      0.0  0.000867307 0.0348657 -6.95145
+      0.0333333  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Candle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter Candleflame 
+  parent damage 
+    alphaStartkey
+    endlist
+    alphaEndkey
+    endlist
+    sizeStartkey
+    endlist
+    sizeEndkey
+    endlist
+    birthratekey
+    endlist
+endnode
+node dummy Cndl01_ground 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_hand 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head_hit 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_impact 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_pwk 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_wg 
+  parent PLC_Cndl03_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Cndl03_pwk 
+endnode
+doneanim dead PLC_Cndl03 
+
+#MAXANIM ASCII
+newanim default PLC_Cndl03 
+ length 0.0
+ transtime 0.25
+animroot PLC_Cndl03
+node dummy PLC_Cndl03 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Cndl03 
+endnode
+node trimesh damage 
+  parent PLC_Cndl03 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  3.03925e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Candle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter Candleflame 
+  parent damage 
+    alphaStartkey
+      0.0   0.0
+    endlist
+    alphaEndkey
+      0.0   1.0
+    endlist
+    sizeStartkey
+      0.0   0.4
+    endlist
+    sizeEndkey
+      0.0   0.4
+    endlist
+    birthratekey
+      0.0   3.0
+    endlist
+endnode
+node dummy Cndl01_ground 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_hand 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head_hit 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_impact 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_pwk 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_wg 
+  parent PLC_Cndl03_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Cndl03_pwk 
+endnode
+doneanim default PLC_Cndl03 
+
+#MAXANIM ASCII
+newanim on2off PLC_Cndl03 
+ length 0.0333333
+ transtime 0.25
+animroot PLC_Cndl03
+node dummy PLC_Cndl03 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Cndl03 
+endnode
+node trimesh damage 
+  parent PLC_Cndl03 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Candle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter Candleflame 
+  parent damage 
+    alphaStartkey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+    alphaEndkey
+      0.0   1.0
+      0.0333333   0.0
+    endlist
+    sizeStartkey
+      0.0   0.4
+      0.0333333   0.0
+    endlist
+    sizeEndkey
+      0.0   0.4
+      0.0333333   0.0
+    endlist
+    birthratekey
+      0.0   3.0
+      0.0333333   0.0
+    endlist
+endnode
+node dummy Cndl01_ground 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_hand 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head_hit 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_impact 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_pwk 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_wg 
+  parent PLC_Cndl03_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Cndl03_pwk 
+endnode
+doneanim on2off PLC_Cndl03 
+
+#MAXANIM ASCII
+newanim off2on PLC_Cndl03 
+ length 0.0333333
+ transtime 0.25
+animroot PLC_Cndl03
+node dummy PLC_Cndl03 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Cndl03 
+endnode
+node trimesh damage 
+  parent PLC_Cndl03 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Candle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter Candleflame 
+  parent damage 
+    alphaStartkey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+    alphaEndkey
+      0.0   0.0
+      0.0333333   1.0
+    endlist
+    sizeStartkey
+      0.0   0.0
+      0.0333333   0.4
+    endlist
+    sizeEndkey
+      0.0   0.0
+      0.0333333   0.4
+    endlist
+    birthratekey
+      0.0   0.0
+      0.0333333   3.0
+    endlist
+endnode
+node dummy Cndl01_ground 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_hand 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head_hit 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_impact 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_pwk 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_wg 
+  parent PLC_Cndl03_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Cndl03_pwk 
+endnode
+doneanim off2on PLC_Cndl03 
+
+#MAXANIM ASCII
+newanim on PLC_Cndl03 
+ length 0.0333333
+ transtime 0.25
+animroot PLC_Cndl03
+node dummy PLC_Cndl03 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Cndl03 
+endnode
+node trimesh damage 
+  parent PLC_Cndl03 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Candle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter Candleflame 
+  parent damage 
+    alphaStartkey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+    alphaEndkey
+      0.0   1.0
+      0.0333333   1.0
+    endlist
+    sizeStartkey
+      0.0   0.4
+      0.0333333   0.4
+    endlist
+    sizeEndkey
+      0.0   0.4
+      0.0333333   0.4
+    endlist
+    birthratekey
+      0.0   3.0
+      0.0333333   3.0
+    endlist
+endnode
+node dummy Cndl01_ground 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_hand 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head_hit 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_impact 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_pwk 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_wg 
+  parent PLC_Cndl03_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Cndl03_pwk 
+endnode
+doneanim on PLC_Cndl03 
+
+#MAXANIM ASCII
+newanim off PLC_Cndl03 
+ length 0.0333333
+ transtime 0.25
+animroot PLC_Cndl03
+node dummy PLC_Cndl03 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Cndl03 
+endnode
+node trimesh damage 
+  parent PLC_Cndl03 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Candle01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node emitter Candleflame 
+  parent damage 
+    alphaStartkey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+    alphaEndkey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+    sizeStartkey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+    sizeEndkey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+    birthratekey
+      0.0   0.0
+      0.0333333   0.0
+    endlist
+endnode
+node dummy Cndl01_ground 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_hand 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_head_hit 
+  parent PLC_Cndl03 
+endnode
+node dummy Cndl01_impact 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_pwk 
+  parent PLC_Cndl03 
+endnode
+node dummy PLC_Cndl03_wg 
+  parent PLC_Cndl03_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Cndl03_pwk 
+endnode
+doneanim off PLC_Cndl03 
+
+donemodel PLC_Cndl03 
+

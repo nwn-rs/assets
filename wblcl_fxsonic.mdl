@@ -1,0 +1,89 @@
+#MAXMODEL ASCII
+# model: WBlCl_fxsonic 
+filedependancy WBlCl.max
+newmodel WBlCl_fxsonic 
+setsupermodel WBlCl_fxsonic NULL
+classification Item
+#MAXGEOM  ASCII
+beginmodelgeom WBlCl_fxsonic 
+node dummy WBlCl_fxsonic 
+  parent NULL 
+endnode
+node emitter g_WSwGs_V_Sonic 
+  parent WBlCl_fxsonic 
+  position -0.00472351 0.174067 -0.000303899
+  orientation  1.0 -1.28837e-007 1.76945e-007  -1.5708
+  wirecolor 0.6 0.894118 0.6  
+    colorStart 1.0 1.0 1.0  
+    colorEnd 1.0 1.0 1.0  
+    alphaStart 0.7 
+    alphaEnd 0.5 
+    sizeStart 0.33 
+    sizeEnd 0.33 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 0 
+    birthrate 15 
+    spawnType 0 
+    lifeExp 0.5 
+    mass 0.0 
+    spread 0.0 
+    particleRot 3.0 
+    velocity 0.0 
+    randvel 0.0 
+    fps 0 
+    random 0 
+    inherit 1 
+    inherit_local 0 
+    inherit_part 0 
+    inheritvel 0 
+    xsize 0 
+    ysize 0 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Fountain 
+    render Normal 
+    Blend Lighten 
+    update_sel 1 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.2 
+    blurlength 0.2 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 1 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_flare 
+    xgrid 1 
+    ygrid 1 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node reference OmenRef01 
+  parent g_WSwGs_V_Sonic 
+  position -0.00348276 0.000151743 0.234894
+  orientation  -1.0 1.3426e-007 -1.71233e-007  -1.5708
+  wirecolor 0.541176 0.0313726 0.431373  
+  refModel fx_ref 
+  reattachable 0 
+endnode
+endmodelgeom WBlCl_fxsonic 
+
+donemodel WBlCl_fxsonic 
+
