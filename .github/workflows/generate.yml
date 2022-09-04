@@ -56,15 +56,11 @@ jobs:
           mkdir unpacked
       - run: nimble install neverwinter -y
       - name: unpack preview keyfile
-        if: github.event.inputs.release == 'preview'
+        if: github.event.inputs.release == 'preview' || github.event.inputs.release == 'build8193.35'
         run: |
           nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/9334745/data/nwn_base.key unpacked
           cp -r DepotDownloader/DepotDownloader/depots/704451/9334745/lang/en/docs/ docs/
           cp -r DepotDownloader/DepotDownloader/depots/704451/9334745/ovr/ ovr/
-      - name: unpack build8193.35 keyfile
-        if: github.event.inputs.release == 'build8193.35'
-        run: |
-          echo "Not stabalized yet"
       - name: unpack build8193.34 keyfile
         if: github.event.inputs.release == 'build8193.34'
         run: |
@@ -385,7 +381,7 @@ jobs:
           name: wok
           path: wok.zip
       - name: prerelease
-        if: github.event.inputs.release == 'preview'
+        if: github.event.inputs.release == 'preview' || github.event.inputs.release == 'build8193.35'
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
@@ -489,7 +485,6 @@ jobs:
           7z x ${{ matrix.type }}.zip
       - uses: EndBug/add-and-commit@v9
         with:
-          add: "-- . ':!unpacked'"
           message: 'CI: ${{ github.event.inputs.release }}'
           new_branch: '${{ github.event.inputs.release }}/${{ matrix.type }}'
           committer_name: GitHub Actions
