@@ -57,9 +57,9 @@ jobs:
       - name: unpack preview keyfile
         if: github.event.inputs.release == 'preview' || github.event.inputs.release == 'build8193.35'
         run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/9334745/data/nwn_base.key unpacked
-          cp -r DepotDownloader/DepotDownloader/depots/704451/9334745/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/9334745/ovr/ ovr/
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/9443052/data/nwn_base.key unpacked
+          cp -r DepotDownloader/DepotDownloader/depots/704451/9443052/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/9443052/ovr/ ovr/
       - name: unpack build8193.34 keyfile
         if: github.event.inputs.release == 'build8193.34'
         run: |
