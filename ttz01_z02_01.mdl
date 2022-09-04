@@ -1,0 +1,102 @@
+# Exported from NWmax 0.8 b59 at 1/30/2006 3:17:27 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: TTZ01_Z02_01
+#local file: D:\Work_NWN\tilesets\ttz01_Tropical_new\TTZ01_tsc.max
+filedependancy TTZ01_tsc.max
+newmodel TTZ01_Z02_01
+setsupermodel TTZ01_Z02_01 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom TTZ01_Z02_01
+node dummy TTZ01_Z02_01
+  parent NULL
+endnode
+#Tile trimesh node
+node trimesh TTZPlane342
+  parent TTZ01_Z02_01
+  position 0.0 0.0 -2.4
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.109804 0.694118 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 0.658824 0.572549 0.498039 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 0.0 0.0 0.0 
+  bitmap ttz01_watcliff
+  verts 9
+    -5.0 0.0 0.0
+    -5.0 -5.0 0.0
+    0.0 0.0 0.0
+    0.0 -5.0 0.0
+    5.0 0.0 0.0
+    5.0 -5.0 0.0
+    -5.0 5.0 0.0
+    0.0 5.0 0.0
+    5.0 5.0 0.0
+  faces 8
+    0 1 2  1  0 1 2  1
+    3 2 1  1  1 0 3  1
+    2 3 4  1  0 1 2  1
+    5 4 3  1  1 0 3  1
+    6 0 7  1  4 0 5  1
+    2 7 0  1  0 4 2  1
+    7 2 8  1  4 0 5  1
+    4 8 2  1  0 4 2  1
+  tverts 6
+    0.5 0.05 0
+    0.000499517 0.05 0
+    0.5 0.05 0
+    0.000499517 0.05 0
+    0.999501 0.05 0
+    0.999501 0.05 0
+endnode
+#Tile trimesh node
+node trimesh TTZPlane343
+  parent TTZ01_Z02_01
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.109804 0.694118 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 1
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 0.0 0.0 0.0 
+  bitmap ttz01_water01
+  verts 4
+    -5.0 5.0 0.0
+    -5.0 -5.0 0.0
+    5.0 5.0 0.0
+    5.0 -5.0 0.0
+  faces 2
+    0 1 2  1  0 1 2  1
+    3 2 1  1  3 2 1  1
+  tverts 4
+    6.00004 -56.0006 0
+    6.00004 -59.0006 0
+    9.00007 -56.0006 0
+    9.00007 -59.0006 0
+endnode
+endmodelgeom TTZ01_Z02_01
+donemodel TTZ01_Z02_01

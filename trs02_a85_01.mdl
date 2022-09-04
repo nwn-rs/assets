@@ -1,0 +1,144 @@
+# Rewritten by CleanModels 3 Version 3.5.1 Thu Aug 31 20:06:45 2017
+#MAXMODEL ASCII
+filedependency Unknown
+newmodel trs02_a85_01
+  classification TILE
+  setsupermodel trs02_a85_01 NULL
+  setanimationscale 1
+#MAXGEOM ASCII
+beginmodelgeom trs02_a85_01
+node dummy trs02_a85_01
+  parent NULL
+endnode
+node light trs02_a85_01ml1
+  parent trs02_a85_01
+  orientation 0 0 0 0
+  position -1.5 -1.5 16
+  wirecolor 0.419608 0.0313726 0.529412
+  radius 14
+  multiplier 1
+  color 0.639216 0.639216 0.639216
+  ambientonly 0
+  nDynamicType 1
+  affectdynamic 1
+  shadow 0
+  lightpriority 5
+  fadinglight 1
+endnode
+node light trs02_a85_01ml2
+  parent trs02_a85_01
+  orientation 0 0 0 0
+  position 1.5 1.5 16.5
+  wirecolor 0.419608 0.0313726 0.529412
+  radius 5
+  multiplier 1
+  color 0.639216 0.639216 0.639216
+  ambientonly 0
+  nDynamicType 1
+  affectdynamic 1
+  shadow 0
+  lightpriority 5
+  fadinglight 1
+endnode
+node aabb wok
+  parent trs02_a85_01
+  position 0 0 0
+  bitmap NULL
+  orientation 0 0 0 0
+  wirecolor 0.6 0.894118 0.6
+  ambient 0 0 0
+  diffuse 0 0.501961 0
+  specular 0 0 0
+  shininess 10
+  render 0
+  shadow 0
+  verts 4
+    -5 -5 7.5
+    5 -5 7.5
+    -5 5 7.5
+    5 5 7.5
+  faces 2
+    2 0 3 1 0 0 0 19
+    1 3 0 1 0 0 0 19
+  aabb     -5 -5 7.5 5 5 7.5 -1
+    -5 -5 7.5 5 5 7.5 0
+    -5 -5 7.5 5 5 7.5 1
+endnode
+node trimesh ground01
+  parent trs02_a85_01
+  position 0 0 7.5
+  orientation 0 0 0 0
+  wirecolor 0.6 0.894118 0.6
+  tilefade 0
+  scale 1
+  render 1
+  shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1
+  transparencyhint 0
+  selfillumcolor 0 0 0
+  ambient 1 1 1
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 11
+  center 0 0 0
+  bitmap trs02_grass01
+  verts 17
+    -5 -5 0
+    -2.5 -5 0
+    0 -5 0
+    2.5 -5 0
+    5 -5 0
+    -5 -2.5 0
+    0 0 0
+    5 -2.5 0
+    -5 0 0
+    5 0 0
+    -5 2.5 0
+    5 2.5 0
+    -5 5 0
+    -2.5 5 0
+    0 5 0
+    2.5 5 0
+    5 5 0
+  faces 16
+    5 0 6 1 5 0 6 2
+    1 6 0 1 1 6 0 2
+    2 6 1 1 2 6 1 2
+    3 6 2 1 3 6 2 2
+    6 3 7 1 6 3 7 2
+    4 7 3 1 4 7 3 2
+    8 5 6 1 8 5 6 2
+    7 9 6 1 7 9 6 2
+    10 8 6 1 10 8 6 2
+    9 11 6 1 9 11 6 2
+    12 10 13 1 12 10 13 2
+    6 13 10 1 6 13 10 2
+    13 6 14 1 13 6 14 2
+    14 6 15 1 14 6 15 2
+    15 6 16 1 15 6 16 2
+    11 16 6 1 11 16 6 2
+  tverts 17
+    0.000999033 0.00099951 0
+    0.500499 0.000999391 0
+    1 0.000999272 0
+    1.4995 0.000999153 0
+    1.999 0.000999033 0
+    0.000999153 0.5005 0
+    1 1 0
+    1.999 0.500499 0
+    0.000999272 1 0
+    1.999 1 0
+    0.000999391 1.4995 0
+    1.999 1.4995 0
+    0.00099951 1.999 0
+    0.5005 1.999 0
+    1 1.999 0
+    1.4995 1.999 0
+    1.999 1.999 0
+endnode
+endmodelgeom trs02_a85_01
+donemodel trs02_a85_01
+
