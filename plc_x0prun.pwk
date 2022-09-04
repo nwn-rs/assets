@@ -1,0 +1,24 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x0prun
+filedependancy plc_x0runepillr.max
+node trimesh NoWalk
+  parent plc_x0prun_pwk
+  position 0.0960896 0.0499188 0
+  orientation 0 0 0 0
+  wirecolor 0.0273438 0.0273438 0.0273438
+  ambient 0.0234375 0.523438 0.441406
+  diffuse 0.0234375 0.523438 0.441406
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 4
+    0.591687 0.619606 0
+    -0.591687 0.619606 0
+    0.591687 -0.619606 0
+    -0.591687 -0.619606 0
+  faces 2
+    2 0 3  1  0 0 0  0
+    1 3 0  1  0 0 0  0
+endnode
