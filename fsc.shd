@@ -1,0 +1,35 @@
+/*
+
+fsc.shd
+
+*/
+
+
+
+varying lowp vec4 vColorOut;
+varying mediump float fFogFragCoord;
+
+
+uniform lowp vec4 fogColor;
+uniform int fogEnabled;
+uniform int texture0Bound;
+
+void main() {
+
+	lowp vec4 color;
+
+    color = vColorOut;
+
+	// If we have a texture bound, even though there are no texcoords, then the assumption
+	// is that things would have been black in the original.
+    vec4 decal = vec4(0.0,0.0,0.0,1.0);
+    if(texture0Bound == 0)
+    { 
+        decal = vec4(1.0);
+    }
+    color*=decal;
+
+    if(fogEnabled != 0) color.rgb = mix(color.rgb, fogColor.rgb, clamp(fFogFragCoord, 0.0, 1.0));
+
+	gl_FragColor = color;
+}
