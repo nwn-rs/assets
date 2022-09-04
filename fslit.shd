@@ -1,0 +1,45 @@
+/*
+
+fslit.shd
+
+*/
+
+uniform vec3 playerPosition;
+uniform float playerCameraDist;
+uniform vec3 cameraPosition;
+
+uniform int screenWidth = 1920;
+uniform int screenHeight = 1080;
+
+varying highp vec3 vWorldCoord;
+
+#include "inc_keyhole"
+
+uniform sampler2D texUnit0;
+uniform lowp vec4 fogColor;
+uniform int fogEnabled;
+
+uniform int texture0Bound;
+
+varying lowp vec4 vColorOut;
+varying mediump vec2 vTc;
+varying mediump float fFogFragCoord;
+
+void main (void)
+{
+	lowp vec4 color;
+
+    color = vColorOut;
+	vec4 decal = texture2D(texUnit0, vTc.xy);
+    if(texture0Bound == 0)
+    {
+	decal = vec4(1.0);
+    }
+    color*=decal;
+
+    color = DrawKeyhole(color);
+
+    if(fogEnabled != 0) color.rgb = mix(color.rgb, fogColor.rgb, clamp(fFogFragCoord, 0.0, 1.0));
+
+	gl_FragColor = color;
+}

@@ -1,0 +1,29 @@
+/*
+
+vsvtc.shd
+
+*/
+
+uniform highp mat4 m_mvp;
+uniform highp mat4 m_texture;
+
+attribute vec3 vPos;
+attribute vec4 vColor;
+attribute vec2 vTc;
+
+varying vec2 vTcOut;
+varying vec4 vColorOut;
+
+vec2 fRotateTexCoord(vec2 vTexCoord)
+{
+	vec4 vTc4 = vec4(vTexCoord.x, vTexCoord.y, 0, 1);
+	vTc4 = m_texture * vTc4;
+	return vTc4.xy;
+}
+
+void main()
+{
+	gl_Position = m_mvp * vec4(vPos, 1.0);
+	vTcOut = fRotateTexCoord(vTc);
+	vColorOut = vColor;
+}

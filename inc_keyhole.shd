@@ -1,0 +1,262 @@
+uniform int keyholeCanDissolve;
+
+varying highp vec3 vKeyholeNoiseBase;
+
+const float GRAD_VECS_NUM = 12.0;
+
+#ifdef MOBILE
+uniform float alphaTestValue;
+uniform int useAlphaFunc;
+#endif
+
+
+// Keyhole unifroms
+uniform highp int keyholeRadius;
+uniform sampler2D keyholePermutationTable;
+uniform vec3 keyholeGradients[int(GRAD_VECS_NUM)];
+
+
+
+// ========= Start implementation of Symplex noise
+const int PERM_TABLE_SIZE = 512;
+const float MAX_PERM_VALUE = 255.0;
+const float NOISE_BORDER_WIDTH = 0.075;
+// Offset from position of character below which nothing will be dissolved
+const float FLOOR_OFFSET = 0.5;
+// Offset from position of character relatively to camera. We don't want to dissolve stuff that
+// is behind character, but if you almost vertically look on the character you will not see half
+// of the character because character's position is in the middle of character's model. So this
+// offset is not completely solves this problem, but makes it better. With this offset we will dissolve
+// geometry that is slightly behind character.
+const float BEHIND_CHAR_OFFSET = -0.5;
+const float INNER_KEYHOLE_RADIUS_MULTIPLIER = 0.55;
+
+
+const float skewFactorMultipl = 1.0 / 3.0;
+const float unskewFactorMultipl = 1.0 / 6.0;
+
+
+// Get value from permutation table (implemented as texture)
+int PermVal(int index)
+{
+    return int(texture2D(keyholePermutationTable, vec2(float(index) / float(PERM_TABLE_SIZE), 0.0)).a * MAX_PERM_VALUE);
+}
+
+float CornerContrib(const int gradInd, float x, float y, float z)
+{
+    // I don't know what exactly this constant means, it is just a part of
+    // formula to calculate contribution of each angle into the noise.
+    // However, what I do know is that value of this variable influence
+    // on how discontinuity we have in our noise. This value was taken from
+    // original implementation of this algorithm
+    const float sqrR = 0.6;
+
+    float t = sqrR - x * x - y *y - z * z;
+
+    if (t < 0.0)
+        return 0.0;
+
+    return pow(t, 4.0) * dot(keyholeGradients[gradInd], vec3(x, y, z));
+}
+
+// This calculates symplex 3D noise
+float MakeSomeNoise(float x, float y, float z)
+{
+    float skewFactor = (x + y + z) * skewFactorMultipl;
+    // Skew the input and determine cell origin in skewed space
+    int sCellOrigX = int(floor(x + skewFactor));
+    int sCellOrigY = int(floor(y + skewFactor));
+    int sCellOrigZ = int(floor(z + skewFactor));
+
+    float unskewFactor = (float(sCellOrigX) +
+        float(sCellOrigY) +
+        float(sCellOrigZ)) * unskewFactorMultipl;
+
+    // Find unskewed cell origins
+    float cellOrigX = float(sCellOrigX) - unskewFactor;
+    float cellOrigY = float(sCellOrigY) - unskewFactor;
+    float cellOrigZ = float(sCellOrigZ) - unskewFactor;
+
+    // Distance from cell origin to input point
+    float x0 = x - cellOrigX;
+    float y0 = y - cellOrigY;
+    float z0 = z - cellOrigZ;
+
+    // Offsets for second corner of simplex in skewed coords
+    int sCellOrigX1, sCellOrigY1, sCellOrigZ1;
+    // Offsets for third corner of simplex in skewed coords
+    int sCellOrigX2, sCellOrigY2, sCellOrigZ2;
+
+    if (x0 >= y0)
+    {
+        if (y0 >= z0)
+        {
+            sCellOrigX1 = 1;
+            sCellOrigY1 = 0;
+            sCellOrigZ1 = 0;
+
+            sCellOrigX2 = 1;
+            sCellOrigY2 = 1;
+            sCellOrigZ2 = 0;
+        }
+        else if (x0 >= z0)
+        {
+            sCellOrigX1 = 1;
+            sCellOrigY1 = 0;
+            sCellOrigZ1 = 0;
+
+            sCellOrigX2 = 1;
+            sCellOrigY2 = 0;
+            sCellOrigZ2 = 1;
+        }
+        else
+        {
+            sCellOrigX1 = 0;
+            sCellOrigY1 = 0;
+            sCellOrigZ1 = 1;
+
+            sCellOrigX2 = 1;
+            sCellOrigY2 = 0;
+            sCellOrigZ2 = 1;
+        }
+    }
+    else
+    {
+         if (y0 < z0)
+         {
+            sCellOrigX1 = 0;
+            sCellOrigY1 = 0;
+            sCellOrigZ1 = 1;
+
+            sCellOrigX2 = 0;
+            sCellOrigY2 = 1;
+            sCellOrigZ2 = 1;
+         }
+         else if (x0 < z0)
+         {
+            sCellOrigX1 = 0;
+            sCellOrigY1 = 1;
+            sCellOrigZ1 = 0;
+
+            sCellOrigX2 = 0;
+            sCellOrigY2 = 1;
+            sCellOrigZ2 = 1;
+         }
+         else
+         {
+            sCellOrigX1 = 0;
+            sCellOrigY1 = 1;
+            sCellOrigZ1 = 0;
+
+            sCellOrigX2 = 1;
+            sCellOrigY2 = 1;
+            sCellOrigZ2 = 0;
+         }
+    }
+
+    // Offsets for second corner and input point in unskewed coords
+    float x1 = x0 - float(sCellOrigX1) + unskewFactorMultipl;
+    float y1 = y0 - float(sCellOrigY1) + unskewFactorMultipl;
+    float z1 = z0 - float(sCellOrigZ1) + unskewFactorMultipl;
+    // Offsets for third corner and input point in unskewed coords
+    float x2 = x0 - float(sCellOrigX2) + 2.0 * unskewFactorMultipl;
+    float y2 = y0 - float(sCellOrigY2) + 2.0 * unskewFactorMultipl;
+    float z2 = z0 - float(sCellOrigZ2) + 2.0 * unskewFactorMultipl;
+    // Offsets for last corner in (x,y,z) coords
+    float x3 = x0 - 1.0 + 3.0 * unskewFactorMultipl;
+    float y3 = y0 - 1.0 + 3.0 * unskewFactorMultipl;
+    float z3 = z0 - 1.0 + 3.0 * unskewFactorMultipl;
+
+
+    // Work out the hashed gradient indices of the four simplex corners.
+    // Original algorithm contains bitwise AND here, but our version of GLSL is too
+    // old to have this fancy feature, so alternative is to use mod (works only for 0xFF),
+    //  ?\_(?)_/? .
+    // Can't compile this for Adnroid, because there is no overload for mod() with
+    // int arguments, so you have to cast to float
+    const float divisionArg = float(0xFF);
+    int ii = int(mod(float(sCellOrigX), divisionArg));
+    int jj = int(mod(float(sCellOrigY), divisionArg));
+    int kk = int(mod(float(sCellOrigZ), divisionArg));
+
+    int grInd0 = PermVal(kk);
+    grInd0 = PermVal(jj + grInd0);
+    grInd0 = PermVal(ii+ grInd0);
+    grInd0 = int(mod(float(grInd0), GRAD_VECS_NUM));
+
+    int grInd1 = PermVal(kk + sCellOrigZ1);
+    grInd1 = PermVal(jj + sCellOrigY1 + grInd1);
+    grInd1 = PermVal(ii + sCellOrigX1 + grInd1);
+    grInd1 = int(mod(float(grInd1), GRAD_VECS_NUM));
+
+    int grInd2 = PermVal(kk + sCellOrigZ2);
+    grInd2 = PermVal(jj + sCellOrigY2 + grInd2);
+    grInd2 = PermVal(ii + sCellOrigX2 + grInd2);
+    grInd2 = int(mod(float(grInd2), GRAD_VECS_NUM));
+
+    int grInd3 = PermVal(kk + 1);
+    grInd3 = PermVal(jj + 1 + grInd3);
+    grInd3 = PermVal(ii + 1 + grInd3);
+    grInd3 = int(mod(float(grInd3), GRAD_VECS_NUM));
+
+    // Add contributions from each corner to get the final noise value.
+    // The result is scaled to stay just inside [-1,1]
+    return 32.0 *
+    (
+        CornerContrib(grInd0, x0, y0, z0) +
+        CornerContrib(grInd1, x1, y1, z1) +
+        CornerContrib(grInd2, x2, y2, z2) +
+        CornerContrib(grInd3, x3, y3, z3)
+    );
+}
+
+
+vec4 DrawKeyhole(vec4 vColor)
+{
+    if (keyholeCanDissolve == 1)
+    {
+        // Coordinates of fragment relatevie to the screen center
+        highp vec2 coordsVec = vec2(gl_FragCoord.x - float(screenWidth) * 0.5, gl_FragCoord.y - float(screenHeight) * 0.5);
+        float fragToCenterDist = length(coordsVec);
+        float radDiff = float(keyholeRadius) - fragToCenterDist;
+
+        if (radDiff > 0.0)
+        {
+            vec2 fragToCamera  = vWorldCoord.xy - cameraPosition.xy;
+            vec2 plToCam = playerPosition.xy - cameraPosition.xy;
+            float plToCamDist = length(plToCam);
+            // Normalize, we need plToCamDist further
+            vec2 dirCharToCam = plToCam / plToCamDist;
+            float distXY = dot(dirCharToCam, fragToCamera);
+
+            // This function returns value from -1.0 to 1.0,  so we multiply return value by 0.5
+            // and add 0.5 to make it from 0.0 to 1.0
+            float noise = MakeSomeNoise(vKeyholeNoiseBase.x, vKeyholeNoiseBase.y, vKeyholeNoiseBase.z) * 0.5 + 0.5;
+            // So we don't want to dissolve stuff that is behind(or below) the character, but if will just cutoff everything
+            // behind(or below) characte it looks ugly, so instead after some point we start to  gradually increase the noise
+            // so everything behind(or below) character have very high noise level and will not be dissovled
+            // Noise increase for objects that are behind
+            noise += mix(1.0 + NOISE_BORDER_WIDTH, 0.0, smoothstep(0.0, 1.0, plToCamDist - (distXY + BEHIND_CHAR_OFFSET)));
+            // Noise increase for objects that are below
+            noise += mix(1.0 + NOISE_BORDER_WIDTH, 0.0, smoothstep(0.0, 1.0, vWorldCoord.z -  (playerPosition.z + FLOOR_OFFSET)));
+            // Radial gradient from the center of the screen. We compare value of noise with this one to figure out
+            // whether we need to dissolve this fragment or not. So all the values in the center of the gradient will have very high
+            // grad value and are guaranteed to be dissolved, it falls off o the edges.
+            float grad = mix(1.0, 0.0, smoothstep(float(keyholeRadius) * INNER_KEYHOLE_RADIUS_MULTIPLIER,
+                float(keyholeRadius), fragToCenterDist));
+
+            float noiseDiff = grad - noise;
+            
+            if (noiseDiff >= 0.0)
+                discard;        
+            
+            // Draw border
+            if (noiseDiff + NOISE_BORDER_WIDTH > 0.0)
+                vColor.rgb =
+                    mix(vColor.rgb, vec3(0.0), smoothstep(0.0, NOISE_BORDER_WIDTH, NOISE_BORDER_WIDTH + noiseDiff));
+            
+        }
+
+    }
+    return vColor;
+}
