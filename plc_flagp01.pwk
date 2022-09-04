@@ -1,0 +1,30 @@
+#MAXDOOR ASCII
+# model: PLC_FlagP01_pwk 
+filedependancy plc_flags.max
+node trimesh PLC_FlagP01_wg 
+  parent PLC_FlagP01_pwk 
+  position -0.130563 0.0892987 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.694118 0.101961  
+    bitmap NULL
+    verts 4
+     -0.266949 -0.166767 0.0
+     0.566729 -0.166767 0.0
+     -0.266949 0.0707216 0.0
+     0.566729 0.0707216 0.0
+    faces 2
+     2 0 3  1  0 0 0  1
+     1 3 0  1  0 0 0  1
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_FlagP01_pwk 
+  position 0.0229308 -0.318809 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_FlagP01_pwk 
+  position -0.00831638 0.245229 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0235294 0.52549 0.443137  
+endnode

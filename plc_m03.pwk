@@ -1,0 +1,51 @@
+#MAXDOOR ASCII
+# model: PLC_M03_pwk 
+filedependancy PlaceableObjects01.max
+node trimesh PLC_M03_wg 
+  parent PLC_M03_pwk 
+  position 0.000645728 -0.0343652 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.431373 0.0313726  
+  multimaterial 18 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+    bitmap NULL
+    verts 5
+     -0.274182 -0.0808081 0.0
+     0.1544 -0.432241 0.0
+     -0.0535973 0.34864 0.0
+     0.573793 -0.17807 0.0
+     0.517233 0.322184 0.0
+    faces 3
+     1 3 0  1  0 0 0  7
+     2 0 4  1  0 0 0  7
+     4 0 3  1  0 0 0  7
+endnode
+node dummy M03_pwk_use02 
+  parent PLC_M03_pwk 
+  position -0.626116 0.655766 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.694118 0.580392 0.101961  
+endnode
+node dummy M03_pwk_use01 
+  parent PLC_M03_pwk 
+  position 0.442446 -0.924576 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.694118 0.580392 0.101961  
+endnode
