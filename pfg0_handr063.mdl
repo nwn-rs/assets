@@ -1,0 +1,88 @@
+# Exported from NWmax 0.8 b40 at 3/3/2005 10:35:27 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pfg0_handr063
+filedependancy pfg0_handr063.max
+newmodel pfg0_handr063
+setsupermodel pfg0_handr063 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom pfg0_handr063
+node dummy pfg0_handr063
+  parent NULL
+endnode
+node trimesh pfg0_handr063g
+  parent pfg0_handr063
+  position 0.0 0.0 0.0
+  orientation -1.0 0.0 0.0 -3.14159
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 0.960261 -0.883272 5.35974 
+  bitmap pfh0_handl063
+  verts 10
+    -0.0313567 -0.0586975 0.0761576
+    -0.0140908 -0.0246281 0.00280059
+    -0.0117193 0.0410321 0.0984605
+    -0.0166383 0.0274907 0.00274224
+    0.0505619 -0.0478568 0.073166
+    0.0494054 0.037766 0.0808694
+    0.0128923 0.0231406 0.00158369
+    0.0192526 -0.0292807 0.00778453
+    -0.00361391 -0.0272489 0.115481
+    -0.00188398 0.0051021 -0.0082863
+  faces 16
+    1 0 2  1  1 0 2  2
+    2 3 1  1  2 3 1  2
+    5 4 6  1  5 4 6  1
+    7 6 4  1  7 6 4  1
+    2 8 5  1  9 8 10  5
+    4 5 8  1  11 10 8  5
+    3 2 6  1  13 12 6  4
+    5 6 2  1  5 6 12  4
+    1 3 9  1  15 14 16  6
+    6 7 9  1  18 17 16  6
+    8 2 0  1  8 9 19  3
+    7 4 0  1  7 4 0  3
+    1 9 7  1  15 16 17  6
+    6 9 3  1  18 16 14  6
+    8 0 4  1  8 19 11  3
+    7 0 1  1  7 0 1  3
+  tverts 20
+    0.99538 0.275998 0
+    0.475039 0.259983 0
+    0.988899 0.0111091 0
+    0.487964 0.0328482 0
+    0.996448 0.550226 0
+    0.987486 0.813328 0
+    0.473001 0.814205 0
+    0.470249 0.597539 0
+    0.224371 0.461529 0
+    0.00370373 0.0635437 0
+    0.0205904 0.968364 0
+    0.472911 0.960885 0
+    0.979885 0.992847 0
+    0.475657 0.988385 0
+    0.484728 0.204133 0
+    0.496342 0.171714 0
+    0.496316 0.203898 0
+    0.507873 0.202375 0
+    0.49536 0.21257 0
+    0.449847 0.0929894 0
+endnode
+endmodelgeom pfg0_handr063
+donemodel pfg0_handr063

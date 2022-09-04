@@ -1,0 +1,53 @@
+# Exported from NWmax 0.8 b52 at 3/2/2006 9:07:46 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: plc_moss_a03
+#local file: Unknown
+filedependancy Unknown
+newmodel plc_moss_a03
+setsupermodel plc_moss_a03 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom plc_moss_a03
+node dummy plc_moss_a03
+  parent NULL
+endnode
+node trimesh g_moss
+  parent plc_moss_a03
+  position 0.0 0.0 0.001
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.341176 0.694118 0.101961 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center 0.772713 0.0 0.0 
+  bitmap plc_moss_tex
+  verts 4
+    -1.49118 -1.0 0.0
+    1.50664 -1.0 0.0
+    -1.49118 1.0 0.0
+    1.50664 1.0 0.0
+  faces 2
+    2 0 3  1  2 0 3  1
+    1 3 0  1  1 3 0  1
+  tverts 4
+    0.985966 0.56045 0
+    0.985966 1.0012 0
+    0.500364 0.561052 0
+    0.501608 1.0012 0
+endnode
+endmodelgeom plc_moss_a03
+donemodel plc_moss_a03
