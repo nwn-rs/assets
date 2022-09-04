@@ -1,0 +1,22 @@
+//=============================================================================
+//
+// vsvt_sm.shd
+//
+//=============================================================================
+
+#define SHADER_TYPE 1
+
+
+#define LIGHTING 0
+#define FOG 0
+#define KEYHOLING 0
+
+#define NORMAL_MAP 0
+#define ENVIRONMENT_MAP 1
+
+#include "inc_standard"
+
+void main ()
+{
+    ApplyStandardShader();
+}

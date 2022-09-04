@@ -1,0 +1,4 @@
+mipmap 0
+filter 0
+downsamplemax 0
+decal 1                                  
