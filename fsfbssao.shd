@@ -1,0 +1,863 @@
+//----------------------------------------
+//Screen Space Ambient Radiosity, Highlight and Occlusion for NWN:EE
+//
+//Version 1.23
+//
+//By Søren Møller (Zarathustra217)
+//soerenpm@gmail.com
+//
+//----------------------------------------
+//Description:
+//
+//Mimics the ambient light radiation and occlusion that would realistically affect the appearance of objects in a scene, adding to the sense of depth and detail.
+//
+//Setup:
+//
+//For increased fidelity at the cost of some performance, set nSSAOAngularFidelity to 2.
+//
+//To enable radiosity, set SSAO_RADIOSITY to 1.
+//
+//You can also enable various debugging options (see comments below.)
+//
+//Version history:
+//
+//1.0:
+// - Initial release
+//
+//1.10:
+// - Increased precision, realism and fixed a few issues.
+//
+//1.20:
+// - Added ambient highlighting.
+// - Improved the basic algorithms significantly.
+// - Increased the range.
+// - Reorganized debug options to make them simpler to manage.
+// - Disabled radiosity by default to increase performance as the impact on the visuals proved to be minimal.
+// - Fixed issues with alpha blending.
+//
+//1.21
+// - Minor corrections.
+//
+//1.22
+// - Corrected the calculation of perpendicular pixel distance to be more proper.
+// - Set FOV to the correct 45 degrees.
+//
+//1.23
+// - Performance optimizations.
+
+// Set to 1 to enable rendering the vectors used for calculating rays.
+#define SSAO_DEBUG_VECTORS 0
+
+// Set to 1 to enable rendering the calculated normal vector of the current hovered pixel.
+#define SSAO_DEBUG_NORMAL_VECTOR 0
+
+// Set to only render the actually shading on a background of a uniform color. These colors are available:
+// 1 - Black.
+// 2 - Grey
+// 3 - White.
+#define SSAO_DEBUG_COLOR 0
+
+// Set to 1 to enable rendering the calculated normals in the entire scene as colors.
+#define SSAO_DEBUG_NORMALS 0
+
+// Set to 1 to enable rendering the calculated linear depth of the entire scene in greyscale.
+#define SSAO_DEBUG_DEPTH 0
+
+// Set to 1 to enable occlusion and highlight colors being determined by local environment.  Disabled by default for better performance. The effect is usually marginal.
+#define SSAO_RADIOSITY 0
+
+// Set to 1 to enable high quality mode.
+#define SSAO_HIGH_QUALITY_MODE 0
+
+
+#if SSAO_HIGH_QUALITY_MODE == 1
+const int nSSAOAngularFidelity = 2; // Number of angular iterations. Higher increase precision and smoothness at the expense of performance. (Default: 2)
+#else
+const int nSSAOAngularFidelity = 1; // Number of angular iterations. Higher increase precision and smoothness at the expense of performance. (Default: 1)
+#endif
+
+const int nSSAORangeFidelity = 6; // Number of iterations for range precision. (Default: 6)
+const float fSSAOCutOffAngle = 20.0; //Minimum angle for applying occlusion. This should be relatively low as it's faint at this point. (Default: 20.0)
+const float fSSAOIntensity = 0.5; // Intensity of occlusion. General modifier. (Default: 0.5)
+const float fSSAOOcclusionDarkness = 0.15; // Amount of darkening to simulate occlusion. (Default 0.15)
+const float fSSAORange = 20.0; // Range of occlusion. Increasing it should be paired with an increase in range fidelity for the best result. (Default: 20.0)
+const float fSSAONearClip = 0.135; // Gradually fades out occlusion at this proximity. In place because SSAO never look very good up close (Default: 0.135)
+const float fSSAOExposureHighlightIntensity=0.03; // How much high exposure to ambient light should increase brightness. (Default 0.03)
+const float fSSAOOcclusionToHighlightRatio=4.0; // The ratio between highlight and occlusion when both are present at the same pixel. (Default 4.0)
+
+#if SSAO_RADIOSITY == 1
+const float fSSAORadiosity = 1.0; // Amount of coloring from local environment light radiation. (Default: 1.0)
+#endif
+
+const float fSSAOCutOffAngleModifier = tan(radians(fSSAOCutOffAngle)); 
+
+const float fPi= 3.14159;
+const float fFOV = radians(45.0); //Vertical field of view.
+
+const vec4 COLOR_BLACK = vec4(0.0, 0.0, 0.0, 1.0);
+const vec4 COLOR_GREY = vec4(0.5, 0.5, 0.5, 1.0);
+const vec4 COLOR_WHITE = vec4(1.0, 1.0, 1.0, 1.0);
+const vec4 COLOR_RED = vec4(1.0, 0.0, 0.0, 1.0);
+const vec4 COLOR_GREEN = vec4(0.0, 1.0, 0.0, 1.0);
+const vec4 COLOR_BLUE = vec4(0.0, 0.0, 1.0, 1.0);
+
+varying mediump vec2 vTcOut;
+
+uniform sampler2D texUnit0; // Frame buffer
+uniform sampler2D texUnit1; // Depth buffer
+
+//Notice that distance is relative to character, not camera. Ideally we would use fFogFragCoord to determine fog, but this is not accessible in FBO shaders.)
+uniform mediump float fogEnd; // Distance where fog is 100%
+uniform mediump float fogStart;
+varying float fFogFragCoord;
+uniform int fogMode;
+uniform int fogEnabled;
+uniform vec4  fogColor;
+
+uniform float nearClip = 0.1;
+uniform float farClip = 45.0; // Normally this is fogEnd, but whenever there's a skybox it'll be further away.
+uniform int screenWidth = 1920;
+uniform int screenHeight = 1080;
+
+float fResolutionModifier = float(screenHeight) / 1080.0;
+
+// Screen pixel coordinates of the mouse
+uniform ivec2 userinputMousePosition;
+
+vec2 vPixelSize = vec2(1.0/float(screenWidth), 1.0/float(screenHeight));
+float fAspectRatio = vPixelSize.y/vPixelSize.x;
+
+// How wide an angle each pixel on the screen covers.
+float fPixelAngle = fFOV / float(screenHeight);
+                                                                
+//This is the coefficient of distance to a pixel to the perpendicular distance to the neighboring pixel (assuming the same distance and view space).
+float fPixelAngleDistanceCoeff=tan(fPixelAngle);
+
+//Modifier used for calculating distance.
+float fDepthModifier = 1.0 - nearClip/farClip;
+
+float ColorToBrightness(vec4 vColor)
+{
+    return dot(vColor.rgb, vec3(0.3333333, 0.3333333, 0.3333333));    
+}
+
+float Random(vec2 vCoords)
+{
+    return fract(sin(dot(vCoords, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+
+float GetDepth(vec2 vCoords)
+{
+    vCoords = clamp(vCoords, 0.0, 1.0);
+    float fDepth = texture2D(texUnit1, vCoords).x;
+    fDepth = nearClip / (1.0 - fDepth*fDepthModifier);
+    return fDepth;
+}
+
+float GetDepthInverse(vec2 vCoords)
+{
+    vCoords = clamp(vCoords, 0.0, 1.0);
+    float fDepth = texture2D(texUnit1, vCoords).x;
+    fDepth = (1.0 - fDepth*fDepthModifier)/nearClip;
+    return fDepth;
+}
+
+vec3 DirectionViewToPerspective(vec3 vDirection, vec2 vCoords)
+{
+
+    vec2 vOffset = vec2((vCoords.x-0.5)*fAspectRatio, (vCoords.y-0.5));
+    vDirection.xy = vDirection.xy - vDirection.z * sin(vOffset*fFOV);
+    return vDirection;
+}
+
+vec3 DirectionPerspectiveToView(vec3 vDirection, vec2 vCoords)
+{
+    vec2 vOffset = vec2((vCoords.x-0.5)*fAspectRatio, (vCoords.y-0.5));
+    vDirection.xy = vDirection.xy + vDirection.z * sin(vOffset*fFOV);
+    return vDirection;
+}
+
+float ColorToPerceivedBrightness(vec4 vColor)
+{
+    return dot(vColor.rgb, vec3(0.299, 0.587, 0.114)); //Quick formula. 
+}
+
+float GetPerpendicularPixelDistance(float fDistance, vec2 vCoords)
+{
+    //Fast version. More correct would be using length and taking delta tan between pixel and pixel before.
+    return fDistance * fPixelAngleDistanceCoeff * (1.0 + 0.1 * max(abs(2.0*vCoords.x-1.0)*fAspectRatio, abs(2.0*vCoords.y-1.0)));
+}
+
+vec3 GetNormalVector(vec2 vCoords)
+{
+    
+    vec3 vNormal = vec3 (0.0, 0.0, 0.0);
+    float fPixelDistance= GetDepth(vCoords); 
+    float fPerpendicularPixelDistance = GetPerpendicularPixelDistance(fPixelDistance, vCoords);
+    
+    
+    vec3 vSurfaceVectorH=vec3(0.0,0.0,0.0);
+    vec3 vSurfaceVectorV=vec3(0.0,0.0,0.0);
+    float fDistanceDelta = 0.0;
+    for(int i = 0; i <2; i++)
+    {
+        vec2 vOffset = vec2 (0.0, 0.0);
+        if( i == 0)
+        {
+            vOffset = vec2(vPixelSize.x, 0.0); 
+        }
+        else
+        {
+            vOffset = vec2(0.0, vPixelSize.y); 
+        }
+        float fNegPixelDistanceDelta = GetDepth(vCoords - vOffset)-fPixelDistance;
+        float fPosPixelDistanceDelta = GetDepth(vCoords + vOffset)-fPixelDistance;
+        if(abs(fNegPixelDistanceDelta)<abs(fPosPixelDistanceDelta))
+        {
+            //Negative pixel is closest.
+            fDistanceDelta = -fNegPixelDistanceDelta;
+        }
+        else
+        {
+            fDistanceDelta = fPosPixelDistanceDelta;
+             
+        }
+        if(i == 0)
+        {
+            vSurfaceVectorH=vec3(fPerpendicularPixelDistance,0.0,fDistanceDelta);
+            vSurfaceVectorH=DirectionPerspectiveToView(vSurfaceVectorH, vCoords);
+      }
+        else
+        {
+            vSurfaceVectorV=vec3(0.0,fPerpendicularPixelDistance,fDistanceDelta);
+            vSurfaceVectorV=DirectionPerspectiveToView(vSurfaceVectorV, vCoords);
+         }
+      
+    }
+
+    vNormal = cross(vSurfaceVectorV, vSurfaceVectorH);
+    vNormal = normalize (vNormal);
+    
+    return vNormal;
+}
+
+vec3 GetPerspectiveNormalVector(vec2 vCoords)
+{
+    vec3 vNormal = DirectionViewToPerspective(GetNormalVector(vCoords), vCoords);
+    return normalize(vNormal);
+}
+
+vec4 NormalVectors()
+{
+    vec4 vColor = vec4 (0.0, 0.0, 0.0, 1.0);
+    vec3 vNormal = GetNormalVector(vTcOut);
+    vColor.r = 0.5+0.5*vNormal.x;
+    vColor.g = 0.5+0.5*vNormal.y;
+    vColor.b = 0.5+0.5*vNormal.z;
+    return vColor;
+}
+
+vec4 Depth()
+{
+    
+    float fDepth = GetDepth(vTcOut) / farClip;
+    vec4 vColor = vec4(fDepth, fDepth, fDepth, 1.0);
+    return vColor;
+}
+
+
+float GetAngleDelta(float fAngle1, float fAngle2)
+{
+    float fAngleDelta = abs(fAngle1-fAngle2);
+    if(fAngleDelta>fPi)
+    {
+        fAngleDelta = 2*fPi - fAngleDelta;
+    }
+    return fAngleDelta;
+}
+
+vec4 DrawCrosshair(vec4 vColor, vec2 vCoords, float fSize, vec4 vDrawColor)
+{
+    vec2 vTcOutScaled=vec2(vTcOut.x*fAspectRatio, vTcOut.y);
+    vec2 vOriginScaled=vec2(vCoords.x*fAspectRatio, vCoords.y);
+    vec2 vOffset = vTcOutScaled - vOriginScaled;
+    float fDistance=length(vOffset);
+    //Draw a crosshair.
+    if(abs(vOffset.y)<vPixelSize.y || abs(vOffset.x)<vPixelSize.x)
+    {
+        if(fDistance<=fSize*vPixelSize.x)
+        {
+            vColor = vDrawColor;
+        }
+    }
+    return vColor;
+}
+
+vec4 DrawVector(vec4 vColor, vec2 vOrigin, vec3 vDraw, vec3 vDrawColor)
+{
+    float fDrawLength = length(vDraw);
+    vDraw = normalize(vDraw);
+
+    vec2 vTcOutScaled=vec2(vTcOut.x*fAspectRatio, vTcOut.y);
+    vec2 vOriginScaled=vec2(vOrigin.x*fAspectRatio, vOrigin.y);
+    vec2 vOffset = vTcOutScaled - vOriginScaled;
+    float fDistance=length(vOffset);
+
+    if(fDistance>fDrawLength) 
+    {
+        return vColor;
+    } 
+    float fDrawAngle = asin (vDraw.y / length(vDraw.xy));
+    if(vDraw.x<0.0)
+    {
+        fDrawAngle = fPi - fDrawAngle;
+    }
+    float fOffsetAngle = asin (vOffset.y / fDistance);
+    if(vOffset.x<0.0)
+    {
+       fOffsetAngle = fPi - fOffsetAngle;
+    }
+    if(abs(vDraw.z)<0.01)
+    {
+        //Prevents divide by zero and makes a circle that appears as a line.
+        float fOffsetAngleCircle = fOffsetAngle;
+        if(fOffsetAngleCircle>fDrawAngle)
+        {
+            fOffsetAngleCircle-=radians(90.0);
+        }
+        else
+        {
+            fOffsetAngleCircle+=radians(90.0);
+        }
+        float fCircleAngleDelta = GetAngleDelta(fDrawAngle,fOffsetAngleCircle);
+        float fToleranceCircle = radians(max(1.0, 1.0+2.0*abs(vDraw.z)) / (fDistance / fDrawLength)); 
+
+        //Check if vector to point is parallel to draw vector. 
+        if(fCircleAngleDelta<abs(fToleranceCircle) && fDistance<0.50*fDrawLength)
+        {
+            return vec4(vDrawColor.x, vDrawColor.y, vDrawColor.z, 1.0);
+        } 
+    }
+    else
+    {
+        //Draw a circle ortogonal to the vector.
+        //As the dot product should be 0, we can calculate the desired Z value. I.e.
+        // vDraw.x * vOffset. x + vDraw.y * vOffset.y + vDraw.z * vOffset.z = 0.0
+        vec3 vDrawCircle=vDraw;
+        float fZ = dot(vDrawCircle.xy, vOffset) / -vDrawCircle.z;
+        vec3 vOffset3 = vec3 (vOffset.x, vOffset.y, fZ);
+        //Check if within certain range.
+        float fToleranceCircle=fDrawLength*0.002 + vPixelSize.x / abs(vDraw.z);
+        if(length(vOffset3)+fToleranceCircle>0.48*fDrawLength&&length(vOffset3)<0.50*fDrawLength) 
+        {
+            return vec4(vDrawColor.x, vDrawColor.y, vDrawColor.z, 1.0);
+        } 
+    }
+    
+    fDrawLength *=length(vDraw.xy);
+    if(fDistance>fDrawLength) 
+    {
+        return vColor;
+    } 
+
+    float fTolerance = radians(max(1.0, (0.5/length(vDraw.xy)*(2.0 - 2.0 * vDraw.z * fDistance/ fDrawLength)))/ (fDistance / fDrawLength)); 
+    //Adjut to depth
+    //Check if vector to point is parallel to draw vector. 
+    if(GetAngleDelta(fDrawAngle,fOffsetAngle)<fTolerance)
+    {
+        vColor.xyz = vDrawColor;
+    } 
+    return vColor;
+} 
+
+vec4 DrawNormalVector(vec4 vColor, vec2 vCoords)
+{
+    vec3 vDraw = GetPerspectiveNormalVector(vCoords);
+    float fDepth = GetDepth(vCoords);
+    vec3 vDrawColor = vec3(vDraw.x*0.5 + 0.5, vDraw.y*0.5 + 0.5, -vDraw.z*0.5 + 0.5);
+    vColor = DrawVector(vColor, vCoords, 1.5*vDraw/(fDepth), vDrawColor);
+    return vColor;
+}
+
+vec4 DrawSSAOVectors(vec4 vColor, vec2 vCoords)
+{
+    float fDepth = GetDepth(vCoords);
+    float fDepthInverse = 1.0 / fDepth;
+    float fPerpendicularPixelDistance = GetPerpendicularPixelDistance(fDepth, vCoords);
+
+    vec3 vNormal = GetNormalVector(vCoords);
+    vec3 vOffset=vec3(0.0, 0.0, 0.0);
+    vec3 vOcclusion = vec3(0.0, 0.0, 0.0);
+    int nIterations = 4 * nSSAOAngularFidelity;
+    float fAngleIterationSize = fPi * 0.5 / float(nSSAOAngularFidelity);
+
+    float fAngle=fAngleIterationSize;
+    float fOffset1 = cos(fAngle);
+    float fOffset2 = sqrt(1.0-fOffset1*fOffset1); //sin(fAngle);
+
+    int nAngularIteration = 0;
+    float fMaxRange = fResolutionModifier * fSSAORange * 45.0 / (fDepth);
+    int nRangeFidelity = nSSAORangeFidelity;
+    float fIterationRange = fMaxRange / float(nRangeFidelity);
+
+    float fToleranceModifier = 0.0;
+    vec2 vOcclusionCoordsOffset = vec2(0.0, 0.0);
+    float fMinimumRange = 2.0;
+    ////////// ITERATE ANGLES //////////
+
+    while(nAngularIteration < nIterations)
+    {
+        if(nAngularIteration == 4)
+        {
+            nIterations-=4;
+            nAngularIteration-=4;
+            vOffset = cos(fAngleIterationSize) * vOffset + sin(fAngleIterationSize) * cross(vOffset, vNormal); //That's what math says! Rotate by fAngle around vNormal.
+            vOcclusion = normalize(DirectionViewToPerspective(vOffset, vCoords));
+            fToleranceModifier = sqrt(1-(vOcclusion.z * vOcclusion.z)) * fSSAOCutOffAngleModifier; //Optimization courtesy of Sherincall.
+            vOcclusionCoordsOffset = vPixelSize * vOcclusion.xy;
+        }
+        else if(nAngularIteration == 0)
+        {
+            vOffset = cross(vec3(fOffset1, fOffset2, 0.0), vNormal);
+            vOcclusion = normalize(DirectionViewToPerspective(vOffset, vCoords));
+            fToleranceModifier = sqrt(1-(vOcclusion.z * vOcclusion.z)) * fSSAOCutOffAngleModifier; 
+            vOcclusionCoordsOffset = vPixelSize * vOcclusion.xy;
+
+        }
+        else if(nAngularIteration == 2)
+        {
+            //vOffset = cross(vNormal, vOffset);
+            vOffset = cross(vNormal, vOffset);
+            vOcclusion = normalize(DirectionViewToPerspective(vOffset, vCoords));
+            fToleranceModifier = sqrt(1-(vOcclusion.z * vOcclusion.z)) * fSSAOCutOffAngleModifier; 
+            vOcclusionCoordsOffset = vPixelSize * vOcclusion.xy;
+
+        }
+        else //nAngularIteration 1 or 3
+        {
+            vOcclusion = -vOcclusion;
+            vOcclusionCoordsOffset = -vOcclusionCoordsOffset;
+        }
+
+        ////////// ITERATE RANGE //////////
+
+        vec2 vOcclusionCoords = vCoords;
+        float fIterationRangeThis=fIterationRange;
+        float fRange=fIterationRangeThis;
+        int nRangeIteration=1;
+        bool bRangeExtend=true;
+        float fOcclusionRange = 0.0;
+        float fOcclusionActualRange = 0.0;
+        float fOcclusionDelta = 0.0;
+        while(nRangeIteration<=nSSAORangeFidelity) 
+        {
+            float fActualRange = fPerpendicularPixelDistance * fRange;
+            vec2 vOcclusionCoordsThis = vCoords + vOcclusionCoordsOffset * fRange;
+            float fExpectedDepth = vOcclusion.z * fActualRange + fDepth;
+
+            float fDepthDelta = GetDepth(vOcclusionCoordsThis)-fExpectedDepth;
+
+            float fTolerance = max(fPerpendicularPixelDistance, fActualRange * fToleranceModifier);
+            
+            if(abs(fDepthDelta)>fTolerance)
+            {
+                vOcclusionCoords = vOcclusionCoordsThis;
+                fOcclusionDelta = fDepthDelta;
+                fOcclusionRange = fRange;
+                fOcclusionActualRange = fActualRange;
+                //Stop extending.
+                bRangeExtend=false;
+                //Search closer.
+                fIterationRangeThis=-fIterationRangeThis;
+            }
+            if(!bRangeExtend)
+            {
+                fIterationRangeThis*=0.5;
+            }
+            fRange+=fIterationRangeThis;
+            fIterationRangeThis=abs(fIterationRangeThis);
+            if(fIterationRangeThis<fMinimumRange || fRange<fMinimumRange)
+            {
+
+                break;
+            }
+            nRangeIteration++;
+        }
+        if(fOcclusionRange == 0.0)
+        {
+            fOcclusionRange = fMaxRange;
+        }
+        else
+        {
+            vColor=DrawCrosshair(vColor, vOcclusionCoords, 250.0 * fDepthInverse, COLOR_RED * fOcclusionDelta * fMaxRange / fOcclusionRange - COLOR_BLUE * fOcclusionDelta * fMaxRange / fOcclusionRange);
+
+            vec3 vOcclusionIdeal = vOcclusion + DirectionViewToPerspective(vNormal, vOcclusionCoords);
+            vColor = DrawVector(vColor, vCoords, vPixelSize.y*vOcclusionIdeal*abs(fOcclusionRange), 0.75*COLOR_GREEN.rgb);
+            vColor = DrawCrosshair(vColor, vCoords + vOcclusionIdeal.xy*vPixelSize* fOcclusionRange, 250.0 * fDepthInverse, COLOR_GREEN);
+        }
+        vec3 vDrawColor = normalize(vOcclusion);
+        vDrawColor = vec3(vDrawColor.x*0.5 + 0.5, vDrawColor.y*0.5 + 0.5, -vDrawColor.z*0.5 + 0.5);
+        vColor = DrawVector(vColor, vCoords, vPixelSize.y*vOcclusion*abs(fOcclusionRange), vDrawColor);
+        
+        nAngularIteration++;
+    }
+    return vColor;
+}
+
+vec4 SSAO(vec4 vColor)
+{
+    #if SSAO_DEBUG_COLOR == 0
+    //Don't waste time on things that are already black.
+    if(all(equal(vColor.xyz, COLOR_BLACK.xyz)))
+    {
+        return vColor;
+    }
+    #else
+    vec4 vColorOriginal = vColor;
+    #endif
+
+    vec2 vCoords = vTcOut;
+    float fDepth = GetDepth(vCoords);
+ 
+    #if SSAO_DEBUG_COLOR == 1
+    vec4 vColorDebug = COLOR_BLACK;
+    #elif SSAO_DEBUG_COLOR == 2
+    vec4 vColorDebug = COLOR_GREY;
+    #elif SSAO_DEBUG_COLOR == 3
+    vec4 vColorDebug = COLOR_WHITE;
+    #endif
+
+    float fNearClip = fSSAONearClip*45.0;
+
+    if(fDepth<=fNearClip)
+    {
+        #if SSAO_DEBUG_COLOR != 0
+        return vColorDebug;
+        #else
+        return vColor;
+        #endif
+    }
+    
+    //Due to how rarely this occur, it actually just reduce performance, so commented out.
+    /*if(fogEnd<=fDepth)
+    {
+        return vColor;
+    }*/
+
+    float fPerpendicularPixelDistance = GetPerpendicularPixelDistance(fDepth, vCoords);
+
+    vec3 vNormal = GetNormalVector(vCoords);
+    vec3 vOffset=vec3(0.0, 0.0, 0.0);
+    vec3 vOcclusion = vec3(0.0, 0.0, 0.0);
+    int nIterations = 4 * nSSAOAngularFidelity;
+    float fAngleIterationSize = fPi * 0.5 / float(nSSAOAngularFidelity);
+
+
+    #if SSAO_RADIOSITY == 1
+    vec4 vRadiosityColor = COLOR_BLACK;
+    #else
+    vec4 vRadiosityColor = vColor;
+    #endif
+
+    #if SSAO_HIGH_QUALITY_MODE == 1
+    float fRandom = Random(vCoords);
+    #else
+    float fRandom = 0.333333 * floor(Random(vCoords)*3.0) ; //Faster.
+    #endif
+
+    float fAngle=fAngleIterationSize * fRandom;
+    float fOffset1 = cos(fAngle);
+    float fOffset2 = sqrt(1.0-fOffset1*fOffset1); //sin(fAngle);
+
+    int nAngularIteration = 0;
+    float fMaxRange = fResolutionModifier * (fSSAORange) * 45.0 / fDepth;
+    float fIterationRange = fMaxRange / float(nSSAORangeFidelity);
+
+    float fOcclusionTotal=0.0;
+    float fExposureTotal = 0.0;
+    float fRangeToOpenEdge = fMaxRange;
+    float fRangeToClosedEdge = fMaxRange;
+    float fToleranceModifier = 0.0;
+    vec2 vOcclusionCoordsOffset = vec2(0.0, 0.0);
+    float fMinimumRange = 2.0;
+
+    ////////// ITERATE ANGLES //////////
+
+    while(nAngularIteration < nIterations)
+    {
+        if(nAngularIteration == 4)
+        {
+            nIterations-=4;
+            nAngularIteration-=4;
+            vOffset = cos(fAngleIterationSize) * vOffset + sin(fAngleIterationSize) * cross(vOffset, vNormal); //That's what math says! Rotate by fAngle around vNormal.
+            vOcclusion = normalize(DirectionViewToPerspective(vOffset, vCoords));
+            fToleranceModifier = sqrt(1-(vOcclusion.z * vOcclusion.z)) * fSSAOCutOffAngleModifier; //Optimization courtesy of Sherincall.
+            vOcclusionCoordsOffset = vPixelSize * vOcclusion.xy;
+        }
+        else if(nAngularIteration == 0)
+        {
+            vOffset = cross(vec3(fOffset1, fOffset2, 0.0), vNormal);
+            vOcclusion = normalize(DirectionViewToPerspective(vOffset, vCoords));
+            fToleranceModifier = sqrt(1-(vOcclusion.z * vOcclusion.z)) * fSSAOCutOffAngleModifier; 
+            vOcclusionCoordsOffset = vPixelSize * vOcclusion.xy;
+
+        }
+        else if(nAngularIteration == 2)
+        {
+            vOffset = cross(vNormal, vOffset);
+            vOcclusion = normalize(DirectionViewToPerspective(vOffset, vCoords));
+            fToleranceModifier = sqrt(1-(vOcclusion.z * vOcclusion.z)) * fSSAOCutOffAngleModifier; 
+            vOcclusionCoordsOffset = vPixelSize * vOcclusion.xy;
+
+        }
+        else //nAngularIteration 1 or 3
+        {
+            vOcclusion = -vOcclusion;
+            vOcclusionCoordsOffset = -vOcclusionCoordsOffset;
+        }
+
+        ////////// ITERATE RANGE //////////
+
+        vec2 vOcclusionCoords = vCoords;
+        float fIterationRangeThis=fIterationRange;
+        float fRange=fIterationRangeThis;
+        int nRangeIteration=1;
+        bool bRangeExtend=true;
+        float fOcclusionRange = 0.0;
+        float fOcclusionActualRange = 0.0;
+        float fOcclusionDelta = 0.0;
+        while(nRangeIteration<=nSSAORangeFidelity) 
+        {
+            float fActualRange = fPerpendicularPixelDistance * fRange;
+            vec2 vOcclusionCoordsThis = vCoords + vOcclusionCoordsOffset * fRange;
+            float fExpectedDepth = vOcclusion.z * fActualRange + fDepth;
+
+            float fDepthDelta = GetDepth(vOcclusionCoordsThis)-fExpectedDepth;
+
+            float fTolerance = max(fPerpendicularPixelDistance, fActualRange * fToleranceModifier);
+            
+            if(abs(fDepthDelta)>fTolerance)
+            {
+                vOcclusionCoords = vOcclusionCoordsThis;
+                fOcclusionDelta = fDepthDelta;
+                fOcclusionRange = fRange;
+                fOcclusionActualRange = fActualRange;
+                //Stop extending.
+                bRangeExtend=false;
+                //Search closer.
+                fIterationRangeThis=-fIterationRangeThis;
+            }
+            if(!bRangeExtend)
+            {
+                fIterationRangeThis*=0.5;
+            }
+            fRange+=fIterationRangeThis;
+            fIterationRangeThis=abs(fIterationRangeThis);
+            if(fIterationRangeThis<fMinimumRange || fRange<fMinimumRange)
+            {
+
+                break;
+            }
+            nRangeIteration++;
+        }
+
+        ////////// EVALUATE DETECTED EDGE //////////
+
+        if(sign(fOcclusionRange)==1.0)
+        {
+             // Power of two is necessary to have the same total between vector pointing directly towards an edge and having two with an angle.
+            float fOcclusion = pow(1.0 - 0.8 * fOcclusionRange/fMaxRange, 2.0);
+            vec3 vOcclusionIdeal = vOcclusion + DirectionViewToPerspective(vNormal, vOcclusionCoords);
+            
+            if (sign(fOcclusionDelta)==-1.0)
+            {
+                fOcclusionDelta += 0.707*fToleranceModifier * fOcclusionActualRange/fSSAOCutOffAngleModifier;
+                fOcclusionDelta = min(0.0, fOcclusionDelta);
+                float fOcclusionRangeOffset = (fOcclusionRange + 3.0);
+                float fIdealDelta = 1.0;
+                if(fOcclusionDelta<0.0)
+                {
+                    //Compensates for overlapping objects. 
+                    fIdealDelta -= (fOcclusionDelta) * 0.5 * (fOcclusionRangeOffset);
+                }
+
+                float fDelta = (GetDepth(vCoords + vOcclusionCoordsOffset * fOcclusionRangeOffset) - fDepth);
+                fDelta -= fOcclusionRangeOffset * fPerpendicularPixelDistance * (vOcclusionIdeal.z);
+                if(sign(fDelta)==-1.0)
+                {
+                    fIdealDelta *= 1.0 - fDelta * (fOcclusionRangeOffset) * 0.5;
+                } 
+                fIdealDelta=pow(fIdealDelta, 3.0);
+
+
+                //Compare with ideal corner of 45 degrees to soften lower angles.
+                float fExpectedDepthDelta = vOcclusionIdeal.z * fOcclusionActualRange + fDepth;
+                fDelta = GetDepth(vCoords + vOcclusionIdeal.xy*vPixelSize* fOcclusionRange) - fExpectedDepthDelta;
+                //Only deal with positive values (i.e. longer away than the ideal) as overlaps are better dealt with using the method above.
+                if(sign(fDelta)==1.0)
+                {
+                    fIdealDelta +=3.375 * fDelta / (fOcclusionActualRange);
+                }
+                fOcclusion*=1.0/(fIdealDelta);
+                if(fOcclusion>0.01)
+                {
+                    fRangeToClosedEdge=min(fRangeToClosedEdge, fOcclusionRange);
+                    fOcclusionTotal+=fOcclusion;
+                }
+            }
+            else
+            {
+                fRangeToOpenEdge=min(fRangeToOpenEdge, fOcclusionRange);
+                fExposureTotal+=fOcclusion;
+                #if SSAO_RADIOSITY == 1
+                fOcclusionRange = fMaxRange; //Sets the point we want to read radiosity at below to be at maximum range.
+                #endif
+            } 
+            #if SSAO_RADIOSITY == 1
+            vec4 vOcclusionColorThis=(texture2D(texUnit0, vCoords + vOcclusionIdeal.xy*vPixelSize* fOcclusionRange));
+            vRadiosityColor+=vOcclusionColorThis*fOcclusion;
+            #endif
+        }
+        nAngularIteration++;
+    }
+
+    ////////// CALCULATE TOTALS AND APPLY //////////
+
+    if(sign(fExposureTotal)==1.0||sign(fOcclusionTotal)==1.0)
+    {
+        fExposureTotal *= 0.25 / float(nSSAOAngularFidelity);
+        fExposureTotal += sqrt (fExposureTotal); // Combine with linear.
+        fOcclusionTotal *= 0.25 / float(nSSAOAngularFidelity);
+        fOcclusionTotal += sqrt (fOcclusionTotal); // Combine with linear.
+        
+        float fExposureOcclusionDelta=fExposureTotal-fOcclusionTotal * fSSAOOcclusionToHighlightRatio;
+        if(sign(fExposureOcclusionDelta)!=0.0)
+        {
+            if(sign(fExposureOcclusionDelta)==-1.0)
+            {
+                fExposureOcclusionDelta/=fSSAOOcclusionToHighlightRatio;
+            }
+
+            if(abs(fExposureOcclusionDelta)<0.01)
+            {
+                #if SSAO_DEBUG_COLOR != 0
+                vColor = vColorDebug;
+                #endif
+                return vColor;
+
+            }
+
+
+            fExposureOcclusionDelta=fExposureOcclusionDelta*0.965+sign(fExposureOcclusionDelta) * 0.035;
+
+            #if SSAO_RADIOSITY == 1
+            vRadiosityColor /= (fOcclusionTotal+fExposureTotal);
+            #endif 
+            float fFogModifier=0.0;
+            if(fogEnabled!=0)
+            {
+                fFogModifier = (fDepth-fogStart) / (fogEnd - fogStart);
+                fFogModifier = fFogModifier-0.05; // Decrease to make slightly more smooth transition.
+                if(sign(fFogModifier) == 1.0)
+                {
+                    fFogModifier=clamp(fFogModifier, 0.0, 0.99);
+                    #if SSAO_DEBUG_COLOR == 0
+                    if(fFogModifier>=0.99)
+                    {
+                        return vColor;
+                    }
+                    #endif
+                    //Remove fog.
+                    vColor = (vColor - fogColor*fFogModifier)/(1.0-fFogModifier);
+                    #if SSAO_RADIOSITY == 1
+                    vRadiosityColor = (vRadiosityColor - fogColor*fFogModifier)/(1.0-fFogModifier);
+                    #endif
+                    if(fogEnd<farClip) // Signifies a skybox.
+                    {
+                        fExposureOcclusionDelta/=(1.0 + fFogModifier*fFogModifier*4.0); // Fade out if having a skybox. Probably won't be needed if we get something similar to fFogFragCoord.
+                    }
+
+                }
+            }
+            fExposureOcclusionDelta = fExposureOcclusionDelta * min(1.0, (fDepth-fNearClip)*0.25);
+
+
+            if(fRangeToOpenEdge<fMaxRange && fRangeToClosedEdge<fMaxRange)
+            {
+                fExposureOcclusionDelta*=min(1.0, (fRangeToOpenEdge * fRangeToClosedEdge)/fMaxRange);
+
+            }
+
+            fExposureOcclusionDelta*=fSSAOIntensity;
+            if(sign(fExposureOcclusionDelta)==-1.0)
+            {
+                fExposureOcclusionDelta*=fSSAOOcclusionDarkness;
+            } 
+            else
+            {
+                fExposureOcclusionDelta*=fSSAOExposureHighlightIntensity;
+            }
+            #if SSAO_RADIOSITY == 1
+            //Dividing by brightness provides a non-relative adjustment while still preserving hue and saturation. Cut-off at 0.2 to prevent precision issues.
+            vColor *= 1.0 + fExposureOcclusionDelta / max(ColorToBrightness(vColor), 0.2);
+            vRadiosityColor = mix(vColor, vRadiosityColor, abs(fExposureOcclusionDelta)* fSSAORadiosity);
+            //Restores perceived brightness.
+            vColor = vRadiosityColor * ColorToPerceivedBrightness(vColor)/ColorToPerceivedBrightness(vRadiosityColor);
+
+            #else
+            //Dividing by brightness provides a non-relative adjustment while still preserving hue and saturation. Cut-off at 0.2 to prevent precision issues.
+            vColor *= max(1.0 + fExposureOcclusionDelta / max(ColorToBrightness(vColor), 0.2), 0.0);
+            #endif
+
+            //Re-apply fog.
+            if(sign(fFogModifier)==1.0)
+            {
+                vColor = mix(vColor, fogColor, fFogModifier);
+            }
+
+            vColor = clamp(vColor, 0.0, 1.0);
+            #if SSAO_DEBUG_COLOR != 0
+            vColor += vColorDebug - vColorOriginal;
+            vColor = clamp(vColor, 0.0, 1.0);
+            #endif
+        }
+        #if SSAO_DEBUG_COLOR != 0
+        else vColor = vColorDebug;
+        #endif
+    }
+    #if SSAO_DEBUG_COLOR != 0
+    else vColor = vColorDebug;
+    #endif
+    return vColor;
+}
+
+
+void main()
+{
+    vec4 vColor = texture2D(texUnit0, vTcOut);
+    float fAlpha = vColor.a;
+
+    vColor = SSAO(vColor);
+
+    #if SSAO_DEBUG_NORMALS == 1
+    vColor = NormalVectors();
+    #endif
+
+    #if SSAO_DEBUG_DEPTH == 1
+    vColor = Depth();
+    #endif
+
+    #if SSAO_DEBUG_VECTORS == 1
+    vColor = DrawSSAOVectors(vColor, vPixelSize * vec2 (float(userinputMousePosition.x), float(userinputMousePosition.y)));
+    #endif
+
+    #if SSAO_DEBUG_NORMAL_VECTOR == 1
+    vColor = DrawNormalVector(vColor, vPixelSize * vec2 (float(userinputMousePosition.x), float(userinputMousePosition.y)));
+    #endif
+
+
+    vColor.a = fAlpha; // This should always be preserved as other shaders might need it.
+    gl_FragColor = vColor;
+    
+}

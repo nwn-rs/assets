@@ -1,0 +1,34 @@
+/*
+
+vsvt_sm.shd
+
+*/
+
+uniform highp mat4 m_mvp;
+uniform highp mat4 m_texture;
+uniform vec4 globalColor;
+
+uniform vec4  materialFrontDiffuse;
+
+attribute vec3 vPos;
+attribute vec2 vTcIn;
+
+varying vec2 vTcOut;
+varying vec4 vColorOut;
+varying vec4 vPosOut;
+
+vec2 fRotateTexCoord(vec2 vTexCoord)
+{
+	vec4 vTc4 = vec4(vTexCoord.x, vTexCoord.y, 0, 1);
+	vTc4 = m_texture * vTc4;
+	return vTc4.xy;
+}
+
+void main()
+{
+	vPosOut = m_mvp * vec4(vPos, 1.0);
+	gl_Position = vPosOut;
+	vTcOut = fRotateTexCoord(vTcIn);
+	vColorOut = globalColor * materialFrontDiffuse;
+}
+

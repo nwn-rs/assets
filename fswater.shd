@@ -1,0 +1,224 @@
+varying vec4 vColorOut;
+varying vec4 vWorldPos;
+varying vec4 vCameraPos;
+varying float fFogFragCoord;
+
+uniform sampler2D   texUnit0;
+uniform samplerCube texUnit1;
+uniform sampler2D   texUnit2;
+
+uniform float fogEnd;
+uniform float fogStart;
+uniform vec4  fogColor;
+uniform int   fogMode;
+uniform int   fogEnabled;
+
+uniform int screenWidth;
+uniform int screenHeight;
+
+uniform int sceneCurrentFrame;
+uniform int worldtimerTimeOfDay;
+uniform int moduleYear;
+uniform int moduleMonth;
+uniform int moduleDay;
+uniform int moduleHour;
+
+const int MAX_WINDS=32;
+uniform int windPointSourcesCount;
+uniform vec3 windPointSourcesPosition[MAX_WINDS];
+uniform float windPointSourcesRadius[MAX_WINDS];
+uniform float windPointSourcesIntensity[MAX_WINDS];
+uniform float windPointSourcesTimeRemaining[MAX_WINDS];
+
+uniform int moduleDawnHour;
+uniform int moduleDuskHour;
+uniform int moduleMinutesPerHour;
+
+uniform vec3 areaGlobalWind;
+uniform float areaWeatherDensity;
+#define NWAREA_FLAG_INTERIOR            0x0001
+#define NWAREA_FLAG_UNDERGROUND         0x0002
+#define NWAREA_FLAG_NATURAL             0x0004
+uniform int areaFlags;
+#define NWAREA_WEATHER_CLEAR            0
+#define NWAREA_WEATHER_RAIN             1
+#define NWAREA_WEATHER_SNOW             2
+uniform int areaWeatherType;
+
+
+//
+// CONFIG
+//
+// Global speed-up or slowdown for animations
+const float ANIMATION_SPEED_MULTIPLIER = 1.0;
+
+// Recommended values 1..10, higher is prettier but slower.
+const int WAVE_ITERATIONS = 5;
+
+// Water glossyness and light reflections
+const float GLOSSSYNESS = 100.0;
+
+// How much should we use the texture in the cubemap, as opposed to generated.
+// Higher values mean the game texture is more visible in the end result.
+// Note that we still generate the waves to apply over the texture, so even with
+// a value 1.0 this will improve the base shader due to the waves.
+const float NWN_CUBEMAP_TEXTURE_FRACTION = 0.7;
+
+
+float calc_total_wind()
+{
+    float wind = length(areaGlobalWind);
+    vec3 pos = vWorldPos.xyz/vWorldPos.w;
+    for (int i = 0; i < windPointSourcesCount; i++)
+    {
+        // Skip creature wind effects as they have disproportionate intensities
+        if (windPointSourcesRadius[i] < 1.1)
+            continue;
+
+        float dist = abs(distance(pos, windPointSourcesPosition[i]));
+        float wind_strength = windPointSourcesIntensity[i] * clamp(windPointSourcesTimeRemaining[i], 0.0, 1.0);
+
+        wind += abs(wind_strength / (dist*dist));
+    }
+    return wind;
+}
+float total_wind = calc_total_wind();
+
+float tick = (worldtimerTimeOfDay/1000.0) * ANIMATION_SPEED_MULTIPLIER;
+
+float noon = (moduleDawnHour + moduleDuskHour) / 2.0;
+float minutes = (1.0 * mod(worldtimerTimeOfDay / 60000, moduleMinutesPerHour)) / moduleMinutesPerHour;
+vec3 sun_or_moon_position()
+{
+    float north_south = 0.0;
+    float east_west = noon - (moduleHour + minutes);
+    return vec3(north_south, 3.0*east_west, 100.0);
+}
+float sun_or_moon_light()
+{
+    return clamp(1.0 - abs(noon - (moduleHour + minutes))/12.0, 0.0, 1.0);
+}
+
+/*
+// TODO: Extra hue basid on the hour.
+vec3 sun_or_moon_color()
+{
+    if (moduleHour > moduleDuskHour && moduleHour < moduleDawnHour)
+    {
+        return vec3(0.5, 0.5, 0.7);
+    }
+    else
+    {
+        return vec3(0.7, 0.5, 0.5);
+    }
+}
+*/
+
+//
+// TODO: Optimize for perf..somehow. The hash/noise functions are by far the
+// biggest offenders. Perhaps a noise texture instead?
+//
+vec2 hash( vec2 p ) {
+    p = vec2(dot(p,vec2(127.1,311.7)), dot(p,vec2(269.5,183.3)));
+    return -1.0 + 2.0*fract(sin(p)*43758.5453123);
+}
+
+float noise( in vec2 p ) {
+    const float K1 = 0.366025404;
+    const float K2 = 0.211324865;
+    vec2 i = floor(p + (p.x+p.y)*K1);
+    vec2 a = p - i + (i.x+i.y)*K2;
+    vec2 o = (a.x>a.y) ? vec2(1.0,0.0) : vec2(0.0,1.0);
+    vec2 b = a - o + K2;
+    vec2 c = a - 1.0 + 2.0*K2;
+    vec3 h = max(0.5-vec3(dot(a,a), dot(b,b), dot(c,c) ), 0.0 );
+    vec3 h2 = h*h;
+    vec3 n = h2*h2*vec3( dot(a,hash(i+0.0)), dot(b,hash(i+o)), dot(c,hash(i+1.0)));
+    return dot(n, vec3(70.0));
+}
+
+float waves(vec2 pos)
+{
+    // Matrix to iterate over neighboring cells
+    const mat2 M = mat2( 0.72, -1.60,  1.60,  0.72 );
+
+    float wave = sin(pos.x + pos.y + tick)*(noise(pos) + .5*noise(pos*M) + .25*noise(pos*M*M));
+
+    float amp = 1.0;
+    vec2 shift = vec2(.32*tick, .24*tick);
+    for (int i = 0; i < WAVE_ITERATIONS; i++)
+    {
+        pos = M*pos*.9;
+        wave -= amp * abs(sin((noise(pos + shift))));
+        amp *= .6;
+        shift *=-1.3;
+    }
+
+    return wave;
+}
+
+
+void main()
+{
+    vec2 xy = (vWorldPos.xy/vWorldPos.w);
+
+    // Higher values mean calmer water
+    vec2 wave = (xy*2.0)/(4.5+2*total_wind);
+
+    // Displacement for wave movement
+    wave += (total_wind+0.1)*tick/10.0;
+
+    // Base color of the water
+    vec3 color = vColorOut.rgb;
+    float light = sun_or_moon_light(); // base light
+    if (areaWeatherType == NWAREA_WEATHER_RAIN)
+    {
+        float weather_modifier = areaWeatherDensity / 100.0;
+        color *= 1.0 - (weather_modifier * 0.6);
+        //wave  *= 1.0 + (weather_modifier * 0.2);
+        light *= 1.0 - (weather_modifier * 0.5);
+    }
+    else if (areaWeatherType == NWAREA_WEATHER_SNOW)
+    {
+        float weather_modifier = areaWeatherDensity / 100.0;
+        color *= 1.0 + (weather_modifier * 0.3);
+        //wave  *= 1.0 + (weather_modifier * 0.2);
+        light *= 1.0 - (weather_modifier * 0.2);
+    }
+
+    float w1 = waves(vec2(wave.x, wave.y+.01));
+    float w2 = waves(vec2(wave.x, wave.y-.01));
+    float w3 = waves(vec2(wave.x+.01, wave.y));
+    float w4 = waves(vec2(wave.x-.01, wave.y));
+    vec3 normal = normalize(vec3(w4-w3, w2-w1, .125));
+
+    vec2 uv = xy*0.1 + normal.xy*light;
+
+    vec3 light_direction = normalize(sun_or_moon_position() - vec3(uv, 1.0));
+    float grad = dot(normal, light_direction);
+
+    color += ((grad-1.0)*0.5+1.0) * .05;
+    color += pow(grad, GLOSSSYNESS);
+    color *= light;
+    color *= 0.5;
+
+    // Merge with NWNs cubemap water, but using our wavey normal
+    vec4 texColor = texture2D(texUnit0, uv);
+    vec4 cubeColor = textureCube(texUnit1, normal);
+    color = mix(color, vColorOut.rgb * texColor.rgb * cubeColor.rgb, NWN_CUBEMAP_TEXTURE_FRACTION);
+
+    // Merge water and fog
+    if (fogEnabled != 0)
+    {
+        if (fogMode == 0)
+        {
+          float fog = (fogEnd - fFogFragCoord) / (fogEnd - fogStart);
+          fog = clamp(fog, 0.0, 1.0);
+          color = mix(fogColor.rgb, color, fog);
+        }
+        //else if ( fogMode == 1 ) { }
+        //else if ( fogMode == 2 ) { }
+    }
+
+    gl_FragColor.rgba = vec4(color, texColor.a);
+}

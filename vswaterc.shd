@@ -1,0 +1,139 @@
+const int MAX_LIGHTS=8;
+
+vec4 Ambient;
+vec4 Diffuse;
+vec4 Specular;
+
+attribute vec4 vPos;
+attribute vec4 vColor;
+attribute vec3 vNormal;
+
+uniform highp mat4 m_mvp;
+uniform highp mat4 m_mv;
+uniform highp mat4 m_m;
+uniform highp mat3 m_normal;
+
+uniform lowp		vec4 lightAmbient			[MAX_LIGHTS];
+uniform lowp		vec4 lightDiffuse			[MAX_LIGHTS];
+uniform lowp		vec4 lightSpecular			[MAX_LIGHTS];
+uniform mediump		vec4 lightPosition			[MAX_LIGHTS];
+uniform mediump		float lightQuadraticAtten	[MAX_LIGHTS];
+
+uniform mediump	vec4  materialFrontAmbient;
+uniform mediump	vec4  materialFrontDiffuse;
+uniform mediump	vec4  materialFrontSpecular;
+uniform mediump	vec4  materialFrontEmissive;
+uniform mediump	float materialFrontShininess;
+
+uniform lowp		vec4 frontLightModelProductSceneColor;
+
+uniform int numLights;
+
+varying mediump vec4 vColorOut;
+varying mediump vec4 vWorldPos;
+varying mediump vec4 vCameraPos;
+varying mediump float fFogFragCoord;
+
+
+void pointLight(in int i, in vec3 normal, in vec3 eye, in vec3 ecPosition3)
+{
+	float nDotVP;       // normal . light direction
+	float nDotHV;       // normal . light half vector
+	float pf;           // power factor
+	float attenuation;  // computed attenuation factor
+	float d;            // distance from surface to light source
+	vec3  VP;           // direction from surface to light position
+	vec3  halfVector;   // direction of maximum highlights
+	
+	// Compute vector from surface to light position
+	VP = vec3 (lightPosition[i]) - ecPosition3;
+	
+	// Compute distance between surface and light position
+	d = length(VP);
+	
+	// Normalize the vector from surface to light position
+	VP = normalize(VP);
+	
+	// Compute attenuation
+	attenuation = 1.0 / (1.0 + lightQuadraticAtten[i] * d * d);			
+
+	halfVector = normalize(VP + eye);
+
+	nDotVP = max(0.0, dot(normal, VP));
+	nDotHV = max(0.0, dot(normal, halfVector));
+
+	if (nDotVP == 0.0)
+	{
+		pf = 0.0;
+	}
+	else
+	{
+		pf = pow(nDotHV, materialFrontShininess);
+
+	}
+	Ambient  += lightAmbient[i] * attenuation;
+	Diffuse  += lightDiffuse[i] * nDotVP * attenuation;
+	Specular += lightSpecular[i] * pf * attenuation;
+}
+
+float ffog(in float ecDistance)
+{
+	return(abs(ecDistance));
+}
+
+vec3 fnormal(void)
+{
+	//Compute the normal
+	vec3 normal = m_normal * vNormal;
+	normal = normalize(normal);
+	return normal;
+}
+
+void flight(in vec3 normal, in vec4 ecPosition, float alphaFade)
+{
+	vec4 color;
+	vec3 ecPosition3;
+	vec3 eye;
+
+	ecPosition3 = (vec3 (ecPosition)) / ecPosition.w;
+	eye = vec3 (0.0, 0.0, 1.0);
+
+	// Clear the light intensity accumulators
+	Ambient  = vec4 (0.0);
+	Diffuse  = vec4 (0.0);
+	Specular = vec4 (0.0);
+
+	for(int i = 0; i < numLights; i++) {
+		pointLight(i, normal, eye, ecPosition3);
+	}
+
+
+	color = frontLightModelProductSceneColor +
+	Ambient * materialFrontAmbient +
+	Diffuse * materialFrontDiffuse + vColor;
+	color += materialFrontEmissive;
+
+	color = clamp( color, 0.0, 1.0 );
+	vColorOut = color;
+	
+	vColorOut.a *= alphaFade * materialFrontDiffuse.a;
+}
+
+
+void main (void)
+{
+	vec3  transformedNormal;
+	float alphaFade = 1.0;
+	
+	// Eye-coordinate position of vertex, needed in various calculations
+	vec4 ecPosition = m_mv * vPos;
+	
+	// Do fixed functionality vertex transform
+	gl_Position = m_mvp * vPos;
+	transformedNormal = fnormal();
+	flight(transformedNormal, ecPosition, alphaFade);
+	fFogFragCoord = ffog(ecPosition.z);
+	
+	vCameraPos = ecPosition;
+	vWorldPos = m_m * vPos;
+}

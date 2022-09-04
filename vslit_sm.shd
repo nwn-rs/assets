@@ -1,0 +1,200 @@
+/*
+
+vslit_sm.shd
+
+*/
+
+#define PI 3.14159265359
+
+const int MAX_LIGHTS=8;
+
+attribute vec4 vPos;
+attribute vec2 vTcIn;
+attribute vec3 vNormal;
+
+uniform highp mat4 m_mvp;
+uniform highp mat4 m_mv;
+uniform highp mat3 m_normal;
+uniform highp mat4 m_texture;
+
+uniform int fogEnabled;
+uniform mediump float fogEnd;
+uniform mediump float fogStart;
+
+uniform lowp		vec4 lightAmbient			[MAX_LIGHTS];
+uniform lowp		vec4 lightDiffuse			[MAX_LIGHTS];
+uniform mediump		vec4 lightPosition			[MAX_LIGHTS];
+uniform mediump		float lightQuadraticAtten	[MAX_LIGHTS];
+
+uniform mediump	vec4  materialFrontAmbient;
+uniform mediump	vec4  materialFrontDiffuse;
+uniform mediump	vec4  materialFrontEmissive;
+
+uniform lowp		vec4 frontLightModelProductSceneColor;
+
+uniform int numLights;
+
+varying vec2 vTc;
+varying vec4 vColorOut;
+varying float fFogFragCoord;
+varying vec2 vTcEnv;
+
+uniform highp mat4 m_m;
+
+varying highp vec3 vWorldCoord;
+varying highp vec4 viewPosition;
+
+uniform int keyholeCanDissolve;
+
+varying highp vec3 vKeyholeNoiseBase;
+
+const float WORLD_COORDS_MOD_LIMIT = 35.0;
+
+void SetKeyholeNoiseBase(vec4 vCoords)
+{
+    if(keyholeCanDissolve == 1)
+    {
+        highp mat4 tempM = m_m;
+        tempM[3] = mod(tempM[3], WORLD_COORDS_MOD_LIMIT);
+        vKeyholeNoiseBase = (tempM * vCoords).xyz;
+    }
+}
+
+
+vec3 AmbientLight = vec3(0.0);
+vec3 DiffuseLight = vec3(0.0);
+//This type has no color attribute.
+#define StaticLight vec4(0.0, 0.0, 0.0, 1.0)
+
+// Often doesn't look good with vertex lighting, left here for experimenting.
+#define SPECULAR_ENABLED 0
+
+#if SPECULAR_ENABLED == 1
+vec3 SpecularLight = vec3(0.0);
+vec3 EyeToSurfaceNorm;
+//uniform mediump vec4 materialFrontSpecular;
+//uniform mediump float materialFrontShininess;
+//float fShininess = materialFrontShininess;
+
+float fSpecularity = 0.1;
+float fShininess = 12.0;
+
+//Using diffuse light for now.
+//uniform lowp        vec4 lightSpecular          [MAX_LIGHTS];
+#endif
+
+
+
+void pointLight(in int i, in vec3 normal, in vec3 viewPosition)
+{
+
+    float fDotVP;       // normal . light direction
+    float attenuation;  // computed attenuation factor
+    float d;            // distance from surface to light source
+    vec3 VP;           // direction from surface to light position
+
+    // Compute vector from surface to light position
+    VP = vec3(lightPosition[i]) - viewPosition;
+
+    attenuation = 1.0;
+    if(lightQuadraticAtten[i]>0.000000001) // Below is area lighting.
+    {
+        // Compute our squared distance between surface and light position
+        d = dot(VP, VP);
+        attenuation = 1.0 / (1.0 + lightQuadraticAtten[i] * d);
+    }
+
+    VP = normalize(VP);
+    fDotVP = max(0.0, dot(normal, VP));
+
+    if(fDotVP != 0.0)
+    {
+        DiffuseLight += lightDiffuse[i].rgb * fDotVP * attenuation;
+        #if SPECULAR_ENABLED == 1
+        vec3 HV = normalize(VP - EyeToSurfaceNorm);
+        float fDotHV = max(0.0, dot(normal, HV));
+        //Latter is for energy-conservation. Monte Carlo based as (n+2)/(2pi)
+        float fSpecularIntensity = pow(fDotHV, fShininess) * (fShininess * 0.5 / PI + 1.0 / PI );
+        SpecularLight += min(fDotVP*4.0, 1.0) * lightDiffuse[i].rgb * fSpecularIntensity * attenuation;
+        //Using diffuse light element rather than specular until properly set up.
+        //SpecularLight += min(fDotVP*4.0, 1.0) * lightSpecular[i].rgb * fSpecularIntensity * attenuation;
+        #endif
+    }
+    AmbientLight += lightAmbient[i].rgb * attenuation;
+}
+
+vec4 computeLighting(in vec3 normal, in vec3 viewPosition3, float alphaFade)
+{
+    vec4 color;
+
+    #if SPECULAR_ENABLED == 1
+    EyeToSurfaceNorm = normalize(viewPosition3);
+    #endif
+
+	AmbientLight = StaticLight.rgb;
+	
+    for (int i = 0; i < numLights; i++) {
+        pointLight(i, normal, viewPosition3);
+    }
+
+    color.rgb = 
+                frontLightModelProductSceneColor.rgb +
+                materialFrontEmissive.rgb +
+                AmbientLight * materialFrontAmbient.rgb +
+    #if SPECULAR_ENABLED == 1
+                mix(DiffuseLight * materialFrontDiffuse.rgb, SpecularLight, fSpecularity);
+    #else
+                DiffuseLight * materialFrontDiffuse.rgb;
+    #endif
+
+    color.a = StaticLight.a * alphaFade * materialFrontDiffuse.a;
+
+    // Clamp to reduce over-exposure.
+    color = clamp(color, 0.0, 1.0);
+    return color;
+}
+
+float ffog(in float viewDistance)
+{
+    //Make sure to not to clamp this in the vertex stage as we need to be able to get within boundaries through interpolation.
+    //Taking absolute value of distance is important for some GUI elements.
+    return (fogEnabled == 0) ? 0.0 : (abs(viewDistance)-fogStart) / (fogEnd - fogStart);
+}
+
+vec3 fnormal(void)
+{
+    //Compute the normal
+    vec3 normal = m_normal * vNormal;
+    normal = normalize(normal);
+    return normal;
+}
+
+vec4 RotateVector(vec4 vVec, mat4 mMat)
+{
+	return mMat * vVec;
+}
+
+void main (void)
+{
+	vec3  transformedNormal;
+	float alphaFade = 1.0;
+
+	// Eye-coordinate position of vertex, needed in various calculations
+    viewPosition = m_mv * vPos;
+
+    SetKeyholeNoiseBase(vPos);
+    vWorldCoord = (m_m * vPos).xyz;
+
+	// Do fixed functionality vertex transform
+	gl_Position = m_mvp * vPos;
+	transformedNormal = fnormal();
+	vColorOut = computeLighting(transformedNormal, viewPosition.xyz, alphaFade);
+	fFogFragCoord = ffog(viewPosition.z);
+	vTc = RotateVector(vec4(vTcIn.x, vTcIn.y, 0, 1), m_texture).xy;
+
+    // Sphere mapping coord
+    vec3 vEnvReflect = reflect(normalize(viewPosition.xyz), transformedNormal);
+    vEnvReflect.z+=1.0;
+    float fOffset= inversesqrt(dot(vEnvReflect, vEnvReflect));
+    vTcEnv = 0.5 * vEnvReflect.xy * fOffset + 0.5;
+}

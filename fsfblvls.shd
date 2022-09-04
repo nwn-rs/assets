@@ -1,0 +1,125 @@
+//----------------------------------------
+//Dynamic contrast shader.
+//
+//Version 1.01
+//
+//By Søren Møller (Zarathustra217)
+//soerenpm@gmail.com
+//
+//----------------------------------------
+//Description:
+//
+//Adds contrast to the current scene with a dynamic midpoint based on area lighting.
+//
+//Version history:
+//
+//1.0:
+// - Initial release
+//
+//1.01:
+// - Scaled with fog to preserve fog color.
+
+varying mediump vec2 vTcOut;
+const float fContrastModifier=1.25;
+const float fMidPointModifier=0.5;
+
+uniform mediump float fogEnd; // Distance where fog is 100%
+uniform mediump float fogStart;
+uniform vec4 fogColor;
+
+uniform float nearClip = 0.1;
+uniform float farClip = 45.0; // Normally this is fogEnd, but whenever there's a skybox it'll be further away.
+
+uniform sampler2D texUnit0;
+uniform sampler2D texUnit1; // Depth buffer
+
+const int MAX_LIGHTS=8;
+
+uniform vec4 lightAmbient           [MAX_LIGHTS];
+uniform vec4 lightDiffuse           [MAX_LIGHTS];
+uniform vec4 lightPosition          [MAX_LIGHTS];
+
+uniform int screenWidth = 1920;
+uniform int screenHeight = 1080;
+
+vec2 vPixelSize = vec2(1.0/float(screenWidth), 1.0/float(screenHeight));
+
+// Screen pixel coordinates of the mouse
+uniform ivec2 userinputMousePosition;
+
+float fAspectRatio = vPixelSize.y/vPixelSize.x;
+
+//Estimate average scene color.
+vec4 GetAreaLightTotal()
+{
+    vec4 vColor=vec4(0.0);
+    if(lightPosition[0].z>6999.9) // Identifies area lighting.
+    {
+        //Only count diffuse lighting as half, given that it's only applying to roughly that amount in the scene.
+        vColor+=lightAmbient[0]+lightDiffuse[0]*0.5;
+    }
+    if(lightPosition[1].z>6999.9) // Identifies area lighting.
+    {
+        vColor+=lightAmbient[1]+lightDiffuse[1]*0.5;
+    }
+    return vColor;
+}
+
+float ColorToBrightness(vec4 vColor)
+{
+    return dot(vColor.rgb, vec3(0.3333333, 0.3333333, 0.3333333));    
+}
+
+float ColorToLuma(vec4 vColor)
+{
+    return dot(vColor.rgb, vec3(0.299, 0.587, 0.114)); //Quick formula. 
+    // More precise:
+    /*return sqrt(0.299 * vColor.r * vColor.r + 
+       0.587 * vColor.g * vColor.g + 
+       0.114 * vColor.b * vColor.b);
+    */
+}
+
+//Modifier used for calculating distance.
+float fDepthModifier = 1.0 - nearClip/farClip;
+
+float GetDepth(vec2 vCoords)
+{
+    vCoords = clamp(vCoords, 0.0, 1.0);
+    float fDepth = texture2D(texUnit1, vCoords).x;
+    fDepth = nearClip / (1.0 - fDepth*fDepthModifier);
+    return fDepth;
+}
+
+vec4 ApplyContrast(vec4 vColor)
+{
+    float fDepth = GetDepth(vTcOut);
+    float fFogModifier = clamp((fDepth-fogStart) / (fogEnd - fogStart), 0.0, 1.0);
+    float fMidPoint = fMidPointModifier * clamp(ColorToLuma(GetAreaLightTotal()), 0.0, 1.0);
+    //Scale to fog depending on the amount of fog in the area.
+    fMidPoint = mix(fMidPoint, ColorToLuma(fogColor), clamp(52.5 / max(fogStart+fogEnd*0.5, 1.0) - 0.75, 0.0, 1.0));
+    float fBrightness = ColorToLuma(vColor);
+    float fDelta = fBrightness-fMidPoint;
+    fDelta = sign(fDelta) * fDelta * fDelta;
+    //Dividing by brightness provides a non-relative adjustment while still preserving hue and saturation. Cut-off at 0.2 to prevent precision issues.
+    float fModifier = fDelta*fContrastModifier / max(fBrightness, 0.01);
+    // Reduce as brightness moves toward 0 or 1 to preserve detail near boundaries.
+    fModifier -= fModifier * pow((sign(fModifier) == 1.0 ? fBrightness : 1.0 - fBrightness),2.0);
+
+    vColor *= 1.0 + fModifier * (1.0-fFogModifier);
+    vColor =clamp(vColor, 0.0, 1.0);
+    
+    return vColor;
+}
+
+
+void main()
+{    
+    vec4 vColor = texture2D(texUnit0, vTcOut);
+    float fAlpha = vColor.a;
+
+    vColor = ApplyContrast(vColor);
+
+    vColor.a = fAlpha; // This should always be preserved as other shaders might need it.
+	gl_FragColor = vColor;
+}

@@ -1,0 +1,15 @@
+/*
+
+fstc.shd
+
+*/
+
+varying mediump vec2 vTcOut;
+varying lowp vec4 vColorOut;
+
+uniform sampler2D texUnit0;
+
+void main()
+{
+	gl_FragColor = texture2D(texUnit0, vTcOut) * vColorOut;
+}
