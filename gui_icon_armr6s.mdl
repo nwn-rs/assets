@@ -1,0 +1,227 @@
+# Exported from NWmax 0.8 b59 at 11/16/2005 4:13:03 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: GUI_ICON_ARMR6S
+#local file: D:\Work\gui\gui_icon_armr6.max
+filedependancy gui_icon_armr6.max
+newmodel GUI_ICON_ARMR6S
+setsupermodel GUI_ICON_ARMR6S NULL
+classification GUI
+#NWmax GEOM  ASCII
+beginmodelgeom GUI_ICON_ARMR6S
+node dummy GUI_ICON_ARMR6S
+  parent NULL
+endnode
+node trimesh icon
+  parent GUI_ICON_ARMR6S
+  position 0.0 0.0 0.03
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.87451 0.776471 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.0640517 0.186926 0.128103 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.045 0.045 0.045 
+  shininess 26
+  center 0.0 0.0 0.0 
+  bitmap gui_replace01
+  verts 4
+    -0.105 -0.16 0.0
+    0.105 -0.16 0.0
+    -0.105 0.16 0.0
+    0.105 0.16 0.0
+  faces 2
+    2 0 3  1  2 0 3  1
+    1 3 0  1  1 3 0  1
+  tverts 4
+    0.0 0.25 0
+    1.0 0.25 0
+    2.38419e-007 1.0 0
+    1.0 1.0 0
+endnode
+node trimesh icon2
+  parent icon
+  position 0.0 0.0 0.01
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.87451 0.776471 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.0 0.145097 0.0640517 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.045 0.045 0.045 
+  shininess 26
+  center 0.0 0.0 0.0 
+  bitmap gui_replace02
+  verts 4
+    -0.105 -0.16 0.0
+    0.105 -0.16 0.0
+    -0.105 0.16 0.0
+    0.105 0.16 0.0
+  faces 2
+    2 0 3  1  2 0 3  1
+    1 3 0  1  1 3 0  1
+  tverts 4
+    0.0 0.25 0
+    1.0 0.25 0
+    2.38419e-007 1.0 0
+    1.0 1.0 0
+endnode
+node trimesh icon3
+  parent icon2
+  position 0.0 0.0 0.01
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.87451 0.776471 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.329408 0.118953 0.163397 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.045 0.045 0.045 
+  shininess 26
+  center 0.0 0.0 0.0 
+  bitmap gui_replace03
+  verts 4
+    -0.105 -0.16 0.0
+    0.105 -0.16 0.0
+    -0.105 0.16 0.0
+    0.105 0.16 0.0
+  faces 2
+    2 0 3  1  2 0 3  1
+    1 3 0  1  1 3 0  1
+  tverts 4
+    0.0 0.25 0
+    1.0 0.25 0
+    2.38419e-007 1.0 0
+    1.0 1.0 0
+endnode
+node trimesh icon4
+  parent icon3
+  position 0.0 0.0 0.01
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.87451 0.776471 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.12026 0.12026 0.12026 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.045 0.045 0.045 
+  shininess 26
+  center 0.0 0.0 0.0 
+  bitmap gui_replace04
+  verts 4
+    -0.105 -0.16 0.0
+    0.105 -0.16 0.0
+    -0.105 0.16 0.0
+    0.105 0.16 0.0
+  faces 2
+    2 0 3  1  2 0 3  1
+    1 3 0  1  1 3 0  1
+  tverts 4
+    0.0 0.25 0
+    1.0 0.25 0
+    2.38419e-007 1.0 0
+    1.0 1.0 0
+endnode
+node trimesh icon5
+  parent icon4
+  position 0.0 0.0 0.01
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.87451 0.776471 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.149018 0.0640517 0.0941167 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.045 0.045 0.045 
+  shininess 26
+  center 0.0 0.0 0.0 
+  bitmap gui_replace05
+  verts 4
+    -0.105 -0.16 0.0
+    0.105 -0.16 0.0
+    -0.105 0.16 0.0
+    0.105 0.16 0.0
+  faces 2
+    2 0 3  1  2 0 3  1
+    1 3 0  1  1 3 0  1
+  tverts 4
+    0.0 0.25 0
+    1.0 0.25 0
+    2.38419e-007 1.0 0
+    1.0 1.0 0
+endnode
+node trimesh icon6
+  parent icon5
+  position 0.0 0.0 0.01
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.87451 0.776471 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.149018 0.0640517 0.0941167 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.045 0.045 0.045 
+  shininess 26
+  center undefined
+  bitmap gui_replace06
+  verts 4
+    -0.105 -0.16 0.0
+    0.105 -0.16 0.0
+    -0.105 0.16 0.0
+    0.105 0.16 0.0
+  faces 2
+    2 0 3  1  2 0 3  1
+    1 3 0  1  1 3 0  1
+  tverts 4
+    0.0 0.25 0
+    1.0 0.25 0
+    2.38419e-007 1.0 0
+    1.0 1.0 0
+endnode
+endmodelgeom GUI_ICON_ARMR6S
+donemodel GUI_ICON_ARMR6S
