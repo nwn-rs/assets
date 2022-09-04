@@ -1,0 +1,21 @@
+#MAXWALKMESH  ASCII
+beginwalkmeshgeom TIN01_D11_01 
+node aabb Plane532 
+  parent TIN01_D11_01 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.690196 0.101961 0.101961  
+    verts 4
+     -5.0 -5.0 0.0
+     5.0 -5.0 0.0
+     5.0 5.0 0.0
+     -5.0 5.0 0.0
+    faces 2
+     1 2 0  1  4 9 3  4
+     3 0 2  1  20 15 21  4
+aabb    -5.00 -5.00  0.00   5.00  5.00  0.00  -1
+    -5.00 -5.00  0.00   5.00  5.00  0.00  0
+    -5.00 -5.00  0.00   5.00  5.00  0.00  1
+endnode
+endwalkmeshgeom TIN01_D11_01 
+
