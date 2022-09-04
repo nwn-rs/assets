@@ -1,0 +1,24 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: PLC_X0_TEL
+filedependancy plc_x0telscope.max
+node trimesh NoWalkArea
+  parent PLC_X0_TEL_pwk
+  position 0.0436087 -0.125019 0
+  orientation 0 0 1 -0.422698
+  wirecolor 0.527344 0.527344 0.527344
+  ambient 0.523438 0.0234375 0.0234375
+  diffuse 0.523438 0.0234375 0.0234375
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 4
+    0.506883 0.399391 0
+    -0.506883 0.399391 0
+    0.506883 -0.399391 0
+    -0.506883 -0.399391 0
+  faces 2
+    2 0 3  1  0 0 0  0
+    1 3 0  1  0 0 0  0
+endnode
