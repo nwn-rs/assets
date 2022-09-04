@@ -1,0 +1,122 @@
+/*
+
+vslit_sk_nm.shd
+
+*/
+
+#define MAX_BONES 128
+
+attribute vec4 vPos;
+attribute vec2 vTcIn;
+attribute vec3 vNormal;
+attribute vec4 vIndex;
+attribute vec4 vWeight;
+
+attribute vec3 vTangent;
+attribute float fHandedness;
+
+uniform highp mat4 m_mvp;
+uniform highp mat4 m_mv;
+uniform highp mat3 m_normal;
+uniform highp mat4 m_texture;
+uniform highp mat4 m_m;
+
+varying highp vec3 vWorldCoord;
+
+uniform int fogEnabled;
+uniform mediump float fogEnd;
+uniform mediump float fogStart;
+
+uniform int idxmap[MAX_BONES];
+uniform highp mat4 m_bones[MAX_BONES];
+
+varying vec2 vTc;
+//varying vec2 vTcEnv;
+varying vec4 vColorOut;
+varying float fFogFragCoord;
+varying vec3 vTangentOut;
+varying vec3 vNormalOut;
+varying vec4 vPosOut;
+varying vec3 vStaticLightDirOut;
+varying float fTextureHandedness; // Just the handedness attribute passed to the fragment shader. It should always be the same for all vertices of a face so interpolation will not be an issue.
+
+
+uniform int keyholeCanDissolve;
+
+varying highp vec3 vKeyholeNoiseBase;
+
+const float WORLD_COORDS_MOD_LIMIT = 35.0;
+
+void SetKeyholeNoiseBase(vec4 vCoords)
+{
+    if(keyholeCanDissolve == 1)
+    {
+        highp mat4 tempM = m_m;
+        tempM[3] = mod(tempM[3], WORLD_COORDS_MOD_LIMIT);
+        vKeyholeNoiseBase = (tempM * vCoords).xyz;
+    }
+}
+
+float ffog(in float viewDistance)
+{
+    //Make sure to not to clamp this in the vertex stage as we need to be able to get within boundaries through interpolation.
+    //Taking absolute value of distance is important for some GUI elements.
+    return (fogEnabled == 0) ? 0.0 : (abs(viewDistance)-fogStart) / (fogEnd - fogStart);
+}
+
+vec3 TransformVec3ToCameraSpace(vec3 vec)
+{
+	vec3 result = m_normal * vec;
+	//result = normalize(result);
+	return result;
+}
+
+void main (void)
+{
+	fTextureHandedness = fHandedness;
+
+	vec3  transformedNormal;
+	float alphaFade = 1.0;
+
+	vec4 vSkinnedPos = vPos;
+	vec3 vSkinnedTangent = vTangent;
+	vec3 vSkinnedNormal = vNormal;
+
+	// Do our skinning here.
+	int index = idxmap[int(vIndex.x)];
+	vSkinnedPos = (m_bones[index] * vPos) * vWeight.x;
+	vSkinnedTangent = (mat3(m_bones[index]) * vTangent) * vWeight.x;
+	vSkinnedNormal = (mat3(m_bones[index]) * vNormal) * vWeight.x;
+	index = idxmap[int(vIndex.y)];
+	vSkinnedPos = (m_bones[index] * vPos) * vWeight.y + vSkinnedPos;
+	vSkinnedTangent = (mat3(m_bones[index]) * vTangent) * vWeight.y + vSkinnedTangent;
+	vSkinnedNormal = (mat3(m_bones[index]) * vNormal) * vWeight.y + vSkinnedNormal;
+	index = idxmap[int(vIndex.z)];
+	vSkinnedPos = (m_bones[index] * vPos) * vWeight.z + vSkinnedPos;
+	vSkinnedTangent = (mat3(m_bones[index]) * vTangent) * vWeight.z + vSkinnedTangent;
+	vSkinnedNormal = (mat3(m_bones[index]) * vNormal) * vWeight.z + vSkinnedNormal;
+	index = idxmap[int(vIndex.w)];
+	vSkinnedPos = (m_bones[index] * vPos) * vWeight.w + vSkinnedPos;
+	vSkinnedTangent = (mat3(m_bones[index]) * vTangent) * vWeight.w + vSkinnedTangent;
+	vSkinnedNormal = (mat3(m_bones[index]) * vNormal) * vWeight.w + vSkinnedNormal;
+
+	// View position of vertex, needed in various calculations
+	vPosOut = m_mv * vSkinnedPos;
+
+    SetKeyholeNoiseBase(vSkinnedPos);
+    vWorldCoord = (m_m * vSkinnedPos).xyz;
+
+	// Do fixed functionality vertex transform
+	gl_Position = m_mvp * vec4(vSkinnedPos.xyz, 1.0);
+
+	fFogFragCoord = ffog(vPosOut.z);
+	vTc = vTcIn;
+
+	// Transform our tangent-space basis into camera-space
+	vTangentOut = TransformVec3ToCameraSpace(vSkinnedTangent);
+	vNormalOut = TransformVec3ToCameraSpace(vSkinnedNormal);
+
+	vColorOut = vec4(0,0,0,1);
+
+	vStaticLightDirOut = vec3(0,0,0);
+}

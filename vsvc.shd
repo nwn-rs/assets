@@ -1,0 +1,36 @@
+/*
+
+vsvc.shd
+
+*/
+
+uniform highp mat4 m_mvp;
+uniform highp mat4 m_mv;
+
+uniform int fogEnabled;
+uniform mediump float fogEnd;
+uniform mediump float fogStart;
+
+attribute vec3 vPos;
+attribute vec4 vColor;
+
+varying vec4 vColorOut;
+varying mediump float fFogFragCoord;
+varying mediump vec4 vProjPos;
+
+float ffog(in float viewDistance)
+{
+    //Make sure to not to clamp this in the vertex stage as we need to be able to get within boundaries through interpolation.
+    //Taking absolute value of distance is important for some GUI elements.
+    return (fogEnabled == 0) ? 0.0 : (abs(viewDistance)-fogStart) / (fogEnd - fogStart);
+}
+
+void main()
+{
+	vec4 viewPosition = m_mv * vec4(vPos, 1.0);
+	fFogFragCoord = ffog(viewPosition.z);
+	vProjPos = m_mvp * vec4(vPos, 1.0);
+	//gl_Position = m_mvp * vec4(vPos, 1.0);
+	gl_Position = vProjPos;
+	vColorOut = vColor;
+}
