@@ -120,7 +120,7 @@ jobs:
           cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/lang/en/docs/ docs/
           cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/ovr/ ovr/
 
-      - run: mkdir 2da dds dlg dwk gff gui ids ini itp ltr mdl mod mtr nss plt ptt pwk set shd ssf tga tlk ute uti utm utp uts utt utw wok
+      - run: mkdir 2da dds dlg dwk gff gui ids ini itp ltr mdl mod mtr nss plt ptt pwk set shd ssf tga tlk utc ute uti utm utp uts utt utw wok
 
       - name: Gather 2da files
         run: |
@@ -220,6 +220,10 @@ jobs:
         run: |
           find ./ -name '*.ute' -exec cp -prv '{}' 'ute/' ';'
           cd ute && zip -r ../ute.zip .
+      - name: Gather utc files
+        run: |
+          find ./ -name '*.ute' -exec cp -prv '{}' 'utc/' ';'
+          cd utc && zip -r ../utc.zip .
       - name: Gather uti files
         run: |
           find ./ -name '*.uti' -exec cp -prv '{}' 'uti/' ';'
@@ -281,6 +285,7 @@ jobs:
             ssf.zip
             tga.zip
             tlk.zip
+            utc.zip
             ute.zip
             uti.zip
             utm.zip
@@ -321,6 +326,7 @@ jobs:
             ssf.zip
             tga.zip
             tlk.zip
+            utc.zip
             ute.zip
             uti.zip
             utm.zip
