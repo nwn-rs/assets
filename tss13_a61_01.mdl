@@ -1,0 +1,169 @@
+# Exported from NWmax 0.8 c00 at 2/22/2019 2:51:01 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tss13_a61_01
+#local file: S:\Ossian Studios\Tyrants of Moonsea\Tiles\Sea Ships\sea-ships_Water1_Final_02.max
+filedependancy sea-ships_Water1_Final_02.max
+newmodel tss13_a61_01
+setsupermodel tss13_a61_01 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom tss13_a61_01
+node dummy tss13_a61_01
+  parent NULL
+endnode
+node trimesh water170
+  parent tss13_a61_01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.560784 0.882353 0.341176 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center undefined
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 11.0
+  bitmap tno01_wtsea01
+  verts 4
+    -5.0 -5.0 0.0
+    5.0 -5.0 0.0
+    -5.0 5.0 0.0
+    5.0 5.0 0.0
+  faces 2
+    0 1 3  1  1 2 3  1
+    3 2 0  1  3 0 1  1
+  tverts 4
+    0.0 2.0 0
+    0.0 0.0 0
+    2.0 0.0 0
+    2.0 2.0 0
+endnode
+node light tss13_a61_01ml1
+  parent tss13_a61_01
+  position -1.5 -1.5 5.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.419608 0.0313726 0.529412 
+  radius 14.0
+  multiplier 1.0
+  color 0.639216 0.639216 0.639216 
+  ambientonly 0
+  nDynamicType 1
+  affectDynamic 1
+  shadow 0
+  lightpriority 5
+  fadingLight 1
+endnode
+node light tss13_a61_01ml2
+  parent tss13_a61_01
+  position 1.5 1.5 4.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.419608 0.0313726 0.529412 
+  radius 5.0
+  multiplier 1.0
+  color 0.639216 0.639216 0.639216 
+  ambientonly 0
+  nDynamicType 1
+  affectDynamic 1
+  shadow 0
+  lightpriority 5
+  fadingLight 1
+endnode
+#Tile trimesh node
+node trimesh underwater007
+  parent tss13_a61_01
+  position 0.0 0.0 -3.5
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.6 0.894118 0.6 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 11
+  center undefined
+  bitmap tno01_watgr01
+  verts 4
+    -5.0 -5.0 0.0
+    5.0 -5.0 0.0
+    -5.0 5.0 0.0
+    5.0 5.0 0.0
+  faces 2
+    2 0 3  1  2 0 3  2
+    1 3 0  1  1 3 0  2
+  tverts 4
+    0.000999033 0.00099951 0
+    1.999 0.000999033 0
+    0.00099951 1.999 0
+    1.999 1.999 0
+endnode
+node aabb wm_a61_01
+  parent tss13_a61_01
+  position 0.0 0.0 -3.5
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.6 0.894118 0.6 
+  multimaterial 20
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+  ambient 0.588 0.588 0.588 
+  diffuse 0.0 0.0 0.376471 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap DeepWater
+  verts 4
+    -5.0 -5.0 0.0
+    5.0 -5.0 0.0
+    -5.0 5.0 0.0
+    5.0 5.0 0.0
+  faces 2
+    2 0 3  1  2 0 3  17
+    1 3 0  1  1 3 0  17
+  tverts 4
+    1.4995 1.4995 0
+    1.999 1.4995 0
+    1.4995 1.999 0
+    1.999 1.999 0
+    aabb         -5.0 -5.0 0.0 5.0 5.0 0.0 -1
+        -5.0 -5.0 0.0 5.0 5.0 0.0 0
+        -5.0 -5.0 0.0 5.0 5.0 0.0 1
+endnode
+endmodelgeom tss13_a61_01
+
+donemodel tss13_a61_01

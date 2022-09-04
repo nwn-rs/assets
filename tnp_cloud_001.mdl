@@ -1,0 +1,114 @@
+#MAXMODEL ASCII
+# model: tnp_cloud_001 
+filedependancy 
+newmodel tnp_cloud_001 
+setsupermodel tnp_cloud_001 NULL
+classification Character
+setanimationscale 1.0
+#MAXGEOM  ASCII
+beginmodelgeom tnp_cloud_001 
+node dummy tnp_cloud_001 
+  parent NULL 
+endnode
+node trimesh cloudshadow 
+  parent tnp_cloud_001 
+  position 0.0 0.0 50.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.878431 0.341176 0.560784  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 0
+     Shadow 1
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 -3.05176e-005 -5e-005 
+     gizmo SubAnim:Gizmo
+    bitmap NULL
+    verts 12
+     9.13765 6.51858 -5e-007
+     3.89951 8.96305 -5e-007
+     -1.10583 8.96305 -5e-007
+     -7.27325 7.55853 -5e-007
+     -9.60326 3.14289 -5e-007
+     -12.1641 -1.39684 -5e-007
+     -10.88 -6.51329 -5e-007
+     -4.24872 -8.96305 -5e-007
+     3.7831 -6.05297 -5e-007
+     5.06354 -1.97885 -5e-007
+     9.37046 -0.465613 -5e-007
+     12.1641 3.25929 -5e-007
+    faces 10
+     10 11 0  1  0 0 0  1
+     9 10 0  1  0 0 0  1
+     9 0 1  1  0 0 0  1
+     9 1 2  1  0 0 0  1
+     9 2 3  1  0 0 0  1
+     9 3 4  1  0 0 0  1
+     8 9 4  1  0 0 0  1
+     7 8 4  1  0 0 0  1
+     6 7 4  1  0 0 0  1
+     5 6 4  1  0 0 0  1
+endnode
+endmodelgeom tnp_cloud_001 
+
+#MAXANIM ASCII
+newanim on tnp_cloud_001 
+ length 33.0
+ transtime 0.25
+animroot tnp_cloud_001
+node dummy tnp_cloud_001 
+  parent NULL 
+endnode
+node trimesh cloudshadow 
+  parent tnp_cloud_001 
+    positionkey 
+      0.0  0.0 -100.0 50.0
+      33.0  0.0 100.0 50.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+doneanim on tnp_cloud_001 
+
+#MAXANIM ASCII
+newanim off tnp_cloud_001 
+ length 0.0333333
+ transtime 0.25
+animroot tnp_cloud_001
+node dummy tnp_cloud_001 
+  parent NULL 
+endnode
+node trimesh cloudshadow 
+  parent tnp_cloud_001 
+    positionkey 
+      0.0  0.0 0.0 50.0
+      0.0333333  0.0 0.0 50.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+doneanim off tnp_cloud_001 
+
+donemodel tnp_cloud_001 
+

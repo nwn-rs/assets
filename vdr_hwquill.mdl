@@ -1,0 +1,103 @@
+# Exported from NWmax 0.8 b47 at 22/03/2006 7:59:17 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: vdr_hwquill
+filedependancy arrows2.max
+newmodel vdr_hwquill
+setsupermodel vdr_hwquill NULL
+classification Effect
+#NWmax GEOM  ASCII
+beginmodelgeom vdr_hwquill
+node dummy vdr_hwquill
+  parent NULL
+endnode
+node trimesh Object01
+  parent vdr_hwquill
+  position -0.0701356 0.0359698 -0.012363
+  orientation -0.424211 0.902985 -0.0682845 -1.78585
+  wirecolor 0.27451 0.258824 0.301961 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center undefined
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 11.0
+  bitmap c_howler
+  verts 6
+    0.0194547 0.0454693 -0.00471016
+    8.93658e-005 0.0532912 0.0110866
+    -0.0173841 0.0455504 -0.00648869
+    0.00159088 0.0375188 -0.0227201
+    -0.000542651 -0.243668 0.0069469
+    0.00160452 0.144869 -0.00577757
+  faces 8
+    0 1 4  1  2 3 5  3
+    1 2 4  1  3 1 5  3
+    2 3 4  1  1 0 5  3
+    3 0 4  1  4 2 5  3
+    5 2 1  1  6 1 3  3
+    5 1 0  1  6 3 2  1
+    2 5 0  1  1 6 2  1
+    3 2 0  1  7 8 9  1
+  tverts 10
+    0.0603783 0.257235 0
+    0.0469146 0.253146 0
+    0.0205717 0.247964 0
+    0.0348996 0.249838 0
+    0.00717918 0.24716 0
+    0.013416 0.378071 0
+    0.0411593 0.211002 0
+    0.0417318 0.260419 0
+    0.0355293 0.247153 0
+    0.0255744 0.255468 0
+endnode
+endmodelgeom vdr_hwquill
+
+#NWmax ANIM ASCII
+newanim duration vdr_hwquill
+  length 0.0333333
+  transtime 0.25
+  animroot vdr_hwquill
+    node dummy vdr_hwquill
+        parent NULL
+    endnode
+    node trimesh Object01
+        parent vdr_hwquill
+        alphakey
+            0.0 1.0 
+            0.0333333 1.0 
+        endlist
+    endnode
+doneanim duration vdr_hwquill
+
+
+#NWmax ANIM ASCII
+newanim cessation vdr_hwquill
+  length 1.0
+  transtime 0.25
+  animroot vdr_hwquill
+    node dummy vdr_hwquill
+        parent NULL
+    endnode
+    node trimesh Object01
+        parent vdr_hwquill
+        alphakey
+            0.0 1.0 
+            1.0 0.0 
+        endlist
+    endnode
+doneanim cessation vdr_hwquill
+
+donemodel vdr_hwquill

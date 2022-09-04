@@ -1,0 +1,99 @@
+# Exported from NWmax 0.8 b60 at 1/27/2006 1:10:36 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pwc_wallweed_002
+#local file: D:\DL\sea_stuff\fort_mdls\seaweed03.max
+filedependancy seaweed03.max
+newmodel pwc_wallweed_002
+setsupermodel pwc_wallweed_002 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom pwc_wallweed_002
+node dummy pwc_wallweed_002
+  parent NULL
+endnode
+node dummy wallweed_002_ground01
+  parent pwc_wallweed_002
+  position -0.131997 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.337255 0.337255 
+endnode
+node dummy wallweed_002_hand01
+  parent pwc_wallweed_002
+  position -0.131997 0.0 0.533066
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.337255 0.337255 
+endnode
+node dummy wallweed_002_head01
+  parent pwc_wallweed_002
+  position -0.131997 0.0 0.551909
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.54902 0.345098 0.882353 
+endnode
+node dummy wallweed_002_head_hit01
+  parent pwc_wallweed_002
+  position -0.131997 0.0 0.561413
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.54902 0.345098 0.882353 
+endnode
+node dummy wallweed_002_impact01
+  parent pwc_wallweed_002
+  position -0.131997 0.0 0.538862
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.431373 0.52549 
+endnode
+node trimesh wallweed_002
+  parent pwc_wallweed_002
+  position -0.0079541 0.171035 0.828995
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.34902 0.694118 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center -0.0359917 0.210778 -1.52588e-005 
+  ambient 0.588 0.588 0.588 
+  diffuse 0.588 0.588 0.588 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap twc03_seaweed01
+  verts 7
+    0.81 -0.04 -0.78
+    0.81 0.13 0.78
+    -0.81 0.0 -0.77
+    -0.81 0.13 0.78
+    -0.31 0.13 0.78
+    -0.03 -0.13 -0.77
+    0.27 0.13 0.78
+  faces 6
+    2 4 3  1  5 6 3  1
+    6 4 5  1  10 6 8  1
+    2 5 4  1  5 8 6  1
+    2 0 5  1  2 0 7  1
+    5 0 6  1  7 0 10  1
+    1 6 0  1  1 10 0  1
+  tverts 11
+    0.463086 0.0018457 0
+    0.946475 0.0 0
+    0.464932 0.607051 0
+    0.94832 0.605205 0
+    0.491675 0.607051 0
+    0.494298 0.60704 0
+    0.947746 0.416769 0
+    0.47798 0.317128 0
+    0.479348 0.317157 0
+    0.752162 0.249327 0
+    0.947095 0.203442 0
+endnode
+endmodelgeom pwc_wallweed_002
+donemodel pwc_wallweed_002
