@@ -1,0 +1,24 @@
+# Exported from NWmax 0.8 b61 at 1/17/2008 10:48:54 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: WBlFl_b_051
+#local file: C:\Program Files\Autodesk\3dsMax8\scenes\ratflail.max
+filedependancy ratflail.max
+newmodel WBlFl_b_051
+setsupermodel WBlFl_b_051 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom WBlFl_b_051
+node dummy WBlFl_b_051
+  parent NULL
+endnode
+node dummy Dummy02
+  parent WBlFl_b_051
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.776471 0.878431 0.341176 
+endnode
+endmodelgeom WBlFl_b_051
+donemodel WBlFl_b_051

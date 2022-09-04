@@ -1,0 +1,1588 @@
+# Exported from NWmax 0.8 c00 at 12/29/2019 9:09:35 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: trm_udoor_06
+#local file: M:\Tyrants Fixes\Jorn Doors\Source Files Max\trm_udoor06.max
+filedependancy trm_udoor06.max
+newmodel trm_udoor_06
+setsupermodel trm_udoor_06 NULL
+classification Door
+#NWmax GEOM  ASCII
+beginmodelgeom trm_udoor_06
+node dummy trm_udoor_06
+  parent NULL
+endnode
+node trimesh wing01
+  parent trm_udoor_06
+  position -1.4 -0.25 1.2
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 10.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 65.1429 0.0 48.1355 
+  bitmap trm02_planks04
+  verts 18
+    0.0363366 -0.05 -1.15
+    0.68 -0.05 -1.15
+    0.68 -0.05 0.0031471
+    0.0363779 -0.05 0.0031471
+    1.38 -0.05 -1.15
+    1.38 -0.05 0.0031471
+    0.75454 -0.05 2.07064
+    -0.0771419 -0.05 1.81643
+    1.38 -0.05 2.11271
+    1.38 0.05 -1.15
+    1.38 0.05 0.0031471
+    1.38 0.05 2.11271
+    0.68 0.05 -1.15
+    0.68 0.05 0.0031471
+    0.0363366 0.05 -1.15
+    0.0363779 0.05 0.0031471
+    0.75454 0.05 2.07064
+    -0.0771419 0.05 1.81643
+  faces 28
+    0 1 2  1  0 1 2  5
+    2 3 0  1  2 3 0  5
+    1 4 5  1  1 4 5  5
+    5 2 1  1  5 2 1  5
+    3 2 6  1  3 2 6  5
+    6 7 3  1  6 7 3  5
+    2 5 8  1  2 5 8  5
+    8 6 2  1  8 6 2  5
+    4 9 10  2  9 10 11  4
+    10 5 4  2  11 12 9  4
+    5 10 11  2  12 11 13  4
+    11 8 5  2  13 14 12  4
+    9 12 13  1  15 16 17  6
+    13 10 9  1  17 18 15  6
+    12 14 15  1  16 19 20  6
+    15 13 12  1  20 17 16  6
+    10 13 16  1  18 17 21  6
+    16 11 10  1  21 22 18  6
+    13 15 17  1  17 20 23  6
+    17 16 13  1  23 21 17  6
+    14 0 3  4  9 10 11  3
+    3 15 14  4  11 12 9  3
+    15 3 7  4  12 11 24  3
+    7 17 15  4  24 25 12  3
+    6 16 17  4  26 27 28  3
+    17 7 6  4  28 29 26  3
+    8 11 16  4  30 31 27  3
+    16 6 8  4  27 26 30  3
+  tverts 32
+    0.122089 0.0004995 0
+    0.417711 0.0004995 0
+    0.417711 0.353579 0
+    0.122108 0.353579 0
+    0.739208 0.0004995 0
+    0.739208 0.353579 0
+    0.451946 0.986619 0
+    0.0699705 0.908783 0
+    0.739208 0.9995 0
+    0.381625 0.0004995 0
+    0.427553 0.0004995 0
+    0.427553 0.353579 0
+    0.381625 0.353579 0
+    0.427553 0.9995 0
+    0.381625 0.9995 0
+    0.0699704 0.0004995 0
+    0.391467 0.0004995 0
+    0.391467 0.353579 0
+    0.0699704 0.353579 0
+    0.68709 0.0004995 0
+    0.687071 0.353579 0
+    0.357232 0.986619 0
+    0.0699704 0.9995 0
+    0.739208 0.908783 0
+    0.427553 0.908783 0
+    0.381625 0.908783 0
+    0.451946 0.484691 0
+    0.451946 0.515309 0
+    0.0699705 0.515309 0
+    0.0699705 0.484691 0
+    0.739208 0.484691 0
+    0.739208 0.515309 0
+endnode
+node trimesh frame01
+  parent wing01
+  position 0.0 0.0 -0.29
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 10.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 65.09 0.0 76.3345 
+  bitmap trm02_wood05
+  verts 48
+    0.75242 -0.1 2.36462
+    0.75242 0.1 2.36462
+    -0.0992603 0.1 2.11041
+    -0.0992603 -0.1 2.11041
+    1.39894 -0.1 2.40669
+    1.39894 0.1 2.40669
+    0.75454 0.1 2.07064
+    -0.0971399 0.1 1.81643
+    -0.0971399 -0.1 1.81643
+    0.75454 -0.1 2.07064
+    1.40106 -0.1 2.11271
+    1.40106 0.1 2.11271
+    0.0264828 0.07 -0.663823
+    0.0264828 -0.07 -0.663823
+    0.0265241 -0.07 0.285502
+    0.0265241 0.07 0.285502
+    -0.0869957 -0.07 1.89618
+    -0.0869957 0.07 1.89618
+    0.226337 -0.07 -0.656177
+    0.226378 -0.07 0.293147
+    0.226378 0.07 0.293147
+    0.226337 0.07 -0.656177
+    0.112858 -0.07 1.90382
+    0.112858 0.07 1.90382
+    1.19 -0.07 -0.66
+    1.39 -0.07 -0.66
+    1.39 -0.07 2.14
+    1.19 -0.07 2.14
+    1.39 0.07 -0.66
+    1.39 0.07 2.14
+    1.19 0.07 -0.66
+    1.19 0.07 2.14
+    0.15 -0.06 0.49
+    0.15 0.06 0.49
+    1.25 0.06 0.49
+    1.25 -0.06 0.49
+    0.15 -0.06 0.72
+    1.25 -0.06 0.72
+    1.25 0.06 0.72
+    0.15 0.06 0.72
+    0.02 -0.09 -0.88
+    0.02 0.09 -0.88
+    1.4 0.09 -0.88
+    1.4 -0.09 -0.88
+    0.02 -0.09 -0.65
+    1.4 -0.09 -0.65
+    1.4 0.09 -0.65
+    0.02 0.09 -0.65
+  faces 64
+    0 1 2  1  0 1 2  3
+    2 3 0  1  2 3 0  3
+    4 5 1  1  4 5 1  3
+    1 0 4  1  1 0 4  3
+    6 7 2  2  6 7 8  3
+    2 1 6  2  8 9 6  3
+    7 8 3  4  10 11 12  3
+    3 2 7  4  12 13 10  3
+    8 9 0  2  14 15 16  3
+    0 3 8  2  16 17 14  3
+    10 11 5  4  18 19 20  3
+    5 4 10  4  20 21 18  3
+    11 6 1  2  22 6 9  3
+    1 5 11  2  9 23 22  3
+    9 10 4  2  15 24 25  3
+    4 0 9  2  25 16 15  3
+    9 11 10  1  26 27 3  1
+    11 9 6  1  27 26 28  1
+    6 9 7  8  28 26 29  1
+    9 8 7  8  26 4 29  1
+    12 13 14  1  30 31 32  3
+    14 15 12  1  32 33 30  3
+    15 14 16  1  33 32 34  3
+    16 17 15  1  34 35 33  3
+    18 19 14  2  36 37 32  3
+    14 13 18  2  32 31 36  3
+    20 21 12  2  38 39 30  3
+    12 15 20  2  30 33 38  3
+    19 22 16  2  37 40 34  3
+    16 14 19  2  34 32 37  3
+    23 20 15  2  41 38 33  3
+    15 17 23  2  33 35 41  3
+    18 21 20  1  36 42 43  1
+    18 20 19  1  36 43 37  1
+    19 20 22  4  37 43 40  1
+    20 23 22  4  43 44 40  1
+    24 25 26  1  45 46 47  5
+    26 27 24  1  47 48 45  5
+    25 28 29  2  49 50 51  4
+    29 26 25  2  51 52 49  4
+    28 30 31  1  45 46 47  6
+    31 29 28  1  47 48 45  6
+    30 24 27  2  49 50 51  3
+    27 31 30  2  51 52 49  3
+    32 33 34  1  53 54 55  2
+    34 35 32  1  55 56 53  2
+    36 37 38  1  57 58 59  1
+    38 39 36  1  59 60 57  1
+    32 35 37  2  53 56 58  5
+    37 36 32  2  58 57 53  5
+    34 33 39  2  55 54 61  6
+    39 38 34  2  61 62 55  6
+    40 41 42  1  63 64 65  2
+    42 43 40  1  65 66 63  2
+    44 45 46  1  67 68 69  1
+    46 47 44  1  69 70 67  1
+    40 43 45  2  63 66 68  5
+    45 44 40  2  68 67 63  5
+    43 42 46  4  71 72 73  4
+    46 45 43  4  73 74 71  4
+    42 41 47  2  65 64 75  6
+    47 46 42  2  75 76 65  6
+    41 40 44  4  72 77 74  3
+    44 47 41  4  74 78 72  3
+  tverts 79
+    0.695617 0.300564 0
+    0.695617 0.433736 0
+    0.128519 0.433736 0
+    0.128519 0.300564 0
+    1.12611 0.300564 0
+    1.12611 0.433735 0
+    0.55901 0.368 0
+    1.12611 0.368 0
+    1.12752 0.564 0
+    0.560422 0.564 0
+    0.561433 0.170633 0
+    0.694605 0.170633 0
+    0.694605 0.366385 0
+    0.561433 0.366385 0
+    0.129931 0.368 0
+    0.697029 0.368 0
+    0.695617 0.564 0
+    0.131147 0.564 0
+    0.561433 0.367914 0
+    0.694605 0.367914 0
+    0.694605 0.563666 0
+    0.561433 0.563666 0
+    0.128519 0.368 0
+    0.129931 0.564 0
+    1.12752 0.368 0
+    1.12611 0.564 0
+    0.55901 0.300564 0
+    0.128519 0.433735 0
+    0.55901 0.433736 0
+    1.12611 0.433736 0
+    -0.425402 0.750204 0
+    -0.425402 0.451614 0
+    0.313311 0.451551 0
+    0.313311 0.750267 0
+    1.56665 0.539279 0
+    1.56665 0.662539 0
+    -0.419453 0.201724 0
+    0.31926 0.20171 0
+    0.31926 1.00011 0
+    -0.419453 1.00009 0
+    1.5726 0.289437 0
+    1.5726 0.912381 0
+    -0.419453 0.078435 0
+    0.31926 0.0784494 0
+    1.5726 -0.009278 0
+    1.59601 0.354415 0
+    1.59476 0.497124 0
+    -0.403165 0.479689 0
+    -0.40192 0.33698 0
+    1.59582 0.375822 0
+    1.59495 0.475718 0
+    -0.402978 0.458282 0
+    -0.402106 0.358386 0
+    0.185097 0.775942 0
+    0.186942 0.698689 0
+    1.1859 0.701876 0
+    1.18406 0.779129 0
+    0.182578 0.881431 0
+    1.18154 0.884617 0
+    1.1797 0.96187 0
+    0.180734 0.958684 0
+    0.18946 0.593201 0
+    1.18842 0.596387 0
+    -0.0612799 0.498165 0
+    -0.0594353 0.420912 0
+    0.939528 0.424098 0
+    0.937683 0.501351 0
+    -0.0637986 0.603653 0
+    0.935164 0.606839 0
+    0.93332 0.684093 0
+    -0.0656431 0.680906 0
+    0.627738 0.696968 0
+    0.630363 0.411223 0
+    0.246146 0.408037 0
+    0.243522 0.693781 0
+    -0.0569166 0.315423 0
+    0.942046 0.318609 0
+    0.627738 0.696967 0
+    0.246146 0.408036 0
+endnode
+node trimesh wing02
+  parent trm_udoor_06
+  position 1.4 -0.25 1.2
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 10.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center -64.33 0.0 48.1355 
+  bitmap trm02_planks04
+  verts 18
+    -0.671875 -0.05 -1.15
+    -0.0282116 -0.05 -1.15
+    -0.671875 -0.05 0.0031471
+    -0.0282529 -0.05 0.0031471
+    -1.37187 -0.05 -1.15
+    -1.37187 -0.05 0.0031471
+    -0.746411 -0.05 2.07064
+    0.0852703 -0.05 1.81643
+    -1.37187 -0.05 2.11271
+    -1.37187 0.05 -1.15
+    -1.37187 0.05 0.0031471
+    -1.37187 0.05 2.11271
+    -0.671875 0.05 -1.15
+    -0.671875 0.05 0.0031471
+    -0.0282116 0.05 -1.15
+    -0.0282529 0.05 0.0031471
+    -0.746411 0.05 2.07064
+    0.0852703 0.05 1.81643
+  faces 28
+    0 1 2  1  0 1 2  5
+    3 2 1  1  3 2 1  5
+    4 0 5  1  4 0 5  5
+    2 5 0  1  2 5 0  5
+    2 3 6  1  2 3 6  5
+    7 6 3  1  7 6 3  5
+    5 2 8  1  5 2 8  5
+    6 8 2  1  6 8 2  5
+    9 4 10  2  9 10 11  4
+    5 10 4  2  12 11 10  4
+    10 5 11  2  11 12 13  4
+    8 11 5  2  14 13 12  4
+    12 9 13  1  15 16 17  6
+    10 13 9  1  18 17 16  6
+    14 12 15  1  19 15 20  6
+    13 15 12  1  17 20 15  6
+    13 10 16  1  17 18 21  6
+    11 16 10  1  22 21 18  6
+    15 13 17  1  20 17 23  6
+    16 17 13  1  21 23 17  6
+    1 14 3  4  9 10 11  3
+    15 3 14  4  12 11 10  3
+    3 15 7  4  11 12 24  3
+    17 7 15  4  25 24 12  3
+    6 16 11  2  26 27 28  4
+    11 8 6  2  28 29 26  4
+    7 17 16  2  30 31 27  4
+    16 6 7  2  27 26 30  4
+  tverts 32
+    0.736876 0.0004995 0
+    1.0325 0.0004995 0
+    0.736876 0.353579 0
+    1.03248 0.353579 0
+    0.415381 0.0004995 0
+    0.415381 0.353579 0
+    0.702643 0.986619 0
+    1.08462 0.908783 0
+    0.415381 0.9995 0
+    0.727036 0.0004995 0
+    0.772964 0.0004995 0
+    0.727036 0.353579 0
+    0.772964 0.353579 0
+    0.727036 0.9995 0
+    0.772964 0.9995 0
+    0.763124 0.0004995 0
+    1.08462 0.0004995 0
+    0.763124 0.353579 0
+    1.08462 0.353579 0
+    0.467502 0.0004995 0
+    0.46752 0.353579 0
+    0.797357 0.986619 0
+    1.08462 0.9995 0
+    0.415381 0.908783 0
+    0.727036 0.908783 0
+    0.772964 0.908783 0
+    0.702643 0.484691 0
+    0.702643 0.515309 0
+    0.415381 0.515309 0
+    0.415381 0.484691 0
+    1.08462 0.484691 0
+    1.08462 0.515309 0
+endnode
+node trimesh frame02
+  parent wing02
+  position 0.0 0.0 -0.29
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 10.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center -64.2713 0.0 76.3345 
+  bitmap trm02_wood05
+  verts 48
+    -0.747819 -0.1 2.36462
+    -0.747819 0.1 2.36462
+    -1.3907 0.1 2.40669
+    -1.3907 -0.1 2.40669
+    0.103866 -0.1 2.11041
+    0.103866 0.1 2.11041
+    -0.746411 0.1 2.07064
+    -1.3893 0.1 2.11271
+    -1.3893 -0.1 2.11271
+    -0.746411 -0.1 2.07064
+    0.105274 -0.1 1.81643
+    0.105274 0.1 1.81643
+    -0.0183578 -0.07 -0.663823
+    -0.0183578 0.07 -0.663823
+    -0.0183991 -0.07 0.285502
+    -0.0183991 0.07 0.285502
+    0.0951241 -0.07 1.89618
+    0.0951241 0.07 1.89618
+    -0.218253 -0.07 0.293147
+    -0.218212 -0.07 -0.656177
+    -0.218212 0.07 -0.656177
+    -0.218253 0.07 0.293147
+    -0.10473 -0.07 1.90382
+    -0.10473 0.07 1.90382
+    -1.38 -0.07 -0.66
+    -1.18 -0.07 -0.66
+    -1.18 -0.07 2.14
+    -1.38 -0.07 2.14
+    -1.18 0.07 -0.66
+    -1.18 0.07 2.14
+    -1.38 0.07 -0.66
+    -1.38 0.07 2.14
+    -1.25 -0.06 0.49
+    -1.25 0.06 0.49
+    -0.15 0.06 0.49
+    -0.15 -0.06 0.49
+    -1.25 -0.06 0.72
+    -0.15 -0.06 0.72
+    -0.15 0.06 0.72
+    -1.25 0.06 0.72
+    -1.39 -0.09 -0.88
+    -1.39 0.09 -0.88
+    -0.01 0.09 -0.88
+    -0.01 -0.09 -0.88
+    -1.39 -0.09 -0.65
+    -0.01 -0.09 -0.65
+    -0.01 0.09 -0.65
+    -1.39 0.09 -0.65
+  faces 64
+    0 1 2  1  0 1 2  4
+    2 3 0  1  2 3 0  4
+    4 5 1  1  4 5 1  4
+    1 0 4  1  1 0 4  4
+    6 7 2  2  6 7 8  4
+    2 1 6  2  8 9 6  4
+    7 8 3  4  10 11 12  4
+    3 2 7  4  12 13 10  4
+    8 9 0  2  14 15 16  4
+    0 3 8  2  16 17 14  4
+    10 11 5  4  18 19 20  4
+    5 4 10  4  20 21 18  4
+    11 6 1  2  22 6 9  4
+    1 5 11  2  9 23 22  4
+    9 10 4  2  15 24 25  4
+    4 0 9  2  25 16 15  4
+    11 10 6  1  26 27 28  1
+    10 9 6  1  27 29 28  1
+    7 6 9  8  5 28 29  1
+    7 9 8  8  5 29 4  1
+    12 13 14  1  30 31 32  3
+    15 14 13  1  33 32 31  3
+    14 15 16  1  32 33 34  3
+    17 16 15  1  35 34 33  3
+    18 19 12  2  36 37 30  3
+    12 14 18  2  30 32 36  3
+    20 21 15  2  38 39 40  3
+    15 13 20  2  40 41 38  3
+    22 18 14  2  42 36 32  3
+    14 16 22  2  32 34 42  3
+    21 23 17  2  39 43 44  3
+    17 15 21  2  44 40 39  3
+    21 18 23  1  39 36 43  1
+    18 22 23  1  36 42 43  1
+    20 19 18  4  38 37 36  1
+    20 18 21  4  38 36 39  1
+    24 25 26  1  45 46 47  5
+    26 27 24  1  47 48 45  5
+    25 28 29  2  49 50 51  4
+    29 26 25  2  51 52 49  4
+    28 30 31  1  45 46 47  6
+    31 29 28  1  47 48 45  6
+    30 24 27  2  49 50 51  3
+    27 31 30  2  51 52 49  3
+    32 33 34  1  53 54 55  2
+    34 35 32  1  55 56 53  2
+    36 37 38  1  57 58 59  1
+    38 39 36  1  59 60 57  1
+    32 35 37  2  53 56 58  5
+    37 36 32  2  58 57 53  5
+    34 33 39  2  55 54 61  6
+    39 38 34  2  61 62 55  6
+    40 41 42  1  63 64 65  2
+    42 43 40  1  65 66 63  2
+    44 45 46  1  67 68 69  1
+    46 47 44  1  69 70 67  1
+    40 43 45  2  63 66 68  5
+    45 44 40  2  68 67 63  5
+    43 42 46  4  71 72 73  4
+    46 45 43  4  73 74 71  4
+    42 41 47  2  65 64 75  6
+    47 46 42  2  75 76 65  6
+    41 40 44  4  77 78 79  3
+    44 47 41  4  79 80 77  3
+  tverts 81
+    0.429812 0.433221 0
+    0.429812 0.566779 0
+    0.0004996 0.566779 0
+    0.0004995 0.433221 0
+    0.99856 0.433221 0
+    0.99856 0.566779 0
+    0.569247 0.5 0
+    0.99856 0.5 0
+    0.9995 0.7 0
+    0.570188 0.7 0
+    0.433221 0.500766 0
+    0.566779 0.500766 0
+    0.566779 0.697087 0
+    0.433221 0.697087 0
+    0.0014398 0.5 0
+    0.430753 0.5 0
+    0.429812 0.7 0
+    0.0004995 0.7 0
+    0.433221 0.302913 0
+    0.566779 0.302913 0
+    0.566779 0.499234 0
+    0.433221 0.499234 0
+    0.0004995 0.5 0
+    0.0014399 0.7 0
+    0.999501 0.5 0
+    0.99856 0.7 0
+    0.0004995 0.566779 0
+    0.0004995 0.433221 0
+    0.569247 0.566779 0
+    0.569247 0.433221 0
+    2.04689 0.675045 0
+    2.05201 0.96819 0
+    1.30829 0.687876 0
+    1.31341 0.981144 0
+    0.0566467 0.795879 0
+    0.0587589 0.916889 0
+    1.29806 0.442699 0
+    2.03666 0.429821 0
+    2.03455 0.308783 0
+    1.29595 0.321689 0
+    1.29762 0.0763048 0
+    2.03622 0.0633509 0
+    0.0464171 0.550702 0
+    0.0412981 0.257433 0
+    0.0429649 0.0120491 0
+    -0.848083 0.37511 0
+    -0.848083 0.232395 0
+    1.14992 0.232395 0
+    1.14992 0.37511 0
+    -0.848083 0.353703 0
+    -0.848083 0.253803 0
+    1.14992 0.253803 0
+    1.14992 0.353703 0
+    1.05075 0.213206 0
+    1.05075 0.291783 0
+    0.051746 0.291783 0
+    0.0517461 0.213206 0
+    1.05075 0.105909 0
+    0.051746 0.105909 0
+    0.051746 0.0273322 0
+    1.05075 0.0273321 0
+    1.05075 0.399079 0
+    0.051746 0.399079 0
+    0.893742 0.544124 0
+    0.893742 0.622701 0
+    -0.105259 0.622701 0
+    -0.105259 0.544124 0
+    0.893742 0.436827 0
+    -0.105259 0.436827 0
+    -0.105259 0.35825 0
+    0.893742 0.35825 0
+    0.200194 0.345154 0
+    0.200194 0.635796 0
+    0.588289 0.635796 0
+    0.588289 0.345154 0
+    0.893742 0.729997 0
+    -0.105259 0.729997 0
+    0.200194 0.635797 0
+    0.200194 0.345155 0
+    0.588289 0.345155 0
+    0.588289 0.635797 0
+endnode
+node trimesh sam
+  parent trm_udoor_06
+  position -0.02 -0.2 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 0.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 1.0 
+  ambient 0.2 0.2 0.2 
+  Diffuse 0.8 0.8 0.8 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 1.97601 -4.59406 170.44 
+  bitmap NULL
+  verts 8
+    -1.39945 -0.0358825 0.0
+    1.43897 -0.035882 0.0
+    1.43897 -0.035882 3.40881
+    -1.39945 -0.0358825 3.40881
+    1.43897 -0.0559986 0.0
+    -1.39945 -0.0559992 0.0
+    1.43897 -0.0559986 3.40881
+    -1.39945 -0.0559992 3.40881
+  faces 4
+    0 1 2  1  0 0 0  18
+    2 3 0  1  0 0 0  18
+    4 5 6  1  0 0 0  18
+    7 6 5  1  0 0 0  18
+endnode
+node dummy trm_udoor_06head
+  parent trm_udoor_06
+  position 0.000429687 -0.230669 2.59232
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy trm_udoor_06hhit
+  parent trm_udoor_06
+  position 0.000429687 -0.230669 2.22022
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy trm_udoor_06impc
+  parent trm_udoor_06
+  position 0.000429687 -0.230669 1.27804
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy trm_udoor_06grnd
+  parent trm_udoor_06
+  position 0.000429687 -0.230669 0.04
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+endmodelgeom trm_udoor_06
+
+#NWmax ANIM ASCII
+newanim closed trm_udoor_06
+  length 0.333333
+  transtime 0.25
+  animroot trm_udoor_06
+    node dummy trm_udoor_06
+        parent NULL
+    endnode
+    node trimesh wing01
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh frame01
+        parent wing01
+    endnode
+    node trimesh wing02
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh frame02
+        parent wing02
+    endnode
+    node trimesh sam
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06head
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06hhit
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06impc
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06grnd
+        parent trm_udoor_06
+    endnode
+    node dummy trm02_udoor_06_DWK
+        parent trm_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent trm02_udoor_06_DWK
+    endnode
+doneanim closed trm_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim opening1 trm_udoor_06
+  length 0.633333
+  transtime 0.25
+  animroot trm_udoor_06
+    node dummy trm_udoor_06
+        parent NULL
+    endnode
+    node trimesh wing01
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0666667 0.0 0.0 -1.0 -0.148353
+            0.2 0.0 0.0 -1.0 -0.567232
+            0.433333 0.0 0.0 -1.0 -1.35263
+            0.533333 0.0 0.0 -1.0 -1.42244
+            0.633333 0.0 0.0 -1.0 -1.44862
+        endlist
+    endnode
+    node trimesh frame01
+        parent wing01
+    endnode
+    node trimesh wing02
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0666667 0.0 0.0 1.0 -0.122173
+            0.166667 0.0 0.0 1.0 -0.453786
+            0.366667 0.0 0.0 1.0 -1.28282
+            0.433333 0.0 0.0 1.0 -1.38754
+            0.5 0.0 0.0 1.0 -1.309
+            0.566667 0.0 0.0 1.0 -1.30463
+            0.633333 0.0 0.0 1.0 -1.42244
+        endlist
+    endnode
+    node trimesh frame02
+        parent wing02
+    endnode
+    node trimesh sam
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06head
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06hhit
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06impc
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06grnd
+        parent trm_udoor_06
+    endnode
+    node dummy trm02_udoor_06_DWK
+        parent trm_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent trm02_udoor_06_DWK
+    endnode
+doneanim opening1 trm_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim opening2 trm_udoor_06
+  length 0.633333
+  transtime 0.25
+  animroot trm_udoor_06
+    node dummy trm_udoor_06
+        parent NULL
+    endnode
+    node trimesh wing01
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.92388 0.0 0.382683 -4.67431e-07
+            0.0666667 0.0 0.0 -1.0 -0.148353
+            0.2 0.0 0.0 -1.0 -0.567232
+            0.433333 0.0 0.0 -1.0 -1.35263
+            0.533333 0.0 0.0 -1.0 -1.42244
+            0.633333 0.0 0.0 -1.0 -1.44862
+        endlist
+    endnode
+    node trimesh frame01
+        parent wing01
+    endnode
+    node trimesh wing02
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.92388 0.0 0.382683 -6.22291e-07
+            0.0666667 0.0 0.0 1.0 -0.122173
+            0.166667 0.0 0.0 1.0 -0.453786
+            0.366667 0.0 0.0 1.0 -1.28282
+            0.433333 0.0 0.0 1.0 -1.38754
+            0.5 0.0 0.0 1.0 -1.309
+            0.566667 0.0 0.0 1.0 -1.30463
+            0.633333 0.0 0.0 1.0 -1.42244
+        endlist
+    endnode
+    node trimesh frame02
+        parent wing02
+    endnode
+    node trimesh sam
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06head
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06hhit
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06impc
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06grnd
+        parent trm_udoor_06
+    endnode
+    node dummy trm02_udoor_06_DWK
+        parent trm_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent trm02_udoor_06_DWK
+    endnode
+doneanim opening2 trm_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim opened1 trm_udoor_06
+  length 0.3
+  transtime 0.25
+  animroot trm_udoor_06
+    node dummy trm_udoor_06
+        parent NULL
+    endnode
+    node trimesh wing01
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.44862
+            0.3 0.0 0.0 -1.0 -1.44862
+        endlist
+    endnode
+    node trimesh frame01
+        parent wing01
+    endnode
+    node trimesh wing02
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.0 0.0 1.0 -1.42244
+            0.3 0.0 0.0 1.0 -1.42244
+        endlist
+    endnode
+    node trimesh frame02
+        parent wing02
+    endnode
+    node trimesh sam
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06head
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06hhit
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06impc
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06grnd
+        parent trm_udoor_06
+    endnode
+    node dummy trm02_udoor_06_DWK
+        parent trm_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent trm02_udoor_06_DWK
+    endnode
+doneanim opened1 trm_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim opened2 trm_udoor_06
+  length 0.3
+  transtime 0.25
+  animroot trm_udoor_06
+    node dummy trm_udoor_06
+        parent NULL
+    endnode
+    node trimesh wing01
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.44862
+            0.3 0.0 0.0 -1.0 -1.44862
+        endlist
+    endnode
+    node trimesh frame01
+        parent wing01
+    endnode
+    node trimesh wing02
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.0 0.0 1.0 -1.42244
+            0.3 0.0 0.0 1.0 -1.42244
+        endlist
+    endnode
+    node trimesh frame02
+        parent wing02
+    endnode
+    node trimesh sam
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06head
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06hhit
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06impc
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06grnd
+        parent trm_udoor_06
+    endnode
+    node dummy trm02_udoor_06_DWK
+        parent trm_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent trm02_udoor_06_DWK
+    endnode
+doneanim opened2 trm_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim closing1 trm_udoor_06
+  length 0.633333
+  transtime 0.25
+  animroot trm_udoor_06
+    node dummy trm_udoor_06
+        parent NULL
+    endnode
+    node trimesh wing01
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.44862
+            0.0666667 0.0 0.0 -1.0 -1.39626
+            0.2 0.0 0.0 -1.0 -0.916298
+            0.4 0.0 0.0 -1.0 -0.279253
+            0.5 0.0 0.0 -1.0 -0.0959931
+            0.633333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh frame01
+        parent wing01
+    endnode
+    node trimesh wing02
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.0 0.0 1.0 -1.42244
+            0.0666667 0.0 0.0 1.0 -1.33518
+            0.266667 0.0 0.0 1.0 -0.942478
+            0.433333 -4.99997e-07 -4.99997e-07 1.0 -0.00872675
+            0.5 0.0 0.0 1.0 -0.1309
+            0.566667 0.0 0.0 1.0 -0.10472
+            0.6 0.0 0.0 1.0 -0.0436332
+            0.633333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh frame02
+        parent wing02
+    endnode
+    node trimesh sam
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06head
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06hhit
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06impc
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06grnd
+        parent trm_udoor_06
+    endnode
+    node dummy trm02_udoor_06_DWK
+        parent trm_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent trm02_udoor_06_DWK
+    endnode
+doneanim closing1 trm_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim closing2 trm_udoor_06
+  length 0.633333
+  transtime 0.25
+  animroot trm_udoor_06
+    node dummy trm_udoor_06
+        parent NULL
+    endnode
+    node trimesh wing01
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.44862
+            0.0666667 0.0 0.0 -1.0 -1.39626
+            0.2 0.0 0.0 -1.0 -0.916298
+            0.4 0.0 0.0 -1.0 -0.279253
+            0.5 0.0 0.0 -1.0 -0.0959931
+            0.633333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh frame01
+        parent wing01
+    endnode
+    node trimesh wing02
+        parent trm_udoor_06
+        orientationkey
+            0.0 0.0 0.0 1.0 -1.42244
+            0.0666667 0.0 0.0 1.0 -1.33518
+            0.266667 0.0 0.0 1.0 -0.942478
+            0.433333 -4.99997e-07 -4.99997e-07 1.0 -0.00872675
+            0.5 0.0 0.0 1.0 -0.1309
+            0.566667 0.0 0.0 1.0 -0.10472
+            0.6 0.0 0.0 1.0 -0.0436332
+            0.633333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh frame02
+        parent wing02
+    endnode
+    node trimesh sam
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06head
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06hhit
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06impc
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06grnd
+        parent trm_udoor_06
+    endnode
+    node dummy trm02_udoor_06_DWK
+        parent trm_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent trm02_udoor_06_DWK
+    endnode
+doneanim closing2 trm_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim trans trm_udoor_06
+  length 0.0333333
+  transtime 0.25
+  animroot trm_udoor_06
+    node dummy trm_udoor_06
+        parent NULL
+    endnode
+    node trimesh wing01
+        parent trm_udoor_06
+    endnode
+    node trimesh frame01
+        parent wing01
+    endnode
+    node trimesh wing02
+        parent trm_udoor_06
+    endnode
+    node trimesh frame02
+        parent wing02
+    endnode
+    node trimesh sam
+        parent trm_udoor_06
+        alphakey
+            0.0 0.25 
+            0.0333333 0.25 
+        endlist
+    endnode
+    node dummy trm_udoor_06head
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06hhit
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06impc
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06grnd
+        parent trm_udoor_06
+    endnode
+    node dummy trm02_udoor_06_DWK
+        parent trm_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent trm02_udoor_06_DWK
+    endnode
+doneanim trans trm_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim die trm_udoor_06
+  length 0.666667
+  transtime 0.25
+  animroot trm_udoor_06
+    node dummy trm_udoor_06
+        parent NULL
+    endnode
+    node trimesh wing01
+        parent trm_udoor_06
+        positionkey
+            0.0 -1.4 -0.25 1.2
+            0.666667 -1.4 -0.25 -3.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.666667 -1.0 0.0 0.0 -1.5708
+        endlist
+    endnode
+    node trimesh frame01
+        parent wing01
+    endnode
+    node trimesh wing02
+        parent trm_udoor_06
+        positionkey
+            0.0 1.4 -0.25 1.2
+            0.666667 1.4 -0.25 -3.0
+        endlist
+        orientationkey
+            0.0 1.0 0.0 0.000365143 -9.56464e-07
+            0.666667 -1.0 0.0 0.0 -1.5708
+        endlist
+    endnode
+    node trimesh frame02
+        parent wing02
+    endnode
+    node trimesh sam
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06head
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06hhit
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06impc
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06grnd
+        parent trm_udoor_06
+    endnode
+    node dummy trm02_udoor_06_DWK
+        parent trm_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent trm02_udoor_06_DWK
+    endnode
+doneanim die trm_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim dead trm_udoor_06
+  length 0.0333333
+  transtime 0.25
+  animroot trm_udoor_06
+    node dummy trm_udoor_06
+        parent NULL
+    endnode
+    node trimesh wing01
+        parent trm_udoor_06
+        positionkey
+            0.0 -1.4 -0.25 -3.0
+            0.0333333 -1.4 -0.25 -3.0
+        endlist
+        orientationkey
+            0.0 -1.0 0.0 0.0 -1.57498
+            0.0333333 -1.0 0.0 0.0 -1.5708
+        endlist
+    endnode
+    node trimesh frame01
+        parent wing01
+    endnode
+    node trimesh wing02
+        parent trm_udoor_06
+        positionkey
+            0.0 1.4 -0.25 -3.0
+            0.0333333 1.4 -0.25 -3.0
+        endlist
+        orientationkey
+            0.0 -1.0 0.0 0.0 -1.5708
+            0.0333333 -1.0 0.0 0.0 -1.5708
+        endlist
+    endnode
+    node trimesh frame02
+        parent wing02
+    endnode
+    node trimesh sam
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06head
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06hhit
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06impc
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06grnd
+        parent trm_udoor_06
+    endnode
+    node dummy trm02_udoor_06_DWK
+        parent trm_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent trm02_udoor_06_DWK
+    endnode
+doneanim dead trm_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim damage trm_udoor_06
+  length 0.466667
+  transtime 0.25
+  animroot trm_udoor_06
+    node dummy trm_udoor_06
+        parent NULL
+    endnode
+    node trimesh wing01
+        parent trm_udoor_06
+        positionkey
+            0.0 -1.4 -0.25 1.2
+            0.133333 -1.4 -0.27 1.2
+            0.3 -1.4 -0.24 1.2
+            0.466667 -1.4 -0.25 1.2
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.133333 -1.0 -2.98552e-07 0.0 -0.0698132
+            0.3 1.0 -5.97594e-07 0.0 -0.0349066
+            0.466667 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh frame01
+        parent wing01
+    endnode
+    node trimesh wing02
+        parent trm_udoor_06
+        positionkey
+            0.0 1.4 -0.25 1.2
+            0.133333 1.4 -0.275 1.2
+            0.3 1.4 -0.23 1.2
+            0.466667 1.4 -0.25 1.2
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.133333 -1.0 0.0 0.0 -0.0523599
+            0.3 1.0 0.0 0.0 -0.02618
+            0.466667 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh frame02
+        parent wing02
+    endnode
+    node trimesh sam
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06head
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06hhit
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06impc
+        parent trm_udoor_06
+    endnode
+    node dummy trm_udoor_06grnd
+        parent trm_udoor_06
+    endnode
+    node dummy trm02_udoor_06_DWK
+        parent trm_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_02
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent trm02_udoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent trm02_udoor_06_DWK
+    endnode
+doneanim damage trm_udoor_06
+
+donemodel trm_udoor_06

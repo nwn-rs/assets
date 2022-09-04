@@ -1,0 +1,15 @@
+#MAXMODEL ASCII
+# model: pnl_opt_splash
+filedependancy pnl_opt_splash.max
+newmodel pnl_opt_splash
+setsupermodel pnl_opt_splash NULL
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom pnl_opt_splash
+node dummy pnl_opt_splash
+  parent NULL
+  #part-number 0
+endnode
+endmodelgeom pnl_opt_splash
+
+donemodel pnl_opt_splash
