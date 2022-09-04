@@ -126,133 +126,264 @@ jobs:
         run: |
           find ./ -name '*.2da' -exec cp -prv '{}' '2da/' ';'
           cd 2da && zip -r ../2da.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: 2da
+          path: 2da.zip
       - name: Gather dds files
         run: |
           find ./ -name '*.dds' -exec cp -prv '{}' 'dds/' ';'
           cd dds && zip -r ../dds.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dds
+          path: dds.zip
       - name: Gather dlg files
         run: |
           find ./ -name '*.dlg' -exec cp -prv '{}' 'dlg/' ';'
           cd dlg && zip -r ../dlg.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dlg
+          path: dlg.zip
       - name: Gather docs
         run: |
           cd docs && zip -r ../docs.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: docs.zip
       - name: Gather dwk files
         run: |
           find ./ -name '*.dwk' -exec cp -prv '{}' 'dwk/' ';'
           cd dwk && zip -r ../dwk.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dwk
+          path: dwk.zip
       - name: Gather gff files
         run: |
           find ./ -name '*.gff' -exec cp -prv '{}' 'gff/' ';'
           cd gff && zip -r ../gff.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: gff
+          path: gff.zip
       - name: Gather gui files
         run: |
           find ./ -name '*.gui' -exec cp -prv '{}' 'gui/' ';'
           cd gui && zip -r ../gui.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: gui
+          path: gui.zip
       - name: Gather ids files
         run: |
           find ./ -name '*.ids' -exec cp -prv '{}' 'ids/' ';'
           cd ids && zip -r ../ids.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ids
+          path: ids.zip
       - name: Gather ini files
         run: |
           find ./ -name '*.ini' -exec cp -prv '{}' 'ini/' ';'
           cd ini && zip -r ../ini.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ini
+          path: ini.zip
       - name: Gather itp files
         run: |
           find ./ -name '*.itp' -exec cp -prv '{}' 'itp/' ';'
           cd itp && zip -r ../itp.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: itp
+          path: itp.zip
       - name: Gather ltr files
         run: |
           find ./ -name '*.ltr' -exec cp -prv '{}' 'ltr/' ';'
           cd ltr && zip -r ../ltr.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ltr
+          path: ltr.zip
       - name: Gather mdl files
         run: |
           find ./ -name '*.mdl' -exec cp -prv '{}' 'mdl/' ';'
           cd mdl && zip -r ../mdl.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: mdl
+          path: mdl.zip
       - name: Gather mod files
         run: |
           find ./ -name '*.mod' -exec cp -prv '{}' 'mod/' ';'
           cd mod && zip -r ../mod.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: mod
+          path: mod.zip
       - name: Gather mtr files
         run: |
           find ./ -name '*.mtr' -exec cp -prv '{}' 'mtr/' ';'
           cd mtr && zip -r ../mtr.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: mtr
+          path: mtr.zip
       - name: Gather nss files
         run: |
           find ./ -name '*.nss' -exec cp -prv '{}' 'nss/' ';'
           cd nss && zip -r ../nss.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: nss
+          path: nss.zip
       - name: Gather plt files
         run: |
           find ./ -name '*.plt' -exec cp -prv '{}' 'plt/' ';'
           cd plt && zip -r ../plt.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: plt
+          path: plt.zip
       - name: Gather ovr files
         run: |
           cd ovr && zip -r ../ovr.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ovr
+          path: ovr.zip
       - name: Gather ptt files
         run: |
           find ./ -name '*.ptt' -exec cp -prv '{}' 'ptt/' ';'
           cd ptt && zip -r ../ptt.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ptt
+          path: ptt.zip
       - name: Gather pwk files
         run: |
           find ./ -name '*.pwk' -exec cp -prv '{}' 'pwk/' ';'
           cd pwk && zip -r ../pwk.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: pwk
+          path: pwk.zip
       - name: Gather dwk files
         run: |
           find ./ -name '*.set' -exec cp -prv '{}' 'set/' ';'
           cd set && zip -r ../set.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: set
+          path: set.zip
       - name: Gather shd files
         run: |
           find ./ -name '*.shd' -exec cp -prv '{}' 'shd/' ';'
           cd shd && zip -r ../shd.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: shd
+          path: shd.zip
       - name: Gather ssf files
         run: |
           find ./ -name '*.ssf' -exec cp -prv '{}' 'ssf/' ';'
           cd ssf && zip -r ../ssf.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ssf
+          path: ssf.zip
       - name: Gather tga files
         run: |
           find ./ -name '*.tga' -exec cp -prv '{}' 'tga/' ';'
           cd tga && zip -r ../tga.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: tga
+          path: tga.zip
       - name: Gather tlk files
         run: |
           find ./ -name '*.tlk' -exec cp -prv '{}' 'tlk/' ';'
           cd tlk && zip -r ../tlk.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: tlk
+          path: tlk.zip
       - name: Gather ute files
         run: |
           find ./ -name '*.ute' -exec cp -prv '{}' 'ute/' ';'
           cd ute && zip -r ../ute.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ute
+          path: ute.zip
       - name: Gather utc files
         run: |
           find ./ -name '*.ute' -exec cp -prv '{}' 'utc/' ';'
           cd utc && zip -r ../utc.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: utc
+          path: utc.zip
       - name: Gather uti files
         run: |
           find ./ -name '*.uti' -exec cp -prv '{}' 'uti/' ';'
           cd uti && zip -r ../uti.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: uti
+          path: uti.zip
       - name: Gather utm files
         run: |
           find ./ -name '*.utm' -exec cp -prv '{}' 'utm/' ';'
           cd utm && zip -r ../utm.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: utm
+          path: utm.zip
       - name: Gather utp files
         run: |
           find ./ -name '*.utp' -exec cp -prv '{}' 'utp/' ';'
           cd utp && zip -r ../utp.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: utp
+          path: utp.zip
       - name: Gather uts files
         run: |
           find ./ -name '*.uts' -exec cp -prv '{}' 'uts/' ';'
           cd uts && zip -r ../uts.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: uts
+          path: uts.zip
       - name: Gather utt files
         run: |
           find ./ -name '*.utt' -exec cp -prv '{}' 'utt/' ';'
           cd utt && zip -r ../utt.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: utt
+          path: utt.zip
       - name: Gather utw files
         run: |
           find ./ -name '*.utw' -exec cp -prv '{}' 'utw/' ';'
           cd utw && zip -r ../utw.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: utw
+          path: utw.zip
       - name: Gather wok files
         run: |
           find ./ -name '*.wok' -exec cp -prv '{}' 'wok/' ';'
           cd wok && zip -r ../wok.zip .
-
+      - uses: actions/upload-artifact@v3
+        with:
+          name: wok
+          path: wok.zip
       - name: prerelease
         if: github.event.inputs.release == 'preview'
         uses: softprops/action-gh-release@v1
@@ -335,6 +466,25 @@ jobs:
             utt.zip
             utw.zip
             wok.zip
+  git:
+    name: Generate ${{ github.event.inputs.release }} nwn files
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        type: [2da, dds, dlg, docs, dwk, gff, gui, ids, ini, itp, ltr, mdl, mod, mtr, nss, ovr, plt, ptt, pwk, set, shd, ssf, tga, tlk, utc, ute, uti, utm, utp, uts, utt, utw, wok]
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: "Checkout source code"
+        uses: "actions/checkout@v3"
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_ACCESS_TOKEN  }}
+      - uses: actions/download-artifact@v3
+        with:
+          name: ${{ matrix.type }}
+      - name: Extract some files
+        run: 7z x ${{ matrix.type }}.zip
 
 #      # wok
 #      # gather wok files
