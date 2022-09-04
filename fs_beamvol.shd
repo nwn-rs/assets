@@ -1,0 +1,23 @@
+//=============================================================================
+//
+// fs_beamvol.shd
+//
+//=============================================================================
+
+uniform vec4 globalColor;
+
+varying float fFogFragCoord;
+
+float GetFogAlpha(float fAmount)
+{
+	return clamp(fAmount, 0.0, 1.0);
+}
+
+void main()
+{
+
+	vec4 FragmentColor = globalColor;
+	FragmentColor.a *= 1.0 - GetFogAlpha(fFogFragCoord);
+	gl_FragColor = FragmentColor;
+}
+
