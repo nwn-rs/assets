@@ -1,0 +1,24 @@
+//----------------------------------------
+//
+// Dynamic contrast shader.
+//
+//----------------------------------------
+//
+// Description:
+//
+// Adds contrast to the current scene with a dynamic midpoint based on area lighting.
+//
+//----------------------------------------
+
+#define POSTPROCESSING 1
+
+#define SHADER_TYPE 1
+
+#include "inc_common"
+
+void main()
+{
+	gl_Position = vec4(vPos.xyz, 1.0);
+		
+	vVertexTexCoords = vTcIn;
+}

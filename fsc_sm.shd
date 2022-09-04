@@ -1,0 +1,40 @@
+/*
+
+fsc_sm.shd
+
+*/
+
+varying lowp vec4 vColorOut;
+varying mediump float fFogFragCoord;
+varying vec2 vTcEnv;
+
+uniform sampler2D texUnit0;
+uniform sampler2D texUnitEnv;	// This will contain the environment map
+uniform int fogEnabled;
+uniform lowp vec4 fogColor;
+uniform lowp vec4 globalColor;
+uniform int texture0Bound;
+
+void main() {
+
+    lowp vec4 color;
+    lowp vec4 env;
+    lowp vec4 tex;
+
+    env = texture2D(texUnitEnv, vTcEnv.xy);
+
+    color = texture2D(texUnit0, vec2(0.5,0.5));
+    if(texture0Bound == 0)
+    {
+        color = vColorOut;
+    }
+    color.rgb = mix(env.rgb, color.rgb, color.a);
+
+
+
+    color.a = globalColor.a;
+
+    if(fogEnabled != 0) color.rgb = mix(color.rgb, fogColor.rgb, clamp(fFogFragCoord, 0.0, 1.0));
+
+    gl_FragColor = color;
+}
