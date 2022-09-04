@@ -41,14 +41,14 @@ jobs:
         run: |
           gh repo clone SteamRE/DepotDownloader
       - name: Download preview nwn:ee files
-        if: github.event.inputs.release == 'preview'
+        if: github.event.inputs.release == 'preview' || github.event.inputs.release == 'build8193.35'
         run: |
           cd DepotDownloader/DepotDownloader
           dotnet run -app 704450 -depot 704451 -beta ${{ github.event.inputs.release }} -betapassword ${{ github.event.inputs.release }}${{ github.event.inputs.release }} -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
           cd ${{ env.GITHUB_WORKSPACE }}
           mkdir out
       - name: Download nwn:ee files
-        if: github.event.inputs.release != 'preview'
+        if: github.event.inputs.release != 'preview' || github.event.inputs.release != 'build8193.35'
         run: |
           cd DepotDownloader/DepotDownloader
           dotnet run -app 704450 -depot 704451 -beta ${{ github.event.inputs.release }} -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
