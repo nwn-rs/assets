@@ -469,6 +469,7 @@ jobs:
   git:
     name: Generate ${{ github.event.inputs.release }} nwn files
     runs-on: ubuntu-latest
+    needs: generate
     strategy:
       matrix:
         type: [2da, dds, dlg, docs, dwk, gff, gui, ids, ini, itp, ltr, mdl, mod, mtr, nss, ovr, plt, ptt, pwk, set, shd, ssf, tga, tlk, utc, ute, uti, utm, utp, uts, utt, utw, wok]
