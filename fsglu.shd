@@ -1,0 +1,29 @@
+//=============================================================================
+//
+// fsglu.shd
+//
+//=============================================================================
+
+#define SHADER_TYPE 2
+
+
+#define LIGHTING 0
+#define FOG 0
+#define KEYHOLING 0
+
+#define NO_TEXTURE_COORDS 1
+#define NORMAL_MAP 0
+#define SPECULAR_MAP 0
+#define ROUGHNESS_MAP 0
+#define HEIGHT_MAP 0
+#define SELF_ILLUMINATION_MAP 0
+#define ENVIRONMENT_MAP 0
+
+#include "inc_standard"
+
+uniform lowp vec4 globalColor;
+
+void main ()
+{
+    gl_FragColor = RevertColorSpace(globalColor);
+}
