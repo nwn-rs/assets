@@ -1,0 +1,30 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: PLC_x0_ch2
+filedependancy plc_x0chair2.max
+node trimesh PLC_X02_wg
+  parent PLC_x0_ch2_pwk
+  position 0.155427 0 0
+  orientation 0 0 0 0
+  wirecolor 0.425781 0.425781 0.425781
+  ambient 1 1 1
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 1
+  bitmap PLC_RugDMtlBrk
+  verts 4
+    0.169358 0.256727 0
+    -0.480217 0.256727 0
+    0.169357 -0.343273 0
+    -0.480217 -0.343273 0
+  faces 2
+    2 0 3  1  0 0 0  7
+    1 3 0  1  0 0 0  7
+endnode
+node dummy ch2_pwk_use01
+  parent PLC_x0_ch2_pwk
+  position -0.0021671 0.349336 0
+  orientation 0 0 0 0
+  wirecolor 0.425781 0.425781 0.425781
+endnode

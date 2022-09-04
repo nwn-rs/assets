@@ -1,0 +1,24 @@
+#MAXDOOR ASCII
+# model: PLC_SChair_pwk 
+filedependancy plc_seastuff.max
+node trimesh PLC_SChair_wg 
+  parent PLC_SChair_pwk 
+  position -0.017863 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.694118 0.101961  
+    bitmap NULL
+    verts 4
+     -0.40903 -0.493051 0.0
+     0.453554 -0.493051 0.0
+     -0.40903 0.47929 0.0
+     0.453554 0.47929 0.0
+    faces 2
+     2 0 3  1  0 0 0  1
+     1 3 0  1  0 0 0  1
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_SChair_pwk 
+  position 0.0 -0.56789 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
