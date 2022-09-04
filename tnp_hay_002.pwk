@@ -1,0 +1,24 @@
+#MAXDOOR ASCII
+# model: tnp_hay_002_pwk 
+filedependancy hayblocks_02.max
+node trimesh pwk 
+  parent tnp_hay_002_pwk 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.541176 0.0313726 0.431373  
+    bitmap NULL
+    verts 4
+     -0.301722 -0.305099 0.0
+     0.298377 -0.305099 0.0
+     -0.301722 0.322204 0.0
+     0.298377 0.322204 0.0
+    faces 2
+     2 0 3  1  0 0 0  1
+     1 3 0  1  0 0 0  1
+endnode
+node dummy 002_pwk_use01 
+  parent tnp_hay_002_pwk 
+  position 0.75 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.580392 0.694118 0.101961  
+endnode

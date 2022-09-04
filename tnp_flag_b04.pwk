@@ -1,0 +1,10 @@
+# Exported from NWmax 0.8 b40 at 7/4/2005 4:45:43 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy b04_pwk_use01
+  parent tnp_flag_b04_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.0 0.0 
+endnode

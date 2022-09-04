@@ -1,0 +1,22 @@
+#MAXDOOR ASCII
+# model: PLC_P04_pwk 
+filedependancy PlaceableObjects01.max
+node trimesh PLC_P04_wg 
+  parent PLC_P04_pwk 
+  position -1.58722e-006 -2.6066e-007 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.0235294 0.0235294  
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 1.0 
+    bitmap PLC_RugDMtlBrk
+    verts 4
+     -0.233652 -0.596795 0.0
+     0.26885 -0.578785 0.0
+     -0.240466 -0.0229747 0.0
+     0.344951 0.0396654 0.0
+    faces 2
+     2 0 3  1  0 0 0  7
+     1 3 0  1  0 0 0  7
+endnode
