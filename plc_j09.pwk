@@ -1,0 +1,49 @@
+#MAXDOOR ASCII
+# model: PLC_J09_pwk 
+filedependancy PlaceableObjects01.max
+node trimesh PLC_J09_wg 
+  parent PLC_J09_pwk 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.431373 0.0313726  
+  multimaterial 18 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+    bitmap NULL
+    verts 4
+     -0.689966 -0.70209 0.0
+     0.689966 -0.70209 0.0
+     -0.689966 0.70209 0.0
+     0.689966 0.70209 0.0
+    faces 2
+     2 0 3  1  0 0 0  7
+     1 3 0  1  0 0 0  7
+endnode
+node dummy J09_pwk_use01 
+  parent PLC_J09_pwk 
+  position -0.0219018 -1.24591 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode
+node dummy J09_pwk_use02 
+  parent PLC_J09_pwk 
+  position -0.0219018 1.23201 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode

@@ -1,0 +1,16 @@
+# Exported from NWmax 0.8 c00 at 1/7/2019 7:01:27 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy r11_pwk_use01
+  parent ptm_flower11_pwk
+  position -0.0319092 0.420648 0.0262451
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.529412 0.431373 0.0313726 
+endnode
+node dummy r11_pwk_use02
+  parent ptm_flower11_pwk
+  position -0.198418 -0.548146 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.65098 0.898039 0.898039 
+endnode

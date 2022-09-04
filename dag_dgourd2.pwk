@@ -1,0 +1,31 @@
+# Exported from NWmax 0.8 c00 at 9/24/2020 8:59:18 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh dgourd2_wg
+  parent dgourd2_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.87451 0.776471 0.337255 
+  bitmap NULL
+  verts 4
+    1.0 -1.0 0.0
+    -1.0 1.0 0.0
+    -1.0 -1.0 0.0
+    1.0 1.0 0.0
+  faces 2
+    0 1 2  0  0 0 0  7
+    0 3 1  0  0 0 0  7
+endnode
+node dummy tbd_pwk_use01
+  parent dgourd2_pwk
+  position 0.0295397 1.0791 0.159263
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
+node dummy tbd_pwk_use02
+  parent dgourd2_pwk
+  position 0.0295397 -1.11214 0.159263
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
