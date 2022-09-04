@@ -1,0 +1,268 @@
+Neverwinter Nights: Enhanced Edition v1.79
+
+Breaking Changes
+-=-=-=-=-=-=-=-=
+
+* CopyObject() now also copies the plot flag for creatures and items. This used to not be the case, but copying the plot flag is more consistent since it matches all other script calls for copying objects (i.e. CopyItem()).
+* Dragon Disciple characters will not be back-portable to earlier game versions, as the baked-in stats modifiers are now applied at runtime. Existing characters will be written at first save (see below for details).
+
+
+Major Features
+-=-=-=-=-=-=-=
+
+* Both client and server are now 64bit binaries. We do not provide 32bit binaries anymore as of this patch. (The binary directories in the game install are now misnamed; we didn't change this yet but will in a future patch.)
+
+* CodeBase (“Bioware Campaign Database”) has been replaced with sqlite3, as the old database code would not work when compiled with a 64bit compiler. All new database files end up in the database/ directory in your user home. They have the extension .sqlite3. Old database files will be imported once at module startup.
+
+* Achievements have been added to the Steam release. These are the same as have been available on Android for a while. There is a Debug UI panel that allows you to clear previously-achieved achievements if you’d like to start fresh.
+
+* A new configuration system has been put in place. Most client and server config is now stored in a file called settings.tml, instead of nwn and nwnplayer ini.
+
+* We're changing how networking is done in NWN:EE, with the following benefits: Cryptographic server and client identity authentication; full network encryption to prevent traffic snooping - and in the case of public servers via the master, connection hijacking; floating connections (you might be able to IP/port-hop and retain your connection); better use of compression; and no more host/port confusion when connecting multiple times from behind the same LAN.
+
+* Networking/Crypto: Servers can now have fixed identities that persist between restarts. This identity is stored in a file named “cryptographic_secret” in the user home. Leaking this identity allows others to impersonate your server, much in the same way as leaking a private CD key. Favourites and History storage will now use server identities if available, so that floating IP/port servers can be found again easily.
+
+* We ported keyholing from Android. It is turned ON by default, but can be turned off with a console command (KeyholeToggle) or the configuration setting. There are also bindable keys.
+
+* New main menu background art. (Also configurable in settings.tml)
+
+* A management UI for NWSync was added to the Options dialog. It allows players to remove downloaded data they don’t want anymore.
+
+* New script calls (see below).
+
+
+Further Features
+-=-=-=-=-=-=-=-=
+
+* Shaders now support #include. Use with care: It's not a real preprocessor, just a verbatim string replace.
+* NWSync now cleans up downloaded manifest mappings when getting updates from known servers. It will not remove unreferenced data yet (as desktop users might not want to lose it), but that will come next.
+* NWSync will automatically reconnect you to the server if you are still around after the download finishes (based on keyboard/mouse input detection).
+
+* A debug UI for advanced users to showcase experimental new features and UI scenes has been implemented (Ctrl+Shift+F12 to access).
+
+* A lot of new configuration keys have been added, too numerous to list here.
+  Configuration will be imported from ini files. Once imported, the .ini will not be written anymore (but left in place in case you want to go back to a previous build).
+  All configuration keys can be overridden via ENV variables (useful for automated server setups), like so: NWN_CONFIG_SET_key, where key is the fully-qualified configuration key.
+  Some configuration still remains in .ini files; these will be migrated as we go along.
+  The .tml file is in TOML format and has a full schema embedded for better introspection and tool-based editing.
+  The debug UI offers access to the full new configuration system.
+
+* The game now defaults to windowed mode (instead of exclusive fullscreen) on new installs.
+* The game will now remember the window position between restarts when in windowed mode.
+* A simple frame limiter has been added, which can be used to reduce CPU/GPU usage on battery-constrained devices. It is accessible through the Debug UI as explained below.
+* Walking/Running with shift held down is now an invertible config toggle. This is also accessible through the Debug UI.
+
+* NWSync now automatically purges outdated server manifests, removing stale and unneeded data. Manifests are considered outdated if they are coming from the same server URL and carry the same group_id (see NWSync documentation).
+* NWSync can now download offline modules from preconfigured servers. This is a experimental feature and only accessible via the Debug UI, and requires adding a specially-prepared repository.
+* The debug UI offers to purge unwanted nwsync manifests and all associated data. This will eventually be turned into a more user-friendly UI.
+
+* Music and ambient sounds are now loaded through ResMan and can thus be in hak and nwsync.
+* The game will now read plain mp3 files (the .bmu extension rename is still required, because this extension is used in all existing resources/haks).
+* The game user home (i.e. Documents/Neverwinter Nights) is now provisioned “development” directory, which detects changes and content is reloaded at runtime. This directory sits at the very top of the resources search path (unlike override/, which is sitting below ERF containers such as HAKs).
+  NB: This content reload only affects resource types that are not cached. For example, it can be used to inject scripts or GFF data, but not replace textures on the fly.
+ResMan resource management and priorities has been rewritten. The debug UI can show this to you.
+* [Linux/Mac only] The game can now optionally mmap() all core game resources. This speeds up loading times drastically on some systems. This is turned off by default.
+
+* We have added a script command to JIT-compile and run a chunk of NWScript.
+* We have added functionality that allows attaching UUIDs to objects. These UUIDs are persisted to GFF and can be used by authors to identify items across module restarts, among other use cases.
+* Script calls that serialise/deserialise objects (StoreCampaignObject and CopyObject as of now) can now work with the following object types: Creatures, Items, Placeables, Waypoints, Stores, Doors, Triggers.
+
+
+* Model compiler: Added a new alias to nwn.ini: MODELCOMPILER (instead of clobbering the installation directory)
+* New console command: compileloadedmodels (comppiles all loaded models, including binary)
+* New console command: compileloadedasciimodels (compiles all loaded models, only ascii)
+* New console command: compilemodel <name> (specific model, will load and unload it for you even if it is not currently loaded)
+* New command line switch: nwmain.exe compilemodel <name> (same as the above console command; will compile the model and exit the game immediately)
+* NWSync now shows network and storage speed separately while downloading.
+
+* A new toolset build has been added. See the Toolset section below for details.
+* New console command: cfg <key> [value] to change config values.
+* Configuration keys to set min-height (from ground level), min-radius (percentage of screen), and max-radius (also percentage of screen) for keyholing have been added. These are available through the Debug UI and by editing settings.tml.
+* A configuration key that allows toggling keyholing alongside tooltip (TAB, by default) has been added. It is available through the Debug UI and by editing settings.tml.
+* DM Creator Palettes can now contain plain CExoString entries in addition to STRREFs. Strictly speaking, this was possible before (node name was DELETE_ME); we’ve renamed that node to - surprise - “NAME” to make it * prettier.
+
+* Experimental area precaching has been added. It is guarded behind a configuration toggle and defaults to off.
+
+
+Fixes
+-=-=-
+
+* Performance and memory usage improvements at NWSync startup.
+* History/Favorites have been fixed to once again show what has been saved to the .ini.
+* We fixed the SetName and SetHiddenWhenEquipped script commands not reliably updating all clients.
+* We fixed some doors becoming unclickable after having been destroyed, despite having a scripted transition present.
+* We fixed the script compiler sometimes confusing functions where the full name of one is a prefix of the other ("Action" <-> "ActionTwo").
+* We fixed module content (hak, tlk, nwsync) not properly unloading when disconnecting from a server.
+* We fixed a bug where resources were indexed twice when loading a module, resulting in prolonged load/connect times.
+* We fixed an issue where sending visual transforms or material updates for creatures only seen on the party bar, but not yet in an area, crashed clients.
+
+* C++: Thousands of cases of undefined behaviour have been addressed. A lot of code duplication has been removed in the process.
+* KTX texture loading order has been fixed.
+* The Load/Save dialogue now properly removes savegames from the resource manager when exiting the UI.
+* GL Render Culling was fixed (i.e. flickering trees and keyholing showing backfaces of geometry instead of punching through).
+* We fixed invalid user savegames being deleted on read errors; for example when erroneously storing savegames in subdirectories, or when AV denies access to reading the .sav.
+* Automatic tangent generation has been fixed.
+* Steam CD key retrieval should be more robust; and in the case of errors, will emit a useful support token that can be used to follow up with Beamdog.
+* A memleak in script evaluation was fixed.
+* SetPhenoType: The constraint condition was too narrow in clamping the phenotype; this has been fixed.
+* SetName() on areas now sends the configured language, instead of English.
+* The rather arbitrary builtin effect icon limit has been removed.
+* Object Visual Transforms: We now send VTs for newly-created doors and placeables. Some inefficiencies in network updates have been removed.
+* Material Shader Params: Some inefficiencies in network updates have been removed.
+* The server now waits 3 seconds before attempting to list with the master, allowing a module to load in non-interactive use.
+* Running a local multiplayer game now should never reject the primary player if the master is unreachable.
+* A case where arturo texture animations failed to animate has been addressed.
+* A bug in the creature serialisation code (for StoreCampaignObject) has been addressed where it would erroneously embed transient object IDs for inventory items, resulting in issues when loading this creature again in a persistent world setting.
+* A nullptr deref crash related to funny/zombie-walking a player was fixed.
+* A nullptr deref crash when clicking placeables without a valid player creature was fixed.
+* A thread race crash during sound system initialisation was fixed.
+* A nullptr deref crash when the server sends a weapon switch request for a creature where the model did not yet load was fixed.
+* A selection of nullptr deref crashes when the server sends a creature update for a non-existing creature were fixed.
+* A case where encounters containing creatures only of the same CR would fail to select the proper amount/difficulty was fixed.
+
+* NWSync SQLite migration stability has been improved. They are now defined in code, and no longer in the installation directory. The schema, of course, remains public.
+* The effect limit configuration keys have been uncapped. They used to be limited to [1, default]; they now are [0, 255]. Beware: You may run into strange behaviour if you exceed a total bonus/penalty of -128, 127 or 255 regardless of configuration; since some values are internally typed with 8 bits.
+* Hosting local multiplayer games on Mac and Linux, where the system hostname is not resolvable through DNS, has been fixed.
+* The server config "Server vault by player name" does not require "Sticky player names" enabled anymore to work. This will help servers that want to set up custom authentication schemes.
+* We fixed an issue where the threadpool would not spawn enough worker threads if your CPU had less than three (virtual) cores.
+
+* Scripting: The effect limit accessors now adhere to the configuration constraints. Values set through these will always override the user-configured values for the running module only.
+
+* We addressed a custom content-related crash when adding invalid items to merchants.
+* A handful of UI-crashes inside NWSync have been fixed.
+* The crash reporter now says which OS it came from.
+* We fixed an issue where playing wav ambient sounds would confuse the resource manager into either leaking or freeing memory excessively.
+
+* A serious memleak when rendering skinmeshed objects was fixed.
+* A memleak when calculating tangent space basis was fixed.
+* An issue where the internal resource manager would needlessly evict recently used files under memory pressure was fixed, which had resulted in disk churn.
+
+* [Windows] The game does not crash anymore when wiggling the window. If you are curious - this was a result of Windows queueing up “window moved” messages while you held on to the window and then dumping them onto NWN all at once; overrunning a bounded queue before the game had a chance to clear it out. Other platfoms did not exhibit this behaviour.
+* A nullptr deref in the expression parser of TestStringAgainstPattern has been fixed. It triggered when trying to match empty groups following a token (i.e. “hello()”).
+* We fixed a crash when unloading compiled skinmesh models.
+* We fixed a crash when loading uncompiled skinmesh models that had invalid array lengths for the bone array.
+* The uncompiled model parser now skips empty lines. This will NOT fix invalid array lengths. Models that have invalid array lengths in any definition will still behave erratically and/or not animate and/or just be broken, but at least it won’t crash anymore.
+* We fixed a memleak in loading tile walkmeshes.
+* We fixed a memleak in internal string handling.
+
+* The premium modules have been fixed to once again run on 64 bit without crashing. The fix was to strip the DRM! There are no script sources in the package yet due to time constraints on this patch, but we will be providing them in the future.
+* We fixed the script call CopyItem not properly copying item description overrides.
+* We fixed CopyObject() not properly copying the faction of a creature.
+* We fixed Store/RetrieveCampaignObject() not properly storing/retrieving the faction of a creature.
+* Player characters stored/copied now end up in the Commoner faction (it used to be a the PC faction; with no valid party).
+* We fixed a crash that happened when trying to RetrieveCampaignObject a creature with an invalid faction.
+* We fixed the game not properly reconnecting immediately after clicking Cancel during a connection attempt.
+* We fixed “legacy CD keys” not being sent properly to the server during the connection process.
+* We fixed some memory management issues in CExoResMan, where having a lot of RAM would make it evict cached resources early.
+* The Examine Panel now scales it’s UI properly.
+* We now return to the premium selection UI when cancelling out of running a premium module, instead of the normal module selection.
+
+
+Content Creation
+-=-=-=-=-=-=-=-=
+
+* classes.2da: New column StatGainTable. This column contains a table that describes ability and natural AC progression per level.
+* Palemaster Natural AC progression has been changed to use this mechanism.
+* Dragon Disciple Natural AC and Ability progression has been changed as well. As a consequence of this change, existing creatures will be stripped of their baked-in modifiers; thus changing characters/saves irreversibly and making them invalid with older game versions. Character changes are tracked in the character file itself: A new field “DataMigration” has been added to the GFF CreatureStats struct to accommodate this. In the interest of transparency, changes made to character files are published in the patch notes, below. If you want to return to a previous game version, make sure to create a backup first.
+* racialtypes.2da: New columns to configure extra skill points and feats at first level.
+* racialtypes.2da: New columns to configure the skill points modifier at first level.
+* racialtypes.2da: New columns to configure Ability Point Buy.
+* racialtypes.2da: New columns to configure normal feat progression.
+* racialtypes.2da: New column SkillPointModifierAbility. This column determines the ability which will provide additional skill points on level up. Can be blank. (INT by default, obviously).
+* ruleset.2da: New 2da added that contains a set of builtin ruleset defines. These defines were previously hardcoded in the game engine and are now overridable on a per-module basis. No explicit guarantees of functionality are given due to their scope and amount; however we will gladly listen for feedback on what works, what doesn’t work as expected, and what needs changing to accommodate further use cases. We reserve the right to change and remove entries with future patches.
+
+You can find all of these files in the game installation directory, subdirectory ovr/.
+
+* DataMigration < 1: Dragon Disciple Class:
+  if (level >= 10) STR -= 4;
+  if (level >= 4) STR -= 2;
+  if (level >= 2) STR -= 2;
+  if (level >= 7) CON -= 2;
+  if (level >= 9) INT -= 2;
+  if (level >= 10) CHA -= 2;
+  // Note: Natural AC was already calculated at runtime and not persisted to character data.
+
+
+Toolset Changes
+-=-=-=-=-=-=-=-
+
+* Added support for visual transforms
+  The new options are available in Adjust Location dialog
+  You can use Ctrl+Mousewheel to quickly scale objects
+  Visual transforms currently only work on creatures, items, doors and non-static placeables
+* Added support for opening multiple areas in tabs
+  Tabs are disabled by default. To enable them, go to Toolset settings -> Area editor -> Open areas in tabs, then restart the Toolset.
+  To close a tab, right-click on the tab and choose 'Close' in the context menu.
+* Inventory editor improvements - added key bindings
+  Move selection with arrow keys
+  Set Infinite flag with 'I' key
+  Delete items with 'Delete' key
+  After deleting, it now switches to the next item in the list
+* Significantly optimized Build Module and Update Instances, as well as some minor operations like expanding an area that is not currently open
+
+The Toolset is now built using a newer version of the C++ compiler. We have fixed most of the bugs caused by this change, but there might be a few regressions. If you see any issues that did not exist in the Toolset shipped with 1.78, please help us fix them by reporting them to us.
+
+* Fixed reputation editing in Faction Editor
+* Fixed renaming areas in the main area list
+* The Toolset now properly saves Z translation when it's the only transform defined
+* Fixed access violation when dragging equipped items to trash
+* Fix toolbar icons becoming disabled when double clicking on objects in the area list
+* Fixed Unicode issues in Creature properties dialog
+* Fixed Z translations not saving
+* Fixed undo issues when using tabs
+* Fixed fog rendering when using tabs
+* Fixed Unicode issues in Token Selector dialog
+* Visual transforms are now reset when static flag is set on a placeable
+* Fixed tab order for rotation fields in Adjust Location dialog
+* Fixed "sqrt domain" errors on some fancymapped content
+* Fixed Update Instances dialog layout
+* A memory leak that was observed when switching between areas has finally been fixed
+* Test Module now correctly passes -userdirectory to the game when launching it
+
+
+New Script Commands
+-=-=-=-=-=-=-=-=-=-
+
+// Execute a script chunk.
+// The script chunk runs immediately, same as ExecuteScript().
+// The script is jitted in place and currently not cached: Each invocation will recompile the script chunk.
+// Note that the script chunk will run as if a separate script. This is not eval().
+// By default, the script chunk is wrapped into void main() {}. Pass in bWrapIntoMain = FALSE to override.
+// Returns "" on success, or the compilation error.
+string ExecuteScriptChunk(string sScriptChunk, object oObject = OBJECT_SELF, int bWrapIntoMain = TRUE);
+
+// Returns a UUID. This UUID will not be associated with any object.
+// The generated UUID is currently a v4.
+string GetRandomUUID();
+
+// Returns the given objects' UUID. This UUID is persisted across save boundaries,
+// like Save/RestoreCampaignObject and save games.
+//
+// Thus, reidentification is only guaranteed in scenarios where players cannot introduce
+// new objects (i.e. servervault servers).
+//
+// UUIDs are guaranteed to be unique in any single running game.
+//
+// If a loaded object would collide with a UUID already present in the game, the
+// object receives no UUID and a warning is emitted to the log. Requesting a UUID
+// for the new object will generate a random one.
+//
+// This UUID is useful to, for example:
+// - Safely identify servervault characters
+// - Track serialisable objects (like items or creatures) as they are saved to the
+//   campaign DB - i.e. persistent storage chests or dropped items.
+// - Track objects across multiple game instances (in trusted scenarios).
+//
+// Currently, the following objects can carry UUIDs:
+//   Items, Creatures, Placeables, Triggers, Doors, Waypoints, Stores,
+//   Encounters, Areas.
+//
+// Will return "" (empty string) when the given object cannot carry a UUID.
+string GetObjectUUID(object oObject);
+
+// Forces the given object to receive a new UUID, discarding the current value.
+void ForceRefreshObjectUUID(object oObject);
+
+// Looks up a object on the server by it's UUID.
+// Returns OBJECT_INVALID if the UUID is not on the server.
+object GetObjectByUUID(string sUUID);
