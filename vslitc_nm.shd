@@ -1,0 +1,108 @@
+/*
+
+vslitc_nm.shd
+
+*/
+
+attribute vec4 vPos;
+attribute vec2 vTcIn;
+attribute vec4 vColor;
+attribute vec3 vNormal;
+
+attribute vec3 vTangent;
+attribute float fHandedness;
+attribute vec3 vStaticLightDir;
+
+uniform highp mat4 m_mvp;
+uniform highp mat4 m_mv;
+uniform highp mat3 m_normal;
+uniform highp mat4 m_texture;
+uniform highp mat4 m_m;
+
+varying highp vec3 vWorldCoord;
+
+uniform int fogEnabled;
+uniform mediump float fogEnd;
+uniform mediump float fogStart;
+
+varying vec2 vTc;
+varying vec4 vColorOut;
+varying float fFogFragCoord;
+varying vec3 vTangentOut;
+varying vec3 vNormalOut;
+varying vec4 vPosOut;
+varying vec3 vStaticLightDirOut;
+varying float fTextureHandedness; // Just the handedness attribute passed to the fragment shader. It should always be the same for all vertices of a face so interpolation will not be an issue.
+
+
+uniform int keyholeCanDissolve;
+
+varying highp vec3 vKeyholeNoiseBase;
+
+const float WORLD_COORDS_MOD_LIMIT = 35.0;
+
+void SetKeyholeNoiseBase(vec4 vCoords)
+{
+    if(keyholeCanDissolve == 1)
+    {
+        highp mat4 tempM = m_m;
+        tempM[3] = mod(tempM[3], WORLD_COORDS_MOD_LIMIT);
+        vKeyholeNoiseBase = (tempM * vCoords).xyz;
+    }
+}
+
+float ffog(in float viewDistance)
+{
+    //Make sure to not to clamp this in the vertex stage as we need to be able to get within boundaries through interpolation.
+    //Taking absolute value of distance is important for some GUI elements.
+    return (fogEnabled == 0) ? 0.0 : (abs(viewDistance)-fogStart) / (fogEnd - fogStart);
+}
+
+vec3 TransformVec3ToCameraSpace(vec3 vec)
+{
+	vec3 result = m_normal * vec;
+	//result = normalize(result);
+	return result;
+}
+
+vec4 RotateVector(vec4 vVec, mat4 mMat)
+{
+	return mMat * vVec;
+}
+
+void main (void)
+{
+	fTextureHandedness = fHandedness;
+
+	vec3  transformedNormal;
+	float alphaFade = 1.0;
+
+	// Eye-coordinate position of vertex, needed in various calculations
+	vPosOut = m_mv * vPos;
+
+    SetKeyholeNoiseBase(vPos);
+    vWorldCoord = (m_m * vPos).xyz;
+
+	// Do fixed functionality vertex transform
+	gl_Position = m_mvp * vPos;
+
+	fFogFragCoord = ffog(vPosOut.z);
+
+	// Rotate any values that need to be rotated by the texture rotation
+	vTc = RotateVector(vec4(vTcIn.x, vTcIn.y, 0, 1), m_texture).xy;
+	mat4 mTangentRotation = (fHandedness > 0) ? transpose(m_texture) : m_texture;
+	vec3 vRotatedTangent = RotateVector(vec4(vTangent.x, vTangent.y, vTangent.z, 1), mTangentRotation).xyz;
+
+	// Gram-Schmidt orthogonalization, since the texture matrix is a rotation around Z, but the normal may not be vertical
+	vRotatedTangent = vRotatedTangent - vNormal * dot(vRotatedTangent, vNormal);
+
+	// Transform our tangent-space basis into camera-space
+	vTangentOut = TransformVec3ToCameraSpace(vRotatedTangent);
+	vNormalOut = TransformVec3ToCameraSpace(vNormal);
+
+	// Transform our static lighting direction into camera space
+	vStaticLightDirOut = TransformVec3ToCameraSpace(vStaticLightDir);
+
+	vColorOut = vColor;
+
+}

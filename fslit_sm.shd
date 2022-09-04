@@ -1,0 +1,48 @@
+/*
+
+fslit_sm.shd
+
+*/
+
+uniform sampler2D texUnit0;
+uniform sampler2D texUnitEnv;	// This will contain the environment map
+uniform lowp vec4 fogColor;
+uniform int fogEnabled;
+
+varying lowp vec4 vColorOut;
+varying mediump vec2 vTc;
+varying mediump float fFogFragCoord;
+
+varying vec2 vTcEnv;
+
+
+uniform vec3 playerPosition;
+uniform float playerCameraDist;
+uniform vec3 cameraPosition;
+
+uniform int screenWidth = 1920;
+uniform int screenHeight = 1080;
+
+varying highp vec3 vWorldCoord;
+
+#include "inc_keyhole"
+
+void main (void)
+{
+	lowp vec4 color;
+	lowp vec4 env;
+	lowp vec4 decal;
+
+	decal = texture2D(texUnit0, vTc.xy);
+	env = texture2D(texUnitEnv, vTcEnv.xy);
+	color.rgb = mix(env.rgb, decal.rgb, decal.a);
+	color.a = 1.0;
+
+	color = color * vColorOut;
+
+    color = DrawKeyhole(color);
+
+    if(fogEnabled != 0) color.rgb = mix(color.rgb, fogColor.rgb, clamp(fFogFragCoord, 0.0, 1.0));
+
+	gl_FragColor = color;
+}
