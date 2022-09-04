@@ -1,0 +1,11 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x55
+filedependancy plc_x0plc_x55corpse.max
+node dummy plc_x55_pwk_use01
+  parent plc_x55_pwk
+  position -0.0020997 -1.07441 0.155213
+  orientation 0 0 0 0
+  wirecolor 0.113281 0.113281 0.113281
+endnode

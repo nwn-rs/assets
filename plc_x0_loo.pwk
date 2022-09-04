@@ -1,0 +1,43 @@
+# Exported from NWmax 0.8 b61 at 2/25/2008 9:25:26 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh NoWalk
+  parent PLC_X0_LOO_pwk
+  position 0.0 0.163819 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.894118 0.894118 
+  bitmap NULL
+  verts 10
+    -1.07308 -0.743122 0.0
+    1.01461 -0.743122 0.0
+    1.01461 -0.397734 0.0
+    0.82477 0.82903 0.0
+    0.612212 0.82903 0.0
+    0.612213 -0.111006 0.0
+    -0.707602 -0.111006 0.0
+    -0.707602 0.82903 0.0
+    -0.921151 0.82903 0.0
+    -1.07308 -0.397734 0.0
+  faces 8
+    9 0 1  1  0 0 0  7
+    9 1 2  1  0 0 0  7
+    6 7 8  1  0 0 0  7
+    6 8 9  1  0 0 0  7
+    6 9 2  1  0 0 0  7
+    5 6 2  1  0 0 0  7
+    5 2 3  1  0 0 0  7
+    4 5 3  1  0 0 0  7
+endnode
+node dummy x17_pwk_use01
+  parent PLC_X0_LOO_pwk
+  position 0.0 -0.926481 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.34902 0.694118 
+endnode
+node dummy x17_pwk_use02
+  parent PLC_X0_LOO_pwk
+  position 0.0 0.725628 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.34902 0.694118 
+endnode

@@ -1,0 +1,28 @@
+#MAXDOOR ASCII
+# model: dag_mlstone_pwk 
+filedependancy PlaceableObjects01.max
+node trimesh dag_mlstone_wg 
+  parent dag_mlstone_pwk 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+    verts 4
+     -0.511086 -0.167164 0.0
+     0.511086 -0.167164 0.0
+     -0.511086 0.167164 0.0
+     0.511086 0.167164 0.0
+    faces 2
+     2 0 3  1  0 0 0  7
+     1 3 0  1  0 0 0  7
+endnode
+node dummy j08_pwk_use02 
+  parent dag_mlstone_pwk 
+  position -0.0219018 -0.701481 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode
+node dummy j08_pwk_use01 
+  parent dag_mlstone_pwk 
+  position -0.0219018 0.652549 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode

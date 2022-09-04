@@ -1,0 +1,11 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x46
+filedependancy StoneTrapdoor02.max
+node dummy x46_pwk_use01
+  parent plc_x46_pwk
+  position 0.00949236 -1.09566 0
+  orientation 0 0 0 0
+  wirecolor 0.0273438 0.0273438 0.0273438
+endnode

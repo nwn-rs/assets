@@ -1,0 +1,60 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x0_cus
+filedependancy cushions02.max
+node trimesh cushions_pwk
+  parent plc_x0_cus_pwk
+  position 0.0909938 0.178571 0
+  orientation 0 0 0 0
+  wirecolor 0.652344 0.652344 0.652344
+  ambient 0.222656 0.03125 0.53125
+  diffuse 0.222656 0.03125 0.53125
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 16
+    -0.890994 -0.412112 0
+    -0.746894 -0.79472 0
+    0.142547 -0.909006 0
+    0.495342 -0.794721 0
+    0.604658 -0.436957 0
+    0.554969 -0.228261 0
+    0.743789 -0.104037 0
+    0.778571 0.18913 0
+    0.614596 0.462422 0
+    0.356211 0.551863 0
+    0.0729814 0.482298 0
+    -0.0810558 0.636335 0
+    -0.448758 0.676087 0
+    -0.692236 0.517081 0
+    -0.806522 0.169255 0
+    -0.736328 0.0147896 0
+  faces 14
+    0 1 2  1  0 0 0  0
+    15 0 2  1  0 0 0  0
+    15 2 3  1  0 0 0  0
+    15 3 4  1  0 0 0  0
+    15 4 5  1  0 0 0  0
+    14 15 5  1  0 0 0  0
+    13 14 5  1  0 0 0  0
+    12 13 5  1  0 0 0  0
+    11 12 5  1  0 0 0  0
+    10 11 5  1  0 0 0  0
+    9 10 5  1  0 0 0  0
+    8 9 5  1  0 0 0  0
+    7 8 5  1  0 0 0  0
+    6 7 5  1  0 0 0  0
+endnode
+node dummy cus_pwk_use01
+  parent plc_x0_cus_pwk
+  position 0.0212358 1.08923 0
+  orientation 0 0 0 0
+  wirecolor 0.652344 0.652344 0.652344
+endnode
+node dummy cus_pwk_use02
+  parent plc_x0_cus_pwk
+  position -0.0513123 -0.993692 0
+  orientation 0 0 0 0
+  wirecolor 0.652344 0.652344 0.652344
+endnode

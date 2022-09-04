@@ -1,0 +1,50 @@
+# Exported from NWmax 0.8 b54 at 10/28/2005 11:21:11 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh dag_bls_wg
+  parent dag_bls_dwg
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.835294 0.603922 0.898039 
+  multimaterial 20
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+  ambient 0.0 0.0 0.0 
+  diffuse 0.6 0.34 0.16 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap Dirt
+  verts 4
+    -1.125 -1.125 0.0
+    1.125 -1.125 0.0
+    -1.125 1.125 0.0
+    1.125 1.125 0.0
+  faces 2
+    2 0 3  1  0 0 0  7
+    1 3 0  1  0 0 0  7
+endnode
+node dummy bls_pwk_use01
+  parent dag_bls_dwg
+  position 0.0 -1.54844 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.603922 0.603922 0.898039 
+endnode
