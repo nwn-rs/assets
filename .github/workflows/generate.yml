@@ -371,7 +371,7 @@ jobs:
           name: wok
           path: wok.zip
       - name: prerelease
-        if: github.event.inputs.release == 'preview' || github.event.inputs.release == 'build8193.35'
+        if: github.event.inputs.release == 'preview'
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
@@ -413,7 +413,7 @@ jobs:
             wok.zip
 
       - name: Release
-        if: github.event.inputs.release != 'preview' || github.event.inputs.release != 'build8193.35'
+        if: github.event.inputs.release != 'preview'
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
