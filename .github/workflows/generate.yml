@@ -40,14 +40,14 @@ jobs:
         run: |
           gh repo clone SteamRE/DepotDownloader
       - name: Download preview nwn:ee files
-        if: github.event.inputs.release == 'preview' || github.event.inputs.release == 'build8193.35'
+        if: github.event.inputs.release == 'preview'
         run: |
           cd DepotDownloader/DepotDownloader
           dotnet run -app 704450 -depot 704451 -beta preview -betapassword previewpreview -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
           cd ${{ env.GITHUB_WORKSPACE }}
           mkdir out
       - name: Download nwn:ee files
-        if: github.event.inputs.release != 'preview' || github.event.inputs.release != 'build8193.35'
+        if: github.event.inputs.release != 'preview'
         run: |
           cd DepotDownloader/DepotDownloader
           dotnet run -app 704450 -depot 704451 -beta ${{ github.event.inputs.release }} -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
@@ -55,11 +55,11 @@ jobs:
           mkdir unpacked
       - run: nimble install neverwinter -y
       - name: unpack preview keyfile
-        if: github.event.inputs.release == 'preview' || github.event.inputs.release == 'build8193.35'
+        if: github.event.inputs.release == 'build8193.35'
         run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/9443052/data/nwn_base.key unpacked
-          cp -r DepotDownloader/DepotDownloader/depots/704451/9443052/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/9443052/ovr/ ovr/
+          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/11253735/data/nwn_base.key unpacked
+          cp -r DepotDownloader/DepotDownloader/depots/704451/11253735/lang/en/docs/ docs/
+          cp -r DepotDownloader/DepotDownloader/depots/704451/11253735/ovr/ ovr/
       - name: unpack build8193.34 keyfile
         if: github.event.inputs.release == 'build8193.34'
         run: |
