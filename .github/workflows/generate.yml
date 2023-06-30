@@ -106,7 +106,7 @@ jobs:
           cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/lang/en/docs/ docs/
           cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/ovr/ ovr/
 
-      - run: mkdir 2da dds dlg dwk gff gui ids ini itp ltr mdl mod mtr nss plt ptt pwk set shd ssf tga tlk utc ute uti utm utp uts utt utw wok
+      - run: mkdir 2da dds dlg dwk gic git gff gui ids ini itp ltr jrl mdl mod mtr nss plt ptt pwk set shd ssf tga tlk utc utd ute uti utm utp uts utt utw wok
 
       - name: Gather 2da files
         run: |
@@ -159,6 +159,22 @@ jobs:
         with:
           name: gff
           path: gff.zip
+      - name: Gather gic files
+        run: |
+          find ./ -name '*.gic' -exec cp -prv '{}' 'gic/' ';'
+          cd gic && zip -r ../gic.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: gic
+          path: gic.zip
+      - name: Gather git files
+        run: |
+          find ./ -name '*.git' -exec cp -prv '{}' 'git/' ';'
+          cd git && zip -r ../git.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: gic
+          path: gic.zip
       - name: Gather gui files
         run: |
           find ./ -name '*.gui' -exec cp -prv '{}' 'gui/' ';'
@@ -302,6 +318,22 @@ jobs:
         with:
           name: tlk
           path: tlk.zip
+      - name: Gather ifo files
+        run: |
+          find ./ -name '*.ifo' -exec cp -prv '{}' 'ifo/' ';'
+          cd ifo && zip -r ../ifo.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ifo
+          path: ifo.zip
+      - name: Gather tlk files
+        run: |
+          find ./ -name '*.jrl' -exec cp -prv '{}' 'jrl/' ';'
+          cd jrl && zip -r ../jrl.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: jrl
+          path: jrl.zip
       - name: Gather ute files
         run: |
           find ./ -name '*.ute' -exec cp -prv '{}' 'ute/' ';'
@@ -312,12 +344,20 @@ jobs:
           path: ute.zip
       - name: Gather utc files
         run: |
-          find ./ -name '*.ute' -exec cp -prv '{}' 'utc/' ';'
+          find ./ -name '*.utc' -exec cp -prv '{}' 'utc/' ';'
           cd utc && zip -r ../utc.zip .
       - uses: actions/upload-artifact@v3
         with:
           name: utc
           path: utc.zip
+      - name: Gather utd files
+        run: |
+          find ./ -name '*.utd' -exec cp -prv '{}' 'utd/' ';'
+          cd utd && zip -r ../utd.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: utd
+          path: utd.zip          
       - name: Gather uti files
         run: |
           find ./ -name '*.uti' -exec cp -prv '{}' 'uti/' ';'
@@ -388,12 +428,15 @@ jobs:
             dlg.zip
             docs.zip
             dwk.zip
+            gic.zip
+            git.zip
             gff.zip
             gui.zip
             ids.zip
             ini.zip
             itp.zip
             ltr.zip
+            jrl.zip
             mdl.zip
             mod.zip
             mtr.zip
@@ -408,6 +451,7 @@ jobs:
             tga.zip
             tlk.zip
             utc.zip
+            utd.zip
             ute.zip
             uti.zip
             utm.zip
@@ -430,12 +474,15 @@ jobs:
             dlg.zip
             docs.zip
             dwk.zip
+            gic.zip
+            git.zip
             gff.zip
             gui.zip
             ids.zip
             ini.zip
             itp.zip
             ltr.zip
+            jrl.zip
             mdl.zip
             mod.zip
             mtr.zip
@@ -450,6 +497,7 @@ jobs:
             tga.zip
             tlk.zip
             utc.zip
+            utd.zip
             ute.zip
             uti.zip
             utm.zip
@@ -464,7 +512,7 @@ jobs:
     needs: generate
     strategy:
       matrix:
-        type: [2da, bic, dds, dlg, docs, dwk, gff, gui, ids, ini, itp, ltr, mdl, mod, mtr, nss, ovr, plt, ptt, pwk, set, shd, ssf, tga, tlk, utc, ute, uti, utm, utp, uts, utt, utw, wok]
+        type: [2da, bic, dds, dlg, docs, dwk, gff, gic, git, gui, ids, ini, itp, ltr, jrl, mdl, mod, mtr, nss, ovr, plt, ptt, pwk, set, shd, ssf, tga, tlk, utc, utd, ute, uti, utm, utp, uts, utt, utw, wok]
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
