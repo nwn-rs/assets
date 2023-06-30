@@ -106,7 +106,7 @@ jobs:
           cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/lang/en/docs/ docs/
           cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/ovr/ ovr/
 
-      - run: mkdir 2da bic dds dlg dwk gic git gff gui ids ini itp ltr jrl mdl mod mtr nss plt ptt pwk set shd ssf tga tlk utc utd ute uti utm utp uts utt utw wok
+      - run: mkdir 2da bic dds dlg dwk git gff gui ids ini itp ltr jrl mdl mod mtr nss plt ptt pwk set shd ssf tga tlk utc utd ute uti utm utp uts utt utw wok
 
       - name: Gather 2da files
         run: |
@@ -159,14 +159,6 @@ jobs:
         with:
           name: gff
           path: gff.zip
-      - name: Gather gic files
-        run: |
-          find ./ -name '*.gic' -exec cp -prv '{}' 'gic/' ';'
-          cd gic && zip -r ../gic.zip .
-      - uses: actions/upload-artifact@v3
-        with:
-          name: gic
-          path: gic.zip
       - name: Gather git files
         run: |
           find ./ -name '*.git' -exec cp -prv '{}' 'git/' ';'
