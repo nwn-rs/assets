@@ -120,6 +120,10 @@ jobs:
         run: |
           find ./ -name '*.dds' -exec cp -prv '{}' 'dds/' ';'
           cd dds && zip -r ../dds.zip .
+      - name: Gather bic files
+        run: |
+          find ./ -name '*.bic' -exec cp -prv '{}' 'dds/' ';'
+          cd bic && zip -r ../bic.zip .
       - uses: actions/upload-artifact@v3
         with:
           name: dds
@@ -379,6 +383,7 @@ jobs:
           prerelease: true
           files: |
             2da.zip
+            bic.zip
             dds.zip
             dlg.zip
             docs.zip
@@ -420,6 +425,7 @@ jobs:
           tag_name: release/${{ github.event.inputs.release }}
           files: |
             2da.zip
+            bic.zip
             dds.zip
             dlg.zip
             docs.zip
@@ -458,7 +464,7 @@ jobs:
     needs: generate
     strategy:
       matrix:
-        type: [2da, dds, dlg, docs, dwk, gff, gui, ids, ini, itp, ltr, mdl, mod, mtr, nss, ovr, plt, ptt, pwk, set, shd, ssf, tga, tlk, utc, ute, uti, utm, utp, uts, utt, utw, wok]
+        type: [2da, bic, dds, dlg, docs, dwk, gff, gui, ids, ini, itp, ltr, mdl, mod, mtr, nss, ovr, plt, ptt, pwk, set, shd, ssf, tga, tlk, utc, ute, uti, utm, utp, uts, utt, utw, wok]
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
