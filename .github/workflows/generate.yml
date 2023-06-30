@@ -122,7 +122,7 @@ jobs:
           cd dds && zip -r ../dds.zip .
       - name: Gather bic files
         run: |
-          find ./ -name '*.bic' -exec cp -prv '{}' 'dds/' ';'
+          find ./ -name '*.bic' -exec cp -prv '{}' 'bic/' ';'
           cd bic && zip -r ../bic.zip .
       - uses: actions/upload-artifact@v3
         with:
