@@ -1,0 +1,21 @@
+#MAXWALKMESH  ASCII
+beginwalkmeshgeom tno01_v05_01 
+node aabb WOK 
+  parent tno01_v05_01 
+  position 0.0 0.0 -10.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.6 0.894118 0.6  
+    verts 4
+     -5.0 -5.0 0.0
+     5.0 -5.0 0.0
+     -5.0 5.0 0.0
+     5.0 5.0 0.0
+    faces 2
+     2 0 3  1  2 0 3  17
+     1 3 0  1  1 3 0  17
+aabb    -5.00 -5.00  0.00   5.00  5.00  0.00  -1
+    -5.00 -5.00  0.00   5.00  5.00  0.00  1
+    -5.00 -5.00  0.00   5.00  5.00  0.00  0
+endnode
+endwalkmeshgeom tno01_v05_01 
+
