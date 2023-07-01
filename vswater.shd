@@ -1,0 +1,38 @@
+//=============================================================================
+//
+// vswater.shd
+//
+//=============================================================================
+
+#define SHADER_TYPE 1
+
+#include "inc_water"
+
+void SetupVertexWind()
+{	
+	fTick= float(worldtimerTimeOfDay) * (0.001 * ANIMATION_SPEED_MULTIPLIER);	
+	
+	// Strong wind: 4.0 (1.414, 1.414)
+	// Medium wind: 1.0 (0.707, 0.707)
+	fAreaWindForce = dot(areaGlobalWind,areaGlobalWind);
+	
+	if(fAreaWindForce>0.0)
+	{
+	
+		vAreaWindDirection =  areaGlobalWind * inversesqrt(fAreaWindForce);
+	}
+	else
+	{
+		vAreaWindDirection = vec3(0.707, 0.707, 0.0);
+	}
+	
+	//fAreaWindForce =4.0;
+	fAreaWindForce+=0.05;
+}
+
+
+void main ()
+{
+    ApplyStandardShader();
+	SetupVertexWind();
+}

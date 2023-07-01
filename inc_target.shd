@@ -1,0 +1,222 @@
+//=============================================================================
+//
+// inc_target.shd
+//
+//=============================================================================
+
+#ifndef INC_TARGET
+#define INC_TARGET
+
+///////////////////////////////////
+//
+// BEGIN INC_TARGET
+//
+///////////////////////////////////
+
+#include "inc_uniforms"
+
+#define TARGET_SHAPE_NONE		0
+#define TARGET_SHAPE_SPHERE		1
+#define TARGET_SHAPE_RECT		2
+#define TARGET_SHAPE_CONE		3
+#define TARGET_SHAPE_HSPHERE 	4
+
+uniform int targetShape;
+uniform int targetShapeHarmsEnemies;
+uniform int targetShapeHarmsAllies;
+uniform int targetShapeHelpsAllies;
+uniform int targetShapeIgnoresSelf;
+uniform int targetShapeOriginOnSelf;
+uniform float targetShapeSizeX;
+uniform float targetShapeSizeY;
+uniform int targetShapeSpellId;
+uniform int targetShapeFeatId;
+uniform float targetShapeSpellRange;
+uniform vec4 targetShapeColour;
+
+// Note: These object types are taken from the engine, many of them may never show up here!
+
+#define TARGET_OBJECT_TYPE_NONE 				0
+#define TARGET_OBJECT_TYPE_GUI 					1
+#define TARGET_OBJECT_TYPE_TILE					2
+#define TARGET_OBJECT_TYPE_MODULE 				3
+#define TARGET_OBJECT_TYPE_AREA					4
+#define TARGET_OBJECT_TYPE_CREATURE				5
+#define TARGET_OBJECT_TYPE_ITEM					6
+#define TARGET_OBJECT_TYPE_TRIGGER				7
+#define TARGET_OBJECT_TYPE_PROJECTILE			8
+#define TARGET_OBJECT_TYPE_PLACEABLE			9
+#define TARGET_OBJECT_TYPE_DOOR					10
+#define TARGET_OBJECT_TYPE_AREAOFEFFECTOBJECT	11
+#define TARGET_OBJECT_TYPE_WAYPOINT				12
+#define TARGET_OBJECT_TYPE_ENCOUNTER			13
+#define TARGET_OBJECT_TYPE_STORE				14
+#define TARGET_OBJECT_TYPE_PORTAL				15
+#define TARGET_OBJECT_TYPE_SOUND				16
+
+uniform int targetObjectType;
+uniform vec3 targetWorldCoords;
+
+// Source: https://iquilezles.org/articles/distfunctions/
+// Optimization opportunity: Convert to 2d!
+float distanceToCone(in vec3 p, in vec2 c, float h)
+{
+	// c is the sin/cos of the angle, h is height
+	// Alternatively pass q instead of (c,h),
+	// which is the point at the base in 2D
+	vec2 q = h*vec2(c.x/c.y,-1.0);
+	  
+	vec2 w = vec2( length(p.xz), p.y );
+	vec2 a = w - q*clamp( dot(w,q)/dot(q,q), 0.0, 1.0 );
+	vec2 b = w - q*vec2( clamp( w.x/q.x, 0.0, 1.0 ), 1.0 );
+	float k = sign( q.y );
+	float d = min(dot( a, a ),dot(b, b));
+	float s = max( k*(w.x*q.y-w.y*q.x),k*(w.y-q.y)  );
+	return sqrt(d)*sign(s);
+}
+
+// Source: https://iquilezles.org/articles/distfunctions/
+// Optimization opportunity: Convert to 2d!
+float distanceToRect(vec3 p, vec3 b)
+{
+	vec3 q = abs(p) - b;
+	return length(max(q,0.0)) + min(max(q.x,max(q.y,q.z)),0.0);
+}
+
+// Source: https://gist.github.com/yiwenl/3f804e80d0930e34a0b33359259b556c
+// Optimization opportunity: Convert to 2d with a mat3!
+mat4 rotate(vec3 axis, float angle)
+{
+	axis = normalize(axis);
+	float s = sin(angle);
+	float c = cos(angle);
+	float oc = 1.0 - c;
+		
+	return mat4(oc * axis.x * axis.x + c,		   oc * axis.x * axis.y - axis.z * s,  oc * axis.z * axis.x + axis.y * s,  0.0,
+				oc * axis.x * axis.y + axis.z * s,  oc * axis.y * axis.y + c,		   oc * axis.y * axis.z - axis.x * s,  0.0,
+				oc * axis.z * axis.x - axis.y * s,  oc * axis.y * axis.z + axis.x * s,  oc * axis.z * axis.z + c,		   0.0,
+				0.0,								0.0,								0.0,								1.0);
+}
+
+#if POSITION_WORLD == 1 || POSITION_VIEW == 1
+
+float GetThrobStrength()
+{
+	float throbSpeedFactor = 250.0;
+	float time = float(worldtimerTimeOfDay) / throbSpeedFactor;
+	return 0.3 + (1.0 + sin(time)) * 0.4;
+}
+
+void ApplyTargetGroundHighlighting(inout vec4 FragmentColor)
+{
+	bool invalidTarget = targetObjectType == TARGET_OBJECT_TYPE_NONE;
+	bool nothingToDraw = targetShape == TARGET_SHAPE_NONE && targetShapeSpellRange == 0.0;
+
+	if (invalidTarget || nothingToDraw) return;
+
+	#if POSITION_WORLD == 1 
+		vec3 fragWorldPos = vPosWorld;
+	#else
+		vec3 fragWorldPos = (m_view_inv * vec4(vPosView, 1.0)).xyz;
+	#endif
+
+	vec3 playerToMouse = playerPosition - targetWorldCoords;
+	float distFromPlayerToMouse = sqrt(dot(playerToMouse, playerToMouse));
+	vec3 shapeOrigin = targetShapeOriginOnSelf == 1 ? playerPosition : targetWorldCoords;
+
+	vec3 normalizedPlayerToMouse;
+	mat4 rotationPlayerToMouseYaw;
+	mat4 rotationPlayerToMousePitch;
+	vec4 rotatedWorldPos;
+
+	if (distFromPlayerToMouse > 0.0)
+	{
+		normalizedPlayerToMouse = normalize(playerToMouse);
+		rotationPlayerToMouseYaw = rotate(vec3(0.0, 0.0, 1.0), atan(normalizedPlayerToMouse.y, normalizedPlayerToMouse.x) - PI / 2.0);
+		rotationPlayerToMousePitch = rotate(vec3(1.0, 0.0, 0.0), asin(-normalizedPlayerToMouse.z));
+
+		if (targetShapeOriginOnSelf == 1)
+		{
+			float distToTranslate = 0.0;
+
+			if (targetShape == TARGET_SHAPE_RECT)
+			{
+				// Translate so that the origin is the pc (rather than being centered).
+				distToTranslate = distToTranslate + targetShapeSizeX / 2.0;
+			}
+
+			if (distFromPlayerToMouse > targetShapeSpellRange)
+			{
+				// Translate up until the point where we'd be in range to cast.
+				float outOfRangeBy = distFromPlayerToMouse - targetShapeSpellRange;
+				distToTranslate = distToTranslate + outOfRangeBy;
+			}
+
+			shapeOrigin = shapeOrigin - normalizedPlayerToMouse * distToTranslate;
+		}
+
+		rotatedWorldPos = rotationPlayerToMouseYaw * vec4(fragWorldPos - shapeOrigin, 1.0) * rotationPlayerToMousePitch;
+	}
+	else
+	{
+		rotatedWorldPos = vec4(fragWorldPos - shapeOrigin, 1.0);
+	}
+
+	float targetShapeStrength;
+	const float outlineWidth = 0.05;
+
+    if (targetShape == TARGET_SHAPE_SPHERE)
+    {
+        float distToSphere = sqrt(dot(rotatedWorldPos, rotatedWorldPos));
+        targetShapeStrength = distToSphere > targetShapeSizeX ? 0.0 : (distToSphere > targetShapeSizeX - outlineWidth ? GetThrobStrength() : 0.1);
+    }
+    else if (targetShape == TARGET_SHAPE_RECT)
+    {
+        float distToRect = distanceToRect(rotatedWorldPos.xyz, vec3(targetShapeSizeY / 2.0, targetShapeSizeX / 2.0, max(1.0, abs(playerToMouse.z))));
+        targetShapeStrength = distToRect > 0.0 ? 0.0 : (distToRect > -outlineWidth ? GetThrobStrength() : 0.1f);
+    }
+    else if (targetShape == TARGET_SHAPE_CONE)
+    {
+        const float sin30Degrees = 0.50000019433;
+        const float cos30Degrees = 0.86602529158;
+        float distToCone = distanceToCone(rotatedWorldPos.xyz, vec2(sin30Degrees, cos30Degrees), targetShapeSizeX);
+        targetShapeStrength = distToCone > 0.0 ? 0.0 : (distToCone > -outlineWidth ? GetThrobStrength() : 0.1);
+    }
+    else if (targetShape == TARGET_SHAPE_HSPHERE)
+    {
+        float distToHsphere = sqrt(dot(rotatedWorldPos, rotatedWorldPos));
+        float midPoint = targetShapeSizeX + (targetShapeSizeY - targetShapeSizeX) / 2.0;
+        float distToEdge = distToHsphere < targetShapeSizeY && distToHsphere > midPoint ? targetShapeSizeY - distToHsphere : distToHsphere - targetShapeSizeX;
+        targetShapeStrength = distToHsphere > targetShapeSizeY || distToHsphere < targetShapeSizeX ? 0.0 : (distToEdge <= outlineWidth ? GetThrobStrength() : 0.1);
+    }
+    else
+    {
+        targetShapeStrength = 0.0;
+    }
+
+	float dottedLineStrength = 0.0;
+
+	if (targetShapeSpellRange > 0.0 && distFromPlayerToMouse > targetShapeSpellRange)
+	{
+		// Draw a dotted line from the player to where they would cast.
+		vec3 fragToPlayer = fragWorldPos - playerPosition;
+		float halfOutOfRangeBy = (distFromPlayerToMouse - targetShapeSpellRange) / 2.0;
+		vec4 rotatedFragToPlayer = rotationPlayerToMouseYaw * vec4(fragToPlayer + normalizedPlayerToMouse * halfOutOfRangeBy, 1.0);
+		float distanceToDottedLine = distanceToRect(rotatedFragToPlayer.xyz, vec3(outlineWidth / 2.0, halfOutOfRangeBy, max(1.0, abs(playerToMouse.z))));
+		vec3 worldToPlayer = fragWorldPos - playerPosition;
+		dottedLineStrength = (distanceToDottedLine <= 0.0 && mod(sqrt(dot(worldToPlayer, worldToPlayer)), 1.0) < 0.5) ? GetThrobStrength() : 0.0;
+	}
+
+	FragmentColor.rgb = mix(FragmentColor.rgb, COLOR_WHITE.rgb, targetShapeColour.rgb * max(targetShapeStrength, dottedLineStrength) * targetShapeColour.a);
+}
+
+#endif
+
+
+///////////////////////////////////
+//
+// END INC_TARGET
+//
+///////////////////////////////////
+
+#endif

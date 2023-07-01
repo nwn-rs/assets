@@ -1,0 +1,1237 @@
+//=============================================================================
+//
+// inc_common.shd
+//
+//=============================================================================
+
+#ifndef INC_COMMON
+#define INC_COMMON
+#include "inc_config"
+///////////////////////////////////
+//
+// BEGIN INC_COMMON
+//
+///////////////////////////////////
+
+#define PI 3.14159265359
+
+#define COLOR_BLACK vec4(0.0, 0.0, 0.0, 1.0)
+#define COLOR_WHITE vec4(1.0, 1.0, 1.0, 1.0)
+#define COLOR_GREY  vec4(0.5, 0.5, 0.5, 1.0)
+#define COLOR_RED   vec4(1.0, 0.0, 0.0, 1.0)
+#define COLOR_GREEN vec4(0.0, 1.0, 0.0, 1.0)
+#define COLOR_BLUE  vec4(0.0, 0.0, 1.0, 1.0)
+#define COLOR_MAGENTA  vec4(1.0, 0.0, 1.0, 1.0)
+#define COLOR_YELLOW  vec4(1.0, 1.0, 0.0, 1.0)
+#define COLOR_CYAN  vec4(0.0, 1.0, 1.0, 1.0)
+
+#define SHADER_DEBUG_MODE_DISABLED                  0
+#define SHADER_DEBUG_MODE_NORMALS                   1
+#define SHADER_DEBUG_MODE_MATERIAL_BASE_TEXTURE     2
+#define SHADER_DEBUG_MODE_MATERIAL_AMBIENT          3
+#define SHADER_DEBUG_MODE_MATERIAL_DIFFUSE          4
+#define SHADER_DEBUG_MODE_MATERIAL_EMISSIVE         5
+#define SHADER_DEBUG_MODE_MATERIAL_SPECULARITY      6
+#define SHADER_DEBUG_MODE_MATERIAL_ROUGHNESS        7
+#define SHADER_DEBUG_MODE_MATERIAL_METALLICNESS     8
+#define SHADER_DEBUG_MODE_MATERIAL_SPECULAR_COLOR   9
+#define SHADER_DEBUG_MODE_MATERIAL_LIGHT_OCCLUSION  10
+#define SHADER_DEBUG_MODE_LIGHT_TOTAL               11
+#define SHADER_DEBUG_MODE_LIGHT_STATIC              12
+#define SHADER_DEBUG_MODE_LIGHT_AMBIENT             13
+#define SHADER_DEBUG_MODE_LIGHT_DIFFUSE             14
+#define SHADER_DEBUG_MODE_LIGHT_SPECULAR            15
+#define SHADER_DEBUG_MODE_VERTEX_NORMALS            16
+#define SHADER_DEBUG_MODE_VERTEX_TANGENTS           17
+#define SHADER_DEBUG_MODE_VERTEX_HANDEDNESS         18
+
+
+// This is for legacy.
+#define MAX_LIGHTS 8
+
+// Default texture map units:
+// 
+// 0  - Diffuse / albedo map. 
+// 1  - Normal map.           
+// 2  - Specular map.         
+// 3  - Roughness map.        
+// 4  - Height map.           
+// 5  - Self-illumination map 
+// 15 - Environment map. 
+
+#ifndef NO_TEXTURE_COORDS
+	#define NO_TEXTURE_COORDS 0
+#endif     
+
+#ifndef NO_TEXTURE
+	#define NO_TEXTURE 0
+#endif     
+   
+#ifndef NORMAL_MAP
+	#define NORMAL_MAP 0
+#endif     
+#ifndef SPECULAR_MAP
+	#define SPECULAR_MAP 0
+#endif     
+#ifndef ROUGHNESS_MAP
+	#define ROUGHNESS_MAP 0
+#endif     
+#ifndef HEIGHT_MAP
+	#define HEIGHT_MAP 0
+#endif     
+#ifndef SELF_ILLUMINATION_MAP
+	#define SELF_ILLUMINATION_MAP 0
+#endif
+
+#ifndef ENVIRONMENT_MAP
+	#define ENVIRONMENT_MAP 0
+#endif     
+#ifndef FOG
+	#define FOG 0
+#endif  
+
+#ifndef LIGHTING
+	#define LIGHTING 0
+#endif
+
+#ifndef POSTPROCESSING
+	#define POSTPROCESSING 0
+#endif  
+
+#ifndef KEYHOLING
+	#define KEYHOLING 0
+#endif  
+
+#ifndef POSITION_VIEW
+	#define POSITION_VIEW 0
+#endif
+
+#ifndef POSITION_WORLD
+	#define POSITION_WORLD 0
+#endif
+
+#ifndef VERTEX_NORMAL
+	#define VERTEX_NORMAL 0
+#endif
+
+#ifndef FRAGMENT_NORMAL
+	#define FRAGMENT_NORMAL 0
+#endif
+
+#ifndef VERTEX_COLOR
+	#define VERTEX_COLOR 0 
+#endif
+#ifndef FORCE_VERTEX_LIGHTING
+	#define FORCE_VERTEX_LIGHTING 0
+#endif
+#ifndef NO_DISCARD
+	#define NO_DISCARD 0 
+#endif
+#ifndef FORCE_ALLOW_DISCARD
+	#define FORCE_ALLOW_DISCARD 0
+#endif
+
+// Apply configurations
+
+// If set, this suppresses all "discard" calls. The reason that we need to
+// handle it in this way is because the pressence of discard, even if gated
+// behind a uniform, will always cause the Early-Z optimization to be dropped.
+// This value is set to enabled by default, but disabled when rendering content 
+// with keyholing as well as alpha testing.
+#if NO_DISCARD == 1 && FORCE_ALLOW_DISCARD != 1
+	#define discard
+#endif
+
+#if VERTEX_NORMAL == 1
+	#undef POSITION_VIEW
+	#define POSITION_VIEW 1
+#endif
+
+#if NORMAL_MAP == 1
+	#undef FRAGMENT_NORMAL
+	#define FRAGMENT_NORMAL 1
+#endif
+
+#if KEYHOLING_ENABLED == 0
+	#undef KEYHOLING
+	#define KEYHOLING 0
+#endif
+
+#if FORCE_VERTEX_LIGHTING == 1
+	#undef FRAGMENT_LIGHTING
+	#define FRAGMENT_LIGHTING 0
+#endif
+
+#if LIGHTING == 1 && (FRAGMENT_LIGHTING == 1 || FRAGMENT_NORMAL == 1 ) && POSTPROCESSING != 1
+	#define SPECULAR_LIGHT 1
+#else
+	#define SPECULAR_LIGHT 0
+#endif
+
+
+uniform sampler2D texFBColor; // Frame buffer
+uniform sampler2D texFBDepth; // Depth buffer
+
+#if FOG == 1
+
+	uniform vec4 fogParams;
+	#define fogEnabled (fogParams.x)
+	#define fogStart (fogParams.y)
+	#define fogEnd (fogParams.z)
+	#define fogInvEndMinusStart (fogParams.w)
+
+	varying float fFogFragCoord;
+	uniform vec4 fogColor; // NB Fog color is always in gamma space.
+
+#endif 
+
+uniform highp vec3 playerPosition;
+uniform float playerCameraDist;
+uniform lowp int playerInCutscene;
+uniform highp vec3 cameraPosition;
+uniform float cameraPitch;
+uniform float cameraYaw;
+uniform vec3 cameraFocus;
+uniform float cameraViewAngle;
+uniform lowp int cameraDialogState;
+
+// Screen pixel coordinates of the mouse
+uniform highp ivec2 userinputMousePosition;
+
+uniform highp vec2 screenParams;
+#define screenWidth (screenParams.x)
+#define screenHeight (screenParams.y)
+
+uniform highp vec3 pixelParams;
+#define vPixelSize (pixelParams.xy)
+#define invScreenWidth (pixelParams.x)
+#define invScreenHeight (pixelParams.y)
+#define fAspectRatio (pixelParams.z)
+
+uniform highp vec3 clipParams;
+#define nearClip (clipParams.x)
+#define farClip (clipParams.y)
+#define fDepthToLinearModifier (clipParams.z) // This is (1-near / far)
+
+uniform highp mat4 m_proj;
+uniform highp mat4 m_proj_inv;
+uniform highp mat4 m_vp_inv;
+uniform highp mat4 m_view_inv;
+uniform highp mat4 m_view;
+
+
+//const float fFOV = radians(45.0); //Vertical field of view. 45 degrees.
+#define fFOV 0.78539816
+
+// This is the coefficient of distance between two adjacent points (assuming the same distance from view). 2 * tan(fFOV / 2) 
+#define fPixelToDistanceCoeffModifier 0.828427
+
+vec3 DirectionProjectionToView(vec3 vDirection, vec2 vCoords)
+{
+    vec2 vOffset = vec2((vCoords.x-0.5)*fAspectRatio, (vCoords.y-0.5));
+
+	vDirection.xy = vDirection.xy - vDirection.z * vOffset * fPixelToDistanceCoeffModifier;	
+	
+    return vDirection;
+}
+
+vec3 DirectionViewToProjection(vec3 vDirection, vec2 vCoords)
+{
+    vec2 vOffset = vec2((vCoords.x-0.5)*fAspectRatio, (vCoords.y-0.5));
+
+	vDirection.xy = vDirection.xy + vDirection.z * vOffset * fPixelToDistanceCoeffModifier;	
+
+    return vDirection;
+}
+
+vec3 VectorScaleViewToProjection(vec3 vVector, float fDepth)
+{
+	vVector/=fDepth;
+	vVector*=1.0 / (1.0 - vVector.z);
+	return vVector;
+}
+
+vec3 VectorScaleProjectionToView(vec3 vVector, float fDepth)
+{
+	vVector*=1.0 / (1.0 + vVector.z);
+	vVector*=fDepth;
+	return vVector;
+}
+
+float GetPerpendicularPixelDistance(float fDistance)
+{
+	return fDistance * vPixelSize.y * fPixelToDistanceCoeffModifier;
+}
+
+float GetDepth(vec2 vCoords)
+{
+    return nearClip / (1.0 - texture2D(texFBDepth, vCoords).x*fDepthToLinearModifier);
+}
+
+float GetViewZFromDepth(vec2 vCoords)
+{
+    return -GetDepth(vCoords);
+}
+
+float GetDepthInverse(vec2 vCoords)
+{
+    return (1.0 - texture2D(texFBDepth, vCoords).x *fDepthToLinearModifier)/nearClip;
+}
+
+float GetInverseViewZFromDepth(vec2 vCoords)
+{
+    return -GetDepthInverse(vCoords);
+}
+
+vec3 GetNormalVector(vec2 vCoords)
+{
+    
+    vec3 vNormal = vec3 (0.0, 0.0, 0.0);
+    float fPixelDistance= GetViewZFromDepth(vCoords); 
+    float fPerpendicularPixelDistance = GetPerpendicularPixelDistance(fPixelDistance);
+    
+    
+    vec3 vSurfaceVectorH=vec3(0.0,0.0,0.0);
+    vec3 vSurfaceVectorV=vec3(0.0,0.0,0.0);
+    float fDistanceDelta = 0.0;
+    for(int i = 0; i <2; i++)
+    {
+        vec2 vOffset = vec2 (0.0, 0.0);
+        if( i == 0)
+        {
+            vOffset = vec2(vPixelSize.x, 0.0); 
+        }
+        else
+        {
+            vOffset = vec2(0.0, vPixelSize.y); 
+        }
+        float fNegPixelDistanceDelta = fPixelDistance - GetViewZFromDepth(vCoords - vOffset);
+        float fPosPixelDistanceDelta = fPixelDistance - GetViewZFromDepth(vCoords + vOffset);
+		
+        if(abs(fNegPixelDistanceDelta)<abs(fPosPixelDistanceDelta))
+        {
+            //Negative pixel is closest.
+            fDistanceDelta = -fNegPixelDistanceDelta;
+        }
+        else
+        {
+            fDistanceDelta = fPosPixelDistanceDelta;
+             
+        }
+        if(i == 0)
+        {
+            vSurfaceVectorH=vec3(fPerpendicularPixelDistance,0.0,fDistanceDelta);
+            vSurfaceVectorH=DirectionProjectionToView(vSurfaceVectorH, vCoords);
+		}
+        else
+        {
+            vSurfaceVectorV=vec3(0.0,fPerpendicularPixelDistance,fDistanceDelta);
+            vSurfaceVectorV=DirectionProjectionToView(vSurfaceVectorV, vCoords);
+         }
+      
+    }
+
+    vNormal = cross(vSurfaceVectorH, vSurfaceVectorV);
+    vNormal = normalize (vNormal);
+    return vNormal;
+}
+
+vec3 GetPerspectiveNormalVector(vec2 vCoords)
+{
+    return DirectionViewToProjection(GetNormalVector(vCoords) / GetDepth(vCoords), vCoords);
+}
+
+#if POSTPROCESSING == 0
+
+	#if FOG == 1 || KEYHOLING == 1 || HEIGHT_MAP == 1 || ENVIRONMENT_MAP == 1 || LIGHTING == 1
+		#undef POSITION_VIEW
+		#define POSITION_VIEW 1
+		#undef VERTEX_NORMAL
+		#define VERTEX_NORMAL 1
+	#endif
+
+	#if NO_TEXTURE_COORDS != 1 && NO_TEXTURE != 1
+	uniform highp mat4 m_texture;        
+	#endif
+
+	
+	#if VERTEX_COLOR == 1 || (LIGHTING == 1 && FRAGMENT_LIGHTING != 1 && NORMAL_MAP != 1)
+		
+		varying vec4 VertexColor;
+		
+	#endif
+	
+
+	#if POSITION_VIEW == 1
+
+		uniform highp mat4 m_mv;
+		varying highp vec3 vPosView;
+
+	#else
+
+		uniform highp mat4 m_mvp;
+
+	#endif
+
+	#if VERTEX_NORMAL == 1
+		varying vec3 vVertexNormal;
+	#endif
+		
+	#if POSITION_WORLD == 1
+
+		varying highp vec3 vPosWorld;
+
+	#endif
+
+#endif   
+
+uniform lowp int texNoiseBound;
+
+#if NO_TEXTURE != 1
+
+	uniform lowp int texture0Bound;  
+			
+	varying vec2 vVertexTexCoords;
+			
+	#if NO_TEXTURE_COORDS != 1             
+
+
+		#if NORMAL_MAP == 1
+			uniform lowp int texture1Bound;  
+		#endif
+		#if SPECULAR_MAP == 1
+			uniform lowp int texture2Bound;  
+		#endif
+		#if ROUGHNESS_MAP == 1
+			uniform lowp int texture3Bound;  
+		#endif
+		#if HEIGHT_MAP == 1
+			uniform lowp int texture4Bound;  
+		#endif
+		#if SELF_ILLUMINATION_MAP == 1
+			uniform lowp int texture5Bound;  
+		#endif
+
+		#if NORMAL_MAP == 1 || HEIGHT_MAP == 1
+
+			varying float fTextureHandedness;
+			varying vec3 vVertexTangent;
+
+			#if SHADER_TYPE == 1
+				attribute float fHandedness;
+				attribute vec3 vTangent;
+			#endif
+
+		#endif
+
+	#endif               
+
+	#if ENVIRONMENT_MAP == 1  
+		uniform lowp int texEnvCubeBound;
+		uniform lowp int texEnvBound;
+	#endif
+	
+#endif
+
+#ifndef SHADER_TYPE
+	#define SHADER_TYPE 2
+#endif     
+
+#if SHADER_TYPE == 1
+
+    attribute vec4 vPos;
+
+	#if NO_TEXTURE_COORDS != 1 && NO_TEXTURE != 1
+        
+		attribute vec2 vTcIn;
+    
+	#endif
+	
+	#if VERTEX_NORMAL == 1
+	
+		attribute vec3 vNormal;
+	
+	#endif
+		
+	#if VERTEX_COLOR == 1 || (LIGHTING == 1 && FRAGMENT_LIGHTING != 1)
+	
+		attribute vec4 vColor;
+
+	#endif
+
+	#ifdef MOBILE
+		uniform 	mediump		vec4	 	m_boneRotations[MAX_NUM_BONES];
+		uniform 	mediump 	vec4	 	m_bonePositions[MAX_NUM_BONES];
+	#else	
+		uniform 	highp 		mat4 		m_bones[MAX_NUM_BONES];
+	#endif
+	
+	attribute vec4 vIndex;
+	attribute vec4 vWeight;
+
+#elif SHADER_TYPE == 2
+
+	vec4 FragmentColor;
+
+	#if NO_TEXTURE != 1
+
+		uniform sampler2D texUnit0;    
+		vec2 vTexCoords;
+
+		#if NORMAL_MAP == 1
+			uniform sampler2D texUnit1;   
+		#endif
+		#if SPECULAR_MAP == 1
+			uniform sampler2D texUnit2;  
+		#endif
+		#if ROUGHNESS_MAP == 1
+			uniform sampler2D texUnit3;  
+		#endif
+		#if HEIGHT_MAP == 1
+
+			uniform float DisplacementOffset;
+			
+			const float fDisplacementModifier =1.0; // Scales displacement. Also adjusts the amount of iterations. Can be increased beyond 1.0 but this is generally not recommended.
+			const float fDisplacementBase = 0.04;
+
+			const float fDisplacementAngleIterationsModifier = 0.5;
+			const float fDisplacementDistanceIterationsModifier = 0.25; 
+
+			#if SHADER_QUALITY_MODE > 1
+				const int nDisplacementMaximumIterations = 32;  
+			#else
+				const int nDisplacementMaximumIterations = 16;  
+			#endif
+
+			uniform sampler2D texUnit4;  
+
+		#endif
+		#if SELF_ILLUMINATION_MAP == 1
+			uniform sampler2D texUnit5;  
+		#endif
+
+	#endif
+	
+	#if ENVIRONMENT_MAP == 1 || SPECULAR_LIGHT == 1
+	
+		uniform sampler2D texUnitEnv;   // This will contain the environment map
+		uniform samplerCube texUnitEnvCube;
+
+	#endif
+
+	uniform sampler2D texUnitNoise;
+
+#endif
+
+
+#if ENVIRONMENT_MAP == 1 || SPECULAR_LIGHT == 1
+	uniform lowp int envMapCube;
+#endif
+
+#if POSITION_VIEW == 1
+vec3 vViewToSurface_n;
+
+void SetupViewToSurfaceNormal()
+{
+	vViewToSurface_n = normalize(vPosView.xyz);
+}
+#endif
+
+float sqr(float fA)
+{
+	return fA * fA;
+}
+
+#ifdef MOBILE
+highp mat4 transpose(in highp mat4 inMatrix) 
+{
+    highp vec4 i0 = inMatrix[0];
+    highp vec4 i1 = inMatrix[1];
+    highp vec4 i2 = inMatrix[2];
+    highp vec4 i3 = inMatrix[3];
+
+    highp mat4 outMatrix = mat4(
+                 vec4(i0.x, i1.x, i2.x, i3.x),
+                 vec4(i0.y, i1.y, i2.y, i3.y),
+                 vec4(i0.z, i1.z, i2.z, i3.z),
+                 vec4(i0.w, i1.w, i2.w, i3.w)
+                 );
+
+    return outMatrix;
+}
+
+highp mat3 transpose(in highp mat3 inMatrix) 
+{
+    highp vec3 i0 = inMatrix[0];
+    highp vec3 i1 = inMatrix[1];
+    highp vec3 i2 = inMatrix[2];
+
+    highp mat3 outMatrix = mat3(
+                 vec3(i0.x, i1.x, i2.x),
+                 vec3(i0.y, i1.y, i2.y),
+                 vec3(i0.z, i1.z, i2.z)
+                 );
+
+    return outMatrix;
+}
+
+highp mat2 transpose(in highp mat2 inMatrix) 
+{
+    highp vec2 i0 = inMatrix[0];
+    highp vec2 i1 = inMatrix[1];
+
+    highp mat2 outMatrix = mat2(
+                 vec2(i0.x, i1.x),
+                 vec2(i0.y, i1.y)
+                 );
+
+    return outMatrix;
+}
+
+#endif
+
+#if NO_DISCARD != 1
+uniform lowp float fAlphaDiscardValue;
+#endif
+
+#if SHADER_TYPE == 2
+void AlphaDiscard(float fAlphaValue)
+{
+	#if NO_DISCARD != 1
+	if(fAlphaDiscardValue >= 0.0 && fAlphaValue <= fAlphaDiscardValue) 
+	{
+		discard;
+	}
+	#endif
+}
+#endif
+//=============================================================================
+//
+// Functions for determing color brightness and luma. Should be in gamma space.
+//
+//=============================================================================
+
+
+float ColorToBrightness(vec3 Color)
+{
+    return dot(Color, vec3(0.3333333, 0.3333333, 0.3333333));    
+}
+
+float ColorToBrightness(vec4 Color)
+{
+    return ColorToBrightness(Color.rgb);
+}
+
+float ColorToLuma(vec3 Color)
+{
+    return dot(Color.rgb, vec3(0.299, 0.587, 0.114));
+}
+
+float ColorToLuma(vec4 Color)
+{
+    return ColorToLuma(Color.rgb); 
+}
+
+//=============================================================================
+//
+// Functions for converting to linear color space and back.
+//
+//=============================================================================
+
+
+
+float ApplyColorSpace(float fColor)
+{
+	#if GAMMA_CORRECTION == 1
+        return sign(fColor) * pow(abs(fColor), 2.2);
+	#else
+        return fColor;
+	#endif
+}
+
+
+float RevertColorSpace(float fColor)
+{
+	#if GAMMA_CORRECTION == 1
+        return sign(fColor) * pow(abs(fColor), 0.45454545); // 1.0/2.2
+	#else
+        return fColor;
+	#endif
+}
+
+vec3 ApplyColorSpace(vec3 Color)
+{
+	#if GAMMA_CORRECTION == 1
+        return sign(Color) * pow(abs(Color), vec3(2.2));
+	#else
+        return Color;
+	#endif
+}
+
+vec3 RevertColorSpace(vec3 Color)
+{
+	#if GAMMA_CORRECTION == 1
+        return sign(Color) * pow(abs(Color), vec3(0.45454545)); // 1.0/2.2
+	#else
+        return Color;
+    #endif
+}
+
+vec4 ApplyColorSpace(vec4 Color)
+{
+    return vec4(ApplyColorSpace(Color.rgb), Color.a);
+}
+
+vec4 RevertColorSpace(vec4 Color)
+{
+    return vec4(RevertColorSpace(Color.rgb), Color.a);
+}
+
+//=============================================================================
+//
+// Distributes color channel overflows to preserve brightness and hue.
+//
+//=============================================================================
+vec4 ColorClamp(vec4 Color)
+{
+    float fMax=max(Color.r, max(Color.g, Color.b)); 
+	
+    if(fMax>1.0)
+    {
+		if(Color.a < 1.0)
+		{
+			Color.a *= fMax;
+			float fModifier = 1.0 / fMax;
+			if(Color.a > 1.0)
+			{
+				fModifier *= Color.a;
+				Color.a = 1.0;
+
+			}
+			Color.rgb *= fModifier;
+			fMax *= fModifier;
+		}
+
+        float fBrightness3 = dot(Color.rgb, vec3(1.0)); //Brightness x 3. No reason to divide by 3.
+        if(fBrightness3>=3.0)
+        {
+            return vec4(1.0, 1.0, 1.0, Color.a);
+        }
+        fBrightness3 = 3.0 - fBrightness3; //Invert
+        Color.rgb=-Color.rgb + fMax; // Invert.
+        Color.rgb *= fBrightness3 / dot(Color.rgb, vec3(1.0)); 
+        Color.rgb = -Color.rgb + 1.0; //Invert back.
+    }
+    return Color;
+}
+
+vec3 ColorClamp(vec3 Color)
+{
+    return (ColorClamp(vec4(Color.r, Color.g, Color.b, 1.0))).rgb;
+}
+
+//=============================================================================
+//
+// ACES filmic tonemapping.
+//
+//=============================================================================
+
+vec3 ACESFilm(vec3 Color)
+{
+    float a = 2.51;
+    float b = 0.03;
+    float c = 2.43;
+    float d = 0.59;
+    float e = 0.14;
+    return clamp((Color*(a*Color+b))/(Color*(c*Color+d)+e),0.0,1.0);
+}
+
+vec4 ACESFilm(vec4 Color)
+{
+    return vec4(ACESFilm(Color.rgb), Color.a);
+}
+
+
+#if FOG == 1
+float GetFog(float fDistance)
+{
+    //Make sure to not to clamp this in the vertex stage as we need to be able to get within boundaries through interpolation.
+    //Taking absolute value of distance is important for some GUI elements.
+
+    return (fogEnabled == 0.0) ? 0.0 : (fDistance - fogStart) * fogInvEndMinusStart;
+}
+#endif
+
+#if SHADER_TYPE == 1 && POSTPROCESSING != 1
+
+///////////////////////////////////
+//
+// VERTEX SHADER ONLY FUNCTIONS
+//
+///////////////////////////////////
+
+#ifdef MOBILE
+// Optimized version of vector rotation via quaternion
+vec3 rotateVector( vec4 quat, vec3 vec )
+{
+	return vec + 2.0 * cross( cross( vec, quat.xyz ) + quat.w * vec, quat.xyz );
+} 
+
+vec4 rotateAndTranslateBone(vec4 vPosition, int boneIndex)
+{
+	return vec4(rotateVector(m_boneRotations[boneIndex], vPosition.xyz), 0.0) + m_bonePositions[boneIndex];
+}
+
+#endif
+
+vec4 SkinmeshTransformPosition(vec4 vPosition, int nIndex)
+{
+	#ifdef MOBILE
+		return rotateAndTranslateBone(vPosition, nIndex);
+	#else
+		return m_bones[nIndex] * vPosition;
+	#endif
+}
+
+vec3 SkinmeshTransformOrientation(vec3 vVector, int nIndex)
+{
+	#ifdef MOBILE
+		return rotateVector(m_boneRotations[nIndex], vVector);
+	#else
+		return mat3(m_bones[nIndex]) * vVector;
+	#endif
+}
+
+uniform int skinmesh;
+void TransformMainCoordinates()
+{
+	vec4 vLocalPosition = vec4(0.0, 0.0, 0.0, 0.0);
+
+	#if NORMAL_MAP == 1
+		vVertexTangent = vec3(0.0, 0.0, 0.0);
+	#endif
+	#if VERTEX_NORMAL == 1
+		vVertexNormal = vec3(0.0, 0.0, 0.0);
+	#endif
+	if(skinmesh == 1)
+	{
+		int index = 0;
+		
+		if(vWeight.x > 0.0)
+		{
+			index = int(vIndex.x);
+			vLocalPosition = SkinmeshTransformPosition(vPos, index) * vWeight.x;
+			#if NORMAL_MAP == 1
+				vVertexTangent = SkinmeshTransformOrientation(vTangent, index) * vWeight.x;
+			#endif
+			#if VERTEX_NORMAL == 1
+				vVertexNormal = SkinmeshTransformOrientation(vNormal, index) * vWeight.x;
+			#endif
+		}
+		if(vWeight.y > 0.0)
+		{
+			index = int(vIndex.y);
+			vLocalPosition += SkinmeshTransformPosition(vPos, index) * vWeight.y;
+			#if NORMAL_MAP == 1
+				vVertexTangent = SkinmeshTransformOrientation(vTangent, index) * vWeight.y + vVertexTangent;
+			#endif
+			#if VERTEX_NORMAL == 1
+				vVertexNormal = SkinmeshTransformOrientation(vNormal, index) * vWeight.y + vVertexNormal;
+			#endif
+		}
+		if(vWeight.z > 0.0)
+		{
+			index = int(vIndex.z);
+			vLocalPosition += SkinmeshTransformPosition(vPos, index) * vWeight.z;
+			#if NORMAL_MAP == 1
+				vVertexTangent = SkinmeshTransformOrientation(vTangent, index) * vWeight.z + vVertexTangent;
+			#endif
+			#if VERTEX_NORMAL == 1
+				vVertexNormal = SkinmeshTransformOrientation(vNormal, index) * vWeight.z + vVertexNormal;
+			#endif
+		}
+		if(vWeight.w > 0.0)
+		{
+			index = int(vIndex.w);
+			vLocalPosition += SkinmeshTransformPosition(vPos, index) * vWeight.w;
+			#if NORMAL_MAP == 1
+				vVertexTangent = SkinmeshTransformOrientation(vTangent, index) * vWeight.w + vVertexTangent;
+			#endif
+			#if VERTEX_NORMAL == 1
+				vVertexNormal = SkinmeshTransformOrientation(vNormal, index) * vWeight.w + vVertexNormal;
+			#endif
+		}
+	}
+	else
+	{
+		vLocalPosition = vPos;
+		#if VERTEX_NORMAL == 1
+			vVertexNormal = vNormal;
+		#endif
+		#if NORMAL_MAP == 1
+			vVertexTangent = vTangent;
+		#endif
+	}
+	vec4 vPosProj;
+
+	#if POSITION_VIEW == 1
+		vPosView = (m_mv * vLocalPosition).xyz;
+
+		vPosProj = m_proj * vec4(vPosView.x, vPosView.y, vPosView.z, 1.0);
+
+		#if NORMAL_MAP == 1
+			vVertexTangent = mat3(m_mv) * vVertexTangent;
+		#endif
+
+		#if VERTEX_NORMAL == 1
+			vVertexNormal = mat3(m_mv) * vVertexNormal;
+		#endif
+	
+	#else 
+	
+		vPosProj = m_mvp * vLocalPosition;
+	#endif
+
+	gl_Position = vPosProj;
+	
+	#if POSITION_WORLD == 1
+		vPosWorld = (m_vp_inv * vPosProj).xyz;
+	#endif 
+
+
+	#if NO_TEXTURE != 1
+
+		#if NORMAL_MAP == 1
+			fTextureHandedness = fHandedness;
+		#endif
+		
+
+		#if NO_TEXTURE_COORDS != 1
+			vVertexTexCoords = mat2(m_texture) * vTcIn.xy;
+		#else
+			vVertexTexCoords = vec2(0.5, 0.5);
+		#endif
+
+	#endif
+}
+
+#if FOG == 1
+void SetupFog()
+{
+    //Make sure to not to clamp this in the vertex stage as we need to be able to get within boundaries through interpolation.
+    fFogFragCoord = GetFog(-vPosView.z);
+}
+#endif
+
+#elif SHADER_TYPE == 2
+
+///////////////////////////////////
+//
+// FRAGMENT SHADER ONLY FUNCTIONS
+//
+///////////////////////////////////
+
+vec3 vSurfaceNormal;
+
+vec3 vFragmentNormal;
+
+#if FOG == 1
+
+float GetFogAlpha(float fAmount)
+{
+	return clamp(fAmount, 0.0, 1.0);
+}
+
+void ApplyFog(inout vec3 ColorIO)
+{
+	ColorIO.rgb = mix(ColorIO.rgb, fogColor.rgb, GetFogAlpha(fFogFragCoord));
+}
+
+void ApplyFog(inout vec4 ColorIO)
+{
+	ApplyFog(ColorIO.rgb);
+}
+
+#endif
+
+#if NORMAL_MAP == 1 || HEIGHT_MAP == 1
+
+mat3 SetupTSB()
+{
+    // Construct our tangent-space basis matrix from the input data.
+    vec3 vTangent = vVertexTangent;
+    // Gram-Schmidt orthogonalization.
+     vTangent = normalize(vTangent - vSurfaceNormal * dot(vTangent, vSurfaceNormal));
+
+    vec3 vBitangent = cross(vSurfaceNormal, vTangent) * (2.0 * step(0.0, fTextureHandedness) - 1.0);
+	
+    mat3 mTSB;
+    mTSB[0] = vTangent;
+    mTSB[1] = vBitangent;
+    mTSB[2] = vSurfaceNormal;   
+    return mTSB;
+}
+
+#endif
+     
+#if HEIGHT_MAP == 1
+
+void DisplaceTextureCoords(inout vec2 vTexCoords, mat3 mTSB)
+{
+	if(texture4Bound != 0)
+	{
+		#if FRAGMENT_LIGHTING == 1
+		if(fDisplacementModifier!=0.0)
+		{
+			float fDisplacementSurfaceModifier = 1.0 + fDisplacementAngleIterationsModifier * dot(vViewToSurface_n, vSurfaceNormal);
+			fDisplacementSurfaceModifier *=  fDisplacementSurfaceModifier  / (-vPosView.z * fDisplacementDistanceIterationsModifier);
+			float fIterations = float(nDisplacementMaximumIterations)*fDisplacementModifier*clamp(fDisplacementSurfaceModifier, 0.0, 1.0);
+
+			int nIterations = int(fIterations+0.5);
+			if(nIterations>0)
+			{
+				vec3 vViewDisplacement = vec3(transpose(mTSB) * -vViewToSurface_n);
+				vViewDisplacement.xy = mat2(m_texture) * vViewDisplacement.xy;
+				float fSegmentSize = 2.0 / float(nIterations+1);
+				
+				// Vector for maximum displacement
+				vec2 vTexDisplacement = vViewDisplacement.xy * fDisplacementBase / (0.25 * sqr(vViewDisplacement.z + 1.0));
+				vec2 vTexCoordsDisplaced=vTexCoords.xy + DisplacementOffset * vTexDisplacement;
+				vTexDisplacement*= fDisplacementModifier;
+				float fDisplacementThis = 1.0-texture2D(texUnit4, vTexCoordsDisplaced.xy).r;
+				float fDisplacementDelta = fDisplacementThis;
+
+				float fCurrentDistance = fSegmentSize * fDisplacementThis;
+				for(int i = 1; i <= nDisplacementMaximumIterations; i++)
+				{
+					if(i > nIterations) break;
+					fDisplacementThis = (1.0-texture2D(texUnit4, vTexCoordsDisplaced.xy - vTexDisplacement * fCurrentDistance).r);
+					fDisplacementDelta = fDisplacementThis - fCurrentDistance;
+
+					fCurrentDistance += fDisplacementDelta * fSegmentSize;
+					if(fDisplacementDelta<=0.0)
+					{
+						fSegmentSize*=0.5;
+					}
+				}
+				vTexCoords=vTexCoordsDisplaced.xy - vTexDisplacement*fCurrentDistance;
+			}
+		}
+		#endif
+	}
+}
+
+#endif
+
+
+#endif
+
+#if ENVIRONMENT_MAP == 1 || SPECULAR_LIGHT == 1
+
+	float fEnvMapLevel = 0.0;
+
+	vec3 CalculateEnvironmentTexCoordsCube(vec3 vNormalThis)
+	{
+		return mat3(m_view_inv) * reflect(vViewToSurface_n, vNormalThis);
+	}
+	
+	#if SHADER_TYPE == 2
+
+		vec3 SampleEnvironmentMapCube(vec3 vTexCoords, float fLODOffset)
+		{		
+			return ApplyColorSpace(textureCube(texUnitEnvCube, vTexCoords, fLODOffset).rgb);		
+		}
+		
+	#endif
+
+	#if FRAGMENT_NORMAL != 1
+		varying vec3 vVertexTexCoordsEnvironmentCube;
+	#endif
+
+	vec2 CalculateEnvironmentTexCoords(vec3 vNormalThis)
+	{
+		vec2 vEnvReflect = vNormalThis.xy / (1.0+abs(vNormalThis.z));
+
+		vEnvReflect+=0.5*(vPosView.xy /(-vPosView.z + 0.2));
+
+		vEnvReflect = 0.5*vEnvReflect+vec2(0.5, 0.25);
+	   
+		return vEnvReflect;
+	}		
+
+	#if SHADER_TYPE == 2
+
+		vec3 SampleEnvironmentMap(vec2 vTexCoords, float fLODOffset)
+		{
+			return ApplyColorSpace(texture2D(texUnitEnv, vTexCoords, fLODOffset).rgb);		
+		}		
+	
+	#endif
+
+	#if FRAGMENT_NORMAL != 1
+		varying vec2 vVertexTexCoordsEnvironment;
+	#endif
+
+#endif
+
+//-----------------------------------------------------------------------------
+//
+// Functions and arrays for generating randomization.
+//
+//---------------------------
+
+float Random(vec2 vCoords)
+{
+    return fract(sin(dot(vCoords, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+float Random(vec3 vCoords)
+{
+    return fract(sin(dot(vCoords, vec3(12.9898, 78.233, 10.1523))) * 43758.5453);
+}
+
+float InterleavedGradientNoise(vec2 vPos)
+{
+	vec3 vRandom = vec3 (0.06711056, 0.00583715, 52.9829189);
+	return fract(vRandom.z * fract(dot(vPos, vRandom.xy)));
+}
+
+// Description : Array and textureless GLSL 3D simplex noise function.
+//      Author : Ian McEwan, Ashima Arts.
+//  Maintainer : ijm
+
+// Copyright (C) 2011 by Ashima Arts (Simplex noise)
+
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+
+vec4 permute(vec4 x)
+{
+	return mod((x*34.0+1.0)*x, 289.0);
+}
+
+// Perlin simplex noise
+float NoiseSimplex3D(vec3 v)
+{ 
+	//const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
+	const vec2  C = vec2(0.16666667, 0.33333333) ;
+	const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
+
+	// First corner
+	vec3 i  = floor(v + dot(v, C.yyy) );
+	vec3 x0 =   v - i + dot(i, C.xxx) ;
+
+	// Other corners
+	vec3 g = step(x0.yzx, x0.xyz);
+	vec3 l = 1.0 - g;
+	vec3 i1 = min( g.xyz, l.zxy );
+	vec3 i2 = max( g.xyz, l.zxy );
+
+	//  x0 = x0 - 0. + 0.0 * C 
+	vec3 x1 = x0 - i1 + 1.0 * C.xxx;
+	vec3 x2 = x0 - i2 + 2.0 * C.xxx;
+	vec3 x3 = x0 - 1. + 3.0 * C.xxx;
+
+	// Permutations
+	i = mod(i, 289.0 ); 
+	vec4 p = permute( permute( permute( 
+			 i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
+		   + i.y + vec4(0.0, i1.y, i2.y, 1.0 )) 
+		   + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
+
+	// Gradients
+	// ( N*N points uniformly over a square, mapped onto an octahedron.)
+	const float n_ = 1.0/7.0; // N=7
+	vec3 ns = n_ * D.wyz - D.xzx;
+
+	vec4 j = p - 49.0 * floor(p * ns.z *ns.z);  //  mod(p,N*N)
+
+	vec4 x_ = floor(j * ns.z);
+	vec4 y_ = floor(j - 7.0 * x_ );    // mod(j,N)
+
+	vec4 x = x_ *ns.x + ns.yyyy;
+	vec4 y = y_ *ns.x + ns.yyyy;
+	vec4 h = 1.0 - abs(x) - abs(y);
+
+	vec4 b0 = vec4( x.xy, y.xy );
+	vec4 b1 = vec4( x.zw, y.zw );
+
+	//vec4 s0 = vec4(lessThan(b0,0.0))*2.0 - 1.0;
+	//vec4 s1 = vec4(lessThan(b1,0.0))*2.0 - 1.0;
+	vec4 s0 = floor(b0)*2.0 + 1.0;
+	vec4 s1 = floor(b1)*2.0 + 1.0;
+	vec4 sh = -step(h, vec4(0.0, 0.0, 0.0, 0.0));
+
+	vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;
+	vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;
+
+	vec3 p0 = vec3(a0.xy,h.x);
+	vec3 p1 = vec3(a0.zw,h.y);
+	vec3 p2 = vec3(a1.xy,h.z);
+	vec3 p3 = vec3(a1.zw,h.w);
+
+	//Normalise gradients
+	vec4 norm = inversesqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
+	p0 *= norm.x;
+	p1 *= norm.y;
+	p2 *= norm.z;
+	p3 *= norm.w;
+
+	// Mix final noise value
+	vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
+	m = m * m;
+	return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), 
+								dot(p2,x2), dot(p3,x3) ) );
+}
+
+vec3 permute(vec3 x) 
+{
+	return mod(((x*34.0)+1.0)*x, 289.0);
+}
+
+// Perlin simplex noise
+float NoiseSimplex2D(vec2 v)
+{
+	const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+					 -0.577350269189626, 0.024390243902439);
+	vec2 i  = floor(v + dot(v, C.yy) );
+	vec2 x0 = v -   i + dot(i, C.xx);
+	vec2 i1;
+	i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+	//  i1.x = step( x0.y, x0.x ); // x0.x > x0.y ? 1.0 : 0.0
+	//  i1.y = 1.0 - i1.x;
+	vec4 x12 = x0.xyxy + C.xxzz;
+	x12.xy -= i1;
+	i = mod(i, 289.0);
+	vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+	+ i.x + vec3(0.0, i1.x, 1.0 ));
+	vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
+	dot(x12.zw,x12.zw)), 0.0);
+	m = m*m ;
+	m = m*m ;
+	vec3 x = 2.0 * fract(p * C.www) - 1.0;
+	vec3 h = abs(x) - 0.5;
+	vec3 ox = floor(x + 0.5);
+	vec3 a0 = x - ox;
+	m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+	vec3 g;
+	g.x  = a0.x  * x0.x  + h.x  * x0.y;
+	g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+	return 130.0 * dot(m, g);
+}
+
+
+///////////////////////////////////
+//     
+// END INC_COMMON
+//
+///////////////////////////////////
+
+#endif 

@@ -1,0 +1,751 @@
+//----------------------------------------
+//Screen Space Ambient Radiosity, Highlight and Occlusion for NWN:EE
+//
+//----------------------------------------
+//Description:
+//
+//Mimics the ambient light radiation and occlusion that would realistically affect the appearance of objects in a scene, adding to the sense of depth and detail.
+//
+//Setup:
+//
+//For increased fidelity at the cost of some performance, set nSSAOAngularFidelity to 2.
+//
+//To enable radiosity, set SSAO_RADIOSITY to 1.
+//
+//You can also enable various debugging options (see comments below.)
+//
+
+
+#define FOG 1
+#define POSTPROCESSING 1
+#define SHADER_TYPE 2
+
+#include "inc_random"
+#include "inc_tonemap"
+#include "inc_framebuffer"
+#include "inc_lighting"
+#include "inc_fog"
+
+// Set to 1 to enable rendering the vectors used for calculating rays.
+#define SSAO_DEBUG_VECTORS 0
+
+// Set to 1 to enable rendering the calculated normal vector of the current hovered pixel.
+#define SSAO_DEBUG_NORMAL_VECTOR 0
+
+// Set to only render the actually shading on a background of a uniform color. These colors are available:
+// 1 - Black.
+// 2 - Grey
+// 3 - White.
+#define SSAO_DEBUG_COLOR 0
+
+// Set to 1 to enable rendering the calculated normals in the entire scene as colors.
+#define SSAO_DEBUG_NORMALS 0
+
+// Set to 1 to enable rendering the calculated linear depth of the entire scene in greyscale.
+#define SSAO_DEBUG_DEPTH 0
+
+#define SSAO_DEBUG_SPLIT_VIEW 0
+
+// Set to 1 to enable occlusion and highlight colors being determined by local environment.  Disabled by default for better performance. The effect is usually marginal.
+#define SSAO_RADIOSITY 0
+
+// Set to 1 to enable high quality mode.
+#if SHADER_QUALITY_MODE > 1
+#define SSAO_HIGH_QUALITY_MODE 1
+#else
+#define SSAO_HIGH_QUALITY_MODE 0
+#endif
+
+
+#if SSAO_HIGH_QUALITY_MODE == 1
+#define  nSSAOAngularFidelity 8 // Number of angular iterations. Higher increase precision and smoothness at the expense of performance. (Default: 8)
+#else
+#define  nSSAOAngularFidelity 4 // Number of angular iterations. Higher increase precision and smoothness at the expense of performance. (Default: 4)
+#endif
+
+// Note: these should be precalculated in the constants below.
+#define nSSAORangeFidelity 6 // Number of iterations for range precision. (Default: 6)
+#define fSSAOCutOffAngle 20.0 // Minimum angle for applying occlusion. This should be relatively low as it's faint at this point. (Default: 20.0)
+#define fSSAOCutOffLimit 2.0 // If distance to delta depth gets above this ratio, we ignore the occluder, assuming it's an overlapping object.
+uniform float AOIntensity;
+#define fSSAOIntensity AOIntensity // Intensity of occlusion. General modifier. (Default: 0.5)
+#define fSSAOOcclusionDarkness 0.0375 // Amount of darkening to simulate occlusion. (Default 0.15)
+#define fSSAORange 20.0 // Range of occlusion. Increasing it should be paired with an increase in range fidelity for the best result. (Default: 20.0)
+#define fSSAONearClip 0.135 // Gradually fades out occlusion at this proximity. In place because SSAO never look very good up close (Default: 0.135)
+#define fSSAOExposureHighlightIntensity 0.03 // How much high exposure to ambient light should increase brightness. (Default 0.03)
+#define fSSAOOcclusionToHighlightRatio 4.0 // The ratio between highlight and occlusion when both are present at the same pixel. (Default 4.0)
+
+#if SSAO_RADIOSITY == 1
+#define fSSAORadiosity 1.0 // Amount of coloring from local environment light radiation. (Default: 1.0)
+#endif
+
+//const float fSSAOCutOffAngleModifier = tan(radians(fSSAOCutOffAngle)); 
+#define fSSAOCutOffAngleModifier 0.36397023
+
+//const float fSSAOAngularFidelityInverse = 1.0 / float(nSSAOAngularFidelity);
+#if SSAO_HIGH_QUALITY_MODE == 1
+#define fSSAOAngularFidelityInverse 0.125
+#else
+#define fSSAOAngularFidelityInverse 0.25
+#endif
+
+vec4 NormalVectors()
+{
+    vec4 Color = vec4 (0.0, 0.0, 0.0, 1.0);
+    vec3 vNormal = GetNormalVector(vVertexTexCoords);
+    Color.r = 0.5+0.5*vNormal.x;
+    Color.g = 0.5+0.5*vNormal.y;
+    Color.b = 0.5+0.5*vNormal.z;
+    return Color;
+}
+
+vec4 Depth()
+{
+    
+    float fDepth = GetDepth(vVertexTexCoords) / farClip;
+    vec4 Color = vec4(fDepth, fDepth, fDepth, 1.0);
+    return Color;
+}
+
+#if SSAO_DEBUG_NORMAL_VECTOR == 1 || SSAO_DEBUG_VECTORS == 1
+float GetAngleDelta(float fAngle1, float fAngle2)
+{
+    float fAngleDelta = abs(fAngle1-fAngle2);
+    if(fAngleDelta>PI)
+    {
+        fAngleDelta = 2*PI - fAngleDelta;
+    }
+    return fAngleDelta;
+}
+
+vec4 DrawCrosshair(vec4 Color, vec2 vCoords, float fSize, vec4 vDrawColor)
+{
+    vec2 vTcOutScaled=vec2(vVertexTexCoords.x*fAspectRatio, vVertexTexCoords.y);
+    vec2 vOriginScaled=vec2(vCoords.x*fAspectRatio, vCoords.y);
+    vec2 vOffset = vTcOutScaled - vOriginScaled;
+    float fDistance=length(vOffset);
+    //Draw a crosshair.
+    if(abs(vOffset.y)<vPixelSize.y || abs(vOffset.x)<vPixelSize.x)
+    {
+        if(fDistance<=fSize*vPixelSize.x)
+        {
+            Color = vDrawColor;
+        }
+    }
+    return Color;
+}
+
+vec4 DrawVector(vec4 Color, vec2 vOrigin, vec3 vDraw, vec4 vDrawColor)
+{
+    float fDrawLength = length(vDraw);
+    vDraw = normalize(vDraw);
+
+    vec2 vTcOutScaled=vec2(vVertexTexCoords.x*fAspectRatio, vVertexTexCoords.y);
+    vec2 vOriginScaled=vec2(vOrigin.x*fAspectRatio, vOrigin.y);
+    vec2 vOffset = vTcOutScaled - vOriginScaled;
+    float fDistance=length(vOffset);
+
+    if(fDistance>fDrawLength) 
+    {
+        return Color;
+    } 
+    float fDrawAngle = asin (vDraw.y / length(vDraw.xy));
+    if(vDraw.x<0.0)
+    {
+        fDrawAngle = PI - fDrawAngle;
+    }
+    float fOffsetAngle = asin (vOffset.y / fDistance);
+    if(vOffset.x<0.0)
+    {
+       fOffsetAngle = PI - fOffsetAngle;
+    }
+    if(abs(vDraw.z)<0.01)
+    {
+        //Prevents divide by zero and makes a circle that appears as a line.
+        float fOffsetAngleCircle = fOffsetAngle;
+        if(fOffsetAngleCircle>fDrawAngle)
+        {
+            fOffsetAngleCircle-=radians(90.0);
+        }
+        else
+        {
+            fOffsetAngleCircle+=radians(90.0);
+        }
+        float fCircleAngleDelta = GetAngleDelta(fDrawAngle,fOffsetAngleCircle);
+        float fToleranceCircle = radians(max(1.0, 1.0+2.0*abs(vDraw.z)) / (fDistance / fDrawLength)); 
+
+        //Check if vector to point is parallel to draw vector. 
+        if(fCircleAngleDelta<abs(fToleranceCircle) && fDistance<0.50*fDrawLength)
+        {
+			Color.rgb = mix(Color.rgb, vDrawColor.rgb, vDrawColor.a);
+			Color.a = mix(vDrawColor.a, 1.0, Color.a);
+            return Color;
+        } 
+    }
+    else
+    {
+        //Draw a circle ortogonal to the vector.
+        //As the dot product should be 0, we can calculate the desired Z value. I.e.
+        // vDraw.x * vOffset. x + vDraw.y * vOffset.y + vDraw.z * vOffset.z = 0.0
+        vec3 vDrawCircle=vDraw;
+        float fZ = dot(vDrawCircle.xy, vOffset) / -vDrawCircle.z;
+        vec3 vOffset3 = vec3 (vOffset.x, vOffset.y, fZ);
+        //Check if within certain range.
+        float fToleranceCircle=fDrawLength*0.002 + vPixelSize.y / abs(vDraw.z);
+        if(length(vOffset3)+fToleranceCircle>0.48*fDrawLength&&length(vOffset3)<0.50*fDrawLength) 
+        {
+			Color.rgb = mix(Color.rgb, vDrawColor.rgb, vDrawColor.a);
+			Color.a = mix(vDrawColor.a, 1.0, Color.a);
+            return Color;
+        } 
+    }
+    
+    fDrawLength *=length(vDraw.xy);
+    if(fDistance>fDrawLength) 
+    {
+        return Color;
+    } 
+
+    float fTolerance = radians(max(1.0, (0.5/length(vDraw.xy)*(2.0 + 2.0 * vDraw.z * fDistance/ fDrawLength)))/ (fDistance / fDrawLength)); 
+    //Adjut to depth
+    //Check if vector to point is parallel to draw vector. 
+    if(GetAngleDelta(fDrawAngle,fOffsetAngle)<fTolerance)
+    {
+		Color.rgb = mix(Color.rgb, vDrawColor.rgb, vDrawColor.a);
+		Color.a = mix(vDrawColor.a, 1.0, Color.a);
+		return Color;
+    } 
+    return Color;
+	
+} 
+#endif
+
+#if SSAO_DEBUG_NORMAL_VECTOR == 1
+vec4 DrawNormalVector(vec4 Color, vec2 vCoords)
+{
+	vec3 vDraw = GetNormalVector(vCoords);
+    vec4 vDrawColor = vec4(vDraw.x*0.5 + 0.5, vDraw.y*0.5 + 0.5, vDraw.z*0.5 + 0.5, 0.5);   
+	float fDepth = GetDepth(vCoords);
+	vDraw *= 1.0 / fDepth;
+	vec3 vDraw2 = DirectionViewToProjection(vDraw, vCoords);
+    Color = DrawVector(Color, vCoords, vDraw2, vDrawColor);
+	return Color;
+}
+#endif
+
+struct SSAOInfo
+{
+	vec2 vCoords;
+	vec3 vNormalThis;
+	float fDepth;
+	float fPerpendicularPixelDistance;
+	float fAngleIterationSize;
+	vec3 vOffset;
+	vec3 vOcclusion;
+	vec2 vOcclusionCoordsOffset;
+	float fOffset1;
+	float fOffset2;
+	float fMaxRange;
+	float fIterationRange;
+    float fOcclusionTotal;
+    float fExposureTotal;
+	float fRangeToOpenEdge;
+    float fRangeToClosedEdge;
+	
+	#if SSAO_RADIOSITY == 1
+		vec3 RadiosityColor;
+	#endif
+	
+	#if SSAO_DEBUG_VECTORS == 1 || SSAO_DEBUG_NORMAL_VECTOR == 1
+		vec4 DebugColor;
+	#endif
+};
+
+struct SSAORangeProbeInfo
+{
+	vec2 vOcclusionCoords;
+	float fIterationRangeThis;
+	float fRange;
+	bool bRangeExtend;
+	float fOcclusionRange;
+	float fOcclusionActualRange;
+	float fOcclusionDelta;
+};
+
+void SSAOProbeRange(inout SSAORangeProbeInfo SSAORange, inout SSAOInfo SSAO)
+{
+	float fActualRange = SSAO.fPerpendicularPixelDistance * SSAORange.fRange;
+	vec2 vOcclusionCoordsThis = SSAO.vCoords + SSAO.vOcclusionCoordsOffset * SSAORange.fRange;
+	float fExpectedDepth = -SSAO.vOcclusion.z * fActualRange + SSAO.fDepth;
+
+	float fDepthDelta = GetDepth(vOcclusionCoordsThis)-fExpectedDepth;
+
+	float fTolerance = fActualRange + 2.0 * SSAO.fPerpendicularPixelDistance;
+	
+	if(abs(fDepthDelta)>fTolerance * fSSAOCutOffAngleModifier && fDepthDelta > -fTolerance * fSSAOCutOffLimit)
+	{
+		SSAORange.vOcclusionCoords = vOcclusionCoordsThis;
+		SSAORange.fOcclusionDelta = fDepthDelta;
+		SSAORange.fOcclusionRange = SSAORange.fRange;
+		SSAORange.fOcclusionActualRange = fActualRange;
+		//Stop extending.
+		SSAORange.bRangeExtend=false;
+		//Search closer.
+		SSAORange.fIterationRangeThis=-SSAORange.fIterationRangeThis;
+	}
+	if(!SSAORange.bRangeExtend)
+	{
+		SSAORange.fIterationRangeThis*=0.5;
+	}
+	SSAORange.fRange+=SSAORange.fIterationRangeThis;
+	SSAORange.fIterationRangeThis=abs(SSAORange.fIterationRangeThis);
+}
+
+void SSAOProbeAngle(int nAngularIteration, inout SSAOInfo SSAO)
+{
+	#if SSAO_HIGH_QUALITY_MODE == 1
+	if(nAngularIteration == 4)
+	{
+		SSAO.vOffset = cos(SSAO.fAngleIterationSize) * SSAO.vOffset + sin(SSAO.fAngleIterationSize) * cross(SSAO.vOffset, SSAO.vNormalThis); //That's what math says! Rotate by fAngle around vNormalThis using Rodriguos' formula. As vOffset and vNormalThis are always perpendicular, we can shorten it.
+		SSAO.vOcclusion = normalize(DirectionViewToProjection(SSAO.vOffset, SSAO.vCoords));
+		SSAO.vOcclusionCoordsOffset = vPixelSize * SSAO.vOcclusion.xy;
+	}
+	else 
+	#endif
+	if(nAngularIteration == 0)
+	{
+		SSAO.vOffset = cross(vec3(SSAO.fOffset1, SSAO.fOffset2, 0.0), SSAO.vNormalThis);
+		SSAO.vOcclusion = normalize(DirectionViewToProjection(SSAO.vOffset, SSAO.vCoords));
+		SSAO.vOcclusionCoordsOffset = vPixelSize * SSAO.vOcclusion.xy;
+
+	}
+	else if(nAngularIteration == 2 || nAngularIteration == 6)
+	{
+		SSAO.vOffset = cross(SSAO.vNormalThis, SSAO.vOffset);
+		SSAO.vOcclusion = normalize(DirectionViewToProjection(SSAO.vOffset, SSAO.vCoords));
+		SSAO.vOcclusionCoordsOffset = vPixelSize * SSAO.vOcclusion.xy;
+
+	}
+	else //nAngularIteration 1 or 3
+	{
+		SSAO.vOcclusion = -SSAO.vOcclusion;
+		SSAO.vOcclusionCoordsOffset = -SSAO.vOcclusionCoordsOffset;
+	}
+
+	////////// ITERATE RANGE //////////
+
+	SSAORangeProbeInfo SSAORange;	
+	
+	
+	SSAORange.vOcclusionCoords = SSAO.vCoords;
+	SSAORange.fIterationRangeThis=SSAO.fIterationRange;
+	SSAORange.fRange=SSAORange.fIterationRangeThis;
+	SSAORange.bRangeExtend=true;
+	SSAORange.fOcclusionRange = -1.0;
+	SSAORange.fOcclusionActualRange = 0.0;
+	SSAORange.fOcclusionDelta = 0.0;
+
+	// Unroll up to 10.
+
+	#if nSSAORangeFidelity > 0
+	SSAOProbeRange(SSAORange, SSAO);
+	#endif
+	#if nSSAORangeFidelity > 1
+	SSAOProbeRange(SSAORange, SSAO);
+	#endif
+	#if nSSAORangeFidelity > 2
+	SSAOProbeRange(SSAORange, SSAO);
+	#endif
+	#if nSSAORangeFidelity > 3
+	SSAOProbeRange(SSAORange, SSAO);
+	#endif
+	#if nSSAORangeFidelity > 4
+	SSAOProbeRange(SSAORange, SSAO);
+	#endif
+	#if nSSAORangeFidelity > 5
+	SSAOProbeRange(SSAORange, SSAO);
+	#endif
+	#if nSSAORangeFidelity > 6
+	SSAOProbeRange(SSAORange, SSAO);
+	#endif
+	#if nSSAORangeFidelity > 7
+	SSAOProbeRange(SSAORange, SSAO);
+	#endif
+	#if nSSAORangeFidelity > 8
+	SSAOProbeRange(SSAORange, SSAO);
+	#endif
+	#if nSSAORangeFidelity > 9
+	SSAOProbeRange(SSAORange, SSAO);
+	#endif
+
+	////////// EVALUATE DETECTED EDGE //////////
+	
+
+	if(SSAORange.fOcclusionRange!=-1.0)
+	{
+		 // Squaring is necessary to have the same total between vector pointing directly towards an edge and having two with an angle.
+		float fOcclusion = 1.0 - 0.8 * SSAORange.fOcclusionRange/SSAO.fMaxRange;
+		fOcclusion*=fOcclusion;
+
+		#if SSAO_RADIOSITY == 1 || SSAO_DEBUG_VECTORS == 1
+		
+			vec3 vOcclusionIdeal = SSAO.vOcclusion + DirectionViewToProjection(SSAO.vNormalThis, SSAORange.vOcclusionCoords);			
+			#define OCCLUSION_IDEAL_SET
+			
+		#endif
+		
+
+		if (sign(SSAORange.fOcclusionDelta)==-1.0)
+		{
+			#ifndef OCCLUSION_IDEAL_SET
+			vec3 vOcclusionIdeal = SSAO.vOcclusion + DirectionViewToProjection(SSAO.vNormalThis, SSAORange.vOcclusionCoords);
+			#endif
+		
+			float fOcclusionRangeOffset = (SSAORange.fOcclusionRange + 3.0);
+			float fIdealDelta = 1.0;
+
+			float fDelta = (GetDepth(SSAO.vCoords + SSAO.vOcclusionCoordsOffset * fOcclusionRangeOffset) - SSAO.fDepth);
+			fDelta -= fOcclusionRangeOffset * SSAO.fPerpendicularPixelDistance * (-vOcclusionIdeal.z);
+			if(sign(fDelta)==-1.0)
+			{
+				fIdealDelta *= 1.0 - fDelta * (fOcclusionRangeOffset) * 0.5;
+			} 
+
+			//Compare with ideal corner of 45 degrees to soften lower angles.
+			float fExpectedDepthDelta = -vOcclusionIdeal.z * SSAORange.fOcclusionActualRange + SSAO.fDepth;
+			fDelta = GetDepth(SSAO.vCoords + vOcclusionIdeal.xy*vPixelSize* SSAORange.fOcclusionRange) - fExpectedDepthDelta;
+			//Only deal with positive values (i.e. longer away than the ideal) as overlaps are better dealt with using the method above.
+			if(sign(fDelta)==1.0)
+			{
+				fIdealDelta +=3.375 * fDelta / (SSAORange.fOcclusionActualRange);
+			}
+			fOcclusion*=1.0/(fIdealDelta);
+			SSAO.fRangeToClosedEdge=min(SSAO.fRangeToClosedEdge, SSAORange.fOcclusionRange);
+			SSAO.fOcclusionTotal+=fOcclusion;
+		}
+		else
+		{
+			SSAO.fRangeToOpenEdge=min(SSAO.fRangeToOpenEdge, SSAORange.fOcclusionRange);
+			SSAO.fExposureTotal+=fOcclusion;
+		} 
+		#if SSAO_RADIOSITY == 1
+		vec3 OcclusionColorThis=(texture2D(texFBColor, SSAO.vCoords + vOcclusionIdeal.xy*vPixelSize* SSAORange.fOcclusionRange)).rgb;
+		SSAO.RadiosityColor+=OcclusionColorThis*fOcclusion;
+		#endif
+		
+		#if SSAO_DEBUG_VECTORS == 1
+			vec4 DrawColor = (SSAORange.fOcclusionDelta > 0 ? COLOR_GREEN : COLOR_RED);
+
+			SSAO.DebugColor=DrawCrosshair(SSAO.DebugColor, SSAORange.vOcclusionCoords, 250.0 / SSAO.fDepth, DrawColor);
+			DrawColor.a = 0.5;
+			SSAO.DebugColor = DrawVector(SSAO.DebugColor, SSAO.vCoords, vPixelSize.y*SSAO.vOcclusion*abs(SSAORange.fOcclusionRange), DrawColor);	
+			DrawColor.rgb = COLOR_BLUE.rgb;
+			SSAO.DebugColor = DrawVector(SSAO.DebugColor, SSAO.vCoords, vPixelSize.y*vOcclusionIdeal*abs(SSAORange.fOcclusionRange), DrawColor);
+            SSAO.DebugColor = DrawCrosshair(SSAO.DebugColor, SSAO.vCoords + vOcclusionIdeal.xy*vPixelSize* SSAORange.fOcclusionRange, 250.0  / SSAO.fDepth, DrawColor);
+
+		#endif
+	}
+	#if SSAO_DEBUG_VECTORS == 1
+	else
+	{
+		vec4 vDraw = vec4(normalize(SSAO.vOcclusion), 1.0);
+		vDraw = vec4(vDraw.x*0.5 + 0.5, vDraw.y*0.5 + 0.5, vDraw.z*0.5 + 0.5, 0.75);
+		SSAO.DebugColor = DrawVector(SSAO.DebugColor, SSAO.vCoords, vPixelSize.y*SSAO.vOcclusion*abs(SSAO.fMaxRange), vDraw);		
+	}
+	#endif
+
+
+}
+
+#if SSAO_DEBUG_VECTORS == 1
+vec3 DrawSSAOVectors(vec3 Color, vec2 vCoords)
+{
+
+	SSAOInfo SSAO;
+
+    SSAO.vCoords = vCoords;
+    SSAO.fDepth = GetDepth(SSAO.vCoords);
+ 
+	SSAO.DebugColor = COLOR_BLACK;
+	SSAO.DebugColor.a = 0.0;
+	
+	
+    if(SSAO.fDepth<=fSSAONearClip)
+    {
+        return Color;
+    }
+
+    SSAO.fPerpendicularPixelDistance = GetPerpendicularPixelDistance(SSAO.fDepth);
+
+    SSAO.vNormalThis = GetNormalVector(SSAO.vCoords);
+	
+    SSAO.vOffset=vec3(0.0, 0.0, 0.0);
+    SSAO.vOcclusion = vec3(0.0, 0.0, 0.0);
+    SSAO.fAngleIterationSize = PI * 2.0 * fSSAOAngularFidelityInverse;
+			
+	SSAO.fOffset1 = 1.0;
+	SSAO.fOffset2 = 0.0;				
+	
+	
+    SSAO.fMaxRange = fSSAORange * (45.0 / SSAO.fDepth) * float(screenHeight) / 1080.0;
+    SSAO.fIterationRange = SSAO.fMaxRange / float(nSSAORangeFidelity);
+
+    SSAO.fOcclusionTotal=0.0;
+    SSAO.fExposureTotal = 0.0;
+    SSAO.fRangeToOpenEdge = SSAO.fMaxRange;
+    SSAO.fRangeToClosedEdge = SSAO.fMaxRange;
+    SSAO.vOcclusionCoordsOffset = vec2(0.0, 0.0);
+	
+	
+    #if SSAO_RADIOSITY == 1
+    SSAO.RadiosityColor = COLOR_BLACK.rgb;
+    #endif	
+
+    ////////// ITERATE ANGLES //////////
+
+	#if nSSAOAngularFidelity > 0
+	SSAOProbeAngle(0, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 1
+	SSAOProbeAngle(1, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 2
+	SSAOProbeAngle(2, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 3
+	SSAOProbeAngle(3, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 4
+	SSAOProbeAngle(4, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 5
+	SSAOProbeAngle(5, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 6
+	SSAOProbeAngle(6, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 7
+	SSAOProbeAngle(7, SSAO);
+	#endif
+
+	Color = mix(Color, SSAO.DebugColor.rgb, SSAO.DebugColor.a);
+    return Color;
+}
+
+#endif
+
+vec3 ApplySSAO(vec3 Color)
+{
+    #if SSAO_DEBUG_COLOR == 0
+    //Don't waste time on things that are already black.
+	if( Color.r + Color.g + Color.b == 0.0)
+    {
+        return Color;
+    }
+    #else
+    vec3 ColorOriginal = Color;
+    #endif
+
+
+    #if SSAO_DEBUG_COLOR == 1
+    vec3 ColorDebug = COLOR_BLACK.rgb;
+    #elif SSAO_DEBUG_COLOR == 2
+    vec3 ColorDebug = COLOR_GREY.rgb;
+    #elif SSAO_DEBUG_COLOR == 3
+    vec3 ColorDebug = COLOR_WHITE.rgb;
+    #endif
+
+	SSAOInfo SSAO;
+
+    SSAO.vCoords = vVertexTexCoords;
+    SSAO.fDepth = GetDepth(SSAO.vCoords);
+	
+    if(SSAO.fDepth<=fSSAONearClip)
+    {
+        #if SSAO_DEBUG_COLOR != 0
+        return ColorDebug;
+        #else
+        return Color;
+        #endif
+    }
+
+    SSAO.fPerpendicularPixelDistance = GetPerpendicularPixelDistance(SSAO.fDepth);
+
+    SSAO.vNormalThis = GetNormalVector(SSAO.vCoords);
+	
+    SSAO.vOffset=vec3(0.0, 0.0, 0.0);
+    SSAO.vOcclusion = vec3(0.0, 0.0, 0.0);
+    SSAO.fAngleIterationSize = PI * 2.0 * fSSAOAngularFidelityInverse;
+
+    #if SSAO_HIGH_QUALITY_MODE == 1
+    float fRandom = InterleavedGradientNoise(SSAO.vCoords/vPixelSize);
+
+    float fAngle=SSAO.fAngleIterationSize * fRandom;
+    SSAO.fOffset1 = cos(fAngle);
+    SSAO.fOffset2 = sqrt(1.0-SSAO.fOffset1*SSAO.fOffset1);
+
+    #else
+	
+	if(abs(fract(gl_FragCoord.x * 0.5)-fract(gl_FragCoord.y * 0.5)) >= 0.25)
+	{
+		SSAO.fOffset1 = 1.0;
+		SSAO.fOffset2 = 0.0;
+	}
+	else
+	{
+		SSAO.fOffset1 = 0.707;
+		SSAO.fOffset2 = 0.707;
+	}
+
+    #endif
+							
+    SSAO.fMaxRange = fSSAORange * (45.0 / SSAO.fDepth) * float(screenHeight) / 1080.0;
+    SSAO.fIterationRange = SSAO.fMaxRange / float(nSSAORangeFidelity);
+
+    SSAO.fOcclusionTotal=0.0;
+    SSAO.fExposureTotal = 0.0;
+    SSAO.fRangeToOpenEdge = SSAO.fMaxRange;
+    SSAO.fRangeToClosedEdge = SSAO.fMaxRange;
+    SSAO.vOcclusionCoordsOffset = vec2(0.0, 0.0);
+	
+	
+    #if SSAO_RADIOSITY == 1
+    SSAO.RadiosityColor = COLOR_BLACK.rgb;
+    #endif	
+
+    ////////// ITERATE ANGLES //////////
+
+	#if nSSAOAngularFidelity > 0
+	SSAOProbeAngle(0, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 1
+	SSAOProbeAngle(1, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 2
+	SSAOProbeAngle(2, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 3
+	SSAOProbeAngle(3, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 4
+	SSAOProbeAngle(4, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 5
+	SSAOProbeAngle(5, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 6
+	SSAOProbeAngle(6, SSAO);
+	#endif
+	#if nSSAOAngularFidelity > 7
+	SSAOProbeAngle(7, SSAO);
+	#endif
+
+    ////////// CALCULATE TOTALS AND APPLY //////////
+    float fExposureOcclusionDelta = 0.0;
+	if(max(SSAO.fExposureTotal, SSAO.fOcclusionTotal)>0.0)
+    {
+		#if SSAO_RADIOSITY == 1
+		SSAO.RadiosityColor /= (SSAO.fOcclusionTotal+SSAO.fExposureTotal);
+		#endif 
+
+        SSAO.fExposureTotal *= fSSAOAngularFidelityInverse;
+        SSAO.fExposureTotal += sqrt (SSAO.fExposureTotal); // Combine with linear.
+		
+		SSAO.fOcclusionTotal *=fSSAOAngularFidelityInverse;
+        SSAO.fOcclusionTotal += sqrt (SSAO.fOcclusionTotal); // Combine with linear.
+		
+        fExposureOcclusionDelta=SSAO.fExposureTotal-SSAO.fOcclusionTotal * fSSAOOcclusionToHighlightRatio;
+
+		fExposureOcclusionDelta = fExposureOcclusionDelta * min(1.0, (SSAO.fDepth-fSSAONearClip)*0.25);
+
+		// Reduces occlusion when having both closed and open edge.
+		// Disabled with the new renderer as it's mainly to overcome issues with decals.
+		if(max(SSAO.fRangeToOpenEdge, SSAO.fRangeToClosedEdge)<SSAO.fMaxRange)
+		{
+			fExposureOcclusionDelta*=min(1.0, 2.0* (SSAO.fRangeToOpenEdge * SSAO.fRangeToClosedEdge)/SSAO.fMaxRange);
+
+		}
+			
+		fExposureOcclusionDelta*=(sign(fExposureOcclusionDelta)==-1.0 ? fSSAOOcclusionDarkness : fSSAOExposureHighlightIntensity);
+		
+		fExposureOcclusionDelta*=fSSAOIntensity;
+
+		float fFogModifier;
+		if(fogEnabled!=0.0)
+		{
+			fFogModifier = clamp(GetFog(SSAO.fDepth), 0.0, 1.0);
+			if(fFogModifier >= 0.99)
+			{
+				#if SSAO_DEBUG_COLOR != 0
+					return ColorDebug;
+				#else
+					return Color;
+				#endif
+			}
+			// Remove fog
+			Color = (Color - fFogModifier * fogColor.rgb) / (1.0-fFogModifier);
+		}
+
+		#if SSAO_RADIOSITY == 1
+		SSAO.RadiosityColor = mix(Color, SSAO.RadiosityColor, abs(fExposureOcclusionDelta)* fSSAORadiosity);
+		//Restores perceived brightness.
+		Color = SSAO.RadiosityColor * ColorToLuma(Color)/ColorToLuma(SSAO.RadiosityColor);
+		//Dividing by brightness provides a non-relative adjustment while still preserving hue and saturation. Cut-off at 0.2 to prevent precision issues.
+		Color *= 1.0 + fExposureOcclusionDelta / max(ColorToBrightness(Color), 0.2);
+		#else
+		//Dividing by brightness provides a non-relative adjustment while still preserving hue and saturation. Cut-off at 0.2 to prevent precision issues.
+		Color *= max(1.0 + fExposureOcclusionDelta / max(ColorToBrightness(Color), 0.2), 0.0);
+		#endif
+
+		if(fogEnabled!=0.0)
+		{
+			// Restore fog.
+			Color = mix(Color, fogColor.rgb, fFogModifier);
+		}
+		Color = clamp(Color, 0.0, 1.0);
+		#if SSAO_DEBUG_COLOR != 0
+			#if SSAO_RADIOSITY == 1
+				Color += ColorDebug - ColorOriginal;
+			#else
+				Color.rgb = mix(ColorDebug, COLOR_WHITE.rgb, clamp(fExposureOcclusionDelta * 2.0, 0.0, 1.0));
+				Color.rgb = mix(Color.rgb, COLOR_BLACK.rgb, clamp(-fExposureOcclusionDelta * 2.0, 0.0, 1.0));
+			#endif
+		Color = clamp(Color, 0.0, 1.0);
+		#endif
+    }
+    #if SSAO_DEBUG_COLOR != 0
+    else Color = ColorDebug;
+    #endif
+    return Color;
+}
+
+void main()
+{
+    vec4 Color = texture2D(texFBColor, vVertexTexCoords);
+	
+	#if SSAO_DEBUG_SPLIT_VIEW == 1
+	if(vVertexTexCoords.x < 0.5)
+	{
+	#endif
+	Color.rgb = ApplySSAO(Color.rgb);
+
+    #if SSAO_DEBUG_NORMALS == 1
+		Color = NormalVectors();
+    #elif SSAO_DEBUG_DEPTH == 1
+		Color = Depth();
+    #endif
+	
+	#if SSAO_DEBUG_SPLIT_VIEW == 1
+	}
+	#endif 
+	
+    #if SSAO_DEBUG_VECTORS == 1
+    Color.rgb = DrawSSAOVectors(Color.rgb, vPixelSize * vec2 (float(userinputMousePosition.x), float(userinputMousePosition.y)));
+    #endif
+
+    #if SSAO_DEBUG_NORMAL_VECTOR == 1
+    Color = DrawNormalVector(Color, vPixelSize * vec2 (float(userinputMousePosition.x), float(userinputMousePosition.y)));
+    #endif
+
+	gl_FragColor = Color;
+}
