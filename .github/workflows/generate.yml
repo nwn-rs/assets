@@ -159,14 +159,6 @@ jobs:
         with:
           name: gff
           path: gff.zip
-      - name: Gather git files
-        run: |
-          find ./ -name '*.git' -exec cp -prv '{}' 'git/' ';'
-          cd git && zip -r ../git.zip .
-      - uses: actions/upload-artifact@v3
-        with:
-          name: gic
-          path: gic.zip
       - name: Gather gui files
         run: |
           find ./ -name '*.gui' -exec cp -prv '{}' 'gui/' ';'
@@ -318,14 +310,6 @@ jobs:
         with:
           name: ifo
           path: ifo.zip
-      - name: Gather tlk files
-        run: |
-          find ./ -name '*.jrl' -exec cp -prv '{}' 'jrl/' ';'
-          cd jrl && zip -r ../jrl.zip .
-      - uses: actions/upload-artifact@v3
-        with:
-          name: jrl
-          path: jrl.zip
       - name: Gather ute files
         run: |
           find ./ -name '*.ute' -exec cp -prv '{}' 'ute/' ';'
@@ -420,15 +404,12 @@ jobs:
             dlg.zip
             docs.zip
             dwk.zip
-            gic.zip
-            git.zip
             gff.zip
             gui.zip
             ids.zip
             ini.zip
             itp.zip
             ltr.zip
-            jrl.zip
             mdl.zip
             mod.zip
             mtr.zip
@@ -466,15 +447,12 @@ jobs:
             dlg.zip
             docs.zip
             dwk.zip
-            gic.zip
-            git.zip
             gff.zip
             gui.zip
             ids.zip
             ini.zip
             itp.zip
             ltr.zip
-            jrl.zip
             mdl.zip
             mod.zip
             mtr.zip
@@ -504,7 +482,7 @@ jobs:
     needs: generate
     strategy:
       matrix:
-        type: [2da, bic, dds, dlg, docs, dwk, gff, gic, git, gui, ids, ini, itp, ltr, jrl, mdl, mod, mtr, nss, ovr, plt, ptt, pwk, set, shd, ssf, tga, tlk, utc, utd, ute, uti, utm, utp, uts, utt, utw, wok]
+        type: [2da, bic, dds, dlg, docs, dwk, gff, gui, ids, ini, itp, ltr, mdl, mod, mtr, nss, ovr, plt, ptt, pwk, set, shd, ssf, tga, tlk, utc, utd, ute, uti, utm, utp, uts, utt, utw, wok]
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
