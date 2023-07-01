@@ -1,0 +1,17 @@
+#MAXMODEL ASCII
+# model: tni01_Z13_01
+filedependancy tni01_Z13_01.max
+newmodel tni01_Z13_01
+setsupermodel tni01_Z13_01 NULL
+classification tile
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom tni01_Z13_01
+node dummy tni01_Z13_01
+  parent NULL
+  #part-number 0
+endnode
+endmodelgeom tni01_Z13_01
+
+donemodel tni01_Z13_01
+

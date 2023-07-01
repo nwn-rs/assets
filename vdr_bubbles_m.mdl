@@ -1,0 +1,283 @@
+#MAXMODEL ASCII
+# model: vdr_bubbles_m 
+filedependancy bubbles_04.max
+newmodel vdr_bubbles_m 
+setsupermodel vdr_bubbles_m NULL
+classification Effects
+#MAXGEOM  ASCII
+beginmodelgeom vdr_bubbles_m 
+node dummy vdr_bubbles_m 
+  parent NULL 
+endnode
+node emitter bubbles_m 
+  parent vdr_bubbles_m 
+  position 0.0 0.15 -0.17
+  orientation  0.0 -0.707107 -0.707107  -3.14159
+  wirecolor 0.568627 0.109804 0.694118  
+    colorStart 0.933333 0.933333 0.933333  
+    colorEnd 0.466667 0.466667 0.466667  
+    alphaStart 0.8 
+    alphaEnd 0.4 
+    sizeStart 0.04 
+    sizeEnd 0.02 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 1 
+    frameEnd 4 
+    birthrate 1 
+    spawnType 0 
+    lifeExp 2.5 
+    mass -0.0999999 
+    spread 0.698132 
+    particleRot 1.0 
+    velocity 0.05 
+    randvel 0.2 
+    fps 10 
+    random 1 
+    inherit 0 
+    inherit_local 0 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 4 
+    ySize 4 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Fountain 
+    render Normal 
+    Blend Lighten 
+    update_sel 1 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 1 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fx_bubble 
+    xgrid 2 
+    ygrid 2 
+    affectedByWind true 
+    m_isTinted 1 
+    renderorder 0 
+    Splat 0 
+endnode
+endmodelgeom vdr_bubbles_m 
+
+#MAXANIM ASCII
+newanim default vdr_bubbles_m 
+ length 6.0
+ transtime 1.0
+animroot vdr_bubbles_m
+node dummy vdr_bubbles_m 
+  parent NULL 
+endnode
+node emitter bubbles_m 
+  parent vdr_bubbles_m 
+    positionkey 
+      0.0  0.0 0.15 -0.17
+    endlist 
+    orientationkey 
+      0.0   0.0 0.707107 0.707107  3.14159
+    endlist 
+    colorStartkey
+      0.0   0.933333 0.933333 0.933333
+    endlist
+    colorEndkey
+      0.0   0.466667 0.466667 0.466667
+    endlist
+    alphaStartkey
+      0.0   0.8
+    endlist
+    alphaEndkey
+      0.0   0.4
+    endlist
+    sizeStartkey
+      0.0   0.04
+      2.66667   0.04
+      5.66667   0.04
+      5.7   0.02
+      5.96667   0.03
+      6.0   0.04
+    endlist
+    sizeEndkey
+      0.0   0.02
+      5.66667   0.02
+      5.7   0.01
+      6.0   0.02
+    endlist
+    sizeStart_ykey
+      0.0   0.0
+    endlist
+    sizeEnd_ykey
+      0.0   0.0
+    endlist
+    lockAxeskey
+      0.0   1.0
+    endlist
+    frameStartkey
+      0.0   1.0
+    endlist
+    frameEndkey
+      0.0   4.0
+    endlist
+    birthratekey
+      0.0   1.0
+      2.66667   2.0
+      5.66667   1.0
+      5.7   25.0
+      5.96667   25.0
+      6.0   1.0
+    endlist
+    spawnTypekey
+      0.0   0.0
+    endlist
+    lifeExpkey
+      0.0   2.5
+    endlist
+    masskey
+      0.0   -0.0999999
+      5.66667   -0.1
+      5.7   -0.15
+      5.96667   -0.1
+    endlist
+    spreadkey
+      0.0   0.698131
+      5.66667   0.698131
+      5.7   0.0872664
+      5.96667   0.174533
+      6.0   0.698131
+    endlist
+    particleRotkey
+      0.0   1.0
+    endlist
+    velocitykey
+      0.0   0.05
+      5.66667   0.0499285
+      5.7   0.25
+      5.96667   0.25
+      6.0   0.05
+    endlist
+    randvelkey
+      0.0   0.2
+    endlist
+    fpskey
+      0.0   10.0
+    endlist
+    randomkey
+      0.0   1.0
+    endlist
+    inheritkey
+      0.0   0.0
+    endlist
+    inherit_localkey
+      0.0   0.0
+    endlist
+    inherit_partkey
+      0.0   0.0
+    endlist
+    inheritvelkey
+      0.0   0.0
+    endlist
+    xSizekey
+      0.0   4.0
+    endlist
+    ySizekey
+      0.0   4.0
+    endlist
+    bouncekey
+      0.0   0.0
+    endlist
+    bounce_cokey
+      0.0   0.0
+    endlist
+    loopkey
+      0.0   0.0
+    endlist
+    chunkykey
+      0.0   0.0
+    endlist
+    opacitykey
+      0.0   0.5
+    endlist
+    blurlengthkey
+      0.0   10.0
+    endlist
+    lightningDelaykey
+      0.0   0.0
+    endlist
+    lightningRadiuskey
+      0.0   0.0
+    endlist
+    lightningSubDivkey
+      0.0   0.0
+    endlist
+    lightningScalekey
+      0.0   0.0
+    endlist
+    blastRadiuskey
+      0.0   0.0
+    endlist
+    blastLengthkey
+      0.0   0.0
+    endlist
+    twosidedtexkey
+      0.0   1.0
+    endlist
+    p2pkey
+      0.0   0.0
+    endlist
+    p2p_bezier2key
+      0.0   0.0
+    endlist
+    p2p_bezier3key
+      0.0   0.0
+    endlist
+    combinetimekey
+      0.0   0.0
+    endlist
+    Dragkey
+      0.0   0.0
+    endlist
+    gravkey
+      0.0   0.0
+    endlist
+    thresholdkey
+      0.0   0.0
+    endlist
+    xgridkey
+      0.0   2.0
+    endlist
+    ygridkey
+      0.0   2.0
+    endlist
+    affectedByWindkey
+      0.0   1.0
+    endlist
+    m_isTintedkey
+      0.0   1.0
+    endlist
+    renderorderkey
+      0.0   0.0
+    endlist
+    Splatkey
+      0.0   0.0
+    endlist
+endnode
+doneanim default vdr_bubbles_m 
+
+donemodel vdr_bubbles_m 
+

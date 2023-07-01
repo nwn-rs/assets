@@ -1,0 +1,329 @@
+# Exported from NWmax 0.8 at 9/23/2004 8:39:49 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: plc_bbl_md
+filedependancy Unknown
+newmodel plc_bbl_md
+setsupermodel plc_bbl_md NULL
+classification Item
+#NWmax GEOM  ASCII
+beginmodelgeom plc_bbl_md
+node dummy plc_bbl_md
+  parent NULL
+endnode
+node trimesh Box01 
+  parent plc_bbl_md 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.552941 0.027451 0.227451  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 0
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 12.5 
+     gizmo SubAnim:Gizmo
+    bitmap NULL
+    verts 8
+     -0.25 -0.25 0.0
+     0.25 -0.25 0.0
+     -0.25 0.25 0.0
+     0.25 0.25 0.0
+     -0.1875 -0.1875 0.25
+     0.1875 -0.1875 0.25
+     -0.1875 0.1875 0.25
+     0.1875 0.1875 0.25
+    faces 10
+     4 5 7  4  0 0 0  1
+     7 6 4  4  0 0 0  1
+     0 1 5  8  0 0 0  5
+     5 4 0  8  0 0 0  5
+     1 3 7  16  0 0 0  4
+     7 5 1  16  0 0 0  4
+     3 2 6  32  0 0 0  6
+     6 7 3  32  0 0 0  6
+     2 0 4  64  0 0 0  3
+     4 6 2  64  0 0 0  3
+endnode
+node emitter small_bubbles
+  parent plc_bbl_md
+  position 0.044561 -0.0580719 -0.15
+  orientation -0.0777677 0.0181457 -0.996806 -3.15587
+  wirecolor 0.564706 0.109804 0.694118 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 4.0
+  ySize 4.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 3.04618e-005
+  opacity 0.5
+  colorStart 0.933333 0.933333 0.933333 
+  colorEnd 0.466667 0.466667 0.466667 
+  alphaStart 0.8
+  alphaEnd 0.4
+  sizeStart 0.04
+  sizeEnd 0.02
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 5
+  lifeExp 4.0
+  mass -0.2
+  spread 0.698132
+  particleRot 0.0
+  velocity 0.2
+  randvel 0.3
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind true
+  texture fx_bubble
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 10
+  frameStart 1
+  frameEnd 4
+  random 1
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter big_bubbles
+  parent plc_bbl_md
+  position 0.178287 0.163825 -0.15
+  orientation 0.0142589 0.0479371 -0.998749 -3.15828
+  wirecolor 0.564706 0.109804 0.694118 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 5.3
+  ySize 5.3
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 3.04618e-005
+  opacity 0.5
+  colorStart 0.933333 0.933333 0.933333 
+  colorEnd 0.466667 0.466667 0.466667 
+  alphaStart 0.8
+  alphaEnd 0.4
+  sizeStart 0.09
+  sizeEnd 0.02
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 4.0
+  mass -0.0999999
+  spread 0.698132
+  particleRot 1.0
+  velocity 0.1
+  randvel 0.3
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind true
+  texture fx_bubble
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 10
+  frameStart 1
+  frameEnd 4
+  random 1
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter tiny_bubbles
+  parent plc_bbl_md
+  position 0.0812125 0.0594563 -0.15
+  orientation 0.0129487 -0.0925604 -0.995623 -3.16211
+  wirecolor 0.564706 0.109804 0.694118 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 2.0
+  ySize 2.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 3.04618e-005
+  opacity 0.5
+  colorStart 0.764706 0.792157 0.815686 
+  colorEnd 0.466667 0.466667 0.466667 
+  alphaStart 0.8
+  alphaEnd 0.4
+  sizeStart 0.04
+  sizeEnd 0.02
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 7
+  lifeExp 3.0
+  mass -0.4
+  spread 0.698132
+  particleRot 0.3
+  velocity 0.2
+  randvel 0.3
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind true
+  texture fx_bubble
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 10
+  frameStart 1
+  frameEnd 4
+  random 1
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+endmodelgeom plc_bbl_md
+
+#NWmax ANIM ASCII
+newanim default plc_bbl_md
+  length 2.66667
+  transtime 0.25
+  animroot plc_bbl_md
+    node dummy plc_bbl_md
+        parent NULL
+        positionkey
+            0.0 0.0 0.0 0.0
+            0.3 0.0 0.0 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.3 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node emitter small_bubbles
+        parent plc_bbl_md
+        positionkey
+            0.0 0.044561 -0.0580719 -0.15
+            1.33333 0.044561 -0.0580719 -0.15
+        endlist
+        orientationkey
+            0.0 0.00716212 -0.999809 -0.0182004 -3.29728
+            0.666667 0.00411347 -0.999798 -0.0196832 -3.63498
+            1.33333 0.00985506 -0.999809 -0.0168904 -2.99079
+            2.0 0.00607188 -0.999854 -0.0159884 -3.70211
+            2.66667 0.00841375 -0.999855 -0.0148077 -3.33704
+        endlist
+    endnode
+    node emitter big_bubbles
+        parent plc_bbl_md
+        positionkey
+            0.0 0.178287 0.163825 -0.15
+            0.4 0.0645479 -0.171676 -0.15
+            0.833333 0.178287 0.366304 -0.15
+            1.1 0.178287 0.23134 -0.15
+            1.76667 0.066314 -0.178424 -0.15
+            2.0 0.178287 0.311357 -0.15
+            2.66667 0.178287 0.0647068 -0.15
+        endlist
+        orientationkey
+            0.0 0.00834409 -0.998815 -0.0479402 -3.11307
+            0.4 0.00644383 -0.996717 0.0807107 -3.11117
+            1.1 0.00940371 -0.992274 -0.123706 -3.11443
+            1.76667 0.00637869 -0.996363 0.084973 -3.11111
+            2.0 0.00921182 -0.993917 -0.109746 -3.11416
+            2.66667 0.00726363 -0.999629 0.0262569 -3.11192
+        endlist
+    endnode
+    node emitter tiny_bubbles
+        parent plc_bbl_md
+        positionkey
+            0.0 0.0812125 0.0594563 -0.15
+            1.33333 0.0812125 0.0594563 -0.15
+        endlist
+        orientationkey
+            0.0 0.00877565 -0.99981 -0.0174155 -3.1136
+            0.666667 0.00887936 -0.99981 -0.0173651 -3.10177
+            1.33333 0.00824196 -0.99981 -0.0176751 -3.17446
+            2.0 0.0103402 -0.999865 -0.0127891 -3.06826
+            2.66667 0.00969029 -0.999856 -0.013907 -3.15335
+        endlist
+    endnode
+doneanim default plc_bbl_md
+
+donemodel plc_bbl_md

@@ -1,0 +1,440 @@
+# gaoneng
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: vim_pdkshld
+filedependancy vfx_armor.max
+newmodel vim_pdkshld
+setsupermodel vim_pdkshld NULL
+classification Effect
+#NWmax GEOM  ASCII
+beginmodelgeom vim_pdkshld
+node dummy vim_pdkshld
+  parent NULL
+endnode
+node emitter AuroraEmitter04
+  parent vim_pdkshld
+  position 0 0 0.4
+  orientation 1 0 0 -6.28319
+  wirecolor 0.552941 0.027451 0.227451 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 50.0
+  ySize 50.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 1 1 1 
+  colorEnd 0.952941 0.952941 0.329412013
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.2
+  sizeEnd 0.2
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 36
+  lifeExp 1
+  mass -0.05
+  spread 6.28319
+  particleRot 0
+  velocity 0.3
+  randvel 0.1
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_lensflare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node dummy Dummy01
+  parent vim_pdkshld
+  position 0 0 0.4
+  orientation 0.589522 -0.44568 0.673671 -0.670791
+  wirecolor 0.345098 0.345098 0.882353 
+endnode
+node emitter AuroraEmitter01
+  parent Dummy01
+  position 0 0 0
+  orientation -1 0 0 -5.49779
+  wirecolor 0.839216 0.898039 0.65098 
+  update_sel 1
+  update Fountain
+  render_sel 3
+  render Billboard_to_Local_Z
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 0
+  ySize 0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.533333004 0.329412013 0.952941
+  colorEnd 0.329412013 0.533333004 0.952941
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.4
+  sizeEnd 0.6
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 24
+  lifeExp 0.5
+  mass 0
+  spread 0
+  particleRot 0
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_symbl_001
+  twosidedtex 1
+  xgrid 2
+  ygrid 2
+  fps 0
+  frameStart 2
+  frameEnd 2
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter02
+  parent Dummy01
+  position 0 0 0
+  orientation -0.215739 -0.373672 0.902123 -4.10195
+  wirecolor 0.839216 0.898039 0.65098 
+  update_sel 1
+  update Fountain
+  render_sel 3
+  render Billboard_to_Local_Z
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 0
+  ySize 0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.533333004 0.329412013 0.952941
+  colorEnd 0.329412013 0.533333004 0.952941
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.4
+  sizeEnd 0.6
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 24
+  lifeExp 0.5
+  mass 0
+  spread 0
+  particleRot 0
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_symbl_001
+  twosidedtex 1
+  xgrid 2
+  ygrid 2
+  fps 0
+  frameStart 2
+  frameEnd 2
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter03
+  parent Dummy01
+  position 0 0 0
+  orientation 0.215739 -0.373672 0.902123 -2.18123
+  wirecolor 0.839216 0.898039 0.65098 
+  update_sel 1
+  update Fountain
+  render_sel 3
+  render Billboard_to_Local_Z
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 0
+  ySize 0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.533333004 0.329412013 0.952941
+  colorEnd 0.329412013 0.533333004 0.952941
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.4
+  sizeEnd 0.6
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 24
+  lifeExp 0.5
+  mass 0
+  spread 0
+  particleRot 0
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_symbl_001
+  twosidedtex 1
+  xgrid 2
+  ygrid 2
+  fps 0
+  frameStart 2
+  frameEnd 2
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node dummy Dummy02
+  parent vim_pdkshld
+  position 0 0 0.4
+  orientation 1 0 0 0
+  wirecolor 0.109804 0.34902 0.694118 
+endnode
+node trimesh Plane01
+  parent Dummy02
+  position 0 0 0
+  orientation -0.970288 -0.171088 0.171088 -1.60095
+  wirecolor 0.898039 0.65098 0.843137 
+  tilefade 0
+  scale 1
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1
+  transparencyhint 0
+  selfillumcolor 0.329412013 0.952941 1
+  ambient 1 1 1
+  Diffuse 1 1 1 
+  Specular 0 0 0 
+  shininess 1
+  center undefined
+  bitmap fxpa_shield
+  verts 10
+    -0.0900316 -0.15 -0.0372923
+    -0.0487248 -0.15 -0.00969197
+    0 -0.15 0
+    0.0487248 -0.15 -0.00969197
+    0.0900316 -0.15 -0.0372923
+    -0.0900316 0.15 -0.0372923
+    -0.0487248 0.15 -0.00969195
+    0 0.15 0
+    0.0487248 0.15 -0.00969195
+    0.0900316 0.15 -0.0372923
+  faces 16
+    5 0 6  1  5 0 6  1
+    1 6 0  1  1 6 0  1
+    6 1 7  1  6 1 7  1
+    2 7 1  1  2 7 1  1
+    7 2 8  1  7 2 8  1
+    3 8 2  1  3 8 2  1
+    8 3 9  1  8 3 9  1
+    4 9 3  1  4 9 3  1
+    4 3 9  0  4 3 9  1
+    9 3 8  0  9 3 8  1
+    8 3 2  0  8 3 2  1
+    2 7 8  0  2 7 8  1
+    7 2 1  0  7 2 1  1
+    1 6 7  0  1 6 7  1
+    6 1 0  0  6 1 0  1
+    0 5 6  0  0 5 6  1
+  tverts 20
+    0.177419 0.0161291 0
+    0.33871 0.0161291 0
+    0.5 0.016129 0
+    0.66129 0.016129 0
+    0.822581 0.016129 0
+    0.177419 0.983871 0
+    0.33871 0.983871 0
+    0.5 0.983871 0
+    0.66129 0.983871 0
+    0.822581 0.983871 0
+    0.177419 0.0161291 0
+    0.33871 0.0161291 0
+    0.5 0.016129 0
+    0.66129 0.016129 0
+    0.822581 0.016129 0
+    0.177419 0.983871 0
+    0.33871 0.983871 0
+    0.5 0.983871 0
+    0.66129 0.983871 0
+    0.822581 0.983871 0
+endnode
+endmodelgeom vim_pdkshld
+
+#NWmax ANIM ASCII
+newanim impact vim_pdkshld
+  length 1
+  transtime 0.25
+  animroot vim_pdkshld
+    node dummy vim_pdkshld
+        parent NULL
+    endnode
+    node emitter AuroraEmitter04
+        parent vim_pdkshld
+        birthratekey
+            0 36 
+            0.666667 36 
+            0.833333 0 
+            1 0 
+        endlist
+    endnode
+    node dummy Dummy01
+        parent vim_pdkshld
+    endnode
+    node emitter AuroraEmitter01
+        parent Dummy01
+        birthratekey
+            0 24 
+            0.666667 24 
+            0.833333 0 
+            1 0 
+        endlist
+    endnode
+    node emitter AuroraEmitter02
+        parent Dummy01
+        birthratekey
+            0 24 
+            0.666667 24 
+            0.833333 0 
+            1 0 
+        endlist
+    endnode
+    node emitter AuroraEmitter03
+        parent Dummy01
+        birthratekey
+            0 24 
+            0.666667 24 
+            0.833333 0 
+            1 0 
+        endlist
+    endnode
+    node dummy Dummy02
+        parent vim_pdkshld
+        orientationkey
+            0 0 0 0 0
+            0.333333 0 -1 0 -2.0944
+            0.666667 0 -1 0 -4.18879
+            1 0 1 0 -6.28319
+        endlist
+    endnode
+    node trimesh Plane01
+        parent Dummy02
+        orientationkey
+            0 -0.970288 -0.171088 0.171088 -1.60095
+            0.333333 0.497543 0.710565 0.497543 -4.37716
+            0.666667 0.123724 -0.701674 -0.701674 -2.8954
+            1 0.633687 -0.443713 -0.633687 -3.97682
+        endlist
+        alphakey
+            0 1 
+            0.833333 1 
+            1 0 
+        endlist
+    endnode
+doneanim impact vim_pdkshld
+
+donemodel vim_pdkshld
