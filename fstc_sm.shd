@@ -1,0 +1,36 @@
+/*
+
+fstc_sm.shd
+
+*/
+
+#include "inc_uniforms"
+
+varying mediump vec2 vTcOut;
+varying lowp vec4 vColorOut;
+varying vec4 vPosOut;
+
+uniform sampler2D texUnit0;
+uniform sampler2D texUnitEnv;
+
+uniform int userinputMousePosition[2];
+
+void main()
+{
+	lowp vec4 color;
+	lowp vec4 env;
+	lowp vec4 decal;
+
+	decal = texture2D(texUnit0, vTcOut.xy);
+	color.rgb = (decal.rgb * decal.a);
+	
+	float envX = sin((vPosOut.y) + float(sceneCurrentFrame) / 2048.0);
+	float envY = sin((vPosOut.y) + float(sceneCurrentFrame) / 991.0);
+	
+	env = texture2D(texUnitEnv, vPosOut.xy+(vec2(envX, envY))*0.2);
+
+	color.rgb = color.rgb + env.rgb*(1.0-decal.a);
+	color.a = 1.0;
+
+	gl_FragColor = color * vColorOut;
+}

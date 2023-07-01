@@ -1,0 +1,69 @@
+//=============================================================================
+//
+// fsparticle.shd
+//
+//=============================================================================
+
+#define SHADER_TYPE 2
+
+#define LIGHTING 0
+#define FOG 1
+#define KEYHOLING 0
+
+#define NORMAL_MAP 0
+#define SPECULAR_MAP 0
+#define ROUGHNESS_MAP 0
+#define HEIGHT_MAP 0
+#define SELF_ILLUMINATION_MAP 0
+#define ENVIRONMENT_MAP 0
+
+#define VERTEX_COLOR 1
+#define POSITION_VIEW 1
+#include "inc_framebuffer"
+#include "inc_tonemap"
+#include "inc_standard"
+
+
+#define BLEND_MODE_NORMAL 0
+#define BLEND_MODE_ADDITIVE 1
+#define BLEND_MODE_PUNCHTHROUGH 2
+
+#if SHADER_QUALITY_MODE > 0
+uniform int blendMode;
+	#ifndef MOBILE
+		uniform int particleSoften;
+		varying float fSoftParticleMod;
+	#endif
+#endif
+void main ()
+{
+    FragmentColor = VertexColor * texture2D(texUnit0,vVertexTexCoords.xy); 
+	
+	AlphaDiscard(FragmentColor.a);
+
+	#if SHADER_QUALITY_MODE > 0
+
+		#ifndef MOBILE
+			if(particleSoften != 0)
+			{
+				FragmentColor.a *= sqr(clamp((GetDepth(gl_FragCoord.xy * vPixelSize) + vPosView.z) * fSoftParticleMod, 0.0, 1.0));
+			}
+		#endif
+
+		if(blendMode == BLEND_MODE_ADDITIVE)
+		{
+			FragmentColor.a *= 1.0 - GetFogAlpha(fFogFragCoord);
+		}
+		else
+		{
+			ApplyFog(FragmentColor);
+		}
+	
+	#endif
+	
+	ApplyColorTonemap(FragmentColor);
+	
+	//FragmentColor.a = 1.0;
+	//FragmentColor.rgb = vec3((GetDepth(vSampleScreenCoords) + vPosView.z)/45.0);
+    gl_FragColor = FragmentColor;
+}

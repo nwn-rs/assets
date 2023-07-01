@@ -1,0 +1,69 @@
+//=============================================================================
+//
+// inc_common.shd
+//
+//=============================================================================
+
+#ifndef INC_FOG
+#define INC_FOG
+#include "inc_common"
+///////////////////////////////////
+//
+// BEGIN INC_FOG
+//
+///////////////////////////////////
+
+uniform vec4 fogParams;
+#define fogEnabled (fogParams.x)
+#define fogStart (fogParams.y)
+#define fogEnd (fogParams.z)
+#define fogInvEndMinusStart (fogParams.w)
+
+uniform vec4 fogColor; // NB Fog color is always in gamma space.
+
+float GetFog(float fDistance)
+{
+	//Make sure to not to clamp this in the vertex stage as we need to be able to get within boundaries through interpolation.
+	//Taking absolute value of distance is important for some GUI elements.
+
+	return (fogEnabled == 0.0) ? 0.0 : (fDistance - fogStart) * fogInvEndMinusStart;
+}
+
+
+float GetFogAlpha(float fAmount)
+{
+	return clamp(fAmount, 0.0, 1.0);
+}
+
+#if POSTPROCESSING != 1
+
+varying float fFogFragCoord;
+
+	#if SHADER_TYPE == 1
+
+	void SetupFog()
+	{
+		//Make sure to not to clamp this in the vertex stage as we need to be able to get within boundaries through interpolation.
+		fFogFragCoord = GetFog(-vPosView.z);
+	}
+
+	#endif
+
+void ApplyFog(inout vec3 ColorIO)
+{
+	ColorIO.rgb = mix(ColorIO.rgb, fogColor.rgb, GetFogAlpha(fFogFragCoord));
+}
+
+void ApplyFog(inout vec4 ColorIO)
+{
+	ApplyFog(ColorIO.rgb);
+}
+
+#endif
+
+///////////////////////////////////
+//     
+// END INC_FOG
+//
+///////////////////////////////////
+#endif 
