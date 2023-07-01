@@ -120,14 +120,18 @@ jobs:
         run: |
           find ./ -name '*.dds' -exec cp -prv '{}' 'dds/' ';'
           cd dds && zip -r ../dds.zip .
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dds
+          path: dds.zip  
       - name: Gather bic files
         run: |
           find ./ -name '*.bic' -exec cp -prv '{}' 'bic/' ';'
           cd bic && zip -r ../bic.zip .
       - uses: actions/upload-artifact@v3
         with:
-          name: dds
-          path: dds.zip
+          name: bic
+          path: bic.zip
       - name: Gather dlg files
         run: |
           find ./ -name '*.dlg' -exec cp -prv '{}' 'dlg/' ';'
