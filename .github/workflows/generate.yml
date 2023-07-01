@@ -302,14 +302,6 @@ jobs:
         with:
           name: tlk
           path: tlk.zip
-      - name: Gather ifo files
-        run: |
-          find ./ -name '*.ifo' -exec cp -prv '{}' 'ifo/' ';'
-          cd ifo && zip -r ../ifo.zip .
-      - uses: actions/upload-artifact@v3
-        with:
-          name: ifo
-          path: ifo.zip
       - name: Gather ute files
         run: |
           find ./ -name '*.ute' -exec cp -prv '{}' 'ute/' ';'
