@@ -30,8 +30,8 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_ACCESS_TOKEN  }}
-      - run: nimble install neverwinter -y          
       - uses: jiro4989/setup-nim-action@v1
+      - run: nimble install neverwinter -y          
       - name: Clone SteamRE/DepotDownloader
         run: |
           gh repo clone SteamRE/DepotDownloader
