@@ -37,6 +37,7 @@ jobs:
           gh repo clone SteamRE/DepotDownloader
       - name: Download nwn:ee files
         run: |
+          mkdir unpacked 2da bic dds dlg dwk git gff gui ids ini itp ltr jrl mdl mod mtr nss plt ptt pwk set shd ssf tga tlk utc utd ute uti utm utp uts utt utw wok
           cd DepotDownloader/DepotDownloader
           if [ "${{ github.event.inputs.release }}" = "build8193.36" ]; then
             dotnet run -app 704450 -depot 704451 -beta preview -betapassword previewpreview -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
@@ -52,11 +53,9 @@ jobs:
             fi
           done
 
-          cd ${{ env.GITHUB_WORKSPACE }}
-          mkdir unpacked 2da bic dds dlg dwk git gff gui ids ini itp ltr jrl mdl mod mtr nss plt ptt pwk set shd ssf tga tlk utc utd ute uti utm utp uts utt utw wok
-          nwn_key_unpack "DepotDownloader/DepotDownloader/depots/704451/$dir_name/data/nwn_base.key" unpacked/
-          cp -r "DepotDownloader/DepotDownloader/depots/704451/$dir_name/lang/en/docs/" docs/
-          cp -r "DepotDownloader/DepotDownloader/depots/704451/$dir_name/ovr/" ovr/
+          nwn_key_unpack "depots/704451/$dir_name/data/nwn_base.key" ../../unpacked/
+          cp -r "depots/704451/$dir_name/lang/en/docs/" ../../docs/
+          cp -r "depots/704451/$dir_name/ovr/" ../../ovr/
       - name: Gather files and create zip archives
         run: |
           file_types=("2da" "dds" "bic" "dlg" "docs" "dwk" "gff" "gui" "ids" "ini" "itp" "ltr" "mdl" "mod" "mtr" "nss" "plt" "ovr" "ptt" "pwk" "set" "shd" "ssf" "tga" "tlk" "ute" "utc" "utd" "uti" "utm" "utp" "uts" "utt" "utw" "wok")
