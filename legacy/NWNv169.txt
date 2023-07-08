@@ -1,0 +1,2429 @@
+Neverwinter Nights v1.69
+
+
+Patch details:
+New Content added from the Neverwinter Nights Premium Modules (http://store.bioware.com/products/neverwinternights/)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+New Purple Dragon Knight Prestige Class
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+8 New Tilesets:
+=-=-=-=-=-=-=-=-
+Barrows Interior
+Castle Exterior, Rural
+Castle Interior 2
+City Interior 2
+Fort Interior
+Sea Caves (a hak pack is no longer required)
+Steamworks
+Tropical (a hak pack is no longer required)
+
+Audio:
+=-=-=-
+15 New Music Tracks:
+14 New Ambient Sounds
+
+
+New Creatures (over 100 new appearances):
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Caladnei (NPC)
+Cobra (Regular, Black and Gold)
+Curst Swordsman
+Gem Golems (Diamond, Emerald and Ruby)
+G'Zhorb the All seeing Eye
+Halaster
+Harat, Lord of Darkness (Large and Small)
+Horses (63 Different variants, plus mounted Humans, Elves, Half-Elves, Halflings, Gnomes, Half-Orcs and Dwarves)
+Lord Antoine Baccha, Visier de Guise (NPC)
+Maggris, the Hive Mother
+Masterius (Regular, Disguised and Powerful)
+Mist Dragon
+Nightmare (Regular, Saddled and Armored)
+Ogre Chieftain
+Purple Dragon Knight Archer (Female and Male)
+Purple Dragon Knight Blade (Female and Male)
+Satyr (Regular, Archer and Warrior)
+Wereboar
+Widow Hagatha
+Wyvern (Great, Adult, Juvenile and Young)
+
+New Placeables (nearly 350)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+New Doors ( 15 Generic Doors + 71 Tileset Specific Doors)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+New Visual Effects (over 100)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Glowing eye colors (White, Blue, Cyan, Purple, Orange and Yellow).
+Purple Dragon Knight feat visual effects.
+Lance shattering visual effects.
+Arrow visual effects.
+
+New Armor Part Appearances (lots).
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+New Weapon Part Appearances.
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Gem parts used for the new "Gem Golem" weapons.
+
+New Item
+=-=-=-=-
+Portable Encampment
+
+
+ini file setting additions/changes
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+- Added new nwnplayer.ini file settings, so that red/green color blind users don't get killed by traps unexpectedly.
+    [Trap Colors]
+    FriendlyColor=0,255,0
+    HostileColor=255,0,0
+- Added ability to turn off visible cloaks in the nwnplayer.ini file (set to 1 to enable cloaks, 0 for no visible cloaks).
+    [Game Options]
+    Visible Cloaks=1
+- Added in-game text swear filter nwnplayer.ini setting (set to 1 to enable, only supports English).
+    [Game Options]
+    In-game Text Swear Filter=0
+- Added new nwnplayer.ini file setting to always roll maximum hit points at level up for players (defaults to off).
+    [Server Options]
+    Max Hit Points=1
+- Added new nwnplayer.ini file setting to not display the hit points rolled on the level up summary gui (defaults to off).
+    [Server Options]
+    Hide Hit Points Gained=0
+- Added new nwnplayer.ini file setting to restore the remaining spell uses from the character file on log in to a "server vault" server. This option defaults to off.
+    [Server Options]
+    Restore Spell Uses On Login=0
+- Added new nwn.ini file setting to set how far into the distance grass should be rendered (default value 900.0, valid values range from 900.0 to 30000.0).  Increasing this value will cause more grass to be rendered in outdoor grassy areas, but will also reduce game performance in these areas.
+    [Video Options]
+    Grass Far Render Distance=900.0
+- Added new nwnplayer.ini file setting to toggle on/off the file logging of creature deaths.
+    [Game Options]
+    Death Logging=0
+- Added new nwnplayer.ini file setting to reset the encounter level spawned by an encounter trigger every time that it spawns creatures. If this option is turned on, the encounter trigger will always spawn creatures based on the triggering player's level rather than potentially using left over spawned creature from an early triggering that was initiated by a much higher level player.
+    [Server Options]
+    Always Reset Encounter Spawns=0
+- Updated Get2DAString() scripting command 2da caching code to cache a number of 2das specified in an ini setting. 
+    [Server Options]
+    2DA Cache Size=10
+- Added new nwnplayer.ini file setting to log each script as it executes (defaults to off). Enabling this will degrade game performance. It should only be used for script debugging purposes (i.e. when you have a bad script that causes your module to lock up, checking the log file will let you know the last script that executed).
+    [Script Options]
+    Enable Logging=1
+- Added new nwnplayer.ini file setting to obtain script profiling data in the log file (defaults to off). Enabling this will degrade game performance. It should only be used to determine which scripts you need to optimize to improve the performance of your module. Note: "Enable Logging" should be turned off when profiling is enabled.
+    [Script Options]
+    Enable Profiling=1
+- Added new option to the nwtoolset.ini file to set the toolset CPU affinity on multi-core computers. If you have more than one CPU on your PC, then you can use this setting to make the toolset run on only one of the CPUs by specifying the number of the CPU (0-31). Setting "CPU Affinity=-1" will turn off CPU affinity (default 0).
+    [Start Up]
+    "CPU Affinity".
+- The nwnplayer.ini setting for "Client CPU Affinity" now defaults to 0 (a setting of -1 will be converted to 0). If you need to disable this feature set the value to -2.
+
+
+Feat Prerequisite changes (these may make some existing characters invalid in multiplayer games)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+- The Epic Dodge feat now requires 30 ranks of Tumble skill as a prerequisite, as per the description (feat.2da).
+- The "Dragon Shape" feat now requires Wild Shape 6x/day as per the description (feats.2da).
+- Fixed prerequisite for "Epic Weapon Focus Club" to be "Weapon Focus Club" rather than "Improved Critical Club" (feat.2da). 
+- Weapon Specialization Club now requires four fighter levels to obtain (rather than one).
+
+General Fixes:
+=-=-=-=-=-=-=-
+- Fixed issue with videos not displaying under Windows Vista.
+- The game will now prompt to elevate to administrator privaleges under Windows Vista.
+- Fixed issue with corrupted textures on newer Nvidia cards.
+- Colorized the cloaks in the official campaigns (they are no longer all tan colored).
+- Added missing Trident weapon feats.
+- Tridents are now classified as a "Martial" weapon, rather than a simple weapon.
+- Fixed how Damage Resistance works against weapons that do more than one type of damage (i.e. Morning Stars and Halberds). The target now uses the worst of the multiple damage resistances against weapons that inflict more than one base weapon damage type.
+- Fixes to Whirlwind/Improved Whirlwind/Great Cleave so that all the attacks are done at the player's full BAB.
+- The Defensive Roll feat now works 1/day as per the description.
+- Fixed the caster level being used for Holy Avengers (it is now always set to 10 as it is cast from an item, rather than using the player's paladin caster level).
+- Updated Weapon Finesse to work with all Creature Weapons regardless of the creature's size.
+- Made some minor game optimizations.
+- Fixed some issues that could be used to intentionally crash a server.
+- Fixed client crash that seemed to be related to other players coming out of stealth.
+- Fixed issue where your henchman/associates could sometimes overlap the position of your character.
+- The "Rapid Reload" feat now gives you the proper number of extra attacks.
+- Fixed an issue with the deflection bonus being added in twice when determining a touch attack.
+- Fixed Bandoleers on hobgoblins.
+- Fixed an issue with VFXs not attaching correctly to zombies/mummies.
+- Fixed issue with Item Weights being wrong for extremely heavy items (such as the Tower Shield).
+- Screenshots are now prefixed with the module name (set in the Module properties in the toolset) rather than "NWN". Screenshots are also now placed in the screenshots subdirectory.
+- Changed "Black Blade of Disaster" feats from "Longsword" to "Greatsword"
+- Changed "Brewed Potions" so that they now behave like normal potions (i.e. when used they play the drinking animation, can be dropped on henchman, etc).
+- Fixed issue with "Improved Expertise" mode not being correctly displayed in the combat log for "special" attacks.
+- Fixed issue with resting not getting canceled correctly if a member of your party started attacking something during your rest period (the OnPlayerRest event is now properly called in this situation).
+- Made some changes that will hopefully address area loading crashes related to "shiny water" being enabled in watery areas of the official campaign.
+- Fixed issue with the DM "Send Exit Event" radial command when used on generic triggers. The DM object wasn't being set correctly as the exiting object causing scripting calls to GetExitingObject() to not work correctly.
+- Fixed attack bonus granted when attacking stunned creatures.
+- Fixed AC Increase vs Damage Type item property to work correctly.
+- Fixed some memory leaks.
+- Fixed some exploits.
+
+Spell/Feat description and other text changes:
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+- Updated description for "Elemental Swarm" to reflect that the elementals are 21HD.
+- Updated the Badger animal companion Rage description.
+- Updated the Hawk animal companion description list the correct feats.
+- Updated the Panther animal companion description to list the correct skills/feats.
+- Updated the Panther familiar description to list the correct feats.
+- Updated the Spider animal companion description to include the hide skill.
+- Updated the description of "Bard Song" to correctly reflect the required Perform skill at level 16.
+- Updated the "Enchant Arrow" description to better reflect how it is implemented.
+- Updated description for "Imbue Arrow" feat to better reflect how it behaves.
+- Updated description for "Resist Energy" to properly reflect the Fort Save Bonus required.
+- Updated description for displacement spell. It was incorrectly listing a "Somatic" component.
+- Updated the description for Keen Edge to clarify that it only works on "slashing melee" weapons.
+- Updated the description for Clarity to display the proper duration "5 Rounds + 1 Round / Level" and it now correctly mentions that it removes Daze effects as well.
+- Updated the description for "Undeaths's Eternal Foe" to include the +4 deflection bonus to AC.
+- Updated description for "Tenser's Transformation" to properly reflect the bonuses given by the spell.
+- Updated description for "Shadow Shield" to properly reflect the immunities given by the spell.
+- Updated description for "Black blade of disaster" so that the sword's enhancement bonus is correctly described.
+- Updated description for "Mordenkainen's disjunction" to properly reflect how the dispel check is done.
+- Updated description for "Deafening clang" to clarify that the bonuses will not stack.
+- Updated description for "Holy sword" to include all the benefits of the weapon.
+- Updated description for "Nature's Balance" to properly reflect the damage healed.
+- Updated description for "Hammer of the Gods" to properly relect the effects of a successful Will save.
+- Fixed many spelling errors and typos in the official campaign.
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+- Newly created modules will now have the OnClientEnter script set to "x3_mod_def_enter" by default. This script is used to give pre-existing characters horse related feats, so that they can use horses.
+- Fixed issue with non-human cloaks not displaying properly on NPCs in the toolset.
+- Fixed issue with textures not displaying correctly in the toolset for community made creatures that use a phenotype of 10 or greater.
+- Added new generic horse dismount triggers to toolset palette. 
+- Fixed incorrect tails on Lizardmen templates.
+- Fixed the alignment on some of the Slaadi in the toolset palette.
+- Mephits in the toolset palette are now the correct neutral alignment.
+- Fixed incorrect alignment on Duergar Clerics.
+- Fixed incorrect sound sets on Duergar Priestess.
+- Fixed issue with padded lines in the classes.2da displaying as "Bad Strref" in the toolset creature wizard and levelup wizard.
+- Fixed issue with the Snowy Rural and Rural caravan loadscreens displaying the desert image instead (they will now also appear under the tileset filtered lists).
+- Made default equipment on Troglodyte Warrior non-droppable.
+- Fixed some environment mapping issues for Wings/Tails.
+- Fixed a scaling issue for Wings/Tails.
+- Fixed incorrect portrait on Rope placeable.
+
+Script-specific:
+=-=-=-=-=-=-=-=-
+- Added a new Module "OnPlayerChat" event.
+- Added new scripting commands:
+	object GetPCChatSpeaker();
+	string GetPCChatMessage();
+	int GetPCChatVolume();
+	void SetPCChatMessage(string sNewChatMessage="");
+	void SetPCChatVolume(int nTalkVolume=TALKVOLUME_TALK);
+	string GetDescription(object oObject, int bOriginalDescription=FALSE, int bIdentifiedDescription=TRUE);
+	void SetDescription(object oObject, string sNewDescription="", int bIdentifiedDescription=TRUE);
+	int GetColor(object oObject, int nColorChannel);
+	void SetColor(object oObject, int nColorChannel, int nColorValue);
+	itemproperty ItemPropertyMaterial(int nMaterialType);
+	itemproperty ItemPropertyQuality(int nQuality);
+	itemproperty ItemPropertyAdditional(int nAdditionalProperty);
+- Added a new starting position parameter to the FindSubString scripting command.
+    int FindSubString(string sString, string sSubString, int nStart=0);
+- Added extra parameter to scripting command:
+    void AdjustAlignment(object oSubject, int nAlignment, int nShift, int bAllPartyMembers=TRUE);
+- Added new constant VFX_BEAM_DISINTEGRATE for use with EffectBeam()
+- Increased the limit on the SetPhenoType() scripting command to 99.
+- Made CopyItemAndModify() scripting command work with both the old and new cloak systems.
+- Fixed issue with the scripting command SetCreatureAppearance() not restoring players to PC movement speed when restoring the character back to one of the playable races.
+- Evard's Black Tentacles now applies the damage per tentacle, rather than all tentacle damage being applied at one (nw_s0_evardsa.nss and nw_s0_evardsc.ncs).
+- The Arcane Archer special abilities Imbue Arrow, Seeker Arrow, Hail of Arrows and Death Arrow now take into consideration the Epic Weapon Specialization feat (x0_i0_spells.nss)
+- Fixed Isacc's Missile Storm Projectile Traps to work again (x0_i0_spells.nss).
+- Fixed damage calculation for Eyeball familiar rays (x1_s1_eyebray.nss).
+- "Tymora's Smile" now works properly based on Harper levels (x0_s2_HarpSmile.nss).
+- Negative Energy Burst is now properly capped at +20 damage based on caster level (nw_s0_negburst.nss)
+- Blade Barrier now properly respects the Evasion and Improved Evasion feats (nw_s0_bladebara.nss, nw_s0_bladebarc.nss)
+- Fixed hit points healed/damaged for the empowered "Healing Circle" spell (nw_s0_healcirc.nss).
+- Cursed song no longer affects silenced creatures (X2_S2_CurseSong.nss) and the bonuses for level 11 are now granted at level 11 (rather than level 12).
+- Changed the "Undeaths's Eternal Foe" AC bonus from a dodge bonus to a deflection bonus (x0_s0_udetfoe.nss).
+- Fixed SR calculation in "Nature's Balance" when it affects more than one creature (NW_S0_NatureBal.NSS).
+- Fixed dye script to work on the last color available (x2_s2_dyearmor.nss)
+- Fixed missing concealment bonus on the Shadowdancer's Epic Shadowlord (x2_ch_summon_sld.nss).
+- Negative Energy Traps no longer harm undead (nw_t1_negavgc.nss, nw_t1_negstrc.nss, nw_t1_negdeadc.nss, nw_t1_negminc.nss).
+- Fixed duration calculation on Gaze and Howl fear effects (nw_s1_gazefear.nss, nw_s1_howlfear.nss)
+- Fixed Gust of Wind to only disperse cloudlike area of effect spells (x0_s0_gustwind.nss).
+- Added a horse scripting system for builders that want to use horses in their modules. View the x3_inc_horse script in the toolset for more information.
+- Tridents and Magic staves are now considered melee weapons by the scripting command GetMeleeWeapon() (x2_i0_spells). If you have used this scripting command in your own custom module, you will need to recompile your scripts to take advantage of this change.
+
+2DA Changes:
+=-=-=-=-=-=-=-=
+- Amplify now requires a somatic component as per the spell description (spells.2da).
+- The spell War Cry now requires a somatic component as per the spell description (spells.2da).
+- Greater Sanctuary now requires a somatic component, as per the spell description (spells.2da).
+- Balagarn's Iron Horn now requires a somatic component, as per the spell description (spells.2da).
+- Clarity/Scare/Lesser Dispel can now be cast as a stilled spell (spells.2da Meta Magic column updated).
+- Greater Restoration can no longer be selected as an Extended Spell, as its duration is instantaneous (spells.2da).
+- Removed reference to non-existent script NW_S0_MindFogC from VFX_Persistent.2da.
+- Fixed row numbering in IPRP_SPELLCOST.2DA (there were duplicate rows numbered 199).
+- Fixed the spell range for "Shadow Conjuration Darkness" (spells.2da).
+- Added missing Trident weapon feats ( CLS_FEAT_FIGHT.2DA, CLS_FEAT_BARB.2DA, CLS_FEAT_DIVCHA.2DA, CLS_FEAT_DWDEF.2DA, CLS_FEAT_PAL.2DA, CLS_FEAT_RANG.2DA, CLS_FEAT_WM.2DA, CLS_FEAT_BLKGRD.2DA, and many PackFT*.2das).
+- Fixed broken "Minotaur, Zor" sound set (soundset.2da).
+- Fixed issue with clubs not playing the hit sound against creatures wearing medium armor (weaponsounds.2da).
+- Fixed icon for "Ethereal Visage" scrolls (iprp_spells.2da).
+- Fixed weight of two-bladed swords (baseitems.2da).
+- Fixed environment mapping on the bone golem (appearance.2da).
+- Fixed RacialType entries for elementals in the polymorph.2da
+- Adding missing feat FEAT_EPIC_WEAPON_SPECIALIZATION_DWAXE to cls_feat_divcha.2da
+- Fixed missing underscore in categories.2da.
+- Fixed category entries for FEAT_EPIC_ARMOR_SKIN and FEAT_EPIC_SPELL_MAGE_ARMOUR (feat.2da).
+- Fixed issue with Champions of Torm not being able to take Ambidexterity and Two Weapon Fighting as Bonus Feats (CLS_FEAT_DIVCHA.2da).
+
+Custom Content:
+=-=-=-=-=-=-=-=
+- Upped maximum number of tilesets allowed to 100
+- Load screen row indexes past row 255 will now working properly in the game.
+- The Read/Drink/Meditate/Worship/Sit/Fall Backwards/Fall Forwards radial menu icons no longer all use the ir_nod.tga (so that the community can properly override the images with custom content).
+- Increased the allowable rows in the WingType.2da, TailType.2da and GenericDoors.2da from 255 to a much larger value (i.e. around 4 billion).
+- Added new renderaabb and rendertilepathnodes DebugMode console commands to aid with building tilesets.
+- Added support for 10 new custom animations (plus a new mount and dismount).
+
+Special Information with regards to some of the new content:
+=-=-=-=-=-=-=-==-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-===-=
+Barrows Interior Tileset:
+- The white patches in the "Final 7x7" group are there to help you position the "Pillar #, Barrows" placeables from the "Placeable->Miscellaneous Interior" standard palette.  You can turn this off by unchecking "Animation Loop 1" in the tile properties for the placed tile group).  
+
+Horses:
+To create a mounted NPC in the tooolset you need to do the following
+- Change the NPC's appearance to "Human mounted, Male" (or choose another race/gender that you desire). Set the PhenoType to "Normal Mounted" (or Large for larger human phenotypes). Click on the Appearance tab and from the "Tail" pull down menu select the type of horse that you desire.
+- Changing the NPC's Phenotype to one of the "Jousting Mounted" settings will cause the NPC horse to use Jousting animations in game, rather than the normal horse combat animations.
+
+
+Please visit the Neverwinter Nights Community Site at:
+=-=-=-=-=-=-=-==-=-=-=-==-=-=-=-=-=-==-=-==-=-=-=-=-=-
+http://nwn.bioware.com/
+
+
+BioWare Neverwinter Nights support pages:
+=-=-=-=-=-=-=-==-=-=-=-==-=-=-=-=-=-==-=-=
+The BioWare known issues page:
+http://nwn.bioware.com/support/known.html
+
+The BioWare Technical Support (Self-Help) forum:
+http://nwn.bioware.com/forums/viewforum.html?forum=49
+
+The BioWare Patches and Updates page:
+http://nwn.bioware.com/support/patch.html
+
+
+
+Patch details for 1.68:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+WARNING! AS OF THIS PATCH, ALL MODULES CREATED/SAVED WITH THE VERSION 1.68 TOOLSET ARE TAGGED AS REQUIRING VERSION 1.68 OR HIGHER OF NEVERWINTER NIGHTS GAME OR TOOLSET.
+IF YOU DON'T WANT TO BRAND YOUR MODULE AS 1.68 THEN DO NOT EDIT YOUR MODULE IN THE VERSION 1.68 TOOLSET.
+IF YOU WANT TO GO BACK TO 1.67, WE HAVE A 1.68 TO 1.67 PATCH AVAILABLE.
+- Added visible cloaks to the game.
+- Fixed an issue with the Monk's Perfect Self feat not correctly reporting that the monk was immune when making saving throws against mind-affecting spells (was making Phantasmal Killer work on monks if they failed their saving throws). 
+
+Script-specific:
+=-=-=-=-=-=-=-=-=-=
+- Fixed an issue with the sleep spell not being counted as a hostile action when cast (nw_s0_sleep.nss).
+- Fixed range issue in spell "Mestil's Acid Breath" (X2_S0_AcidBrth.nss).
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+- Fix to CopyObject() so that copied creatures now run their OnSpawn script.
+- Enabled PLT support for visible cloaks.
+- Fixed an issue with GetIsSkillSuccessful() not working correctly under Linux/Mac.
+- Fixed an issue with SetLockUnlockDC() and SetLockLockDC() being reversed in nwscript.nss. Any scripts calling these scripting functions will need to be recompiled for the changes to take effect.
+- Fixed an issue with ActionCastSpellAtObject() not working for Paladin spells.
+- Made a change to hopefully fix some potential issues with the client losing some appearance/phenotype update messages when using the SetPhenoType() scripting command.
+
+Custom Content:
+=-=-=-=-=-=-=-=
+- Added new scripting command:
+	// Set oPlaceable's useable object status.
+	// Note: Only works on non-static placeables.
+	void SetUseableFlag(object oPlaceable, int nUseableFlag);
+- Added new nwnplayer.ini setting.
+    [Game Options]
+    Log Model Errors=0
+  If turned on, some types of model errors will be logged out to the nwclientLog file and the AR_ERROR.LOG file while the game is running (in the NWN install directory).  This would include some errors with setting invalid TileSet data, invalid use nodes set on placables, some placeable walkmesh errors, and some errors with the animrootnode not matching the name of other nodes in the model.
+- Wings now use the ENVMAP setting from the new column in the WingModel.2da rather than using the ENVMAP setting from the appearance.2da. This fixes some issues with transparency on wings.
+- Tails now use the ENVMAP setting from the new column in the TailModel.2da rather than using the ENVMAP setting from the appearance.2da. This fixes some issues with transparency on tails.
+
+
+
+Patch details for 1.67:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+WARNING! AS OF THIS PATCH, ALL MODULES CREATED/SAVED WITH THE VERSION 1.67 TOOLSET ARE TAGGED AS REQUIRING VERSION 1.67 OR HIGHER OF NEVERWINTER NIGHTS GAME OR TOOLSET.
+IF YOU DON'T WANT TO BRAND YOUR MODULE AS 1.67 THEN DO NOT EDIT YOUR MODULE IN THE VERSION 1.67 TOOLSET.
+IF YOU WANT TO GO BACK TO 1.66, WE WILL HAVE A 1.67 TO 1.66 PATCH AVAILABLE.
+- Official Campaign: Chapter 2e - Fixed an issue with attacking Tolan Losen causing all commoners to become hostile.
+- Official Campaign: Chapter 3 - One of the pedestals in Layenne's Tomb can no longer be accidentally destroyed.
+- Added 13 varieties of new creatures to the game from Pirates of the Sword Coast: Sharks (Goblin, Mako, Hammerhead), Gray Ooze, Ochre Jelly (Large, Medium, Small), Sahuagin (regular, Cleric, Leader), Parrot, Seagull (flying, walking).
+- Added 79 new placeable objects to game resources:
+	Arrow (Penants & Signs) - 8 variety of colors 
+	Flag (Penants & Signs) - Pirate and Umberlee 
+	X (Penants & Signs) - Pirate X mark 
+	Bubbles (Visual Effects) - 3 different heights 
+	Candle (Misc. Interior) - 2 types of 2 versions - 1 set with ambient light, 1 without 
+	Chest (Containers & Switches) - 1 buried, 1 sunken - sunken one has a bubbles effect when opened 
+	Driftwood (Parks & Nature) - 4 types 
+	Bed & Bench & Table & Chair, Dwarven (Misc. Interior) 
+	School of Fish (Parks & Nature) - 3 types 
+	Footprints (Misc.) - left and right 
+	Fungus (Parks & Nature) 
+	Hanging Dwarf Skeleton (Misc. Interior) 
+	Kelp (Parks & Nature) - 3 sizes of 3 types 
+	Mushrooms (Parks & Nature) - 4 types 
+	Net (Misc.) 
+	Palm Tree (Parks & Nature) - 2 types 
+	Parrot (Misc.) 
+	Portal (Visual Effects) 
+	Puddle (Misc.) - 2 types 
+	Raft (Misc.) - 1 normal, 1 broken 
+	Rocks (Parks & Nature) - 5 types 
+	Rope Coils (Misc.) - 2 types 
+	Sea Chair (Misc. Interior) 
+	Sea Idol (Misc.) 
+	Sea Obelisk (Misc.) 
+	Sea Table (Misc. Interior) 
+	Seashell (Parks & Nature) - 3 types 
+	Shrine of Umberlee (Misc. Interior) - 1 with ambient light, 1 without 
+	Starfish (Parks & Nature) 
+	Trog Bed (Misc. Interior) 
+	Trog Egg (Misc. Interior) 
+	Trog Nest (Misc. Interior) 
+	Trog Shrine (Misc. Interior) 
+	Trog Throne (Misc. Interior) 
+- Added a new option to the nwnplayer.ini file under [Game Options] "Client CPU Affinity" (for Windows only). If you have more than one CPU on your PC, then you can use this setting to make the game run on only one of the CPUs by specifying the number of the CPU (0-31).  Setting "Client CPU Affinity=-1" will turn off CPU affinity.
+- Added a new setting to the nwnplayer.ini file under [Server Options] "Examine Effects On Creatures=1". If this option turned off then any magical effects on a creature will not appear in the creature description when you examine a creature in the game (Note: DMs will still see the effects on the creature).
+- Added a new setting to the nwnplayer.ini file under [Server Options] "Examine CR On Creatures=1". If this option turned off then the challenge rating of a creature will not appear in the creature description when you examine a creature in the game.
+- Added strings to bow models.
+- Expanded the number of color choices available for Armor, Cloth, Leather, Skin, Hair, Tattoos (affects both character generation and the toolset).
+- Fixed a crash that could happen going to the character select screen if you had a character in the list that was using a specific community made custom class that the current module does not support.
+- Fixed an issue with using an item on another item causing the player to run to the corner of the area. The player will now run to get within range of the targetted item instead.
+- Fixed a number of FeatIndex errors in the following 2das:	PackFTShad.2DA, PackFTRog1.2DA, PackFTRog2.2DA, PackFTRog3.2DA, PackFTRog5.2DA, PackFTRog6.2DA, PackFTRog7.2DA
+- Fixed an issue with being able to pick pocket empty containers that were not flagged as being "pickpocketable".
+- Fixed an issue with custom tokens not getting cleared/cleaned-up properly when quitting a module.
+- Fixed a crash related to large creatures having weapons equipped that were too small for them to use.
+- Fixed Defensive Casting to work properly with sub-radial spells.
+- Fixed the innate spell level for the spell "War Cry" in the spells.2da
+- Fixed the 'Category' setting for the "Animate Dead" spell in the spells.2a.
+- Fixed a crash that could occur if a store was destroyed through scripting while it had customers buying/selling stuff.
+- Fixed typo in the SoundImpact column of the VisualEffects.2da for VFX_IMP_HEAD_ODD.
+- Weapon Finesse now works with creature weapons.
+- Long item names now get truncated in the store gui panel, so that you can see the buy/sell price of the item.
+- Fixed immunity to damage type Magical/Divine item properties.
+- When attempting to examining a trap, you no longer get all the trap's information when you fail to examine it.
+- The area behind a door that was bashed down will now become properly explored.
+- Fixed the displayed TAG name when using the console command "dm_dumplocals" on an item or creature object.
+- Fixed an issue where the text window feedback message that states that "Your journal has been updated." wasn't properly replacing custom tokens.
+- Fixed a few memory leaks.
+- Made some fixes to prevent game/character hacking. Sorry, but we will never publicly discuss specific changes to the game with regards to hacking the game.
+
+DM Client:
+=-=-=-=-=-
+- Added the ability for DMs to spawn in traps on doors/placeables through the creator (and quickbar slots dragged from the creator menu).
+- Made custom triggers and traps from the DM creator menu spawn in correctly (rather than spawn in as a default trap).
+- The DM instant kill key (default 'Y') now also works on non-plot items that are on the ground.
+- Added a new "Give Alignment Shift" sub radial to the DM's Give/Take creature radial menu.
+- Added an "Examine" option to the DM's Examine Creature sub-radial menu.
+- When a DM 'Examines' a PC, it will now display their Experience and GP totals as well.
+- When a DM 'Examines' an item, it will now also display the value of the item in GP.
+- Made a change to try and reduce game lag that has been reported to occur when a DM possesses a creature that is part of a very large faction.
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+- Added a boat-load of new scripting commands (check the Toolset for more information):
+    GetCreatureWingType()
+	SetCreatureWingType()
+    GetCreatureTailType()
+	SetCreatureTailType()
+	GetCreatureBodyPart()
+	SetCreatureBodyPart()
+	GetHardness()
+	SetHardness()
+	SetLockKeyRequired()
+	SetLockKeyTag()
+	SetLockLockable()
+	SetLockLockDC()
+	SetLockUnlockDC()
+	SetTrapDisarmable()
+	SetTrapDetectable()
+	SetTrapOneShot()
+	SetTrapKeyTag()
+	SetTrapDisarmDC()
+	SetTrapDetectDC()
+	CreateTrapAtLocation()
+	CreateTrapOnObject()
+	SetWillSavingThrow()
+	SetReflexSavingThrow()
+	SetFortitudeSavingThrow()
+	GetTilesetResRef()
+	GetTrapRecoverable()
+	SetTrapRecoverable()
+	GetModuleXPScale()
+	SetModuleXPScale()
+	GetKeyRequiredFeedback()
+	SetKeyRequiredFeedback()
+	GetTrapActive()
+	SetTrapActive()
+	GetInfiniteFlag()
+	SetInfiniteFlag()
+	LockCameraPitch()
+	LockCameraDistance()
+	LockCameraDirection()
+	GetPlaceableLastClickedBy()
+	GetAreaSize()
+	SetName() - Sets the name of an Object (a creature, placeable, item, or door) - does NOT work on player objects.
+	GetPortraitId()
+	SetPortraitId()
+	GetPortraitResRef()
+	SetPortraitResRef()
+- As if the above wasn't enough, we also added new parameters to the following scripting commands:
+	GetAbilityScore(object oCreature, int nAbilityType, int nBaseAbilityScore=FALSE)
+	GetSkillRank(int nSkill, object oTarget=OBJECT_SELF, int nBaseSkillRank=FALSE)
+	SetTrapDetectedBy(object oTrap, object oDetector, int bDetected=TRUE)
+	ExploreAreaForPlayer(object oArea, object oPlayer, int bExplored=TRUE)
+	SetCutsceneMode(object oCreature, int nInCutscene=TRUE, int nLeftClickingEnabled=FALSE)
+	GetPCPublicCDKey(object oPlayer, int nSinglePlayerCDKey=FALSE)
+	CreateItemOnObject(string sItemTemplate, object oTarget=OBJECT_SELF, int nStackSize=1, string sNewTag="")
+    GetName(object oObject, int bOriginalName=FALSE)
+    ActionRest(int bCreatureToEnemyLineOfSightCheck=FALSE)
+	RandomName(int nNameType=NAME_FIRST_GENERIC_MALE)
+- Added a new OnClick event type for placeables. This event fires immediately when a PC left clicks on a placeable (regardless of how far away they are from the placeable, or whether or not they can reach the placeable for whatever reason).
+  To obtain the player that left clicked on the placeable object, call GetPlaceableLastClickedBy() in the placeable's OnClick script.
+- Added 53 new VFX_DUR_AURA_* visual effects (VisualEffects.2da) for use with the scripting command EffectVisualEffect().
+- Added 80 new visual effect constants (VisualEffects.2da) for use with the scripting command EffectVisualEffect(). These use the new constants VFX_DUR_AURA_*, VFX_EYES_* and VFX_DUR_BUBBLES. 
+- Added new FOOTSTEP_TYPE_* constants to nwscript.nss (FootstepSounds.2da)
+- Added the ability to force a placeable to be non-static (grey out the static checkbox) for any placeable using skin mesh. This is toggleable in the placeables.2da in a "Static" column. Defaults to allow if column missing.
+- Added Hook Hands and Peg Leg armor appearance variations to the toolset.
+- Added new Trident weapon models to the toolset under Polearms (x2_inc_itemprop.nss, x0_i0_match.nss). There are no new Trident specific weapon feats associated with Tridents at this time (BaseItems.2da).
+- Added a new Shipwreck group to the desert tileset.
+- Added 4 new groups to the city exterior tileset (Merchant Ship and Weather Ship variations).
+- Added option to skip multiple hak pak warning message to the nwtoolset.ini file "Display Hak Warning=1"
+- The scripting command GetResRef() now works on areas, stores and waypoints.
+- The scripting command PlayAnimation() now works on doors (use the new animation constants ANIMATION_DOOR_*).
+- The scripting command GetClassByPosition() will now work with community made custom classes.
+- Made the scripting command CopyItemAndModify() work with arrows and bolts using the constants ITEM_APPR_TYPE_WEAPON_*
+- Added random facing button to the toolset.  This button allows you to select one or more things and change their facing to a random direction.
+- Added option to skip multiple hak pak warning message to the nwtoolset.ini file, section [Start Up], "Display Hak Warning=1"
+- Fixed crashes caused by passing in invalid area/module objects to the scripting commands SetListenPattern() and GetMatchedSubstring() (or running these from an area/module event).
+- Fixed scripting command ItemPropertyImmunityToSpellLevel(), it was creating a spell immunity property that was one level lower than what it should have been creating.
+- Fixed a typo in the constant name IP_CONST_FEAT_USE_POISON. If you recompile a script that uses the old name, you will need to update your script to use the new fixed name.
+- Fixed a typo in the constant name FOOTSTEP_TYPE_SOFT. If you recompile a script that uses the old name, you will need to update your script to use the new fixed name.
+- Fixed an issue with the incorrect door type showing up for the "Turfhouse Interior 2x2" in the Ruins tileset (tdr01.set). 
+- Fixed an issue with no door showing up for the "Cloak Tower 2x2" in the Rural Winter tileset (tts01.set). 
+- Fixed an issue with the door being rotated for the "Turf House 2" in the Rural Winter tileset (tts01.set). 
+- Fixed the Rural Tileset - Wall 2 Gate w/Road model for people that have HotU installed.
+- Fixed a visual issue with the campfire placeable (plc_i06.mdl).
+- Fixed the level up wizard duplicating Special Abilities from the Creature Properties window.
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+- Added new TileMagic functions in x2_inc_toollib.nss that make use of GetAreaSize:
+    void TLResetAreaGroundTilesEx(object oArea);
+	void TLChangeAreaGroundTilesEx(object oArea, int nGroundTileConst, float fZOffset = -0.4f );
+- Added a new Creature name randomization feature to the default OnSpawn script ("nw_c2_default9.nss")
+  By setting a new variable int X2_NAME_RANDOM to 1 on a creature template in the toolset, the module creature
+  can now tell creatures to randomize their name on Spawn. By default this will cause the creature to change it's name to
+  a name generated by the RandomName command.
+  For module builders not satisfied with the name selection provided by the RandomName command, the ability
+  to override this behavior with a random name generation script of their choice has been included: 
+  If a script called "x3_name_gen.nss" exists in a module, it will be executed on spawn of any creature template that has 
+  random name generation activated. The builder can then specify a return value for that custom name generation script by
+  setting a string variable named "X3_S_RANDOM_NAME" on OBJECT_SELF (the creature spawning), which will then be used 
+  instead of RandomName().
+- Made Web Bolt attacks respect the Woodland stride feat (nw_s1_bltweb.nss).
+- Fixed a typo in the impact script name for "Greater Fox's Cunning" in the spells.2da that was causing the spell to not work.
+- Changed implosion so that it no longer affects the caster (nw_s0_implosion.nss).
+- Changed the way the damage was being calculated for the shifter's various wyrmling and dragon breath attacks to make it more random (x2_s1_wyrmbreath.nss, x2_s2_edragbrth.nss).
+- Fixed an issue with the way the reflex saving throw was being done in DoMissileStorm() (x0_i0_spells.nss).
+- Fixed an issue with Cloud of Bewilderment not respecting poison immunity (x2_s0_cldbewlda.nss, x2_s0_cldbewldc.nss).
+- Finger of Death now properly respects immunity to death magic on a failed save (NW_S0_FingDeath.NSS).
+- Fixed a bug with MatchSingleHandedWeapon and MatchDoubleHandedWeapon returning the incorrect value for some weapon types (x0_i0_match.nss)
+- Mass Blindness/Deafness now only affects enemies even on the harder difficulty settings (nw_s0_massbldf.nss). 
+
+Custom Content:
+=-=-=-=-=-=-=-=
+- Change to allow plt texture support on custom created part based creature races. Part based creatures (past row 481 in the appearance.2da) will now use a plt texture name based on the "RACE" letter specified in the appearance.2da (rather than always using the pfh0_ prefix). If your custom part based creature is past row 481 in the appearance.2da and you haven't specified the race specific PLT texture the game will use the human PLT texture by default.
+- Fixed an issue with how the caster level was being calculated for classes that used the ArcSpellLvlMod and DivSpellLvlMod values in the classes.2da (for values other than 2).
+- Added custom grass texture support to the tileset set file. The new grass texture entry is "GrassTextureName". For example specifying the following in the set file:
+	[GRASS] 
+	Grass=1 
+	GrassTextureName=my_grass
+  Will cause "my_grass.tga" (maximum of 16 characters and do not include the .tga extension in the name) to be used as the grass texture for the tileset. The game will default to the usual "grass.tga" if "GrassTextureName" is not specified.
+- Fixed an issue where new names added to the SavingThrowTable column in the classes.2da were causing the toolset to behave erratically.
+- Added support for prestige class prerequisite type "SAVE" (used in the CLS_PRES_*.2da files).
+	 ReqParam1           ReqParam2
+	 1 = Fort Save       Minimum Base Save Required
+	 2 = Ref Save        Minimum Base Save Required
+	 3 = Will Save       Minimum Base Save Required
+- Note to custom tilelset makers: When creating custom tilsets, don't forget to create a corresponding entry for the new tileset in the areag.ini file.  The "Interior" flag must match that from the .set file created.
+- Updated the DefaultIcon column of the BaseItems.2da to have new entries. This fixes an issue with taking hak pak specific items into a non-hak pak module which in turn was causing your inventory to start behaving erratically.
+- Changed the behavior of in game Robe inventory icons. The icon will now also display non-hidden body parts as specified in the parts_robe.2da (the icon will only display the robe, pelvis, belt, torso and shoulders). 
+- Added a new "DefaultPhenoType" column to the phenotype.2da. The number specified in this column will be the phenotype that will be used in the case where the model does not exist for the desired phenotype (e.g. when using the SetPhenoType() scripting command).
+- Made Head models use the same "DefaultPhenoType" system as above (rather than your head just disappearing if the model didn't exist for the desired phenotype).
+- Wings/Tails will now use PLT textures if they exist (defaulting to using the creature's skin color), if a PLT texture does not exist for the model then the texture will default to using the TGA instead.
+
+2DA Files Changed in this Update:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+ambientmusic.2da
+appearance.2da
+baseitems.2da
+classes.2da
+feat.2da
+footstepsounds.2da
+iprp_spellcost.2da
+parts_foot.2da
+parts_hand.2da
+parts_shin.2da
+phenotype.2da
+placeables.2da
+portraits.2da
+skyboxes.2da
+soundset.2da
+visualeffects.2da
+weaponsounds.2da
+
+
+
+Patch details for 1.66:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+WARNING! AS OF THIS PATCH, ALL MODULES CREATED/SAVED WITH THE VERSION 1.66 TOOLSET ARE TAGGED AS REQUIRING VERSION 1.66 OR HIGHER OF NEVERWINTER NIGHTS GAME OR TOOLSET.
+IF YOU DON'T WANT TO BRAND YOUR MODULE AS 1.66 THEN DO NOT EDIT YOUR MODULE IN THE VERSION 1.66 TOOLSET.
+IF YOU WANT TO GO BACK TO 1.65, WE WILL HAVE A 1.66 TO 1.65 PATCH AVAILABLE.
+- Official Campaign: Chapter 2E  - Made Voleron's OnDeath script a bit more robust.
+- HotU: Chapter 2 - Fixed an issue that could sometimes occur during the battle in the Environs near the end of Chapter 2. You should no longer get stuck and be unable to move if the Battle Herald does not approach you and initiate a conversation with you (this fix will retroactively fix saved games exhibiting this issue, but only if you load a saved game from before you entered the Environs).
+- Added a new command line parameter for automatically loading a module in single player. This will cause the module to be loaded and takes the player to the premade character select screen.
+    +LoadNewModule "module name that needs quotes if it contains spaces"
+- Added a new command line parameter for automatically testing a module in single player. This will cause the module to be loaded and then starts the module using the first character listed on the premade character select screen.
+    +TestNewModule "module name that needs quotes if it contains spaces"
+- Added 3 portraits and 3 music themes from the BioWare Premium Modules Kingmaker, ShadowGuard, and Witch's Wake 1 to game resources.
+- Fixed an issue that was causing the game to slow down and become unplayable at the start of SoU Chapter 2.
+- Fixed an issue with creatures some times occupying the same space.  This should happen a lot less frequently now.
+- Extended the glowing monk eye effect to work on all the default playable races. 
+- Neutral monks now get ultra cool purple glowing eyes.
+- Fixed placement of glowing monk eyes on Human/Half-Elf females (much thanks to the DLA team for their help with this).
+- Fixed placement of helmets on Human/Half-Elf females (much thanks to the DLA team for their help with this).
+- Added server support for the ability to refuse player login attempts if the master server could not be reached. In the nwnplayer.ini files under the heading [Server Options] set the follwowing option to '1' "Master Server Authentication Required For Player Login=1"
+- Added the ability to turn on/off the Heartbeat logging in the log file (default is now off). In the nwnplayer.ini file under [Game Options] set "Heartbeat Logging=1" in order to turn the Heartbeat logging back on.
+- Added a new nwnplayer.ini setting to have the server do some spell validation for spells cast by players. Under [Server Options] set "Validate Spells=1". Note: If you are using an edited spells.2da that is only being used server side, you may want to disable this option if your players are finding that they can't cast certain spells anymore (the log file should indicated if this is happening). 
+- Added new option to the nwnplayer.ini file under [Server Options] "Account validation required during Master Server down times=1" If this option is turned on, the server will track the public CD-Keys of each player logging onto the server. If the Master Server ever goes down for any reason (e.g. for scheduled maintenance) then the server will validate itself that the player name of any new player trying to connect is in fact using the same public cd-key that they last logged in with.
+- Fixed an issue with the Greater Sanctuary icon some times incorrectly showing up as the regular Sanctuary icon.
+- Fixed an issue with Damage Immunities not working correctly once they were stacked way too high above 100%.
+- Fixed an issue with the Enable Texture Animations advanced video setting not being restored correctly when restarting the game (if it was turned off).
+- Fixed Damage Immunities against weapons with more than one damage type (e.g. Halberds with slashing/piercing damage) to work correctly.
+- Immunity to "Mind Affecting Spells" will no longer make you immune to the Monk's Stunning Fist attack.
+- Wounding effects are now removed from creatures once you leave the area that the wounded creature is in. 
+- Added skyboxes back into the outdoor areas of the original Official Campaign.
+- Fixed an issue that could rarely cause your character to become illegal if you leveled up during an episode of game lag.
+- The "Single Player Enforce Legal Characters" setting in the nwnplayer.ini file has been disabled. ELC is now always turned off in single player games.
+- Fixed an issue that was causing creatures to always face east when sitting on a stool placeable (plc_x05.pwk).
+- Fixed another issue where under specific circumstances items would not show up in your inventory panel.
+- Immunity to mind spells no longer makes you immune to the Assasin's Death Attack.
+- Sneak/Death attacks now properly respect the Pale Master's Deathless Mastery feat.
+- Fixed a minor animation issue that could occur if you performed a Whirlwind attack while you had some 2 handed weapons equipped.
+- Fixed some issues with Tile "time of day" animations. This was causing flickering and other issues at the end of a DayToNight/NightToDay transition.
+- Fixed an issue with the Force Field door sounds using the default wooden door sounds (placeableobjsnds.2da, genericdoors.2DA).
+- Fixed an issue related to copying a creature from a hak pak through scripting and then saving and loading the hak pak saved game from inside gameplay (was causing some different weird issues).
+- Added support for WeaponType 5 (Bludgeoning and Piercing) in the BaseItems.2da.
+- Updated Morningstars to use the new Bludgeoning and Piercing WeaponType (BaseItems.2da).
+- The following weapons have had their WeaponType changed to 3 (Slashing) in the BaseItems.2da in order to bring them inline with 3rd edition D&D rules (and their NWN in game descriptions): Longsword, Bastard sword, Greatsword, Katana, and Double Axe.
+- Added missing armor proficiency to Gnolls.
+- Made some fixes to prevent game/character hacking. Sorry, but we will never publicly discuss specific changes to the game with regards to hacking the game.
+
+DM Client:
+=-=-=-=-=-
+- DMs can now still login to a server when the server is full, so that they are not prevented from performing any required administration tasks. If you go above the 64 player maximum, server performance may be adversely affected until some players leave the server (your mileage may vary).
+- The game no longer displays encumbered feedback messages for DMs, since they actually can't ever be encumbered.
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+- Added two new item scripting commands GetPickpocketableFlag() and SetPickpocketableFlag().
+- Added a "Test Module" option to the toolset's Build menu that allows you to quick launch the game (for testing module changes). Selecting this option will give you the choice of saving your module changes. The game will then automatically launch, load the module, select the first available premade character in the list and enter gameplay with that character. The Hot Key for this new functionality is F9.
+- Fixed an error that was causing some of the Group "Home Lower/Upper" tiles in the city interior tileset to appear as duplicates of some of the other "Home" tiles (tinpalstd.itp). This change makes some new "Home" tile types available for placing in the toolset.
+- Fixed an issue with answering no to any warnings that appear during module opening causing any subsequently opened module to potentially become corrupt.
+- Fixed comments for the scripting commands EffectSavingThrowIncrease and EffectSavingThrowDecrease (nwscript.nss).
+- The GetIsImmune() scripting command now reports the proper result when the creature specified has the Pale Master's Deathless Mastery feat.
+- Fixed a stack underflow error when the scripting command GetStandardFactionReputation() was called with an invalid creature object as an argument.
+- Fixed an issue with the scripting command GetStandardFactionReputation() returning -1 when called on the defender faction with a PC creature object specified.
+- Fixed an issue with the scripting command SetFogColor() when used to set the sun fog color in an always dark area (or the moon fog color in an always bright area).
+- Added some missing IP_CONST_FEAT_* constants to nwscript.nss
+- Fixed a Copy area/script/dialog issue that was making it look like the toolset was loosing data and could sometimes lead to a crash.
+- Fixed an issue with the script compiler that could cause a Stack Underflow error when a switch statement was placed inside a Do/While loop. There is also a new command line compiler in the Neverwinter Nights utils directory that includes this fix (clcompile.exe).
+- Fixed an issue with the scripting command GetCasterLevel() when used from within a feat script for a feat that was granted at first level (e.g. Cleric Protection Domain Powers).
+- Added two new creature related scripting commands GetFootstepType() and SetFootstepType().
+- Fixed an issue related to using the scripting command CopyObject() on a player's associate.
+
+Script Debugger:
+=-=-=-=-=-=-=-=-
+- Fixed a compiler issue that was causing the script debugger (DebugServer.exe that is in your NWN utils directory) to not work properly when stepping into/out of case statements (see the scripting command SpawnScriptDebugger() for more information regarding the script debugger).
+
+Server-specific:
+=-=-=-=-=-=-=-=-
+- Added server support for the ability to refuse player login attempts if the master server could not be reached. In the nwnplayer.ini files under the heading [Server Options] set the follwowing option to '1' "Master Server Authentication Required For Player Login=1"
+- Added the ability to turn on/off the Heartbeat logging in the log file (default is now off). In the nwnplayer.ini file under [Game Options] set "Heartbeat Logging=1" in order to turn the Heartbeat logging back on.
+- Added a new nwnplayer.ini setting to have the server do some spell validation for spells cast by players. Under [Server Options] set "Validate Spells=1". Note: If you are using an edited spells.2da that is only being used server side, you may want to disable this option if your players are finding that they can't cast certain spells anymore (the log file should indicated if this is happening). 
+- Added new option to the nwnplayer.ini file under [Server Options] "Account validation required during Master Server down times=1" If this option is turned on, the server will track the public CD-Keys of each player logging onto the server. If the Master Server ever goes down for any reason (e.g. for scheduled maintenance) then the server will validate itself that the player name of any new player trying to connect is in fact using the same public cd-key that they last logged in with.
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+- Made Invisibility Purge work correctly with Invisibility that is granted through special abilities such as the Assasin's Invisibility (NW_S0_InvPurgeA.NSS).
+- Fixed an issue with Wail of the Banshee sometimes requiring the first target to make two saving throws instead of one (nw_s0_wailbansh.nss).
+- Implosion now properly ignores immunity to death magic (nw_s0_implosion.nss).
+- Fixed the maximized damage healed for cure spells (nw_i0_spells.nss)
+- Cure spells now do DAMAGE_TYPE_POSITIVE to undead rather than DAMAGE_TYPE_NEGATIVE (nw_i0_spells.nss).
+- Phantasmal Killer now properly respects Fear immunity and properly ignores Death Magic immunity (nw_s0_phankill.nss).
+- Weird now properly ignores Death Magic immunity (nw_s0_weird.nss).
+- Mind fog now properly respects immunity to mind affecting spells (nw_s0_mindfoga.nss).
+- The item properties "Immunity: Specific Spell [Gaze Petrification/Touch Petrification/Breath Petrification]" now work properly against monster petrification effects (x0_i0_spells.nss).
+- Fixed an issue with Choking Powder heart beat script not repecting poison immunity ( x0_s3_chokehb.nss ).
+- Fixed an issue with the way the damage calculation was being done for the Cone of Frost monster ability (nw_s1_conecold.nss).
+- Made the Shifter's Manticore's spike script work correctly in the case when it is inappropriately given to an NPC Manticore monster by mistake (x2_s1_gwspikes.nss).
+- Fix to Negative Energy Ray, to properly calculate the damage for a successul saving throw (nw_s0_negray.nss).
+- Fixed the extended duration for Divine Favor (x0_s0_divfav.nss).
+- Made a change to the Wyrmling Breath, Dragon Breath and Petrifying Gaze attacks used by some of the Shifter shapes. Previously if you targeted yourself with one of these attacks the cone attack would damage creatures East from your location, it will now be directed forwards from your character instead. (x2_s2_edragbrth.nss, x2_s1_wyrmbreath.nss, x2_s1_petrgaze.nss).
+- Made the same above fix for the RDD dragon breath ability (x2_s2_discbreath).
+- Updated the duration of "Camouflage/Mass Camouflage" to bring these spells more inline with 3rd edition rules (x0_i0_spells.nss, x0_s0_masscamo.nss). Also updated the in game spell descriptions to reflect the change.
+
+Custom Content:
+=-=-=-=-=-=-=-=
+- Added a new column to the feat.2da "ReqAction" (all default NWN feats have this value set to 1 and if the column is missing from the feats.2da, such as in a hak pak, it will also default to 1). Turning this off means that the adjusted feat will no longer require an action from the object (it fires immediately, takes no action, and ignores your action queue entirely). In order to use this new functionality you need to do the following: 
+  1) Set the "ReqAction" value for the feat to 0 in the feat.2da
+  2) Have a spellID associated with the feat in the feat.2da.
+  3) Have a "ImpactScript" specified in the spells.2da for the spellID that you specified in the feat.2da
+  The ImpactScript will then fire immediately when the feat is used. 
+- Walk meshes now work when placed at heights above -30 (previous lower limit was -10).
+- Added an option to change/increase the selector height (when placing tiles) in the tileset "set" file. In order to use this you must add a new setting called "SelectorHeight" to the set file and specify the desired float value for this setting. The selector height will continue to default to the transition height if it has not been specified.
+- Added more tile path nodes types m, n, o, and p. For custom tile set support. 
+
+TYPE m				TYPE n
+    ---------           --------- 
+    [ | | | ]           [ | | | ] 
+    [-+ | +-]           [-+ + +-] 
+    [   +   ]           [       ] 
+    [-+ | +-]           [-+ + +-] 
+    [ | | | ]           [ | | | ] 
+    ---------           --------- 
+
+TYPE o				TYPE p
+    ---------           ---------
+    [ | | | ]           [ |   | ]
+    [-+ | | ]           [-+   | ]
+    [   + +-]           [-+   +-]
+    [-+ | | ]           [-+   | ]
+    [ | | | ]           [ |   | ]
+    ---------           ---------
+
+2DA Files Changed in this Update:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+- ambientmusic.2da
+- cls_skill_blkgrd.2da
+- feat.2da
+- iprp_feats.2da
+- portraits.2da
+- swearfilter.2da
+
+
+
+Patch details for 1.65:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+WARNING! AS OF THIS PATCH, ALL MODULES CREATED/SAVED WITH THE VERSION 1.65 TOOLSET ARE TAGGED AS REQUIRING VERSION 1.65 OR HIGHER OF NEVERWINTER NIGHTS GAME OR TOOLSET.
+IF YOU DON'T WANT TO BRAND YOUR MODULE AS 1.65 THEN DO NOT EDIT YOUR MODULE IN THE VERSION 1.65 TOOLSET.
+IF YOU WANT TO GO BACK TO 1.64, WE WILL HAVE A 1.65 TO 1.64 PATCH AVAILABLE.
+- Added Stormy Skybox to game resources.
+- Fixed a crash that could happen when you had enabled SubNetProfiling (by setting "Enable SubNet Profiling=1" in your nwn.ini file).
+- Fixed an issue with server vault saves causing various problems for shifted characters.
+- Fixed a crash related to calling GetHasSpell() on spells that have an innate level of 10 in the spells.2da
+- Fixed a crash caused by calling SetSkyBox() in a multiplayer game while a player was still on the Character Select screen.
+- Slight change of behavior for Attacks Of Opportunity. Now if have an invisibility effect applied (e.g. Invisibility, Sanctuary) you will no longer make attacks of opportunity.
+- Another change to AOO behavior. You will no longer take an AOO while you are using a healing kit.
+- Circle Kick should no longer try to target creatures that you can not reach (which was making you become flat footed).
+- Whirlwind attack will no longer leave you stuck in combat mode after using it. You will now also try to reaquire your original target after a Whirlwind attack (may not succeed if your target is now dead or gone).
+- Damage Shields (e.g. Mestil's Acid Sheath ) now affect the melee attacker when the attacker hits the creature that has a damage shield (rather than only when they damage the shielded creature).
+- Fixed an issue where respawning encounters would stop working under certain circumstances when saving and reloading the game.
+- Fixed an issue with unlimited ammo not being identified when you equipped a weapon that had the unlimited ammo property.
+- Fixed an issue with some single shot traps not applying damage correctly.
+- Fixed a crash that would occur when an NPC tried to drop a container on the ground.
+- Fixed an issue with True Seeing being removed incorrectly when you had mutliple True Seeing effects stacked and only one of them was supposed to be removed.
+- Fixed an issue with some effects from Haste (extra attacks and spell casting benefits) not being updated correctly when you had multiple haste effects applied and only one of them was removed. Fixed the same issue for multiple Slow effects as well.
+- Fixed an issue with size modifiers affecting your attack bonus when making Knockdown attacks. The size modifiers now only affect the opposed roll to resist the Knockdown attack.
+- Effects being dispelled should now properly use the caster level when determining whether the dispel succeeds or not
+- Fixed an issue with the Epic Dodge feedback messages for melee attacks that were being evaded.
+- Fixed an issue where your screen could become permanently blacked out under certain circumstances after unpossessing a familiar that was inside an AOE darkness effect.
+- Fixed some issues where the Darkness spell, when combined with Ultravision/True Seeing, could under specific circumstances incorrectly make you blind when your Ultravision/True Seeing wore off.
+- Fixed "On Hit: Sleep" item property, so that it works again.
+- Made some fixes to prevent game/character hacking. Sorry, but we will never publicly discuss specific changes to the game with regards to hacking the game.
+
+DM Client:
+=-=-=-=-=-
+- The DM difficulty slider tooltip will now display the current difficulty setting
+- Fixed a crash that could happen when minimizing the game.
+- Fixed an issue with issuing commands to groups of creatures (such as trying to make them run).
+- Fixed an issue where the DM's screen could end up being permanently blacked out after the DM unpossessed a creature that was inside an AOE darkness effect.
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+- Added new GetSkyBox(), GetFogColor(), GetFogAmount() and SetFogAmount() scripting commands.
+- Fixed a problem with variables being lost from items that were placed inside a container.
+- Fixed a "List index out of bounds (0)" error that could occur when there were no sounds in the sound list on the Sound Properties menu.
+- The scripting command GetName() now works with stores.
+- The scripting command GetItemPossessedBy() now works with stores.
+- GetEffectType() will now return EFFECT_TYPE_ETHEREAL for the greater sanctuary effect (was incorrectly returning EFFECT_TYPE_SANCTUARY).
+- Fixed the following scripting commands to return the correct information (they were reversed before): GetAnimalCompanionName(), GetAnimalCompanionCreatureType(), GetFamiliarName(), GetFamiliarCreatureType(). If you recompile any scripts that use these scripting commands, you will need to update your scripts to use the new (proper) functionality.
+- Fixed an issue with GetSpellSaveDC() returning the DC of any new spell cast (or feat used) by the creator of an AOE spell when called from within the AOE's heartbeat script (rather than returning the DC of the originally cast AOE spell).
+- Extended the scripting command EffectHeal(), so that it now also works on doors and placeables.
+- Fixed a couple of issues with the ResistSpell() scripting command:
+    - First issue occurred when it was called from within an AOE heart beat script after the caster had cast a new spell since casting the original AOE spell, the AOE spell could stop working under these conditions (it should now work properly).
+    - Second issue was with the spell immunity check not returning the proper result when called with the caster object specified as an AOE object.
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+- Bigby's Grasping/Crushing Hand spells now properly affect creatures that are immune to mind affecting spells (x0_s0_bigby3.nss, x0_s0_bigby5.nss).
+- Weird now properly handles creatures that are immune to mind-affecting and fear spells (nw_s0_weird.nss).
+- Druid's elemental shape can no longer be dispelled (nw_s2_elemshape.nss).
+- Fixed an issue with some creatures no longer using their special abilities (nw_i0_generic.nss)
+- Crafted wands should now start with 1-20 charges rather than 1-10 charges (x2_inc_craft.nss)
+- Added Troglodyte Stench ability to the game (spells.2da, VFX_Persistent.2DA, nw_s1_trogstink.nss and nw_s1_trogstinka.nss ).
+- You now get a reflex save against Ball Lightning (x2_s0_balllghtng.nss).
+- Stone Hold will no longer remove caster buffs (x2_s0_stneholdc.nss).
+- Divine Wrath can no longer be dispelled (x2_s2_divwrath.nss).
+- Aura versus Alignment spells will now being properly extended (x0_i0_spells.nss).
+- Terrifying Rage can no longer be dispelled (x2_i0_spells.nss, x2_s2_terrage_a.nss).
+- Fixed a couple of issues with the darkness OnEnter script (nw_s0_darknessa.nss).
+
+Custom Content:
+=-=-=-=-=-=-=-=
+- Increased the number of allowable custom phenotypes to 18.
+
+
+
+Patch details for 1.64:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+WARNING! AS OF THIS PATCH, ALL MODULES CREATED/SAVED WITH THE VERSION 1.64 TOOLSET ARE TAGGED AS REQUIRING VERSION 1.64 OR HIGHER OF NEVERWINTER NIGHTS GAME OR TOOLSET.
+IF YOU DON'T WANT TO BRAND YOUR MODULE AS 1.64 THEN DO NOT EDIT YOUR MODULE IN THE VERSION 1.64 TOOLSET.
+IF YOU WANT TO GO BACK TO 1.62, WE WILL HAVE A 1.64 TO 1.62 PATCH AVAILABLE.
+- Original Campaign: Fixed an issue with Sharwyn not using her Bard Song ability (this should not affect Sharwyn in HotU).
+- Original Campaign: Chapter 2 - The scene at the Pinnacle of the Host Tower should now always fire properly, no matter what.
+- Original Campaign: Chapter 2 - Lenton isn't as busy as he used to be (you can now talk to him again).
+- Original Campaign: Prelude - Fixed a minor error that could occur under specific circumstances when opening a certain chest.
+- HotU: Chapter 2 - Fixed an issue that could cause the game to crash when specific spells were active in the Wizard's Tower in Shaori's fell.
+- HotU: Chapter 2 - Fixed an issue with the teleporter to the Grand Hall in Zorvak'Mur, as it wasn't working properly under a specific set of circumstances.
+- HotU: Chapter 3 - Fix to a rare bug in the Windswept Battlefield area where the 'boss' creature wouldn't spawn in properly, which made him somewhat difficult to kill.
+- HotU: Chapter 3 - When the game ends, we now remove the non-droppable (cursed) flag from all items before doing the final export of the character. This is so that when you take the character into another module, you can drop items such as the Relic of the Reaper.
+  - If you already have a character who can't get rid of the Relic (or another item), you can do the following (in single player) - in the chat bar, type:
+      ##DebugMode 1
+      ##runscript nw_itemreset
+      ##DebugMode 0
+  - If you use this script so that you can drop an item which is part of the module you're currently playing, don't be surprised if the game breaks later on (because the module will expect you to have the item). Only use it to get rid of items that have been stuck to your character from other modules.
+- Made some fixes to prevent game/character hacking. Sorry, but we will never publicly discuss specific changes to the game with regards to hacking the game.
+- Added a new ini setting to nwnplayer.ini [Server Options] "Saving Throw Automatic Failure On 1=1". If turned off (0), you will no long fail saving throws on a roll of 1 if your total saving throw with bonuses beats the required DC.
+- Added a new Sub Net Profiling system (which logs bandwidth usage). To activate it, go to nwn.ini and in the [Game Options] section add in "Enable SubNet Profiling=1". A log file called SubNetProfile.log will be created in your root Neverwinter Nights directory once the game/server shuts down.
+- Added new "Max Memory Usage" ini setting to [Game Options] in the nwnplayer.ini file. This allows you to set the amount of available memory (in Megs) that the game will use for caching resources in memory. Adding more memory for the cache may improve performance up to a point, after which increasing the cache size any more most likely wont do much. Your mileage may vary.
+- Fixed an issue that could cause the game to crash under certain circumstances when the player entered cutscene mode while their character was able to level up.
+- Fixed an issue that was causing the "Greater Shadow Conjuration Web" spell to have a DC of 127. Should also fix the DC for other spells that also appear on a sub-radial menu.
+- Fixed problem with shifters losing their merged item properties while in shifted form after a server save occurred, and when switching directly from one form to another using the radial menu.
+- Fixed a problem where unpolymorphing could sometimes leave you walking around just fine while you have zero or less hit points.
+- Fixed a bug that could cause some visual effects to be displayed on your character forever. Most often reported occurrence of this problem was the green paint effect from the goblin archers in the HotU official campaign.
+- Fixed some other issues that could cause effects to not be removed properly from a creature.
+- Fixed some issues with the Red Dragon Disciple not getting the proper hit die rolled at level up.
+- Fixed problem with characters becoming illegal if they multiclassed to a wizard, but their intelligence was too low to even cast cantrips.
+- Devastating Critical now works with bows.
+- Fixed a problem with the PaleMaster's Deathless Vigor feat not always giving the correct hit points.
+- Fixed a issue with the hit points displayed on the level-up summary screen if you just took the toughness feat during your level-up.
+- Fixed the dispel magic text message feedback. It wasn't always displaying the correct spell names.
+- Fixed a problem where some quickbar tooltips were not getting cleared properly when the quickslot became empty.
+- The familiar selection screen will no longer display the familiar's current hit points at 0 all the time.
+- The game no longer displays the "Experience Points Gained:" message when the experience points gained was 0.
+- Lootable corpses wont be stripped of items until after the corpse has been looted by a player.
+- Fixed a problem with the wrong message being displayed if you tried to load a module that required one of the expansions packs to use and you didn't have the required expansion pack installed.
+- Fixed a problem with the experience point penalty not always being calculated properly for multiclass characters that had taken a prestige class.
+- Fixed a problem with custom portraits showing up on your party bar as a white box until the player using the portrait entered the same area as you.
+- Fixed a problem with Whirlwind Attack data sometimes being incorrectly sent to players in other areas.
+- Fixed a problem with the Age/Deity information getting lost when you edited an existing character using the "Customize Character" feature.
+- EffectDispelMagicBest() now takes into account the level of the creator of the spell that it is trying to dispel, for determining whether the spell is actually dispelled successfully or not.
+- Fixed item properties "Immunity: Damage Type Positive Energy" and "Immunity: Damage Type Negative Energy"
+- Fixed issue, where if you lost a level and no longer had the required level for an item that you had equipped, your character would become illegal. The item is now unequipped automatically if you don't have the level required to equip it after losing a level.
+- Fixed an issue with non-hostile actions (e.g. rest) getting canceled when someone joins your party. Made some changes so that not all hostile actions (i.e. attacks and spells) get canceled when a someone joins your party.  Some hostile actions will still be canceled when someone joins your party (and all attack/spells actions directed against other players) which is the intentional behavior.
+- Fixed a problem with the OnStoreClosed scripts not working in saved games.
+- Fixed a couple of problems that could make your inventory items disappear when opening your inventory. One was related to having a placeable container open and then bringing up other panels (e.g. your spell book) that caused your inventory panel to close. The second involved possessing/unpossessing a familiar while your inventory was open. Hopefully that's the last of the disappearing inventory problems.
+- Fixed a problem where if you saved and reloaded a game while in defensive stance, you could no longer move.
+- Fixed a problem with the remaining number of feat uses for some prestige classes not being calculated correctly when loading a saved game.
+- The Epic Fire Trap item in the standard item palette now has the correct icon.
+- Fixed some saving throw text feedback weirdness with some "On Hit" item properties. Affects Slay Racial Group, Slay Alignment, and Slay Alignment Group item properties.
+- Fixed an issue where clicking "Cancel" in the game options menu wouldn't properly restore your orignal "Hide Secondary Story Tiles" setting.
+- Fixed some issues with head turning. Creatures will no longer turn their heads to look at cutscene invisible players. After going through an area transition, NPCs will now still turn their heads to look at players.
+- Fixed crash caused by calling TriggerProjectileTrap() with SPELL_MELFS_ACID_ARROW specified and oOrigin was a static placeable object.
+- Fixed a problem where clients wouldn't play the spell casting sound if the character casting the spell had the Automatic Silent feat, regardless of the level of the spell that was being cast.
+- Fixed a problem with the "Automatic Still" feat not working correctly with sub-radial spells (e.g. Shadow Conjuration).
+- Fixed a problem with no longer being able to sit in a chair if you had previously destroyed an object while that object was still sitting in the chair.
+- Red Dragon Disciple wings will now be properly removed on level down.
+- The Cloud of Bewilderment scroll item now has the correct description.
+- Added a new ini setting to nwnplayer.ini  [Game Options] ClientEntireChatWindowLogging=1 (Defaults to off). Turning this option on will cause all text in the in-game chat window to be logged to the log file (regardless of whether or not you have set certain chat messages to be filtered).
+- Fixed a minor gui scroll bar issue.
+- Fixed a problem where the new Day/Night music track wouldn't play if you used SetTime() to suddenly change the current time of day from Day to Night or from Night to Day.
+- Fixed a problem where "Seamlessly looping" sound effects would not play again after being turned off during a Day/Night transition.
+- Fixed some issues related to logging out of a multiplayer game while possessing a familiar.
+- Fixed some memory leaks.
+- Made some optimizations to the game's resource caching system.
+- Made several game stability fixes.
+
+DM Client:
+=-=-=-=-=-
+- Added ability for DMs to create items directly inside placeable containers (e.g. chests) using the creator. Choose the item to be created in the creator, and then target a placeable to have the item created directly inside the placeable.
+- If you drag a "Create <thing>" item from the creator menu to your quickbar, it will now give you useful tooltips for all your DM Creator Quickbar buttons (this will NOT retroactively add the new tooltips to existing DM quickbar buttons). There are also new quickbar icons for the different major categories (i.e. placeables, items, triggers and encounters).
+- DMs can now move undroppable items between a player's inventory and their own inventory and they can drop undroppable items now too.
+- DMs can now use items on their quickbar while possessing creatures with full powers (i.e. if the item is in the DM's inventory, but not the creature's inventory).
+- DMs can no longer force rest other DMs.
+- DMs can no longer jump other DMs around.
+- Fixed some issues with loading saved games that were saved while a DM was possessing a creature. This could lead to a number of different symptoms such as: DMs getting stuck inside creatures and not being able to unpossess them; DMs not being able to possess creatures that they should be able to possess; creatures disappearing entirely from the saved game; or the server crashing.
+- Disabled the ability to polymorph while possessing a creature, since doing this would wreck your game.
+- If a DM gave more gold to a player than the player could carry, the feedback message was indicating the wrong amount of gold gained.
+- Fixed a bug where you sometimes couldn't drag items onto your quickbar anymore after DM possessing/unpossessing creatures.
+- DMs no longer broadcast "DM uses <item>" messages to other players when using an item in their DM's inventory. If possessing a creature and using an item from the possessed creature's inventory, then a message will still be broadcast as usual stating "<creature name> uses <item>".
+- Fixed a minor issue where you could hear the DM's footsteps for a few seconds after they disappeared.
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+- Added the new SetSkyBox() scripting command. Please look in the toolset for more information.
+- Added GetPhenoType() and SetPhenoType() scripting commands.
+- Added SetFogColor() scripting command
+- The scripting command GetDamageDealtByType() now works with DAMAGE_TYPE_SONIC
+- Clarified function comment for CreateItemOnObject().
+- Fixed GetCreatureHasTalent(). This scripting command was causing a stack underflow error.
+- Fixed the scripting commands EffectDispelMagicBest() and EffectDispelMagicAll() These scripting commands will now use the passed in nCasterLevel parameter. Also you now no longer need to specify a parameter, in which case these commands will cause the dispel effect to use the level of the creature creating the dispel effect instead. The fixes to these two scripting commands also fixes some existing problems with the Lesser Dispel, Dispel Magic, Greater Dispel and Mordenkainen's Disjunction spells.
+- Fixed crashes caused by using the scripting commands GetFactionBestAC() and GetFactionWorstAC().
+- Fix to the scripting command DecrementRemainingSpellUses() to make it work correctly with Cleric Domain Spells.
+- Fixed crash caused by calling RetrieveCampaignObject() when the object being retrieved was gold and the gold was being acquired by a creature.
+- Fixed problem with ResistSpell() scripting command not working correctly when used with Cleric Domain spells and sub-radial spells in combination with spell absorption effects.
+- Fixed problem with GetTransitionTarget() scripting command returning a random valid object ID if the destination on the trigger did not exist. It will now return OBJECT_INVALID in this case.
+- Fixed problem with GetObjectByTag() not returning OBJECT_INVALID if you passed in an empty string.
+- Fix to scripting commands ActionCastSpellAtObject() and ActionCastSpellAtLocation() to make them work with sub-radial type spells.
+- Fix to make the GetEffectCreator() scripting command work with effects created through the scripting commands EffectSpellFailure(), EffectTurnResistanceIncrease() and EffectTurnResistanceDecrease().
+- Fixed value of ACTION_RANDOMWALK constant in nwscript.nss
+- Fixed a problem with the Scripting Wizard used by the Conversation Editor, where it could use an incorrect constant when checking for certain prestige classes.
+- Fixed crash in scripting command GetReputation() when an invalid type of object was passed in.
+- Fix to scripting command GetRacialType() to correctly return RACIAL_TYPE_INVALID when an invalid object or a non-creature object was specified.
+- Fix to the scripting commands GetNearestObjectToLocation() and GetNearestCreatureToLocation() in order to make them more consistently return the nearest object.
+- Fixed a crash related to switching areas after trying to place corridors on top of a group.
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+- Added new GetCutsceneMode() scripting command. Please look in the toolset for more information.
+- Fix to scripting command SetCalendar(). If large Month/Day values were specified, the date wasn't updating correctly.
+- Fixed a problem where the scripting command DestroyCampaignDatabase didn't work as intended for database names with spaces in them.
+- Fixed crash in scripting commands TouchAttack*() that could happen if the caller was a non-creature and oTarget was also a non-creature object.
+- Made a fix to the shifter manticore spike attack, so that it is properly signaled as a hostile action.
+- The shifter's epic gargoyle form now has proper creature items equipped.
+- The shifter/druid epic dragon form has now a more epic creature hide equipped.
+- Fixed a problem where, under certain circumstances, a henchman could not be rehired after removing them from the party with the radial menu option. This would result in the henchman saying they were "here with someone else", when in fact they were not working for someone else.
+- Dwarven Defenders can now take the Two-Weapon Fighting feat.
+- Fixed a small bug with some spells that applied damage to multiple enemies.
+- Fixed a bug with shapeshifting, where item properties on an equipped tower shield would be lost while in shifted form.
+- Fixed a bug with some crafting cost calculations.
+- Fixed a rare issue where it was possible that when being healed at a temple, the Wounding effect would not be removed.
+- Fixed minor bug with monster petrification attacks.
+- Made the Sea Hag's Horrific Appearance ability a "Supernatural" effect
+- Fix to henchman level-up scripting. At very high levels, a certain henchman was not leveling up correctly.
+- Fixed a minor bug that occurred when the player cast resurrection spells on their living henchmen.
+- The spell Phantasmal Killer now respects creatures that are immune to mind-affecting spells a bit better (nw_s0_phankill.nss).
+- The spell Tasha's Hideous Laughter now respects creatures that are immune to mind-affection spells a bit better (x0_s0_laugh.NSS).
+- Fixed a minor bug with the Web spell.
+- Made a fix to the XP2 shapechange feats, so that NPC's are able to use them.
+- Made a fix to tangle traps, so that they use the correct saving throw type.
+- Made a fix to the IPGetHasItemPropertyOnCharacter() function, which is a part of the x2_inc_itemprop.nss include file.
+- Fixed epic-level damage bonus for Divine Wrath ability.
+- Fixed saving-throw-adjusted damage for the Sunbeam spell.
+- Fix to bardsong bonuses, for epic-level bards.
+- Made a fix to the damage calculation on the breath weapon for the epic-level Dragon Shape ability.
+- Fixed a bug with the Magic Vestment spell, where the duration of the visual effect differed from the duration of the actual effect.
+- Druids can now properly scribe Shapechange scrolls.
+- Fixed a bug where the Endurance spell couldn't be scribed.
+- Added spell hook to Endurance spell nw_s0_endurce.nss
+- Fixed the bug where Blackguards' Summon Fiend ability would summon in a Vrock starting at level 10, instead of level 9.
+- Fix to the Shadowdancer ability Shadow Evade - it was not calculating the bonuses properly for Shadowdancers of levels 11 through 14.
+- Fix to the Doom spell. To negate the effects, the target needs to make their saving throw OR resist the spell, they shouldn't need to do both.
+- The Meteor Swarm spell can now be scribed to scrolls.
+- Performed some minor cleanup on a number of character class packages.
+- Fixed a problem with frost and acid_splash traps changing types (IPRP_TRAPCOST.2DA).
+- Made some small optimizations to various portions of the generic scripts.
+- Fixed typo in tde01_edge.2da that caused doorway edge tiles in the dungeon tileset to not be displayed correctly in game.
+- Raised DC's for epic traps, as they were too low previously.
+- Fixed a bug in the ambient animation system (x0_i0_anims).
+- Fixed a bug with the Chain Lightning spell (was not capped properly).
+- Fix to the spell Stinking Cloud, it was not respecting poison immunites correctly.
+- Fixed a problem with creature poison attacks.
+- Fix to Bigby's Crushing Hand and Bigby's Grasping Hand spells. Immunity to paralysis should not make you immune to these spells.
+- Fixed size category for a few appearance types (Pit Fiend, Harpy, Bone Golem, Demon Flesh Golem).
+- The Banishment spell now kills the creature instead of simply destroying the creature object. This is to ensure that the creature's OnDeath event fires properly.
+- Made a fix to the damage cap on the Darkfire spell.
+- Made a fix to the damage healed by the spell Nature's Balance (NW_S0_NatureBal.NSS)
+- Made a fix to the empowered damaged caused by the spell Slay Living (NW_S0_SlayLive.NSS)
+- Undead are no longer immune to the blindness effect from the spell Sun Burst (x0_s0_sunburst.NSS)
+- Fixed some issues with spell mantles stacking when they shouldn't (NW_S0_SpMantle.NSS, NW_S0_LsSpMant.NSS, NW_S0_GrSpMant.NSS).
+- Fixed a problem with the damage calculated for the cloud kill spell (nw_s0_cloudkilla.nss).
+- Fixed the way the BAB increase was being calculated for the spell Divine Power (nw_s0_divpower.nss).
+- Protection from Spells can now be extended properly (nw_s0_prspells.nss).
+- Changed the duration of the spell Magic Weapon to match the in-game description (x2_s0_magcweap.nss).
+- EffectTurned() now creates an effect that is supernatural by default. Call MagicalEffect() on the effect if you want to make it magical again instead.
+- Fixed grapple check for some of the Bigby's spells (x0_s0_bigby3.nss, x0_s0_bigby5.nss).
+- Fire Storm now works correctly when combined with meta magic (nw_s0_firestrm.nss).
+- Removed unnecessary spell hook code from the onenter/onexit/onheartbeat scripts for some AOE spells (nw_s0_invsph*.nss, nw_s0_invpurgea.nss, nw_s0_GhoulTchA.nss, and nw_s0_SilenceB.nss).
+- Made Protection from Good/Evil work properly with the Extend Spell feat (nw_s0_prgood.nss, nw_s0_previl.nss).
+- Removed the 10 round maximum duration for Ray of EnFeeblement, so that it better matches the spell description (NW_S0_rayEnfeeb.nss).
+- Made the Scare spell work properly with the Extend Spell feat (nw_s0_scare.nss).
+- Call lightning now specifies the correct EventSpellCastAt() constant (nw_s0_calllghtn.nss).
+- Corrected the duration of the Remove Fear spell and made it work correctly with the Extend Spell feat (nw_s0_rmvfear.nss).
+- Corrected the duration for the spells IronGuts, Stone Bones and Keen Edge (X2_S0_Ironguts.NSS, x2_s0_stnbones.nss, x2_s0_keenedge.nss).
+- Fixed the damage calculation for the Flame Lash spell to better match the in game description (nw_s0_flmlash.nss).
+
+Custom Content:
+=-=-=-=-=-=-=-=
+- Added new column to VisualEffects.2da "OrientWithObject", that will
+  cause the visual effect to take on the orientation of the object
+  that it is attached to. This was previously hard coded for the colored
+  back flags that were used in Contest of Champions, but this functionality
+  is now available for custom created visual effects as well by setting
+  the value in this column to '1'. You will need to update your VisualEffects.2da
+  with the additional column, if you use this 2da in your hack pack.
+- Added a new visualeffects.2da entry for use with tile magic (Row 511)
+- Soundset.2da will now work correctly when placed inside a hak pack.
+- Added support for 8 new custom animation types:
+	ANIMATION_LOOPING_CUSTOM3
+	ANIMATION_LOOPING_CUSTOM4
+	ANIMATION_LOOPING_CUSTOM5
+	ANIMATION_LOOPING_CUSTOM6
+	ANIMATION_LOOPING_CUSTOM7
+	ANIMATION_LOOPING_CUSTOM8
+	ANIMATION_LOOPING_CUSTOM9
+	ANIMATION_LOOPING_CUSTOM10
+  Note: None of the current BioWare creatures use these new custom animation types, they have been added for use by custom content creators.
+
+- Added more tile path nodes of types f, g, h, i, j, k and l (lower case L) for custom tile set support.
+
+  TYPE g                   TYPE h
+         ---------                ---------
+         [ | | | ]                [   |   ]
+         [ | | | ]                [---+-+ ]
+         [-+-+ +-]                [----/+-]
+         [ | | | ]                [-+ | | ]
+         [ | | | ]                [ | | | ]
+         ---------                ---------
+
+  TYPE i                   TYPE j
+         ---------                ---------
+         [---+---]                [---+---]
+         [   |   ]                [       ]
+         [-+ | +-]                [-+   +-]
+         [   |   ]                [       ]
+         [---+---]                [---+---]
+         ---------                ---------
+
+  TYPE k                   TYPE f
+         ---------                ---------
+         [ | | | ]                [ | | | ]
+         [-+ | | ]                [ | | | ]
+         [---+ +-]                [-+ + +-]
+         [-+ | | ]                [ | | | ]
+         [ | | | ]                [ | | | ]
+         ---------                ---------
+
+  TYPE l
+         ---------
+         [ | | | ]
+         [-+ | +-]
+         [---+---]
+         [-+ | +-]
+         [ | | | ]
+         ---------
+
+- Increased the limit on the number of tilesets that the game can use in a module from 24 to 50.
+
+2DA Files Changed in this Update:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+- appearance.2da
+- cls_feat_dwdef.2da
+- cls_feat_sorc.2da
+- des_crft_appear.2da
+- des_crft_scroll.2da
+- iprp_spellcost.2da
+- iprp_trapcost.2da
+- polymorph.2da
+- spells.2da
+- surfacemat.2da
+- visualeffects.2da
+
+
+
+Patch details for 1.62:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+WARNING! AS OF THIS PATCH, ALL MODULES CREATED/SAVED WITH THE VERSION 1.62 TOOLSET ARE TAGGED AS REQUIRING VERSION 1.62 OR HIGHER OF NEVERWINTER NIGHTS GAME OR TOOLSET.
+IF YOU DON'T WANT TO BRAND YOUR MODULE AS 1.62 THEN DO NOT EDIT YOUR MODULE IN THE VERSION 1.62 TOOLSET.
+IF YOU WANT TO GO BACK TO 1.61, WE WILL HAVE A 1.62 TO 1.61 PATCH AVAILABLE.
+- Added the Sea Hag to game resources.
+- Added the Winter Sky skybox to game resources.
+- Custom talk tables now work in multiplayer games. If you don't have the module's required "*.tlk" file in your "tlk" directory the module wont load and you will be given an error message telling you that the tlk file is missing. This behaviour is the same as for Hak Paks.
+- Fixed up a few spells for various bugs: Elemental Shape, Improved Invisibility, and Crumble.
+- Fixed a bug that was causing store purchasing restrictions messages to be displayed at inappropriate times.
+- HotU: Fixed crash in the official campaign that could sometimes happen after talking to the Battle Herald if you had a summoned familiar present.
+- Made a fix to the lootable corpse system. If the only inventory item that a lootable corpse drops is gold, the gold will now show up on the corpse, rather than the corpse appearing empty. Also, if a lootable corpse is empty, it will become unselectable after you search it once.
+- Made a fix to the Server/Module details. They were showing up under the wrong headings in the server details page.
+- Made some fixes to skyboxes for their display and their transitions.
+- Creatures now drop out of stealth mode and lose invisibility effects when they die. Makes it a little easier to find the body for resurrection purposes.
+- Fixed a bug that was capping the Experience Points granted for killing a creature to a maximum Creature Rating of 20.  You now get the proper experience points for killing creatures that have a CR above 20.
+- Fixed bug that would occur if you were disconnected from a multiplayer game while in defensive stance. If you logged back into the server your character would never be able to move ever again.
+- Fixed a number of bugs with regards to the Dragon Disciple and ELC checks.
+- Fixed a problem with henchman not running their on death scripts.
+- Bane of enemies feat now does the correct amount of damage.
+- Touch attacks now properly takes into account "epic weapon focus" bonus if its in unarmed attack.
+- An Epic level Bard/Palemaster will now properly show the epic level spells on their spells radial menu once the Palemaster reaches level 15.
+- We now try removing stealth/invisibility visual effects from henchman before the are removed from the party, so that they stop fading in and out.
+- Fixed a bug could cause your character to fail leveling-up if you had previously lost a class due to a level-loss.
+- Added a slight delay to the "inventory is full" sound effect. This fixes a problem, where the sound wouldn't play if you dropped an item while switching weapons.
+- Fixed a bug that would cause placeable containers to get permanently stuck open.
+- Fixed a few bugs where the contents of your inventory would suddenly dissappear.
+- Fixed a message where the "Gained Gold" text message was being displayed when you were actually losing gold.
+- Added more emotes to the emotes menu (Read, Drink potion, Meditate, Worship, Sit on ground, Fall down forwards, Fall down backwards).
+- Fixed the text message when using cleave in a defensive stance.
+- Fixed character select screen crash that would occur if you had a character with a custom character class in the list and you loaded a module that didn't support that custom character class. The unsupported class will be displayed as "Barbarian".
+- Fixed a bug in the encounter system that would cause 1st level creatures to be spawned in once your character was above 20th level. This change affects all modules that are NOT the official campaign.
+- Clicking OK in the sound options menu will now correctly save the selected sound provider selected in the Advanced Sound Options gui to the nwn.ini file. Rather than overriding it with the preferred sound provider, which could be different.
+- Fixed a display issue with the Henchman stealth mode/spell mode radial menu options.
+- Fixed the Zen Archery Feat so that it is now used for non-touch ranged attacks instead of just ranged touch attacks.
+- There were a number of problems with the calculations to attack bonuses for Melee Touch Attacks. These have been fixed now.
+- Made some fixes to prevent game/character hacking. Sorry, but we will never publically discuss specific changes to the game with regards to hacking the game.
+- Made several game stability fixes.
+
+
+DM Client:
+=-=-=-=-=-
+- Added a confirmation box to the DM "Jump All Players to Point" feature.
+- DM spawned in Placeables now spawn in facing the DM, rather than always facing East.
+- DMs can now attack things again.
+
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+- The GetFacing() scripting command will now always return the angle rounded to the nearest degree. This fixes a problem where in some odd situations the returned value was off by more than 0.01 and causing comparison operations to fail and breaking some puzzles in HotU.
+- Made some fixes to GetIsImmune() to address the various issues where Monks, Druids, Paladins, and Red Dragon Disciples that have various feats that give immunities to poisons and disease.
+- Made a fix to GetHasSpell() where it was returning incorrect values for creatures that could cast the Cure/Inflict Wounds spells.
+- Made a fix to the GetClassByPosition() scripting command, so that it now works with the new HotU prestige classes and CLASS_TYPE_OOZE.
+- Made a fix to the CreateItemOnObject() scripting command. Now if the item created was merged into an existing stack of similar items CreateItemOnObject() will return the merged stack object rather than OBJECT_INVALID. If the merged stack overflowed, then CreateItemOnObject() will return the overflowed stack that was created. This also fixes a Scribe Scroll bug, where if you created a new scroll and you had an existing scroll in your inventory, it would state that you failed, but the scroll would be created anyways.
+- Fixed an issue when calling SetCutsceneMode(FALSE) and it not clearing the player's plot flag.
+- The SurrenderToEnemies() scripting command now removes wounding effects from the surrendering creature, so that you can talk to them.
+- We now allow users to specify any Camera Traslation Speed.
+- Made a fix to CreateObject() so that objects created are done from their templates so they can pick up template variables.
+- The GetLastClosedBy() scripting command now works in the OnStoreClosed event of stores. The GetLastOpenedBy() scripting command should now be more reliable when used on stores in a multiplayer game.
+- GetIsImmune() scripting command now also takes into account Palemaster's Tough as Bones feat, Paladin's aura of courage feat and Monks perfect self. Fixes some immunity text message feedback weirdness when Palemasters are being attacked by Gelatenous cubes and such.
+
+Server-specific changes:
+=-=-=-=-=-=-=-=-=-==-=-
+- Made some optimizations to improve the responsiveness of the Windows dedicated server interface.
+
+Custom Content Installer:
+=-=-=-=-=-=-=-=-=-==-=-=-
+- Added support for adding and installing custom .tlk files.
+
+
+2DA Files Changed in this Update:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+- appearance.2da
+- iprp_aligngrp.2da
+- iprp_onhitspell.2da
+- polymorph.2da
+- portraits.2da
+- skyboxes.2da
+- soundset.2da
+- spells.2da
+- vfx_persistent.2da
+
+
+Patch details for 1.61:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+- added support for custom TLK files for single-player games. Multiplayer support for custom TLK files will be added in a future update.
+- HotU: A few issues with cutscenes have been resolved
+- HotU: Chapter 2 - Fixed a problem with the Inner Gate near the end of Chapter 2
+- HotU: Chapter 2 - Fixed a bug with Matron Myrune's dialogue
+- HotU: Chapter 2 - Fixed an issue when giving out commands to NPC's near the end of Chapter 2
+- HotU: Chapter 2 - Fixed a problem with a couple of autosaves near the end of Chapter 2
+- HotU: Chapter 3 - Fixed a bug with a henchman dialogue
+- HotU: Chapter 3 - Fixed a bug with party interaction
+- HotU: Chapter 3 - Fixed a Sleeping Man interaction bug
+- HotU: Chapter 3 - Fixed an issue with a cutscene where it was possible to become invulnerable
+- HotU: Chapter 3 - Tweaked end sequence
+- Made damage reduction for DD and barbarians stack.
+- Added dm_visualeffect console command.  first param is int for vfx #, second is duration in seconds (float, optional). Can target ground, doors, creatures and placeable objects.
+- Fixed NPCs trying to use items that they were not usable due to race, alignment or class restrictions and standing around looking dumb.
+- Fixed Whirlwind timing for attacking so you can attack right away after finishing the whirlwind, and fixed too many attacks warnings
+- Fixed a bug with opening inventory while container is opened on top of open inventory, inventory was open but had no items.
+- Fixed a bug on LAN page where connect button was not being updated when the list is empty and a new server is added.
+- Fixed a crash in sound options GUI that could happen when Environment Effects=1 but had disabled hardware sound acceleration through DXDiag.
+- Fixed a crash in the level-up GUI if you had a invalid familiar
+- Fixed a crash when loading saved game when user managed to save between the time an OnHitCastSpell event was signalled and the time it impacted.
+- Fixed a crash when examining object just before area transition
+- Fixed an ELC problem that was sometimes evident in Epic Levels
+- Fixed a Palemaster level bonus bug
+- Fixed a couple relatively rare crash bugs
+- Fixed a save/load bug when using a custom talktable file
+- Made some fixes to prevent game/character hacking. Sorry, but we will never publically discuss specific changes to the game with regards to hacking the game.
+- Made several game stability fixes.
+
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+General:
+- Fixed bug where two controls in the Options dialog would cause an array out of bounds error when fetching the StrRefs for their text. Fixes access violation when trying to open Options dialog.
+- Fixed bug where ctrl + up arrow or ctrl + down arrow in the Sound Properties dialog's waves listbox would cause the selected item index to move twice in the indicated direction instead of once.
+- Small stability fixes
+- Fixed some memory leaks
+
+Custom Content:
+- Support for using an alternate tlk file if the StrRef is greater than 0x00ffffff, where the bit 0x01000000 has been set. It will mask off the upper 2 hex digits and use the resulting number as the StrRef into the alternate tlk file.
+- Module Properties dialog Custom Content tabsheet contains setting for specifying a custom tlk file from among those in the user's tlk subfolder.
+- Added Hak conflicts dialog. It is launched from the Custom Contents page of the module properties dialog.
+- Refreshing Custom palette will now include blueprints from ERFs (read: hak paks) in addition to just the module blueprints.
+
+Items:
+- Added robes support
+- Added Cursed/Undroppable property to Items.
+- Whips created in Item Wizard automatically have "Bonus Feat: Disarm (Whip)"
+- Added support for stand-alone Visual Effect item property.
+- Fixed bug where elemental damage vfx would not always override alignment damage vfx.
+- Changed toolset handling of alignment-based vfx to be consistent with game in that any damage amount vs good or evil will generate a vfx.
+- Fixed bug in Item Properties dialog where no color variations would be listed for a weapon part if it has only one color variation.
+- Gold can no longer be set to undroppable in the inventory dialog for creatures.
+- When composing an armor icon, the appropriate armor parts are now hidden according to the settings in parts_robe.2da.
+
+Creatures:
+- Added Wings and Tails support.
+- Added Lootable and DecayTime properties to Creatures.
+- Creature Wizard and Creature Dialog allows up to level 60.
+- In Creature Properties dialog, entering a special ability caster level > 15 will clamp the value to 15 instead of restoring the previous value.
+- Restrict maximum Special Ability caster level to 15.
+- Fixed bug in Creature Dialog where visiting the Classes page would cause unspecified classes to count as 1 level toward the creature's total level when calculating HP. (eg., level 10 abberation would have 12 levels of constitution bonus).
+- Fixed bug where a creature could be saved with a level 0 class.
+- When loading a creature, it will no longer load classes that have -1 classID and/or level 0.
+- Can no longer set a creature's level to 0 in the creature properties dialog.
+- When loading package names in Creature Editor, fall back on 2da Label if StrRef not found.
+
+Creature Wizard and Creature Levelup Wizard:
+- Added new package-2da-based backend for Creature Wizard.
+- Added Creature Levelup Wizard. You can run it by right-clicking on a creature instance, or by going to the Classes tab in the Creature Properties Dialog and clicking on the Levelup Wizard button.
+- Fixed bug in Creature Wizard where Starting Package was not being initialized.
+- Changed Creature Wizard to use the CLS_BFEAT_*.2da tables to determine class bonus feats instead of hardcoding rules for each class. Fixes problem where no hardcoded rules were present for some classes and level ranges, causing creatures to miss out on bonus feats.
+
+Areas:
+- Added skybox property to Areas.
+- Added area property for fog clip distance.
+- Added reading of default skybox from environment.2da when setting up default area properties.
+- Increased height of Area Wizard dialog so that all tilesets are visible without having to scroll the listbox.
+- Fixed bug in tilegroup painting where it would not lock corners in the interior of a tilegroup that should have been locked.
+When painting group tiles, tiles that belong to the group are locked (at the center) and those tiles can skip the template verification.
+This change allows for 3x3 and larger groups that contain null tiles.
+- When using the context menu to open the Inventory dialog on an object in the area viewer then clicking OK, it will now flag the area as modified.
+- Fixed bug where Location Adjustment dialog would not flag the area as modified.
+- Added Apply button to Location Adjustment dialog.
+- Fixed crash when doing the following: select item, copy, paste, R-click, select item again, copy, paste.
+- Fixed crash that would occur if user did Ctrl-C on an object, then selected a different object in the area treeview, then typed Ctrl-C again.
+
+Stores:
+- Added new Store properties: IdentifyPrice, MaxBuyPrice, StoreGold, OnStoreClosed, and the WillNotBuy and WillOnlyBuy lists of baseitem types.
+- fixed crash to desktop due to stack overflow in the store properties dialog when clicking the up/down arrows for the sell markup/markdown values when they contained certain combinations of manually typed in and out-of-bound values.
+- Fixed bug where equality comparison for stores was not checking OnOpenStore event. (Affected use of AddToPalette on store instances)
+
+Module:
+- Fixed access violation setting the date/time on a mod or erf when the user's system clock exceeded the year 2038.
+- Added option to create backup module files on save.
+- Fixed bug where the Strings section of the ERF header of a module was not being set to exactly the same set of strings as in the Module.ifo's Description CExoLocString.
+- Optimized ERF file I/O. ERF import and export is faster now and uses less memory.
+- Significantly sped up saving custom creature palettes by not doing a full creature load in order to get the CR and FactionID. Instead, it now specifically reads only those fields out of the utc. However, this means that the CR is no longer recalculated, so if anything happened to invalide the CR since the creature was last saved, the CR saved to the custom palette will still be invalid.
+- Build Module Dialog:
+   - Double-clicking an instance in the message listbox will also edit that instance in its property dialog, not just focus on the instance.
+   - Double-clicking a journal-related message in the messages listbox will open the journal editor.
+- Added OnPlayerEquipItem and OnPlayerUnEquipItem event to module properties.
+
+Resource Management:
+- Fixed bug in resource selection dialog where multiple "hits" would show up if you typed in a resref quickly enough to get in multiple keystrokes inbetween refreshes of the resources listview.
+- Fixed bug where the editing-a-standard-resources warning and the editing-a-resource--in-a-hak warnings would not be disabled when the user checked the "Never Warn Again" checkbox.
+- Do a total reload of a custom palette if trying to add a blueprint whose palette category does not exist in the current custom palette, which could happen in old modules created prior to the addition of new standard palette categories.
+
+Scripting:
+- In Script Editor: when parsing shortcuts for a script, user-defined constants will now appear in bold in the Constants listbox. A user-defined constant must be "const int", "const float", or "const string" and have an assignment. eg., "const int BLAH = 0;"
+- Fixed BadStrRef statusbar hint when mousing over main text entry area of script editor.
+- Added context menu items for Location and Variables dialogs from the module contents treeview.
+- Variables dialog:
+  - Fixed Variables dialog not flagging the current area as modified when it was used on an instance.
+  - Added Variables dialog menu option for Encounter and Trigger instances.
+  - Replacing a Variable will no longer deselect it from the Variables listview. This will allow you to Replace it again without reselecting it.
+  - After deleting a variable, it will select the next variable that moved into selected line, if there is one.
+  - Fixed Delete button still being enabled when no variables are selected.
+
+Doors:
+- Invisible door models in doortypes.2da (VisibleModel = 0) now show up in the Unique Door Appearances dropdown in the Door Properties Dialog, regardless of what tileset the current area is using.
+- Door Dialog now checks TileSet0, TileSet1, TileSet3 columns in doortypes.2da if the TileSet column does not match the currently open area's tileset. If one of those additional columns matches the current area's tileset, then that door appearance is selectable.
+- Door Wizard now sets OnDeath=x2_door_death for new Doors.
+
+Placeable Objects:
+- Added Environment-mapping support for placeable objects by reading "Reflection" column from placeables.2da. **** means no reflection. "default" means use the default env map. Any other value means to use the named TGA file.
+
+Sound:
+- The Audio page of the Area Properties dialog will no longer show music tracks that do not exist.
+- The Audio page of the Area Properties dialog will no longer show ambient sound tracks that do not exist.
+- Fixed bug where the ambient sound dropdowns, on the Audio page of the Area Properties dialog, were not using the DisplayName column in ambientsound.2da when no StrRef was present in the Description column.
+
+Conversation Editor:
+- Fixed bug where the Text Dump function in the Conversation Editor function would not restore the toolset's original working folder after saving the text dump.
+- removed Looping checkbox for animations in a conversation node. It never worked correctly, and making it would would require the artists to create two copies of every animation in the list--a fire and forget and a looping one.
+- Added context menu option in area viewer to directly edit the conversation of an instance.
+
+SpellCheck:
+- Removed MS Word SpellCheck.
+
+Journal:
+- Fixed bug where recent changes to the LocName and Comments of a Journal Category would be discarded when R-clicking the treenode for that journal category.
+
+Factions:
+- Added progress bars to faction updates when OKing the Faction Editor.
+
+Plot Wizard:
+- Fixed bug in Plot Wizard where it would insert OnAcquireItem lines at the top of the Module OnAcquireItem script, if that script already existed, but did not contain any previous Plot Wizard modifications.
+- Fixed bug in plot node wizard where a node that uses the designated villain cast member would always be loaded up with the "Conflict with Villain" radio button checked, even if it was saved with the "Conversation" button checked.
+
+Multi-Language Support:
+- Fixed toolset always using English as the user's language ID. It now uses the language in dialog.tlk
+- Fixed LocString dialog, when initially showing itself, showing the first available embedded string if no string for the user's current language could be found.
+- Fixed conversation dialog tree always displaying locstrings in English. It will now display in the current language
+- Fixed bug where a LocString control would have its displayed text added to the locstring on initial creation when the displayed text is not for the current language.
+- If a localized text control cannot find a string in the specified language and gender, it will search for a string in the specified language but opposite gender, before it searches for a strref or string in another language.
+- After clicking OK in the multilanguage string dialog, the text in the LocString field would be set to the first available language's string. If the string shown was not for the current language, it would then change the current language's string to the displayed string. Fixed so that it no longer sets the text for the current language on returning from the multilanguage dialog.
+- Added Default Editing Language option so that the user can set the default language for editing locstrings to something other than the language specified in the user's dialog.tlk file. Note that this only affects user-entered module text, not the actual GUI labels. (eg., an English user can edit a module as if he were German, with all localized strings showing up and being saved in German instead of English.)
+
+
+DM Client:
+=-=-=-=-=-
+- Fixed HP sometimes displaying as 0/0 in DM party bar.
+- DMs will now be included in Attack, Damage, and Death messages as if they were a member of the party
+- Fix so that you can't send a DM possessed creature into Limbo
+- Fixed another instance of the bug when a DM cancels out of game options screen the difficulty was being set to easy.
+- Fixed bug where if a DM stole an item directly from a players equipped slot the weight encumbrance of that character was not being recalulated.
+
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+- Added a number of HotU scripting commands including:
+  GetCreatureStartingPackage()
+  SetCameraHeigth()
+  ForceRest()
+  SetStolenFlag()
+  GetIsCreatureDisarmable()
+  GetItemPropertyParam1Value()
+  GetItemPropertyParam1()
+  GetItemPropertyCostTableValue()
+  GetItemPropertyCostTable()
+  GetIsInSubArea()
+  EffectCutsceneImmobilize() - this effect is meant for the Dwarven Defender's defensive stance. it roots the creature to the spot so that they can't move but grants no other penalties. It cannot be resisted (even by Freedom of Movement)
+- We now drop items at the object's position when CopyItem() or CopyAndModifyItem() fails to add the new item to the inventory.
+- Fix to CopyAndModifyItem() to not always drop the items at your feet
+- Fixed a crash when an area attempted to do an ActionSpeakString()
+- StartNewModule() will no longer crash if the module name is invalid
+
+
+2DA Files Changed in this Update:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+- probably most of them - please see the 2dasource.zip file or the "source" directory in your NWN install.
+
+
+
+Patch details for 1.32:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+- Made some fixes to prevent game/character/server hacking. Sorry, but we will never publically discuss specific changes to the game with regards to hacking the game.
+- Added some safety checks to the CD checking code. Hopefully this will prevent silly messages from Windows asking you to insert your NWN CD into your hard drive. Doing this might void your hard drive's warranty.
+- Fixed a nasty frame rate killing bug - if you fired lots of missile weapons with some form of added damage (eg. fire) eventually your frame rate would slow to a crawl.
+- Made a fix to wounding.
+- Fixed some display issues in the internet multiplayer server list:
+  - older servers are not listed (some were being shown)
+  - newer servers are listed, but the Connect button is disabled
+  - if you don't have the required expansion pack(s) for the listed server the Connect button is disabled
+  - Details page shows XP requirements in the version number slot (eg. "7041 + XP1 + XP2") and is highlighted in red if you don't meet the requirements
+
+
+2DA Files Changed in this Update:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+none
+
+
+Patch details for v1.31:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+- Fix to database system referencing player name variables.  This fix is already in Live 1.30 but will break compatibility between player-specific data between SoU 1.30 and 1.31. We apologize for any inconvienience.
+- Fixed up some SoU vs. non-SoU compatibility issues.
+- SoU: Henchman will remember level-up status per module per PC
+- SoU: Chapter 1 - Tymofarrar should talk only to nearby henchmen and not those that he can only see (and might be too far away to talk to).
+- SoU: Chapter 1 - Changed meat desc' at Drogan's kitchen.
+- SoU: Chapter 2 - updated some database changes from Chapter 1
+- SoU: Interlude - more rest areas before mummy fight
+- SoU: Interlude - fixed not creating a pc copy at the slaad cutscene.
+- SoU: Interlude - Fixed retrieval of henchman data from chapter 1
+- Updated some player portraits.
+- Fix to henchman not loading in from the database after module transition.
+- Fixed Monk Glowing eyes not showing up at level 20.
+- Made a theoretical fix to the "body switching" bug. Let us know if this fixes it or if its still happening at nwbugs@bioware.com
+- Added a new console command - "setfogdistance x" where x is the distance to set the fog. At this time, this command can only move the plane out, not back in.
+- Fixed the ShowDMJoinedMessage ini server option so that it actually works now.
+- Fixed a problem with ModifyNumAttacks not stacking properly.
+- Removed penalty for point blank shots (firing into melee penalty).
+- Made a fix to the GameSpy autologin process.
+- Deflect arrows feat now works if either of you hands are free. Rather than the left hand always having to be free regardless of whether or not you have something in your right hand.
+- Fixed "On Hit: Blindness" item property so that it now works again.
+- You actually have to take damage from a stunning fist attack in order to get stunned by it.
+- You actually have to take damage from a quivering palm attack in order to die from it.
+- Put in a fix to allow henchman in the Original Official Campaign to equip unidentified magic items on loading to allow for the SoU henchmen changes.
+- Item property "On Hit Knock" now actually uses it DC value.
+- Made a fix to Attack Bonus calculation that was erroneously granting attack bonuses to certain damage reduction effects.
+- Fixed a bug where you always failed your concentration check for spells on a subradial menu.
+- Fixed a bug where cleric always failed their concentration checks when casting a non-cleric domain spell (e.g. an Air Domain cleric casting Chain Lightning).
+- Fixed the level up summary screen so that it displays the correct hit points gained if you level up when you are diseased and you CON has gone down.
+- If you're immortal and you get a death effect and your hit points are below 1, they're now set back up to 1.
+- You now have to have a ring/amulet equipped in order to cast spells from it.
+- Fixed the "Server Description" incorrectly appearing under the "Module Description" heading in the Favorites/History page.
+- Spell Resistance from items no longer stacks with the SR from a Monk's innate ability under weird circumstances.
+- Added fix for defensive casting not working.
+- Fixed counterspell causing the player to walk toward the target.
+- Fixed DC to detect traps to use a d20 on your roll, not a d10.
+- Fixed Nature's Sense and Trackless step, so that they now take effect when in the proper environment.
+- Fixed an issue with module switching and the character selection screen.
+- Made a fix to drive mode keys while entering cutscene mode.
+- Fixed autosave character portrait and character info, for when the autosave occurred as the player was in an area transition.
+- Fixed double clicking on a button in the load game menu causing the screen shot to get messed up.
+- Fixed a crash when you do massive damage to a non-creature.
+- Fix to radial equip option on items on the ground.
+- Fix to texture replacements. VFX for stoneskin, barkskin, petrify and shadow skin should stack properly now (removing one won't remove them all).
+- Fixed "Server Description" scroll bars not working in the History/Favorites/LAN pages.
+- Fixed trapped placeables that were spawned in through scripting were not being added to the area's trap list, so it couldn't be detected.
+- Fixed up some ELC checks that weren't working quite right.
+- Fixed a problem with hostile monsters being able to open doors that were trapped by the PC without setting off the trap.
+- Fixed item containers in henchman inventory issues
+- Fixed selling items from henchman's item containers
+- Fixed Set/Disable Trap synergy bonus not showing up on the character sheet.
+- Fixed some spellbook display issues.
+- Fixed a crash while saving with certain malformed custom portrait .tga files.
+- Fixed a crash when creature dies and DM is looking at inventory.
+- Fixed crash in game options, if you quickly moved the "Overall Graphics Quality" slider when anti-aliasing was turned on.
+- Fixed a rare crash when dropping gold into a container.
+- Fixed a crash when calling unpossess familiar when you weren't possessing.
+- Fixed a few memory leaks.
+- Fixed a crash that would occasionally happen when viewing the LAN server details page.
+- Fixed a crash when trying to pick up item in NULL area
+- Made some fixes to prevent game/character hacking. Sorry, but we will never publically discuss specific changes to the game with regards to hacking the game.
+- Made several game stability fixes.
+
+
+DM Client:
+=-=-=-=-=-
+- Added a new DM "Jump Single Player to DM" radial menu option. Also moved the DM "Examine Character Sheet" and DM "View Inventory" icons to their own examine sub-radial menu, in order to make room for the new option.
+- Fixed the portrait not being saved out for DMs when the DM is hosting the game and saves.
+
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+- Added 7 scripting commands. Please see the script editor for more details.
+    void ExportSingleCharacter(object oPlayer);
+    void SetSubRace(object oCreature, string sSubRace);
+    void SetDeity(object oCreature, string sDeity);
+    int GetIsDMPossessed(object oCreature);
+    int GetWeather(object oArea);
+    int GetIsAreaNatural(object oArea);
+    int GetIsAreaAboveGround(object oArea);
+- Added gender option to GetStringByStrRef()
+- Added support for triggers in GetLockKeyTag() script command
+- Objects should not default to private conversations, which means BeginConversation can now be used to run dialogs between NPCs.
+- Made a fix to CreateObject scripting command for creating stores.
+- Made a fix so game timers wouldn't get confused when SetCalendar or SetTime were called.
+- Fixed EffectNegativeLevel so it doesn't cause a script underflow.
+- Made a fix so that GetTotalDamageDealt() work with doors/placeables.
+- Made a few small fixed to ActionEquipMostDamagingMelee().
+- Made a fix to the script debugger format that would cause issues when a function with parameters and a prototype is followed by a constant value.
+- Fix to GetDamageRoll(), so that it now returns the correct max unarmed damage.
+- Fixed crashes caused by scripting an area to apply an AOE spell to a location or object using the scripting command ApplyEffectAtLocation or ApplyEffectToObject.
+
+
+Server-specific changes:
+=-=-=-=-=-=-=-=-=-==-=-
+- Added the option to backup a character file on export.
+  nwnplayer.ini
+  [Server Options]
+  BackupSavedChars=1
+
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+- Sped up loading of resources in Hak Paks.
+- Added progress bars to loading of Hak Paks
+- Added ability to hear soundsets when clicking their names in the listbox in the soundset selection dialog.
+- Added Location Adjustment dialog to Area Editor context menu for object instances.
+- Added context menu option in area viewer to go straight to the inventory dialog for creatures and placeables.
+- Fixed 6 memory leaks.
+- When opening a module that does not currently require all the expansions that the toolset currently has installed, the user is warned that saving the module will flag it as needing all the installed expansion packs.
+- Toolset no longer checks the "Location" string in registry to determine where its resources are located. It will just use the directory that it is being run from. This means that you can have two installs of neverwinter, one with XP1 and one without, and the toolset executables will run be able to run independently from each install folder.
+- Help | About dialog now lists the installed expansion packs.
+- Fixed BadStrRef appearing when mousing over certain regions of various dialogs inherited from the generic wizard dialog.
+- Fixed BadStrRef hint when mousing over area listbox and Finish image in Module Wizard.
+- Fixed the Location Dialog to have the correct caption.
+- Fixed access violation when loading custom palettes when a custom blueprint contains a palette node ID that does not exist in the custom palette tree for that blueprint.
+- Sped up loading of resources in Hak Paks some more
+- Conversation Editor, Script Editor, and Plot Wizard now include warnings if editing or trying to save a resource that already exists in a Hak Pak or in standard game resources.
+  - Added Option to toggle the above "editing-a-standard-resource" warning on or off.
+
+Creature Dialog:
+- Added Clear Spell List button
+- Certain creature models will now play their Pause animation instead of standing frozen.
+- Main form's Edit menu no longer contains "Placeable Properties" menu item if more than one Placeable is selected, since the Placeable Object dialog does not support multi-edit.
+- Fixed "Full Plate +4" appearing instead of "Building Module..." on the Build Module progress bar.
+
+Area Transition Dialog
+- Auto-created area transition script when editing a transition door or trigger's OnClick event was not the same as nw_g0_transition. It is now.
+
+Palette
+- Added Find Text menu option and shortcut to the Palette treeviews.
+- Changed terrain palette to select a node on right-click.
+- Refresh Palette menu option flags module as modified.
+
+Plot Wizard
+- Added support for giving negative XP in Plot Node Wizard.
+
+Script Editor:
+- if there is selected text when you invoke the search dialog, the selected text will now be automatically entered as the search string.
+
+
+2DA Files Changed in this Update:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+- iprp_spellcost.2da
+- spells.2da
+- Safe 2DA lines have been issued. Please see the following file - Safe2DALines.txt
+
+
+
+Patch details for v1.30:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+WARNING! AS OF THIS PATCH, ALL MODULES CREATED/SAVED WITH THE VERSION 1.30 TOOLSET ARE TAGGED AS REQUIRING VERSION 1.30 OR HIGHER OF NEVERWINTER NIGHTS GAME OR TOOLSET.
+IF YOU DON'T WANT TO BRAND YOUR MODULE AS 1.30 THEN DO NOT EDIT YOUR MODULE IN THE VERSION 1.30 TOOLSET.
+IF YOU WANT TO GO BACK TO 1.29, WE WILL HAVE A 1.30 TO 1.29 PATCH AVAILABLE.
+
+- Added Hobgoblin and Pit Fiend creatures to the game resources.
+- Added database access scripting commands.
+- Made some improvements to network performance.
+- Made some fixes to prevent game/character hacking. Sorry, but we will never publically discuss specific changes to the game with regards to hacking the game.
+- Made several game stability fixes.
+- Changed the connection panel so if you press Cancel on GameSpy connect it will dump you to the History/Favorites/Buddies pages.
+- Fixed bug with buddy list where buddy names list was not showing correct name associated with server.  Also fixed bug where there was an extra server showing up with ping of -1 that didn't really exist.
+- Fixed a bug where if you loaded a module with a hak pack that had a custom creature in it, quit out, then loaded it again it would crash.
+- Fixed the character sheet displaying the incorrect "Attack Bonus" after loading a saved game from within the game.
+- Charsheet now also displays your base attack bonus.
+- "Limited" animation creatures can now use bows and crossbows.
+- Fixed loading saved games if the save folder did not specify a number.
+- Made a symptomatic fix to a counterspell issue where the character would walk up to its target.
+- Fix to disarm/recover trap progress GUI not disappearing when the character or familiar doing it dies.
+- Scripts on custom area of effect objects are now being loaded in from saved games properly.
+- Changed the feedback system on skills to handle traps that cannot be disarmed.  Now if you try and disarm/recover a trap that is not flagged as disarmable, your character will try just like on a normal trap, then it will give a message saying *success will never be possible*.
+- Fix to trap feedback messages, before it was reporting success not possible when it actually was possible.
+- Fixed some combat debugging feedback messages in regards to AC Decrease properties.
+- Made "spell immunity"/"saving thow" user feedback messages display in a more intuitive manner.
+- Fixed a bug so now Halflings Good Aim bonus will show up on the character sheet.
+- Added feedback for when a henchman runs out of ammunition.
+- Give appropriate alignment shifting feedback in all cases when you are getting close to losing/regaining the ability to level up in a class.
+- Game now displays "Item Acquired:..." feedback when the acquired item is stacked onto an existing item in the inventory.
+- Changed bodybags so they are called "Remains".
+- Changed the description on Body bags (when you examine them) to display the name of the object that spawned them.
+- Fixed a problem with some of Healer Kits/Theives Tools not getting the number of uses updated properly on your quickbar after they'd been used.
+- Changed level drain visual feedback system on the client extensively.  Now it will show your level in red if your are level drained, it will also show saving throws and skills in red as they are effected by level drain.  It will also always effect your highest level now, taking into account the level after negative levels have been applied.
+- We now display feedback on creature's saving throws, when you cast an AOE spell on them.
+- Damage Vulnerabilities on items are now being correctly removed when the item is unequipped
+- Items with an AC Decrease property (e.g. -5 AC) will now give you the correct AC modifier.
+- Fixed a bug with multiple item effects not always being removed correctly when the item was unequipped.
+- Fixed a bug where you would lose an item that was unequiped due to losing a level.
+- Items can no longer be sold if they can't be unequipped.
+- Fixed problem with saving throw bonuses not getting properly removed when you unequip an item.
+- Fixed a problem where is some custom built modules, closing a door could sometimes cause a creature in a different part of the area to teleport into the room.
+- Door/Placeable traps that are flagged as undetectable in the toolset will now truely be undetecable.
+- Plot items should appear properly in the lostitems store now
+- Plot items will now appear in the Divining Pool if a player logs out of a multiplayer game while in possession of them.
+- Fixed RemoveJournalQuestEntry so it'd pull the date and time as well.
+- Fixed bug where if you were a multiclassed cleric/ranger - spells were incorrectly showing up in the rangers known list.
+- Changed it so in 800X600 you can't enable the larger font.  Also if you switch to 800X600 it will disable the large font option and switch you to the normal one if your already using it.
+- Fixed resting so that associates will now rest after any custom OnPlayerRest script has already fired.
+- Fix to the way AreaEffect spells were being saved and loaded in.
+- Stopped polymorph from firing off onexit and onenter scripts.
+- Fixed polymorphed spell casting via dragging spells to quickbar.
+- Polymorphed player creatures can now use potions
+- Fixed a problem where a druid's weapons were not visible after leaving wild shape.
+- Fixes to domination. The effect should no longer partially remove itself  when the associate is attacked, and they should no longer return their master as a valid enemy (since it was using their personal reputation values to adjust the happy friendly value)
+- Added "saving status" to the server status control on nwserver. The server status control will now display wether or not the save was successfull and the reason why any save attempts failed.
+- Made some changes to the nwserver gui layout for Japanese language support.
+- Fixed a bug with spell resistance increase/decrease not being handled properly.
+- Changed default violence setting (if there is nothing set in the ini file) to medium violence.
+- Fixed bug where recommended button on skill panel in character generation did nothing.
+- Recommended button on levelup will select the class last leveled up in (if the character can still gain a level in that class), otherwise it will now find a valid class, preferably one the character already has a level in.
+- Fixed some issues with dominating creatures and animal empathy.
+- Immortal creatures are immune to all 'state' effects (daze, sleep, paralyze, petrify, etc..)
+- Fixed problem where dead people would spawn in standing up and then immediately fall over (they now spawn in lying down).
+- Fixed a problem where creatures in a crowded location would sometimes appear on the wrong side of a door when loading a saved game.
+- Fixed bug with barter panel preventing chat from being resized after it is closed.
+- Changed min number of voice channels from 8 to 16.  This SHOULD solve problems where combat sounds were not playing in certain rooms with lots of ambient sounds.
+- Fixed unlocking and locking of doors (with and without using a key). You can now lock doors with the proper key. Yay!
+- Poison and disease effects are no longer applied to dead creatures
+- Fixed to Called Shot. Target will now only suffer a penalty if the Called Shot attack actually does damage (i.e. due to target having Damage Reduction).
+- Skill Decrease effects should stack properly now.
+- Fixed a bug where if you clicked at the just the right time on the legal screen the mouse wouldn't work when you got to main menu, forcing you to alt-tab out and back in for it to work again.
+- Stopped battlemusic from playing if you leave an area.
+- Fixes to Protection Vs Alignment spells.
+- Fixed immunity vs spells cast from a creature of a particular alignment type.
+- Fixed bonus saving throws so that they now work properly against Area of Effect spells cast by a creature of a particular alignment type.
+- You now get the +2 attack bonus for your initial attack when you're invisible.
+- Daze will now allow you to walk, but not cast spells or attack.
+- Fixed a problem with music sources in alternate directories.
+- Fixed a problem with the party bar icon missing in multiplayer when using a character from the character list instead of a saved game
+- Fix for removing spells in levelup when they're on your quickbar.
+- Fixed quickbar item removal.
+- Made some fixes to damage resistance/reduction, so that it always decrements the damage limit by the correct amount (i.e. by a maximum of the amount resisted) and the user feedback messages are now displaying the correct values too.
+- Made some more fixes to the damage reduction system. The damage reduction feedback system has also been fixed so it is much less confusing and much more informative.
+- Fixed a problem where ingame keyboard shortcuts did not work if you had to enter your CD Key when starting the game.
+- Fixed level drain so skills now are effected by it.
+- Knockdown does a ClearAllActions()
+- Fixed bug where subrace was not being reset when user changed race.
+- Fixed a problem with you getting locked into conversation and being unable to successfully start a converstaion with another NPC
+- Many changes to the way darkness works in combination with True Seeing/Ultravision.
+- DMs are no longer blinded by darkness.
+- The Blindness visual effect (screen black out) will no longer carry over from one game to the next.
+- Made some fixes to make sure that saved creatures load their animations properly
+- Spells are now sorted in char generation, the level up panel, and the character sheet.
+- Fixed a spell casting issue. (Memorized count not always reducing)
+- Fixed bug with examine item in multiplayer.
+- Rangers companions are now the same level as shown in level up. They get the companion that compares to their real level now, not starting at level 6 any more.- Fixed imported characters and negative effects put on them making them unable to modify their action queue.
+- Fixed a crash that would happen if you tried to change the violence password and got it wrong.
+- Fixed crash that would sometimes occur when the host quit a mulitplayer game.
+- Fixed crash that could occur when damaging people who are pretending to cast a spell
+- Fixed a crash that would rarely occur when casting spells at a target.
+- Fixed a crash that could occur when acquiring stackable equipped items that were able to merge with other items.
+- Fix to crash when copying gold to a player's repository.
+- Fixed clients hanging on a partially faded screen if the server autosaved while they were in an area transition.
+- Fixed crash caused by using up a potion and then dropping it on the quickbar.
+- Fixed a rare crash with Floaty Text and game loading.
+
+
+DM Client:
+=-=-=-=-=-
+- DM's can now open and modify any inventory, including players.  They can give items, take them away, or equip and unequip them.  Its pretty sweet!
+- DM characters will now remain invulnerable when loaded in from a saved game.
+- Fixed crash when reloading a saved game from within a running game (as a DM) when the saved game contained a DM saved character.
+- The difficulty setting will no longer reset when a DM logs into a multiplayer game. The DM's difficulty slider will now also update to the current server difficulty when logging in.
+- Now when a DM changes the difficulty slider, other DMs in the game will now see it change.
+- Fixed bug where DM's could not cast spells at NPC's.
+- Fixed a crash that could occur with DM Goto commands.
+
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+- Added some new scripting commands - please refer to the Toolset for the details:
+   int GetAppearanceType(object oCreature);
+   void SpawnScriptDebugger();
+   int GetModuleItemAcquiredStackSize();
+   object CopyItem(object oItem, object oTargetInventory=OBJECT_INVALID);
+   void SetCampaignFloat(string sCampaignName, string sVarName, float flFloat, object oPlayer=OBJECT_INVALID);
+   void SetCampaignInt(string sCampaignName, string sVarName, int nInt, object oPlayer=OBJECT_INVALID);
+   void SetCampaignVector(string sCampaignName, string sVarName, vector vVector, object oPlayer=OBJECT_INVALID);
+   void SetCampaignLocation(string sCampaignName, string sVarName, location locLocation, object oPlayer=OBJECT_INVALID);
+   void SetCampaignString(string sCampaignName, string sVarName, string sString, object oPlayer=OBJECT_INVALID);
+   void DestroyCampaignDatabase(string sCampaignName);
+   float GetCampaignFloat(string sCampaignName, string sVarName, object oPlayer=OBJECT_INVALID);
+   int GetCampaignInt(string sCampaignName, string sVarName, object oPlayer=OBJECT_INVALID);
+   vector GetCampaignVector(string sCampaignName, string sVarName, object oPlayer=OBJECT_INVALID);
+   location GetCampaignLocation(string sCampaignName, string sVarName, object oPlayer=OBJECT_INVALID);
+   string GetCampaignString(string sCampaignName, string sVarName, object oPlayer=OBJECT_INVALID);
+   void DeleteCampaignVariable(string sCampaignName, string sVarName, object oPlayer=OBJECT_INVALID);
+   int StoreCampaignObject(string sCampaignName, string sVarName, object oObject, object oPlayer=OBJECT_INVALID);
+   object RetrieveCampaignObject(string sCampaignName, string sVarName, location locLocation, object oOwner = OBJECT_INVALID, object oPlayer=OBJECT_INVALID);
+   int GetItemStackSize(object oItem);
+   void SetItemStackSize(object oItem, int nSize);
+   int GetItemCharges(object oItem);
+   void SetItemCharges(object oItem, int nCharges);
+   int GetIsSkillSuccessful(object oTarget, int nSkill, int nDifficulty);
+   effect EffectSpellFailure(int nPercent=100, int nSpellSchool=SPELL_SCHOOL_GENERAL);
+   void SpeakStringByStrRef(int nStrRef, int nTalkVolume=TALKVOLUME_TALK);
+   void SetCutsceneMode(object oCreature, int nInCutscene=TRUE);
+   object GetLastPCToCancelCutscene();
+   float GetDialogSoundLength(int nStrRef);
+   void FadeFromBlack(object oCreature, float fSpeed=FADE_SPEED_MEDIUM);
+   void FadeToBlack(object oCreature, float fSpeed=FADE_SPEED_MEDIUM);
+   void StopFade(object oCreature);
+   void BlackScreen(object oCreature);
+   int GetBaseAttackBonus(object oCreature);
+   void SetImmortal(object oCreature, int bImmortal);
+   void OpenInventory(object oCreature, object oPlayer);
+   void StoreCameraFacing();
+   void RestoreCameraFacing();
+   int LevelUpHenchman(object oCreature, int nClass = CLASS_TYPE_INVALID, int bReadyAllSpells = FALSE);
+   void SetDroppableFlag(object oItem, int bDroppable);
+   int GetWeight(object oTarget=OBJECT_SELF);
+   object GetModuleItemAcquiredBy();
+   int GetImmortal(object oTarget=OBJECT_SELF);
+   string Get2DAString(string s2DA, string sColumn, int nRow);
+   effect EffectEthereal();
+   int GetAILevel(object oTarget=OBJECT_SELF);
+   void SetAILevel(object oTarget, int nAILevel);
+   int GetIsPossessedFamiliar(object oCreature);
+   void UnpossessFamiliar(object oCreature);
+   void PlaySoundByStrRef(int nStrRef, int nRunAsAction = TRUE );
+- Added a parameter to ActionStartConversation() to stop playing the hello
+- Fixed an issue in scripting where the code would skip a switch evaluation line (in particular, if it was called without a compound statement as the statement inside an if, while, do/while or for statement!)
+- Copy item template name as part of copy item (used for infinite store items)
+- Fixed compilation bug that causes compiler/toolset to crash when a semi-colon immediately followed the "else" keyword.
+- Fix a crash related to GetCasterLevel().
+
+
+Server-specific changes:
+=-=-=-=-=-=-=-=-=-==-=-
+- Fixed a server crash when a creature that was the target of a spell was sent into limbo.
+- Made some improvements to network performance.
+- Made some fixes to prevent game/character hacking. Sorry, but we will never publically discuss specific changes to the game with regards to hacking the game.
+- Made several game stability fixes.
+
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+- Added a new system for script caching on the game server. You can now cache your most frequently called scripts to help improve performance. Go to "Module Properties" and click on the new "Cached Scripts" tab.
+- Added ability to save and load a set of spell selections on the Spells tab of Creatures. Uh, is this the coolest thing ever, or what?
+- Added buttons on Scripts page of various object types to save an load a set of script assignments. Actually, this is pretty darn cool, too.
+- Added Autolevelup Package dropdown to Classes tab for Creatures, for use when autolevelling up a creature via scripting.
+- Changed representation of current area's treenode in the area treeview. Instead of being in bold text, it now uses the Script Editor's keyword color. Bold text was causing sizing issues with certain fonts, most notably in Japanese.
+- When deleting temp0 folder, delete read-only files as well as files of types unknown to the resource manager. If the directory cannot be removed, show an error message.
+- Added double-click support to Inventory dialog. Double-clicking a treeview item sends it to the backpack/store. Double-clicking a backpack item attempts to equip it. Double-clicking an equipped item unequips it.
+- Added Cancel button to Build Module progress bar.
+- Added warnings when editing a resource that is in a Hak Pak, and added option to enable/disable the resource-is-in-Hak-Pak warning.
+- Fixed creation of temp directories for new modules so that they are called "temp0" instead of just "0".
+- Changed handling of stray temp directories in the modules folder. Toolset will try to use only temp0, not any of the higher numbers. It will automatically remove a stale temp0 if temp0 is empty, and prompt to remove temp0 if it is not empty but contains no module.ifo to recover. It will now do the temp0 check on every attempt to create a new module or open an existing one.
+- Added support in the Resource Selection dialog for "x#_" resref filters when the filter currently in use begins with "nw_" or "plc_".
+- Modifications to current area now prompted for save when exporting the current area via File|Export. It had already been doing this when exporting via the area treeview's Export context menu option.
+- Added Armor Class field to the Appearance tab for armor being edited in the Item properties dialog. This makes it easier to see the effect of armor appearance on AC. This is simply a duplicate of the one on the General page.
+- Added Armor Check Penalty, Arcane Failure Rate, and Max Dex Bonus fields to Item properties dialog.
+- Fixed bug in item dialog where Stack Size adjustments using the UpDown control would update the Total Cost field using the previous stack size value.
+- Fixed bug in Store Dialog where the Sell Mark Up would increment when attempting to increase the Buy Mark Down past its maximum. The Sell Mark Up now remains the same.
+- Inventory dialog for stores now consistent with game in terms of buy/sell values. Minimum buy/sell price is 1 gp at all times, except for plot items, which are always 0 gp buy/sell.
+- Static Placeable objects forced to default animation, because that's the only animation the game supports for them.
+- Fixed stack overflow bug when placeable object properties opens an object whose portrait ID has no value in portraits.2da.
+- Open Lock and Close Lock DC now disabled when 'Key Required to Lock or Unlock' is checked.
+- Fixed minor bug with Preview Window layout cutting off information for triggers.
+- Fixed Preview Window not showing all information for Trigger and Store instances.
+- Fixed problem where in non-English languages, the users would see English text in the custom palettes, even when the custom palette node's blueprint did have a StrRef for its name. Refreshing a palette will now use the StrRef for a blueprint IF the blueprint name has a StrRef, AND the blueprint name's locstring does not have any embedded text.
+- Fixed bug where, if a module could not be opened, the toolset would say that required hak paks are missing even if there are no missing hak paks.
+- Fixed inability to cut/copy/paste in the non-modal dialogs appearing over the main toolset window (eg., the Find Instances dialog).
+- Fixed garbled characters in Store Setup Dialog when warning that the selected creature is of a hostile faction.
+- Fixed creature and item colors not updating when choosing their colors in their property dialogs when environment mapping is turned off.
+- Fixed memory leak in hak pak attachment in the module properties dialog.
+- Fixed encounter spawn point orientations not saving correctly when they are facing between 0 and 180 degrees.
+- Fixed OK button appearing on the generic warning dialog when it should not.
+- Fixed bug where, when trying to remove all references to a script or conversation from the module, it would stop after the first such removal in each area in the module, leaving the other object instances untouched.
+- Fixed bug where certain item types were being rotated about an incorrect axis when rotating them in the area viewer.
+- Fixed access violations and allocated memory overwrite errors when doing the following exact set of steps: Ctrl-C an instance, Ctrl-V, then select a different palette or blueprint, then select another instance and Ctrl-C, Ctrl-V.
+- Fixed bug where shrinking an area would not mark the area or module as modified.
+
+Script Editor:
+- Script Editor no longer parses #include files inside /* */-style block comments when generating the list of functions and variables in the sidebar
+- In Script Editor, Ctrl+F now prompts to search again from the beginning if the string was not found, just like F3.
+- Script Editor dialog remembers window state (maximized/normal)
+- Fixes bug where Script Editor would fail to compile conditional scripts when doing a Save All with Autocompile-on-save turned on.
+- Fixed bug where exporting a conditional script would sometimes not compile the script.
+
+Conversation Editor:
+- Added Insert Token button to Conversation Editor.
+- Conversation Editor remembers position of splitter bars.
+- Added Ctrl+F, Ctrl-R, and F3 shortcut keybindings to Conversation Editor.
+- Fixed Conversation Test dialog's initial test node not showing all the text for a response that has long, multiline text.
+- Fixed BadStrRef context menu item in the Conversation Dialog Input dialog. It now reads "Insert Token".
+- Fixed bug in Conversation Editor where the [END DIALOGUE] indicator on a PC node (and all nodes linking to it) would not disappear after pasting an NPC node under it (either as a link or for real).
+
+Journal Editor:
+- Journal Editor no longer re-sorts the Entries within a Category unless the last edited Entry had its ID changed. This reduces the frequency with which the treeview will scroll to the right when moving among the treenodes (the scrolling was annoying).
+- Journal Editor has vertical scrollbars in text entry fields now.
+
+Plot Wizard:
+- Changed Plot Wizard basic page to show blueprint full names instead of resrefs.
+- When loading a plot blueprint, Plot Wizard no longer asks for confirmation to overwrite the current plot if the current plot has not been modified.
+- Fixed progress frame sometimes not repainting when changing the status of a line or set of lines.
+- Fixed progress frame having red X's for all steps when reopening a plot or an existing plot node. The steps are now marked with green checks to reflect that they had been completed already.
+- localized plot overwrite confirmation when loading plot blueprint in plot wizard.
+
+
+Utilities
+=-=-=-=-=
+- added a script debugger, spawnable from scripting - utils\DebugServer.exe
+  - YOU MUST GO INTO THE TOOLSET OPTIONS AND TURN ON THE OPTION "Generate Debug Information When Compiling Scripts"
+- added a command-line script compiler - utils\clcompile.exe
+- added a database packing program - utils\DataPack.exe
+
+
+2DA Files Changed in this Update:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+- appearance.2da
+- baseitems.2da
+- classes.2da
+- feat.2da
+- iprp_spells.2da
+- itempropdef.2da
+- packages.2da
+- portraits.2da
+- soundset.2da
+- spells.2da
+- visualeffects.2da
+- weaponsounds.2da
+
+
+
+Patch details for 1.29:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+- Fixed an issue with NPCs "warping" around on the client screen
+- Added support for 5.1 and 7.1 speakers settings in the sound panel
+- Fixed Stoneskin limit, so that its now reduced by the correct amount if you take more than the maximum absorbed damage from a hit.
+- Active item properties should be properly useable on items bought from stores and split from piles. This fixes the "can't use purchased item in inventory" issue.
+- Fixed logging out with a placeable container open causing the container to be permanently stuck open.
+- Added more informative user feedback on why their new server vault character was rejected.
+- Fixed NPCs attacking DMs.
+- PCs can no longer pick the DMs pocket. =P
+- Fixed potions/scrolls not working and breaking your game if you set the starting hour/year to zero in module properties.
+- Tags are now being properly enforced to their 32 character limit.
+- Fixed a bug where game rooms would show up twice when you hit cancel on direct connect panel.
+- Fixed an art bug with filter list on internet page and tweaked chat page also.
+- Fixed the "Release From Domination" icon.
+
+
+DM Client:
+=-=-=-=-=-
+- Fixed a display issue where not all players were being displayed in the DM Clients player list.
+- Fixed DM possessed creatures changing to friendly on No-PVP servers.
+
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+************************
+* SCRIPTERS TAKE NOTE! *
+************************
+- CopyObject() scripting command "Tag" parameter is now clamped at the common maximum of 32 characters for tags.
+
+
+Server-specific changes:
+=-=-=-=-=-=-=-=-=-==-=-
+- Fixed the server option "RotateServerLog" to not delete old logs when rotation is disabled on a server restart.
+
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+- Fixed an issue where deleting a resource would replace the resource with the word "resref".
+
+
+2DA Files Changed in this Update:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+- NONE
+
+
+Patch details for 1.28:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+WARNING! AS OF THIS PATCH, ALL MODULES CREATED/SAVED WITH THE VERSION 1.28 TOOLSET ARE TAGGED AS REQUIRING VERSION 1.28 OR HIGHER OF NEVERWINTER NIGHTS GAME OR TOOLSET.
+IF YOU DON'T WANT TO BRAND YOUR MODULE AS 1.28 THEN DO NOT EDIT YOUR MODULE IN THE VERSION 1.28 TOOLSET.
+IF YOU WANT TO GO BACK TO 1.27, WE WILL HAVE A 1.28 TO 1.27 PATCH AVAILABLE.
+
+- Added Gnolls to the game resources.
+- Added support for multiple Hak Paks.
+- Added "unlockcamera 1" console command. This overrides min/max pitch and distance to allow distances from 1 - 25, and pitch from 1 - 89.
+- Added custom tokens to the journal system. No, really. For sure this time.
+- Added custom token support to placeables. If you add a custom token to a placeable name, then if that token is set when the area loads in, it will show up in the name of the placeable. (ie: Jail Cell can be changed to "Yoko's Jail Cell" when you re-enter an area once you've captured Yoko in the keep). This won't change for people already in the area.
+- Fixed polymorph removal on all saving/exporting of creatures.
+- Added new ATI code for the ATI Catalyst 3.0/3.1 drivers. Please upgrade to the ATI Catalyst 3.1 drivers if you have not done so already.
+- Changed Ambient Music Day/Night transition fadeout time to 10 seconds.
+- On level up and down, made sure that we change the pre-polymorph values for STR, DEX, and CON that are stored on the server, so that when the polymorph is cancelled, the ability changes are reflected on the base creature.
+- Made a fix to Henchmen/familiars having problems when using an exported character in a saved game.
+- Fixed the Flame Arrow script that was incorrectly signalling itself as Magic Missle.
+- Fixed an obscure crash when closing the options panel using the default 'O' key.
+- Made a fix to prevent an obscure crash when generating a familiar name.
+- Fixed an issue with the hide empty/hide full servers filter being switched around.
+- Fixed an issue where tag lookups using more than 32 characters would fail.
+- Made a fix for pressing 'I' to close inventory while a placeable container is open, causing the container to be stuck open permanently.
+- Fixed an odd faction bug where certain NPC's were hating each other.
+- Fixed a feedback crash with Barbarian Rage in certain specific areas.
+- Fixed "Damage Reduction absorbed # damage" message. It now displays the correct value absorbed for Barbarians/Monks.
+- Changed resolution of FirstName and LastName tokens in conversations so that if a first name is required but isn't populated, it will use the last name instead and vice-versa. Note that this means if both a FirstName and a LastName token are used and only one name is given for the character, the name will appear twice in a conversation. But, you should be using <FullName> in that case anyway.
+- If GameSpy is offline, Favorites, History, Buddy Lists, and Direct Connect will all be available from the Internet Multiplayer screen instead of denying access.
+- Fixed problem with inventory items locking up after moving them and then cancelling the action queue.
+- Fixed problem with inventory items locking up after trying to move, drop, or unequip them while stunned.
+- Fixed problem with unmemorizing spells on multi-class characters.
+- Fixed a problem with many items in the action queue and the queue misfiring.
+- Fix for in game guis not updating after a character loses a class during a level-down.
+- Fixed the the restoring of previous remaining skill points during a level-down. It was restoring them based on the earlier multi-class level instead of the total character levels.
+- Fixed seamless portals that don't have waypoints specified (they will portal you now)
+- Fixed an incorrect entry in soundset.2da that was causing Dire Rats to not have sounds.
+- Fixed Gargoyle statues not destroying themselves when spawning a Gargoyle, as well as improved the visual effect of the statue's destruction.
+- Fixed Wail of the Banshee script. It now allows the game to do proper Death Immunity checking.
+- Added seamless portal password security check. ie: portal seamlessly to passworded server with no password specified fails.
+- Made a fix for creatures in a Hak Pak crashing the game when reloading the hak pak saved game from within the game.
+- PVP attitude is no longer re-initialized on area transitions. Like/Dislike buttons won't reset to "Like" on area transitions.
+- Added in-game chat color stripping.
+- Fixed convoluted saving crash related to creating a placeable with inventory then unclicking the 'inventory' checkbox and then deleting said inventory through scripting and then trying to save.
+- Made several game stability fixes.
+- Made some fixes to prevent game/character hacking. Sorry, but we will never publically discuss specific changes to the game with regards to hacking the game.
+- Fixed a problem where containers could get stuck open when an NPC starts a conversation with you.
+- Fixed JumpToPoint and JumpToObject from firing when the client is loading or playing a movie.
+
+
+DM Client:
+=-=-=-=-=-
+- Changed the DM Faction when possessing a creature to that creature's faction. ie: Possessing a hostile creature will keep him hostile.
+- Added some safety checks to some DM commands.
+- Partial fix for server crash when DM possesses gated in Balor and it gets unsummoned.
+- Fixed crashes caused by using console command "dm_setfaction <faction_name>".
+- Fixed Dungeon Master area transitions - they were getting a blank entry in the party bar during some transitions.
+- Made some fixes to the DM jump to/goto commands and added some more error checking to address any potential crash situations.
+- Fixed problem where DM viewing NPC character sheets displayed hit points as 1/1.
+- Fixed an issue caused by DM possessing a creature and then creating/editing a map pin.
+
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+- Added smooth transitioning parameter to SetCameraFacing().
+     // - nTransitionType: CAMERA_TRANSITION_TYPE_*  SNAP will immediately move the
+     //   camera to the new position, while the other types will result in the camera moving gradually into position
+     //   int CAMERA_TRANSITION_TYPE_SNAP = 0;
+     //   int CAMERA_TRANSITION_TYPE_CRAWL = 2;
+     //   int CAMERA_TRANSITION_TYPE_VERY_SLOW = 5;
+     //   int CAMERA_TRANSITION_TYPE_SLOW = 20;
+     //   int CAMERA_TRANSITION_TYPE_MEDIUM = 40;
+     //   int CAMERA_TRANSITION_TYPE_FAST = 70;
+     //   int CAMERA_TRANSITION_TYPE_VERY_FAST = 100;
+- Added CopyObject() scripting command.
+     // Duplicates the object specified by oSource.
+     // ONLY creatures and items can be specified.
+     // If an owner is specified and the object is an item, it will be put into their inventory
+     // If the object is a creature, they will be created at the location.
+     // If a new tag is specified, it will be assigned to the new object.
+     object CopyObject(object oSource, location locLocation, object oOwner = OBJECT_INVALID, string sNewTag = "");
+- RemoveFromParty() no longer removes a player from the party when the server is set to "One Party Only".
+- Added some safety checks for ActionGiveItem() and ActionTakeItem() - there were some reports in the scripting forum that the scripting commands could crash the game in some odd situations.
+- Fixed GetNearestCreature() so that when first or only criteria is CREATURE_TYPE_IS_ALIVE it doesn't always return an invalid object.
+- Changed how OnDisturb events are fired for placeables when the item being moved is gold.
+- Fixed GetIsResting() - was always returning false except when called from OnPlayerRest.
+- Changed AddHenchman() so that you cannot add a player character or a DM as a henchman.
+- Fixed problem with SetMapPinEnabled() whereby map pins could not be disabled. The map wasn't updating correctly, so the pin WAS indeed disabled but still displayed on map.
+- Fixed GetHasSpell() and DecrementRemainingSpellUses() to work properly with spontaneously cast spells.
+- Fixed the GetFirst/NextFactionMember() scripting command toggle.
+- Fixed crash when ActionStartConversation() assigned to area or module.
+- Fixed a bug when calling a GetAlignment() function on a non-creature.
+
+
+Server-specific changes:
+=-=-=-=-=-=-=-=-=-==-=-
+- Added server option "RotateServerLog=0/1" to nwnplayer.ini, under [Server Options]. If this is turned off the server logs won't rotate (default is on).
+- Added logging for the ban list being modified and the difficulty setting changing.
+- Added server logging of connection attempts.
+- Added server CDKey logging to "Player Name (XXXXXXXX) Joined as Player #" messages.
+- We now load in the ban lists from the ini, when ever the ini file has changed. This should allow cross server banning when running multiple servers on the same box.
+
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+- Added multiple Hak Pak support.
+- Improved module loading speed. However, this change means that you can no longer insert blueprints into a module outside of the Toolset by putting them in the module temp directory, and expect them to appear when you load the module.
+- Added right-click menu option to manually reload any of the blueprint palettes. Useful if you inserted blueprints into a module outside of the toolset and they don't appear because of the new module loading code.
+- Optimized loading of blueprint files during palette refresh after operations such as File|Import, or creating a new plot.
+- In the inventory dialog, warn user when equipping items that a creature cannot use, and list the feats that are missing. This will not warn about existing problems with creatures, only warn for new equipping attempts.
+- The Toolset will no longer open a module if the module's Hak Pak does not exist.
+- The Conversation Editor saves newlines as just an LF character, instead of a CR+LF. Fixes appearance of "box" characters when showing the conversation in the game. (Note: any existing conversation nodes containing CR-LF newlines will have to be edited in order to be converted.)
+- Added 2D view to items in the preview window
+- Mouse rotation of objects will snap orientation to mulitples of the rotation increment.
+- Increased precision/decreased rotation speed on the object rotate buttons.
+- Fixed a bug where the Sound Source position would not be updated when the 3D graphical representation of a sound object was moved, causing the user to hear it from its orginal position instead of the correct new position.
+- Fixed an assertion error when redrawing a trigger/encounter polygon after viewing the properties of a creature blueprint.
+- After redrawing a trigger/encounter polygon, the selection bounding box correctly updates to the new shape instead of still appearing around the original polygon's vertices.
+- Fixed an access violation when painting an object from a palette when a different palette is active.
+- Changed the Script Wizard to use HasItem() instead of CheckPartyHasItem() since the wizard can only take items from the speaker, not from the party.
+- Fixed a divide by zero script error with AutoDC checks from the Script Wizard.
+- Recursive file includes in scripts no longer generates the same error message twice.
+- Fixed a bug where parsing a script file with a circular include would cause the script text to change to the error text. The error text will correctly go into the Help pane now.
+- When loading a tileset's groups, show an error message when a tilegroup has no entry for one of its tiles.
+- Deleting a generic trigger's OnClick event will reset the Cursor to 'none'.
+- Palettes no longer remain visible after user indirectly closes the current area by attaching a hak pak.
+- When exporting resources, it is now optional as to whether Factions reset to their Parent values.
+- Fixed the Trigger dialog Tag fields not being flagged as modified when pasting text containing invalid Tag characters. Fixes bug where changes would not be saved when pasting such text.
+- Fixed a bug where Placeable Objects, under rare cases, would be saved as BTP instead of UTP.
+- Placeable Wizard no longer saves a blueprint file when it's not supposed to (eg, when started in Plot Wizard).
+- Fixed memory leak when destroying Placeable Properties dialog.
+- Fixed memory leak while adding a placeable blueprint's node to the blueprint palettes.
+- When editing the inventory of a blueprint, the Inventory dialog will autoselect the appropriate blueprint palette when the user right-clicks on an item in the inventory.
+
+
+Plot Wizard
+=-=-=-=-=-=
+- Fixed bug where acquiring a plot item would grant XP every time it was acquired, instead of only the first time.
+- Fixed some StrRefs in the plot blueprints.
+- Fixed BadStrRef label on the 'Insert Token' menu option when editing conversations.
+- Fixed NonPlotWizard plots not having their ResRefs set after being saved.
+- NonPlotWizard Plots can be deleted now.
+- Talking to a villain no longer updates the state of the current plot, although it will still update the cast member conversation state on the villain.
+- Fixed Extra Scripting button for Conversation Actions still being visible in a Single Statement Plot Node.
+- Fixed Journal Checkbox not being checked when the journal entry has no string but has a stringref.
+- Modified the Conditional script that shows the Acceptance Conversation node: If the prerequisite node requires killing a villain, then the condition will check for that.
+- Added custom scripting to plot node conversation nodes.
+
+
+Hak Pak Editor:
+=-=-=-=-=-=-=-=
+- Added File|Merge option to merge another Hak Pak into the one that is currently open. This will just merge the file content of the Hak Paks. This will NOT merge 2DA files.
+- Added error reporting to the "Build Hak from directory" option of the Hak Pak editor, which is invoked with a command line of the form "nwhak.exe <newhakfile.hak> <directory_to_create_from>"
+
+
+2DA Files Changed in this Update:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+- appearance.2da
+- portraits.2da
+- soundset.2da
+
+
+
+Patch details for v1.27:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+WARNING! AS OF THIS PATCH, ALL MODULES CREATED/SAVED WITH THE VERSION 1.27 TOOLSET ARE TAGGED AS REQUIRING VERSION 1.27 OR HIGHER OF NEVERWINTER NIGHTS GAME OR TOOLSET.
+IF YOU DON'T WANT TO BRAND YOUR MODULE AS 1.27 THEN DO NOT EDIT YOUR MODULE IN THE VERSION 1.27 TOOLSET.
+IF YOU WANT TO GO BACK TO 1.26, WE WILL HAVE A 1.27 TO 1.26 PATCH AVAILABLE.
+
+- Added Rat and Dire Rat to game resources.
+- Added support for Shiny Water for ATI Radeon users.
+- Added an option for users to log client chat to the "logs\nwclientLog1.txt" file. The setting in the nwnplayer.ini file is:
+  [Game Options]
+  ClientChatLogging=0
+- Changed Journal system to allow for tokens.
+- Added feedback to text window, for failed level-up attempts.
+- Official Campaign fixes:
+ - Chapter 1 - Fixed the force-field door in the Beggar's Nest Warehouse.
+ - Chapter 1 - fixed a blank journal entry problem.
+ - Chapter 2E - made a symptomatic fix to the Host Tower: Pinacle bug - currently broken save games will have to follow the instructions here - http://nwn.bioware.com/support/known.html#1.25
+ - Chapter 3 - fixed a blank journal entry problem.
+ - Chapter 3 - fixed force field doors in Creator Race Ruins so that they are closed.
+- Monks now suffer the penalty of equiping a shield just like equipping armour.
+- Fixed a bug where character files would be saved out then loaded would sometime be unusable with ghosted inventory items and an inability to act in the game. The Combat Flag was being saved out and reloaded here.
+- Fixed a bug when validating a Wizard character's spells; it was using their use thier CHA modifier instead of INT.
+- Made a preliminary fix for the infamous "Swapping Out the Blood Sailor Uniform After Being Shot By Arrows" crash. Oh man was this an obscure one to find.
+- Made a symptomatic fix to Henchmen going hostile. It seems that after quitting and rejoining a multiplayer game, something was getting corrupted, causing your henchman to go hostile. We have fixed this, although they still aren't in your party even though they show up on your party bar after a load. You can simply ask them to join you again. We are continuing to investigate so we can have a permanent solution.
+- Made a fix to properly level down multi-classed characters.
+- Reversed size bonus for Knockdown so that the larger creature has the advantage as stated in the manual.
+- Changed Improved Knockdown so that the attacker knocks down as if it were one size larger, as stated in the manual.
+- Made a preliminary fix for corrupted character files crashing the game server. Bad characters will end up as ghosts on the server.
+- Made some fixes to prevent game/character hacking. Sorry, but we will never publically discuss specific changes to the game with regards to hacking the game.
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+- Added optional parameter to ClearAllActions() that allows you to clear the combat state on a creature.
+- Added EffectCutsceneDomination().
+    // Returns an effect that is guaranteed to dominate a creature
+    // Like EffectDominated but cannot be resisted
+    effect EffectCutsceneDominated();
+- Added GetDroppableFlag(), GetUseableFlag(), and GetStolenFlag().
+    // Return true if item can be dropped
+    // - oItem: item to query
+    int GetDroppableFlag(object oItem);
+
+    // Returns true if placeable object can be used
+    int GetUseableFlag(object oObject=OBJECT_SELF);
+
+    // Returns true if item is stolen
+    // - oItem: item to query
+    int GetStolenFlag(object oItem);
+- Fixed a script compiler issue where too many variables in a script caused the compiler to fail with a non-descriptive "Privileged Instruction" error.
+- Fixed a crash if GetIsDM() is called with a non-creature.
+- Fixed a crash when ActionUnequipItem() was called by a non-creature.
+- Fixed a crash when certain scripts try delete polymorphed creature items.
+- Fixed a bug in GetMaxHitpoints() when hitpoints for a PC's level are less than 1 it was resetting their total hitpoints to 1.
+- GetHasFeat() will now check the highest level of a feat.
+- DecrementRemainingFeatUses() will now look for the highest level of the feat to decrement. (ie. barbarian rage will decrement properly for higher levels)
+- GetHasSpell() and DecrementRemainingSpellUses() will now work with master spells (like protection from alignment).
+- Game no longer behaves erratically when the first element of a structure is a string or engine-defined structure.
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+- Added the Plot Wizard:
+  http://nwn.bioware.com/builders/plotwizard_intro.html
+  http://nwn.bioware.com/builders/plotwizard_tutorial.html
+- Conversation Editor:
+ - Added flag to NOT zoom camera, overriding user preference in game.
+ - Added check for stereo sound files for dialog, and issue a warning when user tries to preview one. Mono sounds can only be played in conversations.
+ - Added 'No Animation' animation. Speaker will continue whatever animation they were already running i.e. continue sitting or lying down.
+- Changed the Import/Export dialog interface changed so that user adds resources of possibly different types to a list before proceeding with the export. This makes it possible to export resources of multiple restypes into a single ERF using only a single File|Export command, instead of one File|Open for each restype as was the case before.
+- Changed Token selector dialog to add "[" "]" around highlight tokens.
+- Fixed Force Field door entry to be Visible.
+
+Hak Pak Editor:
+=-=-=-=-=-=-=-=
+- Added an 'Export All' option.
+- Hak Pak editor now restricts file names to 16 characters when saving.
+- Exporting now prompts for a directory and not for each file that you are trying to export.
+
+Neverwinter Nights Content Installer:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-
+- Fixed small Windows icons from disappearing after exiting in Win9x.
+- Fixed menubar not rendering correctly on some Win9x machines.
+- Fixed text files not opening in notepad under Win9x.
+- Increased language support for all programs to include German, French, Spanish, and Italian.
+
+Linux Dedicated Server:
+=-=-=-=-=-=-=-=-=-==-=-
+- Fixed a few RedHat 8 compatibility issues causing a shutdown crash and high CPU utilization.
+
+
+Patch details for 1.26:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+- Fixed the AC application bug where AC changes through spells and feats weren't being applied, but were being removed. Please note: Stoneskin and Greater Stoneskin are not supposed to change your AC.
+- Fixed a crash using Direct Connect on LAN server page.
+- Fixed a GameSpy chat crash
+- Double-clicking in chat once again will start sending a private message.
+- Suppressed a To Hit roll when casting healing spells. This To Hit roll was only for using healing to attack hostile undead.
+- Changed default chat mode to Talk.
+- Made a fix for barter panel text - some of it was not being clipped properly.
+- Fixed the history page so it will show servers on same IPs but different ports.
+- Fixed an issue with the save game screen and NWN module names not showing up as translated.
+- Fixed the player list multiple selection bug.
+- Fixed it so that campaign hints do not show up in user created modules.
+- Direct connecting as a DM now properly prompts for the DM password. The text was missing before.
+- Changed the default sort column on the Buddy List to server name instead of player name. This just looks better as it packs all offline servers together.
+- Fixed a display issue with connecting to a server loaded from a save game and displaying the wrong character information.
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+- Made a fix to DecrementRemainingFeatUses() - You must have at least one feat use remaining to be able to decrement it.
+
+
+Patch details for 1.25:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+WARNING! AS OF THIS PATCH, ALL MODULES CREATED/SAVED WITH THE VERSION 1.25 TOOLSET ARE TAGGED AS REQUIRING VERSION 1.25 OR HIGHER OF NEVERWINTER NIGHTS GAME OR TOOLSET.
+IF YOU DON'T WANT TO BRAND YOUR MODULE AS 1.25 THEN DO NOT EDIT YOUR MODULE IN THE VERSION 1.25 TOOLSET.
+IF YOU WANT TO GO BACK TO 1.24, WE WILL HAVE A 1.25 TO 1.24 PATCH AVAILABLE.
+
+- added Kobolds and Malar Panther to the game - demo modules included
+- added Hidden Wall Door and Hidden Trap Door placeables to the game - demo module included
+- added the Neverwinter Nights Content Installer. Please check out the new files in your "utils" directory.
+- added Buddy Lists to both the in-game Server Browser and the Neverwinter Nights Community site.
+  Through this, you will be able to see the on-line gaming status of your Buddies as well as the server that they are playing on.
+  You can view the Community site version of the Buddy List here - http://nwn.bioware.com/my_account/buddy_list.html
+- Moved "source" 2DA files from the patching system as they were sometimes breaking people's ability to patch. They are now in the root of the NWN directory in a file called "2dasource.zip".
+- Upgraded sound system to Miles 6.5
+- Added the ability for users to specify their chat colors using settings in nwnplayer.ini. The color values are specified by:
+
+  Color=RedValue,GreenValue,BlueValue
+
+  where the color values can be in the range of 1 to 255. You cannot use 0.
+
+  Here are the default colors:
+
+  [Chat Colors]
+  TalkColor=240,240,240
+  ShoutColor=255,239,80
+  WhisperColor=128,128,128
+  TellColor=32,255,32
+  ServerColor=176,176,176
+  PartyColor=240,240,240
+  DMColor=16,223,255
+
+  Here are some sample color settings:
+
+  [Colors]
+  Color=255,1,1	// Red
+  Color=1,255,1    // Green
+  Color=1,1,255  // Blue
+  Color=1,255,255   // Cyan
+  Color=255,1,255 // Magenta
+  Color=255,255,1  // Yellow
+  Color=255,255,255   // White
+
+  In case you interested Orange = 255,102,1
+
+- Added "/tk" and "/talk" to the chat command list.
+- Added Console Commands and for:
+  - getbannedlist
+  - banplayername [name]
+  - banplayerip [ip]
+  - banplayercd [public CD Key]
+  - unbanplayername [name]
+  - unbanplayerip [ip]
+  - unbanplayercd [public CD Key]
+- All 2DAs now work properly in Hak Paks. Seriously. I am not kidding.
+- Fixed miscalculation of AC bonuses.
+- Fixed saving throw miscalculation.
+- Reversed disarm weapon size modifier so that the larger weapon gets a bonus rather than a penalty to match the feat description.
+- Improved CD checking compatibility.
+- Fixed the plot-item Paladin tunic problem in Olgerds store in the Prelude.
+- Fixed door initial state animation.
+- Fixed a problem with portals not going to the proper waypoint.
+- Bard song temporary hitpoints are now working properly.
+- Changed ban lists to write out to the nwnplayer.ini file on each modification.
+- Offhand damage should now work properly for double bladed weapons.
+- Sped up the server vault character listing.
+- You can no longer set traps on objects that are already trapped.
+- Prevent illegal characters in the module name from breaking save game file names.
+- Fixed Store Sell Mark Up value to work in the same range as the Toolset.
+- Failing to load a Module reports the proper error message instead of "Not Enough Disk Space"
+- Fixed a problem with the game loading modules with multiple periods in the module file name.
+- Fixed the problem of not being able to unequip your items if you polymorph, save, load, then unpolymorph.
+- Do Max CR check for spell talents always, not just for metamagicked spells.
+- Fixed a visual bug on older ATI cards playing the Bink movies under Windows XP.
+- Fixed a potential server hang in Jump all players to point.
+- Fixed a problem if you were kicked from the server while in an area transition, your client would hang.
+- Fixed a server crash when a player ignored a party join request from a player who had left the game.
+- Fixed 2 memory leaks.
+
+DM Client:
+=-=-=-=-=-
+- Fixed problems associated with saving games while DM possessing NPCs
+- DMs will now see a player's/creature's Character Sheet when examining them, rather than the Examine Menu.
+- DM Party bar will now display Character Names instead of Player Names.
+- DMs now hear ALL party chat messages from ALL players by default.
+- Fixed a DM-created portalling issue.
+- Cleaned up some DM chat display issues.
+- Fixed a problem associated with saving games while DM possessing NPCs.
+- Fixed a rare crash that occurs when radialing off of a Player Portrait when using the DM client.
+- DMs are no longer affected by Jump all players to point.
+- Fixed a crash that sometimes occurs when a DM tries to level down an NPC using Take Level.
+
+Scripting-specific:
+=-=-=-=-=-=-=-=-=-=
+- In ActivePortal(), the sWaypointTag parameter is now case sensitive.
+- Changed maximum size of compiled scripts from 256K to 512K.
+- Added GetResRef() scripting command.
+- Added DecrementRemainingFeatUses():
+     // Decrement the remaining uses per day for this creature by one.
+     // - oCreature: creature to modify
+     // - nFeat: constant FEAT_*
+     void DecrementRemainingFeatUses(object oCreature, int nFeat);
+- Added DecrementRemainingSpellUses().
+     // Decrement the remaining uses per day for this creature by one.
+     // - oCreature: creature to modify
+     // - nSpell: constant SPELL_*
+     void DecrementRemainingSpellUses(object oCreature, int nSpell);
+- Fixed ActionPauseConversation().
+- Fixed CreateObject() - it was having problems if the template wasn't found.
+- Fixed GetFirstObjectInArea() and GetNextObjectInArea().
+- GetStartLocation() nows return a valid area.
+- Fixed GetHasSpell() to work for Sorcerers and Bards.
+- GetName() will work for modules and areas now (returns name in language of module).
+- Fixed a crash in PlaySound() when called by module.
+- Fixed main tile light constants and added constants for source lights.
+- SetTileSourceLightColor() is now working properly.
+- Fixed GetItemPossessor() to work when loading polymorphed possessor in a save game.
+- Rotating placeables now rotates the walkmesh as well in SetFacing().
+- AdjustAlignment() no longer effects DMs.
+
+Neverwinter Nights Aurora Toolset:
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
+- Added a new column to "ambientmusic.2da" and "ambientsound.2da" - "DisplayName" - if the "Description" column contains "****", then the Toolset will use the text in "DisplayName" for the name of the file.
+- Fixed bug where setting the animation/open state on a door or placeable object did not flag the area as being modified, and hence changes would not be saved.
+- Changed resource selection dialog labels when exporting resources
+- Changed the display of data from "placeables.2da", to use the "Label" column if the "StrRef" column contains "****".
+- Prevent illegal characters in the module name from breaking save game file names, such as \ / : * ? . " < > |
+- Fixed bug where baseitems.2da was not being reloaded after loading a module with a Hak Pak or after changing the Hak Pak for a module.
+- Creature Wizard acts like the Creature Editor now, using the Label column in Appearance.2da if the StrRef was unspecified.
+- Fixed a bug where the CR of a creature would be wildly different between its blueprint and its instance.
+- Fixed bug in Script Editor where an error dialog would appear under certain circumstances when moving the script editor window partially offscreen then moving it back onscreen.
+- When building a module and compiling scripts, if a script fails to compile only because it lacks a "void main()" or "int StartingConditional()", it is not reported as an error.
+- Fixed a bug in Build dialog where double-clicking a script having a compile error would open the Script Editor in unchangeable "conditional" mode so that it would not be possible to compile a "void main()" script without errors.
+- When loading an area, check for valid tile-group placement before adding the group.
+- When loading a placeable object, if the BodyBag property was saved with an invalid value, use a default Treasure Model.
+
+Hak Pak Editor
+=-=-=-=-=-=-=-
+- Prevent adding .bik movie files. Bink movies and BMU music files must go in the "movies" and "music" directories, respectively.
+
+
+Patch details for 1.24:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+- Added support for high resolution font (larger text in most places). The option is in Advanced Video Options.
+- onLocked and onUnLocked events for doors and placeables work now.
+- DM to DM chat messages can now be filtered out in the chat window.
+- Added a tooltip for quickbar "Assign Command".
+- Fixed pop-up GUIs appearing on top of the load screen.
+- Made a small fix to the server list chat edit area.
+- When saving a servervault subdirectory character and the player has no name, save into a subdirectory called "lost+found" instead of the root of the servervault.
+- Fixed an issue with generating texture IDs for Matrox video cards.
+- Plot objects now have all immunities.
+- Fixed a memory leak in inventory.
+- Fixes to Darkness vs. Ultravision and True Seeing.
+- Fixed a DM Client crash when trying to bring up the PvP menu in certain situations.
+- Fixed a problem with determining character encumbrance when loading.
+- Fixed a problem with DMs where getting killed when someone turned off their plot flag through scripting.
+- Fixed the 21st player dedicated server crash.
+- Made a fix to diseases that addresses a server crash.
+- Fixed server crash when critically failing to set a trap.
+
+Scripting-specific
+=-=-=-=-=-=-=-=-=-
+- Allow CreateItemOnObject() to work on item containers.
+- Fixed the GetItemInInventory() crash when examining item containers.
+- VectorToAngle() bug fixed.
+- InsertString() wierdness that caused a crash is fixed.
+- DelayCommand() now works for delays over 1 game day.
+- GetSpellId() now works for non-creatures.
+
+Neverwinter Nights Aurora Toolset
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+- Journal Editor GUI tweak.
+
+Hak Pak Editor
+=-=-=-=-=-=-=-
+- Added ability for the Hak Pak editor to take a .hak file name as a command line parameter.
+
+
+Patch details for 1.23:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+- We have removed SecureROM disk checking.
+- Optimized some multiplayer code for modem/high-ping users.
+- Added new Toolset Wizards. See below for details.
+- Improved overall game stability.
+- Added the option "Suppress Base Servervault" to prevent listing characters in the root of a Server Vault:
+
+nwplayer.ini
+[Server Options]
+Suppress Base Servervault=0
+
+Set this to 1 if you don't want your clients seeing character files from the root of the Server Vault.
+
+- Added code to handle bad save game data properly.
+- Invalid Character bug in Server Vault is fixed.
+- More DM Client fixes for possesion, factions, and crashes.
+- "dm_spawnitem" command readded to the game
+- Added a swearfilter to the multiplayer chat area.
+- Fixed an issue with scripting a door or placeable to lock itself.
+- Fixed the GetFacing() command in NWscript to return the correct value.
+- Fixed creature bumping through walls/doors.
+- Fixed a problem where DMs couldn't GoTo a new area if a large part of the center of the new area was elevated, or didn't have a walkmesh by increasing the search radius.
+- Fixed a bug causing new characters to enter the game with an empty quickbar rather than a default set.
+- Cleaned up and fixed several quick bar issues, including text overlapping and replacing problems.
+- Fixed a bug with Armor Class specific bonuses versus alignment not always working.
+- Added an /ignore command to the multiplayer chat area:
+
+/ignore <chatname>
+/unignore <chatname>
+
+Since chat names can change at each session, the ignore list is not saved.
+- Fixed the adjust alignment feedback messages for the neutral range.
+- Fixed a bug with weapon damage display on the character sheet with variable bonuses and power attack.
+- Added scripting access functions for stealth/detect mode.
+  // Returns the stealth mode of the specified creature.
+  // - oCreature
+  // * Returns a constant STEALTH_MODE_*
+  int GetStealthMode(object oCreature);
+
+  // Returns the detection mode of the specified creature.
+  // - oCreature
+  // * Returns a constant DETECT_MODE_*
+  int GetDetectMode(object oCreature);
+
+- Fixed crash bug where a trap set fails critically and sets off the trap.
+- Fixed an unhilighting bug in the DM chooser that was causing the DM Client to crash randomly on some GoTo's that involved an area transition.
+- We no longer allow the DM to attempt to possess corpses.
+- Fixed server crash when trying to possess a creature that is transitioning into Limbo.
+- Added module/game version checking for future game content patches.
+
+Neverwinter Nights Aurora Toolset
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+- Added a Popup Text "wizard" dialog, accessible from the right-click menu for Placeable Objects.
+- Added a Store Setup Wizard, accessible from the right-click menu for Creatures, Doors, and Placeable Objects.
+- When loading Creature appearances, the Toolset now uses the Label column in appearances.2da if there is no StrRef.
+- Fixed a bug where references to deleted scripts were not being removed from Conversation files.
+- Added Shift-Del keyboard shortcut for cutting text to the clipboard in the Toolset script editor.
+- Fixed a bug where references to deleted scripts were not being removed from placeable objects and doors under certain circumstances.
+- Added module/game version checking for future game content patches.
+
+
+Patch details for 1.22:
+Neverwinter Nights Game
+=-=-=-=-=-=-=-=-=-=-=-=
+- Fixed Intellect Devourer not spawning in certain cross-version save games.
+- Fixed a bug where Skills on the character sheet weren't being displayed and were disabling certain skills.
+- Changed the error message for 'load module failed' to include the possibility that the module was created using a newer version of the resources/toolset.
+- Fixed a text color issue in the game server chat area.
+- Fixed a bug where you joining a server with no module loaded that could crash the game client in certain situations.
+- Fixed a bug where typing a server password for a client connection was showing actual characters that are typed, instead of asterisks.
+- Fixed a bug in "One party only" game where the DM possesses hostile creature, then player joins and gets added to hostile creature's party.
+- Fixed a server crash that occurred when saving during a module load, which could occur with autosaves/manual saves when "Reload When Empty" was enabled or during module transitions.
+- Fixed server crash if a script called ExportAllCharacters() when a player was at the character selection screen.
+- Fixed an incorrect result for many of the damage types in Linux due to small differences in floating point math.
+- Fixed 4 memory leaks
+- Fix to an odd spell-casting/emote bug that allowed users to cast multiple spells with only one spell slot used.
+- Added the manual saving controls to the tabbing order on the Windows dedicated server.
+- Fixed a bug where certain player area transitioning during a module transition caused the server to crash.
+- Fixed a bug on the Sound Options page.
+- Detailed error message is now displayed on client when character validation fails.
+- Code added to prevent "more spells" radial from appearing if there were not any more spells. This was preventing all spells from levels 7,8,9 from appearing in radial.
+- Sped up character listings from server to client.
+
+Neverwinter Nights Aurora Toolset
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+- Fixed a .2DA loading issue when a module has a Hak Pak.
+- Added option to turn off environment mapping for creatures and items. This should fix most crashes for ATI users.
+- Fixed a bug with deleting Scripts not fully removing all references to said scripts.
+- Fixed bug where resizing the area so that the Start Location becomes invalid would cause a crash.
+- If the user tries to find a non-existent start location, they get a message.
+- Restricted editing Conversation Options from the conversation editor can only change the conversation options.
+- Test that the jounals in the conversations files are valid when the conversation is loaded into the editor.
+- Conversations have a new default EndConversation script that tries to restart the creature on its waypoint route.
+- Better help text to explain the 'No Permanent Death' checkbox.
+- With one creature selected, a right click over a tile will show a menu to add a pathing waypoint.
+- Selecting a creature will show its waypoint walking path.
+
+Hak Pak Editor
+=-=-=-=-=-=-=-
+- Fixed a bug where replacing a resource could cause the Hak Pak to become corrupted.
+- Removed the ability to add .mp3 files to Hak Paks as .mp3 files are not supported by Neverwinter Nights and the ability to add these files was causing confusion.
+
+
+Patch details for 1.21:
+- Items located in Creature Inventory slots will now be DELETED when validating a Player through ELC and ILR. Custom modules that use Creature Inventory slots to assign Sub Race abilities will have to re-add items on joining the custom module.
+- Item Costs will now be properly calculated for Plot items in ELC checks.
+- Sped up character listing coming from a Dedicated Server.
+- Fixed an issue with saving at inopportune times resulting in breaking save games.
+- Fixed some item "ghosting" issues.
+- Fixed the DM Faction bug, where possessing a creature results in that creature's friendly faction going hostile.
+- 2DA files are now being loaded in the proper order in Hak Paks.
+- General bug fixes.
+
+
+Patch details for 1.20:
+- Added code to prevent non-Neverwinter Nights files from corrupting modules in the Toolset.
+
+
+Patch details for 1.19:
+
+- Creatures will now use their spell-like abilities again.
+- Bards will no longer become illegal characters when changing modules after leveling up and removing spells.
+- The chat client now ignores all non-existing '/' commands.
+- Fixed the 'Bad Strref' GameSpy connection message.
+- The game now sorts Community Names alphabetically in the chat portion of the Server Browser area.
+- Made Neverwinter Nights work with DirectX debug DLLs.
+- Added a Tech Support chat area in the Server Browser area.
+- Fixed an issue with save game characters and moving between single and multiplayer.
+
+
+Patch details for v1.18:
+
+- Fixed the server filter crash in the server browser screen.
+- Improved client and server stability.
+- Fixed the issue with plot items being dragged directly into an inventory bag.
+- Removed the player joining and leaving chat room messages.
+- Pressing enter mid-line in chat no longer cuts off your text.
+- Added a refresh button to the LAN page.
+- Cleaned up some Journal Entry issues.
+- Cleaned up some general sound issues.
+- Made a correction to the tabbing order for the dedicated server GUI.
+- Fixed duplicate player names appearing on the dedicated server's player list.
+- Corrected the issue that occurred when pressing the Load button without custom modules.
