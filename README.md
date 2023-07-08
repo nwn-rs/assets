@@ -11,6 +11,10 @@
         alt="chat" />
     </a>
     </br>
+    <a href="https://github.com/nwn-rs/nwnee-assets/releases/tag/release%2Fbuild8193.36">
+        <img alt="8193.35" src="https://img.shields.io/github/downloads/nwn-rs/nwnee-assets/release/build8193.36/total">
+    </a>
+    </br>
     <a href="https://github.com/nwn-rs/nwnee-assets/releases/tag/release%2Fbuild8193.35">
         <img alt="8193.35" src="https://img.shields.io/github/downloads/nwn-rs/nwnee-assets/release/build8193.35/total">
     </a>
