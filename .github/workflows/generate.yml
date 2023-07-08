@@ -245,8 +245,7 @@ jobs:
           path: ssf.zip
       - name: Gather tga files
         run: |
-          cd unpacked
-          find / -name '*.tga' -exec bash -c '
+          find unpacked/ -name '*.tga' -exec bash -c '
             filename="${0##*/}";
             if [[ "${filename}" == po* ]];
             then 
