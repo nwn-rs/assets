@@ -1,0 +1,4 @@
+customshadervs vslit
+customshaderfs fslit
+parameter float Metallicness 0.001
+parameter float Specularity 0.0179
