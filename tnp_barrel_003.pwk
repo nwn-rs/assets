@@ -1,0 +1,43 @@
+# Exported from NWmax 0.8 c00 at 2/20/2019 10:27:36 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy 003_pwk_use01
+  parent tnp_barrel_003_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.470588 0.0 0.0 
+endnode
+node dummy 003_pwk_use02
+  parent tnp_barrel_003_pwk
+  position 0.748694 -0.123197 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.470588 0.0 0.0 
+endnode
+node dummy 003_pwk_use03
+  parent tnp_barrel_003_pwk
+  position 0.0789893 0.81218 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.470588 0.0 0.0 
+endnode
+node dummy 003_pwk_use04
+  parent tnp_barrel_003_pwk
+  position -0.680612 -0.119287 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.470588 0.0 0.0 
+endnode
+node trimesh barrel_003_wg
+  parent tnp_barrel_003_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.537255 0.0313726 0.431373 
+  bitmap NULL
+  verts 4
+    -0.648897 -0.80631 0.0
+    0.680834 -0.80631 0.0
+    -0.648897 0.686526 0.0
+    0.680834 0.686526 0.0
+  faces 2
+    2 0 3  1  0 0 0  7
+    1 3 0  1  0 0 0  7
+endnode

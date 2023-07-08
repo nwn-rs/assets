@@ -1,0 +1,98 @@
+# Exported from NWMax Plus v6.11.28 at 9/10/2020 2:13:51 PM
+# pwk file
+#
+#NWMax Plus PWKMESH  ASCII
+node dummy 06n_pwk_use01
+  parent ptm_candle06n_pwk
+  position 0.0 -0.25 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
+node dummy 06n_pwk_use02
+  parent ptm_candle06n_pwk
+  position 0.0 0.25 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
+node trimesh candle06n_wg
+  parent ptm_candle06n_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  multimaterial 30
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+    BareBones
+    StoneBridge
+    Temp1
+    Temp2
+    Temp3
+    Temp4
+    Temp5
+    Temp6
+    Temp7
+    Trigger
+  ambient 0.588 0.588 0.588 
+  diffuse 0.705882 0.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap Nonwalk
+  verts 14
+    0.0 0.0 0.0
+    0.0593424 0.0 0.0
+    0.0296712 0.0513921 0.0
+    -0.0296712 0.0513921 0.0
+    -0.0593424 0.0 0.0
+    -0.0296712 -0.0513921 0.0
+    0.0296712 -0.0513921 0.0
+    0.0593424 0.0 0.705884
+    0.0296712 0.0513921 0.705884
+    -0.0296712 0.0513921 0.705884
+    -0.0593424 0.0 0.705884
+    -0.0296712 -0.0513921 0.705884
+    0.0296712 -0.0513921 0.705884
+    0.0 0.0 0.705884
+  faces 24
+    0 2 1  1  0 0 0  7
+    0 3 2  1  0 0 0  7
+    0 4 3  1  0 0 0  7
+    0 5 4  1  0 0 0  7
+    0 6 5  1  0 0 0  7
+    0 1 6  1  0 0 0  7
+    1 8 7  8  0 0 0  7
+    1 2 8  8  0 0 0  7
+    2 9 8  8  0 0 0  7
+    2 3 9  8  0 0 0  7
+    3 10 9  8  0 0 0  7
+    3 4 10  8  0 0 0  7
+    4 11 10  8  0 0 0  7
+    4 5 11  8  0 0 0  7
+    5 12 11  8  0 0 0  7
+    5 6 12  8  0 0 0  7
+    6 7 12  8  0 0 0  7
+    6 1 7  8  0 0 0  7
+    13 7 8  1  0 0 0  7
+    13 8 9  1  0 0 0  7
+    13 9 10  1  0 0 0  7
+    13 10 11  1  0 0 0  7
+    13 11 12  1  0 0 0  7
+    13 12 7  1  0 0 0  7
+endnode

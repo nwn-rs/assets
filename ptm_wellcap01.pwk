@@ -1,0 +1,39 @@
+# Exported from NWmax 0.8 c00 at 2/9/2019 2:03:36 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh wm_wellcap01
+  parent ptm_wellcap01_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.521569 0.231373 0.0313726 
+  bitmap NULL
+  verts 8
+    0.67 -0.63 0.0
+    -0.58 -0.69 0.0
+    0.05 -0.84 0.0
+    0.86 0.07 0.01
+    -0.86 -0.05 -0.01
+    0.58 0.71 0.0
+    -0.65 0.69 0.0
+    -0.08 0.87 0.0
+  faces 6
+    0 1 2  0  0 0 0  7
+    3 1 0  0  0 0 0  7
+    3 4 1  0  0 0 0  7
+    5 4 3  0  0 0 0  7
+    5 6 4  0  0 0 0  7
+    5 7 6  0  0 0 0  7
+endnode
+node dummy cap_pwk_use01
+  parent ptm_wellcap01_pwk
+  position -0.00141243 0.727684 0.159263
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.470588 0.0 0.0 
+endnode
+node dummy cap_pwk_use02
+  parent ptm_wellcap01_pwk
+  position -0.00141249 -0.737524 0.159263
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.470588 0.0 0.0 
+endnode

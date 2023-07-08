@@ -1,0 +1,58 @@
+# Exported from NWmax 0.8 b50 at 11.07.2005 15:59:53
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh nowalk
+  parent tnp_tree_t01_pwk
+  position -0.241827 -0.277735 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.780392 0.882353 
+  bitmap NULL
+  verts 6
+    -0.916154 -1.05132 0.0
+    0.0 -1.4175 0.0
+    -1.23525 0.0 0.0
+    1.23525 -0.257199 0.0
+    -0.916154 1.05132 0.0
+    0.916154 0.895265 0.0
+  faces 4
+    2 0 1  1  0 1 19  7
+    1 3 2  1  6 7 20  7
+    3 4 2  1  12 13 14  7
+    4 3 5  1  15 16 17  7
+  tverts 22
+    0.0 0.5 0
+    0.0 0.0 0
+    0.5 0.5 0
+    0.5 0.0 0
+    0.5 0.5 0
+    0.0 0.0 0
+    1.0 0.0 0
+    1.0 0.5 0
+    0.5 0.0 0
+    0.0 1.0 0
+    0.0 0.5 0
+    0.5 1.0 0
+    0.5 0.5 0
+    0.5 1.0 0
+    0.0 0.5 0
+    0.5 1.0 0
+    0.5 0.5 0
+    1.0 1.0 0
+    0.0 0.5 0
+    0.5 0.0 0
+    0.5 0.5 0
+    1.0 0.0 0
+endnode
+node dummy t01_pwk_use01
+  parent tnp_tree_t01_pwk
+  position 0.0 1.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.109804 0.694118 
+endnode
+node dummy t01_pwk_use02
+  parent tnp_tree_t01_pwk
+  position 0.0 -2.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.109804 0.694118 
+endnode

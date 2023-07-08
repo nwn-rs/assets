@@ -1,0 +1,42 @@
+#MAXDOOR ASCII
+# model: plc_archtarg_pwk 
+node trimesh PLC_F01_wg 
+  parent plc_archtarg_pwk 
+  position 0.123657 -0.0446079 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.431373 0.0313726  
+  multimaterial 18 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+    bitmap NULL
+    verts 4
+     -0.749103 -0.519914 0.0
+     0.510485 -0.519914 0.0
+     -0.510485 0.519914 0.0
+     0.271866 0.519914 0.0
+    faces 2
+     2 0 3  1  0 0 0  7
+     1 3 0  1  0 0 0  7
+endnode
+node dummy F01_pwk_use01 
+  parent plc_archtarg_pwk 
+  position -0.00258667 -1.08493 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.694118 0.345098 0.101961  
+endnode

@@ -1,0 +1,9 @@
+#MAXDOOR ASCII
+# model: PLC_D09_pwk 
+filedependancy PlaceableObjects01.max
+node dummy D09_pwk_use01 
+  parent PLC_D09_pwk 
+  position 0.0 6.10352e-007 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.878431 0.341176 0.560784  
+endnode

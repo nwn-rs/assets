@@ -1,0 +1,48 @@
+# Exported from NWmax 0.8 b50 at 3/20/2006 6:20:39 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy tbd_pwk_use01
+  parent skullstat_pwk
+  position 0.0590794 3.4565 1.45828
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.776471 0.878431 0.341176 
+endnode
+node dummy tbd_pwk_use02
+  parent skullstat_pwk
+  position 0.0590793 -2.62974 1.29413
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.776471 0.878431 0.341176 
+endnode
+node trimesh NoWalk
+  parent skullstat_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  verts 8
+    1.4033 -2.35479 0.0
+    -1.44788 -2.37962 0.0
+    2.14722 -0.34289 0.0
+    -2.06458 -0.343243 0.0
+    1.80702 1.90865 0.0
+    -1.81998 1.90218 0.0
+    -0.0571415 2.8953 0.0
+    -1.17678 2.12054 0.0
+  faces 7
+    0 2 1  0  0 3 1  7
+    2 3 1  0  3 4 1  7
+    2 4 3  0  3 5 4  7
+    4 5 3  0  5 6 4  7
+    4 6 7  0  5 7 8  7
+    7 6 5  0  8 7 6  7
+    4 7 5  0  5 8 6  7
+  tverts 9
+    0.450478 0.522933 0
+    0.718513 0.904783 0
+    0.436572 0.431746 0
+    0.150149 0.778375 0
+    0.755843 0.963621 0
+    0.318648 0.773931 0
+    0.897566 0.885746 0
+    0.22298 0.891707 0
+    0.756307 0.873105 0
+endnode

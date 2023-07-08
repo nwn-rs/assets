@@ -1,0 +1,29 @@
+# Exported from NWmax 0.8 b50 at 11/13/2005 7:12:51 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh NoWalk
+  parent DAG_BN1_pwk
+  position -0.00696142 -0.295318 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.694118 0.580392 0.101961 
+  ambient 0.0 0.0 0.0 
+  diffuse 0.784314 0.784314 0.784314 
+  specular 0.0 0.0 0.0 
+  shininess 20.0
+  bitmap black
+  verts 4
+    1.25 -0.24 0.0
+    -1.29 0.49 0.0
+    -1.29 -0.24 0.0
+    1.25 0.49 0.0
+  faces 2
+    0 1 2  0  0 0 0  7
+    0 3 1  0  0 0 0  7
+endnode
+node dummy BN1_pwk_use01
+  parent DAG_BN1_pwk
+  position -0.00857101 0.492918 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.839216 0.898039 0.65098 
+endnode

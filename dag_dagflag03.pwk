@@ -1,0 +1,10 @@
+# Exported from NWmax 0.8 b34 at 7/5/2005 2:07:28 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy e53_pwk_use01
+  parent dag_dagflag03_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.694118 0.580392 0.101961 
+endnode

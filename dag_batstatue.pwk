@@ -1,0 +1,31 @@
+# Exported from NWmax 0.8 b50 at 1/4/2006 11:16:31 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh NoWalk
+  parent batstatue_pwk
+  position 0.00706164 0.0800817 -0.0268787
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.239216 0.541176 
+  bitmap NULL
+  verts 4
+    -1.52934 -0.807843 0.0
+    1.43201 -0.807843 0.0
+    -0.804996 1.00118 0.0
+    0.736831 1.00118 0.0
+  faces 2
+    2 0 3  1  0 0 0  7
+    1 3 0  1  0 0 0  7
+endnode
+node dummy tbd_pwk_use01
+  parent batstatue_pwk
+  position 0.0309522 1.16422 0.132384
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.776471 0.878431 0.341176 
+endnode
+node dummy tbd_pwk_use02
+  parent batstatue_pwk
+  position 0.0309521 -0.899719 0.132384
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.776471 0.878431 0.341176 
+endnode

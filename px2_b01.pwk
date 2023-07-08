@@ -1,0 +1,57 @@
+#MAXDOOR ASCII
+# model: PX2_b01_pwk 
+filedependancy PX2_placeables01.max
+node dummy b01_pwk_use01 
+  parent PX2_b01_pwk 
+  position 0.0737317 -0.909745 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode
+node trimesh PX2_b01_wg 
+  parent PX2_b01_pwk 
+  position 0.0 -0.00917969 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.431373 0.0313726  
+  multimaterial 18 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+    bitmap NULL
+    verts 8
+     -0.649574 -0.615001 0.0
+     0.644524 -0.615783 0.0
+     -0.632046 0.667823 0.0
+     0.658603 0.687161 0.0
+     0.921455 0.0591855 0.0
+     -0.882186 0.0441125 0.0
+     0.0230266 -0.875417 0.0
+     0.00618265 0.949993 0.0
+    faces 6
+     5 0 3  1  0 0 0  7
+     4 3 0  1  0 0 0  7
+     1 4 6  1  0 0 0  7
+     2 5 7  1  0 0 0  7
+     6 4 0  1  0 0 0  7
+     7 5 3  1  0 0 0  7
+endnode
+node dummy b01_pwk_use02 
+  parent PX2_b01_pwk 
+  position 0.0203839 1.16667 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode

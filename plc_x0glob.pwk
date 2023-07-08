@@ -1,0 +1,24 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x0glob
+filedependancy plc_x0globe.max
+node trimesh NoWalkArea
+  parent plc_x0glob_pwk
+  position -0.204199 -0.235812 0
+  orientation 0 0 1 -0.858443
+  wirecolor 0.601563 0.601563 0.601563
+  ambient 0.597656 0.890625 0.597656
+  diffuse 0.597656 0.890625 0.597656
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 4
+    0.778223 0.759284 0
+    -0.778223 0.759284 0
+    0.778223 -0.759284 0
+    -0.778223 -0.759284 0
+  faces 2
+    2 0 3  1  0 0 0  0
+    1 3 0  1  0 0 0  0
+endnode

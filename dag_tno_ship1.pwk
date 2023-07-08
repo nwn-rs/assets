@@ -1,0 +1,96 @@
+# Exported from NWmax 0.8 c00 at 9/22/2020 2:29:02 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy ip1_pwk_use01
+  parent tno_ship1_pwk
+  position 6.29436 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
+node dummy ip1_pwk_use02
+  parent tno_ship1_pwk
+  position -5.93425 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
+node trimesh ship1_pwk
+  parent tno_ship1_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+  multimaterial 18
+    n_Obscuring
+    n_Obscuring
+    w_Grass
+    w_Stone
+    w_Wood
+    w_Water
+    n_Nonwalk
+    n_Transparent
+    w_Carpet
+    w_Metal
+    w_Puddles
+    w_Swamp
+    w_Mud
+    w_Leaves
+    n_Lava
+    n_Bottomless
+    n_Deepwater
+    w_Areatansition
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 0.0 
+  specular 0.0 0.0 0.0 
+  shininess 0.0
+  bitmap n_Obscuring
+  verts 20
+    3.16156 12.1871 0.0
+    -3.12817 12.1871 0.0
+    -5.14306 2.19438 0.0
+    -5.03414 -5.34784 0.0
+    -3.10094 -9.43207 0.0
+    0.16645 -12.3455 0.0
+    3.07987 -9.4593 0.0
+    4.52297 -6.81816 0.0
+    5.01308 -4.01366 0.0
+    4.87694 2.82063 0.0
+    -3.10094 -9.43207 7.51499
+    0.16645 -12.3455 7.51499
+    3.07987 -9.4593 7.51499
+    4.52297 -6.81816 7.51499
+    5.01308 -4.01366 7.51499
+    4.87694 2.82063 7.51499
+    3.16156 12.1871 7.51499
+    -3.12817 12.1871 7.51499
+    -5.14306 2.19438 7.51499
+    -5.03414 -5.34784 7.51499
+  faces 28
+    15 16 17  1  0 0 0  7
+    15 17 18  1  0 0 0  7
+    10 11 12  1  0 0 0  7
+    12 13 14  1  0 0 0  7
+    10 12 14  1  0 0 0  7
+    19 10 14  1  0 0 0  7
+    18 19 14  1  0 0 0  7
+    15 18 14  1  0 0 0  7
+    4 5 11  0  0 0 0  7
+    11 10 4  0  0 0 0  7
+    5 6 12  0  0 0 0  7
+    12 11 5  0  0 0 0  7
+    6 7 13  0  0 0 0  7
+    13 12 6  0  0 0 0  7
+    7 8 14  0  0 0 0  7
+    14 13 7  0  0 0 0  7
+    8 9 15  0  0 0 0  7
+    15 14 8  0  0 0 0  7
+    9 0 16  0  0 0 0  7
+    16 15 9  0  0 0 0  7
+    0 1 17  0  0 0 0  7
+    17 16 0  0  0 0 0  7
+    1 2 18  0  0 0 0  7
+    18 17 1  0  0 0 0  7
+    2 3 19  0  0 0 0  7
+    19 18 2  0  0 0 0  7
+    3 4 10  0  0 0 0  7
+    10 19 3  0  0 0 0  7
+endnode

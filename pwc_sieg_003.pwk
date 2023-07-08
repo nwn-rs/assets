@@ -1,0 +1,35 @@
+# Exported from NWmax 0.8 b61 at 2/28/2008 1:16:45 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh PWK
+  parent pwc_sieg_003_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.341176 0.341176 0.882353 
+  bitmap NULL
+  verts 6
+    -0.95 -0.5 0.0
+    -0.6 -1.1 0.0
+    1.15 -0.3 0.0
+    -0.95 0.5 0.0
+    -0.6 1.1 0.0
+    1.15 0.3 0.0
+  faces 4
+    3 0 4  1  0 0 0  7
+    1 4 0  1  0 0 0  7
+    4 1 5  1  0 0 0  7
+    2 5 1  1  0 0 0  7
+endnode
+node dummy 003_pwk_use02
+  parent pwc_sieg_003_pwk
+  position 0.793984 0.415511 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.541176 0.0313726 0.431373 
+endnode
+node dummy 003_pwk_use01
+  parent pwc_sieg_003_pwk
+  position 0.799119 -0.414291 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.541176 0.0313726 0.431373 
+endnode

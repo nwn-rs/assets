@@ -1,0 +1,24 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x0ladder
+filedependancy plc_x0ladder.max
+node trimesh NoWalkArea
+  parent Cylinder472_pwk
+  position -0.548312 0.266998 -2.5816
+  orientation 0.0790994 0.0790994 -0.993724 -1.57709
+  wirecolor 0.550781 0.550781 0.550781
+  ambient 0.546875 0.34375 0.878906
+  diffuse 0.546875 0.34375 0.878906
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 4
+    0.371895 0.11241 0
+    -0.371895 0.112411 0
+    0.371895 -0.112411 0
+    -0.371895 -0.11241 0
+  faces 2
+    2 0 3  1  0 0 0  0
+    1 3 0  1  0 0 0  0
+endnode

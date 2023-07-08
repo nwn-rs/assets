@@ -1,0 +1,30 @@
+#MAXDOOR ASCII
+# model: PLC_dwd03_pwk 
+filedependancy plc_driftwood.max
+node trimesh PLC_dwd03_wg 
+  parent PLC_dwd03_pwk 
+  position 0.0406645 0.17659 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.694118 0.101961  
+    bitmap NULL
+    verts 4
+     -0.879425 0.167472 0.0
+     -0.927271 -0.891139 0.0
+     1.01438 0.899398 0.0
+     0.654717 -0.256174 0.0
+    faces 2
+     2 0 3  1  0 0 0  1
+     1 3 0  1  0 0 0  1
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_dwd03_pwk 
+  position 0.384848 -0.276263 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_dwd03_pwk 
+  position -0.0204295 0.973326 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0235294 0.52549 0.443137  
+endnode

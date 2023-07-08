@@ -1,0 +1,35 @@
+# Exported from NWmax 0.8 c00 at 2/18/2019 1:34:09 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh gong03_wg
+  parent ptm_gong03_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.521569 0.431373 0.0313726 
+  ambient 0.588 0.588 0.588 
+  diffuse 0.705882 0.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap Nonwalk
+  verts 4
+    -0.68 -0.36 0.0
+    0.36 -0.36 0.0
+    -0.68 0.32 0.0
+    0.36 0.32 0.0
+  faces 2
+    2 0 3  0  0 0 0  7
+    1 3 0  0  0 0 0  7
+endnode
+node dummy g03_pwk_use01
+  parent ptm_gong03_pwk
+  position 0.0 -0.573622 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.337255 0.337255 
+endnode
+node dummy g03_pwk_use02
+  parent ptm_gong03_pwk
+  position 0.0 0.557032 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.337255 0.337255 
+endnode

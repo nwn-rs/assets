@@ -1,0 +1,36 @@
+#MAXDOOR ASCII
+# model: PLC_Rock03_pwk 
+filedependancy plc_rocks.max
+node trimesh PLC_Rock03_wg 
+  parent PLC_Rock03_pwk 
+  position -0.0267148 -0.517363 0.0
+  orientation  0.0 0.0 1.0  -0.33855
+  wirecolor 0.345098 0.694118 0.101961  
+    bitmap NULL
+    verts 7
+     -0.425169 -0.486307 0.0
+     0.601538 -0.00538067 0.0
+     -0.672054 -0.404038 0.0
+     0.122076 1.14603 0.0
+     -0.725275 0.341503 0.0
+     0.756565 0.399067 0.0
+     -0.284827 0.989697 0.0
+    faces 5
+     2 0 4  1  0 0 0  1
+     5 3 0  1  0 0 0  1
+     4 0 6  1  0 0 0  1
+     1 5 0  1  0 0 0  1
+     6 0 3  1  0 0 0  1
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Rock03_pwk 
+  position 0.0 0.6 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_Rock03_pwk 
+  position 0.0 -0.5 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode

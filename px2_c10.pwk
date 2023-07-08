@@ -1,0 +1,24 @@
+#MAXDOOR ASCII
+# model: PX2_C10_pwk 
+filedependancy PX2_placeables01.max
+node trimesh PX2_C10_wg 
+  parent PX2_C10_pwk 
+  position 0.0204121 0.10551 0.0
+  orientation  0.0 0.0 0.0  -6.28319
+  wirecolor 0.52549 0.431373 0.0313726  
+    bitmap NULL
+    verts 4
+     -0.861654 -0.17062 0.0
+     0.818149 -0.17062 0.0
+     -0.861654 0.156362 0.0
+     0.818149 0.156362 0.0
+    faces 2
+     2 0 3  1  0 0 0  1
+     1 3 0  1  0 0 0  1
+endnode
+node dummy C10_pwk_use01 
+  parent PX2_C10_pwk 
+  position 0.105719 -1.71352 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.878431 0.341176 0.560784  
+endnode

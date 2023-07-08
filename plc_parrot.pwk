@@ -1,0 +1,24 @@
+#MAXDOOR ASCII
+# model: PLC_Parrot_pwk 
+filedependancy plc_parrot.max
+node trimesh PLC_Parrot_wg 
+  parent PLC_Parrot_pwk 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.694118 0.101961  
+    bitmap NULL
+    verts 4
+     0.00177307 -0.3568 0.0
+     0.346465 2.79236e-005 0.0
+     -0.341333 -0.0129189 0.0
+     0.00297392 0.563516 0.0
+    faces 2
+     2 0 3  1  0 0 0  1
+     1 3 0  1  0 0 0  1
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Parrot_pwk 
+  position -0.00298332 -0.503974 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode

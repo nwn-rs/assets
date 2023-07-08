@@ -1,0 +1,30 @@
+#MAXDOOR ASCII
+# model: PLC_TrgEgg_pwk 
+filedependancy plc_troglodyte.max
+node trimesh PLC_TrgEgg_wg 
+  parent PLC_TrgEgg_pwk 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.694118 0.101961  
+    bitmap NULL
+    verts 4
+     -0.240848 -0.279155 0.0
+     0.233865 -0.283088 0.0
+     -0.212043 0.381418 0.0
+     0.212124 0.385287 0.0
+    faces 2
+     2 0 3  1  0 0 0  1
+     1 3 0  1  0 0 0  1
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_TrgEgg_pwk 
+  position 0.0 -0.438375 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_TrgEgg_pwk 
+  position 0.0 0.504894 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode

@@ -1,0 +1,36 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x44
+filedependancy sphinx_stat.max
+node trimesh spnxstatpwk
+  parent plc_x44_pwk
+  position 0.0636558 0.288929 0
+  orientation 0 0 -1 -3.14159
+  wirecolor 0.34375 0.34375 0.34375
+  ambient 0.339844 0.875 0.339844
+  diffuse 0.339844 0.875 0.339844
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 7
+    -0.844164 0.84941 0
+    -0.60564 -0.988404 0
+    -0.000714809 -3.08707 0
+    0.615328 -0.998232 0
+    0.823759 0.829754 0
+    0.117935 1.68478 0
+    -0.127762 1.68478 0
+  faces 5
+    1 2 3  1  0 0 0  0
+    1 3 4  1  0 0 0  0
+    0 1 4  1  0 0 0  0
+    0 4 5  1  0 0 0  0
+    6 0 5  1  0 0 0  0
+endnode
+node dummy x44_pwk_use01
+  parent plc_x44_pwk
+  position -0.0458864 -1.74965 0
+  orientation 0 0 0 0
+  wirecolor 0.105469 0.105469 0.105469
+endnode

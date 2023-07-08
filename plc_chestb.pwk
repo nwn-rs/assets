@@ -1,0 +1,31 @@
+# Exported from NWmax 0.8 b59 at 11/15/2005 6:15:01 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy IoP_pwk_use01
+  parent PLC_ChestB_pwk
+  position 0.0 -0.579448 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.839216 0.6 
+endnode
+node trimesh PLC_ChestB_wg
+  parent PLC_ChestB_pwk
+  position 0.0 0.551631 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.223529 0.0313726 0.533333 
+  bitmap NULL
+  verts 7
+    -0.219543 -0.967168 0.0
+    0.865021 -0.900311 0.0
+    -1.73234 0.0457451 0.0
+    -0.178685 1.42217 0.0
+    1.45671 -0.0877898 0.0
+    -1.40545 1.10378 0.0
+    0.842848 1.05958 0.0
+  faces 5
+    2 0 3  1  0 0 0  7
+    3 0 4  1  0 0 0  7
+    1 4 0  1  0 0 0  7
+    5 2 3  1  0 0 0  7
+    4 6 3  1  0 0 0  7
+endnode

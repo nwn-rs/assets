@@ -1,0 +1,36 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: PLC_X0_DTR
+filedependancy plc_x0deadtree.max
+node trimesh NoWalkArea
+  parent PLC_X0_DTR_pwk
+  position -0.0746929 0.416407 0
+  orientation 0 0 0 0
+  wirecolor 0.878906 0.878906 0.878906
+  ambient 0.875 0.335938 0.335938
+  diffuse 0.875 0.335938 0.335938
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 4
+    0.353514 0.378505 0
+    -0.353514 0.378505 0
+    0.353514 -0.378505 0
+    -0.353514 -0.378505 0
+  faces 2
+    2 0 3  1  0 0 0  0
+    1 3 0  1  0 0 0  0
+endnode
+node dummy x37_pwk_use01
+  parent PLC_X0_DTR_pwk
+  position -0.0751907 -0.261249 0
+  orientation 0 0 0 0
+  wirecolor 0.695313 0.695313 0.695313
+endnode
+node dummy x37_pwk_use02
+  parent PLC_X0_DTR_pwk
+  position -0.0751906 1.12544 0
+  orientation 0 0 0 0
+  wirecolor 0.695313 0.695313 0.695313
+endnode

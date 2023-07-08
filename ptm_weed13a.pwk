@@ -1,0 +1,16 @@
+# Exported from NWmax 0.8 c00 at 2/18/2019 6:31:36 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy 13a_pwk_use0
+  parent ptm_weed13a_pwk
+  position 0.0 -0.351127 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.65098 0.898039 0.898039 
+endnode
+node dummy 13a_pwk_use02
+  parent ptm_weed13a_pwk
+  position 0.117139 0.201312 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.529412 0.431373 0.0313726 
+endnode
