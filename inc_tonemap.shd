@@ -1,0 +1,121 @@
+//=============================================================================
+//
+// inc_tonemap.shd
+//
+//=============================================================================
+
+#ifndef INC_TONEMAP
+#define INC_TONEMAP
+#include "inc_config"
+///////////////////////////////////
+//
+// BEGIN INC_TONEMAP
+//
+///////////////////////////////////
+
+//=============================================================================
+//
+// Distributes color channel overflows to preserve brightness and hue.
+//
+//=============================================================================
+vec4 ColorClamp(vec4 Color)
+{
+    float fMax=max(Color.r, max(Color.g, Color.b)); 
+	
+    if(fMax>1.0)
+    {
+		if(Color.a < 1.0)
+		{
+			Color.a *= fMax;
+			float fModifier = 1.0 / fMax;
+			if(Color.a > 1.0)
+			{
+				fModifier *= Color.a;
+				Color.a = 1.0;
+
+			}
+			Color.rgb *= fModifier;
+			fMax *= fModifier;
+		}
+
+        #if COLOR_CORRECTION_TYPE == 1
+            float fBrightness3 = dot(Color.rgb, vec3(1.0)); //Brightness x 3. No reason to divide by 3.
+            if(fBrightness3>=3.0)
+            {
+                return vec4(1.0, 1.0, 1.0, Color.a);
+            }
+            fBrightness3 = 3.0 - fBrightness3; //Invert
+            Color.rgb=-Color.rgb + fMax; // Invert.
+            Color.rgb *= fBrightness3 / dot(Color.rgb, vec3(1.0)); 
+            Color.rgb = -Color.rgb + 1.0; //Invert back.
+        #elif COLOR_CORRECTION_TYPE == 3
+            Color.rgb = (-Color.rgb / fMax + 1.0); // Invert.
+            Color.rgb *= max(0.0, 1.0 - (fMax - 1.0)); 
+            Color.rgb = -Color.rgb + 1.0; // Invert back.
+        #else
+            Color.rgb = -Color.rgb + fMax; // Invert.
+            Color.rgb *= 1.0-sqr((fMax-1.0)/fMax);
+            Color.rgb = -Color.rgb + fMax; // Invert back.
+        #endif
+    }
+    return Color;
+}
+
+vec3 ColorClamp(vec3 Color)
+{
+    return (ColorClamp(vec4(Color.r, Color.g, Color.b, 1.0))).rgb;
+}
+
+//=============================================================================
+//
+// ACES filmic tonemapping.
+//
+//=============================================================================
+
+vec3 ACESFilm(vec3 Color)
+{
+    float a = 2.51;
+    float b = 0.03;
+    float c = 2.43;
+    float d = 0.59;
+    float e = 0.14;
+    return clamp((Color*(a*Color+b))/(Color*(c*Color+d)+e),0.0,1.0);
+}
+
+vec4 ACESFilm(vec4 Color)
+{
+    return vec4(ACESFilm(Color.rgb), Color.a);
+}
+
+//=============================================================================
+//
+// Shared wrapper functions.
+//
+//=============================================================================
+
+
+void ApplyColorTonemap(inout vec4 Color)
+{
+	#if COLOR_CORRECTION_TYPE == 2
+		Color.rgb = ACESFilm(Color.rgb);
+	#elif COLOR_CORRECTION_TYPE != 0
+		Color.rgb = ColorClamp(Color.rgb);
+    #endif
+}
+
+void ApplyColorTonemap(inout vec3 Color)
+{
+	#if COLOR_CORRECTION_TYPE == 2
+		Color = ACESFilm(Color);
+	#elif COLOR_CORRECTION_TYPE != 0
+		Color = ColorClamp(Color);
+	#endif
+}
+
+///////////////////////////////////
+//     
+// END INC_TONEMAP
+//
+///////////////////////////////////
+
+#endif 

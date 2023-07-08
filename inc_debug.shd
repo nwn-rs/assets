@@ -1,0 +1,134 @@
+//=============================================================================
+//
+// inc_debug.shd
+//
+//=============================================================================
+
+#ifndef INC_DEBUG
+#define INC_DEBUG
+#include "inc_common"
+
+///////////////////////////////////
+//
+// BEGIN INC_DEBUG
+//
+///////////////////////////////////
+
+float GetAngleDelta(float fAngle1, float fAngle2)
+{
+    float fAngleDelta = abs(fAngle1-fAngle2);
+    if(fAngleDelta>PI)
+    {
+        fAngleDelta = 2*PI - fAngleDelta;
+    }
+    return fAngleDelta;
+}
+
+vec4 DrawCrosshair(vec4 Color, vec2 vCoords, float fSize, vec4 vDrawColor)
+{
+    vec2 vTcOutScaled=vec2(vVertexTexCoords.x*fAspectRatio, vVertexTexCoords.y);
+    vec2 vOriginScaled=vec2(vCoords.x*fAspectRatio, vCoords.y);
+    vec2 vOffset = vTcOutScaled - vOriginScaled;
+    float fDistance=length(vOffset);
+    //Draw a crosshair.
+    if(abs(vOffset.y)<vPixelSize.y || abs(vOffset.x)<vPixelSize.x)
+    {
+        if(fDistance<=fSize*vPixelSize.x)
+        {
+            Color = vDrawColor;
+        }
+    }
+    return Color;
+}
+
+vec4 DrawVector(vec4 Color, vec2 vOrigin, vec3 vDraw, vec4 vDrawColor)
+{
+    float fDrawLength = length(vDraw);
+    vDraw = normalize(vDraw);
+
+    vec2 vTcOutScaled=vec2(vVertexTexCoords.x*fAspectRatio, vVertexTexCoords.y);
+    vec2 vOriginScaled=vec2(vOrigin.x*fAspectRatio, vOrigin.y);
+    vec2 vOffset = vTcOutScaled - vOriginScaled;
+    float fDistance=length(vOffset);
+
+    if(fDistance>fDrawLength) 
+    {
+        return Color;
+    } 
+    float fDrawAngle = asin (vDraw.y / length(vDraw.xy));
+    if(vDraw.x<0.0)
+    {
+        fDrawAngle = PI - fDrawAngle;
+    }
+    float fOffsetAngle = asin (vOffset.y / fDistance);
+    if(vOffset.x<0.0)
+    {
+       fOffsetAngle = PI - fOffsetAngle;
+    }
+    if(abs(vDraw.z)<0.01)
+    {
+        //Prevents divide by zero and makes a circle that appears as a line.
+        float fOffsetAngleCircle = fOffsetAngle;
+        if(fOffsetAngleCircle>fDrawAngle)
+        {
+            fOffsetAngleCircle-=radians(90.0);
+        }
+        else
+        {
+            fOffsetAngleCircle+=radians(90.0);
+        }
+        float fCircleAngleDelta = GetAngleDelta(fDrawAngle,fOffsetAngleCircle);
+        float fToleranceCircle = radians(max(1.0, 1.0+2.0*abs(vDraw.z)) / (fDistance / fDrawLength)); 
+
+        //Check if vector to point is parallel to draw vector. 
+        if(fCircleAngleDelta<abs(fToleranceCircle) && fDistance<0.50*fDrawLength)
+        {
+			Color.rgb = mix(Color.rgb, vDrawColor.rgb, vDrawColor.a);
+			Color.a = mix(vDrawColor.a, 1.0, Color.a);
+            return Color;
+        } 
+    }
+    else
+    {
+        //Draw a circle ortogonal to the vector.
+        //As the dot product should be 0, we can calculate the desired Z value. I.e.
+        // vDraw.x * vOffset. x + vDraw.y * vOffset.y + vDraw.z * vOffset.z = 0.0
+        vec3 vDrawCircle=vDraw;
+        float fZ = dot(vDrawCircle.xy, vOffset) / -vDrawCircle.z;
+        vec3 vOffset3 = vec3 (vOffset.x, vOffset.y, fZ);
+        //Check if within certain range.
+        float fToleranceCircle=fDrawLength*0.002 + vPixelSize.y / abs(vDraw.z);
+        if(length(vOffset3)+fToleranceCircle>0.48*fDrawLength&&length(vOffset3)<0.50*fDrawLength) 
+        {
+			Color.rgb = mix(Color.rgb, vDrawColor.rgb, vDrawColor.a);
+			Color.a = mix(vDrawColor.a, 1.0, Color.a);
+            return Color;
+        } 
+    }
+    
+    fDrawLength *=length(vDraw.xy);
+    if(fDistance>fDrawLength) 
+    {
+        return Color;
+    } 
+
+    float fTolerance = radians(max(1.0, (0.5/length(vDraw.xy)*(2.0 + 2.0 * vDraw.z * fDistance/ fDrawLength)))/ (fDistance / fDrawLength)); 
+    //Adjut to depth
+    //Check if vector to point is parallel to draw vector. 
+    if(GetAngleDelta(fDrawAngle,fOffsetAngle)<fTolerance)
+    {
+		Color.rgb = mix(Color.rgb, vDrawColor.rgb, vDrawColor.a);
+		Color.a = mix(vDrawColor.a, 1.0, Color.a);
+		return Color;
+    } 
+    return Color;
+	
+}
+
+///////////////////////////////////
+//     
+// END INC_DEBUG
+//
+///////////////////////////////////
+
+#endif 

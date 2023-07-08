@@ -1,0 +1,128 @@
+#if SHADER_TYPE == 1
+void VS_PostProcess_Toon() { }
+#else
+
+// Controls how many lines are drawn. Lower value means more edges drawn.
+uniform float ToonDepthEdgeThreshold;
+uniform float ToonColorEdgeThreshold;
+uniform float ToonEdgeHardness;
+
+const float DEPTH_EDGE_THRESHOLD_LOW  = 0.01;
+const float COLOR_EDGE_THRESHOLD_LOW  = 0.01;
+const float DEPTH_FACTOR              = 0.25;
+const float MAX_EDGE_BLEND = 0.8;
+
+// Color weights for nicer grayscale
+const vec3 W = vec3(0.2125, 0.7154, 0.0721);
+
+// Single pixel offsets in the (0.0, 1.0) address space
+#define dx vPixelSize.x
+#define dy vPixelSize.y
+
+float edginess(vec2 coords) {
+
+    float e = 0.0;
+
+    // Surrounding pixels in depth buffer: {bottom,center,top}{left,center,right}
+    float bl = GetDepthInverse(coords - vec2(dx, dy));
+    float tr = GetDepthInverse(coords + vec2(dx, dy));
+    float br = GetDepthInverse(coords - vec2(dx,-dy));
+    float tl = GetDepthInverse(coords + vec2(dx,-dy));
+    float bc = GetDepthInverse(coords - vec2(dx, 0.));
+    float tc = GetDepthInverse(coords + vec2(dx, 0.));
+    float cl = GetDepthInverse(coords - vec2(0., dy));
+    float cr = GetDepthInverse(coords + vec2(0., dy));
+
+    // Weighted differences of the surrounding pixels
+    float h = -br - 2.0 * cr - tr + bl + 2.0 * cl + tl;
+    float v = -bl - 2.0 * bc - br + tl + 2.0 * tc + tr;
+
+    float dlen = length(vec2(h, v));
+
+    float depth = GetDepthInverse(coords);
+
+    float dt_low = ToonDepthEdgeThreshold * DEPTH_EDGE_THRESHOLD_LOW;
+    float dt_high = ToonDepthEdgeThreshold + depth * DEPTH_FACTOR;
+
+    if (dlen > dt_high)
+    {
+        return 1.0;
+    }
+    if (dlen > dt_low)
+    {
+        e = (dlen - dt_low) / (dt_high - dt_low);
+    }
+
+    // same thing for the image, if enabled
+    if (ToonColorEdgeThreshold > 0.0)
+    {
+        // Surrounding pixels as grayscale: {bottom,center,top}{left,center,right}
+        bl = dot(texture2D(texFBColor, coords - vec2(dx, dy)).rgb, W);
+        tr = dot(texture2D(texFBColor, coords + vec2(dx, dy)).rgb, W);
+        br = dot(texture2D(texFBColor, coords - vec2(dx,-dy)).rgb, W);
+        tl = dot(texture2D(texFBColor, coords + vec2(dx,-dy)).rgb, W);
+        bc = dot(texture2D(texFBColor, coords - vec2(dx, 0.)).rgb, W);
+        tc = dot(texture2D(texFBColor, coords + vec2(dx, 0.)).rgb, W);
+        cl = dot(texture2D(texFBColor, coords - vec2(0., dy)).rgb, W);
+        cr = dot(texture2D(texFBColor, coords + vec2(0., dy)).rgb, W);
+
+        // Weighted differences of the surrounding pixels
+        h = -br - 1.41 * cr - tr + bl + 1.41 * cl + tl;
+        v = -bl - 1.41 * bc - br + tl + 1.41 * tc + tr;
+
+        // All those above threshold are treated as edges and drawn black.
+        float clen = length(vec2(h, v));
+
+        float ct_low = ToonColorEdgeThreshold * COLOR_EDGE_THRESHOLD_LOW;
+        float ct_high = ToonColorEdgeThreshold;
+
+        if (clen > ct_high)
+        {
+            return 1.0;
+        }
+        if (clen > ct_low)
+        {
+            float x = (clen - ct_low) / (ct_high - ct_low);
+            e = x + e - (x*e);
+        }
+
+    }
+    return e;
+}
+
+void FS_PostProcess_Toon(inout vec4 Color)
+{
+    if (ToonEdgeHardness == 0.0)
+        return;
+
+    float e = edginess(vVertexTexCoords);
+    if (e > 0.001)
+    {
+        if (ToonEdgeHardness < 1.0)
+        {
+            float cc = e * ToonEdgeHardness * 2.0;
+
+            float bl = edginess(vVertexTexCoords - vec2(dx, dy));
+            float tr = edginess(vVertexTexCoords + vec2(dx, dy));
+            float br = edginess(vVertexTexCoords - vec2(dx,-dy));
+            float tl = edginess(vVertexTexCoords + vec2(dx,-dy));
+            float bc = edginess(vVertexTexCoords - vec2(dx, 0.));
+            float tc = edginess(vVertexTexCoords + vec2(dx, 0.));
+            float cl = edginess(vVertexTexCoords - vec2(0., dy));
+            float cr = edginess(vVertexTexCoords + vec2(0., dy));
+
+            float neighbors = (0.717 * (bl + tr + br + tl) +
+                               1.41 * (bc + tc + cl + cr))
+                              / ToonEdgeHardness;
+            float blurred = (cc + neighbors) / 10.0;
+
+            Color = mix(Color, COLOR_BLACK, blurred * MAX_EDGE_BLEND);
+        }
+        else
+        {
+            Color = mix(Color, COLOR_BLACK, e * MAX_EDGE_BLEND);
+        }
+    }
+
+}
+#endif

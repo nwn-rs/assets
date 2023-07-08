@@ -1,0 +1,215 @@
+[text]
+color = "#FFFFFFFF"
+
+[border]
+border_image = "nui_windowh"
+
+[window]
+fixed_background = "#000000FF"
+background = "#000000FF"
+border_image = "nui_windowh"
+border_color = "#00000000"
+popup_border_color = "#00000000"
+combo_border_color = "#00000000"
+contextual_border_color = "#00000000"
+menu_border_color = "#00000000"
+group_border_color = "#00000000"
+tooltip_border_color = "#00000000"
+scaler = "#AD8E60FF"
+padding_x = 0
+padding_y = 0
+scrollbar_size_x = 18
+scrollbar_size_y = 18
+
+  [window.header]
+  normal = "nui_windowh"
+  hover = "nui_windowh"
+  active = "nui_windowh"
+  label_active = "#FFFFFFFF"
+  label_hover = "#C8C8C8FF"
+  label_normal = "#C8C8C8FF"
+
+    [window.header.close_button]
+    normal = "nui_close"
+    hover = "nui_close"
+    active = "nui_close"
+    padding_x = 5
+    padding_y = 5
+
+    [window.header.minimize_button]
+    normal = "nui_cnt_down"
+    hover = "nui_cnt_down"
+    active = "nui_cnt_down"
+    padding_x = 5
+    padding_y = 5
+
+[chart]
+background_color = "#000000FF"
+color = "#F8F8F8FF"
+border = 1
+border_color = "#AD8E60FF"
+selected_color = "#AD8E60FF"
+
+[scrollv]
+normal = "nui_windowv"
+hover = "nui_windowv"
+active = "nui_windowv"
+cursor_normal = "nui_scrollv"
+cursor_hover = "nui_scrollv"
+cursor_active = "nui_scrollv"
+border_color = "#AD8E60FF"
+padding_x = 4
+padding_y = 2
+
+  [scrollv.dec_button]
+    normal = "nui_cnt_up"
+    hover = "nui_cnt_up"
+    active = "nui_cnt_up"
+
+  [scrollv.inc_button]
+    normal = "nui_cnt_down"
+    hover = "nui_cnt_down"
+    active = "nui_cnt_down"
+
+
+[scrollh]
+normal = "nui_windowh"
+hover = "nui_windowh"
+active = "nui_windowh"
+cursor_normal = "nui_scrollh"
+cursor_hover = "nui_scrollh"
+cursor_active = "nui_scrollh"
+border_color = "#AD8E60FF"
+padding_x = 4
+padding_y = 2
+
+  [scrollh.dec_button]
+    normal = "nui_cnt_left"
+    hover = "nui_cnt_left"
+    active = "nui_cnt_left"
+
+  [scrollh.inc_button]
+    normal = "nui_cnt_right"
+    hover = "nui_cnt_right"
+    active = "nui_cnt_right"
+
+[checkbox]
+normal = "nui_checkbox_n"
+hover = "nui_checkbox_h"
+active = "nui_checkbox_h"
+cursor_normal = "nui_checkbox_x"
+cursor_hover = "nui_checkbox_x"
+
+[option]
+normal = "nui_radial_n"
+hover = "nui_radial_h"
+active = "nui_radial_h"
+cursor_normal = "nui_radial_x"
+cursor_hover = "nui_radial_x"
+
+[button]
+normal = "nui_button_n"
+hover = "nui_button_h"
+active = "nui_button_a"
+text_background = "#F8F8F8FF"
+text_normal = "#FFFFFFFF"
+text_hover = "#FFFFFFFF"
+text_active = "#FFFFFFFF"
+border = 0
+
+[contextual_button]
+normal = "#000000FF"
+active = "#AD8E60FF"
+hover = "#000000FF"
+padding_x = 4
+padding_y = 2
+
+[tab]
+background = "nui_header"
+
+  [tab.tab_minimize_button]
+    normal = "nui_minimize"
+    active = "nui_minimize"
+    hover = "nui_minimize"
+
+  [tab.tab_maximize_button]
+    normal = "nui_maximize"
+    active = "nui_maximize"
+    hover = "nui_maximize"
+
+  [tab.node_minimize_button]
+    normal = "nui_minimize"
+    active = "nui_minimize"
+    hover = "nui_minimize"
+
+  [tab.node_maximize_button]
+    normal = "nui_maximize"
+    active = "nui_maximize"
+    hover = "nui_maximize"
+
+[slider]
+cursor_normal = "nui_slider"
+cursor_hover = "nui_slider"
+cursor_active = "nui_slider"
+bar_filled = "#AD8E60FF"
+
+[selectable]
+normal = "nui_button_n"
+pressed = "nui_button_a"
+hover = "nui_button_h"
+normal_active = "nui_button_a"
+pressed_active = "nui_button_ah"
+hover_active = "nui_button_ah"
+padding_x = 10
+padding_y = 0
+
+[progress]
+normal = "nui_button_n"
+hover = "nui_button_h"
+active = "nui_button_h"
+cursor_normal = "nui_progress"
+cursor_hover = "nui_progress"
+cursor_active = "nui_progress"
+
+[property]
+normal = "#000000FF"
+active = "#000000FF"
+hover  = "#000000FF"
+
+  [property.dec_button]
+    normal = "nui_shld_left"
+    hover = "nui_shld_left"
+    active = "nui_shld_left"
+
+  [property.inc_button]
+    normal = "nui_shld_right"
+    hover = "nui_shld_right"
+    active = "nui_shld_right"
+
+  [property.edit]
+    normal = "#000000FF"
+    hover = "#000000FF"
+    active = "#000000FF"
+
+[combo]
+normal = "nui_button_n"
+hover = "nui_button_h"
+active = "nui_button_a"
+content_padding_x = 10
+content_padding_y = 0
+
+
+  [combo.button]
+    normal = "nui_shld_down"
+    hover = "nui_shld_down"
+    active = "nui_shld_down"
+
+
+[edit]
+normal = "nui_windowh"
+hover = "nui_windowh"
+active = "nui_windowh"
+border_color = "#AD8E60FF"
+text_normal = "#FFFFFFFF"
+padding_x = 10
+padding_y = 0

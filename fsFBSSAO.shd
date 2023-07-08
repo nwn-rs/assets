@@ -1,0 +1,45 @@
+#include "inc_postpr_ssao"
+
+
+#define SSAO_DEBUG_SPLIT_VIEW 0
+
+void main()
+{
+    vec4 Color = COLOR_WHITE;
+
+    if(subvariant == 0)
+    {
+        Color.r = GetSSAOModifier();
+    }
+    else if(subvariant == 1)
+    {
+        // Diagonal blur #1. Benefit from linear interpolation by taking half pixel offsets.
+        Color.r = texture2D(texFBColor, vVertexTexCoords + vPixelSize).r * 4.0;
+        Color.r += texture2D(texFBColor, vVertexTexCoords - vPixelSize).r * 4.0;
+        Color.r += texture2D(texFBColor, vVertexTexCoords + vPixelSize * 3.0).r * 2.0;
+        Color.r += texture2D(texFBColor, vVertexTexCoords - vPixelSize * 3.0).r * 2.0;
+        Color.r += texture2D(texFBColor, vVertexTexCoords + vPixelSize * 5.0).r;
+        Color.r += texture2D(texFBColor, vVertexTexCoords - vPixelSize * 5.0).r;
+        Color.r /= 14.0;
+    }
+    else if(subvariant == 2)
+    {
+        #if SSAO_DEBUG_SPLIT_VIEW == 1
+        if(vVertexTexCoords.x * screenWidth >= userinputMousePosition.x)
+        {
+        #endif
+        // Diagonal blur #2. Benefit from linear interpolation by taking half pixel offsets.
+        Color.a = texture2D(texFBColor, vVertexTexCoords + vec2(vPixelSize.x, -vPixelSize.y)).r * 4.0;
+        Color.a += texture2D(texFBColor, vVertexTexCoords - vec2(vPixelSize.x, -vPixelSize.y)).r * 4.0;
+        Color.a += texture2D(texFBColor, vVertexTexCoords + vec2(vPixelSize.x, -vPixelSize.y) * 3.0).r * 2.0;
+        Color.a += texture2D(texFBColor, vVertexTexCoords - vec2(vPixelSize.x, -vPixelSize.y) * 3.0).r * 2.0;
+        Color.a += texture2D(texFBColor, vVertexTexCoords + vec2(vPixelSize.x, -vPixelSize.y) * 5.0).r;
+        Color.a += texture2D(texFBColor, vVertexTexCoords - vec2(vPixelSize.x, -vPixelSize.y) * 5.0).r;
+        Color.a /= 14.0;
+        #if SSAO_DEBUG_SPLIT_VIEW == 1
+        }
+        #endif         
+    }
+
+    gl_FragColor = Color;
+}

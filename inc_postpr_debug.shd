@@ -1,0 +1,127 @@
+////////////////////////////////////////////////////
+//--------------------------------------------------
+//
+//  Debug shader for NWN:EE
+//
+//--------------------------------------------------
+//
+//  Description:
+//
+//  Applies debug outputs.
+//
+////////////////////////////////////////////////////
+
+
+#if SHADER_TYPE == 2
+
+#define POSTPROCESSING 1
+
+#include "inc_debug"
+#include "inc_framebuffer"
+
+// Set to 1 to enable rendering the calculated normal vector of the current hovered pixel.
+#define DEBUG_NORMAL_VECTOR 0
+
+// Set to 1 to enable rendering the calculated normals in the entire scene as colors.
+#define DEBUG_NORMALS 0
+
+// Set to 1 to enable rendering the calculated linear depth of the entire scene in greyscale.
+#define DEBUG_DEPTH 0
+
+#define DEBUG_SPLIT_VIEW 0
+
+// Set to 1 to enable rendering the vectors used for calculating rays.
+#define DEBUG_SSAO_VECTORS 0
+
+#define DEBUG_TONEMAP 0
+
+#if DEBUG_SSAO_VECTORS == 1
+#include "inc_postpr_ssao"
+#endif
+
+vec4 NormalVectors()
+{
+    vec4 Color = vec4 (0.0, 0.0, 0.0, 1.0);
+    vec3 vNormal = GetNormalVector(vVertexTexCoords);
+    Color.r = 0.5+0.5*vNormal.x;
+    Color.g = 0.5+0.5*vNormal.y;
+    Color.b = 0.5+0.5*vNormal.z;
+    return Color;
+}
+
+vec4 Depth()
+{
+    float fDepth = GetDepth(vVertexTexCoords) / farClip;
+    vec4 Color = vec4(fDepth, fDepth, fDepth, 1.0);
+    return Color;
+}
+
+#if DEBUG_NORMAL_VECTOR == 1
+vec4 DrawNormalVector(vec4 Color, vec2 vCoords)
+{
+	vec3 vDraw = GetNormalVector(vCoords);
+    vec4 vDrawColor = vec4(vDraw.x*0.5 + 0.5, vDraw.y*0.5 + 0.5, vDraw.z*0.5 + 0.5, 0.5);   
+	float fDepth = GetDepth(vCoords);
+	vDraw *= 1.0 / fDepth;
+	vec3 vDraw2 = DirectionViewToProjection(vDraw, vCoords);
+    Color = DrawVector(Color, vCoords, vDraw2, vDrawColor);
+	return Color;
+}
+#endif
+
+void FS_PostProcess_Debug(inout vec4 Color)
+{
+	#if DEBUG_SPLIT_VIEW == 1
+	if(vVertexTexCoords.x * screenWidth < userinputMousePosition.x)
+	{
+	#endif
+    #if DEBUG_NORMALS == 1
+		Color = NormalVectors();
+    #elif DEBUG_DEPTH == 1
+		Color = Depth();
+    #elif DEBUG_TONEMAP == 1
+        float fMinor = 1.0 - abs(mod(vVertexTexCoords.x * 6.0, 2.0) - 1);
+        if(vVertexTexCoords.x < 1.0 / 6.0 )
+        {
+            Color.rgb = vec3(1.0, fMinor, 0.0);
+        }
+        else if(vVertexTexCoords.x < 2.0 / 6.0 )
+        {
+            Color.rgb = vec3(fMinor, 1.0, 0.0);
+        }
+        else if(vVertexTexCoords.x < 3.0 / 6.0 )
+        {
+            Color.rgb = vec3(0.0, 1.0, fMinor);
+        }
+        else if(vVertexTexCoords.x < 4.0 / 6.0 )
+        {
+            Color.rgb = vec3(0.0, fMinor, 1.0);
+        }
+        else if(vVertexTexCoords.x < 5.0 / 6.0 )
+        {
+            Color.rgb = vec3(fMinor, 0.0, 1.0);
+        }
+        else
+        {
+            Color.rgb = vec3(1.0, 0.0, fMinor);
+        }
+        Color.rgb *= vVertexTexCoords.y * 3.0;
+	    ApplyColorTonemap(Color.rgb);
+    #endif
+	#if DEBUG_SPLIT_VIEW == 1
+	}
+	#endif 
+    
+    #if DEBUG_SSAO_VECTORS == 1
+    Color.rgb = DrawSSAOVectors(Color.rgb, vPixelSize * vec2 (float(userinputMousePosition.x), float(userinputMousePosition.y)));
+    #endif
+    
+    #if DEBUG_NORMAL_VECTOR == 1
+    Color = DrawNormalVector(Color, vPixelSize * vec2 (float(userinputMousePosition.x), float(userinputMousePosition.y)));
+    #endif
+}
+
+#endif
+
+
+

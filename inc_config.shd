@@ -1,0 +1,76 @@
+//=============================================================================
+//
+// inc_config.shd
+//
+//=============================================================================
+
+#ifndef INC_CONFIG
+#define INC_CONFIG
+
+///////////////////////////////////
+//
+// BEGIN INC_CONFIG
+//
+///////////////////////////////////
+
+// Determines how to handle over-exposure.
+#define COLOR_CORRECTION_TYPE 4
+// 0 - None
+// 1 - Neutral brightness and hue preserve.
+// 2 - ACES Film.
+// 3 - Hue preserve.
+// 4 - Legacy balanced.
+
+// Softens light on geometry without per-fragment normals to reduce sharp edges on polygons. 
+#ifndef LIGHT_SOFTENING_ENABLED
+	#if SHADER_QUALITY_MODE > 1
+		#define LIGHT_SOFTENING_ENABLED 1
+	#else
+		#define LIGHT_SOFTENING_ENABLED 0
+	#endif
+#endif
+
+#ifndef LIGHT_SOFTENING_VALUE
+	#define LIGHT_SOFTENING_VALUE 0.25
+#endif
+
+// Toggle specular distribution model. Generally Schlick's approximations are used as available.
+#define SPECULAR_DISTRIBUTION_MODEL 1
+// 0 - Blinn-Phong
+// 1 - GGX
+// 2 - Beckmann
+
+// Surface self-shadowing. 
+// 0 - Implicit / none.
+// 1 - Kelemen and Szirmay-Kalos' simplified Cook-Torrance.
+// 2 - Schlick's approximation.
+#ifndef SPECULAR_GEOMETRIC_SHADOWING
+	#if SHADER_QUALITY_MODE > 1
+		#define SPECULAR_GEOMETRIC_SHADOWING 2
+	#else
+		#define SPECULAR_GEOMETRIC_SHADOWING 0
+	#endif
+#endif
+
+// Physical effect that increase specularity at steep angles.
+// 0 - Disabled.
+// 1 - Enabled, full.
+// 2 - Enabled, simplified.
+#ifndef SPECULAR_FRESNEL
+	#if SHADER_QUALITY_MODE > 1
+		#define SPECULAR_FRESNEL 1
+	#elif SHADER_QUALITY_MODE == 1
+		#define SPECULAR_FRESNEL 2
+	#else
+		#define SPECULAR_FRESNEL 0
+	#endif
+#endif
+
+#if SHADER_QUALITY_MODE == 0
+	#undef FRAGMENT_LIGHTING
+	#define FRAGMENT_LIGHTING 0
+#endif
+
+//#define TEST_SPEC_COLOR
+
+#endif

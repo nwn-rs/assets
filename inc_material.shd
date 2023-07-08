@@ -1,0 +1,330 @@
+//=============================================================================
+//
+// inc_material.shd
+//
+//=============================================================================
+
+#ifndef INC_MATERIAL
+#define INC_MATERIAL
+#include "inc_common"
+#include "inc_envmap"
+
+///////////////////////////////////////////////////////////////////////////////
+//=============================================================================
+//                                                                             
+// BEGIN INC_MATERIAL                                               
+//                                                                             
+//=============================================================================
+///////////////////////////////////////////////////////////////////////////////
+
+// Default texture map units:
+// 
+// 0  - Diffuse / albedo map. 
+// 1  - Normal map.           
+// 2  - Specular map.         
+// 3  - Roughness map.        
+// 4  - Height map.           
+// 5  - Self-illumination map 
+
+// Set to one to read roughness from specular map green channel.
+#ifndef MATERIAL_READ_ROUGHNESS_FROM_SPECULAR_MAP
+	#define MATERIAL_READ_ROUGHNESS_FROM_SPECULAR_MAP 0
+#endif
+
+// Set to one to read self illumination from specular map blue channel.
+#ifndef MATERIAL_READ_SELF_ILLUMINATION_FROM_SPECULAR_MAP
+	#define MATERIAL_READ_SELF_ILLUMINATION_FROM_SPECULAR_MAP 0
+#endif
+
+// Values for automatic generation of roughness values.
+#if SPECULAR_GEOMETRIC_SHADOWING == 2
+	#define fGeneratedRoughnessMax 0.55
+#else
+	#define fGeneratedRoughnessMax 0.55
+#endif
+
+#if SPECULAR_DISTRIBUTION_MODEL == 1
+	#define fGeneratedRoughnessMin 0.125	
+#else
+	#define fGeneratedRoughnessMin 0.175
+#endif
+
+#if ENVIRONMENT_MAP == 1
+	
+	// Adjusts how much the pressence of an environment map affects specularity level for content without specular maps. Note that end values will be clamped to 1.
+	#define fLegacyEnvMapSpecularityModifier 8.0
+	#define fLegacyEnvMapSpecularityMax 0.98
+	#define fLegacyEnvMapRoughnessModifier 2.5
+#endif
+
+#define fEnvironmentMapRoughnessLODModifier 30.0
+#define fEnvironmentMapRoughnessLODOffset -1.0
+#define fEnvironmentMapRoughnessLODMax 10.0
+
+// For now, this is set to 0 due to not being able to sample cubemap seamless.
+#define fEnvironmentMapCubeRoughnessLODMax 0.0
+
+// Sets the minimum specularity value for content without specularity maps.
+#define fGeneratedSpecularityMin 0.04
+
+// For generating metallicness when no metallicness uniform is supplied.
+
+// Specularity values below this will not have any level of metallicness.
+#if SPECULAR_MAP == 1
+	#define fGeneratedMetallicnessOffset 0.2
+#else
+	#define fGeneratedMetallicnessOffset fGeneratedSpecularityMin
+#endif
+
+// Scaling factor of metallicness.
+#if SPECULAR_MAP == 1
+	#define fMetallicnessModifier 3.0 
+#else
+	#define fMetallicnessModifier 10.0 
+#endif
+
+#if SPECULAR_LIGHT == 1
+
+uniform lowp float Specularity;
+uniform lowp float Roughness;
+uniform lowp float Metallicness;
+
+uniform lowp vec4 CustomSpecularColor;
+
+#ifndef MATERIAL_ROUGHNESS_VALUE
+	highp float fRoughness;
+	#define MATERIAL_ROUGHNESS_VALUE fRoughness
+	#define MATERIAL_ROUGHNESS_GENERATE_VALUE
+#endif
+
+#ifndef MATERIAL_SPECULARITY_VALUE
+	lowp float fSpecularity;
+	#define MATERIAL_SPECULARITY_VALUE fSpecularity
+	#define MATERIAL_SPECULARITY_GENERATE_VALUE
+#endif
+
+#ifndef MATERIAL_METALLICNESS_VALUE
+	lowp float fMetallicness;
+	#define MATERIAL_METALLICNESS_VALUE fMetallicness
+	#define MATERIAL_METALLICNESS_GENERATE_VALUE
+#endif
+
+#ifndef MATERIAL_SPECULAR_COLOR_VALUE
+	lowp vec3 SpecularColor;
+	#define MATERIAL_SPECULAR_COLOR_VALUE SpecularColor
+	#define MATERIAL_SPECULAR_COLOR_GENERATE_VALUE
+#endif
+
+const float fMetallicnessMod = (fMetallicnessModifier * fGeneratedMetallicnessOffset
+	);
+
+void SetupSpecularity(vec3 Albedo)
+{		
+	// Determine specularity.
+	#ifdef MATERIAL_SPECULARITY_GENERATE_VALUE
+	if(Specularity>0.0)
+	{
+		MATERIAL_SPECULARITY_VALUE = Specularity;
+	}
+	else
+	{
+		#if SHADER_TYPE == 2				
+			#if SPECULAR_MAP == 1 			
+				if(texture2Bound != 0)
+				{
+					MATERIAL_SPECULARITY_VALUE = texture2D(texUnit2, vTexCoords.xy).r;
+				}
+				else
+				{
+			#endif
+				#if ENVIRONMENT_MAP == 1						
+					// This is mainly for the sake of enabling specularity on legacy content.
+					MATERIAL_SPECULARITY_VALUE = mix(fGeneratedSpecularityMin, fLegacyEnvMapSpecularityMax, min(fEnvMapLevel*fLegacyEnvMapSpecularityModifier, 1.0));				
+				#else
+					MATERIAL_SPECULARITY_VALUE = fGeneratedSpecularityMin;
+				#endif			
+			#if SPECULAR_MAP == 1
+				}
+			#endif
+		#else
+				MATERIAL_SPECULARITY_VALUE = fGeneratedSpecularityMin;			
+		#endif
+	}
+	#endif
+	
+	// Determine roughness.
+
+	#ifdef MATERIAL_ROUGHNESS_GENERATE_VALUE
+	if(Roughness>0.0)
+	{
+		MATERIAL_ROUGHNESS_VALUE = Roughness;
+	}
+	else
+	{
+		#if SHADER_TYPE == 2		
+			#if ROUGHNESS_MAP == 1 && MATERIAL_READ_ROUGHNESS_FROM_SPECULAR_MAP == 1
+				if(texture2Bound != 0)
+				{
+					MATERIAL_ROUGHNESS_VALUE = texture2D(texUnit2, vTexCoords.xy).g;
+				}
+				else
+			#else
+				#if ROUGHNESS_MAP == 1
+					if(texture3Bound != 0)
+					{
+						MATERIAL_ROUGHNESS_VALUE = texture2D(texUnit3, vTexCoords.xy).r;
+					}
+					else
+				#endif
+				#if SPECULAR_MAP == 1
+					if(texture2Bound != 0)
+					{
+						// If we have a specular map without a roughness map, we assume that our input isn't geared for our PBR lighting model. Therefore, we translate it PBR values.
+						MATERIAL_ROUGHNESS_VALUE = mix(fGeneratedRoughnessMin, fGeneratedRoughnessMax, sqr(1.0-MATERIAL_SPECULARITY_VALUE));
+
+						#if ENVIRONMENT_MAP == 1
+							MATERIAL_ROUGHNESS_VALUE = min(MATERIAL_ROUGHNESS_VALUE, mix(fGeneratedRoughnessMax, fGeneratedRoughnessMin, min(fEnvMapLevel * fLegacyEnvMapRoughnessModifier, 1.0)));
+						#endif 
+					}
+				#endif
+				#if ROUGHNESS_MAP == 1 || SPECULAR_MAP == 1
+					else
+				#endif
+			#endif
+			{
+				#if ENVIRONMENT_MAP == 1
+					MATERIAL_ROUGHNESS_VALUE =  mix(fGeneratedRoughnessMax, fGeneratedRoughnessMin, min(fEnvMapLevel * fLegacyEnvMapRoughnessModifier, 1.0));
+				#else
+			
+					MATERIAL_ROUGHNESS_VALUE = fGeneratedRoughnessMax;
+				#endif
+			}
+		#else
+			MATERIAL_ROUGHNESS_VALUE = fGeneratedRoughnessMax;
+		#endif
+	}
+	#endif
+		
+	#ifdef MATERIAL_METALLICNESS_GENERATE_VALUE
+		// Determine metallicness. This affects the color of specular light and diffuse light level.
+		if(Metallicness>0.0)
+		{
+			MATERIAL_METALLICNESS_VALUE = Metallicness;
+		}
+		else
+		{
+			#if SPECULAR_MAP == 1
+				float fMetallicnessOffsetThis = 0.0;
+				MATERIAL_METALLICNESS_VALUE  = (MATERIAL_SPECULARITY_VALUE *  MATERIAL_SPECULARITY_VALUE - fMetallicnessOffsetThis) / (1.0 - fMetallicnessOffsetThis);
+				float fMetallicnessModifierThis = 25.0;
+				//fMetallicness = clamp(fMetallicness * fMetallicnessModifierThis / (1.0 + (fMetallicnessModifierThis-1.0) * fMetallicness ), 0.0, 1.0);
+				// Same as: (can be made into constants)
+				float fMetallicnessModifierInv = 1.0 / fMetallicnessModifierThis;
+				float fMetallicnessModifierDenomVarMod = (fMetallicnessModifierThis-1.0) * fMetallicnessModifierInv;
+				MATERIAL_METALLICNESS_VALUE = clamp(MATERIAL_METALLICNESS_VALUE / (fMetallicnessModifierInv + fMetallicness * fMetallicnessModifierDenomVarMod), 0.0, 1.0);
+			#else
+				MATERIAL_METALLICNESS_VALUE = clamp(fMetallicnessModifier * MATERIAL_SPECULARITY_VALUE - fMetallicnessMod, 0.0, 1.0);
+			#endif
+			
+		}
+	#endif	
+	
+	#ifdef MATERIAL_SPECULAR_COLOR_GENERATE_VALUE
+		if(CustomSpecularColor.rgb == COLOR_BLACK.rgb)
+		{
+			#if SHADER_TYPE == 1
+				
+				MATERIAL_SPECULAR_COLOR_VALUE = vec3(min(1.0, 2.0 * max(Albedo.r, max(Albedo.g, Albedo.b))));
+			
+			#else
+					
+				#if GAMMA_CORRECTION == 1
+					#if HEIGHT_MAP == 1 && SHADER_TYPE == 2
+					if(texture4Bound != 0)
+					{
+						MATERIAL_SPECULAR_COLOR_VALUE = mix(COLOR_WHITE.rgb, Albedo.rgb, fMetallicness);
+					}
+					else
+					#endif
+					{
+						// In principle, non-metallic should be white, but since dark colours in diffuse textures are usually used to simulate crevices etc., we scale with max color channel value.
+						MATERIAL_SPECULAR_COLOR_VALUE = mix(vec3(min(1.0, max(Albedo.r, max(Albedo.g, Albedo.b))/ApplyColorSpace(0.5))), Albedo.rgb, fMetallicness);
+					}
+				#else
+					MATERIAL_SPECULAR_COLOR_VALUE = Albedo.rgb;
+				#endif
+				
+			#endif
+
+		}
+		else
+		{
+			MATERIAL_SPECULAR_COLOR_VALUE = ApplyColorSpace(CustomSpecularColor.rgb);
+		}
+	#endif
+
+}
+
+#endif 
+
+#if SHADER_TYPE == 2
+
+///////////////////////////////////
+//
+// FRAGMENT SHADER ONLY FUNCTIONS
+//
+///////////////////////////////////
+
+// SURFACE OCCLUSION
+
+#if (HEIGHT_MAP == 1 || NORMAL_MAP) && LIGHTING == 1
+
+// Will fade light when cosine of light incidence angle to parent surface normal is below this to prevent light moving around corners. Also handles directional occlusion.
+#define SURFACE_FADE_POINT_MIN 0.1
+
+#if HEIGHT_MAP == 1
+	float fSurfaceFadeModifier;
+#else
+	const float fSurfaceFadeModifier = 1.0 / SURFACE_FADE_POINT_MIN;
+#endif
+
+#ifndef OCCLUSION_MULTIPLIER
+	#define OCCLUSION_MULTIPLIER 1.0
+#endif
+
+// Default occlusion at 0. -1 is no occlusion.
+#ifndef OCCLUSION_MODIFIER
+	#define OCCLUSION_MODIFIER 0.0
+#endif
+
+// Mipmap offset modifier for local comparison for determining occlusion.
+#define OCCLUSION_VICINITT_RANGE 7.0
+
+float fAmbientOcclusionModifier;
+
+#if HEIGHT_MAP == 1
+
+void SetupOcclusionFromTexture(vec2 vSampleTexCoords, sampler2D sHeightMap)
+{
+	float fOcclusion = texture2D(sHeightMap, vSampleTexCoords.xy, max(0.0, OCCLUSION_VICINITT_RANGE - log2(-vPosView.z)) ).r - texture2D(sHeightMap, vSampleTexCoords.xy).r;
+	fOcclusion = clamp(fOcclusion * (1.0+OCCLUSION_MODIFIER) * OCCLUSION_MULTIPLIER, 0.0, 0.9);
+	fAmbientOcclusionModifier = sqr(1.0 - fOcclusion);
+	fSurfaceFadeModifier = 1.0 / mix(1.0, SURFACE_FADE_POINT_MIN, fAmbientOcclusionModifier*fAmbientOcclusionModifier);
+}
+
+void SetupOcclusionBase()
+{
+	fAmbientOcclusionModifier = 1.0;
+	fSurfaceFadeModifier = 1.0 / SURFACE_FADE_POINT_MIN;
+}
+
+#endif // HEIGHT_MAP == 1
+#endif // (HEIGHT_MAP == 1 || NORMAL_MAP) && LIGHTING == 1
+#endif // SHADER_TYPE == 2
+#endif 
+
+///////////////////////////////////
+//
+// END INC_MATERIAL
+//
+///////////////////////////////////

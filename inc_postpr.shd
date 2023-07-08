@@ -1,0 +1,125 @@
+//#define POSTPROCESSING_TYPES_ENABLED
+#define POSTPROCESSING_SHARPEN                  0x0001
+#define POSTPROCESSING_DOF                      0x0002
+#define POSTPROCESSING_DYNAMIC_CONTRAST         0x0004
+#define POSTPROCESSING_VIBRANCE                 0x0008
+#define POSTPROCESSING_GAMMA                    0x0010
+#define POSTPROCESSING_TOON                     0x0020
+
+#define POSTPROCESSING 1
+#define LIGHTING 1
+#define FOG 1
+
+#include "inc_uniforms"
+#include "inc_random"
+#include "inc_tonemap"
+#include "inc_framebuffer"
+#include "inc_lighting"
+#include "inc_fog"
+
+#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_SHARPEN)
+
+#include "inc_postpr_shrp"
+
+#endif
+
+#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_DOF)
+
+#include "inc_postpr_dof"
+
+#endif
+
+#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_DYNAMIC_CONTRAST)
+
+#include "inc_postpr_dyn_c"
+
+#endif
+
+#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_VIBRANCE)
+
+#include "inc_postpr_vibr"
+
+#endif
+
+#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_GAMMA)
+
+#include "inc_postpr_gam"
+
+#endif
+
+#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_TOON)
+
+#include "inc_postpr_toon"
+
+#endif
+
+#include "inc_postpr_debug"
+
+#if SHADER_TYPE == 1
+
+void VS_PostProcess()
+{
+	#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_SHARPEN)
+		VS_PostProcess_Sharpen();
+	#endif
+
+	#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_DOF)
+		VS_PostProcess_DepthOfField();
+	#endif
+
+    #if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_TOON)
+        VS_PostProcess_Toon();
+    #endif    
+	
+	#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_DYNAMIC_CONTRAST)
+		VS_PostProcess_DynamicContrast();
+	#endif
+	
+	#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_VIBRANCE)
+		VS_PostProcess_Vibrance();
+	#endif
+	
+	#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_GAMMA)
+		VS_PostProcess_Gamma();
+	#endif
+    
+}
+
+#else
+
+vec4 FS_PostProcess()
+{
+	vec4 Color = texture2D(texFBColor, vVertexTexCoords);
+
+	#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_SHARPEN)
+		FS_PostProcess_Sharpen(Color);
+	#endif
+
+	#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_DOF)
+		FS_PostProcess_DepthOfField(Color);
+	#endif
+
+    #if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_TOON)
+        FS_PostProcess_Toon(Color);
+    #endif    
+	
+	#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_DYNAMIC_CONTRAST)
+		FS_PostProcess_DynamicContrast(Color);
+	#endif
+	
+	#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_VIBRANCE)
+		FS_PostProcess_Vibrance(Color);
+	#endif
+	
+	#if (POSTPROCESSING_TYPES_ENABLED & POSTPROCESSING_GAMMA)
+		FS_PostProcess_Gamma(Color);
+	#endif
+	
+	ApplyColorTonemap(Color.rgb);
+
+	FS_PostProcess_Debug(Color);
+
+	return Color;
+}
+
+#endif
