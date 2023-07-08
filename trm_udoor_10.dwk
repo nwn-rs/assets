@@ -1,0 +1,115 @@
+# Exported from NWmax 0.8 c00 at 12/29/2019 9:24:46 AM
+# dwk file
+#
+#NWmax DWKMESH  ASCII
+node trimesh 10_DWK_wg_open1
+  parent trm_udoor_10_DWK
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.537255 0.0313726 0.431373 
+  bitmap NULL
+  verts 8
+    -1.1665 0.0265397 0.0
+    -0.985235 -2.05902 0.0
+    -0.76802 0.061402 0.0
+    -0.586758 -2.02416 0.0
+    -1.1665 0.0265397 1.5
+    -0.985235 -2.05902 1.5
+    -0.76802 0.061402 1.5
+    -0.586758 -2.02416 1.5
+  faces 12
+    0 2 3  2  0 0 0  7
+    3 1 0  2  0 0 0  7
+    4 5 7  4  0 0 0  7
+    7 6 4  4  0 0 0  7
+    0 1 5  8  0 0 0  7
+    5 4 0  8  0 0 0  7
+    1 3 7  16  0 0 0  7
+    7 5 1  16  0 0 0  7
+    3 2 6  32  0 0 0  7
+    6 7 3  32  0 0 0  7
+    2 0 4  64  0 0 0  7
+    4 6 2  64  0 0 0  7
+endnode
+node trimesh 10_DWK_wg_open2
+  parent trm_udoor_10_DWK
+  position -1.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.537255 0.0313726 0.431373 
+  bitmap NULL
+  verts 8
+    0.163865 -0.0557047 0.0
+    0.349781 2.03002 0.0
+    -0.234613 -0.0208424 0.0
+    -0.048696 2.06488 0.0
+    0.163865 -0.0557047 1.5
+    0.349781 2.03002 1.5
+    -0.234613 -0.0208424 1.5
+    -0.048696 2.06488 1.5
+  faces 12
+    0 2 3  2  0 0 0  7
+    3 1 0  2  0 0 0  7
+    4 5 7  4  0 0 0  7
+    7 6 4  4  0 0 0  7
+    0 1 5  8  0 0 0  7
+    5 4 0  8  0 0 0  7
+    1 3 7  16  0 0 0  7
+    7 5 1  16  0 0 0  7
+    3 2 6  32  0 0 0  7
+    6 7 3  32  0 0 0  7
+    2 0 4  64  0 0 0  7
+    4 6 2  64  0 0 0  7
+endnode
+node trimesh 10_DWK_wg_closed
+  parent trm_udoor_10_DWK
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.537255 0.0313726 0.431373 
+  bitmap NULL
+  verts 8
+    -1.05 -0.2 0.0
+    1.05 -0.2 0.0
+    -1.05 0.2 0.0
+    1.05 0.2 0.0
+    -1.05 -0.2 1.5
+    1.05 -0.2 1.5
+    -1.05 0.2 1.5
+    1.05 0.2 1.5
+  faces 12
+    0 2 3  2  0 0 0  7
+    3 1 0  2  0 0 0  7
+    4 5 7  4  0 0 0  7
+    7 6 4  4  0 0 0  7
+    0 1 5  8  0 0 0  7
+    5 4 0  8  0 0 0  7
+    1 3 7  16  0 0 0  7
+    7 5 1  16  0 0 0  7
+    3 2 6  32  0 0 0  7
+    6 7 3  32  0 0 0  7
+    2 0 4  64  0 0 0  7
+    4 6 2  64  0 0 0  7
+endnode
+node dummy 10_DWK_dp_open1_01
+  parent trm_udoor_10_DWK
+  position -0.3 -1.9 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy 10_DWK_dp_open2_01
+  parent trm_udoor_10_DWK
+  position -0.2 1.9 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy 10_DWK_dp_closed_01
+  parent trm_udoor_10_DWK
+  position 0.8 -0.4 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy 10_DWK_dp_closed_02
+  parent trm_udoor_10_DWK
+  position 0.8 0.4 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode

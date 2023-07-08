@@ -1,0 +1,115 @@
+# Exported from NWmax 0.8 c00 at 10/11/2019 3:28:20 PM
+# dwk file
+#
+#NWmax DWKMESH  ASCII
+node dummy 05_DWK_dp_open2_01
+  parent TCN_UDoor_05_DWK
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.721569 0.607843 0.898039 
+endnode
+node dummy 05_DWK_dp_closed_01
+  parent TCN_UDoor_05_DWK
+  position -0.0465625 -1.02762 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.721569 0.607843 0.898039 
+endnode
+node dummy 05_DWK_dp_open1_01
+  parent TCN_UDoor_05_DWK
+  position 0.033457 0.929515 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.721569 0.607843 0.898039 
+endnode
+node dummy 05_DWK_dp_closed_02
+  parent TCN_UDoor_05_DWK
+  position -0.0465625 0.929515 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.721569 0.607843 0.898039 
+endnode
+node trimesh 05_DWK_wg_closed
+  parent TCN_UDoor_05_DWK
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.431373 0.521569 
+  bitmap NULL
+  verts 8
+    -2.55 -0.05 2.95
+    2.55 -0.05 2.95
+    -2.55 0.05 2.95
+    2.55 0.05 2.95
+    -2.55 -0.05 -0.05
+    2.55 -0.05 -0.05
+    -2.55 0.05 -0.05
+    2.55 0.05 -0.05
+  faces 12
+    2 0 3  2  0 0 0  7
+    1 3 0  2  0 0 0  7
+    5 4 7  4  0 0 0  7
+    6 7 4  4  0 0 0  7
+    1 0 5  8  0 0 0  7
+    4 5 0  8  0 0 0  7
+    3 1 7  16  0 0 0  7
+    5 7 1  16  0 0 0  7
+    2 3 6  32  0 0 0  7
+    7 6 3  32  0 0 0  7
+    0 2 4  64  0 0 0  7
+    6 4 2  64  0 0 0  7
+endnode
+node trimesh 05_DWK_wg_open1
+  parent TCN_UDoor_05_DWK
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.431373 0.521569 
+  bitmap NULL
+  verts 8
+    2.6 -0.05 2.95
+    2.69 -0.05 2.95
+    2.6 0.05 2.95
+    2.69 0.05 2.95
+    2.6 -0.05 -0.05
+    2.69 -0.05 -0.05
+    2.6 0.05 -0.05
+    2.69 0.05 -0.05
+  faces 12
+    2 0 3  2  0 0 0  7
+    1 3 0  2  0 0 0  7
+    5 4 7  4  0 0 0  7
+    6 7 4  4  0 0 0  7
+    1 0 5  8  0 0 0  7
+    4 5 0  8  0 0 0  7
+    3 1 7  16  0 0 0  7
+    5 7 1  16  0 0 0  7
+    2 3 6  32  0 0 0  7
+    7 6 3  32  0 0 0  7
+    0 2 4  64  0 0 0  7
+    6 4 2  64  0 0 0  7
+endnode
+node trimesh 05_DWK_wg_open2
+  parent TCN_UDoor_05_DWK
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.431373 0.521569 
+  bitmap NULL
+  verts 8
+    -2.66 -0.05 2.95
+    -2.58 -0.05 2.95
+    -2.66 0.05 2.95
+    -2.58 0.05 2.95
+    -2.66 -0.05 -0.05
+    -2.58 -0.05 -0.05
+    -2.66 0.05 -0.05
+    -2.58 0.05 -0.05
+  faces 12
+    2 0 3  2  0 0 0  7
+    1 3 0  2  0 0 0  7
+    5 4 7  4  0 0 0  7
+    6 7 4  4  0 0 0  7
+    1 0 5  8  0 0 0  7
+    4 5 0  8  0 0 0  7
+    3 1 7  16  0 0 0  7
+    5 7 1  16  0 0 0  7
+    2 3 6  32  0 0 0  7
+    7 6 3  32  0 0 0  7
+    0 2 4  64  0 0 0  7
+    6 4 2  64  0 0 0  7
+endnode
