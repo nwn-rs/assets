@@ -1,0 +1,28 @@
+# Exported from NWmax 0.8 c00 at 8/18/2020 2:07:11 PM
+# wok file
+#
+#NWmax WALKMESH  ASCII
+beginwalkmeshgeom ttf02_m11_07
+node aabb wm_ttf02_m1107
+  parent ttf02_m11_07
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  ambient 0.588 0.588 0.588 
+  diffuse 0.6 0.34 0.16 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap NULL
+  verts 4
+    -5.0 -5.0 12.5
+    5.0 -5.0 12.5
+    5.0 5.0 12.5
+    -5.0 5.0 12.5
+  faces 2
+    0 1 2  1  0 0 0  1
+    2 3 0  1  0 0 0  1
+    aabb         -5.0 -5.0 12.5 5.0 5.0 12.5 -1
+        -5.0 -5.0 12.5 5.0 5.0 12.5 1
+        -5.0 -5.0 12.5 5.0 5.0 12.5 0
+endnode
+endwalkmeshgeom ttf02_m11_07

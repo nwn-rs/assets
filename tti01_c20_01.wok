@@ -1,0 +1,21 @@
+#MAXWALKMESH  ASCII
+beginwalkmeshgeom TTI01_c20_01 
+node aabb Box03 
+  parent TTI01_c20_01 
+  position 0.0 0.0 -6.4
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.694118 0.345098 0.101961  
+    verts 4
+     -5.0 -5.0 3.0
+     5.0 -5.0 3.0
+     -5.0 5.0 3.0
+     5.0 5.0 3.0
+    faces 2
+     0 1 3  4  8 9 11  7
+     3 2 0  4  11 10 8  7
+aabb    -5.00 -5.00  3.00   5.00  5.00  3.00  -1
+    -5.00 -5.00  3.00   5.00  5.00  3.00  0
+    -5.00 -5.00  3.00   5.00  5.00  3.00  1
+endnode
+endwalkmeshgeom TTI01_c20_01 
+

@@ -1,0 +1,73 @@
+# Exported from NWmax 0.8 b60 at 10.08.2012 23:05:33
+# wok file
+#
+#NWmax WALKMESH  ASCII
+beginwalkmeshgeom trm02_m31_02
+node aabb walkmesh
+  parent trm02_m31_02
+  position 0.0 0.0 8.0
+  orientation 1.0 0.0 0.0 -6.28319
+  wirecolor 0.419608 0.0313726 0.529412 
+  multimaterial 20
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+  ambient 0.0 0.0 0.0 
+  diffuse 0.0 0.501961 0.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap Grass
+  verts 9
+    -5.0 -5.0 5.0
+    -5.0 5.0 5.0
+    5.0 5.0 5.0
+    4.0 -4.0 -0.43
+    4.0 -5.0 -0.5
+    5.0 -4.0 -0.5
+    5.0 -5.0 -0.5
+    5.0 -4.5 -0.5
+    4.5 -5.0 -0.5
+  faces 8
+    5 3 7  0  0 0 0  3
+    8 6 3  0  0 0 0  3
+    7 3 6  0  0 0 0  3
+    4 8 3  0  0 0 0  3
+    0 3 1  0  0 0 0  7
+    3 2 1  0  0 0 0  7
+    3 5 2  0  0 0 0  7
+    4 3 0  0  0 0 0  7
+    aabb         -5.0 -5.0 -0.5 5.0 5.0 5.0 -1
+        -5.0 -5.0 -0.5 5.0 5.0 5.0 -1
+        -5.0 -5.0 -0.43 4.0 5.0 5.0 4
+        -5.0 -5.0 -0.5 5.0 5.0 5.0 -1
+        -5.0 -5.0 -0.5 4.0 -4.0 5.0 7
+        -5.0 -4.0 -0.43 5.0 5.0 5.0 5
+        4.0 -5.0 -0.5 5.0 5.0 5.0 -1
+        4.0 -5.0 -0.5 5.0 -4.0 -0.43 -1
+        4.0 -5.0 -0.5 4.5 -4.0 -0.43 3
+        4.0 -5.0 -0.5 5.0 -4.0 -0.43 -1
+        4.0 -5.0 -0.5 5.0 -4.0 -0.43 1
+        4.0 -5.0 -0.5 5.0 -4.0 -0.43 -1
+        4.0 -5.0 -0.5 5.0 -4.0 -0.43 2
+        4.0 -4.5 -0.5 5.0 -4.0 -0.43 0
+        4.0 -4.0 -0.5 5.0 5.0 5.0 6
+endnode
+endwalkmeshgeom trm02_m31_02
+

@@ -1,0 +1,21 @@
+#MAXWALKMESH  ASCII
+beginwalkmeshgeom TTU01_r07_01 
+node aabb Object695 
+  parent TTU01_r07_01 
+  position 0.0 0.0 3.76
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.266667 0.168627  
+    verts 4
+     -5.0 5.0 0.000529785
+     5.0 5.0 0.000529785
+     -5.0 -5.0 0.000529785
+     5.0 -5.0 0.000529785
+    faces 2
+     2 3 1  0  3 4 2  7
+     2 1 0  0  3 2 1  7
+aabb    -5.00 -5.00  0.00   5.00  5.00  0.00  -1
+    -5.00 -5.00  0.00   5.00  5.00  0.00  0
+    -5.00 -5.00  0.00   5.00  5.00  0.00  1
+endnode
+endwalkmeshgeom TTU01_r07_01 
+

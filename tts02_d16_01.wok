@@ -1,0 +1,81 @@
+# Exported from NWmax 0.8 b61 at 25.11.2021 20:29:51
+# wok file
+#
+#NWmax WALKMESH  ASCII
+beginwalkmeshgeom tts02_d16_01
+node aabb CM058
+  parent tts02_d16_01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  multimaterial 20
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+  ambient 0.0 0.0 0.0 
+  diffuse 0.705882 0.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap Nonwalk
+  verts 8
+    -5.0 0.0 4.0
+    0.0 5.0 4.0
+    0.0 5.0 5.0
+    -5.0 0.0 5.0
+    5.0 -5.0 4.0
+    5.0 5.0 4.0
+    -5.0 -5.0 4.0
+    -5.0 5.0 5.0
+  faces 6
+    0 1 2  1  0 1 2  7
+    0 2 3  1  0 2 3  7
+    1 0 4  2  4 5 6  2
+    1 4 5  2  7 6 8  2
+    0 6 4  2  9 10 11  2
+    3 2 7  0  12 13 14  19
+  tverts 15
+    1.6 0.803 0
+    2.0 0.803 0
+    2.0 1.0 0
+    1.6 1.0 0
+    1.03996 0.0010002 0
+    1.1398 0.227811 0
+    1.12482 1.0556 0
+    1.16632 0.691512 0
+    0.626864 0.691511 0
+    1.79231 0.885202 0
+    1.57509 1.54389 0
+    1.08029 1.63998 0
+    1.73769 1.05239 0
+    1.999 0.999999 0
+    1.999 1.4995 0
+    aabb         -5.0 -5.0 4.0 5.0 5.0 5.0 -1
+        -5.0 -5.0 4.0 5.0 5.0 5.0 -1
+        -5.0 0.0 4.0 0.0 5.0 5.0 -1
+        -5.0 0.0 4.0 0.0 5.0 5.0 1
+        -5.0 0.0 5.0 0.0 5.0 5.0 5
+        -5.0 -5.0 4.0 5.0 5.0 5.0 -1
+        -5.0 -5.0 4.0 5.0 0.0 4.0 4
+        -5.0 0.0 4.0 0.0 5.0 5.0 0
+        -5.0 -5.0 4.0 5.0 5.0 4.0 -1
+        -5.0 -5.0 4.0 5.0 5.0 4.0 2
+        0.0 -5.0 4.0 5.0 5.0 4.0 3
+endnode
+endwalkmeshgeom tts02_d16_01

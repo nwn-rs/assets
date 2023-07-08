@@ -1,0 +1,21 @@
+#MAXWALKMESH  ASCII
+beginwalkmeshgeom tdt01_O01_01 
+node aabb CMO01_01 
+  parent tdt01_O01_01 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0 0.0 0.0  
+    verts 4
+     -5.0 -5.0 0.0
+     5.0 -5.0 0.0
+     -5.0 5.0 0.0
+     5.0 5.0 0.0
+    faces 2
+     1 2 0  1  0 0 0  4
+     2 1 3  1  0 0 0  4
+aabb    -5.00 -5.00  0.00   5.00  5.00  0.00  -1
+    -5.00 -5.00  0.00   5.00  5.00  0.00  0
+    -5.00 -5.00  0.00   5.00  5.00  0.00  1
+endnode
+endwalkmeshgeom tdt01_O01_01 
+
