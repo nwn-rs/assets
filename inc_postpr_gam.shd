@@ -1,0 +1,31 @@
+////////////////////////////////////////////////////
+//--------------------------------------------------
+//
+//  Gamma shader for NWN:EE
+//
+//--------------------------------------------------
+//
+//  Description:
+//
+//  Applies gamma level.
+//
+////////////////////////////////////////////////////
+
+
+#if SHADER_TYPE == 1
+
+void VS_PostProcess_Gamma()
+{
+	// Nothing.
+}
+
+#else
+
+uniform float Gamma;
+
+void FS_PostProcess_Gamma(inout vec4 Color)
+{
+	Color.rgb = pow(Color.rgb, vec3(Gamma/2.2));
+}
+
+#endif

@@ -1,0 +1,128 @@
+#define POSTPROCESSING 1
+#define SHADER_TYPE 2
+#include "inc_framebuffer"
+
+#define BLOOM_SUBSTAGE_THRESHOLD                0
+#define BLOOM_SUBSTAGE_DOWNSCALE                1
+#define BLOOM_SUBSTAGE_UPSCALE                  2
+#define BLOOM_SUBSTAGE_APPLY                    3
+
+#define BLOOM_DEBUG_COMPARE_MODE                0
+
+#define BLOOM_DEBUG_MODE_DISABLED               0
+#define BLOOM_DEBUG_MODE_ABOVE_THRESHOLD_ONLY   1
+#define BLOOM_DEBUG_MODE_BELOW_THRESHOLD_ONLY   2
+#define BLOOM_DEBUG_MODE                        BLOOM_DEBUG_MODE_DISABLED
+
+
+uniform mediump float BloomThreshold;
+uniform mediump float BloomSoftness;
+uniform mediump float BloomMultiplier;
+
+uniform lowp int BloomDownscaleOffset;
+uniform lowp int BloomDownscaleSteps;
+
+uniform sampler2D texUnit0;    
+uniform sampler2D texUnit1;
+
+float GetColorBloomModifier(vec3 Color)
+{
+    float ColorMod = max(Color.r, max(Color.g, Color.b));
+    if(ColorMod <= BloomThreshold)
+    {
+        return 0.0;
+    }
+    ColorMod = (ColorMod - BloomThreshold) / ColorMod;
+    return ColorMod;
+}
+
+void main()
+{
+    vec4 Color = COLOR_BLACK;
+    if(subvariant == BLOOM_SUBSTAGE_THRESHOLD)
+    {
+        Color.rgb = clamp(texture2D(texFBColor, vVertexTexCoords).rgb, -10.0, 10.0);
+        Color.rgb *= GetColorBloomModifier(Color.rgb);
+    }
+    else if(subvariant == BLOOM_SUBSTAGE_DOWNSCALE)
+    {
+        vec2 vPixelOffset = vPixelSize * 0.5;
+        Color.rgb += texture2D(texUnit0, vVertexTexCoords + vPixelOffset).rgb;
+        Color.rgb += texture2D(texUnit0, vVertexTexCoords - vPixelOffset).rgb;
+        Color.rgb += texture2D(texUnit0, vVertexTexCoords + vec2(vPixelOffset.x, -vPixelOffset.y)).rgb;
+        Color.rgb += texture2D(texUnit0, vVertexTexCoords + vec2(-vPixelOffset.x, vPixelOffset.y)).rgb;
+        Color.rgb *= 0.25 * BloomSoftness;
+    }
+    else if(subvariant == BLOOM_SUBSTAGE_UPSCALE)
+    {
+        vec2 vPixelOffset = vPixelSize * 1.5;
+        Color.rgb += texture2D(texUnit0, vVertexTexCoords + vPixelOffset).rgb;
+        Color.rgb += texture2D(texUnit0, vVertexTexCoords - vPixelOffset).rgb;
+        Color.rgb += texture2D(texUnit0, vVertexTexCoords + vec2(vPixelOffset.x, -vPixelOffset.y)).rgb;
+        Color.rgb += texture2D(texUnit0, vVertexTexCoords + vec2(-vPixelOffset.x, vPixelOffset.y)).rgb;
+        Color.rgb *= 0.25;
+        Color.rgb += texture2D(texUnit1, vVertexTexCoords).rgb;
+    }
+    else if(subvariant == BLOOM_SUBSTAGE_APPLY)
+    {
+        vec2 vPixelOffset = vPixelSize * 1.5;
+        // Final upscale.
+        Color.rgb += texture2D(texUnit0, vVertexTexCoords + vPixelOffset).rgb + 
+                     texture2D(texUnit0, vVertexTexCoords - vPixelOffset).rgb +
+                     texture2D(texUnit0, vVertexTexCoords + vec2(vPixelOffset.x, -vPixelOffset.y)).rgb +
+                     texture2D(texUnit0, vVertexTexCoords + vec2(-vPixelOffset.x, vPixelOffset.y)).rgb;
+
+        vPixelOffset = 0.5 * vPixelSize;
+
+        // Blend in initial threshold texture.
+        Color.rgb +=(
+                    texture2D(texUnit1, vVertexTexCoords + vPixelOffset).rgb + 
+                    texture2D(texUnit1, vVertexTexCoords - vPixelOffset).rgb +
+                    texture2D(texUnit1, vVertexTexCoords + vec2(vPixelOffset.x, -vPixelOffset.y)).rgb +
+                    texture2D(texUnit1, vVertexTexCoords + vec2(-vPixelOffset.x, vPixelOffset.y)).rgb
+                    );
+
+        // This should apply to both of the above steps, so only do this once.
+        Color.rgb *= 0.25;
+
+        vec3 ColorThreshold = texture2D(texUnit1, vVertexTexCoords).rgb;
+        float ColorMod = GetColorBloomModifier(ColorThreshold + BloomThreshold);
+
+        // 1.0 - alpha determines the level of the main texture. We use it normalize it to the 0 - threshold range,
+        // since bloom will manage and apply color above that range.
+        Color.a = clamp(ColorMod * BloomMultiplier, 0.0, 1.0);
+
+        float fNormalizationFactor = 1.0;
+        if(BloomSoftness == 1.0 || BloomDownscaleSteps == 0)
+        {
+            fNormalizationFactor /= 1.0 + float(BloomDownscaleSteps);
+        }
+        else
+        {
+            // This is a geometric sequence so it can be normalized as follows (notice this is reciprocal).
+            fNormalizationFactor = (BloomSoftness - 1.0) / (pow(BloomSoftness, float(BloomDownscaleSteps + 1)) - 1.0);
+        }
+        Color.rgb *= fNormalizationFactor * BloomMultiplier;
+        
+        // Prevent bloom from ever darkening.
+        Color.rgb = max(Color.rgb, ColorThreshold * BloomMultiplier);
+        #if BLOOM_DEBUG_MODE == BLOOM_DEBUG_MODE_ABOVE_THRESHOLD_ONLY
+            Color.a = 1.0;
+        #elif BLOOM_DEBUG_MODE == BLOOM_DEBUG_MODE_BELOW_THRESHOLD_ONLY
+            Color.rgb = COLOR_BLACK.rgb;
+        #endif
+        
+        #if BLOOM_DEBUG_COMPARE_MODE == 1
+        if(vVertexTexCoords.x < userinputMousePosition.x * vPixelSize.x)
+        {
+            #if BLOOM_DEBUG_MODE == BLOOM_DEBUG_MODE_ABOVE_THRESHOLD_ONLY
+                Color.rgb = ColorThreshold;
+            #else
+                Color.rgb = COLOR_BLACK.rgb;
+                Color.a = 0.0;
+            #endif
+        }
+        #endif
+    }
+    gl_FragColor = Color;
+}

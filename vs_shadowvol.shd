@@ -1,0 +1,102 @@
+//=============================================================================
+//
+// vs_shadowvol.shd
+//
+//=============================================================================
+
+uniform mat4 m_m;
+
+uniform mat4 m_proj;
+uniform mat4 m_view;
+
+attribute vec4 vPos;
+
+attribute float fProjectionFrontal;
+
+uniform vec4 projectionSource;
+uniform float projectionWorldZClip;
+
+uniform highp vec3 clipParams;
+#define nearClip (clipParams.x)
+#define farClip (clipParams.y)
+#define fDepthToLinearModifier (clipParams.z) // This is (1-near / far)
+
+uniform highp vec3 cameraPosition;
+uniform highp vec3 cameraFocus;
+
+// Constant value inherited from old NWN.
+const float fMinOffset = 0.1;
+
+void main()
+{
+	vec3 vPosWorld = (m_m * vPos).xyz;
+	vec3 vPosView = vec3(m_view * vec4(vPosWorld.xyz, 1.0));
+	vec3 vProjection;
+	float fOffset;
+	if(projectionSource.w < 0.0)
+	{
+		vProjection = projectionSource.xyz;
+		
+		if(fProjectionFrontal > 0.0)
+		{
+			fOffset = fMinOffset;
+		}
+		else
+		{
+			fOffset = (projectionWorldZClip-vPosWorld.z) / vProjection.z;
+			fOffset = max(fMinOffset, fOffset);
+		}
+
+		// Shadows can never render above the camera / focus.
+		fOffset = max(fOffset, (max(cameraPosition.z, cameraFocus.z) - vPosWorld.z) / vProjection.z);
+	
+	}
+	else
+	{
+		vProjection = vPosWorld-projectionSource.xyz;
+		if(fProjectionFrontal > 0.0)
+		{
+			fOffset = fMinOffset;
+			vProjection = normalize(vProjection);
+		}
+		else
+		{
+			float fLength = length(vProjection);
+			// For point lighting, we clip with radius. 
+			// NB: Clipping -both- with world Z and radius at once will cause issues.
+			fOffset = projectionSource.w - fLength;
+			fOffset = max(fMinOffset, fOffset);
+			// Normalize. 
+			vProjection/= fLength;
+		}		
+	}
+
+	vProjection = mat3(m_view) * vProjection;
+
+	float fNearLimit = -nearClip - 0.001;
+	float fFarLimit = -farClip + 0.001;
+
+	float fZOffset = vPosView.z + vProjection.z * fOffset;
+	if(vProjection.z>0.001)
+	{
+		if(fZOffset > fNearLimit)
+		{
+			// For now, we just move to near limit on z. Seems the best compromise here.
+			// fOffset = -(vPosView.z-fNearLimit) / (vProjection.z);
+			fZOffset = fNearLimit;
+		}
+	}
+	else if(vProjection.z<-0.001)
+	{
+		if(fZOffset < fFarLimit)
+		{
+			fOffset = -(vPosView.z-fFarLimit) / (vProjection.z);
+			fZOffset = fFarLimit;
+		}
+	}
+	vPosView.xy += fOffset * vProjection.xy;
+	vPosView.z = fZOffset;
+
+    gl_Position = m_proj * vec4(vPosView, 1.0);
+
+}

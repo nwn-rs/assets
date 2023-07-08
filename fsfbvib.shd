@@ -1,0 +1,27 @@
+
+varying mediump vec2 vTcOut;
+
+uniform sampler2D texUnit0;
+uniform sampler2D texUnit1;
+
+uniform float Vibrance = 0.70;
+uniform vec4 RGBBalance = vec4 (1.0, 1.0, 1.0, 1.0);
+
+void main()
+{
+	vec3 color = texture2D(texUnit0, vTcOut).rgb;
+  
+	const vec3 coefLuma = vec3(0.212656, 0.715158, 0.072186);
+	float luma = dot(coefLuma, color);
+
+	float max_color = max(color.r, max(color.g, color.b)); // Find the strongest color
+	float min_color = min(color.r, min(color.g, color.b)); // Find the weakest color
+
+	float color_saturation = max_color - min_color; // The difference between the two is the saturation
+
+	// Extrapolate between luma and original by 1 + (1-saturation) - current
+	vec3 coeffVibrance = vec3(RGBBalance.rgb * Vibrance);
+	color = mix(vec3(luma, luma, luma), color, 1.0 + (coeffVibrance * (1.0 - (sign(coeffVibrance) * color_saturation))));
+
+	gl_FragColor = vec4(color.x, color.y, color.z, 1.0);
+}

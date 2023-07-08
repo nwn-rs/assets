@@ -1,0 +1,57 @@
+#ifndef INC_SCRIPTABLE
+#define INC_SCRIPTABLE
+
+// These uniforms are globally available and settable via nwscript: SetShaderUniform*.
+
+uniform float scriptableFloat1;
+uniform float scriptableFloat2;
+uniform float scriptableFloat3;
+uniform float scriptableFloat4;
+uniform float scriptableFloat5;
+uniform float scriptableFloat6;
+uniform float scriptableFloat7;
+uniform float scriptableFloat8;
+uniform float scriptableFloat9;
+uniform float scriptableFloat10;
+uniform float scriptableFloat11;
+uniform float scriptableFloat12;
+uniform float scriptableFloat13;
+uniform float scriptableFloat14;
+uniform float scriptableFloat15;
+uniform float scriptableFloat16;
+
+uniform int scriptableInt1;
+uniform int scriptableInt2;
+uniform int scriptableInt3;
+uniform int scriptableInt4;
+uniform int scriptableInt5;
+uniform int scriptableInt6;
+uniform int scriptableInt7;
+uniform int scriptableInt8;
+uniform int scriptableInt9;
+uniform int scriptableInt10;
+uniform int scriptableInt11;
+uniform int scriptableInt12;
+uniform int scriptableInt13;
+uniform int scriptableInt14;
+uniform int scriptableInt15;
+uniform int scriptableInt16;
+
+uniform vec4 scriptableVec1;
+uniform vec4 scriptableVec2;
+uniform vec4 scriptableVec3;
+uniform vec4 scriptableVec4;
+uniform vec4 scriptableVec5;
+uniform vec4 scriptableVec6;
+uniform vec4 scriptableVec7;
+uniform vec4 scriptableVec8;
+uniform vec4 scriptableVec9;
+uniform vec4 scriptableVec10;
+uniform vec4 scriptableVec11;
+uniform vec4 scriptableVec12;
+uniform vec4 scriptableVec13;
+uniform vec4 scriptableVec14;
+uniform vec4 scriptableVec15;
+uniform vec4 scriptableVec16;
+
+#endif

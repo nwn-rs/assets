@@ -1,0 +1,15 @@
+varying mediump vec2 vTcOut;
+
+uniform sampler2D texUnit0;
+
+uniform float Gamma = 2.2;
+
+void main()
+{
+	vec4 vColor = texture2D(texUnit0, vTcOut);
+	vColor.rgb = pow(vColor.rgb, vec3(Gamma/2.2));
+	// This should always be preserved as other shaders might need it -
+	// except if below 0.21 as this will result in displaying pure fog color.
+	vColor.a = max(vColor.a, 0.21);
+	gl_FragColor = vColor;
+}
