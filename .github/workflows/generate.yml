@@ -245,8 +245,17 @@ jobs:
           path: ssf.zip
       - name: Gather tga files
         run: |
-          find ./ -name '*.tga' -exec bash -c 'filename="${0##*/}"; if [[ "${filename}" == po* ]]; then convert "$0" -gravity North -chop 0x22% -rotate 180 "${filename%.*}.png"; else convert "$0" -rotate 180 "png/${filename%.*}.png"; fi; cp -prv "$0" "tga/${filename}"' {} ';'
-          cd tga && zip -r ../tga.zip . && ../png && zip -r ../png.zip
+          find / -name '*.tga' -exec bash -c '
+            filename="${0##*/}";
+            if [[ "${filename}" == po* ]];
+            then 
+              convert "$0" -gravity North -chop 0x22% -rotate 180 "png/${filename%.*}.png"; 
+            else 
+              convert "$0" -rotate 180 "png/${filename%.*}.png"; 
+            fi; 
+            cp -prv "$0" "tga/${filename}"
+          ' {} \;
+          cd tga && zip -r ../tga.zip . && ../png && zip -r ../png.zip .
       - uses: actions/upload-artifact@v3
         with:
           name: tga
