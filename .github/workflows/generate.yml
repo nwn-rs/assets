@@ -31,7 +31,9 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GH_ACCESS_TOKEN  }}
       - uses: jiro4989/setup-nim-action@v1
-      - run: nimble install neverwinter -y          
+      - run: |
+          sudo apt-get install -y imagemagick
+          nimble install neverwinter -y
       - name: Clone SteamRE/DepotDownloader
         run: |
           gh repo clone SteamRE/DepotDownloader
@@ -238,12 +240,16 @@ jobs:
           path: ssf.zip
       - name: Gather tga files
         run: |
-          find ./ -name '*.tga' -exec cp -prv '{}' 'tga/' ';'
-          cd tga && zip -r ../tga.zip .
+          find ./ -name '*.tga' -exec sh -c 'filename="${0##*/}"; if [[ "${filename}" == po* ]]; then convert "$0" -gravity North -chop 0x22% -rotate 180 "png/${filename%.*}.png"; else convert "$0" -rotate 180 "png/${filename%.*}.png"; fi; cp -prv "$0" "tga/${filename}"' {} ';'
+          cd tga && zip -r ../tga.zip . && ../png && zip -r ../png.zip
       - uses: actions/upload-artifact@v3
         with:
           name: tga
           path: tga.zip
+      - uses: actions/upload-artifact@v3
+        with:
+          name: png
+          path: png.zip          
       - name: Gather tlk files
         run: |
           find ./ -name '*.tlk' -exec cp -prv '{}' 'tlk/' ';'
@@ -356,6 +362,7 @@ jobs:
             mod.zip
             mtr.zip
             nss.zip
+            png.zip
             ovr.zip
             plt.zip
             ptt.zip
@@ -381,7 +388,7 @@ jobs:
     needs: generate
     strategy:
       matrix:
-        type: [2da, bic, dds, dlg, docs, dwk, gff, gui, ids, ini, itp, ltr, mdl, mod, mtr, nss, ovr, plt, ptt, pwk, set, shd, ssf, tga, tlk, utc, utd, ute, uti, utm, utp, uts, utt, utw, wok]
+        type: [2da, bic, dds, dlg, docs, dwk, gff, gui, ids, ini, itp, ltr, mdl, mod, mtr, nss, ovr, png, plt, ptt, pwk, set, shd, ssf, tga, tlk, utc, utd, ute, uti, utm, utp, uts, utt, utw, wok]
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
