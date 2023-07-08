@@ -7,6 +7,7 @@
 *.itp	binary
 *.mdl	binary
 *.plt	binary
+*.png binary
 *.ptt	binary
 *.ssf	binary
 *.tga	binary
