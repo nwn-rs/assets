@@ -1,0 +1,35 @@
+2DA V2.0                                                                                                                                                                               
+                                                                                                                                                                                       
+           Label             ArmorType   WeapTypeL   WeapTypeR   WeapTypeS   WeapTypeClsLw   WeapTypeClsH   WeapTypeRch   MissIndex   Looping          FallFwd         FallBck         
+0          Humanoid_Normal   ****        ****        ****        ****        ****            ****           ****          ****        ****             bf_med_flesh    bf_med_flesh    
+1          Humanoid_Large    ****        ****        ****        ****        ****            ****           ****          ****        ****             bf_large        bf_large        
+2          Simple_Normal     leather     0           0           0           0               0              0             0           ****             bf_small        bf_small        
+3          Simple_Large      leather     0           0           0           0               0              0             0           ****             bf_large        bf_large        
+4          Bone_Golem        chitin      4           4           4           4               4              4             4           ****             bf_large        bf_large        
+5          Birds             leather     18          18          18          18              18             18            18          ****             bf_tiny         bf_tiny         
+6          Beetles_Spiders   chitin      0           0           0           0               0              0             0           ****             bf_med_insect   bf_med_insect   
+7          Sword_Spider      chitin      1           1           1           1               1              1             1           ****             bf_med_insect   bf_med_insect   
+8          Leather_Flesh     leather     ****        ****        ****        ****            ****           ****          ****        ****             bf_med_hard     bf_med_hard     
+9          Plate             plate       ****        ****        ****        ****            ****           ****          ****        ****             bf_med_flesh    bf_med_flesh    
+10         Chain             chain       ****        ****        ****        ****            ****           ****          ****        ****             bf_med_flesh    bf_med_flesh    
+11         Stone             stone       ****        ****        ****        ****            ****           ****          ****        ****             bf_med_hard     bf_med_hard     
+12         Wood              wood        ****        ****        ****        ****            ****           ****          ****        ****             bf_med_flesh    bf_med_flesh    
+13         Chitin            chitin      ****        ****        ****        ****            ****           ****          ****        ****             bf_med_bone     bf_med_bone     
+14         Scale             scale       ****        ****        ****        ****            ****           ****          ****        ****             bf_med_hard     bf_med_hard     
+15         Ethereal_1        ethereal    ****        ****        ****        ****            ****           ****          ****        ****             ****            ****            
+16         Ethereal_2        ethereal    ****        ****        ****        ****            ****           ****          ****        fs_floatmoan     ****            ****            
+17         Ethereal_3        ethereal    ****        ****        ****        ****            ****           ****          ****        fs_floatexhale   ****            ****            
+18         Earth_Elemental   stone       2           2           2           2               2              2             2           fs_floatlava     bf_large        bf_large        
+19         Fire_Elemental    stone       0           0           0           0               0              0             0           fs_floatfire     bf_med_hard     bf_med_hard     
+20         Air_Elemental     leather     0           0           0           0               0              0             0           fs_floatair      ****            ****            
+21         Water_Elemental   leather     1           1           1           1               1              1             1           fs_floatwater    bf_med_hard     bf_med_hard     
+22         Dragon            scale       1           1           1           1               1              1             1           ****             bf_huge         bf_huge         
+23         Fairy             leather     18          18          18          18              18             18            18          fs_floattinkle   bf_tiny         bf_tiny         
+24         Slaad             leather     0           2           2           2               2              2             2           ****             bf_med_hard     bf_med_hard     
+25         Battle_Horror     plate       ****        ****        ****        ****            ****           ****          ****        fs_floatmoan     bf_med_hard     bf_med_hard     
+26         Mephit            leather     0           0           0           0               0              0             0           ****             bf_small        bf_small        
+27         Gelatinous_Cube   leather     0           0           0           0               0              0             0           fs_squishy       bf_squish       bf_squish       
+28         Metl_Golem        plate       2           2           2           2               2              2             2           ****             bf_large        bf_large        
+29	       Halaster          leather     20          20          20          20              20             20            20          ****             ****            ****
+30         Shark             leather     21          21          21          21              21             21            21  	      ****             ****            ****
+31         Crystalline       crystal     2           2           2           2               2              2             2           ****             ****            ****

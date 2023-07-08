@@ -1,0 +1,6 @@
+2DA V2.0
+
+     Label          Model        Animation        ModelLightning          FadeTime
+0    Clear          ****         ****             ****                    ****
+1    Rain           fx_rain      rain             fx_lightning01          6000
+2    Snow           fx_snow      snow             fx_lightning01          6000

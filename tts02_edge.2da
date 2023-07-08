@@ -1,0 +1,33 @@
+2DA V2.0
+
+   Corner1 Edge   Corner2 Height Model        
+0  Trees   ****   Water   0      tts02_z10_01 
+1  Snow    ****   Water   0      tts02_z05_01 
+2  Water   ****   Water   0      tts02_z02_01 
+3  Snow+   ****   Water   0      tts02_z07_01 
+4  Trees   ****   Snow    0      tts02_z08_01 
+5  Snow    ****   Snow    0      tts02_z01_01 
+6  Snow+   ****   Snow    0      tts02_z06_01 
+7  Trees   ****   Trees   0      tts02_z03_01 
+8  Snow+   ****   Trees   0      tts02_z09_01 
+9  Snow+   ****   Snow+   1      tts02_z01_01 
+10 Snow    Road   Snow    0      tts02_z12_01 
+11 Snow    Stream Snow    0      tts02_z15_01 
+12 Snow    Wall1  Snow    0      tts02_z13_01 
+13 Snow    Wall2  Snow    0      tts02_z14_01 
+14 Water   Road   Water   0      tts02_z16_01 
+15 Water   ****   ****    0      tts02_z02_01 
+16 Snow    ****   ****    0      tts02_z01_01 
+17 Trees   ****   ****    0      tts02_z03_01 
+18 Snow+   ****   ****    1      tts02_z01_01 
+19 Snow+   Road   Snow+   1      tts02_z12_01 
+20 Snow+   Stream Snow+   1      tts02_z15_01 
+21 Snow+   Wall1  Snow+   1      tts02_z13_01 
+22 Snow+   Wall2  Snow+   1      tts02_z14_01 
+23 Trees+  ****   Trees   0      tts02_z17_01 
+24 Snow    ****   Fort    0      tts02_z18_01 
+25 Snow+   ****   Fort    0      tts02_z19_01 
+26 Fort    ****   ****    0      tts02_z04_01 
+27 Fort+   ****   Fort+   1      tts02_z04_01 
+28 Fort+   ****   ****    1      tts02_z04_01 
+29 Fort    ****   Fort    0      tts02_z04_01 

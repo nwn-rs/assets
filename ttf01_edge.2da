@@ -1,0 +1,16 @@
+2DA V2.0
+
+       Corner1     Edge     Corner2     Height     Model            
+0      Forest      ****     Forest      0          TTF01_Z01_01     
+1      Forest      Stream   Forest      0          TTF01_Z02_01     
+2      Forest      Wall     Forest      0          TTF01_Z03_01     
+3      Pit         Bridge   Pit         0          TTF01_Z04_01     
+4      Forest      Road     Forest      0          TTF01_Z05_01     
+5      Forest      ****     Pit         0          TTF01_Z06_01     
+6      Cliff       ****     Pit         0          TTF01_Z08_01     
+7      Cliff       ****     Forest      0          TTF01_Z10_01     
+8      Cliff       ****     Cliff       0          TTF01_Z12_01     
+9      Pit         ****     Pit         0          TTF01_Z13_01     
+10     Forest      ****     ****        0          TTF01_Z01_01     
+11     Pit         ****     ****        0          TTF01_Z13_01     
+12     Cliff       ****     ****        0          TTF01_Z11_01     

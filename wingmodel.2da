@@ -1,0 +1,93 @@
+2DA V2.0
+
+       LABEL                     MODEL               ENVMAP
+0      None                      ****                ****
+1      Demon                     c_wingsdm           default
+2      Angel                     c_wingsan           ****
+3      Bat                       c_wingbat           ****
+4      Dragon                    c_wingdra           ****
+5      Butterfly                 c_wingbut           ****
+6      Bird                      c_wingbird          ****
+7      ****                      ****                ****
+8      ****                      ****                ****
+9      ****                      ****                ****
+10     ****                      ****                ****
+11     ****                      ****                ****
+12     ****                      ****                ****
+13     ****                      ****                ****
+14     ****                      ****                ****
+15     ****                      ****                ****
+16     ****                      ****                ****
+17     ****                      ****                ****
+18     ****                      ****                ****
+19     ****                      ****                ****
+20     ****                      ****                ****
+21     ****                      ****                ****
+22     ****                      ****                ****
+23     ****                      ****                ****
+24     ****                      ****                ****
+25     ****                      ****                ****
+26     ****                      ****                ****
+27     ****                      ****                ****
+28     ****                      ****                ****
+29     ****                      ****                ****
+30     ****                      ****                ****
+31     ****                      ****                ****
+32     ****                      ****                ****
+33     ****                      ****                ****
+34     ****                      ****                ****
+35     ****                      ****                ****
+36     ****                      ****                ****
+37     ****                      ****                ****
+38     ****                      ****                ****
+39     ****                      ****                ****
+40     ****                      ****                ****
+41     ****                      ****                ****
+42     ****                      ****                ****
+43     ****                      ****                ****
+44     ****                      ****                ****
+45     ****                      ****                ****
+46     ****                      ****                ****
+47     ****                      ****                ****
+48     ****                      ****                ****
+49     ****                      ****                ****
+50     ****                      ****                ****
+51     ****                      ****                ****
+52     ****                      ****                ****
+53     ****                      ****                ****
+54     ****                      ****                ****
+55     ****                      ****                ****
+56     ****                      ****                ****
+57     ****                      ****                ****
+58     ****                      ****                ****
+59     "Dragon Wing, Brass"      c_wingdrg1_brs      default
+60     "Dragon Wing, Bronze"     c_wingdrg1_brz      default
+61     "Dragon Wing, Copper"     c_wingdrg1_cop      default
+62     "Dragon Wing, Silver"     c_wingdrg1_sil      default
+63     "Dragon Wing, Gold"       c_wingdrg1_gol      default
+64     "Dragon Wing, White"      c_wingdrg1_whi      ****
+65     "Dragon Wing, Black"      c_wingdrg1_blk      ****
+66     "Dragon Wing, Green"      c_wingdrg1_grn      ****
+67     "Dragon Wing, Blue"       c_wingdrg1_blu      ****
+68     "Dragon Wing, Red"        c_wingdrg1_red      ****
+69     "Dragon Wing, Brass 2"    c_wingdrg2_brs      default
+70     "Dragon Wing, Bronze 2"   c_wingdrg2_brz      default
+71     "Dragon Wing, Copper 2"   c_wingdrg2_cop      default
+72     "Dragon Wing, Silver 2"   c_wingdrg2_sil      default
+73     "Dragon Wing, Gold 2"     c_wingdrg2_gol      default
+74     "Dragon Wing, White 2"    c_wingdrg2_whi      ****
+75     "Dragon Wing, Black 2"    c_wingdrg2_blk      ****
+76     "Dragon Wing, Green 2"    c_wingdrg2_grn      ****
+77     "Dragon Wing, Blue 2"     c_wingdrg2_blu      ****
+78     "Dragon Wing, Red 2"      c_wingdrg2_red      ****
+79     "Backpack"                c_backpack          ****
+80     "Backpack, Bedroll"       c_rollpack          ****
+81     "Quiver"                  c_quiver            default
+82     "Quiver, Empty"           c_quiverempty       default
+83     "Scabbard"                c_scabbard          default
+84     "Scabbard, empty"         c_scabbard_e        default
+85     "Scabbard A"              c_scabbardA         default
+86     "Scabbard A, empty"       c_scabbardA_e       default
+87     "Scabbard B"              c_scabbardB         default
+88     "Scabbard B, empty"       c_scabbardB_e       default
+89     "Greatsword"              c_greatsword        default

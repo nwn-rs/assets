@@ -1,0 +1,7 @@
+2DA V2.0
+
+       Corner1     Edge         Corner2     Height     Model            
+0      wall        ****         wall        0          TIB01_Z02_01     
+1      wall        ****         ****        0          TIB01_Z02_01     
+2      wall        Door         wall        0          TIB01_Z03_01     
+3      wall        Corridor     wall        0          TIB01_Z01_01     
