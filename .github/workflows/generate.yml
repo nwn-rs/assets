@@ -1,5 +1,4 @@
 name: Generate
-
 on:
   workflow_dispatch:
     inputs:
@@ -7,6 +6,7 @@ on:
         type: choice
         description: What version to generate
         options:
+        - build8193.36
         - build8193.35
         - build8193.34
         - build8193.32
@@ -18,7 +18,6 @@ on:
         - build8193.26
         - build8193.25
         required: true
-
 jobs:
   generate:
     name: Generate ${{ github.event.inputs.release }} nwn files
@@ -31,83 +30,37 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_ACCESS_TOKEN  }}
-      - uses: jiro4989/setup-nim-action@v1
-      - uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '6.0.x'
+      - name: Install Neverwinter.nim
+        run: |
+          wget -O nwn-nim.zip https://github.com/niv/neverwinter.nim/releases/download/1.5.9/neverwinter.linux.amd64.zip
+          unzip -j nwn-nim.zip nwn_key_unpack -d /usr/local/bin/
+          chmod +x /usr/local/bin/nwn_key_unpack
+          echo /usr/local/bin/ >> $GITHUB_PATH
+      - name: Install Imagemagick
+        run: |
+          sudo apt-get install -y imagemagick
       - name: Clone SteamRE/DepotDownloader
         run: |
           gh repo clone SteamRE/DepotDownloader
       - name: Download nwn:ee files
         run: |
+          mkdir unpacked 2da bic dds dlg dwk git gff gui ids ini itp ltr jrl mdl mod mtr nss png plt ptt pwk set shd ssf tga tlk utc utd ute uti utm utp uts utt utw wok
           cd DepotDownloader/DepotDownloader
-          dotnet run -app 704450 -depot 704451 -beta ${{ github.event.inputs.release }} -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
-          cd ${{ env.GITHUB_WORKSPACE }}
-          mkdir unpacked
-      - run: nimble install neverwinter -y
-      - name: unpack preview keyfile
-        if: github.event.inputs.release == 'build8193.35'
-        run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/11253735/data/nwn_base.key unpacked
-          cp -r DepotDownloader/DepotDownloader/depots/704451/11253735/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/11253735/ovr/ ovr/
-      - name: unpack build8193.34 keyfile
-        if: github.event.inputs.release == 'build8193.34'
-        run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7843474/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7843474/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7843474/ovr/ ovr/
-      - name: unpack build8193.32 keyfile
-        if: github.event.inputs.release == 'build8193.32'
-        run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7398767/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7398767/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7398767/ovr/ ovr/
-      - name: unpack build8193.31 keyfile
-        if: github.event.inputs.release == 'build8193.31'
-        run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7370737/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7370737/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7370737/ovr/ ovr/
-      - name: unpack build8193.30 keyfile
-        if: github.event.inputs.release == 'build8193.30'
-        run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/7070152/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7070152/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/7070152/ovr/ ovr/
-      - name: unpack build8193.29 keyfile
-        if: github.event.inputs.release == 'build8193.29'
-        run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6999455/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6999455/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6999455/ovr/ ovr/
-      - name: unpack build8193.28 keyfile
-        if: github.event.inputs.release == 'build8193.28'
-        run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6952603/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6952603/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6952603/ovr/ ovr/
-      - name: unpack build8193.27 keyfile
-        if: github.event.inputs.release == 'build8193.27'
-        run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6933430/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6933430/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6933430/ovr/ ovr/
-      - name: unpack build8193.26 keyfile
-        if: github.event.inputs.release == 'build8193.26'
-        run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6925985/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6925985/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6925985/ovr/ ovr/
-      - name: unpack build8193.25 keyfile
-        if: github.event.inputs.release == 'build8193.25'
-        run: |
-          nwn_key_unpack DepotDownloader/DepotDownloader/depots/704451/6907248/data/nwn_base.key unpacked/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/lang/en/docs/ docs/
-          cp -r DepotDownloader/DepotDownloader/depots/704451/6907248/ovr/ ovr/
-
-      - run: mkdir 2da bic dds dlg dwk git gff gui ids ini itp ltr jrl mdl mod mtr nss plt ptt pwk set shd ssf tga tlk utc utd ute uti utm utp uts utt utw wok
-
+          if [ "${{ github.event.inputs.release }}" = "build8193.36" ]; then
+            dotnet run -app 704450 -depot 704451 -beta preview -betapassword previewpreview -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
+          else
+            dotnet run -app 704450 -depot 704451 -beta ${{ github.event.inputs.release }} -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
+          fi
+          dir_name=""
+          for dir in depots/704451/*; do
+            if [ -d "$dir" ]; then
+              dir_name=$(basename "$dir")
+              echo "$dir_name"
+            fi
+          done
+          nwn_key_unpack "depots/704451/$dir_name/data/nwn_base.key" ../../unpacked/
+          cp -r "depots/704451/$dir_name/lang/en/docs/" ../../docs/
+          cp -r "depots/704451/$dir_name/ovr/" ../../ovr/
       - name: Gather 2da files
         run: |
           find ./ -name '*.2da' -exec cp -prv '{}' '2da/' ';'
@@ -292,12 +245,25 @@ jobs:
           path: ssf.zip
       - name: Gather tga files
         run: |
-          find ./ -name '*.tga' -exec cp -prv '{}' 'tga/' ';'
-          cd tga && zip -r ../tga.zip .
+          find unpacked/ -name '*.tga' -exec bash -c '
+            filename="${0##*/}";
+            if [[ "${filename}" == po* ]];
+            then 
+              convert "$0" -gravity North -chop 0x22% -rotate 180 "png/${filename%.*}.png"; 
+            else 
+              convert "$0" -rotate 180 "png/${filename%.*}.png"; 
+            fi; 
+            cp -prv "$0" "tga/${filename}"
+          ' {} \;
+          cd tga && zip -r ../tga.zip . && cd ../png && zip -r ../png.zip .
       - uses: actions/upload-artifact@v3
         with:
           name: tga
           path: tga.zip
+      - uses: actions/upload-artifact@v3
+        with:
+          name: png
+          path: png.zip          
       - name: Gather tlk files
         run: |
           find ./ -name '*.tlk' -exec cp -prv '{}' 'tlk/' ';'
@@ -386,56 +352,13 @@ jobs:
         with:
           name: wok
           path: wok.zip
-      - name: prerelease
-        if: github.event.inputs.release == 'preview'
-        uses: softprops/action-gh-release@v1
-        with:
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
-          tag_name: release/${{ github.event.inputs.release }}
-          prerelease: true
-          files: |
-            2da.zip
-            bic.zip
-            dds.zip
-            dlg.zip
-            docs.zip
-            dwk.zip
-            gff.zip
-            gui.zip
-            ids.zip
-            ini.zip
-            itp.zip
-            ltr.zip
-            mdl.zip
-            mod.zip
-            mtr.zip
-            nss.zip
-            ovr.zip
-            plt.zip
-            ptt.zip
-            pwk.zip
-            set.zip
-            shd.zip
-            ssf.zip
-            tga.zip
-            tlk.zip
-            utc.zip
-            utd.zip
-            ute.zip
-            uti.zip
-            utm.zip
-            utp.zip
-            uts.zip
-            utt.zip
-            utw.zip
-            wok.zip
-
       - name: Release
-        if: github.event.inputs.release != 'preview'
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
+          name: ${{ github.event.inputs.release }}
           tag_name: release/${{ github.event.inputs.release }}
+          prerelease: ${{ github.event.inputs.release == 'build8193.36' }}
           files: |
             2da.zip
             bic.zip
@@ -453,6 +376,7 @@ jobs:
             mod.zip
             mtr.zip
             nss.zip
+            png.zip
             ovr.zip
             plt.zip
             ptt.zip
@@ -478,7 +402,7 @@ jobs:
     needs: generate
     strategy:
       matrix:
-        type: [2da, bic, dds, dlg, docs, dwk, gff, gui, ids, ini, itp, ltr, mdl, mod, mtr, nss, ovr, plt, ptt, pwk, set, shd, ssf, tga, tlk, utc, utd, ute, uti, utm, utp, uts, utt, utw, wok]
+        type: [2da, bic, dds, dlg, docs, dwk, gff, gui, ids, ini, itp, ltr, mdl, mod, mtr, nss, ovr, png, plt, ptt, pwk, set, shd, ssf, tga, tlk, utc, utd, ute, uti, utm, utp, uts, utt, utw, wok]
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
