@@ -1,0 +1,24 @@
+# Exported from NWmax 0.8 b60 at 6/21/2006 3:27:49 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pmo6_cloak_002
+#local file: Unknown
+filedependancy Unknown
+newmodel pmo6_cloak_002
+setsupermodel pmo6_cloak_002 pmo6
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom pmo6_cloak_002
+node dummy pmo6_cloak_002
+  parent NULL
+endnode
+node trimesh rootdummy
+  parent pmo6_cloak_002
+  position 0.000249158 -0.0325529 1.19227
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+endnode
+endmodelgeom pmo6_cloak_002
+donemodel pmo6_cloak_002

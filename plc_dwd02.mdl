@@ -1,0 +1,1314 @@
+# Exported from NWmax 0.8 c00 at 4/27/2020 1:15:05 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: PLC_dwd02
+#local file: M:\DoD Fixes\driftwood2.max
+filedependancy driftwood2.max
+newmodel PLC_dwd02
+setsupermodel PLC_dwd02 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom PLC_dwd02
+node dummy PLC_dwd02
+  parent NULL
+endnode
+node emitter ChunkyWood
+  parent PLC_dwd02
+  position 0.00528414 0.0133384 0.713518
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.87451 0.776471 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType -1
+  xSize 15.0
+  ySize 7.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.482353 0.435294 0.317647 
+  colorEnd 0.584314 0.533333 0.407843 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 1.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 1
+  xgrid 5
+  ygrid 5
+  fps 0
+  framestart 0
+  frameend 24
+  random 0
+  chunkName PLC_Chunk_W01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fire!
+  parent PLC_dwd02
+  position 0.0 0.0137917 0.504806
+  orientation 1.0 0.0 0.0 -1.5708
+  wirecolor 0.686275 0.101961 0.101961 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType -1
+  xSize 400.0
+  ySize 400.0
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.45098 0.392157 
+  colorEnd 0.760784 0.74902 0.694118 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 1
+  xgrid 4
+  ygrid 4
+  fps 10
+  framestart 0
+  frameend 24
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node trimesh damage
+  parent PLC_dwd02
+  position 0.000867307 0.0348657 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.603922 0.839216 0.894118 
+  tilefade 0
+  scale 1.0
+  render 0
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.0705882 0.0 1.0 
+  Diffuse 1.0 0.501961 0.643137 
+  Specular 0.0 0.0 0.0 
+  shininess 25
+  center 0.0 0.0 25.0 
+  bitmap NULL
+  verts 12
+    0.2 0.19 0.0
+    0.2 -0.19 0.0
+    -0.2 -0.19 0.0
+    -0.2 0.19 0.0
+    0.2 0.19 0.5
+    -0.2 0.19 0.5
+    -0.2 -0.19 0.5
+    0.2 -0.19 0.5
+    -0.1 0.1 0.25
+    0.1 0.1 0.25
+    -0.1 -0.1 0.25
+    0.1 -0.1 0.25
+  faces 20
+    0 1 2  1  0 0 0  1
+    2 3 0  1  0 0 0  1
+    4 5 6  1  0 0 0  1
+    6 7 4  1  0 0 0  1
+    0 3 8  1  0 0 0  1
+    8 9 0  1  0 0 0  1
+    9 8 5  1  0 0 0  1
+    5 4 9  1  0 0 0  1
+    3 2 10  1  0 0 0  1
+    10 8 3  1  0 0 0  1
+    8 10 6  1  0 0 0  1
+    6 5 8  1  0 0 0  1
+    2 1 11  1  0 0 0  1
+    11 10 2  1  0 0 0  1
+    10 11 7  1  0 0 0  1
+    7 6 10  1  0 0 0  1
+    1 0 9  1  0 0 0  1
+    9 11 1  1  0 0 0  1
+    11 9 4  1  0 0 0  1
+    4 7 11  1  0 0 0  1
+  tverts 1
+    0.0 0.0 0
+endnode
+node danglymesh Grass01
+  parent damage
+  position -0.0788951 0.319881 -0.0633103
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.419608 0.0313726 0.529412 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center -23.0 23.0 78.5 
+  period 1.0
+  tightness 1.0
+  displacement 0.2
+  showdispl true
+  displtype 1
+  center -23.0 23.0 78.5 
+  bitmap plc_leaf01
+  verts 9
+    0.03 0.04 0.0
+    -0.04 0.01 0.0
+    -0.06 0.04 0.45
+    -0.02 0.05 0.45
+    -0.02 0.01 0.46
+    -0.28 0.27 1.22
+    -0.23 0.3 1.22
+    -0.3 0.23 1.23
+    -0.49 0.45 1.57
+  faces 14
+    0 1 2  1  0 1 2  1
+    0 2 3  1  0 2 3  1
+    1 4 2  1  1 4 2  1
+    1 0 3  1  1 0 3  1
+    1 3 4  1  1 3 4  1
+    3 2 5  1  3 2 5  1
+    3 5 6  1  3 5 6  1
+    2 4 7  1  2 4 7  1
+    2 7 5  1  2 7 5  1
+    4 3 6  1  4 8 9  1
+    4 6 7  1  4 9 7  1
+    6 5 8  1  6 5 10  1
+    5 7 8  1  5 7 10  1
+    7 6 8  1  7 9 10  1
+  tverts 11
+    0.00107657 0.00149864 0
+    0.116792 0.00149864 0
+    0.119477 0.776669 0
+    -0.00380523 0.776669 0
+    0.188309 0.776669 0
+    0.103736 2.22333 0
+    -0.00226858 2.22333 0
+    0.164911 2.22333 0
+    0.296195 0.776669 0
+    0.297731 2.22333 0
+    0.162896 2.9985 0
+  constraints 9
+    0.0
+    0.0
+    220.0
+    220.0
+    220.0
+    192.0
+    192.0
+    192.0
+    128.0
+endnode
+node danglymesh Grass02
+  parent damage
+  position -0.0784514 0.358226 -0.0633103
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.694118 0.101961 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 3.5 23.0 54.0 
+  period 1.0
+  tightness 1.0
+  displacement 0.16
+  showdispl true
+  displtype 1
+  center 3.5 23.0 54.0 
+  bitmap plc_leaf01
+  verts 9
+    0.04 0.0 0.0
+    -0.01 0.03 0.0
+    0.0 0.05 0.31
+    0.02 0.03 0.31
+    0.0 0.01 0.32
+    0.04 0.27 0.84
+    0.08 0.25 0.84
+    0.01 0.26 0.85
+    0.06 0.46 1.08
+  faces 14
+    0 1 2  1  0 1 2  1
+    0 2 3  1  0 2 3  1
+    1 4 2  1  1 4 2  1
+    1 0 3  1  1 0 3  1
+    1 3 4  1  1 3 4  1
+    3 2 5  1  3 2 5  1
+    3 5 6  1  3 5 6  1
+    2 4 7  1  2 4 7  1
+    2 7 5  1  2 7 5  1
+    4 3 6  1  4 8 9  1
+    4 6 7  1  4 9 7  1
+    6 5 8  1  6 5 10  1
+    5 7 8  1  5 7 10  1
+    7 6 8  1  7 9 10  1
+  tverts 11
+    0.00107657 0.00149864 0
+    0.116792 0.00149864 0
+    0.119477 0.776669 0
+    -0.00380523 0.776669 0
+    0.188309 0.776669 0
+    0.103736 2.22333 0
+    -0.00226858 2.22333 0
+    0.164911 2.22333 0
+    0.296195 0.776669 0
+    0.297731 2.22333 0
+    0.162896 2.9985 0
+  constraints 9
+    0.0
+    0.0
+    220.0
+    220.0
+    220.0
+    192.0
+    192.0
+    192.0
+    128.0
+endnode
+node danglymesh Grass03
+  parent damage
+  position 0.250554 -0.0268064 0.223952
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.694118 0.101961 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 12.0 16.5 51.0 
+  period 1.0
+  tightness 1.0
+  displacement 0.155
+  showdispl true
+  displtype 1
+  center 12.0 16.5 51.0 
+  bitmap plc_leaf01
+  verts 9
+    0.05 -0.02 0.0
+    0.01 0.05 0.0
+    0.02 0.05 0.29
+    0.04 0.01 0.29
+    -0.01 0.01 0.3
+    0.16 0.21 0.79
+    0.21 0.16 0.79
+    0.11 0.22 0.8
+    0.25 0.35 1.02
+  faces 14
+    0 1 2  1  0 1 2  1
+    0 2 3  1  0 2 3  1
+    1 4 2  1  1 4 2  1
+    1 0 3  1  1 0 3  1
+    1 3 4  1  1 3 4  1
+    3 2 5  1  3 2 5  1
+    3 5 6  1  3 5 6  1
+    2 4 7  1  2 4 7  1
+    2 7 5  1  2 7 5  1
+    4 3 6  1  4 8 9  1
+    4 6 7  1  4 9 7  1
+    6 5 8  1  6 5 10  1
+    5 7 8  1  5 7 10  1
+    7 6 8  1  7 9 10  1
+  tverts 11
+    0.00107657 0.00149864 0
+    0.116792 0.00149864 0
+    0.119477 0.776669 0
+    -0.00380523 0.776669 0
+    0.188309 0.776669 0
+    0.103736 2.22333 0
+    -0.00226858 2.22333 0
+    0.164911 2.22333 0
+    0.296195 0.776669 0
+    0.297731 2.22333 0
+    0.162896 2.9985 0
+  constraints 9
+    0.0
+    0.0
+    220.0
+    220.0
+    220.0
+    192.0
+    192.0
+    192.0
+    128.0
+endnode
+node danglymesh Grass04
+  parent damage
+  position 0.341289 -0.084084 0.229002
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.564706 0.109804 0.694118 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center -4.0 -21.5 51.0 
+  period 1.0
+  tightness 1.0
+  displacement 0.145
+  showdispl true
+  displtype 1
+  center -4.0 -21.5 51.0 
+  bitmap plc_leaf01
+  verts 9
+    -0.05 -0.03 0.0
+    0.02 -0.07 0.0
+    0.01 -0.05 0.29
+    -0.03 -0.03 0.29
+    0.01 0.0 0.3
+    -0.04 -0.26 0.79
+    -0.1 -0.24 0.79
+    0.02 -0.24 0.8
+    -0.04 -0.43 1.02
+  faces 14
+    0 1 2  1  0 1 2  1
+    0 2 3  1  0 2 3  1
+    1 4 2  1  1 4 2  1
+    4 0 3  1  4 0 3  1
+    1 0 4  1  1 0 4  1
+    3 2 5  1  3 2 5  1
+    3 5 6  1  3 5 6  1
+    2 4 7  1  2 4 7  1
+    2 7 5  1  2 7 5  1
+    4 3 6  1  4 8 9  1
+    4 6 7  1  4 9 7  1
+    6 5 8  1  6 5 10  1
+    5 7 8  1  5 7 10  1
+    7 6 8  1  7 9 10  1
+  tverts 11
+    0.00107657 0.00149864 0
+    0.116792 0.00149864 0
+    0.119477 0.776669 0
+    -0.00380523 0.776669 0
+    0.188309 0.776669 0
+    0.103736 2.22333 0
+    -0.00226858 2.22333 0
+    0.164911 2.22333 0
+    0.296195 0.776669 0
+    0.297731 2.22333 0
+    0.162896 2.9985 0
+  constraints 9
+    0.0
+    0.0
+    220.0
+    220.0
+    220.0
+    192.0
+    192.0
+    192.0
+    128.0
+endnode
+node danglymesh Grass05
+  parent damage
+  position 0.38623 -0.0695402 0.258758
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.564706 0.109804 0.694118 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 32.5 -6.0 78.5 
+  period 1.0
+  tightness 1.0
+  displacement 0.2
+  showdispl true
+  displtype 1
+  center 32.5 -6.0 78.5 
+  bitmap plc_leaf01
+  verts 9
+    0.0 -0.03 0.0
+    0.04 0.03 0.0
+    0.07 -0.01 0.45
+    0.04 -0.03 0.45
+    0.02 0.0 0.46
+    0.38 -0.09 1.22
+    0.35 -0.15 1.22
+    0.37 -0.05 1.23
+    0.65 -0.14 1.57
+  faces 14
+    0 1 2  1  0 1 2  1
+    0 2 3  1  0 2 3  1
+    1 4 2  1  1 4 2  1
+    4 0 3  1  4 0 3  1
+    1 0 4  1  1 0 4  1
+    3 2 5  1  3 2 5  1
+    3 5 6  1  3 5 6  1
+    2 4 7  1  2 4 7  1
+    2 7 5  1  2 7 5  1
+    4 3 6  1  4 8 9  1
+    4 6 7  1  4 9 7  1
+    6 5 8  1  6 5 10  1
+    5 7 8  1  5 7 10  1
+    7 6 8  1  7 9 10  1
+  tverts 11
+    0.00107657 0.00149864 0
+    0.116792 0.00149864 0
+    0.119477 0.776669 0
+    -0.00380523 0.776669 0
+    0.188309 0.776669 0
+    0.103736 2.22333 0
+    -0.00226858 2.22333 0
+    0.164911 2.22333 0
+    0.296195 0.776669 0
+    0.297731 2.22333 0
+    0.162896 2.9985 0
+  constraints 9
+    0.0
+    0.0
+    220.0
+    220.0
+    220.0
+    192.0
+    192.0
+    192.0
+    128.0
+endnode
+node trimesh Driftwood_02
+  parent damage
+  position -0.0750924 0.0566179 0.186277
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.556863 0.87451 0.337255 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 11
+  center -6.5 -20.5 45.0 
+  bitmap plc_driftwood
+  verts 69
+    0.34 0.51 -0.32
+    0.09 0.02 0.04
+    0.23 0.55 -0.34
+    -0.04 0.1 0.06
+    0.23 0.58 -0.51
+    -0.11 0.08 0.01
+    0.26 0.37 -0.57
+    -0.07 -0.03 -0.08
+    0.36 0.33 -0.56
+    0.01 -0.06 -0.07
+    0.48 0.4 -0.55
+    0.08 -0.04 -0.02
+    0.48 0.49 -0.46
+    0.03 -0.12 0.36
+    0.1 -0.63 0.7
+    -0.04 -0.14 0.35
+    0.04 -0.65 0.69
+    -0.07 -0.19 0.31
+    0.01 -0.7 0.65
+    -0.04 -0.24 0.27
+    0.03 -0.74 0.62
+    0.15 -0.74 0.61
+    0.13 -0.19 0.3
+    0.17 -0.7 0.65
+    -0.06 -0.02 0.27
+    -0.18 -0.08 0.68
+    -0.06 0.05 0.23
+    -0.26 -0.01 0.66
+    -0.14 0.05 0.2
+    -0.3 -0.03 0.64
+    -0.3 -0.12 0.63
+    -0.13 -0.02 0.19
+    -0.09 -0.04 0.21
+    -0.25 -0.14 0.64
+    -0.2 -0.13 0.66
+    0.11 -0.68 0.94
+    0.15 -0.79 1.48
+    0.07 -0.71 0.93
+    0.13 -0.81 1.48
+    0.07 -0.76 0.93
+    0.12 -0.83 1.48
+    0.2 -0.78 0.92
+    0.19 -0.84 1.47
+    0.2 -0.72 0.92
+    0.19 -0.82 1.47
+    0.12 -0.96 1.22
+    0.07 -0.79 0.79
+    0.09 -0.98 1.21
+    0.12 -0.99 1.21
+    0.15 -0.78 0.79
+    0.13 -0.98 1.21
+    -0.12 -0.13 0.86
+    -0.06 -0.19 1.25
+    -0.18 -0.06 0.88
+    -0.09 -0.17 1.26
+    -0.22 -0.08 0.88
+    -0.09 -0.2 1.25
+    -0.22 -0.16 0.87
+    -0.18 -0.18 0.86
+    -0.08 -0.21 1.25
+    -0.37 -0.04 0.72
+    -0.59 -0.05 0.88
+    -0.61 -0.04 0.87
+    -0.39 -0.09 0.69
+    -0.61 -0.07 0.86
+    -0.36 -0.1 0.73
+    -0.6 -0.07 0.88
+    0.27 0.48 -0.58
+    0.1 -0.24 0.26
+  faces 134
+    0 2 3  1  0 1 2  1
+    0 3 1  1  0 2 3  1
+    2 4 3  1  12 13 14  1
+    4 5 3  1  11 23 51  1
+    4 67 5  1  13 15 17  1
+    6 7 5  1  22 24 17  1
+    6 8 7  1  4 5 6  1
+    8 9 7  1  7 16 28  1
+    8 10 9  1  7 30 16  1
+    10 11 9  1  30 38 16  1
+    10 12 11  1  8 9 10  1
+    12 1 11  1  9 18 10  1
+    12 0 1  1  9 19 18  1
+    13 15 14  1  25 27 29  1
+    15 16 14  1  27 31 29  1
+    15 17 16  1  26 35 57  1
+    17 18 16  1  35 82 57  1
+    17 19 18  1  35 85 82  1
+    19 20 18  1  85 88 82  1
+    19 68 20  1  54 56 58  1
+    68 21 20  1  56 59 58  1
+    68 22 21  1  20 21 32  1
+    22 23 21  1  21 90 32  1
+    22 13 23  1  21 120 90  1
+    13 14 23  1  120 121 90  1
+    24 26 25  1  135 137 143  1
+    26 27 25  1  52 53 55  1
+    26 28 27  1  52 61 53  1
+    28 29 27  1  61 77 53  1
+    28 30 29  1  89 101 157  1
+    28 31 30  1  89 158 101  1
+    31 32 30  1  43 47 49  1
+    32 33 30  1  47 50 49  1
+    32 24 33  1  47 63 50  1
+    24 34 33  1  63 64 50  1
+    24 25 34  1  135 143 144  1
+    35 37 36  1  78 79 80  1
+    37 38 36  1  79 81 80  1
+    37 39 38  1  159 160 161  1
+    39 40 38  1  160 162 161  1
+    39 41 40  1  65 66 71  1
+    41 42 40  1  66 72 71  1
+    41 43 42  1  145 146 147  1
+    43 44 42  1  146 148 147  1
+    43 35 44  1  91 78 92  1
+    35 36 44  1  78 80 92  1
+    41 39 45  1  93 94 95  1
+    46 48 47  1  73 74 75  1
+    46 49 48  1  73 76 74  1
+    49 50 48  1  76 112 74  1
+    49 41 50  1  149 145 150  1
+    41 45 50  1  145 151 150  1
+    51 53 52  1  152 153 154  1
+    53 54 52  1  96 97 98  1
+    53 55 54  1  96 99 97  1
+    55 56 54  1  163 164 165  1
+    55 57 56  1  163 166 164  1
+    57 58 56  1  113 114 115  1
+    58 59 56  1  114 116 115  1
+    58 52 59  1  114 117 116  1
+    58 51 52  1  114 118 117  1
+    60 62 61  1  100 105 106  1
+    60 63 62  1  60 62 67  1
+    63 64 62  1  62 68 67  1
+    63 65 64  1  119 133 134  1
+    65 66 64  1  133 136 134  1
+    65 60 66  1  33 34 36  1
+    60 61 66  1  34 37 36  1
+    28 5 31  1  89 17 158  1
+    31 7 32  1  43 28 47  1
+    22 1 13  1  21 18 120  1
+    15 24 17  1  26 167 35  1
+    17 24 32  1  35 167 168  1
+    68 11 22  1  20 10 21  1
+    1 3 26  1  108 51 52  1
+    3 5 28  1  51 23 61  1
+    5 7 31  1  17 24 158  1
+    7 9 32  1  28 16 47  1
+    9 11 68  1  16 38 138  1
+    11 1 22  1  10 18 21  1
+    46 21 49  1  73 139 76  1
+    35 16 37  1  78 122 79  1
+    37 18 39  1  159 82 160  1
+    41 49 23  1  145 149 90  1
+    43 14 35  1  91 123 78  1
+    16 18 37  1  57 82 159  1
+    18 20 39  1  82 88 160  1
+    20 46 39  1  88 169 160  1
+    20 21 46  1  140 139 73  1
+    21 23 49  1  32 90 149  1
+    23 43 41  1  90 146 145  1
+    23 14 43  1  124 123 91  1
+    14 16 35  1  123 122 78  1
+    60 29 63  1  170 157 171  1
+    63 33 65  1  119 50 133  1
+    65 57 60  1  33 39 34  1
+    51 27 53  1  152 155 153  1
+    53 60 55  1  96 100 99  1
+    55 60 57  1  163 170 166  1
+    57 65 58  1  113 133 114  1
+    58 25 51  1  114 141 118  1
+    27 29 60  1  53 77 100  1
+    27 60 53  1  53 100 96  1
+    29 30 63  1  69 70 62  1
+    30 33 63  1  49 50 119  1
+    33 34 65  1  50 64 133  1
+    34 58 65  1  64 114 133  1
+    34 25 58  1  144 143 156  1
+    25 27 51  1  55 53 125  1
+    26 3 28  1  52 51 61  1
+    26 13 1  1  52 126 108  1
+    24 13 26  1  40 25 41  1
+    24 15 13  1  40 27 25  1
+    32 19 17  1  168 85 35  1
+    9 19 32  1  172 85 168  1
+    67 10 8  1  83 84 5  2
+    10 67 4  1  84 83 86  2
+    12 10 4  1  87 84 86  2
+    12 4 2  1  127 11 131  2
+    0 12 2  1  132 127 131  2
+    42 44 36  1  42 44 45  2
+    40 42 36  1  46 42 45  2
+    38 40 36  1  48 46 45  2
+    48 50 45  1  102 103 104  2
+    45 47 48  1  104 107 102  2
+    56 59 52  1  109 110 111  2
+    52 54 56  1  111 128 109  2
+    64 66 61  1  173 174 175  2
+    61 62 64  1  37 129 130  2
+    8 6 67  1  5 4 83  2
+    67 6 5  1  15 22 17  1
+    68 19 9  0  138 142 16  1
+    39 46 47  0  160 169 176  1
+    47 45 39  0  176 177 160  1
+  tverts 178
+    0.553376 2.03809 0
+    0.447709 2.07652 0
+    0.188343 1.64424 0
+    0.313223 1.56739 0
+    1.31819 0.786951 0
+    1.41535 0.751396 0
+    1.33886 1.28465 0
+    0.615019 -1.47631 0
+    1.70886 -1.55123 0
+    1.8306 -1.53986 0
+    1.70844 -0.889521 0
+    -0.942661 0.552961 0
+    -0.815703 -1.43063 0
+    -0.745684 -1.58095 0
+    -0.681841 -0.867967 0
+    -0.628426 -1.58096 0
+    0.511246 -0.907251 0
+    -0.638562 -0.896304 0
+    1.7896 -0.881939 0
+    1.93122 -1.44859 0
+    1.73222 -0.559837 0
+    1.79372 -0.560914 0
+    -0.547359 -1.51251 0
+    -0.754757 1.11943 0
+    -0.502418 -0.906553 0
+    0.255586 1.4329 0
+    -0.652674 -0.507541 0
+    0.188343 1.41369 0
+    0.437622 -0.883219 0
+    0.322829 0.942992 0
+    0.72341 -1.51671 0
+    0.265192 0.92378 0
+    1.57706 0.00554919 0
+    -0.119053 1.45212 0
+    -0.128659 1.50975 0
+    -0.591291 -0.511485 0
+    -0.3496 1.48094 0
+    -0.339994 1.50015 0
+    0.592541 -0.892426 0
+    0.015433 1.39448 0
+    0.169131 1.52897 0
+    0.169131 1.59621 0
+    0.409284 0.741264 0
+    0.495917 -0.624 0
+    0.409284 0.760476 0
+    0.37086 0.789294 0
+    0.342041 0.75087 0
+    0.538864 -0.622979 0
+    0.351647 0.770082 0
+    0.528141 -0.172027 0
+    0.57569 -0.183788 0
+    -0.832052 1.14865 0
+    -0.85527 1.31143 0
+    -0.77525 1.75991 0
+    1.10446 1.38487 0
+    -0.854457 1.75882 0
+    1.23894 1.38487 0
+    -0.438543 0.0409435 0
+    1.1717 1.86518 0
+    1.28697 1.86518 0
+    0.787455 1.19275 0
+    -0.773605 1.30324 0
+    0.768243 1.24078 0
+    0.589482 -0.5831 0
+    0.627329 -0.186858 0
+    0.745498 0.0460907 0
+    0.870378 0.0364846 0
+    0.556908 1.19275 0
+    0.556908 1.22157 0
+    0.854698 1.18315 0
+    0.854698 1.2696 0
+    0.793529 0.574428 0
+    0.860772 0.564821 0
+    0.745498 -0.088395 0
+    0.793529 0.315062 0
+    0.764711 0.315062 0
+    0.822347 -0.088395 0
+    -0.733189 1.75117 0
+    -1.06502 1.98968 0
+    -1.0276 1.97672 0
+    -1.05748 2.50978 0
+    -1.03835 2.50808 0
+    -0.377161 0.0370003 0
+    1.25477 0.701887 0
+    1.45624 0.624363 0
+    -0.529908 -0.515428 0
+    1.16201 0.65605 0
+    1.3985 0.560014 0
+    -0.329156 0.0354198 0
+    -0.719596 -0.730243 0
+    1.63117 0.010604 0
+    -1.15284 1.97818 0
+    -1.09661 2.5036 0
+    -1.14083 1.97085 0
+    -1.01595 1.98045 0
+    -1.06399 2.25903 0
+    -0.903622 1.94454 0
+    -1.08061 2.27529 0
+    -1.10601 2.25863 0
+    -0.866477 1.95437 0
+    -0.687851 1.84267 0
+    -0.822629 -0.298185 0
+    0.342041 0.597172 0
+    0.351647 0.606778 0
+    0.342041 0.62599 0
+    -0.501854 2.04096 0
+    -0.522885 2.04533 0
+    0.313223 0.606778 0
+    -0.947857 1.09812 0
+    0.140313 1.35606 0
+    0.149919 1.34645 0
+    0.169131 1.36566 0
+    0.803135 0.315062 0
+    0.695847 0.00384867 0
+    0.726524 -0.0212051 0
+    0.964279 0.280956 0
+    0.972971 0.276865 0
+    0.990354 0.268684 0
+    0.778673 -0.0457484 0
+    0.474459 -0.0830626 0
+    1.88227 -0.559462 0
+    1.71359 0.00466001 0
+    -1.01925 1.74453 0
+    -1.07581 1.75919 0
+    -1.14703 1.71728 0
+    -0.954423 1.91122 0
+    -0.970804 1.41003 0
+    -1.18711 0.537936 0
+    0.140313 1.38487 0
+    -0.359206 1.50975 0
+    -0.359206 1.48094 0
+    -0.984451 0.710828 0
+    -1.09152 0.702359 0
+    0.516896 -0.0605674 0
+    0.352781 0.154687 0
+    2.06507 -0.59752 0
+    0.369654 0.16798 0
+    2.13231 -0.635944 0
+    0.724459 -0.65724 0
+    0.822347 -0.261305 0
+    0.707074 -0.251699 0
+    0.652894 -0.177655 0
+    0.606866 -0.591281 0
+    2.00743 -0.203669 0
+    1.9594 -0.222881 0
+    1.73755 0.259318 0
+    1.78192 0.22253 0
+    2.0304 0.702828 0
+    2.04519 0.690566 0
+    1.65784 0.163183 0
+    1.76746 0.596397 0
+    1.78838 0.591529 0
+    1.9594 -0.0307583 0
+    2.02664 -0.011546 0
+    1.90177 0.343881 0
+    2.07468 -0.222881 0
+    1.91137 -0.0307583 0
+    -0.89897 -0.339884 0
+    -0.658996 -0.69956 0
+    -0.523505 0.262879 0
+    -0.484153 0.290418 0
+    -0.747722 0.750828 0
+    -0.731981 0.761844 0
+    -0.991802 -0.123455 0
+    -1.10114 0.233842 0
+    -1.13026 0.225189 0
+    -0.923331 -0.0872647 0
+    -0.703057 -0.636596 0
+    -0.65427 -0.672804 0
+    -0.383434 0.196755 0
+    -0.935161 -0.271413 0
+    -0.879286 -0.267486 0
+    -0.484315 -0.88216 0
+    -0.785408 -0.00194001 0
+    -0.785408 0.0172724 0
+    -0.80462 0.0172724 0
+    -0.465218 0.631958 0
+    -0.486467 0.628813 0
+endnode
+node dummy dwd02_ground
+  parent PLC_dwd02
+  position 0.00363281 -0.0069873 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
+node dummy dwd02_hand
+  parent PLC_dwd02
+  position -0.00398926 0.009105 0.706402
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
+node dummy dwd02_head
+  parent PLC_dwd02
+  position 0.0775075 0.0957358 0.821803
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
+node dummy dwd02_head_hit
+  parent PLC_dwd02
+  position -0.00398926 -0.0108252 0.809092
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
+node dummy dwd02_impact
+  parent PLC_dwd02
+  position -0.00398926 -0.011001 0.868134
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
+endmodelgeom PLC_dwd02
+
+#NWmax ANIM ASCII
+newanim damage PLC_dwd02
+  length 0.133333
+  transtime 0.0
+  animroot PLC_dwd02
+    node dummy PLC_dwd02
+        parent NULL
+    endnode
+    node emitter ChunkyWood
+        parent PLC_dwd02
+    endnode
+    node emitter fire!
+        parent PLC_dwd02
+    endnode
+    node trimesh damage
+        parent PLC_dwd02
+        positionkey
+            0.0 0.000867307 0.0348657 0.0
+            0.0333333 0.000867307 0.0348657 0.0244581
+            0.133333 0.000867307 0.0348657 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 -0.371336 0.928463 0.00810258 -0.0469942
+            0.1 0.599949 -0.79997 0.0104721 -0.0436326
+            0.133333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node danglymesh Grass01
+        parent damage
+    endnode
+    node danglymesh Grass02
+        parent damage
+    endnode
+    node danglymesh Grass03
+        parent damage
+    endnode
+    node danglymesh Grass04
+        parent damage
+    endnode
+    node danglymesh Grass05
+        parent damage
+    endnode
+    node trimesh Driftwood_02
+        parent damage
+    endnode
+    node dummy dwd02_ground
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_hand
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_head
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_head_hit
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_impact
+        parent PLC_dwd02
+    endnode
+    node dummy PLC_dwd02_pwk
+        parent PLC_dwd02
+    endnode
+    node dummy IoP_pwk_use02
+        parent PLC_dwd02_pwk
+    endnode
+    node dummy IoP_pwk_use01
+        parent PLC_dwd02_pwk
+    endnode
+    node trimesh PLC_dwd02_wg
+        parent PLC_dwd02_pwk
+    endnode
+doneanim damage PLC_dwd02
+
+
+#NWmax ANIM ASCII
+newanim die PLC_dwd02
+  length 0.166667
+  transtime 0.0
+  animroot PLC_dwd02
+  event 0.0 detonate
+  event 0.0 detonate
+    node dummy PLC_dwd02
+        parent NULL
+    endnode
+    node emitter ChunkyWood
+        parent PLC_dwd02
+    endnode
+    node emitter fire!
+        parent PLC_dwd02
+    endnode
+    node trimesh damage
+        parent PLC_dwd02
+        positionkey
+            0.0 0.000867307 0.0348657 0.0
+            0.166667 0.000867307 0.0348657 -6.95145
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node danglymesh Grass01
+        parent damage
+    endnode
+    node danglymesh Grass02
+        parent damage
+    endnode
+    node danglymesh Grass03
+        parent damage
+    endnode
+    node danglymesh Grass04
+        parent damage
+    endnode
+    node danglymesh Grass05
+        parent damage
+    endnode
+    node trimesh Driftwood_02
+        parent damage
+    endnode
+    node dummy dwd02_ground
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_hand
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_head
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_head_hit
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_impact
+        parent PLC_dwd02
+    endnode
+    node dummy PLC_dwd02_pwk
+        parent PLC_dwd02
+    endnode
+    node dummy IoP_pwk_use02
+        parent PLC_dwd02_pwk
+    endnode
+    node dummy IoP_pwk_use01
+        parent PLC_dwd02_pwk
+    endnode
+    node trimesh PLC_dwd02_wg
+        parent PLC_dwd02_pwk
+    endnode
+doneanim die PLC_dwd02
+
+
+#NWmax ANIM ASCII
+newanim dead PLC_dwd02
+  length 0.0333333
+  transtime 0.0
+  animroot PLC_dwd02
+    node dummy PLC_dwd02
+        parent NULL
+    endnode
+    node emitter ChunkyWood
+        parent PLC_dwd02
+    endnode
+    node emitter fire!
+        parent PLC_dwd02
+    endnode
+    node trimesh damage
+        parent PLC_dwd02
+        positionkey
+            0.0 0.000867307 0.0348657 -6.95145
+            0.0333333 0.000867307 0.0348657 -6.95145
+        endlist
+    endnode
+    node danglymesh Grass01
+        parent damage
+    endnode
+    node danglymesh Grass02
+        parent damage
+    endnode
+    node danglymesh Grass03
+        parent damage
+    endnode
+    node danglymesh Grass04
+        parent damage
+    endnode
+    node danglymesh Grass05
+        parent damage
+    endnode
+    node trimesh Driftwood_02
+        parent damage
+    endnode
+    node dummy dwd02_ground
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_hand
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_head
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_head_hit
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_impact
+        parent PLC_dwd02
+    endnode
+    node dummy PLC_dwd02_pwk
+        parent PLC_dwd02
+    endnode
+    node dummy IoP_pwk_use02
+        parent PLC_dwd02_pwk
+    endnode
+    node dummy IoP_pwk_use01
+        parent PLC_dwd02_pwk
+    endnode
+    node trimesh PLC_dwd02_wg
+        parent PLC_dwd02_pwk
+    endnode
+doneanim dead PLC_dwd02
+
+
+#NWmax ANIM ASCII
+newanim default PLC_dwd02
+  length 0.0
+  transtime 0.25
+  animroot PLC_dwd02
+    node dummy PLC_dwd02
+        parent NULL
+    endnode
+    node emitter ChunkyWood
+        parent PLC_dwd02
+    endnode
+    node emitter fire!
+        parent PLC_dwd02
+    endnode
+    node trimesh damage
+        parent PLC_dwd02
+        positionkey
+            0.0 0.000867307 0.0348657 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node danglymesh Grass01
+        parent damage
+    endnode
+    node danglymesh Grass02
+        parent damage
+    endnode
+    node danglymesh Grass03
+        parent damage
+    endnode
+    node danglymesh Grass04
+        parent damage
+    endnode
+    node danglymesh Grass05
+        parent damage
+    endnode
+    node trimesh Driftwood_02
+        parent damage
+    endnode
+    node dummy dwd02_ground
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_hand
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_head
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_head_hit
+        parent PLC_dwd02
+    endnode
+    node dummy dwd02_impact
+        parent PLC_dwd02
+    endnode
+    node dummy PLC_dwd02_pwk
+        parent PLC_dwd02
+    endnode
+    node dummy IoP_pwk_use02
+        parent PLC_dwd02_pwk
+    endnode
+    node dummy IoP_pwk_use01
+        parent PLC_dwd02_pwk
+    endnode
+    node trimesh PLC_dwd02_wg
+        parent PLC_dwd02_pwk
+    endnode
+doneanim default PLC_dwd02
+
+donemodel PLC_dwd02

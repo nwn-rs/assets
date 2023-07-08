@@ -1,0 +1,1140 @@
+# Exported from NWmax 0.8 b60 at 12.02.2006 19:05:26
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pwc_scrt_001
+#local file: E:\_Monkeys\wc-Barrows\by martin\Placeable_stone_blocker_01.max
+filedependancy Placeable_stone_blocker_01.max
+newmodel pwc_scrt_001
+setsupermodel pwc_scrt_001 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom pwc_scrt_001
+node dummy pwc_scrt_001
+  parent NULL
+endnode
+node dummy scrt_001_impact
+  parent pwc_scrt_001
+  position 0.0 0.4 0.85
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.780392 0.882353 
+endnode
+node dummy scrt_001_ground
+  parent pwc_scrt_001
+  position 0.0 0.4 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.780392 0.882353 
+endnode
+node dummy scrt_001_hand
+  parent pwc_scrt_001
+  position 0.0 0.4 1.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.780392 0.882353 
+endnode
+node dummy scrt_001_head
+  parent pwc_scrt_001
+  position 0.0 0.4 2.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.780392 0.882353 
+endnode
+node dummy scrt_001_head_hit
+  parent pwc_scrt_001
+  position 0.0 0.4 1.5
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.780392 0.882353 
+endnode
+node dummy animme
+  parent pwc_scrt_001
+  position 0.0 0.4 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.54902 0.345098 0.882353 
+endnode
+node trimesh Cylinder16
+  parent animme
+  position 0.0 0.0 1.8
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.52549 0.231373 0.0313726 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tbw01_stone1
+  verts 67
+    -1.49 -0.0700001 -1.8
+    1.49 -0.0699999 -1.8
+    1.27 -0.47 -1.8
+    0.97 -0.65 -1.8
+    -1.06 -0.72 -1.8
+    -1.32 -0.47 -1.8
+    -1.59 0.0100002 -1.05
+    1.58 0.0100003 -1.05
+    1.37 -0.47 -1.05
+    1.04 -0.8 -1.05
+    -1.15 -0.79 -1.05
+    -1.42 -0.47 -1.05
+    -1.62 0.0600001 -0.3
+    1.61 0.0600003 -0.3
+    1.39 -0.47 -0.3
+    0.98 -0.77 -0.3
+    -1.24 -0.72 -0.3
+    -1.45 -0.47 -0.3
+    -1.6 0.14 0.45
+    -1.33 0.48 0.45
+    -1.0 0.69 0.45
+    0.86 0.74 0.45
+    1.39 0.51 0.45
+    1.6 0.12 0.45
+    1.33 -0.47 0.45
+    0.97 -0.62 0.45
+    -1.17 -0.67 0.45
+    -1.35 -0.47 0.45
+    -1.30168 0.08 1.63301
+    -1.14168 0.48 1.50301
+    -0.501646 0.57 1.95825
+    0.660339 0.62 1.46841
+    0.920339 0.54 1.23841
+    1.12034 0.11 1.33841
+    1.00034 -0.38 1.23841
+    0.710339 -0.44 1.46841
+    -0.521645 -0.44 1.95825
+    -1.14168 -0.31 1.50301
+    -0.564269 0.1 2.11566
+    0.710339 0.09 1.59841
+    0.0761157 0.6 1.81978
+    0.0861157 0.09 1.94978
+    0.05 -0.83 -1.8
+    0.06 -0.92 -1.05
+    0.06 -0.82 -0.3
+    0.05 -0.7 0.45
+    0.0861157 -0.45 1.82978
+    0.36 0.73 0.45
+    -0.35 0.71 0.45
+    1.22294 0.376436 -1.8
+    0.79764 0.635547 -1.8
+    0.300173 0.700078 -1.8
+    -0.376468 0.665381 -1.8
+    -0.996713 0.615556 -1.8
+    -1.33658 0.317568 -1.8
+    1.44195 0.572501 -1.05
+    0.903648 0.874834 -1.05
+    0.359985 0.909747 -1.05
+    -0.393167 0.859903 -1.05
+    -1.02324 0.735215 -1.05
+    -1.38127 0.422334 -1.05
+    1.43236 0.555938 -0.3
+    0.88869 0.800039 -0.3
+    0.359985 0.805039 -0.3
+    -0.348292 0.800069 -0.3
+    -1.02663 0.765186 -0.3
+    -1.41566 0.511084 -0.3
+  faces 119
+    8 1 7  1  67 68 69  1
+    2 1 8  1  70 71 72  1
+    9 2 8  1  73 74 75  1
+    3 2 9  1  76 2 77  1
+    11 4 10  4  78 79 80  1
+    5 4 11  4  81 82 83  1
+    6 5 11  4  84 85 86  1
+    0 5 6  4  87 5 88  1
+    14 7 13  1  89 90 91  1
+    8 7 14  1  92 93 94  1
+    15 8 14  1  95 96 97  1
+    9 8 15  1  98 8 99  1
+    17 10 16  4  100 101 102  1
+    11 10 17  4  103 104 105  1
+    12 11 17  4  106 107 108  1
+    6 11 12  4  109 11 110  1
+    24 13 23  1  111 112 113  1
+    14 13 24  1  114 115 116  1
+    25 14 24  1  117 118 119  1
+    15 14 25  1  120 14 121  1
+    27 16 26  4  122 123 124  1
+    17 16 27  4  125 126 127  1
+    18 17 27  4  128 129 130  1
+    12 17 18  4  131 17 132  1
+    29 18 28  1  133 134 135  1
+    19 18 29  1  136 137 138  1
+    20 19 29  2  139 140 141  1
+    30 20 29  2  142 143 144  1
+    32 21 31  2  145 146 147  1
+    22 21 32  2  148 149 150  1
+    33 22 32  2  151 152 153  1
+    23 22 33  2  154 155 156  1
+    34 23 33  1  157 158 159  1
+    24 23 34  1  160 161 162  1
+    25 24 34  1  163 24 164  1
+    35 25 34  1  165 166 167  1
+    37 26 36  4  168 169 170  1
+    27 26 37  4  171 172 173  1
+    28 27 37  4  174 175 176  1
+    18 27 28  4  177 27 178  1
+    29 38 30  4  179 180 181  1
+    28 38 29  4  182 183 29  1
+    28 36 38  4  184 185 186  1
+    37 36 28  4  37 187 28  1
+    39 34 33  4  188 189 190  1
+    35 34 39  4  191 34 192  1
+    31 33 32  4  193 194 32  1
+    39 33 31  4  195 33 196  1
+    30 41 40  4  197 198 199  1
+    38 41 30  4  200 201 202  1
+    43 3 9  1  203 204 205  1
+    42 3 43  1  206 3 207  1
+    44 9 15  1  208 209 210  1
+    43 9 44  1  211 9 212  1
+    45 15 25  1  213 214 215  1
+    44 15 45  1  216 15 217  1
+    46 25 35  1  218 219 220  1
+    45 25 46  1  221 25 222  1
+    41 35 39  4  223 224 225  1
+    46 35 41  4  226 35 227  1
+    10 42 43  1  228 229 230  1
+    4 42 10  1  4 42 231  1
+    16 43 44  1  232 233 234  1
+    10 43 16  1  10 43 235  1
+    26 44 45  1  236 237 238  1
+    16 44 26  1  16 44 239  1
+    36 45 46  1  240 241 242  1
+    26 45 36  1  26 45 243  1
+    38 46 41  4  244 245 246  1
+    36 46 38  4  36 46 38  1
+    40 39 31  4  247 248 249  1
+    41 39 40  4  41 39 250  1
+    31 21 47  2  251 252 253  1
+    40 47 48  2  254 255 256  1
+    40 48 30  2  257 258 259  1
+    31 47 40  2  31 260 40  1
+    48 20 30  2  261 262 30  1
+    7 1 55  1  263 264 265  1
+    49 55 1  1  266 267 1  1
+    55 49 56  1  268 269 270  1
+    50 56 49  1  271 272 49  1
+    56 50 57  1  273 274 275  1
+    51 57 50  1  276 277 50  1
+    57 51 58  1  278 279 280  1
+    52 58 51  1  281 282 51  1
+    58 52 59  1  283 284 285  1
+    53 59 52  1  286 287 52  1
+    59 53 60  1  288 289 290  1
+    54 60 53  1  291 292 53  1
+    60 54 6  1  293 294 295  1
+    0 6 54  1  0 296 54  1
+    13 7 61  1  297 298 299  1
+    55 61 7  1  300 301 7  1
+    61 55 62  1  302 303 304  1
+    56 62 55  1  305 306 55  1
+    62 56 63  1  307 308 309  1
+    57 63 56  1  310 311 56  1
+    63 57 64  1  312 313 314  1
+    58 64 57  1  315 316 57  1
+    64 58 65  1  317 318 319  1
+    59 65 58  1  320 321 58  1
+    65 59 66  1  322 323 324  1
+    60 66 59  1  325 326 59  1
+    66 60 12  1  327 328 329  1
+    6 12 60  1  6 330 60  1
+    23 13 22  1  23 331 332  1
+    61 22 13  1  333 334 13  1
+    22 61 21  1  22 335 336  1
+    62 21 61  1  337 338 61  1
+    21 62 47  1  21 339 340  1
+    63 47 62  1  341 342 62  1
+    47 63 48  1  47 343 344  1
+    64 48 63  1  345 346 63  1
+    48 64 20  1  48 347 348  1
+    65 20 64  1  349 350 64  1
+    20 65 19  1  20 351 352  1
+    66 19 65  1  353 354 65  1
+    19 66 18  1  19 355 356  1
+    12 18 66  1  12 18 66  1
+  tverts 357
+    0.495 0.0525 0
+    0.505 0.0525 0
+    0.81875 0.0525 0
+    0.74375 0.0525 0
+    0.23625 0.0525 0
+    0.595 0.0525 0
+    0.475 0.24 0
+    0.525 0.24 0
+    0.84375 0.24 0
+    0.76125 0.24 0
+    0.21375 0.24 0
+    0.595 0.24 0
+    0.4625 0.4275 0
+    0.5375 0.4275 0
+    0.84875 0.4275 0
+    0.74625 0.4275 0
+    0.19125 0.4275 0
+    0.595 0.4275 0
+    0.4425 0.615 0
+    0.3575 0.615 0
+    0.74875 0.615 0
+    0.28375 0.615 0
+    0.15125 0.615 0
+    0.5525 0.615 0
+    0.83375 0.615 0
+    0.74375 0.615 0
+    0.20875 0.615 0
+    0.595 0.615 0
+    0.175829 0.5425 0
+    0.215829 0.6425 0
+    0.624161 0.992061 0
+    0.333665 0.869603 0
+    0.6575 0.812103 0
+    0.781335 0.55 0
+    0.751335 0.4275 0
+    0.678835 0.4125 0
+    0.370839 0.4125 0
+    0.215829 0.445 0
+    0.360183 0.5475 0
+    0.678835 0.545 0
+    0.479721 0.957444 0
+    0.522779 0.545 0
+    0.51375 0.0525 0
+    0.51625 0.24 0
+    0.51625 0.4275 0
+    0.51375 0.615 0
+    0.522779 0.41 0
+    0.40875 0.615 0
+    0.58625 0.615 0
+    0.193015 0.0525 0
+    0.29934 0.0525 0
+    0.423707 0.0525 0
+    0.592867 0.0525 0
+    0.747928 0.0525 0
+    0.398108 0.0525 0
+    0.138264 0.24 0
+    0.272838 0.24 0
+    0.408754 0.24 0
+    0.597042 0.24 0
+    0.754561 0.24 0
+    0.371916 0.24 0
+    0.14066 0.4275 0
+    0.276578 0.4275 0
+    0.408754 0.4275 0
+    0.585823 0.4275 0
+    0.755408 0.4275 0
+    0.349729 0.4275 0
+    0.405 0.24 0
+    0.505 0.0525 0
+    0.525 0.24 0
+    0.405 0.0525 0
+    0.505 0.0525 0
+    0.405 0.24 0
+    0.76125 0.24 0
+    0.81875 0.0525 0
+    0.84375 0.24 0
+    0.74375 0.0525 0
+    0.76125 0.24 0
+    0.595 0.24 0
+    0.6575 0.0525 0
+    0.675 0.24 0
+    0.17125 0.0525 0
+    0.23625 0.0525 0
+    0.14625 0.24 0
+    0.475 0.24 0
+    0.595 0.0525 0
+    0.595 0.24 0
+    0.495 0.0525 0
+    0.475 0.24 0
+    0.405 0.4275 0
+    0.525 0.24 0
+    0.5375 0.4275 0
+    0.405 0.24 0
+    0.525 0.24 0
+    0.405 0.4275 0
+    0.74625 0.4275 0
+    0.84375 0.24 0
+    0.84875 0.4275 0
+    0.76125 0.24 0
+    0.74625 0.4275 0
+    0.595 0.4275 0
+    0.675 0.24 0
+    0.6575 0.4275 0
+    0.595 0.24 0
+    0.675 0.24 0
+    0.595 0.4275 0
+    0.4625 0.4275 0
+    0.595 0.24 0
+    0.595 0.4275 0
+    0.475 0.24 0
+    0.4625 0.4275 0
+    0.405 0.615 0
+    0.5375 0.4275 0
+    0.5525 0.615 0
+    0.405 0.4275 0
+    0.5375 0.4275 0
+    0.405 0.615 0
+    0.74375 0.615 0
+    0.84875 0.4275 0
+    0.83375 0.615 0
+    0.74625 0.4275 0
+    0.74375 0.615 0
+    0.595 0.615 0
+    0.6575 0.4275 0
+    0.645 0.615 0
+    0.595 0.4275 0
+    0.6575 0.4275 0
+    0.595 0.615 0
+    0.4425 0.615 0
+    0.595 0.4275 0
+    0.595 0.615 0
+    0.4625 0.4275 0
+    0.4425 0.615 0
+    0.3575 0.878252 0
+    0.4425 0.615 0
+    0.4575 0.910752 0
+    0.3575 0.615 0
+    0.4425 0.615 0
+    0.3575 0.878252 0
+    0.74875 0.615 0
+    0.83125 0.615 0
+    0.784171 0.878252 0
+    0.624161 0.992061 0
+    0.74875 0.615 0
+    0.784171 0.878252 0
+    0.268665 0.812103 0
+    0.28375 0.615 0
+    0.333665 0.869603 0
+    0.15125 0.615 0
+    0.28375 0.615 0
+    0.268665 0.812103 0
+    0.55 0.837103 0
+    0.65 0.615 0
+    0.6575 0.812103 0
+    0.5525 0.615 0
+    0.65 0.615 0
+    0.55 0.837103 0
+    0.4275 0.812103 0
+    0.5525 0.615 0
+    0.55 0.837103 0
+    0.405 0.615 0
+    0.5525 0.615 0
+    0.4275 0.812103 0
+    0.74375 0.615 0
+    0.751335 0.812103 0
+    0.678835 0.869603 0
+    0.74375 0.615 0
+    0.751335 0.812103 0
+    0.215829 0.878252 0
+    0.20875 0.615 0
+    0.370839 0.992061 0
+    0.595 0.615 0
+    0.645 0.615 0
+    0.555 0.878252 0
+    0.4575 0.910752 0
+    0.595 0.615 0
+    0.555 0.878252 0
+    0.4425 0.615 0
+    0.4575 0.910752 0
+    0.215829 0.6425 0
+    0.360183 0.5475 0
+    0.375839 0.665 0
+    0.175829 0.5425 0
+    0.360183 0.5475 0
+    0.175829 0.5425 0
+    0.370839 0.4125 0
+    0.360183 0.5475 0
+    0.370839 0.4125 0
+    0.678835 0.545 0
+    0.751335 0.4275 0
+    0.781335 0.55 0
+    0.678835 0.4125 0
+    0.678835 0.545 0
+    0.6775 0.869603 0
+    0.55 0.837103 0
+    0.678835 0.545 0
+    0.666335 0.6775 0
+    0.375839 0.665 0
+    0.522779 0.545 0
+    0.520279 0.6725 0
+    0.360183 0.5475 0
+    0.522779 0.545 0
+    0.375839 0.665 0
+    0.51625 0.24 0
+    0.74375 0.0525 0
+    0.76125 0.24 0
+    0.51375 0.0525 0
+    0.51625 0.24 0
+    0.51625 0.4275 0
+    0.76125 0.24 0
+    0.74625 0.4275 0
+    0.51625 0.24 0
+    0.51625 0.4275 0
+    0.51375 0.615 0
+    0.74625 0.4275 0
+    0.74375 0.615 0
+    0.51625 0.4275 0
+    0.51375 0.615 0
+    0.522779 0.959944 0
+    0.74375 0.615 0
+    0.678835 0.869603 0
+    0.51375 0.615 0
+    0.522779 0.959944 0
+    0.522779 0.545 0
+    0.678835 0.4125 0
+    0.678835 0.545 0
+    0.522779 0.41 0
+    0.522779 0.545 0
+    0.21375 0.24 0
+    0.51375 0.0525 0
+    0.51625 0.24 0
+    0.21375 0.24 0
+    0.19125 0.4275 0
+    0.51625 0.24 0
+    0.51625 0.4275 0
+    0.19125 0.4275 0
+    0.20875 0.615 0
+    0.51625 0.4275 0
+    0.51375 0.615 0
+    0.20875 0.615 0
+    0.370839 0.992061 0
+    0.51375 0.615 0
+    0.522779 0.959944 0
+    0.370839 0.992061 0
+    0.360183 0.5475 0
+    0.522779 0.41 0
+    0.522779 0.545 0
+    0.520279 0.6725 0
+    0.678835 0.545 0
+    0.666335 0.6775 0
+    0.520279 0.6725 0
+    0.333665 0.869603 0
+    0.28375 0.615 0
+    0.40875 0.615 0
+    0.479721 0.957444 0
+    0.40875 0.615 0
+    0.58625 0.615 0
+    0.479721 0.957444 0
+    0.58625 0.615 0
+    0.624161 0.992061 0
+    0.40875 0.615 0
+    0.58625 0.615 0
+    0.74875 0.615 0
+    0.525 0.24 0
+    0.505 0.0525 0
+    0.665625 0.24 0
+    0.616609 0.0525 0
+    0.665625 0.24 0
+    0.138264 0.24 0
+    0.193015 0.0525 0
+    0.272838 0.24 0
+    0.29934 0.0525 0
+    0.272838 0.24 0
+    0.272838 0.24 0
+    0.29934 0.0525 0
+    0.408754 0.24 0
+    0.423707 0.0525 0
+    0.408754 0.24 0
+    0.408754 0.24 0
+    0.423707 0.0525 0
+    0.597042 0.24 0
+    0.592867 0.0525 0
+    0.597042 0.24 0
+    0.597042 0.24 0
+    0.592867 0.0525 0
+    0.754561 0.24 0
+    0.747928 0.0525 0
+    0.754561 0.24 0
+    0.754561 0.24 0
+    0.747928 0.0525 0
+    0.844068 0.24 0
+    0.832894 0.0525 0
+    0.844068 0.24 0
+    0.371916 0.24 0
+    0.398108 0.0525 0
+    0.475 0.24 0
+    0.475 0.24 0
+    0.5375 0.4275 0
+    0.525 0.24 0
+    0.661484 0.4275 0
+    0.665625 0.24 0
+    0.661484 0.4275 0
+    0.14066 0.4275 0
+    0.138264 0.24 0
+    0.276578 0.4275 0
+    0.272838 0.24 0
+    0.276578 0.4275 0
+    0.276578 0.4275 0
+    0.272838 0.24 0
+    0.408754 0.4275 0
+    0.408754 0.24 0
+    0.408754 0.4275 0
+    0.408754 0.4275 0
+    0.408754 0.24 0
+    0.585823 0.4275 0
+    0.597042 0.24 0
+    0.585823 0.4275 0
+    0.585823 0.4275 0
+    0.597042 0.24 0
+    0.755408 0.4275 0
+    0.754561 0.24 0
+    0.755408 0.4275 0
+    0.755408 0.4275 0
+    0.754561 0.24 0
+    0.852666 0.4275 0
+    0.844068 0.24 0
+    0.852666 0.4275 0
+    0.349729 0.4275 0
+    0.371916 0.24 0
+    0.4625 0.4275 0
+    0.4625 0.4275 0
+    0.5375 0.4275 0
+    0.65 0.615 0
+    0.661484 0.4275 0
+    0.65 0.615 0
+    0.14066 0.4275 0
+    0.28375 0.615 0
+    0.276578 0.4275 0
+    0.28375 0.615 0
+    0.276578 0.4275 0
+    0.40875 0.615 0
+    0.408754 0.4275 0
+    0.40875 0.615 0
+    0.408754 0.4275 0
+    0.58625 0.615 0
+    0.585823 0.4275 0
+    0.58625 0.615 0
+    0.585823 0.4275 0
+    0.74875 0.615 0
+    0.755408 0.4275 0
+    0.74875 0.615 0
+    0.755408 0.4275 0
+    0.83125 0.615 0
+    0.852666 0.4275 0
+    0.83125 0.615 0
+    0.349729 0.4275 0
+    0.4425 0.615 0
+endnode
+node emitter door_explosion
+  parent pwc_scrt_001
+  position 0.0 0.4 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.6 0.894118 0.721569 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 100.0
+  ySize 99.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.439216 0.364706 
+  colorEnd 0.819608 0.796079 0.709804 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 0
+  xgrid 4
+  ygrid 4
+  fps 10
+  framestart 0
+  frameend 24
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter ChunkyWood86
+  parent pwc_scrt_001
+  position 0.0 0.4 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.6 0.894118 0.839216 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 0
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 5.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  framestart 0
+  frameend 24
+  random 0
+  chunkName PLC_Chunk_S01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+endmodelgeom pwc_scrt_001
+
+#NWmax ANIM ASCII
+newanim default pwc_scrt_001
+  length 0.0
+  transtime 0.25
+  animroot pwc_scrt_001
+    node dummy pwc_scrt_001
+        parent NULL
+    endnode
+    node dummy pwc_scrt_001_pwk
+        parent pwc_scrt_001
+    endnode
+    node dummy 001_pwk_use01
+        parent pwc_scrt_001_pwk
+    endnode
+    node pwk pwk
+        parent pwc_scrt_001_pwk
+    endnode
+    node dummy scrt_001_impact
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_ground
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_hand
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head_hit
+        parent pwc_scrt_001
+    endnode
+    node dummy animme
+        parent pwc_scrt_001
+        positionkey
+            0.0 0.0 0.4 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Cylinder16
+        parent animme
+    endnode
+    node emitter door_explosion
+        parent pwc_scrt_001
+    endnode
+    node emitter ChunkyWood86
+        parent pwc_scrt_001
+        birthratekey
+            0.0 0 
+        endlist
+    endnode
+doneanim default pwc_scrt_001
+
+
+#NWmax ANIM ASCII
+newanim on pwc_scrt_001
+  length 0.0
+  transtime 0.25
+  animroot pwc_scrt_001
+    node dummy pwc_scrt_001
+        parent NULL
+    endnode
+    node dummy pwc_scrt_001_pwk
+        parent pwc_scrt_001
+    endnode
+    node dummy 001_pwk_use01
+        parent pwc_scrt_001_pwk
+    endnode
+    node pwk pwk
+        parent pwc_scrt_001_pwk
+    endnode
+    node dummy scrt_001_impact
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_ground
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_hand
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head_hit
+        parent pwc_scrt_001
+    endnode
+    node dummy animme
+        parent pwc_scrt_001
+        positionkey
+            0.0 0.0 0.4 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Cylinder16
+        parent animme
+    endnode
+    node emitter door_explosion
+        parent pwc_scrt_001
+    endnode
+    node emitter ChunkyWood86
+        parent pwc_scrt_001
+        birthratekey
+            0.0 0 
+        endlist
+    endnode
+doneanim on pwc_scrt_001
+
+
+#NWmax ANIM ASCII
+newanim on2off pwc_scrt_001
+  length 1.66667
+  transtime 0.25
+  animroot pwc_scrt_001
+  event 0.166667 detonate
+    node dummy pwc_scrt_001
+        parent NULL
+    endnode
+    node dummy pwc_scrt_001_pwk
+        parent pwc_scrt_001
+    endnode
+    node dummy 001_pwk_use01
+        parent pwc_scrt_001_pwk
+    endnode
+    node pwk pwk
+        parent pwc_scrt_001_pwk
+    endnode
+    node dummy scrt_001_impact
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_ground
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_hand
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head_hit
+        parent pwc_scrt_001
+    endnode
+    node dummy animme
+        parent pwc_scrt_001
+        positionkey
+            0.0 0.0 0.4 0.0
+            1.66667 0.0 0.4 -5.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            1.66667 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Cylinder16
+        parent animme
+    endnode
+    node emitter door_explosion
+        parent pwc_scrt_001
+    endnode
+    node emitter ChunkyWood86
+        parent pwc_scrt_001
+    endnode
+doneanim on2off pwc_scrt_001
+
+
+#NWmax ANIM ASCII
+newanim off pwc_scrt_001
+  length 0.0
+  transtime 0.25
+  animroot pwc_scrt_001
+    node dummy pwc_scrt_001
+        parent NULL
+    endnode
+    node dummy pwc_scrt_001_pwk
+        parent pwc_scrt_001
+    endnode
+    node dummy 001_pwk_use01
+        parent pwc_scrt_001_pwk
+    endnode
+    node pwk pwk
+        parent pwc_scrt_001_pwk
+    endnode
+    node dummy scrt_001_impact
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_ground
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_hand
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head_hit
+        parent pwc_scrt_001
+    endnode
+    node dummy animme
+        parent pwc_scrt_001
+        positionkey
+            0.0 0.0 0.4 -5.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Cylinder16
+        parent animme
+    endnode
+    node emitter door_explosion
+        parent pwc_scrt_001
+    endnode
+    node emitter ChunkyWood86
+        parent pwc_scrt_001
+    endnode
+doneanim off pwc_scrt_001
+
+
+#NWmax ANIM ASCII
+newanim off2on pwc_scrt_001
+  length 1.33333
+  transtime 0.25
+  animroot pwc_scrt_001
+    node dummy pwc_scrt_001
+        parent NULL
+    endnode
+    node dummy pwc_scrt_001_pwk
+        parent pwc_scrt_001
+    endnode
+    node dummy 001_pwk_use01
+        parent pwc_scrt_001_pwk
+    endnode
+    node pwk pwk
+        parent pwc_scrt_001_pwk
+    endnode
+    node dummy scrt_001_impact
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_ground
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_hand
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head_hit
+        parent pwc_scrt_001
+    endnode
+    node dummy animme
+        parent pwc_scrt_001
+        positionkey
+            0.0 0.0 0.4 -5.0
+            1.33333 0.0 0.4 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            1.33333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Cylinder16
+        parent animme
+    endnode
+    node emitter door_explosion
+        parent pwc_scrt_001
+    endnode
+    node emitter ChunkyWood86
+        parent pwc_scrt_001
+    endnode
+doneanim off2on pwc_scrt_001
+
+
+#NWmax ANIM ASCII
+newanim die pwc_scrt_001
+  length 0.333333
+  transtime 0.25
+  animroot pwc_scrt_001
+  event 0.0333333 detonate
+    node dummy pwc_scrt_001
+        parent NULL
+    endnode
+    node dummy pwc_scrt_001_pwk
+        parent pwc_scrt_001
+    endnode
+    node dummy 001_pwk_use01
+        parent pwc_scrt_001_pwk
+    endnode
+    node pwk pwk
+        parent pwc_scrt_001_pwk
+    endnode
+    node dummy scrt_001_impact
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_ground
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_hand
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head_hit
+        parent pwc_scrt_001
+    endnode
+    node dummy animme
+        parent pwc_scrt_001
+        positionkey
+            0.0 0.0 0.4 0.0
+            0.333333 0.0 0.4 -5.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Cylinder16
+        parent animme
+    endnode
+    node emitter door_explosion
+        parent pwc_scrt_001
+    endnode
+    node emitter ChunkyWood86
+        parent pwc_scrt_001
+        birthratekey
+            0.0 0 
+            0.0333333 10 
+            0.3 10 
+            0.333333 0 
+        endlist
+    endnode
+doneanim die pwc_scrt_001
+
+
+#NWmax ANIM ASCII
+newanim dead pwc_scrt_001
+  length 0.0
+  transtime 0.25
+  animroot pwc_scrt_001
+    node dummy pwc_scrt_001
+        parent NULL
+    endnode
+    node dummy pwc_scrt_001_pwk
+        parent pwc_scrt_001
+    endnode
+    node dummy 001_pwk_use01
+        parent pwc_scrt_001_pwk
+    endnode
+    node pwk pwk
+        parent pwc_scrt_001_pwk
+    endnode
+    node dummy scrt_001_impact
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_ground
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_hand
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head
+        parent pwc_scrt_001
+    endnode
+    node dummy scrt_001_head_hit
+        parent pwc_scrt_001
+    endnode
+    node dummy animme
+        parent pwc_scrt_001
+        positionkey
+            0.0 0.0 0.4 -5.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Cylinder16
+        parent animme
+    endnode
+    node emitter door_explosion
+        parent pwc_scrt_001
+    endnode
+    node emitter ChunkyWood86
+        parent pwc_scrt_001
+        birthratekey
+            0.0 0 
+        endlist
+    endnode
+doneanim dead pwc_scrt_001
+
+donemodel pwc_scrt_001

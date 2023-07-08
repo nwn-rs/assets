@@ -1,0 +1,226 @@
+# Exported from NWmax 0.8 b61 at 2/3/2008 8:26:21 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: TTZ01_B20_01
+#local file: Unknown
+filedependancy Unknown
+newmodel TTZ01_B20_01
+setsupermodel TTZ01_B20_01 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom TTZ01_B20_01
+node dummy TTZ01_B20_01
+  parent NULL
+endnode
+#Tile trimesh node
+node trimesh Water
+  parent TTZ01_B20_01
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.101961 0.694118 0.576471 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 0.0 0.0 0.0 
+  bitmap ttz01_water01
+  verts 4
+    -5.0 -5.0 0.0
+    5.0 -5.0 0.0
+    -5.0 5.0 0.0
+    5.0 5.0 0.0
+  faces 2
+    2 0 3  1  2 0 3  1
+    1 3 0  1  1 3 0  1
+  tverts 4
+    -2.38419e-007 1.78814e-007 0
+    2.0 -2.38419e-007 0
+    1.78814e-007 2.0 0
+    2.0 2.0 0
+endnode
+#Tile trimesh node
+node trimesh TTZPlane104
+  parent TTZ01_B20_01
+  position 0.0 0.0 -2.4
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.537255 0.447059 0.294118 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 0.658824 0.572549 0.498039 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 0.0 0.0 0.0 
+  bitmap ttz01_watcliff
+  verts 9
+    -5.0 -5.0 0.0
+    0.0 -5.0 0.0
+    5.0 -5.0 0.0
+    -5.0 0.0 0.0
+    0.0 0.0 0.0
+    5.0 0.0 0.0
+    -5.0 5.0 0.0
+    0.0 5.0 0.0
+    5.0 5.0 0.0
+  faces 8
+    3 0 4  1  3 0 4  1
+    1 4 0  1  1 4 0  1
+    4 1 5  1  4 1 5  1
+    2 5 1  1  2 5 1  1
+    6 3 7  1  6 3 7  1
+    4 7 3  1  4 7 3  1
+    7 4 8  1  7 4 8  1
+    5 8 4  1  5 8 4  1
+  tverts 9
+    0.000499517 0.05 0
+    0.000499517 0.05 0
+    0.000499517 0.05 0
+    0.5 0.05 0
+    0.5 0.05 0
+    0.5 0.05 0
+    0.999501 0.05 0
+    0.999501 0.05 0
+    0.999501 0.05 0
+endnode
+node aabb WOK
+  parent TTZ01_B20_01
+  position 0.0 0.0 -2.4
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.87451 0.337255 0.556863 
+  multimaterial 20
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+  ambient 0.588 0.588 0.588 
+  diffuse 0.0 0.0 0.376471 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap DeepWater
+  verts 9
+    -5.0 -5.0 0.0
+    0.0 -5.0 0.0
+    5.0 -5.0 0.0
+    -5.0 0.0 0.0
+    0.0 0.0 0.0
+    5.0 0.0 0.0
+    -5.0 5.0 0.0
+    0.0 5.0 0.0
+    5.0 5.0 0.0
+  faces 8
+    3 0 4  1  0 1 2  17
+    1 4 0  1  3 4 5  17
+    4 1 5  1  6 7 8  17
+    2 5 1  1  9 10 11  17
+    6 3 7  1  12 13 14  17
+    4 7 3  1  15 16 17  17
+    7 4 8  1  18 19 20  17
+    5 8 4  1  21 22 23  17
+  tverts 24
+    0.5 0.05 0
+    0.000499517 0.05 0
+    0.5 0.05 0
+    0.000499517 0.05 0
+    0.5 0.05 0
+    0.000499517 0.05 0
+    0.5 0.05 0
+    0.000499517 0.05 0
+    0.5 0.05 0
+    0.000499517 0.05 0
+    0.5 0.05 0
+    0.000499517 0.05 0
+    0.999501 0.05 0
+    0.5 0.05 0
+    0.999501 0.05 0
+    0.5 0.05 0
+    0.999501 0.05 0
+    0.5 0.05 0
+    0.999501 0.05 0
+    0.5 0.05 0
+    0.999501 0.05 0
+    0.5 0.05 0
+    0.999501 0.05 0
+    0.5 0.05 0
+    aabb         -5.0 -5.0 0.0 5.0 5.0 0.0 -1
+        -5.0 -5.0 0.0 0.0 5.0 0.0 -1
+        -5.0 -5.0 0.0 0.0 0.0 0.0 -1
+        -5.0 -5.0 0.0 0.0 0.0 0.0 0
+        -5.0 -5.0 0.0 0.0 0.0 0.0 1
+        -5.0 0.0 0.0 0.0 5.0 0.0 -1
+        -5.0 0.0 0.0 0.0 5.0 0.0 4
+        -5.0 0.0 0.0 0.0 5.0 0.0 5
+        0.0 -5.0 0.0 5.0 5.0 0.0 -1
+        0.0 -5.0 0.0 5.0 0.0 0.0 -1
+        0.0 -5.0 0.0 5.0 0.0 0.0 2
+        0.0 -5.0 0.0 5.0 0.0 0.0 3
+        0.0 0.0 0.0 5.0 5.0 0.0 -1
+        0.0 0.0 0.0 5.0 5.0 0.0 6
+        0.0 0.0 0.0 5.0 5.0 0.0 7
+endnode
+node light TTZ01_B20_01ml1
+  parent TTZ01_B20_01
+  position 2.0 2.0 7.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.568627 0.109804 0.694118 
+  radius 10.0
+  multiplier 1.0
+  color 1.0 1.0 1.0 
+  ambientonly 0
+  nDynamicType 0
+  affectDynamic 0
+  shadow 0
+  lightpriority 5
+  fadingLight 0
+endnode
+node light TTZ01_B20_01ml2
+  parent TTZ01_B20_01
+  position -3.0 -3.0 5.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.568627 0.109804 0.694118 
+  radius 10.0
+  multiplier 1.0
+  color 1.0 1.0 1.0 
+  ambientonly 0
+  nDynamicType 0
+  affectDynamic 0
+  shadow 0
+  lightpriority 5
+  fadingLight 0
+endnode
+endmodelgeom TTZ01_B20_01
+donemodel TTZ01_B20_01

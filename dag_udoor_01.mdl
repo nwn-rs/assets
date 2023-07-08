@@ -1,0 +1,1448 @@
+# Exported from NWmax 0.8 c00 at 2/25/2020 7:50:54 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: dag_udoor_01
+#local file: M:\Tyrants Fixes\DAG_UDOOR01_NWMax2017.max
+filedependancy DAG_UDOOR01_NWMax2017.max
+newmodel dag_udoor_01
+setsupermodel dag_udoor_01 NULL
+classification Door
+#NWmax GEOM  ASCII
+beginmodelgeom dag_udoor_01
+node dummy dag_udoor_01
+  parent NULL
+endnode
+node trimesh sam
+  parent dag_udoor_01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.721569 0.894118 0.6 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 0.0
+  transparencyhint 0
+  selfillumcolor 0.0666667 0.0 1.0 
+  ambient 0.2 0.2 0.2 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 0
+  center -3.5 0.0 150.0 
+  bitmap NULL
+  verts 20
+    0.66 0.01 2.2
+    -0.39 0.01 3.0
+    0.37 0.01 3.0
+    -0.69 0.01 2.2
+    0.75 0.01 1.23
+    -0.83 0.01 1.32
+    -0.88 0.01 1.0
+    0.76 0.01 1.0
+    0.82 0.01 0.0
+    -0.89 0.01 0.0
+    0.76 -0.01 1.0
+    -0.89 -0.01 0.0
+    0.82 -0.01 0.0
+    -0.88 -0.01 1.0
+    -0.83 -0.01 1.32
+    0.75 -0.01 1.23
+    0.66 -0.01 2.2
+    -0.69 -0.01 2.2
+    0.37 -0.01 3.0
+    -0.39 -0.01 3.0
+  faces 16
+    0 1 2  0  0 1 2  1
+    0 3 1  0  0 3 1  1
+    4 3 0  0  4 3 0  1
+    4 5 3  0  4 5 3  1
+    5 4 6  0  5 4 6  1
+    7 6 4  0  7 6 4  1
+    8 6 7  0  8 6 7  1
+    6 8 9  0  6 8 9  1
+    10 11 12  0  10 11 12  1
+    11 10 13  0  11 10 13  1
+    13 10 14  0  13 10 14  1
+    10 15 14  0  10 15 14  1
+    16 14 15  0  16 14 15  1
+    16 17 14  0  16 17 14  1
+    18 17 16  0  18 17 16  1
+    19 17 18  0  19 17 18  1
+  tverts 20
+    6.63756 1.0 0
+    5.50401 1.0 0
+    6.59172 1.0 0
+    5.53733 0.0 0
+    3.03 1.0 0
+    5.55029 0.0 0
+    3.03 0.923077 0
+    3.03 0.923077 0
+    3.03 0.153846 0
+    3.03 0.153846 0
+    3.03 0.923077 0
+    3.03 0.153846 0
+    3.03 0.153846 0
+    3.03 0.923077 0
+    5.55029 0.0 0
+    3.03 1.0 0
+    6.63756 1.0 0
+    5.53733 0.0 0
+    6.59172 1.0 0
+    5.50401 1.0 0
+endnode
+node dummy Hinge
+  parent dag_udoor_01
+  position 0.818665 -0.00213286 0.0
+  orientation 1.0 0.0 0.0 -4.71216e-07
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node trimesh Weave
+  parent Hinge
+  position -0.818664 0.00212852 0.00115829
+  orientation -0.0762543 -0.0378176 -0.996371 -5.70401e-06
+  wirecolor 0.882353 0.337255 0.776471 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 20
+  center -3.5 0.0 150.0 
+  bitmap pdag_hwev1
+  verts 20
+    -0.64 -0.06 0.99
+    -0.64 -0.06 0.1
+    0.56 -0.06 0.1
+    0.57 -0.06 1.0
+    0.13 -0.06 2.9
+    -0.2 -0.06 2.9
+    0.45 -0.06 1.94
+    -0.53 -0.06 1.94
+    0.54 -0.06 1.22
+    -0.61 -0.06 1.29
+    -0.64 0.06 0.1
+    -0.64 0.06 0.99
+    0.56 0.06 0.1
+    0.57 0.06 1.0
+    -0.2 0.06 2.9
+    0.13 0.06 2.9
+    0.45 0.06 1.94
+    -0.53 0.06 1.94
+    0.54 0.06 1.22
+    -0.61 0.06 1.29
+  faces 16
+    0 1 2  0  0 1 2  1
+    3 0 2  0  3 0 2  1
+    4 5 6  0  4 5 6  1
+    6 5 7  0  6 5 7  1
+    6 7 8  0  6 7 8  1
+    7 9 8  0  7 9 8  1
+    8 9 0  0  8 9 0  1
+    3 8 0  0  3 8 0  1
+    10 11 12  0  10 11 12  1
+    11 13 12  0  11 13 12  1
+    14 15 16  0  14 15 16  1
+    14 16 17  0  14 16 17  1
+    17 16 18  0  17 16 18  1
+    19 17 18  0  19 17 18  1
+    18 13 11  0  18 13 11  1
+    19 18 11  0  19 18 11  1
+  tverts 20
+    -0.18816 0.965292 0
+    -0.19 0.0 0
+    1.18127 0.0 0
+    1.19 0.969802 0
+    0.6883 3.03 0
+    0.313593 3.03 0
+    1.05814 1.99415 0
+    -0.0568576 1.99012 0
+    1.15981 1.21645 0
+    -0.14709 1.29293 0
+    -0.19 0.0 0
+    -0.18816 0.965292 0
+    1.18127 0.0 0
+    1.19 0.969802 0
+    0.313593 3.03 0
+    0.6883 3.03 0
+    1.05814 1.99415 0
+    -0.0568576 1.99012 0
+    1.15981 1.21645 0
+    -0.14709 1.29293 0
+endnode
+node trimesh Door
+  parent Hinge
+  position -0.818664 0.00212852 0.00115829
+  orientation -0.0762543 -0.0378176 -0.996371 -5.70401e-06
+  wirecolor 0.882353 0.337255 0.776471 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 20
+  center -3.5 0.0 150.0 
+  bitmap pdag_hrope
+  verts 40
+    0.67 0.06 0.0
+    0.67 -0.06 1.0
+    0.67 -0.06 0.0
+    0.67 0.06 1.0
+    -0.74 -0.06 1.0
+    -0.74 0.06 0.0
+    -0.74 -0.06 0.0
+    -0.74 0.06 1.0
+    -0.7 -0.06 1.31
+    -0.7 0.06 1.31
+    -0.62 -0.06 1.96
+    -0.62 0.06 1.96
+    -0.27 -0.06 3.0
+    -0.27 0.06 3.0
+    0.2 0.06 3.0
+    0.2 -0.06 3.0
+    0.55 0.06 1.96
+    0.55 -0.06 1.96
+    0.64 0.06 1.23
+    0.64 -0.06 1.23
+    0.56 -0.06 0.1
+    0.57 -0.06 1.0
+    -0.64 -0.06 0.1
+    -0.64 -0.06 0.99
+    -0.61 -0.06 1.29
+    -0.53 -0.06 1.94
+    -0.2 -0.06 2.9
+    0.13 -0.06 2.9
+    0.45 -0.06 1.94
+    0.54 -0.06 1.22
+    0.56 0.06 0.1
+    -0.64 0.06 0.1
+    0.57 0.06 1.0
+    0.54 0.06 1.22
+    0.45 0.06 1.94
+    0.13 0.06 2.9
+    -0.2 0.06 2.9
+    -0.53 0.06 1.94
+    -0.61 0.06 1.29
+    -0.64 0.06 0.99
+  faces 58
+    0 1 2  0  0 1 2  1
+    0 3 1  0  0 3 1  1
+    4 5 6  0  4 5 6  1
+    4 7 5  0  4 7 5  1
+    8 7 4  0  8 9 10  1
+    8 9 7  0  8 11 9  1
+    10 9 8  0  12 13 14  1
+    10 11 9  0  12 15 13  1
+    12 11 10  0  16 17 18  1
+    12 13 11  0  16 19 17  1
+    14 12 15  0  20 21 22  1
+    14 13 12  0  20 23 21  1
+    16 15 17  0  24 25 26  1
+    16 14 15  0  24 27 25  1
+    18 17 19  0  28 29 30  1
+    18 16 17  0  28 31 29  1
+    3 19 1  0  32 33 34  1
+    3 18 19  0  32 35 33  1
+    1 20 2  0  36 37 38  1
+    1 21 20  0  36 39 37  1
+    20 6 2  0  40 41 42  1
+    20 22 6  0  40 43 41  1
+    22 4 6  0  44 45 46  1
+    22 23 4  0  44 47 45  1
+    24 4 23  0  48 49 50  1
+    24 8 4  0  48 51 49  1
+    25 8 24  0  52 53 54  1
+    25 10 8  0  52 55 53  1
+    26 10 25  0  56 57 58  1
+    26 12 10  0  56 59 57  1
+    15 26 27  0  60 61 62  1
+    15 12 26  0  60 63 61  1
+    17 27 28  0  64 65 66  1
+    17 15 27  0  64 67 65  1
+    19 28 29  0  68 69 70  1
+    19 17 28  0  68 71 69  1
+    1 29 21  0  72 73 74  1
+    1 19 29  0  72 75 73  1
+    5 30 0  0  76 77 78  1
+    5 31 30  0  76 79 77  1
+    30 3 0  0  80 81 82  1
+    30 32 3  0  80 83 81  1
+    33 3 32  0  84 85 86  1
+    33 18 3  0  84 87 85  1
+    34 18 33  0  88 89 90  1
+    34 16 18  0  88 91 89  1
+    35 16 34  0  92 93 94  1
+    35 14 16  0  92 95 93  1
+    36 14 35  0  96 97 98  1
+    36 13 14  0  96 99 97  1
+    11 36 37  0  100 101 102  1
+    11 13 36  0  100 103 101  1
+    9 37 38  0  104 105 106  1
+    9 11 37  0  104 107 105  1
+    7 38 39  0  108 109 110  1
+    7 9 38  0  108 111 109  1
+    7 31 5  0  112 113 114  1
+    7 39 31  0  112 115 113  1
+  tverts 116
+    1.0 0.13 0
+    0.0 0.2 0
+    1.0 0.2 0
+    0.0 0.13 0
+    1.0 0.2 0
+    0.0 0.13 0
+    0.0 0.2 0
+    1.0 0.13 0
+    1.0 0.2 0
+    0.0 0.13 0
+    0.0 0.2 0
+    1.0 0.13 0
+    1.0 0.2 0
+    0.0 0.13 0
+    0.0 0.2 0
+    1.0 0.13 0
+    1.0 0.2 0
+    0.0 0.13 0
+    0.0 0.2 0
+    1.0 0.13 0
+    1.0 0.13 0
+    0.0 0.2 0
+    1.0 0.2 0
+    0.0 0.13 0
+    1.0 0.13 0
+    0.0 0.2 0
+    1.0 0.2 0
+    0.0 0.13 0
+    1.0 0.13 0
+    0.0 0.2 0
+    1.0 0.2 0
+    0.0 0.13 0
+    1.0 0.13 0
+    0.0 0.2 0
+    1.0 0.2 0
+    0.0 0.13 0
+    0.0 0.13 0
+    1.0 0.35 0
+    1.0 0.13 0
+    0.0 0.35 0
+    0.0 0.35 0
+    1.0 0.13 0
+    0.0 0.13 0
+    1.0 0.35 0
+    0.0 0.35 0
+    1.0 0.13 0
+    0.0 0.13 0
+    1.0 0.35 0
+    1.0 0.35 0
+    0.0 0.13 0
+    0.0 0.35 0
+    1.0 0.13 0
+    1.0 0.35 0
+    0.0 0.13 0
+    0.0 0.35 0
+    1.0 0.13 0
+    1.0 0.35 0
+    0.0 0.13 0
+    0.0 0.35 0
+    1.0 0.13 0
+    1.0 0.13 0
+    0.0 0.35 0
+    1.0 0.35 0
+    0.0 0.13 0
+    1.0 0.13 0
+    0.0 0.35 0
+    1.0 0.35 0
+    0.0 0.13 0
+    1.0 0.13 0
+    0.0 0.35 0
+    1.0 0.35 0
+    0.0 0.13 0
+    1.0 0.13 0
+    0.0 0.35 0
+    1.0 0.35 0
+    0.0 0.13 0
+    1.0 0.2 0
+    0.0 0.03 0
+    0.0 0.2 0
+    1.0 0.03 0
+    1.0 0.03 0
+    0.0 0.2 0
+    1.0 0.2 0
+    0.0 0.03 0
+    0.0 0.03 0
+    1.0 0.2 0
+    1.0 0.03 0
+    0.0 0.2 0
+    0.0 0.03 0
+    1.0 0.2 0
+    1.0 0.03 0
+    0.0 0.2 0
+    0.0 0.03 0
+    1.0 0.2 0
+    1.0 0.03 0
+    0.0 0.2 0
+    0.0 0.03 0
+    1.0 0.2 0
+    1.0 0.03 0
+    0.0 0.2 0
+    0.0 0.2 0
+    1.0 0.03 0
+    0.0 0.03 0
+    1.0 0.2 0
+    0.0 0.2 0
+    1.0 0.03 0
+    0.0 0.03 0
+    1.0 0.2 0
+    0.0 0.2 0
+    1.0 0.03 0
+    0.0 0.03 0
+    1.0 0.2 0
+    1.0 0.199219 0
+    0.0 0.03 0
+    0.0 0.2 0
+    1.0 0.03 0
+endnode
+node emitter fire!07
+  parent dag_udoor_01
+  position -0.00470703 0.0227734 1.05934
+  orientation 1.0 0.0 0.0 -4.71239
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType -1
+  xSize 391.0
+  ySize 140.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.439216 0.364706 
+  colorEnd 0.819608 0.796079 0.709804 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 35
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 1
+  xgrid 4
+  ygrid 4
+  fps 10
+  framestart 0
+  frameend 24
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node dummy dag_udoor_01impc
+  parent dag_udoor_01
+  position -0.00121094 0.0 1.10846
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy dag_udoor_01hhit
+  parent dag_udoor_01
+  position -0.00121094 0.0 2.46486
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy dag_udoor_01head
+  parent dag_udoor_01
+  position -0.00121094 0.0 2.89342
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy dag_udoor_01grnd
+  parent dag_udoor_01
+  position -0.00121094 0.0 0.0200041
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node emitter ChunkyWood02
+  parent dag_udoor_01
+  position -0.00470703 0.0227734 1.61918
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType -1
+  xSize 382.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.482353 0.435294 0.317647 
+  colorEnd 0.584314 0.533333 0.407843 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 2.9
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 1
+  xgrid 5
+  ygrid 5
+  fps 0
+  framestart 0
+  frameend 24
+  random 0
+  chunkName PLC_Chunk_S02
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter ChunkyWood1
+  parent dag_udoor_01
+  position -0.00470703 0.0227734 0.656361
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType -1
+  xSize 384.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 5.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  framestart 0
+  frameend 24
+  random 0
+  chunkName PLC_Chunk_W02
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+endmodelgeom dag_udoor_01
+
+#NWmax ANIM ASCII
+newanim opened1 dag_udoor_01
+  length 0.0333333
+  transtime 0.25
+  animroot dag_udoor_01
+    node dummy dag_udoor_01
+        parent NULL
+    endnode
+    node trimesh sam
+        parent dag_udoor_01
+    endnode
+    node dummy Hinge
+        parent dag_udoor_01
+        positionkey
+            0.0333333 0.818665 -0.00213286 0.0
+        endlist
+        orientationkey
+            0.0 0.0 1.33033e-07 -1.0 -1.65807
+            0.0333333 2.18469e-07 0.0 -1.0 -1.65807
+        endlist
+    endnode
+    node trimesh Weave
+        parent Hinge
+    endnode
+    node trimesh Door
+        parent Hinge
+    endnode
+    node emitter fire!07
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01impc
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01hhit
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01head
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01grnd
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood02
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood1
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01_DWK
+        parent dag_udoor_01
+    endnode
+    node dummy 01_DWK_dp_open2_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open2_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_01
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_closed
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open1
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open2
+        parent dag_udoor_01_DWK
+    endnode
+doneanim opened1 dag_udoor_01
+
+
+#NWmax ANIM ASCII
+newanim opened2 dag_udoor_01
+  length 0.0333333
+  transtime 0.25
+  animroot dag_udoor_01
+    node dummy dag_udoor_01
+        parent NULL
+    endnode
+    node trimesh sam
+        parent dag_udoor_01
+    endnode
+    node dummy Hinge
+        parent dag_udoor_01
+        orientationkey
+            0.0 0.0 -2.04423e-07 1.0 -1.63189
+            0.0333333 2.2428e-07 0.0 1.0 -1.63189
+        endlist
+    endnode
+    node trimesh Weave
+        parent Hinge
+    endnode
+    node trimesh Door
+        parent Hinge
+    endnode
+    node emitter fire!07
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01impc
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01hhit
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01head
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01grnd
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood02
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood1
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01_DWK
+        parent dag_udoor_01
+    endnode
+    node dummy 01_DWK_dp_open2_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open2_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_01
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_closed
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open1
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open2
+        parent dag_udoor_01_DWK
+    endnode
+doneanim opened2 dag_udoor_01
+
+
+#NWmax ANIM ASCII
+newanim closed dag_udoor_01
+  length 0.0333333
+  transtime 0.25
+  animroot dag_udoor_01
+    node dummy dag_udoor_01
+        parent NULL
+    endnode
+    node trimesh sam
+        parent dag_udoor_01
+    endnode
+    node dummy Hinge
+        parent dag_udoor_01
+    endnode
+    node trimesh Weave
+        parent Hinge
+    endnode
+    node trimesh Door
+        parent Hinge
+    endnode
+    node emitter fire!07
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01impc
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01hhit
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01head
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01grnd
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood02
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood1
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01_DWK
+        parent dag_udoor_01
+    endnode
+    node dummy 01_DWK_dp_open2_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open2_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_01
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_closed
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open1
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open2
+        parent dag_udoor_01_DWK
+    endnode
+doneanim closed dag_udoor_01
+
+
+#NWmax ANIM ASCII
+newanim opening1 dag_udoor_01
+  length 0.966667
+  transtime 0.25
+  animroot dag_udoor_01
+    node dummy dag_udoor_01
+        parent NULL
+    endnode
+    node trimesh sam
+        parent dag_udoor_01
+    endnode
+    node dummy Hinge
+        parent dag_udoor_01
+        orientationkey
+            0.0 0.136409 0.000630983 -0.990652 -5.78395e-06
+            0.1 1.76559e-06 1.80192e-07 -1.0 -0.400221
+            0.266667 2.22354e-06 -4.56923e-07 -1.0 -0.800444
+            0.5 2.09178e-06 -9.71898e-07 -1.0 -1.25784
+            0.966667 0.0 1.87772e-07 -1.0 -1.65806
+        endlist
+    endnode
+    node trimesh Weave
+        parent Hinge
+    endnode
+    node trimesh Door
+        parent Hinge
+    endnode
+    node emitter fire!07
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01impc
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01hhit
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01head
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01grnd
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood02
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood1
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01_DWK
+        parent dag_udoor_01
+    endnode
+    node dummy 01_DWK_dp_open2_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open2_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_01
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_closed
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open1
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open2
+        parent dag_udoor_01_DWK
+    endnode
+doneanim opening1 dag_udoor_01
+
+
+#NWmax ANIM ASCII
+newanim opening2 dag_udoor_01
+  length 0.966667
+  transtime 0.25
+  animroot dag_udoor_01
+    node dummy dag_udoor_01
+        parent NULL
+    endnode
+    node trimesh sam
+        parent dag_udoor_01
+    endnode
+    node dummy Hinge
+        parent dag_udoor_01
+        orientationkey
+            0.0 1.0 6.31779e-07 0.0 -8.08517e-07
+            0.0666667 4.43563e-06 1.89718e-06 1.0 -0.343044
+            0.166667 3.70639e-06 1.47956e-06 1.0 -0.800444
+            0.466667 2.01229e-06 9.11068e-07 1.0 -1.25784
+            0.966667 3.62712e-07 0.0 1.0 -1.65806
+        endlist
+    endnode
+    node trimesh Weave
+        parent Hinge
+    endnode
+    node trimesh Door
+        parent Hinge
+    endnode
+    node emitter fire!07
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01impc
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01hhit
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01head
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01grnd
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood02
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood1
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01_DWK
+        parent dag_udoor_01
+    endnode
+    node dummy 01_DWK_dp_open2_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open2_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_01
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_closed
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open1
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open2
+        parent dag_udoor_01_DWK
+    endnode
+doneanim opening2 dag_udoor_01
+
+
+#NWmax ANIM ASCII
+newanim closing1 dag_udoor_01
+  length 0.966667
+  transtime 0.25
+  animroot dag_udoor_01
+    node dummy dag_udoor_01
+        parent NULL
+    endnode
+    node trimesh sam
+        parent dag_udoor_01
+    endnode
+    node dummy Hinge
+        parent dag_udoor_01
+        orientationkey
+            0.0 0.0 3.12312e-07 -1.0 -1.65806
+            0.7 1.79662e-06 -5.54489e-07 -1.0 -1.25784
+            0.8 2.97013e-06 -7.06073e-07 -1.0 -0.857619
+            0.9 6.73221e-06 -9.83731e-07 -1.0 -0.400222
+            0.966667 0.909789 0.415072 9.44602e-07 -5.90056e-07
+        endlist
+    endnode
+    node trimesh Weave
+        parent Hinge
+    endnode
+    node trimesh Door
+        parent Hinge
+    endnode
+    node emitter fire!07
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01impc
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01hhit
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01head
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01grnd
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood02
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood1
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01_DWK
+        parent dag_udoor_01
+    endnode
+    node dummy 01_DWK_dp_open2_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open2_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_01
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_closed
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open1
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open2
+        parent dag_udoor_01_DWK
+    endnode
+doneanim closing1 dag_udoor_01
+
+
+#NWmax ANIM ASCII
+newanim closing2 dag_udoor_01
+  length 0.966667
+  transtime 0.25
+  animroot dag_udoor_01
+    node dummy dag_udoor_01
+        parent NULL
+    endnode
+    node trimesh sam
+        parent dag_udoor_01
+    endnode
+    node dummy Hinge
+        parent dag_udoor_01
+        orientationkey
+            0.0 3.87837e-07 -1.77324e-07 1.0 -1.65806
+            0.533333 1.34425e-06 3.01242e-07 1.0 -1.31502
+            0.8 3.2363e-06 1.15002e-06 1.0 -0.857619
+            0.9 7.15319e-06 2.15251e-06 1.0 -0.400222
+            0.966667 0.877464 0.479643 0.0 -5.02238e-07
+        endlist
+    endnode
+    node trimesh Weave
+        parent Hinge
+    endnode
+    node trimesh Door
+        parent Hinge
+    endnode
+    node emitter fire!07
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01impc
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01hhit
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01head
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01grnd
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood02
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood1
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01_DWK
+        parent dag_udoor_01
+    endnode
+    node dummy 01_DWK_dp_open2_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open2_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_01
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_closed
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open1
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open2
+        parent dag_udoor_01_DWK
+    endnode
+doneanim closing2 dag_udoor_01
+
+
+#NWmax ANIM ASCII
+newanim trans dag_udoor_01
+  length 0.0333333
+  transtime 0.25
+  animroot dag_udoor_01
+    node dummy dag_udoor_01
+        parent NULL
+    endnode
+    node trimesh sam
+        parent dag_udoor_01
+        alphakey
+            0.0 0.25 
+            0.0333333 0.25 
+        endlist
+    endnode
+    node dummy Hinge
+        parent dag_udoor_01
+    endnode
+    node trimesh Weave
+        parent Hinge
+    endnode
+    node trimesh Door
+        parent Hinge
+    endnode
+    node emitter fire!07
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01impc
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01hhit
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01head
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01grnd
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood02
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood1
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01_DWK
+        parent dag_udoor_01
+    endnode
+    node dummy 01_DWK_dp_open2_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open2_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_01
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_closed
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open1
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open2
+        parent dag_udoor_01_DWK
+    endnode
+doneanim trans dag_udoor_01
+
+
+#NWmax ANIM ASCII
+newanim die dag_udoor_01
+  length 0.166667
+  transtime 0.25
+  animroot dag_udoor_01
+  event 0.0333333 detonate
+  event 0.0333333 detonate
+  event 0.0333333 detonate
+    node dummy dag_udoor_01
+        parent NULL
+    endnode
+    node trimesh sam
+        parent dag_udoor_01
+    endnode
+    node dummy Hinge
+        parent dag_udoor_01
+        positionkey
+            0.0 0.818665 -0.00213286 0.0
+            0.166667 0.818665 -0.00213286 -4.0
+        endlist
+    endnode
+    node trimesh Weave
+        parent Hinge
+    endnode
+    node trimesh Door
+        parent Hinge
+    endnode
+    node emitter fire!07
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01impc
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01hhit
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01head
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01grnd
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood02
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood1
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01_DWK
+        parent dag_udoor_01
+    endnode
+    node dummy 01_DWK_dp_open2_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open2_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_01
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_closed
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open1
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open2
+        parent dag_udoor_01_DWK
+    endnode
+doneanim die dag_udoor_01
+
+
+#NWmax ANIM ASCII
+newanim dead dag_udoor_01
+  length 0.0333333
+  transtime 0.25
+  animroot dag_udoor_01
+    node dummy dag_udoor_01
+        parent NULL
+    endnode
+    node trimesh sam
+        parent dag_udoor_01
+    endnode
+    node dummy Hinge
+        parent dag_udoor_01
+        positionkey
+            0.0 0.818665 -0.00213286 -4.0
+            0.0333333 0.818665 -0.00213286 -4.0
+        endlist
+    endnode
+    node trimesh Weave
+        parent Hinge
+    endnode
+    node trimesh Door
+        parent Hinge
+    endnode
+    node emitter fire!07
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01impc
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01hhit
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01head
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01grnd
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood02
+        parent dag_udoor_01
+    endnode
+    node emitter ChunkyWood1
+        parent dag_udoor_01
+    endnode
+    node dummy dag_udoor_01_DWK
+        parent dag_udoor_01
+    endnode
+    node dummy 01_DWK_dp_open2_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open2_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_open1_01
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_02
+        parent dag_udoor_01_DWK
+    endnode
+    node dummy 01_DWK_dp_closed_01
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_closed
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open1
+        parent dag_udoor_01_DWK
+    endnode
+    node trimesh 01_DWK_wg_open2
+        parent dag_udoor_01_DWK
+    endnode
+doneanim dead dag_udoor_01
+
+donemodel dag_udoor_01

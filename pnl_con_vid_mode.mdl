@@ -1,0 +1,39 @@
+#MAXMODEL ASCII
+# model: PNL_CON_VID_MODE
+filedependancy PNL_CON_VID_MODE.max
+newmodel PNL_CON_VID_MODE
+setsupermodel PNL_CON_VID_MODE NULL
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom PNL_CON_VID_MODE
+node dummy PNL_CON_VID_MODE
+  parent NULL
+  #part-number 0
+endnode
+node trimesh Plane21
+  parent PNL_CON_VID_MODE
+  #part-number 1
+  ambient 0 0 0
+  diffuse 1 1 1
+  specular 0.0500000007 0.0500000007 0.0500000007
+  shininess 26
+  bitmap PNL_CON_VID_MODE
+  verts 4
+    -1.86000001 1.92 0
+    -1.86000001 -1.92 0
+    1.86000001 1.92 0
+    1.86000001 -1.92 0
+  tverts 4
+    0.136719003 0.875 0
+    0.136719003 0.125 0
+    0.863281012 0.875 0
+    0.863281012 0.125 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 0 0 -0.0500000007
+  orientation 0 0 0 0
+endnode
+endmodelgeom PNL_CON_VID_MODE
+
+donemodel PNL_CON_VID_MODE

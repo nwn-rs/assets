@@ -1,0 +1,681 @@
+# Exported from NWmax 0.8 b40 at 7/4/2005 4:46:20 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tnp_flag_b11
+filedependancy B_flags_01_12.max
+newmodel tnp_flag_b11
+setsupermodel tnp_flag_b11 tnp_flag_b01
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom tnp_flag_b11
+node dummy tnp_flag_b11
+  parent NULL
+endnode
+node dummy flag_b11_ground
+  parent tnp_flag_b11
+  position -0.00363281 0.0069873 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.0 0.0 
+endnode
+node dummy flag_b11_head
+  parent tnp_flag_b11
+  position 0.0 0.0041629 4.84041
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.0 0.0 
+endnode
+node dummy flag_b11_head_hit
+  parent tnp_flag_b11
+  position 0.0 0.00958099 4.63392
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.0 0.0 
+endnode
+node dummy flag_b11_impact
+  parent tnp_flag_b11
+  position 0.0 0.415962 3.8079
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.0 0.0 
+endnode
+node trimesh mount
+  parent tnp_flag_b11
+  position 0.0 1.0 3.13947
+  orientation 0.0 0.0 1.0 -3.14159
+  wirecolor 0.313726 0.176471 0.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 0
+  center 0.0 4.95911e-005 -0.00150013 
+  bitmap tno01_wood011
+  verts 6
+    -0.110603 -0.143492 -0.219293
+    0.110603 -0.143492 -0.219293
+    -0.110603 -0.143492 0.219263
+    0.110603 -0.143492 0.219263
+    -0.110603 0.143493 0.0630272
+    0.110603 0.143493 0.0630272
+  faces 8
+    2 3 4  0  0 1 2  1
+    3 5 4  0  1 3 2  1
+    4 5 0  0  2 3 4  1
+    5 1 0  0  3 5 4  1
+    1 5 3  0  6 7 8  1
+    4 0 2  0  9 10 11  1
+    1 3 2  0  6 8 12  1
+    2 0 1  0  12 13 6  1
+  tverts 14
+    0.713494 0.719369 0
+    0.489563 0.719369 0
+    0.713494 0.367236 0
+    0.489563 0.367236 0
+    0.713494 0.0151043 0
+    0.489563 0.0151043 0
+    0.252612 0.0189876 0
+    0.490109 0.367054 0
+    0.252613 0.49305 0
+    0.490109 0.367054 0
+    0.253078 0.0189876 0
+    0.253078 0.49305 0
+    0.0842518 0.49305 0
+    0.0842516 0.0189875 0
+endnode
+node trimesh ball
+  parent mount
+  position 0.00107754 2.14763 2.20465
+  orientation -1.0 0.0 0.0 -6.28318
+  wirecolor 0.694118 0.576471 0.101961 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 0
+  center 0.0 -0.000714779 0.00171518 
+  bitmap w_metal_tex
+  verts 12
+    0.0732284 -0.0113077 0.0618649
+    0.081513 -0.0371447 -0.035923
+    0.0744531 0.0606363 -0.00969815
+    0.0211823 -0.0905869 0.0257437
+    -0.0231639 -0.0258353 0.0900817
+    0.00975927 0.067626 0.0681772
+    0.0231639 0.025821 -0.0900474
+    -0.00975928 -0.0676403 -0.0681429
+    -0.0744531 -0.0606506 0.00973225
+    -0.081513 0.0371301 0.0359571
+    -0.0211824 0.0905726 -0.0257096
+    -0.0732285 0.0112934 -0.0618305
+  faces 20
+    0 1 2  1  0 1 2  1
+    0 3 1  1  0 3 1  1
+    0 4 3  1  0 4 3  1
+    0 5 4  1  0 5 4  1
+    0 2 5  1  0 2 5  1
+    2 1 6  1  2 1 6  1
+    1 7 6  1  1 7 6  1
+    1 3 7  1  1 3 7  1
+    3 8 7  1  3 8 7  1
+    3 4 8  1  3 4 8  1
+    4 9 8  1  4 9 8  1
+    4 5 9  1  4 5 9  1
+    5 10 9  1  5 10 9  1
+    5 2 10  1  5 2 11  1
+    2 6 10  1  2 6 11  1
+    11 10 6  1  12 11 6  1
+    11 6 7  1  12 6 7  1
+    11 7 8  1  13 14 8  1
+    11 8 9  1  13 8 9  1
+    11 9 10  1  13 9 10  1
+  tverts 15
+    0.376782 0.61731 0
+    0.419716 0.590131 0
+    0.408738 0.695314 0
+    0.369837 0.509529 0
+    0.333673 0.602277 0
+    0.352548 0.708541 0
+    0.454466 0.655322 0
+    0.469613 0.552784 0
+    0.287944 0.562284 0
+    0.298922 0.667468 0
+    0.29263 0.723174 0
+    0.452492 0.742285 0
+    0.497575 0.640289 0
+    0.255989 0.640289 0
+    0.259355 0.535443 0
+endnode
+node trimesh pole
+  parent mount
+  position 0.0047741 1.05145 1.10422
+  orientation -1.0 0.0 0.0 -6.28318
+  wirecolor 0.47451 0.294118 0.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 0
+  center 0.0 -0.000499725 0.000499725 
+  bitmap tno01_wood02
+  verts 10
+    0.0106759 -1.02704 -1.09428
+    -0.0452256 -1.03988 -1.08144
+    -0.0452256 -1.08144 -1.03988
+    0.0106759 -1.09429 -1.02703
+    0.0452256 -1.06066 -1.06066
+    0.0106759 1.09428 1.02704
+    -0.0452256 1.08144 1.03988
+    -0.0452256 1.03988 1.08144
+    0.0106759 1.02703 1.09429
+    0.0452256 1.06066 1.06066
+  faces 10
+    0 1 5  0  0 1 2  1
+    1 6 5  0  1 3 2  1
+    1 2 6  0  1 4 3  1
+    2 7 6  0  4 5 3  1
+    2 3 7  0  4 6 5  1
+    3 8 7  0  6 7 5  1
+    3 4 8  0  6 8 7  1
+    4 9 8  0  8 9 7  1
+    4 0 9  0  8 10 9  1
+    0 5 9  0  10 11 9  1
+  tverts 12
+    0.397815 -0.95343 0
+    0.438485 -0.95343 0
+    0.397815 0.983958 0
+    0.438485 0.983958 0
+    0.479154 -0.95343 0
+    0.479154 0.983958 0
+    0.519824 -0.95343 0
+    0.519824 0.983959 0
+    0.560494 -0.95343 0
+    0.560493 0.983959 0
+    0.601163 -0.95343 0
+    0.601163 0.983959 0
+endnode
+node trimesh support
+  parent mount
+  position -3.03773e-007 0.23715 0.663788
+  orientation -1.0 0.0 0.0 -6.28318
+  wirecolor 0.419608 0.266667 0.0666667 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 0
+  center 0.0 0.000148773 -0.00104487 
+  bitmap tno01_wood011
+  verts 10
+    -0.0713778 -0.517461 -0.035458
+    0.0713778 -0.517461 -0.035458
+    -0.0713778 -0.517461 0.0354371
+    0.0713778 -0.517461 0.0354371
+    -0.0713778 0.460397 0.0354371
+    0.0713778 0.460397 0.0354371
+    -0.0713778 0.389457 -0.035458
+    0.0713778 0.389457 -0.035458
+    0.0 0.517464 0.0354371
+    0.0 0.446525 -0.035458
+  faces 16
+    2 3 4  0  0 1 2  1
+    8 4 5  0  3 2 4  1
+    3 5 4  0  1 4 2  1
+    8 9 4  0  5 6 7  1
+    4 9 6  0  7 6 8  1
+    1 0 7  0  9 10 11  1
+    9 7 6  0  12 11 13  1
+    6 7 0  0  13 11 10  1
+    5 3 7  0  4 1 11  1
+    1 7 3  0  9 11 1  1
+    4 6 2  0  2 14 0  1
+    6 0 2  0  14 15 0  1
+    8 5 9  0  5 16 6  1
+    9 5 7  0  6 16 17  1
+    3 2 0  0  18 19 20  1
+    0 1 3  0  20 21 18  1
+  tverts 22
+    0.295518 0.304102 0
+    0.44739 0.304102 0
+    0.295518 0.739458 0
+    0.371454 0.769697 0
+    0.44739 0.739458 0
+    0.310069 0.719171 0
+    0.428893 0.719171 0
+    0.310069 0.93589 0
+    0.428893 0.93589 0
+    0.528315 0.304102 0
+    0.680188 0.304102 0
+    0.528315 0.701868 0
+    0.604252 0.732108 0
+    0.680188 0.701868 0
+    0.214592 0.701868 0
+    0.214592 0.304102 0
+    0.310069 0.502451 0
+    0.428893 0.502451 0
+    0.299677 0.181061 0
+    0.422589 0.181061 0
+    0.422589 0.303973 0
+    0.299677 0.303973 0
+endnode
+node danglymesh flag
+  parent mount
+  position -0.00321639 1.62382 0.454025
+  orientation 0.0 0.0 1.0 -3.14159
+  wirecolor 0.0313726 0.0313726 0.529412 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 0.0 5.14984e-005 0.0 
+  period 0.5
+  tightness 1.0
+  displacement 0.4
+  showdispl true
+  displtype 1
+  center 0.0 5.14984e-005 0.0 
+  bitmap tno01_flag_11
+  verts 40
+    -0.00321668 0.442297 0.730917
+    -0.00321666 0.142067 0.909639
+    -0.00321665 -0.14465 1.19638
+    -0.00321663 -0.426862 1.58212
+    -0.00321668 0.437152 -0.150442
+    0.00184086 -0.00643631 0.140285
+    -0.0292301 -0.432007 0.538306
+    -0.000111955 0.432007 -0.815043
+    -0.00023713 -0.0115808 -0.37589
+    -0.00741377 -0.437151 0.0361647
+    -0.0111575 0.426862 -1.58212
+    -0.0407395 0.126632 -1.28634
+    0.0391722 -0.160084 -0.999602
+    0.0178442 -0.442296 -0.730916
+    0.00159793 -0.438967 -0.354699
+    0.000123835 -0.0132726 -0.736856
+    -0.00321805 0.43051 -1.21671
+    -0.0196199 -0.430106 0.993033
+    -0.000984035 -0.00381618 0.564034
+    -0.00321668 0.439746 0.281052
+    -0.00164938 0.442297 0.730917
+    -0.00164936 0.142067 0.909639
+    -0.00164935 -0.14465 1.19638
+    -0.00164933 -0.426862 1.58212
+    -0.00164938 0.437152 -0.150442
+    0.00340816 -0.00643631 0.140285
+    -0.0276628 -0.432007 0.538306
+    0.00145535 0.432007 -0.815043
+    0.00133017 -0.0115808 -0.37589
+    -0.00584647 -0.437151 0.0361647
+    -0.00959018 0.426862 -1.58212
+    -0.0391722 0.126632 -1.28634
+    0.0407395 -0.160084 -0.999602
+    0.0194115 -0.442296 -0.730916
+    0.00316524 -0.438967 -0.354699
+    0.00169114 -0.0132726 -0.736856
+    -0.00165075 0.43051 -1.21671
+    -0.0180526 -0.430106 0.993033
+    0.000583269 -0.00381618 0.564034
+    -0.00164938 0.439746 0.281052
+  faces 44
+    5 19 4  1  5 19 4  1
+    5 18 19  1  5 18 19  1
+    6 18 5  1  6 18 5  1
+    6 17 18  1  6 17 18  1
+    5 4 7  1  5 4 7  1
+    8 5 7  1  8 5 7  1
+    6 5 8  1  6 5 8  1
+    9 6 8  1  9 6 8  1
+    11 16 10  1  11 16 10  1
+    11 15 16  1  11 15 16  1
+    12 15 11  1  12 15 11  1
+    14 15 12  1  14 15 12  1
+    13 14 12  1  13 14 12  1
+    14 9 8  1  14 9 8  1
+    14 8 15  1  14 8 15  1
+    15 8 7  1  15 8 7  1
+    15 7 16  1  15 7 16  1
+    18 17 2  1  18 17 2  1
+    17 3 2  1  17 3 2  1
+    18 2 1  1  18 2 1  1
+    19 1 0  1  19 1 0  1
+    18 1 19  1  18 1 19  1
+    39 25 24  1  19 5 4  1
+    38 25 39  1  18 5 19  1
+    38 26 25  1  18 6 5  1
+    37 26 38  1  17 6 18  1
+    24 25 27  1  4 5 7  1
+    25 28 27  1  5 8 7  1
+    25 26 28  1  5 6 8  1
+    26 29 28  1  6 9 8  1
+    36 35 31  1  16 15 11  1
+    36 31 30  1  16 11 10  1
+    35 32 31  1  15 12 11  1
+    35 34 32  1  15 14 12  1
+    34 33 32  1  14 13 12  1
+    29 34 28  1  9 14 8  1
+    28 34 35  1  8 14 15  1
+    28 35 27  1  8 15 7  1
+    27 35 36  1  7 15 16  1
+    23 37 22  1  3 17 2  1
+    22 37 38  1  2 17 18  1
+    22 38 21  1  2 18 1  1
+    21 39 20  1  1 19 0  1
+    21 38 39  1  1 18 19  1
+  tverts 20
+    1.00277 1.0 0
+    0.837629 1.0 0
+    0.67249 1.0 0
+    0.507352 1.0 0
+    1.00114 0.6 0
+    0.752724 0.6 0
+    0.505726 0.6 0
+    0.999515 0.372718 0
+    0.752724 0.372718 0
+    0.5041 0.372718 0
+    0.997889 0.0 0
+    0.832751 0.0 0
+    0.667613 0.0 0
+    0.502474 0.0 0
+    0.503526 0.185119 0
+    0.752724 0.185119 0
+    0.999042 0.185119 0
+    0.506327 0.772718 0
+    0.752724 0.7938 0
+    1.00196 0.8 0
+  constraints 40
+    0.0
+    245.0
+    247.0
+    0.0
+    165.0
+    183.0
+    183.0
+    111.0
+    147.0
+    147.0
+    75.0
+    75.0
+    75.0
+    111.0
+    111.0
+    111.0
+    75.0
+    219.0
+    219.0
+    219.0
+    0.0
+    245.0
+    247.0
+    0.0
+    165.0
+    183.0
+    183.0
+    111.0
+    147.0
+    147.0
+    75.0
+    75.0
+    75.0
+    111.0
+    111.0
+    111.0
+    75.0
+    219.0
+    219.0
+    219.0
+endnode
+node emitter echunkywood11
+  parent tnp_flag_b11
+  position 0.00845276 -0.0210043 0.568524
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.482353 0.435294 0.317647 
+  colorEnd 0.584314 0.533333 0.407843 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 2.9
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud11
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName PLC_Chunk_W02
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter echunkywood01
+  parent tnp_flag_b11
+  position 0.00845276 -0.0210043 0.462303
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 5.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud11
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName PLC_Chunk_W01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter esmoke
+  parent tnp_flag_b11
+  position 0.00845276 -0.0210043 0.388259
+  orientation 1.0 0.0 0.0 -4.71239
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 100.0
+  ySize 99.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.439216 0.364706 
+  colorEnd 0.819608 0.796079 0.709804 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 0
+  xgrid 4
+  ygrid 4
+  fps 10
+  frameStart 0
+  frameEnd 24
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node dummy flag_b11_hand
+  parent tnp_flag_b11
+  position 0.00398437 -0.344823 2.54718
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.0 0.0 
+endnode
+endmodelgeom tnp_flag_b11
+donemodel tnp_flag_b11

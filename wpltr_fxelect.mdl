@@ -1,0 +1,473 @@
+# Exported from NWmax 0.8 b59 at 2/3/2006 10:51:06 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: WPlTr_fxelect
+#local file: D:\Work_NWN\weapons\wpltr.max
+filedependancy wpltr.max
+newmodel WPlTr_fxelect
+setsupermodel WPlTr_fxelect NULL
+classification Item
+#NWmax GEOM  ASCII
+beginmodelgeom WPlTr_fxelect
+node dummy WPlTr_fxelect
+  parent NULL
+endnode
+node emitter g_WSwGs_V_Elec_b
+  parent WPlTr_fxelect
+  position 0.0 0.965366 0.0922043
+  orientation 0.0 -1.0 0.0 -1.5708
+  wirecolor 0.603922 0.603922 0.894118 
+  update_sel 1
+  update Fountain
+  render_sel 2
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 5.0
+  ySize 20.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 10.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 0.572549 0.643137 1.0 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 0.0
+  sizeEnd 0.3
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 20
+  lifeExp 1.0
+  mass 0.0
+  spread 0.0
+  particleRot 0.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_lightning2
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 12
+  framestart 0
+  frameend 3
+  random 0
+  lightningDelay 0.05
+  lightningRadius 0.05
+  lightningSubDiv 0
+  lightningScale 0.5
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 1
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.2
+endnode
+node reference g_WSwGs_V_Elec_b_ref
+  parent g_WSwGs_V_Elec_b
+  position 0.0 0.0 0.0
+  orientation 0.0 1.0 0.0 -1.5708
+  wirecolor 0.894118 0.6 0.721569 
+  refModel fx_ref
+  reattachable 1
+  Dummy Dummy
+endnode
+node emitter g_WSwGs_V_Elec
+  parent WPlTr_fxelect
+  position 0.0 0.869196 0.0923905
+  orientation 1.0 -5.31521e-007 0.0 -1.5708
+  wirecolor 0.6 0.894118 0.6 
+  update_sel 4
+  update Lightning
+  render_sel 2
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 6.0
+  ySize 6.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 0.545098 0.976471 0.737255 
+  alphaStart 0.75
+  alphaEnd 0.5
+  sizeStart 0.1
+  sizeEnd 0.075
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 5
+  lifeExp 1.0
+  mass 0.0
+  spread 0.0
+  particleRot 200.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_lightning2
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  lightningDelay 0.09
+  lightningRadius 0.04
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node reference g_WSwGs_V_Elec_ref
+  parent g_WSwGs_V_Elec
+  position -0.00832365 -0.00485109 0.198148
+  orientation -1.0 3.31644e-007 -2.13432e-007 -3.14159
+  wirecolor 0.721569 0.607843 0.898039 
+  refModel fx_ref
+  reattachable 1
+  Dummy Dummy
+endnode
+node emitter g_WSwGs_V_Elec01
+  parent WPlTr_fxelect
+  position 3.65552e-007 0.869782 -0.0982228
+  orientation 1.23668e-006 -0.707107 -0.707107 -3.14159
+  wirecolor 0.6 0.894118 0.6 
+  update_sel 4
+  update Lightning
+  render_sel 2
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 6.0
+  ySize 6.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 0.545098 0.976471 0.737255 
+  alphaStart 0.75
+  alphaEnd 0.5
+  sizeStart 0.1
+  sizeEnd 0.075
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 5
+  lifeExp 1.0
+  mass 0.0
+  spread 0.0
+  particleRot 200.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_lightning2
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  lightningDelay 0.09
+  lightningRadius 0.04
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node reference g_WSwGs_V_Elec_ref01
+  parent g_WSwGs_V_Elec01
+  position -0.00832365 -0.00485109 0.198148
+  orientation 1.0 -3.29542e-007 2.14047e-007 -3.1416
+  wirecolor 0.560784 0.878431 0.341176 
+  refModel fx_ref
+  reattachable 1
+  Dummy Dummy
+endnode
+node emitter g_WSwGs_V_Elec_b01
+  parent WPlTr_fxelect
+  position 3.79293e-007 0.965951 -0.0980366
+  orientation -1.82443e-006 1.0 1.19209e-007 -1.5708
+  wirecolor 0.603922 0.603922 0.894118 
+  update_sel 1
+  update Fountain
+  render_sel 2
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 5.0
+  ySize 20.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 10.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 0.572549 0.643137 1.0 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 0.0
+  sizeEnd 0.3
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 20
+  lifeExp 1.0
+  mass 0.0
+  spread 0.0
+  particleRot 0.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_lightning2
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 12
+  framestart 0
+  frameend 3
+  random 0
+  lightningDelay 0.05
+  lightningRadius 0.05
+  lightningSubDiv 0
+  lightningScale 0.5
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 1
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.2
+endnode
+node reference g_WSwGs_V_Elec_b_ref01
+  parent g_WSwGs_V_Elec_b01
+  position 0.0 0.0 0.0
+  orientation 0.0 -1.0 0.0 -4.71239
+  wirecolor 0.341176 0.878431 0.776471 
+  refModel fx_ref
+  reattachable 1
+  Dummy Dummy
+endnode
+node emitter g_WSwGs_V_Elec02
+  parent WPlTr_fxelect
+  position 0.0 0.869196 0.00437249
+  orientation 1.0 -5.31521e-007 0.0 -1.5708
+  wirecolor 0.6 0.894118 0.6 
+  update_sel 4
+  update Lightning
+  render_sel 2
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 6.0
+  ySize 6.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 0.545098 0.976471 0.737255 
+  alphaStart 0.75
+  alphaEnd 0.5
+  sizeStart 0.1
+  sizeEnd 0.075
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 5
+  lifeExp 1.0
+  mass 0.0
+  spread 0.0
+  particleRot 200.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_lightning2
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  lightningDelay 0.09
+  lightningRadius 0.04
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node reference g_WSwGs_V_Elec_ref02
+  parent g_WSwGs_V_Elec02
+  position -0.00832365 -0.00485109 0.198148
+  orientation -1.0 3.31644e-007 -2.13432e-007 -3.14159
+  wirecolor 0.721569 0.607843 0.898039 
+  refModel fx_ref
+  reattachable 1
+  Dummy Dummy
+endnode
+node emitter g_WSwGs_V_Elec_b02
+  parent WPlTr_fxelect
+  position 0.0 0.965366 0.00418627
+  orientation 0.0 -1.0 0.0 -1.5708
+  wirecolor 0.603922 0.603922 0.894118 
+  update_sel 1
+  update Fountain
+  render_sel 2
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 5.0
+  ySize 20.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 10.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 0.572549 0.643137 1.0 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 0.0
+  sizeEnd 0.3
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 20
+  lifeExp 1.0
+  mass 0.0
+  spread 0.0
+  particleRot 0.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_lightning2
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 12
+  framestart 0
+  frameend 3
+  random 0
+  lightningDelay 0.05
+  lightningRadius 0.05
+  lightningSubDiv 0
+  lightningScale 0.5
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 1
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.2
+endnode
+node reference g_WSwGs_V_Elec_b_ref02
+  parent g_WSwGs_V_Elec_b02
+  position 0.0 0.0 0.0
+  orientation 0.0 1.0 0.0 -1.5708
+  wirecolor 0.894118 0.6 0.721569 
+  refModel fx_ref
+  reattachable 1
+  Dummy Dummy
+endnode
+endmodelgeom WPlTr_fxelect
+donemodel WPlTr_fxelect

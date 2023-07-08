@@ -1,0 +1,72 @@
+#MAXMODEL ASCII
+# model: PNL_MAINMENU
+filedependancy PNL_MAINMENU.max
+newmodel PNL_MAINMENU
+setsupermodel PNL_MAINMENU NULL
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom PNL_MAINMENU
+node dummy PNL_MAINMENU
+  parent NULL
+endnode
+node trimesh logo
+  parent PNL_MAINMENU
+  position -1.45 0.6 0.02
+  orientation 0 0 0 0
+  bitmap gui_pre_logo
+  ambient 0.100000001 0.100000001 0.100000001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  verts 4
+    0 2.25 0
+    0 0 0
+    2.8125 2.25 0
+    2.8125 0 0
+  tverts 4
+    0 1 0
+    0 0 0
+    1 1 0
+    1 0 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+endnode
+node dummy ExitButton01
+  parent PNL_MAINMENU
+  position -0.75 -1.01 0.02
+  orientation 0 0 0 0
+endnode
+node dummy JoinButton01
+  parent PNL_MAINMENU
+  position -0.75 -0.63 0.02
+  orientation 0 0 0 0
+endnode
+node dummy OptionsButton01
+  parent PNL_MAINMENU
+  position -0.75 -1.33 0.02
+  orientation 0 0 0 0
+endnode
+node dummy MoviesButton01
+  parent PNL_MAINMENU
+  position -0.75 -0.85 0.02
+  orientation 0 0 0 0
+endnode
+node dummy LoadButton01
+  parent PNL_MAINMENU
+  position -0.75 0.11 0.02
+  orientation 0 0 0 0
+endnode
+node dummy NewButton01
+  parent PNL_MAINMENU
+  position -0.75 0.59 0.02
+  orientation 0 0 0 0
+endnode
+node dummy QuickButton01
+  parent PNL_MAINMENU
+  position 0.779956 1.006 0.02
+  orientation 0 0 0 0
+endnode
+endmodelgeom PNL_MAINMENU
+
+donemodel PNL_MAINMENU

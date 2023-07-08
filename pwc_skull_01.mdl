@@ -1,0 +1,449 @@
+# Exported from NWmax 0.8 b58 at 09.01.2006 00:14:14
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pwc_skull_01
+#local file: E:\3dsmax7\scenes\twc03\placeable_altar_03.max
+filedependancy placeable_altar_03.max
+newmodel pwc_skull_01
+setsupermodel pwc_skull_01 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom pwc_skull_01
+node dummy pwc_skull_01
+  parent NULL
+endnode
+node emitter em_sparks04
+  parent pwc_skull_01
+  position 0.0 0.0 0.05
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.239216 0.541176 
+  update_sel 1
+  update Fountain
+  render_sel 7
+  render Motion_Blur
+  blend_sel 3
+  Blend Lighten
+  spawntype_sel 1
+  spawnType 0
+  xSize 40.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.3
+  deadspace 0.00523599
+  opacity 0.5
+  colorStart 0.305882 0.0 0.360784 
+  colorEnd 0.866667 0.0 0.141176 
+  alphaStart 0.5
+  alphaEnd 0.2
+  sizeStart 0.2
+  sizeEnd 0.2
+  sizeStart_y 0.2
+  sizeEnd_y 0.2
+  birthrate 0
+  lifeExp 2.5
+  mass -0.2
+  spread 0.00872665
+  particleRot 1.5
+  velocity 0.1
+  randvel 0.3
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_sparks
+  twosidedtex 1
+  xgrid 4
+  ygrid 4
+  fps 10
+  framestart 0
+  frameend 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node dummy Dummy03
+  parent pwc_skull_01
+  position 0.0 0.0 1.1
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.6 0.894118 0.839216 
+endnode
+node emitter AuroraEmitter03
+  parent Dummy03
+  position 0.0 0.0 1.0
+  orientation 0.0 -1.0 0.0 -1.39626
+  wirecolor 0.345098 0.694118 0.101961 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawntype_sel 1
+  spawnType 0
+  xSize 1.0
+  ySize 1.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.572549 0.0705882 0.756863 
+  colorEnd 0.764706 0.827451 0.639216 
+  alphaStart 0.5
+  alphaEnd 0.2
+  sizeStart 0.5
+  sizeEnd 0.2
+  sizeStart_y 0.5
+  sizeEnd_y 0.3
+  birthrate 0
+  lifeExp 2.0
+  mass 0.0
+  spread 0.0
+  particleRot 0.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_skulblur
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter em_sparks05
+  parent pwc_skull_01
+  position 0.0 0.0 0.05
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.239216 0.541176 
+  update_sel 1
+  update Fountain
+  render_sel 7
+  render Motion_Blur
+  blend_sel 3
+  Blend Lighten
+  spawntype_sel 1
+  spawnType 0
+  xSize 40.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.3
+  deadspace 0.00523599
+  opacity 0.5
+  colorStart 0.054902 0.458824 0.0 
+  colorEnd 0.0 0.054902 0.756863 
+  alphaStart 0.5
+  alphaEnd 0.2
+  sizeStart 0.5
+  sizeEnd 0.5
+  sizeStart_y 0.5
+  sizeEnd_y 0.5
+  birthrate 6
+  lifeExp 2.5
+  mass -0.1
+  spread 0.00872665
+  particleRot 1.5
+  velocity 0.1
+  randvel 0.3
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_sparks
+  twosidedtex 1
+  xgrid 4
+  ygrid 4
+  fps 10
+  framestart 0
+  frameend 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node trimesh Box02
+  parent pwc_skull_01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.52549 0.431373 0.0313726 
+  tilefade 0
+  scale 1.0
+  render 0
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 40.0 
+  bitmap NULL
+  verts 8
+    -0.3 -0.3 0.0
+    0.3 -0.3 0.0
+    -0.3 0.3 0.0
+    0.3 0.3 0.0
+    -0.21 -0.21 0.8
+    0.21 -0.21 0.8
+    -0.21 0.21 0.8
+    0.21 0.21 0.8
+  faces 10
+    4 5 7  4  8 9 11  1
+    7 6 4  4  11 10 8  1
+    0 1 5  8  4 5 7  5
+    5 4 0  8  7 6 4  5
+    1 3 7  16  0 1 3  4
+    7 5 1  16  3 2 0  4
+    3 2 6  32  4 5 7  6
+    6 7 3  32  7 6 4  6
+    2 0 4  64  0 1 3  3
+    4 6 2  64  3 2 0  3
+  tverts 12
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+endnode
+endmodelgeom pwc_skull_01
+
+#NWmax ANIM ASCII
+newanim dead pwc_skull_01
+  length 0.0333333
+  transtime 0.0
+  animroot pwc_skull_01
+    node dummy pwc_skull_01
+        parent NULL
+    endnode
+    node emitter em_sparks04
+        parent pwc_skull_01
+    endnode
+    node dummy Dummy03
+        parent pwc_skull_01
+    endnode
+    node emitter AuroraEmitter03
+        parent Dummy03
+    endnode
+    node emitter em_sparks05
+        parent pwc_skull_01
+    endnode
+    node trimesh Box02
+        parent pwc_skull_01
+    endnode
+doneanim dead pwc_skull_01
+
+
+#NWmax ANIM ASCII
+newanim default pwc_skull_01
+  length 1.26667
+  transtime 0.25
+  animroot pwc_skull_01
+    node dummy pwc_skull_01
+        parent NULL
+    endnode
+    node emitter em_sparks04
+        parent pwc_skull_01
+        birthratekey
+            0.0 8 
+            1.26667 8 
+        endlist
+    endnode
+    node dummy Dummy03
+        parent pwc_skull_01
+        positionkey
+            0.0 0.0 0.0 1.1
+            0.633333 0.0 0.0 1.1
+            1.26667 0.0 0.0 1.1
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.633333 0.0 0.0 -1.0 -2.0944
+            1.26667 0.0 0.0 -1.0 -4.18879
+        endlist
+    endnode
+    node emitter AuroraEmitter03
+        parent Dummy03
+        birthratekey
+            0.0 2 
+            1.26667 2 
+        endlist
+    endnode
+    node emitter em_sparks05
+        parent pwc_skull_01
+        birthratekey
+            0.0 6 
+            1.26667 6 
+        endlist
+    endnode
+    node trimesh Box02
+        parent pwc_skull_01
+    endnode
+doneanim default pwc_skull_01
+
+
+#NWmax ANIM ASCII
+newanim on pwc_skull_01
+  length 1.26667
+  transtime 0.25
+  animroot pwc_skull_01
+    node dummy pwc_skull_01
+        parent NULL
+    endnode
+    node emitter em_sparks04
+        parent pwc_skull_01
+        birthratekey
+            0.0 8 
+            1.26667 8 
+        endlist
+    endnode
+    node dummy Dummy03
+        parent pwc_skull_01
+        positionkey
+            0.0 0.0 0.0 1.1
+            0.633333 0.0 0.0 1.1
+            1.26667 0.0 0.0 1.1
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.633333 0.0 0.0 -1.0 -2.0944
+            1.26667 0.0 0.0 -1.0 -4.18879
+        endlist
+    endnode
+    node emitter AuroraEmitter03
+        parent Dummy03
+        birthratekey
+            0.0 2 
+            1.26667 2 
+        endlist
+    endnode
+    node emitter em_sparks05
+        parent pwc_skull_01
+        birthratekey
+            0.0 6 
+            1.26667 6 
+        endlist
+    endnode
+    node trimesh Box02
+        parent pwc_skull_01
+    endnode
+doneanim on pwc_skull_01
+
+
+#NWmax ANIM ASCII
+newanim off pwc_skull_01
+  length 0.0333333
+  transtime 0.25
+  animroot pwc_skull_01
+    node dummy pwc_skull_01
+        parent NULL
+    endnode
+    node emitter em_sparks04
+        parent pwc_skull_01
+        birthratekey
+            0.0 0 
+            0.0333333 0 
+        endlist
+    endnode
+    node dummy Dummy03
+        parent pwc_skull_01
+        positionkey
+            0.0 0.0 0.0 1.1
+            0.0333333 0.0 0.0 1.1
+        endlist
+        orientationkey
+            0.0 0.0 0.0 -1.0 -4.40925
+            0.0333333 0.0 0.0 -1.0 -4.40925
+        endlist
+    endnode
+    node emitter AuroraEmitter03
+        parent Dummy03
+        birthratekey
+            0.0 0 
+            0.0333333 0 
+        endlist
+    endnode
+    node emitter em_sparks05
+        parent pwc_skull_01
+        birthratekey
+            0.0 0 
+            0.0333333 0 
+        endlist
+    endnode
+    node trimesh Box02
+        parent pwc_skull_01
+    endnode
+doneanim off pwc_skull_01
+
+donemodel pwc_skull_01

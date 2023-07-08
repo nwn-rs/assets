@@ -1,0 +1,889 @@
+#MAXMODEL ASCII
+# model: PLC_Fungus1 
+filedependancy plc_fungus_01.max
+newmodel PLC_Fungus1 
+setsupermodel PLC_Fungus1 NULL
+classification Character
+setanimationscale 1.0
+#MAXGEOM  ASCII
+beginmodelgeom PLC_Fungus1 
+node dummy PLC_Fungus1 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Fungus1 
+  position 0.0 0.0137917 0.504806
+  orientation  1.0 0.0 0.0  -1.5708
+  wirecolor 0.690196 0.101961 0.101961  
+    colorStart 0.47451 0.45098 0.392157  
+    colorEnd 0.760784 0.74902 0.694118  
+    alphaStart 1.0 
+    alphaEnd 0.0 
+    sizeStart 4.0 
+    sizeEnd 1.0 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 24 
+    birthrate 10 
+    spawnType 0 
+    lifeExp 2.5 
+    mass 0.09 
+    spread 2.96706 
+    particleRot 0.5 
+    velocity 2.0 
+    randvel 0.5 
+    fps 10 
+    random 0 
+    inherit 0 
+    inherit_local 1 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 400 
+    ySize 400 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Explosion 
+    render Normal 
+    Blend Normal 
+    update_sel 2 
+    render_sel 1 
+    blend_sel 1 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.2 
+    blastLength 1.0 
+    twosidedtex 1 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_smoke01 
+    xgrid 4 
+    ygrid 4 
+    affectedByWind false 
+    m_isTinted 1 
+    renderorder 0 
+    Splat 0 
+endnode
+node trimesh damage 
+  parent PLC_Fungus1 
+  position 0.000867307 0.0348657 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.603922 0.843137 0.898039  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 0
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 25.0 
+     gizmo SubAnim:Gizmo
+  ambient 0.0705882 0.0 1.0  
+  diffuse 1.0 0.501961 0.643137  
+  specular 0.0 0.0 0.0  
+  shininess 25.0 
+    bitmap NULL
+    verts 12
+     0.195415 0.186216 0.0
+     0.195415 -0.186216 0.0
+     -0.195415 -0.186216 0.0
+     -0.195415 0.186216 0.0
+     0.195415 0.186216 0.5
+     -0.195415 0.186216 0.5
+     -0.195415 -0.186216 0.5
+     0.195415 -0.186216 0.5
+     -0.103944 0.0990513 0.25
+     0.103944 0.0990513 0.25
+     -0.103944 -0.0990513 0.25
+     0.103944 -0.0990513 0.25
+    faces 20
+     0 1 2  1  0 0 0  1
+     2 3 0  1  0 0 0  1
+     4 5 6  1  0 0 0  1
+     6 7 4  1  0 0 0  1
+     0 3 8  1  0 0 0  1
+     8 9 0  1  0 0 0  1
+     9 8 5  1  0 0 0  1
+     5 4 9  1  0 0 0  1
+     3 2 10  1  0 0 0  1
+     10 8 3  1  0 0 0  1
+     8 10 6  1  0 0 0  1
+     6 5 8  1  0 0 0  1
+     2 1 11  1  0 0 0  1
+     11 10 2  1  0 0 0  1
+     10 11 7  1  0 0 0  1
+     7 6 10  1  0 0 0  1
+     1 0 9  1  0 0 0  1
+     9 11 1  1  0 0 0  1
+     11 9 4  1  0 0 0  1
+     4 7 11  1  0 0 0  1
+    tverts 1
+     0.0 0.0 0 
+endnode
+node trimesh Fungus01 
+  parent damage 
+  position 0.092105 -0.176726 0.715526
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.345098 0.882353  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 1
+     Shadow 1
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center -0.872919 -0.160966 12.3126 
+     gizmo SubAnim:Gizmo
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 11.0 
+    bitmap PLC_Fungus01
+    verts 22
+     0.0749496 -0.0318219 0.297013
+     0.174712 0.00471978 -0.0387926
+     0.00311527 0.177459 0.0445509
+     -0.19217 0.000693234 0.0090294
+     -0.000987474 -0.180679 -0.0203009
+     0.166832 -0.016885 0.154826
+     0.0487504 0.0943257 0.20775
+     -0.0824214 -0.0227674 0.219157
+     0.0472456 -0.138336 0.167675
+     0.152854 0.0931826 0.0102823
+     0.0905826 0.155503 0.0384382
+     -0.0944181 0.153483 0.0387142
+     -0.166935 0.0893855 0.0246434
+     -0.169777 -0.089659 -0.00294604
+     -0.0995828 -0.156629 -0.00495421
+     0.0881169 -0.154554 -0.0345313
+     0.1501 -0.0859005 -0.0507605
+     0.134959 0.0675689 0.186123
+     -0.0498571 0.0695856 0.22514
+     -0.0493992 -0.113279 0.195363
+     0.141679 -0.115684 0.145946
+     0.00492079 -0.00557233 0.0537919
+    faces 40
+     0 5 17  1  0 5 17  2
+     0 17 6  1  0 17 6  2
+     5 1 9  1  5 1 9  2
+     5 9 17  1  5 9 17  2
+     17 9 10  1  17 9 10  2
+     17 10 6  1  17 10 6  2
+     6 10 2  1  6 10 2  2
+     0 6 18  1  0 6 18  2
+     0 18 7  1  0 18 7  2
+     6 2 11  1  6 2 11  2
+     6 11 18  1  6 11 18  2
+     18 11 12  1  18 11 12  2
+     18 12 7  1  18 12 7  2
+     7 12 3  1  7 12 3  2
+     0 7 19  1  0 7 19  2
+     0 19 8  1  0 19 8  2
+     7 3 13  1  7 3 13  2
+     7 13 19  1  7 13 19  2
+     19 13 14  1  19 13 14  2
+     19 14 8  1  19 14 8  2
+     8 14 4  1  8 14 4  2
+     0 8 20  1  0 8 20  2
+     0 20 5  1  0 20 5  2
+     8 4 15  1  8 4 15  2
+     8 15 20  1  8 15 20  2
+     20 15 16  1  20 15 16  2
+     20 16 5  1  20 16 5  2
+     5 16 1  1  5 16 1  2
+     9 1 21  1  21 22 23  2
+     10 9 21  1  24 21 23  2
+     2 10 21  1  25 24 23  2
+     11 2 21  1  26 25 23  2
+     12 11 21  1  27 26 23  2
+     3 12 21  1  28 27 23  2
+     13 3 21  1  29 28 23  2
+     14 13 21  1  30 29 23  2
+     4 14 21  1  31 30 23  2
+     15 4 21  1  32 31 23  2
+     16 15 21  1  33 32 23  2
+     1 16 21  1  22 33 23  2
+    tverts 34
+     0.624327 0.50089 0 
+     0.994438 0.50615 0 
+     0.618762 0.9995 0 
+     0.234394 0.501517 0 
+     0.62185 0.000499517 0 
+     0.836965 0.50152 0 
+     0.623004 0.765901 0 
+     0.393248 0.499366 0 
+     0.62576 0.225585 0 
+     0.931276 0.761976 0 
+     0.795968 0.939406 0 
+     0.424632 0.930229 0 
+     0.282432 0.749278 0 
+     0.279975 0.251222 0 
+     0.417831 0.068758 0 
+     0.80923 0.0696974 0 
+     0.945715 0.254176 0 
+     0.774799 0.701127 0 
+     0.449722 0.711992 0 
+     0.453913 0.287762 0 
+     0.79377 0.27362 0 
+     0.197865 0.734466 0 
+     0.215204 0.681035 0 
+     0.10884 0.680009 0 
+     0.16072 0.771523 0 
+     0.112074 0.784074 0 
+     0.0587812 0.769607 0 
+     0.0197446 0.731814 0 
+     0.00655737 0.680068 0 
+     0.0190701 0.627792 0 
+     0.0569142 0.589683 0 
+     0.112922 0.575427 0 
+     0.164361 0.58988 0 
+     0.201829 0.628409 0 
+endnode
+node trimesh Fungus02 
+  parent damage 
+  position -0.123252 0.13655 0.526206
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.345098 0.882353  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 1
+     Shadow 1
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center -1.96963 0.2102 8.39515 
+     gizmo SubAnim:Gizmo
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 11.0 
+    bitmap PLC_Fungus01
+    verts 22
+     -0.0685279 0.0375274 0.190845
+     0.0297341 0.0647623 0.00106755
+     -0.0666956 0.0288148 -0.0173724
+     -0.02993 -0.0725761 -0.012117
+     0.0606745 -0.03073 0.0284226
+     -0.0145682 0.080766 0.117979
+     -0.0950279 0.0475819 0.101676
+     -0.0735765 -0.0390775 0.121472
+     0.0103308 -0.00128111 0.140719
+     -0.0118196 0.0709494 -0.000641302
+     -0.0462594 0.0578449 -0.00799027
+     -0.0713607 -0.0114064 -0.0229418
+     -0.0580166 -0.0488069 -0.0215928
+     0.00453891 -0.0788697 0.00291826
+     0.0360928 -0.063567 0.020926
+     0.067682 0.00669885 0.0258886
+     0.0577602 0.040913 0.0122351
+     -0.0630401 0.0830738 0.107803
+     -0.107074 -0.00446781 0.104967
+     -0.0244345 -0.0420918 0.136593
+     0.0236486 0.0483498 0.135565
+     -0.0099278 -0.00016259 0.0211169
+    faces 40
+     0 5 17  1  0 5 17  2
+     0 17 6  1  0 17 6  2
+     5 1 9  1  5 1 9  2
+     5 9 17  1  5 9 17  2
+     17 9 10  1  17 9 10  2
+     17 10 6  1  17 10 6  2
+     6 10 2  1  6 10 2  2
+     0 6 18  1  0 6 18  2
+     0 18 7  1  0 18 7  2
+     6 2 11  1  6 2 11  2
+     6 11 18  1  6 11 18  2
+     18 11 12  1  18 11 12  2
+     18 12 7  1  18 12 7  2
+     7 12 3  1  7 12 3  2
+     0 7 19  1  0 7 19  2
+     0 19 8  1  0 19 8  2
+     7 3 13  1  7 3 13  2
+     7 13 19  1  7 13 19  2
+     19 13 14  1  19 13 14  2
+     19 14 8  1  19 14 8  2
+     8 14 4  1  8 14 4  2
+     0 8 20  1  0 8 20  2
+     0 20 5  1  0 20 5  2
+     8 4 15  1  8 4 15  2
+     8 15 20  1  8 15 20  2
+     20 15 16  1  20 15 16  2
+     20 16 5  1  20 16 5  2
+     5 16 1  1  5 16 1  2
+     9 1 21  1  21 22 23  2
+     10 9 21  1  24 21 23  2
+     2 10 21  1  25 24 23  2
+     11 2 21  1  26 25 23  2
+     12 11 21  1  27 26 23  2
+     3 12 21  1  28 27 23  2
+     13 3 21  1  29 28 23  2
+     14 13 21  1  30 29 23  2
+     4 14 21  1  31 30 23  2
+     15 4 21  1  32 31 23  2
+     16 15 21  1  33 32 23  2
+     1 16 21  1  22 33 23  2
+    tverts 34
+     0.529793 0.691241 0 
+     0.7749 0.693841 0 
+     0.526107 0.937663 0 
+     0.27156 0.691551 0 
+     0.528153 0.443939 0 
+     0.670613 0.691552 0 
+     0.528917 0.822214 0 
+     0.37676 0.690488 0 
+     0.530742 0.55518 0 
+     0.733071 0.820274 0 
+     0.643463 0.907963 0 
+     0.397544 0.903428 0 
+     0.303372 0.813999 0 
+     0.301745 0.567851 0 
+     0.393041 0.477674 0 
+     0.652245 0.478138 0 
+     0.742633 0.56931 0 
+     0.629443 0.790201 0 
+     0.41416 0.795571 0 
+     0.416936 0.585909 0 
+     0.642007 0.57892 0 
+     0.197865 0.734466 0 
+     0.215204 0.681035 0 
+     0.10884 0.680009 0 
+     0.16072 0.771523 0 
+     0.112074 0.784074 0 
+     0.0587812 0.769607 0 
+     0.0197446 0.731814 0 
+     0.00655737 0.680068 0 
+     0.0190701 0.627792 0 
+     0.0569142 0.589683 0 
+     0.112922 0.575427 0 
+     0.164361 0.58988 0 
+     0.201829 0.628409 0 
+endnode
+node trimesh FungusStem01 
+  parent damage 
+  position -0.0417224 -0.0448451 -0.00837809
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.423529 0.0313726 0.533333  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 1
+     Shadow 1
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 3.09096 -2.74609 46.9145 
+     gizmo SubAnim:Gizmo
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 11.0 
+    bitmap PLC_Fungus01
+    verts 11
+     0.0773894 0.0 -4.00112e-007
+     -0.0630472 0.0810811 -4.27041e-007
+     -0.0248312 -0.0810811 -3.97737e-007
+     0.0577332 -0.0127671 0.241057
+     -0.018341 0.0305437 0.251406
+     -0.018341 -0.0572765 0.241859
+     0.0845721 -0.0586959 0.514249
+     0.04486 -0.0368528 0.519245
+     0.04486 -0.0805146 0.509148
+     0.18741 -0.136003 0.938291
+     -0.12559 0.0 -4.12389e-007
+    faces 16
+     0 4 3  8  0 4 3  3
+     0 1 4  8  0 1 4  3
+     1 10 4  8  1 10 4  3
+     10 2 5  8  10 2 5  3
+     2 3 5  8  2 3 5  3
+     2 0 3  8  2 0 3  3
+     3 7 6  8  3 7 6  3
+     3 4 7  8  3 4 7  3
+     4 8 7  8  4 8 7  3
+     4 5 8  8  4 5 8  3
+     5 6 8  8  5 6 8  3
+     5 3 6  8  5 3 6  3
+     6 7 9  8  6 7 9  3
+     7 8 9  8  7 8 9  3
+     8 6 9  8  8 6 9  3
+     4 10 5  8  4 10 5  3
+    tverts 11
+     0.192345 0.000499606 0 
+     0.0162646 0.000499576 0 
+     0.0908794 0.000499606 0 
+     0.19971 0.257154 0 
+     0.0136133 0.268172 0 
+     0.092751 0.258008 0 
+     0.183913 0.548023 0 
+     0.0238355 0.553342 0 
+     0.0945521 0.542591 0 
+     0.098417 0.9995 0 
+     0.053572 0.000499591 0 
+endnode
+node trimesh FungusStem02 
+  parent damage 
+  position -0.0662089 0.0584704 -0.00562247
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.423529 0.0313726 0.533333  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 1
+     Shadow 1
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center -3.18216 1.8259 33.0546 
+     gizmo SubAnim:Gizmo
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 11.0 
+    bitmap PLC_Fungus01
+    verts 10
+     0.0206632 0.0475221 -1.89533e-007
+     -0.0666228 -0.0170662 -1.89997e-007
+     0.0329553 -0.060364 -1.92003e-007
+     0.00909348 0.0331576 0.164162
+     -0.0383437 -0.00195114 0.163255
+     0.015846 -0.02542 0.166701
+     -0.0075923 0.0414721 0.356627
+     -0.0313545 0.0228985 0.351761
+     -0.00384268 0.0111855 0.355087
+     -0.0965985 0.0968819 0.661092
+    faces 15
+     0 4 3  8  0 4 3  3
+     0 1 4  8  0 1 4  3
+     1 5 4  8  1 5 4  3
+     1 2 5  8  1 2 5  3
+     2 3 5  8  2 3 5  3
+     2 0 3  8  2 0 3  3
+     3 7 6  8  3 7 6  3
+     3 4 7  8  3 4 7  3
+     4 8 7  8  4 8 7  3
+     4 5 8  8  4 5 8  3
+     5 6 8  8  5 6 8  3
+     5 3 6  8  5 3 6  3
+     6 7 9  8  6 7 9  3
+     7 8 9  8  7 8 9  3
+     8 6 9  8  8 6 9  3
+    tverts 10
+     0.192345 0.000499606 0 
+     0.0162646 0.000499576 0 
+     0.0908794 0.000499606 0 
+     0.19971 0.257154 0 
+     0.0136133 0.268172 0 
+     0.092751 0.258008 0 
+     0.183913 0.548023 0 
+     0.0238355 0.553342 0 
+     0.0945521 0.542591 0 
+     0.098417 0.9995 0 
+endnode
+node dummy Fungus1_ground 
+  parent PLC_Fungus1 
+  position 0.00363281 -0.0069873 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.0235294 0.0235294  
+endnode
+node dummy Fungus1_hand 
+  parent PLC_Fungus1 
+  position -0.00398926 0.0200562 0.69318
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.878431 0.337255 0.337255  
+endnode
+node dummy Fungus1_head 
+  parent PLC_Fungus1 
+  position -0.00398918 0.0200157 0.670586
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.768628 0.345098 0.882353  
+endnode
+node dummy Fungus1_head_hit 
+  parent PLC_Fungus1 
+  position -0.00398926 -0.0108252 0.675992
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.101961 0.694118 0.580392  
+endnode
+node dummy Fungus1_impact 
+  parent PLC_Fungus1 
+  position -0.00398926 -0.011001 0.721453
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+endmodelgeom PLC_Fungus1 
+
+#MAXANIM ASCII
+newanim damage PLC_Fungus1 
+ length 0.133333
+ transtime 0.0
+animroot PLC_Fungus1
+node dummy PLC_Fungus1 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Fungus1 
+endnode
+node trimesh damage 
+  parent PLC_Fungus1 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0244581
+      0.133333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.371336 -0.928463 -0.00810258  0.0469942
+      0.1   -0.599949 0.799969 -0.0104721  0.0436326
+      0.133333   0.0 0.0 0.0  3.57628e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Fungus01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Fungus02 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh FungusStem01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh FungusStem02 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy Fungus1_ground 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_hand 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_head 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_head_hit 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_impact 
+  parent PLC_Fungus1 
+endnode
+node dummy PLC_Fungus1_pwk 
+  parent PLC_Fungus1 
+endnode
+node dummy plc_Fungus1_wg 
+  parent PLC_Fungus1_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Fungus1_pwk 
+endnode
+doneanim damage PLC_Fungus1 
+
+#MAXANIM ASCII
+newanim die PLC_Fungus1 
+ length 0.166667
+ transtime 0.0
+animroot PLC_Fungus1
+node dummy PLC_Fungus1 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Fungus1 
+endnode
+node trimesh damage 
+  parent PLC_Fungus1 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.166667  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  5.67028e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Fungus01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Fungus02 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh FungusStem01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh FungusStem02 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy Fungus1_ground 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_hand 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_head 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_head_hit 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_impact 
+  parent PLC_Fungus1 
+endnode
+event 0.0  detonate 
+node dummy PLC_Fungus1_pwk 
+  parent PLC_Fungus1 
+endnode
+node dummy plc_Fungus1_wg 
+  parent PLC_Fungus1_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Fungus1_pwk 
+endnode
+doneanim die PLC_Fungus1 
+
+#MAXANIM ASCII
+newanim dead PLC_Fungus1 
+ length 0.0333333
+ transtime 0.0
+animroot PLC_Fungus1
+node dummy PLC_Fungus1 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Fungus1 
+endnode
+node trimesh damage 
+  parent PLC_Fungus1 
+    positionkey 
+      0.0  0.000867307 0.0348657 -6.95145
+      0.0333333  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Fungus01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Fungus02 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh FungusStem01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh FungusStem02 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy Fungus1_ground 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_hand 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_head 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_head_hit 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_impact 
+  parent PLC_Fungus1 
+endnode
+node dummy PLC_Fungus1_pwk 
+  parent PLC_Fungus1 
+endnode
+node dummy plc_Fungus1_wg 
+  parent PLC_Fungus1_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Fungus1_pwk 
+endnode
+doneanim dead PLC_Fungus1 
+
+#MAXANIM ASCII
+newanim default PLC_Fungus1 
+ length 0.0
+ transtime 0.25
+animroot PLC_Fungus1
+node dummy PLC_Fungus1 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Fungus1 
+endnode
+node trimesh damage 
+  parent PLC_Fungus1 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  3.03925e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Fungus01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Fungus02 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh FungusStem01 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh FungusStem02 
+  parent damage 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy Fungus1_ground 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_hand 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_head 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_head_hit 
+  parent PLC_Fungus1 
+endnode
+node dummy Fungus1_impact 
+  parent PLC_Fungus1 
+endnode
+node dummy PLC_Fungus1_pwk 
+  parent PLC_Fungus1 
+endnode
+node dummy plc_Fungus1_wg 
+  parent PLC_Fungus1_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Fungus1_pwk 
+endnode
+doneanim default PLC_Fungus1 
+
+donemodel PLC_Fungus1 
+

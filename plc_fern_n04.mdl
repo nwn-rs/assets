@@ -1,0 +1,988 @@
+# Exported from NWmax 0.8 b52 at 3/2/2006 11:49:13 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: plc_fern_n04
+#local file: Unknown
+filedependancy Unknown
+newmodel plc_fern_n04
+setsupermodel plc_fern_n04 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom plc_fern_n04
+node dummy plc_fern_n04
+  parent NULL
+endnode
+node dummy anim_dummy
+  parent plc_fern_n04
+  position 0.00078605 0.0 0.00364099
+  orientation -1.0 0.0 0.0 -1.5708
+  wirecolor 0.894118 0.721569 0.6 
+endnode
+node trimesh g_lower_leaf02
+  parent anim_dummy
+  position -0.162072 0.00996281 0.212212
+  orientation 0.610924 0.559809 0.559809 -2.04477
+  wirecolor 0.0156863 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center -5.62205 3.0366 16.116 
+  bitmap plc_fern_tex
+  verts 10
+    -0.221523 0.0132965 0.0
+    -0.168342 -0.0213911 0.164966
+    -0.125994 -0.0458219 0.241343
+    -0.0761144 -0.074841 0.289374
+    0.00983558 -0.124464 0.32232
+    -0.122276 0.185196 0.0
+    -0.0690956 0.150509 0.164966
+    -0.0267473 0.126078 0.241343
+    0.0231321 0.0970589 0.289374
+    0.109082 0.0474357 0.32232
+  faces 8
+    0 5 6  1  0 5 6  1
+    6 1 0  1  6 1 0  1
+    1 6 7  1  1 6 7  1
+    7 2 1  1  7 2 1  1
+    2 7 8  1  2 7 8  1
+    8 3 2  1  8 3 2  1
+    3 8 9  1  3 8 9  1
+    9 4 3  1  9 4 3  1
+  tverts 10
+    0.0018457 0.998675 0
+    0.395311 0.999132 0
+    0.598154 0.999052 0
+    0.766092 1.0 0
+    0.979696 1.0 0
+    0.00369135 0.645996 0
+    0.395312 0.646454 0
+    0.598155 0.646373 0
+    0.766094 0.647321 0
+    0.979697 0.647322 0
+endnode
+node trimesh g_lower_leaf03
+  parent anim_dummy
+  position -0.193673 0.0080845 0.209514
+  orientation 0.954201 0.211542 0.211542 -1.61766
+  wirecolor 0.0156863 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center 0.0 17.6376 30.1578 
+  bitmap plc_fern_tex
+  verts 10
+    0.113148 0.0698801 0.603155
+    0.113148 0.142894 0.481123
+    0.113148 0.202927 0.331735
+    0.113148 0.250838 0.167916
+    0.113148 0.282871 0.0
+    -0.113148 0.0698801 0.603155
+    -0.113148 0.142894 0.481123
+    -0.113148 0.202927 0.331735
+    -0.113148 0.250838 0.167916
+    -0.113148 0.282871 0.0
+  faces 8
+    0 5 6  1  0 5 6  1
+    6 1 0  1  6 1 0  1
+    1 6 7  1  1 6 7  1
+    7 2 1  1  7 2 1  1
+    2 7 8  1  2 7 8  1
+    8 3 2  1  8 3 2  1
+    3 8 9  1  3 8 9  1
+    9 4 3  1  9 4 3  1
+  tverts 10
+    0.98708 0.644149 0
+    0.779466 0.642304 0
+    0.529791 0.642304 0
+    0.265097 0.642305 0
+    0.0 0.642306 0
+    0.98708 0.999997 0
+    0.779466 0.999997 0
+    0.529791 0.999998 0
+    0.265097 0.999999 0
+    -0.00184472 1.0 0
+endnode
+node trimesh g_lower_leaf04
+  parent anim_dummy
+  position 0.155788 0.00404589 0.302062
+  orientation 0.410726 -0.644711 -0.644711 -2.36216
+  wirecolor 0.0156863 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center 10.7801 -0.227205 12.467 
+  bitmap plc_fern_tex
+  verts 10
+    -0.143292 -0.094267 0.174721
+    -0.0110027 -0.0932966 0.24934
+    0.122938 -0.0915232 0.230463
+    0.234218 -0.0904504 0.155446
+    0.358893 -0.0897229 0.0
+    -0.143292 0.0851785 0.174721
+    -0.0110027 0.0861489 0.24934
+    0.122938 0.0879221 0.230463
+    0.234218 0.0889952 0.155446
+    0.358893 0.0897229 0.0
+  faces 8
+    0 5 6  1  0 5 6  1
+    6 1 0  1  6 1 0  1
+    1 6 7  1  1 6 7  1
+    7 2 1  1  7 2 1  1
+    2 7 8  1  2 7 8  1
+    8 3 2  1  8 3 2  1
+    3 8 9  1  3 8 9  1
+    9 4 3  1  9 4 3  1
+  tverts 10
+    0.979697 0.646519 0
+    0.731068 0.646256 0
+    0.501233 0.646666 0
+    0.284284 0.646959 0
+    5.04761e-007 0.647218 0
+    0.979697 0.999823 0
+    0.731067 0.99956 0
+    0.501233 0.999969 0
+    0.284284 1.00026 0
+    0.0 0.998679 0
+endnode
+node trimesh g_lower_leaf05
+  parent anim_dummy
+  position 0.256665 0.00716871 0.0390062
+  orientation 0.313145 -0.671543 -0.671543 -2.53465
+  wirecolor 0.0156863 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center 4.13875 2.9838 11.6553 
+  bitmap plc_fern_tex
+  verts 10
+    0.0101872 -0.163802 0.218485
+    0.0865064 -0.0997641 0.233107
+    0.144587 -0.0474513 0.187535
+    0.192147 -0.00212181 0.121508
+    0.232687 0.0326798 0.0
+    -0.149912 0.0269946 0.218485
+    -0.0735921 0.0910342 0.233107
+    -0.0155108 0.143346 0.187535
+    0.0320493 0.188676 0.121508
+    0.0725891 0.223478 0.0
+  faces 8
+    0 5 6  1  0 5 6  1
+    6 1 0  1  6 1 0  1
+    1 6 7  1  1 6 7  1
+    7 2 1  1  7 2 1  1
+    2 7 8  1  2 7 8  1
+    8 3 2  1  8 3 2  1
+    3 8 9  1  3 8 9  1
+    9 4 3  1  9 4 3  1
+  tverts 10
+    0.977852 0.64415 0
+    0.758481 0.645995 0
+    0.541558 0.645598 0
+    0.318367 0.645175 0
+    7.29245e-007 0.645671 0
+    0.977852 1.00032 0
+    0.75848 1.00032 0
+    0.541558 0.999927 0
+    0.318366 0.999503 0
+    0.0 1.0 0
+endnode
+node trimesh g_lower_leaf08
+  parent anim_dummy
+  position -0.302286 0.0117772 0.0366124
+  orientation 0.610924 0.559809 0.559809 -2.04477
+  wirecolor 0.0156863 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center -1.75505 4.01825 9.17835 
+  bitmap plc_fern_tex
+  verts 10
+    -0.080346 -0.140736 0.169565
+    0.114632 -0.0884915 0.169565
+    -0.0947906 -0.0639091 0.183567
+    0.100188 -0.0116649 0.183567
+    -0.113096 0.0168696 0.161453
+    0.0818821 0.0691139 0.161453
+    -0.13141 0.0938831 0.10311
+    0.0635677 0.146127 0.10311
+    -0.149733 0.168855 0.0
+    0.0452448 0.221101 0.0
+  faces 8
+    0 2 3  1  0 2 3  1
+    3 1 0  1  3 1 0  1
+    2 4 5  1  2 4 5  1
+    5 3 2  1  5 3 2  1
+    4 6 7  1  4 6 7  1
+    7 5 4  1  7 5 4  1
+    6 8 9  1  6 8 9  1
+    9 7 6  1  9 7 6  1
+  tverts 10
+    0.976006 1.00015 0
+    0.976006 0.646199 0
+    0.773957 1.00024 0
+    0.773957 0.646289 0
+    0.555394 1.0 0
+    0.555394 0.646052 0
+    0.304571 0.998798 0
+    0.304571 0.646695 0
+    0.0 1.00009 0
+    0.00184567 0.646142 0
+endnode
+node trimesh g_lower_leaf10
+  parent anim_dummy
+  position 0.290373 0.0050894 0.225701
+  orientation 0.313145 -0.671543 -0.671543 -2.53465
+  wirecolor 0.0156863 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center 17.9012 3.16653 24.8526 
+  bitmap plc_fern_tex
+  verts 10
+    -0.0559875 -0.0829734 0.450846
+    0.0735141 -0.0601389 0.497052
+    0.215279 -0.0353422 0.433376
+    0.340758 -0.0132169 0.284448
+    0.439083 0.00412059 0.0
+    -0.0810581 0.0592092 0.450846
+    0.0484431 0.0820438 0.497052
+    0.190211 0.106841 0.433376
+    0.315687 0.128966 0.284448
+    0.414014 0.146304 0.0
+  faces 8
+    0 5 6  1  0 5 6  1
+    6 1 0  1  6 1 0  1
+    1 6 7  1  1 6 7  1
+    7 2 1  1  7 2 1  1
+    2 7 8  1  2 7 8  1
+    8 3 2  1  8 3 2  1
+    3 8 9  1  3 8 9  1
+    9 4 3  1  9 4 3  1
+  tverts 10
+    0.97416 0.663974 0
+    0.82635 0.663971 0
+    0.628197 0.662606 0
+    0.381421 0.662606 0
+    0.00184572 0.662606 0
+    0.97416 1.00185 0
+    0.82635 1.00184 0
+    0.628197 1.00048 0
+    0.381421 1.00048 0
+    0.00184581 1.00048 0
+endnode
+node trimesh g_upper_leaf02
+  parent anim_dummy
+  position -0.162072 0.00996281 0.212212
+  orientation 0.610924 0.559809 0.559809 -2.04477
+  wirecolor 0.0156863 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center -5.62205 3.0366 16.116 
+  bitmap plc_fern_tex
+  verts 10
+    -0.221523 0.0132965 0.0
+    -0.168342 -0.0213911 0.164966
+    -0.125994 -0.0458219 0.241343
+    -0.0761144 -0.074841 0.289374
+    0.00983558 -0.124464 0.32232
+    -0.122276 0.185196 0.0
+    -0.0690956 0.150509 0.164966
+    -0.0267473 0.126078 0.241343
+    0.0231321 0.0970589 0.289374
+    0.109082 0.0474357 0.32232
+  faces 8
+    5 0 6  1  5 0 6  1
+    1 6 0  1  1 6 0  1
+    6 1 7  1  6 1 7  1
+    2 7 1  1  2 7 1  1
+    7 2 8  1  7 2 8  1
+    3 8 2  1  3 8 2  1
+    8 3 9  1  8 3 9  1
+    4 9 3  1  4 9 3  1
+  tverts 10
+    0.0 0.643625 0
+    0.315946 0.643168 0
+    0.563087 0.64325 0
+    0.814082 0.642304 0
+    0.976006 0.642304 0
+    0.0 1.0 0
+    0.315946 0.999543 0
+    0.563086 0.999625 0
+    0.814081 0.998679 0
+    0.976005 0.99868 0
+endnode
+node trimesh g_upper_leaf03
+  parent anim_dummy
+  position -0.193673 0.0080845 0.209514
+  orientation 0.954201 0.211542 0.211542 -1.61766
+  wirecolor 0.0156863 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center 0.0 17.6376 30.1578 
+  bitmap plc_fern_tex
+  verts 10
+    0.113148 0.0698801 0.603155
+    0.113148 0.142894 0.481123
+    0.113148 0.202927 0.331735
+    0.113148 0.250838 0.167916
+    0.113148 0.282871 0.0
+    -0.113148 0.0698801 0.603155
+    -0.113148 0.142894 0.481123
+    -0.113148 0.202927 0.331735
+    -0.113148 0.250838 0.167916
+    -0.113148 0.282871 0.0
+  faces 8
+    0 1 6  1  0 1 6  1
+    6 5 0  1  6 5 0  1
+    1 2 7  1  1 2 7  1
+    7 6 1  1  7 6 1  1
+    2 3 8  1  2 3 8  1
+    8 7 2  1  8 7 2  1
+    3 4 9  1  3 4 9  1
+    9 8 3  1  9 8 3  1
+  tverts 10
+    1.0 1.0 0
+    0.779466 1.0 0
+    0.529791 1.0 0
+    0.265097 0.999999 0
+    0.0 0.999999 0
+    1.0 0.645996 0
+    0.779466 0.645996 0
+    0.529791 0.645996 0
+    0.265097 0.645995 0
+    -0.00184561 0.645995 0
+endnode
+node trimesh g_upper_leaf04
+  parent anim_dummy
+  position 0.155788 0.00404589 0.302062
+  orientation 0.410726 -0.644711 -0.644711 -2.36216
+  wirecolor 0.0156863 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center 10.7801 -0.227205 12.467 
+  bitmap plc_fern_tex
+  verts 10
+    -0.143292 -0.094267 0.174721
+    -0.0110027 -0.0932966 0.24934
+    0.122938 -0.0915232 0.230463
+    0.234218 -0.0904504 0.155446
+    0.358893 -0.0897229 0.0
+    -0.143292 0.0851785 0.174721
+    -0.0110027 0.0861489 0.24934
+    0.122938 0.0879221 0.230463
+    0.234218 0.0889952 0.155446
+    0.358893 0.0897229 0.0
+  faces 8
+    5 0 6  1  5 0 6  1
+    1 6 0  1  1 6 0  1
+    6 1 7  1  6 1 7  1
+    2 7 1  1  2 7 1  1
+    7 2 8  1  7 2 8  1
+    3 8 2  1  3 8 2  1
+    8 3 9  1  8 3 9  1
+    4 9 3  1  4 9 3  1
+  tverts 10
+    0.977852 1.00013 0
+    0.729223 0.998558 0
+    0.499389 1.0 0
+    0.28244 0.999712 0
+    0.0 0.999457 0
+    0.977849 0.64496 0
+    0.72922 0.64523 0
+    0.499386 0.644826 0
+    0.282438 0.644538 0
+    0.0 0.644283 0
+endnode
+node trimesh g_upper_leaf05
+  parent anim_dummy
+  position 0.256665 0.00716871 0.0390062
+  orientation 0.313145 -0.671543 -0.671543 -2.53465
+  wirecolor 0.0156863 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center 4.13875 2.9838 11.6553 
+  bitmap plc_fern_tex
+  verts 10
+    0.0101872 -0.163802 0.218485
+    0.0865064 -0.0997641 0.233107
+    0.144587 -0.0474513 0.187535
+    0.192147 -0.00212181 0.121508
+    0.232687 0.0326798 0.0
+    -0.149912 0.0269946 0.218485
+    -0.0735921 0.0910342 0.233107
+    -0.0155108 0.143346 0.187535
+    0.0320493 0.188676 0.121508
+    0.0725891 0.223478 0.0
+  faces 8
+    5 0 6  1  5 0 6  1
+    1 6 0  1  1 6 0  1
+    6 1 7  1  6 1 7  1
+    2 7 1  1  2 7 1  1
+    7 2 8  1  7 2 8  1
+    3 8 2  1  3 8 2  1
+    8 3 9  1  8 3 9  1
+    4 9 3  1  4 9 3  1
+  tverts 10
+    0.976006 1.0 0
+    0.758481 1.0 0
+    0.541558 0.998551 0
+    0.318367 0.998974 0
+    0.0 1.00032 0
+    0.976006 0.643826 0
+    0.758481 0.643827 0
+    0.541558 0.642377 0
+    0.318367 0.642801 0
+    0.0 0.644149 0
+endnode
+node trimesh g_upper_leaf08
+  parent anim_dummy
+  position -0.302286 0.0117772 0.0366124
+  orientation 0.610924 0.559809 0.559809 -2.04477
+  wirecolor 0.0156863 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center -1.75505 4.01825 9.17835 
+  bitmap plc_fern_tex
+  verts 10
+    -0.080346 -0.140736 0.169565
+    0.114632 -0.0884915 0.169565
+    -0.0947906 -0.0639091 0.183567
+    0.100188 -0.0116649 0.183567
+    -0.113096 0.0168696 0.161453
+    0.0818821 0.0691139 0.161453
+    -0.13141 0.0938831 0.10311
+    0.0635677 0.146127 0.10311
+    -0.149733 0.168855 0.0
+    0.0452448 0.221101 0.0
+  faces 8
+    2 0 3  1  2 0 3  1
+    1 3 0  1  1 3 0  1
+    4 2 5  1  4 2 5  1
+    3 5 2  1  3 5 2  1
+    6 4 7  1  6 4 7  1
+    5 7 4  1  5 7 4  1
+    8 6 9  1  8 6 9  1
+    7 9 6  1  7 9 6  1
+  tverts 10
+    0.97416 0.646142 0
+    0.97416 1.00009 0
+    0.772111 0.646052 0
+    0.772111 1.0 0
+    0.553549 0.646289 0
+    0.553549 1.00024 0
+    0.302726 0.647491 0
+    0.302726 0.999594 0
+    0.0 0.646199 0
+    -0.00184568 1.00015 0
+endnode
+node trimesh g_upper_leaf10
+  parent anim_dummy
+  position 0.290373 0.0050894 0.225701
+  orientation 0.313145 -0.671543 -0.671543 -2.53465
+  wirecolor 0.0156863 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center 17.9012 3.16653 24.8526 
+  bitmap plc_fern_tex
+  verts 10
+    -0.0559875 -0.0829734 0.450846
+    0.0735141 -0.0601389 0.497052
+    0.215279 -0.0353422 0.433376
+    0.340758 -0.0132169 0.284448
+    0.439083 0.00412059 0.0
+    -0.0810581 0.0592092 0.450846
+    0.0484431 0.0820438 0.497052
+    0.190211 0.106841 0.433376
+    0.315687 0.128966 0.284448
+    0.414014 0.146304 0.0
+  faces 8
+    5 0 6  1  5 0 6  1
+    1 6 0  1  1 6 0  1
+    6 1 7  1  6 1 7  1
+    2 7 1  1  2 7 1  1
+    7 2 8  1  7 2 8  1
+    3 8 2  1  3 8 2  1
+    8 3 9  1  8 3 9  1
+    4 9 3  1  4 9 3  1
+  tverts 10
+    0.976006 0.998634 0
+    0.824505 0.998634 0
+    0.626352 1.0 0
+    0.379575 1.0 0
+    0.0 1.0 0
+    0.976006 0.64784 0
+    0.824505 0.64784 0
+    0.626352 0.64736 0
+    0.379575 0.647361 0
+    2.08616e-007 0.64736 0
+endnode
+node dummy n04_ground
+  parent plc_fern_n04
+  position -0.00363281 -0.00349365 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.560784 0.341176 
+endnode
+node dummy n04_hand
+  parent plc_fern_n04
+  position 0.00398926 -0.00373947 0.253726
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.560784 0.341176 
+endnode
+node dummy n04_head
+  parent plc_fern_n04
+  position 0.00398927 -0.00440873 0.275348
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.560784 0.341176 
+endnode
+node dummy n04_head_hit
+  parent plc_fern_n04
+  position 0.00398926 0.000344238 0.0808467
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.560784 0.341176 
+endnode
+node dummy n04_impact
+  parent plc_fern_n04
+  position 0.00398926 0.000518188 0.0531892
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.694118 0.109804 0.584314 
+endnode
+endmodelgeom plc_fern_n04
+
+#NWmax ANIM ASCII
+newanim default plc_fern_n04
+  length 0.0666667
+  transtime 0.25
+  animroot plc_fern_n04
+    node dummy plc_fern_n04
+        parent NULL
+    endnode
+    node dummy anim_dummy
+        parent plc_fern_n04
+        positionkey
+            0.0 0.00078605 0.0 0.00364099
+            0.0666667 0.00078605 0.0 0.00364099
+        endlist
+        orientationkey
+            0.0 -1.0 0.0 0.0 -1.5708
+            0.0666667 -1.0 0.0 0.0 -1.5708
+        endlist
+    endnode
+    node trimesh g_lower_leaf02
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf03
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf04
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf05
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf08
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf10
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf02
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf03
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf04
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf05
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf08
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf10
+        parent anim_dummy
+    endnode
+    node dummy n04_ground
+        parent plc_fern_n04
+    endnode
+    node dummy n04_hand
+        parent plc_fern_n04
+    endnode
+    node dummy n04_head
+        parent plc_fern_n04
+    endnode
+    node dummy n04_head_hit
+        parent plc_fern_n04
+    endnode
+    node dummy n04_impact
+        parent plc_fern_n04
+    endnode
+doneanim default plc_fern_n04
+
+
+#NWmax ANIM ASCII
+newanim damage plc_fern_n04
+  length 0.233333
+  transtime 0.25
+  animroot plc_fern_n04
+    node dummy plc_fern_n04
+        parent NULL
+    endnode
+    node dummy anim_dummy
+        parent plc_fern_n04
+        positionkey
+            0.0 0.00078605 0.0 0.00364099
+            0.233333 0.00078605 0.0 0.00364099
+        endlist
+        orientationkey
+            0.0 -1.0 0.0 0.0 -1.5708
+            0.0333333 -1.0 0.0 0.0 -1.48353
+            0.0666667 -0.997918 -0.0475483 0.0435701 -1.48561
+            0.1 -0.995867 -0.00396189 0.0907423 -1.49147
+            0.133333 -0.981089 -0.164767 -0.101573 -1.57839
+            0.166667 -0.982353 -0.114521 -0.147877 -1.65236
+            0.2 -1.0 0.0 0.0 -1.5708
+            0.233333 -1.0 0.0 0.0 -1.5708
+        endlist
+    endnode
+    node trimesh g_lower_leaf02
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf03
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf04
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf05
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf08
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf10
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf02
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf03
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf04
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf05
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf08
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf10
+        parent anim_dummy
+    endnode
+    node dummy n04_ground
+        parent plc_fern_n04
+    endnode
+    node dummy n04_hand
+        parent plc_fern_n04
+    endnode
+    node dummy n04_head
+        parent plc_fern_n04
+    endnode
+    node dummy n04_head_hit
+        parent plc_fern_n04
+    endnode
+    node dummy n04_impact
+        parent plc_fern_n04
+    endnode
+doneanim damage plc_fern_n04
+
+
+#NWmax ANIM ASCII
+newanim die plc_fern_n04
+  length 0.166667
+  transtime 0.25
+  animroot plc_fern_n04
+    node dummy plc_fern_n04
+        parent NULL
+    endnode
+    node dummy anim_dummy
+        parent plc_fern_n04
+        positionkey
+            0.0 0.00078605 0.0 -5.0
+            0.166667 0.00078605 0.0 -5.0
+        endlist
+        orientationkey
+            0.0 -1.0 0.0 0.0 -1.5708
+            0.166667 -1.0 0.0 0.0 -1.5708
+        endlist
+    endnode
+    node trimesh g_lower_leaf02
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf03
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf04
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf05
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf08
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf10
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf02
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf03
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf04
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf05
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf08
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf10
+        parent anim_dummy
+    endnode
+    node dummy n04_ground
+        parent plc_fern_n04
+    endnode
+    node dummy n04_hand
+        parent plc_fern_n04
+    endnode
+    node dummy n04_head
+        parent plc_fern_n04
+    endnode
+    node dummy n04_head_hit
+        parent plc_fern_n04
+    endnode
+    node dummy n04_impact
+        parent plc_fern_n04
+    endnode
+doneanim die plc_fern_n04
+
+
+#NWmax ANIM ASCII
+newanim dead plc_fern_n04
+  length 0.166667
+  transtime 0.25
+  animroot plc_fern_n04
+    node dummy plc_fern_n04
+        parent NULL
+    endnode
+    node dummy anim_dummy
+        parent plc_fern_n04
+        positionkey
+            0.0 0.00078605 0.0 -5.0
+            0.166667 0.00078605 0.0 -5.0
+        endlist
+        orientationkey
+            0.0 -1.0 0.0 0.0 -1.5708
+            0.166667 -1.0 0.0 0.0 -1.5708
+        endlist
+    endnode
+    node trimesh g_lower_leaf02
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf03
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf04
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf05
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf08
+        parent anim_dummy
+    endnode
+    node trimesh g_lower_leaf10
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf02
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf03
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf04
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf05
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf08
+        parent anim_dummy
+    endnode
+    node trimesh g_upper_leaf10
+        parent anim_dummy
+    endnode
+    node dummy n04_ground
+        parent plc_fern_n04
+    endnode
+    node dummy n04_hand
+        parent plc_fern_n04
+    endnode
+    node dummy n04_head
+        parent plc_fern_n04
+    endnode
+    node dummy n04_head_hit
+        parent plc_fern_n04
+    endnode
+    node dummy n04_impact
+        parent plc_fern_n04
+    endnode
+doneanim dead plc_fern_n04
+
+donemodel plc_fern_n04

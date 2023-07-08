@@ -1,0 +1,1213 @@
+# Exported from NWmax 0.8 c00 at 10/11/2019 3:22:13 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: T_Door11
+#local file: M:\BD Tile Fixes\Source Files\Doors\T_Door11_fix_01.max
+filedependancy T_Door11_fix_01.max
+newmodel T_Door11
+setsupermodel T_Door11 NULL
+classification Door
+#NWmax GEOM  ASCII
+beginmodelgeom T_Door11
+node dummy T_Door11
+  parent NULL
+endnode
+node emitter OmenEmitter27
+  parent T_Door11
+  position 0.00110596 0.0616406 -0.0328079
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.564706 0.109804 0.694118 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType 0
+  xSize 179.0
+  ySize 31.0
+  inherit 1
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.321569 0.615686 0.980392 
+  colorEnd 0.321569 0.615686 0.980392 
+  alphaStart 0.1
+  alphaEnd 0.0
+  sizeStart 3.0
+  sizeEnd 2.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 0
+  lifeExp 4.0
+  mass 0.0
+  spread 0.0
+  particleRot 0.6
+  velocity 1.8
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 0
+  xgrid 4
+  ygrid 4
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter OmenEmitter26
+  parent T_Door11
+  position 0.00110596 0.0616406 2.91749
+  orientation 0.0 -1.0 -3.26149e-07 -3.14159
+  wirecolor 0.564706 0.109804 0.694118 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType 0
+  xSize 179.0
+  ySize 31.0
+  inherit 1
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.321569 0.615686 0.980392 
+  colorEnd 0.321569 0.615686 0.980392 
+  alphaStart 0.1
+  alphaEnd 0.0
+  sizeStart 3.0
+  sizeEnd 2.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 0
+  lifeExp 4.0
+  mass 0.0
+  spread 0.0
+  particleRot 0.6
+  velocity 1.8
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 0
+  xgrid 4
+  ygrid 4
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter ground_lightning
+  parent T_Door11
+  position -0.0152832 0.0195703 -0.0110349
+  orientation 0.707107 0.707107 0.0 -3.1416
+  wirecolor 0.341176 0.341176 0.882353 
+  update_sel 1
+  update Fountain
+  render_sel 2
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawntype_sel 0
+  spawnType 0
+  xSize 26.0
+  ySize 191.0
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.11
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 1.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 0
+  lifeExp 0.1
+  mass 0.0
+  spread 0.0
+  particleRot 0.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_lightning2
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 8
+  framestart 0
+  frameend 3
+  random 1
+  lightningDelay 0.1
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 1
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node reference OmenRef01
+  parent ground_lightning
+  position -0.00197394 -0.00623478 -2.90314
+  orientation 0.0 0.0 1.0 -1.5708
+  wirecolor 0.721569 0.607843 0.898039 
+  refModel fx_ref
+  reattachable 0
+  Dummy Dummy
+endnode
+node emitter ground_lightning01
+  parent T_Door11
+  position -0.0152832 0.0176172 2.94147
+  orientation 0.0 0.0 1.0 -1.5708
+  wirecolor 0.341176 0.341176 0.882353 
+  update_sel 1
+  update Fountain
+  render_sel 2
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawntype_sel 0
+  spawnType 0
+  xSize 33.0
+  ySize 195.0
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 1.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 1.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 0
+  lifeExp 0.1
+  mass 0.0
+  spread 0.0
+  particleRot 0.0
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_lightning2
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 8
+  framestart 0
+  frameend 3
+  random 1
+  lightningDelay 0.1
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 1
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node reference OmenRef02
+  parent ground_lightning01
+  position -0.00197054 -0.00626126 -2.94944
+  orientation 0.0 0.0 -1.0 -4.71239
+  wirecolor 0.721569 0.607843 0.898039 
+  refModel fx_ref
+  reattachable 0
+  Dummy Dummy
+endnode
+node dummy T_Door11head
+  parent T_Door11
+  position 0.0 0.0 2.50064
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.721569 0.607843 0.898039 
+endnode
+node dummy T_Door11hhit
+  parent T_Door11
+  position 0.0 0.0 2.17507
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.721569 0.607843 0.898039 
+endnode
+node dummy T_Door11impc
+  parent T_Door11
+  position 0.0 0.0 1.63648
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.721569 0.607843 0.898039 
+endnode
+node dummy T_Door11grnd
+  parent T_Door11
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.721569 0.607843 0.898039 
+endnode
+node trimesh sam
+  parent T_Door11
+  position 0.0 0.0 1.485
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 0.721569 0.894118 0.6 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 0.0
+  transparencyhint 1
+  selfillumcolor 0.0705882 0.0 1.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 0.0 0.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 0
+  center 0.0 0.0 0.0 
+  bitmap NULL
+  verts 8
+    -0.08 1.0 -1.49
+    -0.08 -1.0 -1.49
+    -0.08 -1.0 1.49
+    -0.08 1.0 1.49
+    0.08 1.0 -1.49
+    0.08 -1.0 -1.49
+    0.08 -1.0 1.49
+    0.08 1.0 1.49
+  faces 4
+    0 1 2  64  0 1 2  18
+    2 3 0  64  2 3 0  18
+    5 4 6  64  5 4 6  18
+    7 6 4  64  7 6 4  18
+  tverts 12
+    0.000499517 0.000499666 0
+    0.49427 0.000499547 0
+    0.494271 0.876312 0
+    0.000499815 0.876312 0
+    0.000499517 0.000499666 0
+    0.49427 0.000499547 0
+    0.494271 0.876312 0
+    0.000499815 0.876312 0
+    0.000499517 0.000499666 0
+    0.49427 0.000499547 0
+    0.494271 0.876312 0
+    0.000499815 0.876312 0
+endnode
+endmodelgeom T_Door11
+
+#NWmax ANIM ASCII
+newanim opening1 T_Door11
+  length 0.0333333
+  transtime 0.25
+  animroot T_Door11
+    node dummy T_Door11
+        parent NULL
+    endnode
+    node emitter OmenEmitter27
+        parent T_Door11
+        birthratekey
+            0.0 10 
+            0.0333333 0 
+        endlist
+    endnode
+    node emitter OmenEmitter26
+        parent T_Door11
+        birthratekey
+            0.0 10 
+            0.0333333 5 
+        endlist
+    endnode
+    node emitter ground_lightning
+        parent T_Door11
+        birthratekey
+            0.0 12 
+            0.0333333 0 
+        endlist
+    endnode
+    node reference OmenRef01
+        parent ground_lightning
+    endnode
+    node emitter ground_lightning01
+        parent T_Door11
+        birthratekey
+            0.0 12 
+            0.0333333 0 
+        endlist
+    endnode
+    node reference OmenRef02
+        parent ground_lightning01
+    endnode
+    node dummy T_Door11head
+        parent T_Door11
+    endnode
+    node dummy T_Door11hhit
+        parent T_Door11
+    endnode
+    node dummy T_Door11impc
+        parent T_Door11
+    endnode
+    node dummy T_Door11grnd
+        parent T_Door11
+    endnode
+    node dummy T_Door11_DWK
+        parent T_Door11
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open2_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open1_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_closed
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open1
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open2
+        parent T_Door11_DWK
+    endnode
+    node trimesh sam
+        parent T_Door11
+    endnode
+doneanim opening1 T_Door11
+
+
+#NWmax ANIM ASCII
+newanim closing1 T_Door11
+  length 0.233333
+  transtime 0.25
+  animroot T_Door11
+    node dummy T_Door11
+        parent NULL
+    endnode
+    node emitter OmenEmitter27
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.0333333 5 
+            0.233333 10 
+        endlist
+    endnode
+    node emitter OmenEmitter26
+        parent T_Door11
+        birthratekey
+            0.0 5 
+            0.2 10 
+            0.233333 0 
+        endlist
+    endnode
+    node emitter ground_lightning
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.233333 5 
+        endlist
+    endnode
+    node reference OmenRef01
+        parent ground_lightning
+    endnode
+    node emitter ground_lightning01
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.233333 5 
+        endlist
+    endnode
+    node reference OmenRef02
+        parent ground_lightning01
+    endnode
+    node dummy T_Door11head
+        parent T_Door11
+    endnode
+    node dummy T_Door11hhit
+        parent T_Door11
+    endnode
+    node dummy T_Door11impc
+        parent T_Door11
+    endnode
+    node dummy T_Door11grnd
+        parent T_Door11
+    endnode
+    node dummy T_Door11_DWK
+        parent T_Door11
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open2_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open1_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_closed
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open1
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open2
+        parent T_Door11_DWK
+    endnode
+    node trimesh sam
+        parent T_Door11
+    endnode
+doneanim closing1 T_Door11
+
+
+#NWmax ANIM ASCII
+newanim opening2 T_Door11
+  length 0.0333333
+  transtime 0.25
+  animroot T_Door11
+    node dummy T_Door11
+        parent NULL
+    endnode
+    node emitter OmenEmitter27
+        parent T_Door11
+        birthratekey
+            0.0 10 
+            0.0333333 0 
+        endlist
+    endnode
+    node emitter OmenEmitter26
+        parent T_Door11
+        birthratekey
+            0.0 10 
+            0.0333333 5 
+        endlist
+    endnode
+    node emitter ground_lightning
+        parent T_Door11
+        birthratekey
+            0.0 12 
+            0.0333333 0 
+        endlist
+    endnode
+    node reference OmenRef01
+        parent ground_lightning
+    endnode
+    node emitter ground_lightning01
+        parent T_Door11
+        birthratekey
+            0.0 12 
+            0.0333333 0 
+        endlist
+    endnode
+    node reference OmenRef02
+        parent ground_lightning01
+    endnode
+    node dummy T_Door11head
+        parent T_Door11
+    endnode
+    node dummy T_Door11hhit
+        parent T_Door11
+    endnode
+    node dummy T_Door11impc
+        parent T_Door11
+    endnode
+    node dummy T_Door11grnd
+        parent T_Door11
+    endnode
+    node dummy T_Door11_DWK
+        parent T_Door11
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open2_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open1_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_closed
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open1
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open2
+        parent T_Door11_DWK
+    endnode
+    node trimesh sam
+        parent T_Door11
+    endnode
+doneanim opening2 T_Door11
+
+
+#NWmax ANIM ASCII
+newanim closing2 T_Door11
+  length 0.233333
+  transtime 0.25
+  animroot T_Door11
+    node dummy T_Door11
+        parent NULL
+    endnode
+    node emitter OmenEmitter27
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.0333333 5 
+            0.233333 10 
+        endlist
+    endnode
+    node emitter OmenEmitter26
+        parent T_Door11
+        birthratekey
+            0.0 5 
+            0.2 10 
+            0.233333 0 
+        endlist
+    endnode
+    node emitter ground_lightning
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.233333 5 
+        endlist
+    endnode
+    node reference OmenRef01
+        parent ground_lightning
+    endnode
+    node emitter ground_lightning01
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.233333 5 
+        endlist
+    endnode
+    node reference OmenRef02
+        parent ground_lightning01
+    endnode
+    node dummy T_Door11head
+        parent T_Door11
+    endnode
+    node dummy T_Door11hhit
+        parent T_Door11
+    endnode
+    node dummy T_Door11impc
+        parent T_Door11
+    endnode
+    node dummy T_Door11grnd
+        parent T_Door11
+    endnode
+    node dummy T_Door11_DWK
+        parent T_Door11
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open2_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open1_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_closed
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open1
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open2
+        parent T_Door11_DWK
+    endnode
+    node trimesh sam
+        parent T_Door11
+    endnode
+doneanim closing2 T_Door11
+
+
+#NWmax ANIM ASCII
+newanim closed T_Door11
+  length 0.666667
+  transtime 0.25
+  animroot T_Door11
+    node dummy T_Door11
+        parent NULL
+    endnode
+    node emitter OmenEmitter27
+        parent T_Door11
+        birthratekey
+            0.0 10 
+            0.666667 10 
+        endlist
+    endnode
+    node emitter OmenEmitter26
+        parent T_Door11
+        birthratekey
+            0.0 10 
+            0.666667 10 
+        endlist
+    endnode
+    node emitter ground_lightning
+        parent T_Door11
+        birthratekey
+            0.0 12 
+            0.666667 12 
+        endlist
+    endnode
+    node reference OmenRef01
+        parent ground_lightning
+    endnode
+    node emitter ground_lightning01
+        parent T_Door11
+        birthratekey
+            0.0 12 
+            0.666667 12 
+        endlist
+    endnode
+    node reference OmenRef02
+        parent ground_lightning01
+    endnode
+    node dummy T_Door11head
+        parent T_Door11
+    endnode
+    node dummy T_Door11hhit
+        parent T_Door11
+    endnode
+    node dummy T_Door11impc
+        parent T_Door11
+    endnode
+    node dummy T_Door11grnd
+        parent T_Door11
+    endnode
+    node dummy T_Door11_DWK
+        parent T_Door11
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open2_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open1_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_closed
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open1
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open2
+        parent T_Door11_DWK
+    endnode
+    node trimesh sam
+        parent T_Door11
+    endnode
+doneanim closed T_Door11
+
+
+#NWmax ANIM ASCII
+newanim opened2 T_Door11
+  length 0.0333333
+  transtime 0.25
+  animroot T_Door11
+    node dummy T_Door11
+        parent NULL
+    endnode
+    node emitter OmenEmitter27
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.0333333 0 
+        endlist
+    endnode
+    node emitter OmenEmitter26
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.0333333 0 
+        endlist
+    endnode
+    node emitter ground_lightning
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.0333333 0 
+        endlist
+    endnode
+    node reference OmenRef01
+        parent ground_lightning
+    endnode
+    node emitter ground_lightning01
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.0333333 0 
+        endlist
+    endnode
+    node reference OmenRef02
+        parent ground_lightning01
+    endnode
+    node dummy T_Door11head
+        parent T_Door11
+    endnode
+    node dummy T_Door11hhit
+        parent T_Door11
+    endnode
+    node dummy T_Door11impc
+        parent T_Door11
+    endnode
+    node dummy T_Door11grnd
+        parent T_Door11
+    endnode
+    node dummy T_Door11_DWK
+        parent T_Door11
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open2_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open1_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_closed
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open1
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open2
+        parent T_Door11_DWK
+    endnode
+    node trimesh sam
+        parent T_Door11
+    endnode
+doneanim opened2 T_Door11
+
+
+#NWmax ANIM ASCII
+newanim opened1 T_Door11
+  length 0.0333333
+  transtime 0.25
+  animroot T_Door11
+    node dummy T_Door11
+        parent NULL
+    endnode
+    node emitter OmenEmitter27
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.0333333 0 
+        endlist
+    endnode
+    node emitter OmenEmitter26
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.0333333 0 
+        endlist
+    endnode
+    node emitter ground_lightning
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.0333333 0 
+        endlist
+    endnode
+    node reference OmenRef01
+        parent ground_lightning
+    endnode
+    node emitter ground_lightning01
+        parent T_Door11
+        birthratekey
+            0.0 0
+            0.0333333 0 
+        endlist
+    endnode
+    node reference OmenRef02
+        parent ground_lightning01
+    endnode
+    node dummy T_Door11head
+        parent T_Door11
+    endnode
+    node dummy T_Door11hhit
+        parent T_Door11
+    endnode
+    node dummy T_Door11impc
+        parent T_Door11
+    endnode
+    node dummy T_Door11grnd
+        parent T_Door11
+    endnode
+    node dummy T_Door11_DWK
+        parent T_Door11
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open2_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open1_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_closed
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open1
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open2
+        parent T_Door11_DWK
+    endnode
+    node trimesh sam
+        parent T_Door11
+    endnode
+doneanim opened1 T_Door11
+
+
+#NWmax ANIM ASCII
+newanim trans T_Door11
+  length 0.0333333
+  transtime 0.25
+  animroot T_Door11
+    node dummy T_Door11
+        parent NULL
+    endnode
+    node emitter OmenEmitter27
+        parent T_Door11
+    endnode
+    node emitter OmenEmitter26
+        parent T_Door11
+    endnode
+    node emitter ground_lightning
+        parent T_Door11
+    endnode
+    node reference OmenRef01
+        parent ground_lightning
+    endnode
+    node emitter ground_lightning01
+        parent T_Door11
+    endnode
+    node reference OmenRef02
+        parent ground_lightning01
+    endnode
+    node dummy T_Door11head
+        parent T_Door11
+    endnode
+    node dummy T_Door11hhit
+        parent T_Door11
+    endnode
+    node dummy T_Door11impc
+        parent T_Door11
+    endnode
+    node dummy T_Door11grnd
+        parent T_Door11
+    endnode
+    node dummy T_Door11_DWK
+        parent T_Door11
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open2_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open1_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_closed
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open1
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open2
+        parent T_Door11_DWK
+    endnode
+    node trimesh sam
+        parent T_Door11
+        alphakey
+            0.0 0.25 
+            0.0333333 0.25 
+        endlist
+    endnode
+doneanim trans T_Door11
+
+
+#NWmax ANIM ASCII
+newanim die T_Door11
+  length 0.0333333
+  transtime 0.25
+  animroot T_Door11
+    node dummy T_Door11
+        parent NULL
+    endnode
+    node emitter OmenEmitter27
+        parent T_Door11
+        birthratekey
+            0.0 10 
+            0.0333333 0 
+        endlist
+    endnode
+    node emitter OmenEmitter26
+        parent T_Door11
+        birthratekey
+            0.0 10 
+            0.0333333 0 
+        endlist
+    endnode
+    node emitter ground_lightning
+        parent T_Door11
+        birthratekey
+            0.0 12 
+            0.0333333 0 
+        endlist
+    endnode
+    node reference OmenRef01
+        parent ground_lightning
+    endnode
+    node emitter ground_lightning01
+        parent T_Door11
+        birthratekey
+            0.0 12 
+            0.0333333 0 
+        endlist
+    endnode
+    node reference OmenRef02
+        parent ground_lightning01
+    endnode
+    node dummy T_Door11head
+        parent T_Door11
+    endnode
+    node dummy T_Door11hhit
+        parent T_Door11
+    endnode
+    node dummy T_Door11impc
+        parent T_Door11
+    endnode
+    node dummy T_Door11grnd
+        parent T_Door11
+    endnode
+    node dummy T_Door11_DWK
+        parent T_Door11
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open2_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open1_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_closed
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open1
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open2
+        parent T_Door11_DWK
+    endnode
+    node trimesh sam
+        parent T_Door11
+    endnode
+doneanim die T_Door11
+
+
+#NWmax ANIM ASCII
+newanim dead T_Door11
+  length 0.0333333
+  transtime 0.25
+  animroot T_Door11
+    node dummy T_Door11
+        parent NULL
+    endnode
+    node emitter OmenEmitter27
+        parent T_Door11
+        birthratekey
+            0.0 0
+            0.0333333 0 
+        endlist
+    endnode
+    node emitter OmenEmitter26
+        parent T_Door11
+        birthratekey
+            0.0 0 
+            0.0333333 0 
+        endlist
+    endnode
+    node emitter ground_lightning
+        parent T_Door11
+        birthratekey
+            0.0 0
+            0.0333333 0 
+        endlist
+    endnode
+    node reference OmenRef01
+        parent ground_lightning
+    endnode
+    node emitter ground_lightning01
+        parent T_Door11
+        birthratekey
+            0.0 0
+            0.0333333 0 
+        endlist
+    endnode
+    node reference OmenRef02
+        parent ground_lightning01
+    endnode
+    node dummy T_Door11head
+        parent T_Door11
+    endnode
+    node dummy T_Door11hhit
+        parent T_Door11
+    endnode
+    node dummy T_Door11impc
+        parent T_Door11
+    endnode
+    node dummy T_Door11grnd
+        parent T_Door11
+    endnode
+    node dummy T_Door11_DWK
+        parent T_Door11
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open2_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_open1_01
+        parent T_Door11_DWK
+    endnode
+    node dummy 11_DWK_dp_closed_02
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_closed
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open1
+        parent T_Door11_DWK
+    endnode
+    node trimesh 11_DWK_wg_open2
+        parent T_Door11_DWK
+    endnode
+    node trimesh sam
+        parent T_Door11
+        endlist
+    endnode
+doneanim dead T_Door11
+
+donemodel T_Door11

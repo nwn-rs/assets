@@ -1,0 +1,88 @@
+# Exported from NWmax 0.8 b40 at 3/3/2005 10:34:45 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pfd0_handl063
+filedependancy pfd0_handl063.max
+newmodel pfd0_handl063
+setsupermodel pfd0_handl063 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom pfd0_handl063
+node dummy pfd0_handl063
+  parent NULL
+endnode
+node trimesh pfd0_handl063g
+  parent pfd0_handl063
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center -1.20241 1.15628 -6.07807 
+  bitmap pfh0_handl063
+  verts 10
+    0.039264 0.0768404 -0.0863645
+    0.0176442 0.0322404 -0.00317594
+    0.0146746 -0.0537147 -0.111657
+    0.0208341 -0.0359878 -0.00310977
+    -0.0633123 0.0626489 -0.082972
+    -0.0618641 -0.0494391 -0.0917079
+    -0.0161434 -0.0302931 -0.00179595
+    -0.0241076 0.0383311 -0.00882784
+    0.00452524 0.0356712 -0.130958
+    0.00235907 -0.00667911 0.00939686
+  faces 16
+    0 1 2  1  0 1 2  2
+    3 2 1  1  3 2 1  2
+    4 5 6  1  4 5 6  1
+    6 7 4  1  6 7 4  1
+    8 2 5  1  8 9 10  5
+    5 4 8  1  10 11 8  5
+    2 3 6  1  12 13 6  4
+    6 5 2  1  6 5 12  4
+    3 1 9  1  14 15 16  6
+    7 6 9  1  17 18 16  6
+    2 8 0  1  9 8 19  3
+    4 7 0  1  4 7 0  3
+    9 1 7  1  16 15 17  6
+    9 6 3  1  16 18 14  6
+    0 8 4  1  19 8 11  3
+    0 7 1  1  0 7 1  3
+  tverts 20
+    0.99538 0.275998 0
+    0.475039 0.259983 0
+    0.988899 0.0111091 0
+    0.487964 0.0328482 0
+    0.996448 0.550226 0
+    0.987486 0.813328 0
+    0.473001 0.814205 0
+    0.470249 0.597539 0
+    0.224371 0.461529 0
+    0.00370373 0.0635437 0
+    0.0205904 0.968364 0
+    0.472911 0.960885 0
+    0.979885 0.992847 0
+    0.475657 0.988385 0
+    0.484728 0.204133 0
+    0.496342 0.171714 0
+    0.496316 0.203898 0
+    0.507873 0.202375 0
+    0.49536 0.21257 0
+    0.449847 0.0929894 0
+endnode
+endmodelgeom pfd0_handl063
+donemodel pfd0_handl063

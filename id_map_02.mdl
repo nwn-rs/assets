@@ -1,0 +1,319 @@
+# Exported from NWmax 0.8 b52 at 04.10.2005 08:43:12
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: id_map_02
+#local file: E:\3dsMax6\scenes\BIO_ArtAssets3\maps_10.max
+filedependancy maps_10.max
+newmodel id_map_02
+setsupermodel id_map_02 id_map_01
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom id_map_02
+node dummy id_map_02
+  parent NULL
+endnode
+node trimesh mp_grey
+  parent id_map_02
+  position 0.0 0.0 0.04
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.54902 0.345098 0.882353 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 1
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap id_dung_01
+  verts 9
+    -0.5 -0.5 0.0
+    0.0 -0.5 0.0
+    0.5 -0.5 0.0
+    -0.5 0.0 0.0
+    0.0 0.0 0.0
+    0.5 0.0 0.0
+    -0.5 0.5 0.0
+    0.0 0.5 0.0
+    0.5 0.5 0.0
+  faces 8
+    3 0 4  1  3 0 4  1
+    1 4 0  1  1 4 0  1
+    4 1 5  1  4 1 5  1
+    2 5 1  1  2 5 1  1
+    6 3 7  1  6 3 7  1
+    4 7 3  1  4 7 3  1
+    7 4 8  1  7 4 8  1
+    5 8 4  1  5 8 4  1
+  tverts 9
+    0.01 0.01 0
+    0.5 0.01 0
+    0.99 0.01 0
+    0.01 0.5 0
+    0.5 0.5 0
+    0.99 0.5 0
+    0.01 0.99 0
+    0.5 0.99 0
+    0.99 0.99 0
+endnode
+node trimesh mp_red
+  parent id_map_02
+  position 0.0 0.0 -10.2
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.54902 0.345098 0.882353 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 1
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap id_dung_02
+  verts 9
+    -0.5 -0.5 0.0
+    0.0 -0.5 0.0
+    0.5 -0.5 0.0
+    -0.5 0.0 0.0
+    0.0 0.0 0.0
+    0.5 0.0 0.0
+    -0.5 0.5 0.0
+    0.0 0.5 0.0
+    0.5 0.5 0.0
+  faces 8
+    3 0 4  1  3 0 4  1
+    1 4 0  1  1 4 0  1
+    4 1 5  1  4 1 5  1
+    2 5 1  1  2 5 1  1
+    6 3 7  1  6 3 7  1
+    4 7 3  1  4 7 3  1
+    7 4 8  1  7 4 8  1
+    5 8 4  1  5 8 4  1
+  tverts 9
+    0.01 0.01 0
+    0.5 0.01 0
+    0.99 0.01 0
+    0.01 0.5 0
+    0.5 0.5 0
+    0.99 0.5 0
+    0.01 0.99 0
+    0.5 0.99 0
+    0.99 0.99 0
+endnode
+node trimesh mp_black
+  parent id_map_02
+  position 0.0 0.0 -10.3
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.54902 0.345098 0.882353 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 1
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap id_dung_03
+  verts 9
+    -0.5 -0.5 0.0
+    0.0 -0.5 0.0
+    0.5 -0.5 0.0
+    -0.5 0.0 0.0
+    0.0 0.0 0.0
+    0.5 0.0 0.0
+    -0.5 0.5 0.0
+    0.0 0.5 0.0
+    0.5 0.5 0.0
+  faces 8
+    3 0 4  1  3 0 4  1
+    1 4 0  1  1 4 0  1
+    4 1 5  1  4 1 5  1
+    2 5 1  1  2 5 1  1
+    6 3 7  1  6 3 7  1
+    4 7 3  1  4 7 3  1
+    7 4 8  1  7 4 8  1
+    5 8 4  1  5 8 4  1
+  tverts 9
+    0.01 0.01 0
+    0.5 0.01 0
+    0.99 0.01 0
+    0.01 0.5 0
+    0.5 0.5 0
+    0.99 0.5 0
+    0.01 0.99 0
+    0.5 0.99 0
+    0.99 0.99 0
+endnode
+node trimesh mp_blue
+  parent id_map_02
+  position 0.0 0.0 -10.4
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.54902 0.345098 0.882353 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 1
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap id_dung_04
+  verts 9
+    -0.5 -0.5 0.0
+    0.0 -0.5 0.0
+    0.5 -0.5 0.0
+    -0.5 0.0 0.0
+    0.0 0.0 0.0
+    0.5 0.0 0.0
+    -0.5 0.5 0.0
+    0.0 0.5 0.0
+    0.5 0.5 0.0
+  faces 8
+    3 0 4  1  3 0 4  1
+    1 4 0  1  1 4 0  1
+    4 1 5  1  4 1 5  1
+    2 5 1  1  2 5 1  1
+    6 3 7  1  6 3 7  1
+    4 7 3  1  4 7 3  1
+    7 4 8  1  7 4 8  1
+    5 8 4  1  5 8 4  1
+  tverts 9
+    0.01 0.01 0
+    0.5 0.01 0
+    0.99 0.01 0
+    0.01 0.5 0
+    0.5 0.5 0
+    0.99 0.5 0
+    0.01 0.99 0
+    0.5 0.99 0
+    0.99 0.99 0
+endnode
+node trimesh room_mesh_74x74_02
+  parent id_map_02
+  position 0.0 0.0 0.03
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.780392 0.882353 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center -6.25 -6.25 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap id_canvas_02
+  verts 20
+    -0.375 -0.375 0.0
+    -0.125 -0.375 0.0
+    0.125 -0.375 0.0
+    0.375 -0.375 0.0
+    -0.375 -0.125 0.0
+    -0.125 -0.125 0.0
+    0.125 -0.125 0.0
+    0.375 -0.125 0.0
+    -0.375 0.125 0.0
+    -0.125 0.125 0.0
+    0.125 0.125 0.0
+    0.375 0.125 0.0
+    -0.375 0.375 0.0
+    -0.125 0.375 0.0
+    0.125 0.375 0.0
+    0.375 0.375 0.0
+    -0.125 -0.5 0.0
+    0.125 -0.5 0.0
+    -0.5 0.125 0.0
+    -0.5 -0.125 0.0
+  faces 22
+    4 0 5  1  4 0 5  1
+    1 5 0  1  1 5 0  1
+    5 1 6  1  5 1 6  1
+    2 6 1  1  2 6 1  1
+    6 2 7  1  6 2 7  1
+    3 7 2  1  3 7 2  1
+    8 4 9  1  8 4 9  1
+    5 9 4  1  5 9 4  1
+    9 5 10  1  9 5 10  1
+    6 10 5  1  6 10 5  1
+    10 6 11  1  10 6 11  1
+    7 11 6  1  7 11 6  1
+    12 8 13  1  12 8 13  1
+    9 13 8  1  9 13 8  1
+    13 9 14  1  13 9 14  1
+    10 14 9  1  10 14 9  1
+    14 10 15  1  14 10 15  1
+    11 15 10  1  11 15 10  1
+    16 17 2  1  16 17 2  1
+    2 1 16  1  2 1 16  1
+    18 19 4  1  18 19 4  1
+    4 8 18  1  4 8 18  1
+  tverts 20
+    0.128713 2.10891 0
+    0.376238 2.10891 0
+    0.623763 2.10891 0
+    0.871287 2.10891 0
+    0.128713 2.35644 0
+    0.376238 2.35644 0
+    0.623763 2.35644 0
+    0.871288 2.35644 0
+    0.128713 2.60396 0
+    0.376238 2.60396 0
+    0.623763 2.60396 0
+    0.871288 2.60396 0
+    0.128713 2.85149 0
+    0.376238 2.85149 0
+    0.623763 2.85149 0
+    0.871288 2.85149 0
+    0.376238 1.98515 0
+    0.623763 1.98515 0
+    0.004951 2.60396 0
+    0.00495094 2.35644 0
+endnode
+endmodelgeom id_map_02
+donemodel id_map_02

@@ -1,0 +1,99 @@
+# gaoneng
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: vim_pdkwav
+filedependancy Unknown
+newmodel vim_pdkwav
+setsupermodel vim_pdkwav NULL
+classification Effect
+#NWmax GEOM  ASCII
+beginmodelgeom vim_pdkwav
+node dummy vim_pdkwav
+  parent NULL
+endnode
+node emitter AuroraEmitter01
+  parent vim_pdkwav
+  position 0 0 0.1
+  orientation 1 0 0 -6.28319
+  wirecolor 0.898039 0.65098 0.843137 
+  update_sel 3
+  update Explosion
+  render_sel 4
+  render Billboard_to_World_Z
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 0
+  ySize 0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.533333004 0.329412013 0.952941
+  colorEnd 0.329412013 0.533333004 0.952941
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.5
+  sizeEnd 50.0
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 1
+  lifeExp 0.8
+  mass 0
+  spread 0
+  particleRot 10
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_ringwave
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 12
+  frameStart 0
+  frameEnd 3
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+endmodelgeom vim_pdkwav
+
+#NWmax ANIM ASCII
+newanim impact vim_pdkwav
+  length 1
+  transtime 0.25
+  animroot vim_pdkwav
+  event 0 detonate
+  event 0.15 detonate
+    node dummy vim_pdkwav
+        parent NULL
+    endnode
+    node emitter AuroraEmitter01
+        parent vim_pdkwav
+    endnode
+doneanim impact vim_pdkwav
+
+donemodel vim_pdkwav

@@ -1,0 +1,40 @@
+#MAXMODEL ASCII
+# model: CTL_SRV_PL_LIST
+filedependancy CTL_SRV_PL_LIST.max
+newmodel CTL_SRV_PL_LIST
+setsupermodel CTL_SRV_PL_LIST NULL
+classification character
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom CTL_SRV_PL_LIST
+node dummy CTL_SRV_PL_LIST
+  parent NULL
+  #part-number 0
+endnode
+node dummy scrollmax
+  parent CTL_SRV_PL_LIST
+  #part-number 1
+  position 1.47000003 0.660000001 0.100000001
+  orientation 0 0 0 0
+endnode
+node dummy scrollmin
+  parent CTL_SRV_PL_LIST
+  #part-number 2
+  position 1.42999995 2.25 0.150000006
+  orientation 0 0 0 0
+endnode
+node dummy text0
+  parent CTL_SRV_PL_LIST
+  #part-number 3
+  position 0.0700000003 2.41000009 0.100000001
+  orientation 0 0 0 0
+endnode
+node dummy text1
+  parent CTL_SRV_PL_LIST
+  #part-number 4
+  position 1.39999998 0.56999999978 0.100000001
+  orientation 0 0 0 0
+endnode
+endmodelgeom CTL_SRV_PL_LIST
+
+donemodel CTL_SRV_PL_LIST

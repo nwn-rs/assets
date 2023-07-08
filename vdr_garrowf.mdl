@@ -1,0 +1,153 @@
+# Exported from NWmax 0.8 b47 at 22/03/2006 3:39:20 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: vdr_garrowf
+filedependancy arrows.max
+newmodel vdr_garrowf
+setsupermodel vdr_garrowf NULL
+classification Effect
+#NWmax GEOM  ASCII
+beginmodelgeom vdr_garrowf
+node dummy vdr_garrowf
+  parent NULL
+endnode
+node trimesh Cylinder06
+  parent vdr_garrowf
+  position -0.0265268 0.189752 -0.108213
+  orientation -0.0765011 0.995177 0.0614055 -3.37466
+  wirecolor 0.552941 0.027451 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center undefined
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1.0
+  bitmap fxpa_garrow
+  verts 21
+    -0.0107999 0.45 2.11333e-007
+    0.00540008 0.45 -0.00935286
+    0.00540008 0.45 0.00935329
+    -0.0108 -0.2775 0.0
+    0.00540001 -0.2775 -0.00935301
+    0.0054 -0.2775 0.00935314
+    -0.0084 -0.3275 0.0
+    0.00420002 -0.3275 -0.00727452
+    0.00420001 -0.3275 0.0072747
+    -0.00756 -0.3575 0.0130944
+    -0.00755998 -0.3575 -0.0130942
+    0.01512 -0.3575 0.0
+    0.0 -0.4225 0.0
+    0.0 0.308456 1.54399e-007
+    -0.0175 0.336544 0.030311
+    0.0 0.4325 2.05662e-007
+    -0.02 0.446911 0.0346412
+    -0.0175 0.336544 -0.0303107
+    -0.0199999 0.446911 -0.0346408
+    0.035 0.336544 1.74351e-007
+    0.04 0.446911 2.21154e-007
+  faces 34
+    0 2 1  0  19 20 18  2
+    0 4 3  1  16 11 17  3
+    0 1 4  1  16 13 11  3
+    1 5 4  1  13 14 11  3
+    1 2 5  1  13 15 14  3
+    2 3 5  1  15 12 14  3
+    2 0 3  1  15 10 12  3
+    3 7 6  2  21 4 5  3
+    3 4 7  2  21 22 4  3
+    4 8 7  2  21 4 5  3
+    4 5 8  2  21 22 4  3
+    5 6 8  2  21 4 5  3
+    5 3 6  2  21 22 4  3
+    6 7 10  2  5 4 3  1
+    10 9 6  4  2 1 0  1
+    7 8 11  2  5 4 3  1
+    11 10 7  16  2 1 0  1
+    8 6 9  2  5 4 3  1
+    9 11 8  8  2 1 0  1
+    9 10 12  4  1 2 3  1
+    10 11 12  16  1 2 3  1
+    11 9 12  8  1 2 3  1
+    15 16 14  2  8 9 7  2
+    14 13 15  2  7 6 8  2
+    15 18 17  2  8 9 7  2
+    17 13 15  2  7 6 8  2
+    15 20 19  2  8 9 7  2
+    19 13 15  2  7 6 8  2
+    13 19 15  0  6 7 8  1
+    19 20 15  0  7 9 8  1
+    13 17 15  0  6 7 8  1
+    15 17 18  0  8 7 9  1
+    13 14 15  0  6 7 8  1
+    15 14 16  0  8 7 9  1
+  tverts 23
+    0.0 0.75 0
+    0.15 1.0 0
+    0.15 0.5 0
+    0.5 0.75 0
+    0.3 0.6 0
+    0.3 0.9 0
+    0.501 0.501 0
+    0.999 0.501 0
+    0.501 0.999 0
+    0.999 0.999 0
+    -0.01 0.005 0
+    1.04 0.333333 0
+    1.04 0.005 0
+    -0.01 0.333333 0
+    1.04 0.166667 0
+    -0.01 0.166667 0
+    -0.01 0.495 0
+    1.04 0.495 0
+    -0.200334 0.495 0
+    0.0996661 0.005 0
+    0.399666 0.495 0
+    -0.01 1.0 0
+    -0.01 0.5 0
+endnode
+endmodelgeom vdr_garrowf
+
+#NWmax ANIM ASCII
+newanim duration vdr_garrowf
+  length 0.0333333
+  transtime 0.25
+  animroot vdr_garrowf
+    node dummy vdr_garrowf
+        parent NULL
+    endnode
+    node trimesh Cylinder06
+        parent vdr_garrowf
+    endnode
+doneanim duration vdr_garrowf
+
+
+#NWmax ANIM ASCII
+newanim cessation vdr_garrowf
+  length 1.0
+  transtime 0.25
+  animroot vdr_garrowf
+    node dummy vdr_garrowf
+        parent NULL
+    endnode
+    node trimesh Cylinder06
+        parent vdr_garrowf
+        alphakey
+            0.0 1.0 
+            1.0 0.0 
+        endlist
+    endnode
+doneanim cessation vdr_garrowf
+
+donemodel vdr_garrowf

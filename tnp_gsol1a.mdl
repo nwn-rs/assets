@@ -1,0 +1,211 @@
+# Exported from NWmax 0.8 b47 at 03/02/2006 3:23:35 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tnp_gsol1a
+filedependancy Unknown
+newmodel tnp_gsol1a
+setsupermodel tnp_gsol1a NULL
+classification Character
+setanimationscale 1
+#NWmax GEOM  ASCII
+beginmodelgeom tnp_gsol1a
+node dummy tnp_gsol1a
+  parent NULL
+endnode
+node emitter AuroraEmitter02
+  parent tnp_gsol1a
+  position 0 0 0
+  orientation 1 0 0 -6.28319
+  wirecolor 0.603922 0.72549 0.898039 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 5.0
+  ySize 5.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.952941 0.952941 0.952941 
+  colorEnd 0 0 0 
+  alphaStart 0.3
+  alphaEnd 0.6
+  sizeStart 0.01
+  sizeEnd 0.01
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 3
+  lifeExp 8
+  mass -0.005
+  spread 1.5708
+  particleRot 0
+  velocity 0
+  randvel 0.025
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_flare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter01
+  parent tnp_gsol1a
+  position 0 0 5
+  orientation 1 0 0 -3.14159
+  wirecolor 0.894118 0.6 0.721569 
+  update_sel 2
+  update Fountain
+  render_sel 5
+  render Aligned_to_World_Z
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 0
+  ySize 0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.952941 0.952941 0.952941 
+  colorEnd 0 0 0 
+  alphaStart 0
+  alphaEnd 0.15
+  sizeStart 2.5
+  sizeEnd 2.5
+  sizeStart_y 11
+  sizeEnd_y 11
+  birthrate 4
+  lifeExp 5
+  mass 0
+  spread 0
+  particleRot 1.65
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture plc_lightshaft
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node trimesh Rectangle13
+  parent tnp_gsol1a
+  ambient 0.200000003 0.200000003 0.200000003
+  diffuse 0.800000012 0.800000012 0.800000012
+  specular 0 0 0
+  shininess 1
+  shadow 0
+  render 0
+  bitmap NULL
+  verts 8
+    -0.300000012 -0.300000012 0.177000001
+    0.300000012 -0.300000012 0.177000001
+    0.300000012 0.300000012 0.177000001
+    -0.300000012 0.300000012 0.177000001
+    -0.300000012 -0.300000012 0
+    0.300000012 -0.300000012 0
+    0.300000012 0.300000012 0
+    -0.300000012 0.300000012 0
+  faces 10
+    0 1 2 1 0 0 0 1
+    3 0 2 1 0 0 0 1
+    4 5 1 2 0 0 0 1
+    1 0 4 2 0 0 0 1
+    5 6 2 4 0 0 0 1
+    2 1 5 4 0 0 0 1
+    7 4 0 4 0 0 0 1
+    0 3 7 4 0 0 0 1
+    6 7 3 2 0 0 0 1
+    3 2 6 2 0 0 0 1
+  position 0 0 0
+  orientation 0 0 0 0
+  alpha 1
+  scale 1
+  setfillumcolor 0 0 0
+endnode
+node dummy gsol1a_hand
+  parent tnp_gsol1a
+  position 0.0039843698 -0.505195022 0.934401989
+  orientation 0 0 0 0
+endnode
+node dummy gsol1a_head
+  parent tnp_gsol1a
+  position 0.0039843698 0.0108252 1.21001995
+  orientation 0 0 0 0
+endnode
+node dummy gsol1a_head_hit
+  parent tnp_gsol1a
+  position 0.0039843698 0.0108252 0.533897996
+  orientation 0 0 0 0
+endnode
+node dummy gsol1a_impact
+  parent tnp_gsol1a
+  position 0.0039843698 0.0110010002 0.250216007
+  orientation 0 0 0 0
+endnode
+node dummy gsol1a_ground
+  parent tnp_gsol1a
+  position -0.00363280997 0.00698729977 0
+  orientation 0 0 0 0
+endnode
+endmodelgeom tnp_gsol1a
+donemodel tnp_gsol1a

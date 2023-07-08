@@ -1,0 +1,58 @@
+# Exported from NWmax 0.8 b40 at 2/22/2005 6:23:32 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: plc_chunk_c71
+filedependancy plc_chunk_c.max
+newmodel plc_chunk_c71
+setsupermodel plc_chunk_c71 NULL
+classification Item
+#NWmax GEOM  ASCII
+beginmodelgeom plc_chunk_c71
+node dummy plc_chunk_c71
+  parent NULL
+endnode
+node trimesh Shard
+  parent plc_chunk_c71
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+  ambient 0.729412 0.854902 0.72549 
+  diffuse 0.0627451 0.909804 0.0 
+  specular 0.0 0.0 0.0 
+  shininess 50.0
+  bitmap chunkcrystal
+  verts 8
+    0.0705804 0.008108 0.026508
+    0.0705804 0.008108 -0.0262301
+    0.0 0.264231 0.000138929
+    0.0436211 -0.264231 0.000138929
+    0.0 -0.088989 0.0571886
+    0.0 0.0664296 -0.0571886
+    -0.0436211 -0.169856 0.000138929
+    -0.0705804 0.008108 0.000138929
+  faces 12
+    0 1 2  0  0 1 2  1
+    0 3 1  0  0 3 1  1
+    0 4 3  0  0 4 3  1
+    0 2 4  0  0 2 4  1
+    2 1 5  0  2 1 5  1
+    1 3 5  0  1 3 5  1
+    3 4 6  0  3 4 6  1
+    4 7 6  0  4 7 6  1
+    4 2 7  0  4 2 7  1
+    7 2 5  0  7 2 5  1
+    7 5 6  0  7 5 6  1
+    6 5 3  0  6 5 3  1
+  tverts 8
+    0.905467 0.620322 0
+    0.905467 0.620322 0
+    0.974519 0.741908 0
+    0.79408 0.529001 0
+    0.843064 0.610454 0
+    0.900905 0.668294 0
+    0.796734 0.596592 0
+    0.852932 0.672857 0
+endnode
+endmodelgeom plc_chunk_c71
+donemodel plc_chunk_c71

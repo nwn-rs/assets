@@ -1,0 +1,24 @@
+# Exported from NWmax 0.8 b60 at 6/21/2006 3:27:49 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: c_nulltail
+#local file: Unknown
+filedependancy Unknown
+newmodel c_nulltail
+setsupermodel c_nulltail h_ba
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom c_nulltail
+node dummy c_nulltail
+  parent NULL
+endnode
+node trimesh rootdummy
+  parent c_nulltail
+  position 0.000249158 -0.0325529 1.19227
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+endnode
+endmodelgeom c_nulltail
+donemodel c_nulltail

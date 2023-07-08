@@ -1,0 +1,70 @@
+#MAXMODEL ASCII
+# model: PNL_SRV_LST
+filedependancy PNL_SRV_LST.max
+newmodel PNL_SRV_LST
+setsupermodel PNL_SRV_LST NULL
+classification character
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom PNL_SRV_LST
+node dummy PNL_SRV_LST
+  parent NULL
+  #part-number 0
+endnode
+node dummy Pages
+  parent PNL_SRV_LST
+  #part-number 1
+  position -3.95000005 2.49000001 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane28
+  parent PNL_SRV_LST
+  #part-number 2
+  ambient 0.100000001 0.100000001 0.100000001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_srv_lst_pnl
+  verts 4
+    -2.55999994 0.234999999 0
+    -2.55999994 -0.234999999 0
+    2.55999994 0.234999999 0
+    2.55999994 -0.234999999 0
+  tverts 4
+    1.19208998e-007 1 0
+    0 0.908203006 0
+    1 1 0
+    1 0.908203006 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position -1.38999999 2.4449999 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane31
+  parent PNL_SRV_LST
+  #part-number 3
+  ambient 0.100000001 0.100000001 0.100000001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_srv_lst_pnl
+  verts 4
+    -1.39999998 0.234999999 0
+    -1.39999998 -0.234999999 0
+    1.39999998 0.234999999 0
+    1.39999998 -0.234999999 0
+  tverts 4
+    0 0.863281012 0
+    0 0.771484017 0
+    0.546875 0.863281012 0
+    0.546875 0.771484017 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 2.56999993 2.4449999 0
+  orientation 0 0 0 0
+endnode
+endmodelgeom PNL_SRV_LST
+
+donemodel PNL_SRV_LST

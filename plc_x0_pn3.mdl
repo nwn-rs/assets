@@ -1,0 +1,777 @@
+# Exported from NWmax 0.8 c00 at 23.04.2019 11:58:26
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: PLC_X0_PN3
+#local file: Unknown
+filedependancy Unknown
+newmodel PLC_X0_PN3
+setsupermodel PLC_X0_PN3 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom PLC_X0_PN3
+node dummy PLC_X0_PN3
+  parent NULL
+endnode
+node dummy x0_pn3_hand
+  parent PLC_X0_PN3
+  position 0.00398926 -0.505195 0.804144
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.423529 0.0313726 0.533333 
+endnode
+node dummy x0_pn3_head
+  parent PLC_X0_PN3
+  position 0.00398926 -0.437392 1.59644
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.603922 0.603922 0.898039 
+endnode
+node dummy x0_pn3_head_hit
+  parent PLC_X0_PN3
+  position 0.00398926 -0.437392 1.11496
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.603922 0.603922 0.898039 
+endnode
+node dummy x0_pn3_impact
+  parent PLC_X0_PN3
+  position 0.00398926 0.632598 1.31713
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.603922 0.603922 0.898039 
+endnode
+node dummy x0_pn3_ground
+  parent PLC_X0_PN3
+  position -0.00363281 0.0069873 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.603922 0.603922 0.898039 
+endnode
+node emitter ChunkyWood108
+  parent PLC_X0_PN3
+  position -0.000766602 0.418231 0.606715
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 1
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 5.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  framestart 0
+  frameend 24
+  random 0
+  chunkName PLC_Chunk_S01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fire!65
+  parent PLC_X0_PN3
+  position -0.000766602 0.418231 0.532671
+  orientation 1.0 0.0 0.0 -4.71239
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType 0
+  xSize 100.0
+  ySize 99.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.431373 0.329412 
+  colorEnd 0.819608 0.772549 0.584314 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 1
+  xgrid 4
+  ygrid 4
+  fps 10
+  framestart 0
+  frameend 24
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter ChunkyWood109
+  parent PLC_X0_PN3
+  position -0.000766602 0.418231 0.712937
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.482353 0.435294 0.317647 
+  colorEnd 0.584314 0.533333 0.407843 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 2
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 2.9
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 1
+  xgrid 5
+  ygrid 5
+  fps 0
+  framestart 0
+  frameend 24
+  random 0
+  chunkName PLC_Chunk_S02
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node trimesh damage28
+  parent PLC_X0_PN3
+  position 0.000800171 0.00505646 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 0
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.0705882 0.0 1.0 
+  Diffuse 1.0 0.501961 0.643137 
+  Specular 0.0 0.0 0.0 
+  shininess 24
+  center 0.0 0.0 25.0 
+  bitmap NULL
+  verts 12
+    -0.2 -0.19 0.0
+    -0.2 0.19 0.0
+    0.2 0.19 0.0
+    0.2 -0.19 0.0
+    -0.2 -0.19 0.5
+    0.2 -0.19 0.5
+    0.2 0.19 0.5
+    -0.2 0.19 0.5
+    0.1 -0.1 0.25
+    -0.1 -0.1 0.25
+    0.1 0.1 0.25
+    -0.1 0.1 0.25
+  faces 20
+    0 1 2  1  0 1 2  0
+    2 3 0  1  0 1 2  0
+    4 5 6  1  0 1 2  0
+    6 7 4  1  0 1 2  0
+    0 3 8  1  0 1 2  0
+    8 9 0  1  0 1 2  0
+    9 8 5  1  0 1 2  0
+    5 4 9  1  0 1 2  0
+    3 2 10  1  0 1 2  0
+    10 8 3  1  0 1 2  0
+    8 10 6  1  0 1 2  0
+    6 5 8  1  0 1 2  0
+    2 1 11  1  0 1 2  0
+    11 10 2  1  0 1 2  0
+    10 11 7  1  0 1 2  0
+    7 6 10  1  0 1 2  0
+    1 0 9  1  0 1 2  0
+    9 11 1  1  0 1 2  0
+    11 9 4  1  0 1 2  0
+    4 7 11  1  0 1 2  0
+  tverts 3
+    0.0 0.0 0
+    0.0 0.0 0
+    0.0 0.0 0
+endnode
+node trimesh trunk01
+  parent damage28
+  position 0.0121052 0.010874 -0.0719191
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.788235 0.72549 0.72549 
+  Diffuse 0.788235 0.72549 0.72549 
+  Specular 0.05 0.05 0.05 
+  shininess 26
+  center -1.11488 0.45879 95.032 
+  bitmap tts01_wood02
+  verts 9
+    0.07 0.03 0.06
+    0.02 0.08 0.09
+    0.05 -0.04 0.08
+    -0.04 0.08 0.06
+    -0.09 0.03 0.06
+    -0.01 -0.07 0.06
+    -0.07 -0.04 0.09
+    -0.01 0.0 1.85
+    0.02 -0.02 1.57
+  faces 9
+    0 1 2  1  0 1 2  3
+    3 4 1  1  3 4 5  3
+    5 2 6  1  6 7 8  3
+    2 7 8  1  9 10 11  3
+    2 1 7  1  9 12 10  3
+    1 4 7  1  13 14 15  3
+    4 6 7  1  14 16 17  3
+    6 8 7  1  16 18 17  3
+    6 2 8  1  19 20 21  3
+  tverts 22
+    -0.197737 0.00399661 0
+    0.0878895 1.6024 0
+    -0.194747 1.6024 0
+    0.36061 0.00399661 0
+    0.637949 1.6024 0
+    0.362051 1.6024 0
+    1.19774 0.00399661 0
+    1.5 1.6024 0
+    1.19475 1.6024 0
+    -0.180717 4.7992 0
+    0.125469 6.3976 0
+    -0.15669 6.3976 0
+    0.102764 4.7992 0
+    0.368236 4.7992 0
+    0.631764 4.7992 0
+    0.622942 6.3976 0
+    0.897236 4.7992 0
+    0.874531 6.3976 0
+    1.15669 6.3976 0
+    1.18072 4.7992 0
+    1.5 4.7992 0
+    1.5 6.3976 0
+endnode
+node trimesh Cone23
+  parent damage28
+  position 0.00318609 0.0016983 1.05121
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 1
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center undefined
+  bitmap tts01_treefol06
+  verts 0
+  faces 0
+endnode
+node trimesh Mesh01
+  parent damage28
+  position 0.00318609 0.0016983 0.978968
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 1
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 0.0 0.0 -0.2514 
+  bitmap tts01_treefol06
+  verts 49
+    0.21 0.04 0.52
+    0.09 0.21 0.52
+    0.01 0.01 0.72
+    -0.12 0.18 0.52
+    -0.2 -0.01 0.52
+    -0.08 -0.18 0.52
+    0.13 -0.16 0.52
+    0.47 0.61 -0.51
+    -0.3 0.73 -0.49
+    0.0 0.0 -0.17
+    -0.78 0.1 -0.47
+    -0.5 -0.64 -0.45
+    0.28 -0.76 -0.47
+    0.76 -0.13 -0.49
+    0.69 -0.56 -0.71
+    0.81 0.33 -0.7
+    -0.01 -0.01 -0.34
+    0.13 0.89 -0.7
+    -0.69 0.56 -0.71
+    -0.81 -0.33 -0.73
+    -0.12 -0.89 -0.73
+    -0.47 -0.04 -0.02
+    -0.2 -0.42 -0.02
+    0.0 0.03 0.24
+    0.26 -0.36 -0.03
+    0.45 0.07 -0.04
+    0.17 0.46 -0.04
+    -0.29 0.4 -0.03
+    -0.05 0.69 -0.26
+    -0.58 0.28 -0.26
+    0.01 0.03 0.05
+    -0.5 -0.39 -0.25
+    0.1 -0.65 -0.23
+    0.62 -0.25 -0.22
+    0.55 0.42 -0.24
+    -0.45 -0.06 0.18
+    -0.17 -0.44 0.18
+    0.02 0.0 0.43
+    0.29 -0.39 0.17
+    0.48 0.05 0.16
+    0.2 0.44 0.16
+    -0.26 0.38 0.16
+    0.23 -0.15 0.41
+    0.27 0.11 0.4
+    0.02 0.02 0.55
+    0.07 0.27 0.38
+    -0.17 0.17 0.37
+    -0.21 -0.09 0.38
+    0.0 -0.25 0.4
+  faces 42
+    0 1 2  1  0 1 2  1
+    1 3 2  1  1 3 2  1
+    3 4 2  1  3 4 2  1
+    4 5 2  1  4 5 2  1
+    5 6 2  1  5 6 2  1
+    6 0 2  1  6 0 2  1
+    7 8 9  1  7 8 2  1
+    8 10 9  1  8 9 2  1
+    10 11 9  1  9 10 2  1
+    11 12 9  1  10 11 2  1
+    12 13 9  1  11 12 2  1
+    13 7 9  1  12 7 2  1
+    14 15 16  1  0 1 2  1
+    15 17 16  1  1 3 2  1
+    17 18 16  1  3 13 2  1
+    18 19 16  1  13 5 2  1
+    19 20 16  1  5 6 2  1
+    20 14 16  1  6 0 2  1
+    21 22 23  1  14 1 2  1
+    22 24 23  1  1 15 2  1
+    24 25 23  1  15 4 2  1
+    25 26 23  1  4 5 2  1
+    26 27 23  1  5 16 2  1
+    27 21 23  1  16 14 2  1
+    28 29 30  1  14 1 2  1
+    29 31 30  1  1 3 2  1
+    31 32 30  1  3 13 2  1
+    32 33 30  1  13 17 2  1
+    33 34 30  1  17 16 2  1
+    34 28 30  1  16 14 2  1
+    35 36 37  1  14 1 2  1
+    36 38 37  1  1 15 2  1
+    38 39 37  1  15 4 2  1
+    39 40 37  1  4 5 2  1
+    40 41 37  1  5 16 2  1
+    41 35 37  1  16 14 2  1
+    42 43 44  1  18 19 2  1
+    43 45 44  1  19 20 2  1
+    45 46 44  1  20 21 2  1
+    46 47 44  1  21 22 2  1
+    47 48 44  1  22 23 2  1
+    48 42 44  1  23 18 2  1
+  tverts 24
+    0.999501 0.5 0
+    0.74975 0.9995 0
+    0.5 0.5 0
+    0.25025 0.9995 0
+    0.000499547 0.5 0
+    0.25025 0.000499606 0
+    0.74975 0.000499547 0
+    1.11818 0.5 0
+    0.809091 1.11818 0
+    0.190909 1.11818 0
+    -0.118182 0.5 0
+    0.190909 -0.118182 0
+    0.809091 -0.118182 0
+    0.000499517 0.5 0
+    0.9995 0.5 0
+    0.25025 0.999501 0
+    0.74975 0.000499517 0
+    0.25025 0.000499547 0
+    0.96953 0.5 0
+    0.734765 0.96953 0
+    0.265235 0.96953 0
+    0.0304695 0.5 0
+    0.265235 0.0304696 0
+    0.734765 0.0304695 0
+endnode
+endmodelgeom PLC_X0_PN3
+
+#NWmax ANIM ASCII
+newanim damage PLC_X0_PN3
+  length 1.86667
+  transtime 0.0
+  animroot PLC_X0_PN3
+    node dummy PLC_X0_PN3
+        parent NULL
+    endnode
+    node dummy x0_pn3_hand
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_head
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_head_hit
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_impact
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_ground
+        parent PLC_X0_PN3
+    endnode
+    node emitter ChunkyWood108
+        parent PLC_X0_PN3
+    endnode
+    node emitter fire!65
+        parent PLC_X0_PN3
+    endnode
+    node emitter ChunkyWood109
+        parent PLC_X0_PN3
+    endnode
+    node trimesh damage28
+        parent PLC_X0_PN3
+        positionkey
+            0.0 0.000800171 0.00505646 0.0
+            0.0333333 0.000800171 0.00505646 0.0244581
+            0.133333 0.000800171 0.00505646 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.371336 -0.928463 0.00810258 -0.0469942
+            0.1 -0.599949 0.79997 0.0104721 -0.0436326
+            0.133333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh trunk01
+        parent damage28
+    endnode
+    node trimesh Cone23
+        parent damage28
+    endnode
+    node trimesh Mesh01
+        parent damage28
+    endnode
+    node dummy PLC_X0_PN3_pwk
+        parent PLC_X0_PN3
+    endnode
+    node trimesh NoWalk
+        parent PLC_X0_PN3_pwk
+    endnode
+doneanim damage PLC_X0_PN3
+
+
+#NWmax ANIM ASCII
+newanim die PLC_X0_PN3
+  length 0.166667
+  transtime 0.0
+  animroot PLC_X0_PN3
+  event 0.0 detonate
+  event 0.0 detonate
+  event 0.0 detonate
+    node dummy PLC_X0_PN3
+        parent NULL
+    endnode
+    node dummy x0_pn3_hand
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_head
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_head_hit
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_impact
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_ground
+        parent PLC_X0_PN3
+    endnode
+    node emitter ChunkyWood108
+        parent PLC_X0_PN3
+    endnode
+    node emitter fire!65
+        parent PLC_X0_PN3
+    endnode
+    node emitter ChunkyWood109
+        parent PLC_X0_PN3
+    endnode
+    node trimesh damage28
+        parent PLC_X0_PN3
+        positionkey
+            0.0 0.000800171 0.00505646 -6.07193
+            0.166667 0.000800171 0.00505646 -6.07193
+        endlist
+    endnode
+    node trimesh trunk01
+        parent damage28
+    endnode
+    node trimesh Cone23
+        parent damage28
+    endnode
+    node trimesh Mesh01
+        parent damage28
+    endnode
+    node dummy PLC_X0_PN3_pwk
+        parent PLC_X0_PN3
+    endnode
+    node trimesh NoWalk
+        parent PLC_X0_PN3_pwk
+    endnode
+doneanim die PLC_X0_PN3
+
+
+#NWmax ANIM ASCII
+newanim dead PLC_X0_PN3
+  length 0.0333333
+  transtime 0.0
+  animroot PLC_X0_PN3
+    node dummy PLC_X0_PN3
+        parent NULL
+    endnode
+    node dummy x0_pn3_hand
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_head
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_head_hit
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_impact
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_ground
+        parent PLC_X0_PN3
+    endnode
+    node emitter ChunkyWood108
+        parent PLC_X0_PN3
+    endnode
+    node emitter fire!65
+        parent PLC_X0_PN3
+    endnode
+    node emitter ChunkyWood109
+        parent PLC_X0_PN3
+    endnode
+    node trimesh damage28
+        parent PLC_X0_PN3
+        positionkey
+            0.0 0.000800171 0.00505646 -6.07193
+            0.0333333 0.000800171 0.00505646 -6.07193
+        endlist
+    endnode
+    node trimesh trunk01
+        parent damage28
+    endnode
+    node trimesh Cone23
+        parent damage28
+    endnode
+    node trimesh Mesh01
+        parent damage28
+    endnode
+    node dummy PLC_X0_PN3_pwk
+        parent PLC_X0_PN3
+    endnode
+    node trimesh NoWalk
+        parent PLC_X0_PN3_pwk
+    endnode
+doneanim dead PLC_X0_PN3
+
+
+#NWmax ANIM ASCII
+newanim default PLC_X0_PN3
+  length 0.0
+  transtime 0.25
+  animroot PLC_X0_PN3
+    node dummy PLC_X0_PN3
+        parent NULL
+    endnode
+    node dummy x0_pn3_hand
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_head
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_head_hit
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_impact
+        parent PLC_X0_PN3
+    endnode
+    node dummy x0_pn3_ground
+        parent PLC_X0_PN3
+    endnode
+    node emitter ChunkyWood108
+        parent PLC_X0_PN3
+    endnode
+    node emitter fire!65
+        parent PLC_X0_PN3
+    endnode
+    node emitter ChunkyWood109
+        parent PLC_X0_PN3
+    endnode
+    node trimesh damage28
+        parent PLC_X0_PN3
+    endnode
+    node trimesh trunk01
+        parent damage28
+    endnode
+    node trimesh Cone23
+        parent damage28
+    endnode
+    node trimesh Mesh01
+        parent damage28
+    endnode
+    node dummy PLC_X0_PN3_pwk
+        parent PLC_X0_PN3
+    endnode
+    node trimesh NoWalk
+        parent PLC_X0_PN3_pwk
+    endnode
+doneanim default PLC_X0_PN3
+
+donemodel PLC_X0_PN3

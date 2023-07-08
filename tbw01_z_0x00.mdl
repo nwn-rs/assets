@@ -1,0 +1,233 @@
+# Exported from NWmax 0.8 b60 at 23.02.2006 15:26:25
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tbw01_z_0x00
+#local file: E:\3dsmax7\scenes\WyvernCrown-Barrows\tbw01_edgetiles_03.max
+filedependancy tbw01_edgetiles_03.max
+newmodel tbw01_z_0x00
+setsupermodel tbw01_z_0x00 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom tbw01_z_0x00
+node dummy tbw01_z_0x00
+  parent NULL
+endnode
+#Tile trimesh node
+node trimesh Object13
+  parent tbw01_z_0x00
+  position 2.5 2.5 4.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0196078 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 100.0 
+  ambient 0.862745 0.862745 0.862745 
+  diffuse 0.862745 0.862745 0.862745 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tbw01_earthflr2
+  verts 9
+    -2.5 -2.5 1.0
+    0.0 -2.5 1.0
+    2.5 -2.5 1.0
+    -2.5 0.0 1.0
+    0.0 0.0 1.0
+    2.5 0.0 1.0
+    -2.5 2.5 1.0
+    0.0 2.5 1.0
+    2.5 2.5 1.0
+  faces 8
+    3 0 4  1  3 0 4  1
+    1 4 0  1  1 4 0  1
+    4 1 5  1  4 1 5  1
+    2 5 1  1  2 5 1  1
+    6 3 7  1  6 3 7  1
+    4 7 3  1  4 7 3  1
+    7 4 8  1  7 4 8  1
+    5 8 4  1  5 8 4  1
+  tverts 9
+    0.0 0.0 0
+    0.5 0.0 0
+    1.0 0.0 0
+    0.0 0.5 0
+    0.5 0.5 0
+    1.0 0.5 0
+    0.0 1.0 0
+    0.5 1.0 0
+    1.0 1.0 0
+endnode
+#Tile trimesh node
+node trimesh Object14
+  parent tbw01_z_0x00
+  position 2.5 -2.5 4.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0196078 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 100.0 
+  ambient 0.862745 0.862745 0.862745 
+  diffuse 0.862745 0.862745 0.862745 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tbw01_earthflr1
+  verts 9
+    -2.5 -2.5 1.0
+    0.0 -2.5 1.0
+    2.5 -2.5 1.0
+    -2.5 0.0 1.0
+    0.0 0.0 1.0
+    2.5 0.0 1.0
+    -2.5 2.5 1.0
+    0.0 2.5 1.0
+    2.5 2.5 1.0
+  faces 8
+    3 0 4  1  3 0 4  1
+    1 4 0  1  1 4 0  1
+    4 1 5  1  4 1 5  1
+    2 5 1  1  2 5 1  1
+    6 3 7  1  6 3 7  1
+    4 7 3  1  4 7 3  1
+    7 4 8  1  7 4 8  1
+    5 8 4  1  5 8 4  1
+  tverts 9
+    0.0 0.0 0
+    0.5 0.0 0
+    1.0 0.0 0
+    0.0 0.5 0
+    0.5 0.5 0
+    1.0 0.5 0
+    0.0 1.0 0
+    0.5 1.0 0
+    1.0 1.0 0
+endnode
+#Tile trimesh node
+node trimesh Object15
+  parent tbw01_z_0x00
+  position -2.5 -2.5 4.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0196078 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 100.0 
+  ambient 0.862745 0.862745 0.862745 
+  diffuse 0.862745 0.862745 0.862745 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tbw01_earthflr2
+  verts 9
+    -2.5 -2.5 1.0
+    0.0 -2.5 1.0
+    2.5 -2.5 1.0
+    -2.5 0.0 1.0
+    0.0 0.0 1.0
+    2.5 0.0 1.0
+    -2.5 2.5 1.0
+    0.0 2.5 1.0
+    2.5 2.5 1.0
+  faces 8
+    3 0 4  1  3 0 4  1
+    1 4 0  1  1 4 0  1
+    4 1 5  1  4 1 5  1
+    2 5 1  1  2 5 1  1
+    6 3 7  1  6 3 7  1
+    4 7 3  1  4 7 3  1
+    7 4 8  1  7 4 8  1
+    5 8 4  1  5 8 4  1
+  tverts 9
+    0.0 0.0 0
+    0.5 0.0 0
+    1.0 0.0 0
+    0.0 0.5 0
+    0.5 0.5 0
+    1.0 0.5 0
+    0.0 1.0 0
+    0.5 1.0 0
+    1.0 1.0 0
+endnode
+#Tile trimesh node
+node trimesh Plane02
+  parent tbw01_z_0x00
+  position -2.5 2.5 4.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0196078 0.521569 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 100.0 
+  ambient 0.862745 0.862745 0.862745 
+  diffuse 0.862745 0.862745 0.862745 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tbw01_earthflr1
+  verts 9
+    -2.5 -2.5 1.0
+    0.0 -2.5 1.0
+    2.5 -2.5 1.0
+    -2.5 0.0 1.0
+    0.0 0.0 1.0
+    2.5 0.0 1.0
+    -2.5 2.5 1.0
+    0.0 2.5 1.0
+    2.5 2.5 1.0
+  faces 8
+    3 0 4  1  3 0 4  1
+    1 4 0  1  1 4 0  1
+    4 1 5  1  4 1 5  1
+    2 5 1  1  2 5 1  1
+    6 3 7  1  6 3 7  1
+    4 7 3  1  4 7 3  1
+    7 4 8  1  7 4 8  1
+    5 8 4  1  5 8 4  1
+  tverts 9
+    0.0 0.0 0
+    0.5 0.0 0
+    1.0 0.0 0
+    0.0 0.5 0
+    0.5 0.5 0
+    1.0 0.5 0
+    0.0 1.0 0
+    0.5 1.0 0
+    1.0 1.0 0
+endnode
+endmodelgeom tbw01_z_0x00
+donemodel tbw01_z_0x00

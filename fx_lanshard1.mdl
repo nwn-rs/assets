@@ -1,0 +1,57 @@
+# Exported from NWmax 0.8 b47 at 02/02/2006 4:30:05 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: fx_lanshard1
+filedependancy Unknown
+newmodel fx_lanshard1
+setsupermodel fx_lanshard1 NULL
+classification effect
+#NWmax GEOM  ASCII
+beginmodelgeom fx_lanshard1
+node dummy fx_lanshard1
+  parent NULL
+endnode
+node trimesh Cylinder01
+  parent fx_lanshard1
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 -1.5708
+  wirecolor 0.768628 0.337255 0.882353 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center undefined
+  bitmap tin01_hey2
+  verts 4
+    0.009375 9.51465e-007 -0.175
+    -0.0046875 0.00811994 -0.175
+    -0.0046875 -0.00811805 -0.175
+    0.0 9.51465e-007 0.175
+  faces 4
+    0 1 3  1  4 1 3  3
+    1 2 3  1  1 2 3  3
+    2 0 3  1  2 0 3  3
+    1 0 2  1  5 6 7  1
+  tverts 8
+    0.75 0.000499517 0
+    0.113593 0.000499517 0
+    0.386407 0.000499517 0
+    0.25 0.999501 0
+    -0.25 0.000499517 0
+    0.391747 0.40625 0
+    0.5 0.59375 0
+    0.608253 0.40625 0
+endnode
+endmodelgeom fx_lanshard1
+donemodel fx_lanshard1

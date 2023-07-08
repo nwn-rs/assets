@@ -1,0 +1,229 @@
+# Exported from NWmax 0.8 b36 at 15.02.2005 12:05:39
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tsw01_t20_01
+filedependancy t_01.max
+newmodel tsw01_t20_01
+setsupermodel tsw01_t20_01 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom tsw01_t20_01
+node dummy tsw01_t20_01
+  parent NULL
+endnode
+node light tsw01_t20_01ml1
+  parent tsw01_t20_01
+  position 0.0 0.0 5.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  radius 10.0
+  multiplier 1.0
+  color 0.0 0.0 0.0 
+  ambientonly 0
+  nDynamicType 0
+  affectDynamic 1
+  shadow 0
+  lightpriority 5
+  fadingLight 1
+endnode
+#Tile trimesh node
+node trimesh Plane156
+  parent tsw01_t20_01
+  position -0.8 0.52 0.01
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 1
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center -59.0 -50.0 0.0 
+  bitmap tsw01_blast7
+  verts 4
+    -2.43 1.24 0.0
+    -2.43 -2.24 0.0
+    1.25 1.24 0.0
+    1.25 -2.24 0.0
+  faces 2
+    0 1 2  1  0 1 2  1
+    3 2 1  1  3 2 1  1
+  tverts 4
+    0.0499997 1.04465 0
+    0.0499995 -0.0456073 0
+    0.95 1.04465 0
+    0.95 -0.0456076 0
+endnode
+#Tile trimesh node
+node trimesh Plane157
+  parent tsw01_t20_01
+  position 3.3 3.59 0.01
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 1
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center -58.0 -50.0 0.0 
+  bitmap tsw01_blast2
+  verts 4
+    -2.42 1.24 0.0
+    -2.42 -2.24 0.0
+    1.26 1.24 0.0
+    1.26 -2.24 0.0
+  faces 2
+    0 1 2  1  0 1 2  1
+    3 2 1  1  3 2 1  1
+  tverts 4
+    0.398135 0.973633 0
+    0.398135 0.248596 0
+    0.985919 0.987159 0
+    0.985919 0.262122 0
+endnode
+#Tile trimesh node
+node trimesh Plane24
+  parent tsw01_t20_01
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 0.0 0.0 0.0 
+  bitmap tsw01_floor01
+  verts 25
+    -5.0 -2.5 0.0
+    -5.0 -5.0 0.0
+    -2.5 -2.5 0.0
+    -2.5 -5.0 0.0
+    0.0 -2.5 0.0
+    0.0 -5.0 0.0
+    2.5 -2.5 0.0
+    2.5 -5.0 0.0
+    5.0 -2.5 0.0
+    5.0 -5.0 0.0
+    -5.0 0.0 0.0
+    -2.5 0.0 0.0
+    0.0 0.0 0.0
+    2.5 0.0 0.0
+    5.0 0.0 0.0
+    -5.0 2.5 0.0
+    -2.5 2.5 0.0
+    0.0 2.5 0.0
+    2.5 2.5 0.0
+    5.0 2.5 0.0
+    -5.0 5.0 0.0
+    -2.5 5.0 0.0
+    0.0 5.0 0.0
+    2.5 5.0 0.0
+    5.0 5.0 0.0
+  faces 32
+    0 1 2  1  0 1 2  1
+    3 2 1  1  3 2 1  1
+    2 3 4  1  2 3 4  1
+    5 4 3  1  5 4 3  1
+    4 5 6  1  4 5 6  1
+    7 6 5  1  7 6 5  1
+    6 7 8  1  6 7 8  1
+    9 8 7  1  9 8 7  1
+    10 0 11  1  10 0 11  1
+    2 11 0  1  2 11 0  1
+    11 2 12  1  11 2 12  1
+    4 12 2  1  4 12 2  1
+    12 4 13  1  12 4 13  1
+    6 13 4  1  6 13 4  1
+    13 6 14  1  13 6 14  1
+    8 14 6  1  8 14 6  1
+    15 10 16  1  15 10 16  1
+    11 16 10  1  11 16 10  1
+    16 11 17  1  16 11 17  1
+    12 17 11  1  12 17 11  1
+    17 12 18  1  17 12 18  1
+    13 18 12  1  13 18 12  1
+    18 13 19  1  18 13 19  1
+    14 19 13  1  14 19 13  1
+    20 15 21  1  20 15 21  1
+    16 21 15  1  16 21 15  1
+    21 16 22  1  21 16 22  1
+    17 22 16  1  17 22 16  1
+    22 17 23  1  22 17 23  1
+    18 23 17  1  18 23 17  1
+    23 18 24  1  23 18 24  1
+    19 24 18  1  19 24 18  1
+  tverts 25
+    68.0 -39.5 0
+    68.0 -40.0 0
+    68.5 -39.5 0
+    68.5 -40.0 0
+    69.0 -39.5 0
+    69.0 -40.0 0
+    69.5 -39.5 0
+    69.5 -40.0 0
+    70.0 -39.5 0
+    70.0 -40.0 0
+    68.0 -39.0 0
+    68.5 -39.0 0
+    69.0 -39.0 0
+    69.5 -39.0 0
+    70.0 -39.0 0
+    68.0 -38.5 0
+    68.5 -38.5 0
+    69.0 -38.5 0
+    69.5 -38.5 0
+    70.0 -38.5 0
+    68.0 -38.0 0
+    68.5 -38.0 0
+    69.0 -38.0 0
+    69.5 -38.0 0
+    70.0 -38.0 0
+endnode
+node aabb Rectangle35
+  parent tsw01_t20_01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 1.0 0.0 
+  bitmap NULL
+  verts 4
+    -5.0 -5.0 0.0
+    5.0 -5.0 0.0
+    5.0 5.0 0.0
+    -5.0 5.0 0.0
+  faces 2
+    0 1 2  1  0 0 0  4
+    3 0 2  1  0 0 0  4
+    aabb         -5.0 -5.0 0.0 5.0 5.0 0.0 -1
+        -5.0 -5.0 0.0 5.0 5.0 0.0 1
+        -5.0 -5.0 0.0 5.0 5.0 0.0 0
+endnode
+endmodelgeom tsw01_t20_01
+donemodel tsw01_t20_01

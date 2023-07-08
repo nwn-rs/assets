@@ -1,0 +1,60 @@
+filedependancy NULL
+newmodel vdr_shieldmap_01
+setsupermodel vdr_shieldmap_01 NULL
+classification effect
+setanimationscale 1.000000
+#MAXGEOM  ASCII
+beginmodelgeom vdr_shieldmap_01
+node dummy vdr_shieldmap_01
+  parent NULL
+endnode
+node emitter e_vdr_shieldmap_01
+  parent vdr_shieldmap_01
+  position -1.0 1.0 1.5
+  orientation 0.000000 0.000000 0.000000 0.000000
+    colorStart 0.000000 0.000000 0.000000
+    colorEnd 1.000000 1.000000 1.000000
+    alphaStart 0.000000
+    alphaEnd 1.000000
+    sizeStart 2.0
+    sizeEnd 2.0
+    sizeStart_y 2.0
+    sizeEnd_y 2.0
+    frameStart 0
+    frameEnd 0
+    birthrate 1
+    spawnType 0
+    lifeExp 1.000000
+    mass 0.000000
+    spread 0.000000
+    particleRot 0.000000
+    velocity 0.000000
+    randvel 0.000000
+    fps 0
+    random 0
+    inherit 0
+    inherit_local 1
+    inherit_part 0
+    inheritvel 0
+    xsize 0.000000
+    ysize 0.000000
+    bounce 0
+    bounce_co 0.000000
+    update Single
+    render Normal
+    Blend Normal
+    deadspace 0.000000
+    blurlength 0.000000
+    p2p 0
+    p2p_sel 1
+    drag 0.000000
+    grav 0.000000
+    texture shieldmap_01
+    xgrid 0
+    ygrid 0
+    affectedByWind 0
+    m_isTinted 0
+    Splat 0
+endnode
+endmodelgeom vdr_shieldmap_01
+donemodel vdr_shieldmap_01 

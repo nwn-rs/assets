@@ -1,0 +1,226 @@
+#MAXMODEL ASCII
+# model: CTL_SERVERLIST3
+filedependancy CTL_SERVERLIST3.max
+newmodel CTL_SERVERLIST3
+setsupermodel CTL_SERVERLIST3 NULL
+classification character
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom CTL_SERVERLIST3
+node dummy CTL_SERVERLIST3
+  parent NULL
+  #part-number 0
+endnode
+node dummy scrollpane
+  parent CTL_SERVERLIST3
+  #part-number 1
+  position 0 0 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane82
+  parent scrollpane
+  #part-number 2
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.800000012 2.20000005 0
+    -0.800000012 -2.20000005 0
+    0.800000012 2.20000005 0
+    0.800000012 -2.20000005 0
+  tverts 4
+    0.0194818005 10.9918003 0
+    0.0194818005 -11.0081997 0
+    0.0273931995 10.9918003 0
+    0.0273931995 -11.0081997 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 0.800000012 -2.20000005 -0.0500000007
+  orientation 0 0 0 0
+endnode
+node trimesh Plane279
+  parent Plane82
+  #part-number 3
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.904999971 2.20000005 0
+    -0.904999971 -2.20000005 0
+    0.904999971 2.20000005 0
+    0.904999971 -2.20000005 0
+  tverts 4
+    0.0194876008 10.9918003 0
+    0.0194876008 -11.0081997 0
+    0.0273873992 10.9918003 0
+    0.0273873992 -11.0081997 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 1.70500004 0 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane81
+  parent Plane82
+  #part-number 4
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.904999971 2.20000005 0
+    -0.904999971 -2.20000005 0
+    0.904999971 2.20000005 0
+    0.904999971 -2.20000005 0
+  tverts 4
+    0.0194876008 10.9918003 0
+    0.0194876008 -11.0081997 0
+    0.0273873992 10.9918003 0
+    0.0273873992 -11.0081997 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 3.5150001 0 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane280
+  parent Plane82
+  #part-number 5
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.340000004 2.20000005 0
+    -0.340000004 -2.20000005 0
+    0.340000004 2.20000005 0
+    0.340000004 -2.20000005 0
+  tverts 4
+    0.0194128994 10.9917002 0
+    0.0194128994 -11.0082998 0
+    0.0274621006 10.9917002 0
+    0.0274621006 -11.0082998 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 4.76000023 0 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane281
+  parent Plane82
+  #part-number 6
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.305000007 2.20000005 0
+    -0.305000007 -2.20000005 0
+    0.305000007 2.20000005 0
+    0.305000007 -2.20000005 0
+  tverts 4
+    0.0193987992 10.9917002 0
+    0.0193987992 -11.0082998 0
+    0.0274762008 10.9917002 0
+    0.0274762008 -11.0082998 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 5.40500021 0 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane282
+  parent Plane82
+  #part-number 7
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.305000007 2.20000005 0
+    -0.305000007 -2.20000005 0
+    0.305000007 2.20000005 0
+    0.305000007 -2.20000005 0
+  tverts 4
+    0.0193987992 10.9917002 0
+    0.0193987992 -11.0082998 0
+    0.0274762008 10.9917002 0
+    0.0274762008 -11.0082998 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 6.01499987 0 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane283
+  parent Plane82
+  #part-number 8
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.275000006 2.20000005 0
+    -0.275000006 -2.20000005 0
+    0.275000006 2.20000005 0
+    0.275000006 -2.20000005 0
+  tverts 4
+    0.0193837993 10.9917002 0
+    0.0193837993 -11.0082998 0
+    0.0274912007 10.9917002 0
+    0.0274912007 -11.0082998 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 6.59499979 0 0
+  orientation 0 0 0 0
+endnode
+node dummy text0
+  parent CTL_SERVERLIST3
+  #part-number 9
+  position 0.0500000007 -0.00999999978 0.100000001
+  orientation 0 0 0 0
+endnode
+node dummy text1
+  parent CTL_SERVERLIST3
+  #part-number 10
+  position 1.57000005 -3.82999987 0.100000001
+  orientation 0 0 0 0
+endnode
+node dummy scrollmax
+  parent CTL_SERVERLIST3
+  #part-number 11
+  position 7.69999981 -3.55999989 0
+  orientation 0 0 0 0
+endnode
+node dummy scrollmin
+  parent CTL_SERVERLIST3
+  #part-number 12
+  position 7.69999981 -0.159999996 0
+  orientation 0 0 0 0
+endnode
+node dummy Viewport1
+  parent CTL_SERVERLIST3
+  #part-number 13
+  position 7.8499999 0 0
+  orientation 0 0 0 0
+endnode
+node dummy Viewport0
+  parent CTL_SERVERLIST3
+  #part-number 14
+  position 0 -3.65999979 0
+  orientation 0 0 0 0
+endnode
+endmodelgeom CTL_SERVERLIST3
+
+donemodel CTL_SERVERLIST3

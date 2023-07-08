@@ -1,0 +1,794 @@
+# Exported from NWmax 0.8 b34 at 7/5/2005 2:05:06 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tnp_flag_e31
+filedependancy tnoflags.max
+newmodel tnp_flag_e31
+setsupermodel tnp_flag_e31 NULL
+classification Item
+#NWmax GEOM  ASCII
+beginmodelgeom tnp_flag_e31
+node dummy tnp_flag_e31
+  parent NULL
+endnode
+node emitter esmoke
+  parent tnp_flag_e31
+  position 0.0084528 0.0 3.22644
+  orientation 1.0 0.0 0.0 -4.71239
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 100.0
+  ySize 99.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.439216 0.364706 
+  colorEnd 0.819608 0.796079 0.709804 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 0
+  xgrid 4
+  ygrid 4
+  fps 10
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName 
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter echunkywood02
+  parent tnp_flag_e31
+  position 0.0084528 0.0 3.4067
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.482353 0.435294 0.317647 
+  colorEnd 0.584314 0.533333 0.407843 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 2.9
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName PLC_Chunk_W02
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter echunkywood01
+  parent tnp_flag_e31
+  position 0.0084528 0.0 3.30048
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 5.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName PLC_Chunk_W01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node dummy flag_e31_ground
+  parent tnp_flag_e31
+  position -0.00363281 0.0069873 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.54902 0.345098 0.882353 
+endnode
+node dummy flag_e31_hand
+  parent tnp_flag_e31
+  position 0.0 0.0 1.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.341176 0.560784 
+endnode
+node dummy flag_e31_head
+  parent tnp_flag_e31
+  position 0.00398441 -0.242404 3.66649
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.341176 0.560784 
+endnode
+node dummy flag_e31_head_hit
+  parent tnp_flag_e31
+  position 0.00398439 -0.374851 3.46706
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.54902 0.345098 0.882353 
+endnode
+node dummy flag_e31_impact
+  parent tnp_flag_e31
+  position 0.00398437 0.461086 3.0022
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.54902 0.345098 0.882353 
+endnode
+node trimesh shaft
+  parent tnp_flag_e31
+  position -0.000614324 -0.0634204 3.28211
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+  ambient 0.588 0.588 0.588 
+  diffuse 0.588 0.588 0.588 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tno01_wood02
+  verts 8
+    0.03175 0.551563 -0.284904
+    0.03175 0.519813 -0.339896
+    0.0186647 -0.532514 0.339896
+    0.0186647 -0.551564 0.306901
+    -0.03175 0.551563 -0.284904
+    -0.03175 0.519813 -0.339896
+    -0.0194353 -0.532514 0.339896
+    -0.0194353 -0.551564 0.306901
+  faces 8
+    3 1 0  2  0 1 2  2
+    0 2 3  2  2 3 0  2
+    7 6 4  4  4 5 6  1
+    4 5 7  4  6 7 4  1
+    7 5 1  16  4 7 1  4
+    1 3 7  16  1 0 4  4
+    4 6 2  64  6 5 8  3
+    2 0 4  64  9 10 6  3
+  tverts 11
+    0.671733 1.98399 0
+    0.618507 -4.10686 0
+    0.867931 -4.10686 0
+    0.906693 1.98399 0
+    0.325616 1.98399 0
+    0.0962997 1.98399 0
+    0.132069 -4.10686 0
+    0.381493 -4.10686 0
+    -0.0933074 1.98399 0
+    -0.0933074 1.98399 0
+    -0.132069 -4.10686 0
+endnode
+node trimesh ironbits
+  parent shaft
+  position 0.000614328 -0.128668 0.0502374
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+  ambient 0.588 0.588 0.588 
+  diffuse 0.588 0.588 0.588 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tno01_metal01
+  verts 20
+    0.0348422 -0.169268 0.173171
+    0.0348422 -0.204725 0.111758
+    -0.00107774 -0.566373 0.361498
+    -0.0360707 -0.169268 0.173171
+    -0.0360707 -0.204725 0.111758
+    0.0375866 -0.321573 0.264273
+    0.0375866 -0.359774 0.198107
+    -0.00107774 -0.690919 0.433404
+    -0.038815 -0.321573 0.264273
+    -0.038815 -0.359774 0.198107
+    0.0 0.646586 -0.249607
+    0.0966273 0.646586 -0.319811
+    0.059719 0.646586 -0.433404
+    -0.059719 0.646586 -0.433404
+    -0.0966273 0.646586 -0.319811
+    0.0 0.690918 -0.249608
+    0.0966273 0.690918 -0.319811
+    0.059719 0.690918 -0.433404
+    -0.059719 0.690918 -0.433404
+    -0.0966273 0.690918 -0.319811
+  faces 28
+    2 1 0  2  10 8 9  2
+    3 4 2  4  8 9 11  1
+    4 3 0  8  7 6 4  5
+    0 1 4  8  4 5 7  5
+    2 4 1  16  3 2 0  4
+    2 0 3  64  0 1 3  3
+    7 6 5  2  22 20 21  2
+    8 9 7  4  20 21 23  1
+    9 8 5  8  19 18 16  5
+    5 6 9  8  16 17 19  5
+    7 9 6  16  15 14 12  4
+    7 5 8  64  12 13 15  3
+    12 11 10  1  28 26 27  2
+    13 12 10  1  29 28 27  2
+    14 13 10  1  30 29 27  2
+    10 11 16  8  31 34 32  3
+    16 15 10  8  32 33 31  3
+    11 12 17  8  35 38 36  3
+    17 16 11  8  36 37 35  3
+    12 13 18  8  39 42 40  3
+    18 17 12  8  40 41 39  3
+    13 14 19  8  43 46 44  3
+    19 18 13  8  44 45 43  3
+    14 10 15  8  47 24 48  3
+    15 19 14  8  48 49 47  3
+    16 17 18  1  51 52 53  1
+    15 16 18  1  50 51 53  1
+    19 15 18  1  25 50 53  1
+  tverts 54
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.5 0.000496566 0
+    0.999501 0.617916 0
+    0.999501 0.617916 0
+    0.5 0.999501 0
+    0.808708 0.000499606 0
+    0.191292 0.000499755 0
+    0.000499487 0.617916 0
+    0.5 0.000496566 0
+    0.999501 0.999499 0
+    0.5 0.9995 0
+    0.999501 0.000495672 0
+    0.000495672 0.617916 0
+    0.999499 0.000499606 0
+    0.999499 0.617916 0
+    0.000496 0.000499606 0
+    0.191292 0.000496 0
+    0.808708 0.999501 0
+    0.191292 0.999499 0
+    0.808708 0.000497133 0
+    0.999503 0.000499755 0
+    0.00049904 0.617916 0
+    0.000499398 0.000499755 0
+    0.999503 0.617916 0
+    0.000499487 0.00049746 0
+    0.5 0.9995 0
+    0.000499517 0.999501 0
+    0.5 0.999501 0
+    0.000499487 0.617916 0
+    0.191292 0.000499606 0
+    0.808708 0.000499755 0
+endnode
+node danglymesh banner
+  parent shaft
+  position -0.00464204 -0.167071 -0.665654
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 7.62939e-006 
+  period 1.0
+  tightness 1.0
+  displacement 0.1
+  showdispl true
+  displtype 1
+  center 0.0 0.0 7.62939e-006 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tno01_raven02
+  verts 9
+    0.00464219 0.0 -0.841524
+    0.00464217 0.126665 -0.0742602
+    0.00464213 -0.126665 -0.0742602
+    0.00464214 0.1524 0.415687
+    0.00464209 -0.1524 0.415687
+    0.00464211 0.1524 0.653171
+    0.00464206 -0.1524 0.841524
+    0.0277133 0.1524 0.58424
+    -0.0277133 0.1524 0.508417
+  faces 7
+    1 0 2  1  1 0 2  1
+    4 3 1  1  4 3 1  1
+    1 2 4  1  1 2 4  1
+    8 3 6  1  8 3 6  1
+    4 6 3  1  4 6 3  1
+    6 5 7  1  6 5 7  1
+    6 7 8  1  6 7 8  1
+  tverts 9
+    0.262061 0.0530356 0
+    0.143287 0.393392 0
+    0.380836 0.393392 0
+    0.119155 0.684208 0
+    0.404968 0.684208 0
+    0.119155 0.936971 0
+    0.404968 0.936971 0
+    0.119155 0.848378 0
+    0.119155 0.767804 0
+  constraints 9
+    225.0
+    235.0
+    235.0
+    245.0
+    245.0
+    0.0
+    0.0
+    245.0
+    245.0
+endnode
+node danglymesh banner01
+  parent shaft
+  position -0.00464204 -0.167071 -0.665654
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 7.62939e-006 
+  period 1.0
+  tightness 1.0
+  displacement 0.1
+  showdispl true
+  displtype 1
+  center 0.0 0.0 7.62939e-006 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tno01_raven02
+  verts 9
+    0.00464215 0.0 -0.841524
+    0.00464215 0.126665 -0.0742602
+    0.00464215 -0.126665 -0.0742602
+    0.00464214 0.1524 0.415687
+    0.00464214 -0.1524 0.415687
+    0.00464212 0.1524 0.653171
+    0.00464212 -0.1524 0.841524
+    0.0277133 0.1524 0.58424
+    -0.0277133 0.1524 0.508417
+  faces 7
+    0 1 2  1  0 1 2  1
+    1 3 4  1  1 3 4  1
+    4 2 1  1  4 2 1  1
+    3 8 6  1  3 8 6  1
+    6 4 3  1  6 4 3  1
+    5 6 7  1  5 6 7  1
+    7 6 8  1  7 6 8  1
+  tverts 9
+    0.262061 0.0530356 0
+    0.143287 0.393392 0
+    0.380836 0.393392 0
+    0.119155 0.684208 0
+    0.404968 0.684208 0
+    0.119155 0.936971 0
+    0.404968 0.936971 0
+    0.119155 0.848378 0
+    0.119155 0.767804 0
+  constraints 9
+    225.0
+    235.0
+    235.0
+    245.0
+    245.0
+    0.0
+    0.0
+    245.0
+    245.0
+endnode
+endmodelgeom tnp_flag_e31
+
+#NWmax ANIM ASCII
+newanim default tnp_flag_e31
+  length 0.0333333
+  transtime 0.0
+  animroot tnp_flag_e31
+    node dummy tnp_flag_e31
+        parent NULL
+    endnode
+    node emitter esmoke
+        parent tnp_flag_e31
+    endnode
+    node emitter echunkywood02
+        parent tnp_flag_e31
+    endnode
+    node emitter echunkywood01
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_ground
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_hand
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_head
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_head_hit
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_impact
+        parent tnp_flag_e31
+    endnode
+    node dummy tnp_flag_e31_pwk
+        parent tnp_flag_e31
+    endnode
+    node dummy e31_pwk_use01
+        parent tnp_flag_e31_pwk
+    endnode
+    node trimesh shaft
+        parent tnp_flag_e31
+        positionkey
+            0.0 -0.000614324 -0.0634204 3.28211
+            0.0333333 -0.000614324 -0.0634204 3.28211
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh ironbits
+        parent shaft
+    endnode
+    node danglymesh banner
+        parent shaft
+    endnode
+    node danglymesh banner01
+        parent shaft
+    endnode
+doneanim default tnp_flag_e31
+
+
+#NWmax ANIM ASCII
+newanim damage tnp_flag_e31
+  length 0.166667
+  transtime 0.0
+  animroot tnp_flag_e31
+    node dummy tnp_flag_e31
+        parent NULL
+    endnode
+    node emitter esmoke
+        parent tnp_flag_e31
+    endnode
+    node emitter echunkywood02
+        parent tnp_flag_e31
+    endnode
+    node emitter echunkywood01
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_ground
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_hand
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_head
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_head_hit
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_impact
+        parent tnp_flag_e31
+    endnode
+    node dummy tnp_flag_e31_pwk
+        parent tnp_flag_e31
+    endnode
+    node dummy e31_pwk_use01
+        parent tnp_flag_e31_pwk
+    endnode
+    node trimesh shaft
+        parent tnp_flag_e31
+        positionkey
+            0.0 -0.000614324 -0.0634204 3.28211
+            0.1 -0.000614324 -0.0634204 3.29412
+            0.166667 -0.000614324 -0.0634204 3.28211
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.166667 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh ironbits
+        parent shaft
+    endnode
+    node danglymesh banner
+        parent shaft
+    endnode
+    node danglymesh banner01
+        parent shaft
+    endnode
+doneanim damage tnp_flag_e31
+
+
+#NWmax ANIM ASCII
+newanim die tnp_flag_e31
+  length 0.5
+  transtime 0.0
+  animroot tnp_flag_e31
+  event 0.166667 detonate
+  event 0.333333 detonate
+    node dummy tnp_flag_e31
+        parent NULL
+    endnode
+    node emitter esmoke
+        parent tnp_flag_e31
+    endnode
+    node emitter echunkywood02
+        parent tnp_flag_e31
+    endnode
+    node emitter echunkywood01
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_ground
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_hand
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_head
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_head_hit
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_impact
+        parent tnp_flag_e31
+    endnode
+    node dummy tnp_flag_e31_pwk
+        parent tnp_flag_e31
+    endnode
+    node dummy e31_pwk_use01
+        parent tnp_flag_e31_pwk
+    endnode
+    node trimesh shaft
+        parent tnp_flag_e31
+        positionkey
+            0.0 -0.000614324 -0.0634204 3.28211
+            0.166667 -0.000614329 -0.196623 2.68527
+            0.333333 -0.000614327 -0.130646 -0.643783
+            0.5 -0.000614324 -0.0634198 -5.23522
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.166667 -1.0 0.0 0.0 -0.698132
+            0.333333 -0.53302 -0.815724 -0.224686 -1.55057
+            0.5 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh ironbits
+        parent shaft
+    endnode
+    node danglymesh banner
+        parent shaft
+    endnode
+    node danglymesh banner01
+        parent shaft
+    endnode
+doneanim die tnp_flag_e31
+
+
+#NWmax ANIM ASCII
+newanim dead tnp_flag_e31
+  length 0.0333333
+  transtime 0.0
+  animroot tnp_flag_e31
+    node dummy tnp_flag_e31
+        parent NULL
+    endnode
+    node emitter esmoke
+        parent tnp_flag_e31
+    endnode
+    node emitter echunkywood02
+        parent tnp_flag_e31
+    endnode
+    node emitter echunkywood01
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_ground
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_hand
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_head
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_head_hit
+        parent tnp_flag_e31
+    endnode
+    node dummy flag_e31_impact
+        parent tnp_flag_e31
+    endnode
+    node dummy tnp_flag_e31_pwk
+        parent tnp_flag_e31
+    endnode
+    node dummy e31_pwk_use01
+        parent tnp_flag_e31_pwk
+    endnode
+    node trimesh shaft
+        parent tnp_flag_e31
+        positionkey
+            0.0 -0.000614324 -0.0634198 -5.23522
+            0.0333333 -0.000614324 -0.0634198 -5.23522
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh ironbits
+        parent shaft
+    endnode
+    node danglymesh banner
+        parent shaft
+    endnode
+    node danglymesh banner01
+        parent shaft
+    endnode
+doneanim dead tnp_flag_e31
+
+donemodel tnp_flag_e31

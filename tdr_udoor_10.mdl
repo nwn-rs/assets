@@ -1,0 +1,161 @@
+# Exported from NWmax 0.8 c00 at 10/12/2019 2:58:07 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: TDR_UDoor_10
+#local file: M:\BD Tile Fixes\Source Files\Doors\TDR_UDOOR_10.max
+filedependancy TDR_UDOOR_10.max
+newmodel TDR_UDoor_10
+setsupermodel TDR_UDoor_10 NULL
+classification Door
+#NWmax GEOM  ASCII
+beginmodelgeom TDR_UDoor_10
+node dummy TDR_UDoor_10
+  parent NULL
+endnode
+node dummy tdr_uDoor_10hhit
+  parent TDR_UDoor_10
+  position -0.000996094 -0.00575195 3.09113
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy tdr_uDoor_10impc
+  parent TDR_UDoor_10
+  position -0.000996094 -0.00575195 2.22809
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy tdr_uDoor_10grnd
+  parent TDR_UDoor_10
+  position -0.000996094 -0.00575195 0.642634
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy tdr_uDoor_10head
+  parent TDR_UDoor_10
+  position -0.000996094 -0.00575195 3.81435
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node trimesh sam
+  parent TDR_UDoor_10
+  position 0.0 -0.0400001 1.55
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 0.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 1.0 
+  ambient 0.2 0.2 0.2 
+  Diffuse 0.8 0.8 0.8 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center undefined
+  bitmap NULL
+  verts 8
+    -0.05 -1.11 1.55
+    -0.05 1.11 1.55
+    -0.03 1.11 -1.55
+    -0.03 -1.11 -1.55
+    0.03 -1.11 1.55
+    0.03 1.11 1.55
+    0.05 1.11 -1.55
+    0.05 -1.11 -1.55
+  faces 4
+    0 1 2  1  0 0 0  4
+    2 3 0  1  0 0 0  4
+    5 4 6  1  0 0 0  4
+    7 6 4  1  0 0 0  4
+endnode
+endmodelgeom TDR_UDoor_10
+
+#NWmax ANIM ASCII
+newanim trans TDR_UDoor_10
+  length 0.0333333
+  transtime 0.25
+  animroot TDR_UDoor_10
+    node dummy TDR_UDoor_10
+        parent NULL
+    endnode
+    node dummy tdr_uDoor_10hhit
+        parent TDR_UDoor_10
+    endnode
+    node dummy tdr_uDoor_10impc
+        parent TDR_UDoor_10
+    endnode
+    node dummy tdr_uDoor_10grnd
+        parent TDR_UDoor_10
+    endnode
+    node dummy tdr_uDoor_10head
+        parent TDR_UDoor_10
+    endnode
+    node dummy tdr_uDoor_10_DWK
+        parent TDR_UDoor_10
+    endnode
+    node dummy 10_DWK_dp_closed_01
+        parent tdr_uDoor_10_DWK
+    endnode
+    node dummy 10_DWK_dp_closed_01
+        parent tdr_uDoor_10_DWK
+    endnode
+    node trimesh 10_DWK_wg_closed
+        parent tdr_uDoor_10_DWK
+    endnode
+    node trimesh sam
+        parent TDR_UDoor_10
+        alphakey
+            0.0 0.25 
+            0.0333333 0.25 
+        endlist
+    endnode
+doneanim trans TDR_UDoor_10
+
+
+#NWmax ANIM ASCII
+newanim default TDR_UDoor_10
+  length 0.0333333
+  transtime 0.25
+  animroot TDR_UDoor_10
+    node dummy TDR_UDoor_10
+        parent NULL
+    endnode
+    node dummy tdr_uDoor_10hhit
+        parent TDR_UDoor_10
+    endnode
+    node dummy tdr_uDoor_10impc
+        parent TDR_UDoor_10
+    endnode
+    node dummy tdr_uDoor_10grnd
+        parent TDR_UDoor_10
+    endnode
+    node dummy tdr_uDoor_10head
+        parent TDR_UDoor_10
+    endnode
+    node dummy tdr_uDoor_10_DWK
+        parent TDR_UDoor_10
+    endnode
+    node dummy 10_DWK_dp_closed_01
+        parent tdr_uDoor_10_DWK
+    endnode
+    node dummy 10_DWK_dp_closed_01
+        parent tdr_uDoor_10_DWK
+    endnode
+    node trimesh 10_DWK_wg_closed
+        parent tdr_uDoor_10_DWK
+    endnode
+    node trimesh sam
+        parent TDR_UDoor_10
+        alphakey
+            0.0 0.0 
+            0.0333333 0.0 
+        endlist
+    endnode
+doneanim default TDR_UDoor_10
+
+donemodel TDR_UDoor_10

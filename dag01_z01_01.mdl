@@ -1,0 +1,396 @@
+# Exported from NWmax 0.8 b50 at 1/17/2006 11:22:45 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: dag01_z01_01
+#local file: HutInteriorTile_PDAG1_o01_01.gmaxHutInteriorTile_PDAG1_o01_01.gmax
+filedependancy HutInteriorTile_PDAG1_o01_01.gmax
+newmodel dag01_z01_01
+setsupermodel dag01_z01_01 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom dag01_z01_01
+node dummy dag01_z01_01
+  parent NULL
+endnode
+#Tile trimesh node
+node trimesh Plane16
+  parent dag01_z01_01
+  position 0.0 0.0 3.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1
+  center undefined
+  bitmap Black
+  verts 5
+    0.0 0.0 -3.0
+    5.0 -5.0 -3.0
+    5.0 5.0 -3.0
+    -5.0 5.0 -3.0
+    -5.0 -5.0 -3.0
+  faces 4
+    1 2 0  1  7 8 2  1
+    3 0 2  1  12 2 8  1
+    3 4 0  1  12 11 5  1
+    1 0 4  1  7 6 11  1
+  tverts 14
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+    1.03614 1.03614 0
+    4.9975 0.00249758 0
+    4.9975 4.9975 0
+    3.56907 3.56907 0
+    1.47019 3.39944 0
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+    1.03614 1.03614 0
+    1.47019 3.39944 0
+    4.9975 4.9975 0
+    4.9975 0.00249758 0
+    3.56907 3.56907 0
+endnode
+node aabb WalkMesh
+  parent dag01_z01_01
+  position -7.13451e-006 -1.59175e-006 3.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  multimaterial 20
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+  ambient 0.0 0.0 0.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap Obscuring
+  verts 5
+    5.0 -5.0 0.0
+    5.0 5.0 0.0
+    0.0 0.0 0.0
+    -5.0 5.0 0.0
+    -5.0 -5.0 0.0
+  faces 4
+    0 1 2  1  0 1 2  2
+    3 2 1  1  3 2 1  2
+    3 4 2  1  3 4 5  2
+    0 2 4  1  0 6 4  2
+  tverts 7
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+    1.03614 1.03614 0
+    4.9975 0.00249758 0
+    4.9975 4.9975 0
+    3.56907 3.56907 0
+    1.47019 3.39944 0
+    aabb         -4.99999 -5.0 0.0 5.00001 5.0 0.0 -1
+        -4.99999 -5.0 0.0 5.00001 5.0 0.0 -1
+        -4.99999 -5.0 0.0 7.13451e-006 5.0 0.0 2
+        -4.99999 -5.0 0.0 5.00001 5.0 0.0 -1
+        -4.99999 -5.0 0.0 5.00001 1.59175e-006 0.0 3
+        -4.99999 1.59175e-006 0.0 5.00001 5.0 0.0 1
+        7.13451e-006 -5.0 0.0 5.00001 5.0 0.0 0
+endnode
+node light dag01_z01_01ml1
+  parent dag01_z01_01
+  position -7.13451e-006 -4.395e-007 5.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  radius 14.0
+  multiplier 1.0
+  color 0.0 0.0 0.0 
+  ambientonly 0
+  nDynamicType 0
+  affectDynamic 1
+  shadow 0
+  lightpriority 5
+  fadingLight 1
+endnode
+#Tile trimesh node
+node trimesh Object01
+  parent dag01_z01_01
+  position 0.0 0.0 3.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1.0
+  bitmap Black
+  verts 4
+    5.0 -5.0 0.0
+    -5.0 -5.0 0.0
+    5.0 -5.0 -3.0
+    -5.0 -5.0 -3.0
+  faces 2
+    0 1 2  0  0 3 4  1
+    3 2 1  0  6 4 3  1
+  tverts 8
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+    4.9975 0.00249758 0
+    4.9975 4.9975 0
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+    4.9975 4.9975 0
+    4.9975 0.00249758 0
+endnode
+#Tile trimesh node
+node trimesh Object03
+  parent dag01_z01_01
+  position 0.0 0.0 3.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1.0
+  bitmap Black
+  verts 4
+    5.0 -5.0 0.0
+    5.0 5.0 0.0
+    5.0 -5.0 -3.0
+    5.0 5.0 -3.0
+  faces 2
+    1 0 3  0  1 0 3  1
+    2 3 0  0  2 3 0  1
+  tverts 4
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+endnode
+#Tile trimesh node
+node trimesh Object04
+  parent dag01_z01_01
+  position 0.0 0.0 3.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1.0
+  bitmap Black
+  verts 4
+    5.0 5.0 0.0
+    -5.0 5.0 0.0
+    5.0 5.0 -3.0
+    -5.0 5.0 -3.0
+  faces 2
+    0 1 3  0  0 1 3  1
+    3 2 0  0  3 2 0  1
+  tverts 4
+    0.00249758 0.00249878 0
+    4.9975 0.00249758 0
+    0.00249758 0.00249878 0
+    4.9975 0.00249758 0
+endnode
+#Tile trimesh node
+node trimesh Object05
+  parent dag01_z01_01
+  position 0.0 0.0 3.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1.0
+  bitmap Black
+  verts 4
+    -5.0 5.0 0.0
+    -5.0 -5.0 0.0
+    -5.0 5.0 -3.0
+    -5.0 -5.0 -3.0
+  faces 2
+    1 0 3  0  1 0 2  1
+    2 3 0  0  3 2 0  1
+  tverts 4
+    4.9975 0.00249758 0
+    4.9975 4.9975 0
+    4.9975 4.9975 0
+    4.9975 0.00249758 0
+endnode
+#Tile trimesh node
+node trimesh Plane01
+  parent dag01_z01_01
+  position 0.0 0.0 6.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1
+  center undefined
+  bitmap Black
+  verts 5
+    0.0 0.0 -3.0
+    5.0 -5.0 -3.0
+    5.0 5.0 -3.0
+    -5.0 5.0 -3.0
+    -5.0 -5.0 -3.0
+  faces 4
+    1 2 0  1  7 8 2  1
+    3 0 2  1  12 2 8  1
+    3 4 0  1  12 11 5  1
+    1 0 4  1  7 6 11  1
+  tverts 14
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+    1.03614 1.03614 0
+    4.9975 0.00249758 0
+    4.9975 4.9975 0
+    3.56907 3.56907 0
+    1.47019 3.39944 0
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+    1.03614 1.03614 0
+    1.47019 3.39944 0
+    4.9975 4.9975 0
+    4.9975 0.00249758 0
+    3.56907 3.56907 0
+endnode
+#Tile trimesh node
+node trimesh Object02
+  parent dag01_z01_01
+  position 0.0 0.0 3.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1.0
+  bitmap Black
+  verts 4
+    5.0 5.0 0.0
+    -5.0 5.0 0.0
+    5.0 5.0 -3.0
+    -5.0 5.0 -3.0
+  faces 2
+    1 0 3  0  1 0 3  1
+    2 3 0  0  2 3 0  1
+  tverts 4
+    0.00249758 0.00249878 0
+    4.9975 0.00249758 0
+    0.00249758 0.00249878 0
+    4.9975 0.00249758 0
+endnode
+#Tile trimesh node
+node trimesh Object06
+  parent dag01_z01_01
+  position 0.0 0.0 3.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1.0
+  bitmap Black
+  verts 4
+    -5.0 5.0 0.0
+    -5.0 -5.0 0.0
+    -5.0 5.0 -3.0
+    -5.0 -5.0 -3.0
+  faces 2
+    0 1 3  0  0 1 2  1
+    3 2 0  0  2 3 0  1
+  tverts 4
+    4.9975 0.00249758 0
+    4.9975 4.9975 0
+    4.9975 4.9975 0
+    4.9975 0.00249758 0
+endnode
+#Tile trimesh node
+node trimesh Object07
+  parent dag01_z01_01
+  position 0.0 0.0 3.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1.0
+  bitmap Black
+  verts 4
+    5.0 -5.0 0.0
+    -5.0 -5.0 0.0
+    5.0 -5.0 -3.0
+    -5.0 -5.0 -3.0
+  faces 2
+    1 0 2  0  3 0 4  1
+    2 3 1  0  4 6 3  1
+  tverts 8
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+    4.9975 0.00249758 0
+    4.9975 4.9975 0
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+    4.9975 4.9975 0
+    4.9975 0.00249758 0
+endnode
+#Tile trimesh node
+node trimesh Object08
+  parent dag01_z01_01
+  position 0.0 0.0 3.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1.0
+  bitmap Black
+  verts 4
+    5.0 -5.0 0.0
+    5.0 5.0 0.0
+    5.0 -5.0 -3.0
+    5.0 5.0 -3.0
+  faces 2
+    0 1 3  0  0 1 3  1
+    3 2 0  0  3 2 0  1
+  tverts 4
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+    0.00249878 4.9975 0
+    0.00249758 0.00249878 0
+endnode
+endmodelgeom dag01_z01_01
+donemodel dag01_z01_01

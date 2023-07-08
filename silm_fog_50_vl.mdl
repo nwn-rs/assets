@@ -1,0 +1,1703 @@
+# Exported from NWMax Plus v5.05.18 at 12/19/2014 4:11:08 PM
+# mdl file
+#
+#NWMax Plus MODEL  ASCII
+# model: silm_fog_50_vl
+filedependancy fog_009.max
+newmodel silm_fog_50_vl
+setsupermodel silm_fog_50_vl null
+classification Tile
+#NWMax Plus GEOM  ASCII
+beginmodelgeom silm_fog_50_vl
+node dummy silm_fog_50_vl
+  parent NULL
+endnode
+node dummy silm_fog_50_vla
+  parent silm_fog_50_vl
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.529412 0.231373 0.0313726 
+endnode
+node emitter fog_001
+  parent silm_fog_50_vla
+  position -18.4978 -17.9125 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node dummy fog_001_XYdimension
+  parent fog_001
+  position 0.0 0.0 0.0
+  orientation 0.0 0.0 -1.0 -6.28319
+  wirecolor 1.0 1.0 0.0 
+endnode
+node emitter fog_002
+  parent silm_fog_50_vla
+  position -6.1704 -13.9665 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_003
+  parent silm_fog_50_vla
+  position 4.23949 -17.705 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_004
+  parent silm_fog_50_vla
+  position -4.31656 -5.9191 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_005
+  parent silm_fog_50_vla
+  position 13.7298 -16.2259 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_006
+  parent silm_fog_50_vla
+  position -20.0 -10.0 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_007
+  parent silm_fog_50_vla
+  position -9.10809 -8.30573 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_008
+  parent silm_fog_50_vla
+  position 0.778037 -8.01739 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_009
+  parent silm_fog_50_vla
+  position 8.61754 -9.03093 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_010
+  parent silm_fog_50_vla
+  position 15.6546 -9.94668 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_011
+  parent silm_fog_50_vla
+  position -20.0 0.0 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_012
+  parent silm_fog_50_vla
+  position -11.5511 -2.19984 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_013
+  parent silm_fog_50_vla
+  position 0.0 0.0 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_014
+  parent silm_fog_50_vla
+  position 7.76282 0.276079 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_015
+  parent silm_fog_50_vla
+  position 13.2574 -2.99667 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_016
+  parent silm_fog_50_vla
+  position -19.5719 6.4026 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_017
+  parent silm_fog_50_vla
+  position -8.7055 7.88846 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_018
+  parent silm_fog_50_vla
+  position -2.49809 7.04792 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_019
+  parent silm_fog_50_vla
+  position 4.23862 10.4174 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_020
+  parent silm_fog_50_vla
+  position 12.4562 5.7452 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_021
+  parent silm_fog_50_vla
+  position -14.3388 12.6451 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_022
+  parent silm_fog_50_vla
+  position -9.80412 18.007 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_023
+  parent silm_fog_50_vla
+  position -2.98968 16.3177 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_024
+  parent silm_fog_50_vla
+  position 10.0 20.0 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fog_025
+  parent silm_fog_50_vla
+  position 13.1574 14.1002 0.0
+  orientation 0.0 0.0 -1.0 -1.5708
+  wirecolor 1.0 1.0 1.0 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Normal
+  spawnType 0
+  xSize 1000.0
+  ySize 1000.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 3.0 3.0 3.0 
+  colorEnd 3.0 3.0 3.0 
+  alphaStart 0.03
+  alphaEnd 0.01
+  sizeStart 2.0
+  sizeEnd 8.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 10.0
+  mass -0.001
+  spread 2.0
+  particleRot 0.0
+  velocity 0.07
+  randvel 0.05
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind true
+  texture silm_fog_cloud
+  twosidedtex 1
+  xgrid 0
+  ygrid 0
+  fps 10
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+endmodelgeom silm_fog_50_vl
+donemodel silm_fog_50_vl

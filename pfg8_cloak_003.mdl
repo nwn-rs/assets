@@ -1,0 +1,24 @@
+# Exported from NWmax 0.8 b60 at 6/21/2006 3:27:49 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pfg8_cloak_003
+#local file: Unknown
+filedependancy Unknown
+newmodel pfg8_cloak_003
+setsupermodel pfg8_cloak_003 pfg8
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom pfg8_cloak_003
+node dummy pfg8_cloak_003
+  parent NULL
+endnode
+node trimesh rootdummy
+  parent pfg8_cloak_003
+  position 0.000249158 -0.0325529 1.19227
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+endnode
+endmodelgeom pfg8_cloak_003
+donemodel pfg8_cloak_003

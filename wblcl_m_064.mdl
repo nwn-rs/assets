@@ -1,0 +1,23 @@
+# Exported from NWmax 0.8 b61 at 1/16/2008 7:11:44 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: WBlCl_m_064
+#local file: E:\WORK_NWN\creatures\c_trout\fish_clubs.max
+filedependancy fish_clubs.max
+newmodel WBlCl_m_064
+setsupermodel WBlCl_m_064 NULL
+classification Item
+#NWmax GEOM  ASCII
+beginmodelgeom WBlCl_m_064
+node dummy WBlCl_m_064
+  parent NULL
+endnode
+node dummy Dummy08
+  parent WBlCl_m_064
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.239216 0.541176 
+endnode
+endmodelgeom WBlCl_m_064
+donemodel WBlCl_m_064

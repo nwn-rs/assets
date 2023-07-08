@@ -1,0 +1,320 @@
+#MAXMODEL ASCII
+# model: tnp_bird_001 
+filedependancy plc_rowboat6.max
+newmodel tnp_bird_001 
+setsupermodel tnp_bird_001 NULL
+classification Character
+#MAXGEOM  ASCII
+beginmodelgeom tnp_bird_001 
+node dummy tnp_bird_001 
+  parent NULL 
+endnode
+node trimesh Box01 
+  parent tnp_bird_001 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.552941 0.027451 0.227451  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 0
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 12.5 
+     gizmo SubAnim:Gizmo
+    bitmap NULL
+    verts 8
+     -0.25 -0.25 0.0
+     0.25 -0.25 0.0
+     -0.25 0.25 0.0
+     0.25 0.25 0.0
+     -0.1875 -0.1875 0.25
+     0.1875 -0.1875 0.25
+     -0.1875 0.1875 0.25
+     0.1875 0.1875 0.25
+    faces 10
+     4 5 7  4  0 0 0  1
+     7 6 4  4  0 0 0  1
+     0 1 5  8  0 0 0  5
+     5 4 0  8  0 0 0  5
+     1 3 7  16  0 0 0  4
+     7 5 1  16  0 0 0  4
+     3 2 6  32  0 0 0  6
+     6 7 3  32  0 0 0  6
+     2 0 4  64  0 0 0  3
+     4 6 2  64  0 0 0  3
+endnode
+node dummy animdummy 
+  parent tnp_bird_001 
+  position 0.0 0.0 0.0
+  orientation  -1.0 0.0 0.0  -0.174533
+  wirecolor 0.0235294 0.52549 0.0235294  
+endnode
+node trimesh bird01 
+  parent animdummy 
+  position 0.0 4.0 5.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.780392 0.882353  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 1
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 0.0 
+     gizmo SubAnim:Gizmo
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 11.0 
+    bitmap tnp_bird02
+    verts 8
+     0.18 0.0 -0.18
+     -0.18 0.0 -0.18
+     0.18 0.0 0.18
+     -0.18 0.0 0.18
+     0.18 0.0 -0.18
+     -0.18 0.0 -0.18
+     0.18 0.0 0.18
+     -0.18 0.0 0.18
+    faces 4
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+     4 6 7  1  4 6 7  1
+     7 5 4  1  7 5 4  1
+    tverts 8
+     1.0 0.0 0 
+     0.0 0.0 0 
+     1.0 1.0 0 
+     0.0 1.0 0 
+     1.0 0.0 0 
+     0.0 0.0 0 
+     1.0 1.0 0 
+     0.0 1.0 0 
+endnode
+node trimesh bird00 
+  parent animdummy 
+  position 0.0 4.0 5.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.780392 0.882353  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 1
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 0.0 
+     gizmo SubAnim:Gizmo
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 11.0 
+    bitmap tnp_bird02
+    verts 8
+     0.0 -0.18 -0.18
+     0.0 0.18 -0.18
+     0.0 -0.18 0.18
+     0.0 0.18 0.18
+     0.0 -0.18 -0.18
+     0.0 0.18 -0.18
+     0.0 -0.18 0.18
+     0.0 0.18 0.18
+    faces 4
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+     4 6 7  1  4 6 7  1
+     7 5 4  1  7 5 4  1
+    tverts 8
+     1.0 0.0 0 
+     0.0 0.0 0 
+     1.0 1.0 0 
+     0.0 1.0 0 
+     1.0 0.0 0 
+     0.0 0.0 0 
+     1.0 1.0 0 
+     0.0 1.0 0 
+endnode
+endmodelgeom tnp_bird_001 
+
+#MAXANIM ASCII
+newanim on tnp_bird_001 
+ length 33.3333
+ transtime 0.25
+animroot tnp_bird_001
+node dummy tnp_bird_001 
+  parent NULL 
+endnode
+node trimesh Box01 
+  parent tnp_bird_001 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy animdummy 
+  parent tnp_bird_001 
+    positionkey 
+      0.0  0.0 0.0 2.0
+      6.66667  0.0 0.0 0.0
+      13.3333  0.0 0.0 3.0
+      20.0  0.0 0.0 1.5
+      26.6667  0.0 0.0 0.0
+      33.3333  0.0 0.0 1.99
+    endlist 
+    orientationkey 
+      0.0   1.0 0.0 0.0  0.174533
+      6.66667   0.119106 -0.0865353 0.989103  1.26707
+      13.3333   0.0283073 -0.0871208 0.995795  2.51575
+      20.0   -0.0283073 -0.0871208 0.995795  3.76744
+      26.6667   -0.119106 -0.0865353 0.989103  5.01611
+      33.3333   -1.0 0.0 -9.05466e-007  6.10865
+    endlist 
+endnode
+node trimesh bird01 
+  parent animdummy 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh bird00 
+  parent animdummy 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+doneanim on tnp_bird_001 
+
+#MAXANIM ASCII
+newanim off tnp_bird_001 
+ length 33.3333
+ transtime 0.25
+animroot tnp_bird_001
+node dummy tnp_bird_001 
+  parent NULL 
+endnode
+node trimesh Box01 
+  parent tnp_bird_001 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy animdummy 
+  parent tnp_bird_001 
+    positionkey 
+      0.0  0.0 0.0 0.0
+      6.66667  0.0 0.0 0.0
+      13.3333  0.0 0.0 0.0
+      20.0  0.0 0.0 0.0
+      26.6667  0.0 0.0 0.0
+      33.3333  0.0 0.0 0.0
+    endlist 
+    orientationkey 
+      0.0   1.0 0.0 0.0  0.174533
+      6.66667   0.119106 -0.0865353 0.989103  1.26707
+      13.3333   0.0283073 -0.0871208 0.995795  2.51575
+      20.0   -0.0283073 -0.0871208 0.995795  3.76744
+      26.6667   -0.119106 -0.0865353 0.989103  5.01611
+      33.3333   -1.0 0.0 -9.05466e-007  6.10865
+    endlist 
+endnode
+node trimesh bird01 
+  parent animdummy 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh bird00 
+  parent animdummy 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+doneanim off tnp_bird_001 
+
+#MAXANIM ASCII
+newanim default tnp_bird_001 
+ length 33.3333
+ transtime 0.25
+animroot tnp_bird_001
+node dummy tnp_bird_001 
+  parent NULL 
+endnode
+node trimesh Box01 
+  parent tnp_bird_001 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy animdummy 
+  parent tnp_bird_001 
+    positionkey 
+      0.0  0.0 0.0 2.0
+      6.66667  0.0 0.0 0.0
+      13.3333  0.0 0.0 3.0
+      20.0  0.0 0.0 1.5
+      26.6667  0.0 0.0 0.0
+      33.3333  0.0 0.0 1.99
+    endlist 
+    orientationkey 
+      0.0   1.0 0.0 0.0  0.174533
+      6.66667   0.119106 -0.0865353 0.989103  1.26707
+      13.3333   0.0283073 -0.0871208 0.995795  2.51575
+      20.0   -0.0283073 -0.0871208 0.995795  3.76744
+      26.6667   -0.119106 -0.0865353 0.989103  5.01611
+      33.3333   -1.0 0.0 -9.05466e-007  6.10865
+    endlist 
+endnode
+node trimesh bird01 
+  parent animdummy 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh bird00 
+  parent animdummy 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+doneanim default tnp_bird_001 
+
+donemodel tnp_bird_001 
+

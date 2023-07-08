@@ -1,0 +1,197 @@
+# Exported from NWmax 0.8 b60 at 11.03.2006 16:42:36
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pwc_block_01
+#local file: E:\_Monkeys\wc-Barrows\by martin\Finale_04_06.max
+filedependancy Finale_04_06.max
+newmodel pwc_block_01
+setsupermodel pwc_block_01 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom pwc_block_01
+node dummy pwc_block_01
+  parent NULL
+endnode
+node trimesh grabme_05
+  parent pwc_block_01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.65098 0.898039 0.898039 
+  tilefade 0
+  scale 1.0
+  render 0
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 25.0 
+  bitmap NULL
+  verts 8
+    -1.0 -1.0 0.0
+    1.0 -1.0 0.0
+    -1.0 1.0 0.0
+    1.0 1.0 0.0
+    -0.7 -0.7 0.5
+    0.7 -0.7 0.5
+    -0.7 0.7 0.5
+    0.7 0.7 0.5
+  faces 10
+    4 5 7  4  8 9 11  1
+    7 6 4  4  11 10 8  1
+    0 1 5  8  4 5 7  5
+    5 4 0  8  7 6 4  5
+    1 3 7  16  0 1 3  4
+    7 5 1  16  3 2 0  4
+    3 2 6  32  4 5 7  6
+    6 7 3  32  7 6 4  6
+    2 0 4  64  0 1 3  3
+    4 6 2  64  3 2 0  3
+  tverts 12
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+endnode
+node trimesh visible
+  parent pwc_block_01
+  position 0.0 0.0 0.05
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.890196 0.596078 0.596078 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 0.0 
+  ambient 0.862745 0.862745 0.862745 
+  diffuse 0.862745 0.862745 0.862745 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap twc03_books
+  verts 4
+    -2.5 -2.5 0.0
+    2.5 -2.5 0.0
+    -2.5 2.5 0.0
+    2.5 2.5 0.0
+  faces 2
+    2 0 3  1  2 0 3  1
+    1 3 0  1  1 3 0  1
+  tverts 4
+    0.0183585 0.35517 0
+    0.0452343 0.35517 0
+    0.0183585 0.385903 0
+    0.0452343 0.385903 0
+endnode
+endmodelgeom pwc_block_01
+
+#NWmax ANIM ASCII
+newanim default pwc_block_01
+  length 0.0333333
+  transtime 0.25
+  animroot pwc_block_01
+    node dummy pwc_block_01
+        parent NULL
+    endnode
+    node dummy pwc_block_01_pwk
+        parent pwc_block_01
+    endnode
+    node pwk PWK
+        parent pwc_block_01_pwk
+    endnode
+    node trimesh grabme_05
+        parent pwc_block_01
+    endnode
+    node trimesh visible
+        parent pwc_block_01
+        positionkey
+            0.0 0.0 0.0 0.05
+            0.0333333 0.0 0.0 0.05
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+doneanim default pwc_block_01
+
+
+#NWmax ANIM ASCII
+newanim on pwc_block_01
+  length 0.0333333
+  transtime 0.25
+  animroot pwc_block_01
+    node dummy pwc_block_01
+        parent NULL
+    endnode
+    node dummy pwc_block_01_pwk
+        parent pwc_block_01
+    endnode
+    node pwk PWK
+        parent pwc_block_01_pwk
+    endnode
+    node trimesh grabme_05
+        parent pwc_block_01
+    endnode
+    node trimesh visible
+        parent pwc_block_01
+        positionkey
+            0.0 0.0 0.0 0.05
+            0.0333333 0.0 0.0 0.05
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+doneanim on pwc_block_01
+
+
+#NWmax ANIM ASCII
+newanim off pwc_block_01
+  length 0.0333333
+  transtime 0.25
+  animroot pwc_block_01
+    node dummy pwc_block_01
+        parent NULL
+    endnode
+    node dummy pwc_block_01_pwk
+        parent pwc_block_01
+    endnode
+    node pwk PWK
+        parent pwc_block_01_pwk
+    endnode
+    node trimesh grabme_05
+        parent pwc_block_01
+    endnode
+    node trimesh visible
+        parent pwc_block_01
+        positionkey
+            0.0 0.0 0.0 -10.95
+            0.0333333 0.0 0.0 -10.95
+        endlist
+    endnode
+doneanim off pwc_block_01
+
+donemodel pwc_block_01

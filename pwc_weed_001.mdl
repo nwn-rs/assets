@@ -1,0 +1,151 @@
+# Exported from NWmax 0.8 b60 at 1/28/2006 8:36:26 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pwc_weed_001
+#local file: D:\DL\sea_stuff\fort_mdls\seaweed03.max
+filedependancy seaweed03.max
+newmodel pwc_weed_001
+setsupermodel pwc_weed_001 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom pwc_weed_001
+node dummy pwc_weed_001
+  parent NULL
+endnode
+node dummy weed_001_ground02
+  parent pwc_weed_001
+  position -0.131997 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.337255 0.337255 
+endnode
+node dummy weed_001_head03
+  parent pwc_weed_001
+  position -0.131997 0.0 0.551909
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.54902 0.345098 0.882353 
+endnode
+node dummy weed_001_head_hit03
+  parent pwc_weed_001
+  position -0.131997 0.0 0.561413
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.54902 0.345098 0.882353 
+endnode
+node dummy weed_001_impact03
+  parent pwc_weed_001
+  position -0.131997 0.0 0.538862
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.431373 0.52549 
+endnode
+node dummy weed_001_hand03
+  parent pwc_weed_001
+  position -0.131997 0.0 0.533066
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.337255 0.337255 
+endnode
+node trimesh weed_001
+  parent pwc_weed_001
+  position -0.276702 0.369437 0.0492769
+  orientation 0.0 0.0 1.0 -0.609286
+  wirecolor 0.694118 0.101961 0.345098 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center undefined
+  ambient 0.588 0.588 0.588 
+  diffuse 0.588 0.588 0.588 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap twc03_seaweed04
+  verts 19
+    2.73369 -0.795482 0.101967
+    2.14982 -0.208501 0.0924067
+    2.17199 0.378712 0.0747464
+    2.29998 0.798452 0.00383255
+    1.78041 0.712842 0.00383255
+    1.67233 0.0 0.00383255
+    1.74147 -0.717486 0.00383255
+    2.5049 -1.19601 0.00383255
+    4.07824 -0.821619 0.00383255
+    3.81404 -0.108777 0.00383255
+    2.8749 -0.21811 0.0270109
+    1.37808 -1.19143 0.0
+    2.36084 -1.80887 0.0
+    4.73444 -1.18663 0.0
+    4.54514 0.196125 0.0
+    3.13925 0.537234 0.0
+    2.50372 1.35827 0.0
+    1.11045 -0.0865886 0.0
+    1.36622 0.838818 0.0
+  faces 30
+    7 0 6  1  11 0 10  1
+    0 7 8  1  0 11 12  1
+    10 0 9  1  26 0 13  1
+    8 9 0  1  12 13 0  1
+    2 1 10  1  2 1 14  1
+    10 3 2  1  14 6 2  1
+    0 1 6  1  0 1 10  1
+    5 6 1  1  9 10 1  1
+    1 2 5  1  1 2 9  1
+    4 5 2  1  8 9 2  1
+    2 3 4  1  2 6 8  1
+    11 12 7  1  16 17 11  1
+    7 6 11  1  11 10 16  1
+    12 13 8  1  17 18 12  1
+    8 7 12  1  12 11 17  1
+    13 14 9  1  18 19 13  1
+    9 8 13  1  13 12 18  1
+    14 15 10  1  19 20 14  1
+    10 9 14  1  14 13 19  1
+    15 16 3  1  20 22 6  1
+    3 10 15  1  6 14 20  1
+    17 11 6  1  23 16 10  1
+    6 5 17  1  10 9 23  1
+    18 17 5  1  25 23 9  1
+    5 4 18  1  9 8 25  1
+    16 18 4  1  22 25 8  1
+    4 3 16  1  8 6 22  1
+    16 18 4  1  22 25 8  1
+    4 3 16  1  8 6 22  1
+    1 0 10  1  1 0 26  1
+  tverts 27
+    0.321792 0.0990324 0
+    0.222501 0.242934 0
+    0.19781 0.351298 0
+    0.159125 0.863647 0
+    0.162438 0.863647 0
+    0.161017 0.862706 0
+    0.234132 0.426993 0
+    0.122159 0.862706 0
+    0.133443 0.425914 0
+    0.0922908 0.294326 0
+    0.138453 0.164796 0
+    0.262707 0.0560598 0
+    0.696892 0.0551259 0
+    0.662145 0.168003 0
+    0.398055 0.175033 0
+    0.0 0.943224 0
+    0.0260024 0.0896833 0
+    0.195785 -0.0337077 0
+    0.804336 -0.0110598 0
+    0.814722 0.233916 0
+    0.445078 0.273341 0
+    0.0 0.943224 0
+    0.28891 0.526883 0
+    -0.0164272 0.294297 0
+    0.122159 0.862706 0
+    0.0588175 0.461768 0
+    0.398051 0.17502 0
+endnode
+endmodelgeom pwc_weed_001
+donemodel pwc_weed_001
