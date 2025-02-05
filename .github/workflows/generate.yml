@@ -359,7 +359,7 @@ jobs:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
           name: ${{ github.event.inputs.release }}
           tag_name: release/${{ github.event.inputs.release }}
-          prerelease: ${{ github.event.inputs.release == 'build8193.36' }}
+          prerelease: ${{ github.event.inputs.release == 'build8193.38' }}
           files: |
             2da.zip
             bic.zip
