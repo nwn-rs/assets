@@ -21,7 +21,6 @@ on:
         required: true
 permissions:
   contents: write
-        
 jobs:
   generate:
     name: Generate ${{ github.event.inputs.release }} nwn files
@@ -34,6 +33,10 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ github.token  }}
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.0.x"
       - name: Install Neverwinter.nim
         run: |
           wget -O nwn-nim.zip https://github.com/niv/neverwinter.nim/releases/download/2.0.2/neverwinter.linux.amd64.zip
