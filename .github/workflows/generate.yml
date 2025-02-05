@@ -66,7 +66,7 @@ jobs:
         run: |
           find ./ -name '*.2da' -exec cp -prv '{}' '2da/' ';'
           cd 2da && zip -r ../2da.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: 2da
           path: 2da.zip
@@ -74,7 +74,7 @@ jobs:
         run: |
           find ./ -name '*.dds' -exec cp -prv '{}' 'dds/' ';'
           cd dds && zip -r ../dds.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: dds
           path: dds.zip  
@@ -82,7 +82,7 @@ jobs:
         run: |
           find ./ -name '*.bic' -exec cp -prv '{}' 'bic/' ';'
           cd bic && zip -r ../bic.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: bic
           path: bic.zip
@@ -90,14 +90,14 @@ jobs:
         run: |
           find ./ -name '*.dlg' -exec cp -prv '{}' 'dlg/' ';'
           cd dlg && zip -r ../dlg.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: dlg
           path: dlg.zip
       - name: Gather docs
         run: |
           cd docs && zip -r ../docs.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: docs
           path: docs.zip
@@ -105,7 +105,7 @@ jobs:
         run: |
           find ./ -name '*.dwk' -exec cp -prv '{}' 'dwk/' ';'
           cd dwk && zip -r ../dwk.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: dwk
           path: dwk.zip
@@ -113,7 +113,7 @@ jobs:
         run: |
           find ./ -name '*.gff' -exec cp -prv '{}' 'gff/' ';'
           cd gff && zip -r ../gff.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: gff
           path: gff.zip
@@ -121,7 +121,7 @@ jobs:
         run: |
           find ./ -name '*.gui' -exec cp -prv '{}' 'gui/' ';'
           cd gui && zip -r ../gui.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: gui
           path: gui.zip
@@ -129,7 +129,7 @@ jobs:
         run: |
           find ./ -name '*.ids' -exec cp -prv '{}' 'ids/' ';'
           cd ids && zip -r ../ids.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ids
           path: ids.zip
@@ -137,7 +137,7 @@ jobs:
         run: |
           find ./ -name '*.ini' -exec cp -prv '{}' 'ini/' ';'
           cd ini && zip -r ../ini.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ini
           path: ini.zip
@@ -145,7 +145,7 @@ jobs:
         run: |
           find ./ -name '*.itp' -exec cp -prv '{}' 'itp/' ';'
           cd itp && zip -r ../itp.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: itp
           path: itp.zip
@@ -153,7 +153,7 @@ jobs:
         run: |
           find ./ -name '*.ltr' -exec cp -prv '{}' 'ltr/' ';'
           cd ltr && zip -r ../ltr.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ltr
           path: ltr.zip
@@ -161,7 +161,7 @@ jobs:
         run: |
           find ./ -name '*.mdl' -exec cp -prv '{}' 'mdl/' ';'
           cd mdl && zip -r ../mdl.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: mdl
           path: mdl.zip
@@ -169,7 +169,7 @@ jobs:
         run: |
           find ./ -name '*.mod' -exec cp -prv '{}' 'mod/' ';'
           cd mod && zip -r ../mod.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: mod
           path: mod.zip
@@ -177,7 +177,7 @@ jobs:
         run: |
           find ./ -name '*.mtr' -exec cp -prv '{}' 'mtr/' ';'
           cd mtr && zip -r ../mtr.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: mtr
           path: mtr.zip
@@ -185,7 +185,7 @@ jobs:
         run: |
           find ./ -name '*.nss' -exec cp -prv '{}' 'nss/' ';'
           cd nss && zip -r ../nss.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: nss
           path: nss.zip
@@ -193,14 +193,14 @@ jobs:
         run: |
           find ./ -name '*.plt' -exec cp -prv '{}' 'plt/' ';'
           cd plt && zip -r ../plt.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: plt
           path: plt.zip
       - name: Gather ovr files
         run: |
           cd ovr && zip -r ../ovr.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ovr
           path: ovr.zip
@@ -208,7 +208,7 @@ jobs:
         run: |
           find ./ -name '*.ptt' -exec cp -prv '{}' 'ptt/' ';'
           cd ptt && zip -r ../ptt.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ptt
           path: ptt.zip
@@ -216,7 +216,7 @@ jobs:
         run: |
           find ./ -name '*.pwk' -exec cp -prv '{}' 'pwk/' ';'
           cd pwk && zip -r ../pwk.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: pwk
           path: pwk.zip
@@ -224,7 +224,7 @@ jobs:
         run: |
           find ./ -name '*.set' -exec cp -prv '{}' 'set/' ';'
           cd set && zip -r ../set.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: set
           path: set.zip
@@ -232,7 +232,7 @@ jobs:
         run: |
           find ./ -name '*.shd' -exec cp -prv '{}' 'shd/' ';'
           cd shd && zip -r ../shd.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: shd
           path: shd.zip
@@ -240,7 +240,7 @@ jobs:
         run: |
           find ./ -name '*.ssf' -exec cp -prv '{}' 'ssf/' ';'
           cd ssf && zip -r ../ssf.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ssf
           path: ssf.zip
@@ -257,11 +257,11 @@ jobs:
             cp -prv "$0" "tga/${filename}"
           ' {} \;
           cd tga && zip -r ../tga.zip . && cd ../png && zip -r ../png.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: tga
           path: tga.zip
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: png
           path: png.zip          
@@ -269,7 +269,7 @@ jobs:
         run: |
           find ./ -name '*.tlk' -exec cp -prv '{}' 'tlk/' ';'
           cd tlk && zip -r ../tlk.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: tlk
           path: tlk.zip
@@ -277,7 +277,7 @@ jobs:
         run: |
           find ./ -name '*.ute' -exec cp -prv '{}' 'ute/' ';'
           cd ute && zip -r ../ute.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ute
           path: ute.zip
@@ -285,7 +285,7 @@ jobs:
         run: |
           find ./ -name '*.utc' -exec cp -prv '{}' 'utc/' ';'
           cd utc && zip -r ../utc.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: utc
           path: utc.zip
@@ -293,7 +293,7 @@ jobs:
         run: |
           find ./ -name '*.utd' -exec cp -prv '{}' 'utd/' ';'
           cd utd && zip -r ../utd.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: utd
           path: utd.zip          
@@ -301,7 +301,7 @@ jobs:
         run: |
           find ./ -name '*.uti' -exec cp -prv '{}' 'uti/' ';'
           cd uti && zip -r ../uti.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: uti
           path: uti.zip
@@ -309,7 +309,7 @@ jobs:
         run: |
           find ./ -name '*.utm' -exec cp -prv '{}' 'utm/' ';'
           cd utm && zip -r ../utm.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: utm
           path: utm.zip
@@ -317,7 +317,7 @@ jobs:
         run: |
           find ./ -name '*.utp' -exec cp -prv '{}' 'utp/' ';'
           cd utp && zip -r ../utp.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: utp
           path: utp.zip
@@ -325,7 +325,7 @@ jobs:
         run: |
           find ./ -name '*.uts' -exec cp -prv '{}' 'uts/' ';'
           cd uts && zip -r ../uts.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: uts
           path: uts.zip
@@ -333,7 +333,7 @@ jobs:
         run: |
           find ./ -name '*.utt' -exec cp -prv '{}' 'utt/' ';'
           cd utt && zip -r ../utt.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: utt
           path: utt.zip
@@ -341,7 +341,7 @@ jobs:
         run: |
           find ./ -name '*.utw' -exec cp -prv '{}' 'utw/' ';'
           cd utw && zip -r ../utw.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: utw
           path: utw.zip
@@ -349,7 +349,7 @@ jobs:
         run: |
           find ./ -name '*.wok' -exec cp -prv '{}' 'wok/' ';'
           cd wok && zip -r ../wok.zip .
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: wok
           path: wok.zip
