@@ -6,6 +6,7 @@ on:
         type: choice
         description: What version to generate
         options:
+        - build8193.37
         - build8193.36
         - build8193.35
         - build8193.34
@@ -32,7 +33,7 @@ jobs:
           token: ${{ secrets.GH_ACCESS_TOKEN  }}
       - name: Install Neverwinter.nim
         run: |
-          wget -O nwn-nim.zip https://github.com/niv/neverwinter.nim/releases/download/1.5.9/neverwinter.linux.amd64.zip
+          wget -O nwn-nim.zip https://github.com/niv/neverwinter.nim/releases/download/2.0.2/neverwinter.linux.amd64.zip
           unzip -j nwn-nim.zip nwn_key_unpack -d /usr/local/bin/
           chmod +x /usr/local/bin/nwn_key_unpack
           echo /usr/local/bin/ >> $GITHUB_PATH
@@ -46,8 +47,8 @@ jobs:
         run: |
           mkdir unpacked 2da bic dds dlg dwk git gff gui ids ini itp ltr jrl mdl mod mtr nss png plt ptt pwk set shd ssf tga tlk utc utd ute uti utm utp uts utt utw wok
           cd DepotDownloader/DepotDownloader
-          if [ "${{ github.event.inputs.release }}" = "build8193.36" ]; then
-            dotnet run -app 704450 -depot 704451 -beta preview -betapassword previewpreview -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
+          if [ "${{ github.event.inputs.release }}" = "build8193.37" ]; then
+            dotnet run -app 704450 -depot 704451 -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
           else
             dotnet run -app 704450 -depot 704451 -beta ${{ github.event.inputs.release }} -username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}
           fi
