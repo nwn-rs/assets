@@ -1,0 +1,47 @@
+# Exported from NWmax 0.8 c00 at 1/11/2019 1:04:30 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy whl_pwk_use02
+  parent ptm_wagonwhl1_pwk
+  position 0.0 -0.95 0.0
+  orientation 0.234426 0.937702 0.256436 0.0
+  wirecolor 0.470588 0.0 0.0 
+endnode
+node dummy whl_pwk_use02
+  parent ptm_wagonwhl1_pwk
+  position 0.0 1.05 0.0
+  orientation 0.234426 0.937702 0.256436 0.0
+  wirecolor 0.470588 0.0 0.0 
+endnode
+node trimesh wagonwhl1_wg
+  parent ptm_wagonwhl1_pwk
+  position -0.0197309 -0.00145672 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.470588 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 0.0 0.0 
+  specular 0.0 0.0 0.0 
+  shininess 0.0
+  bitmap n_Nonwalk
+  verts 10
+    -0.27 0.81 0.0
+    -0.71 0.47 0.0
+    -0.86 -0.01 0.0
+    -0.71 -0.5 0.0
+    -0.3 -0.81 0.0
+    0.3 -0.81 0.0
+    0.7 -0.49 0.0
+    0.84 -0.02 0.0
+    0.7 0.49 0.0
+    0.29 0.81 0.0
+  faces 8
+    4 5 6  1  0 0 0  7
+    4 6 7  1  0 0 0  7
+    7 8 9  1  0 0 0  7
+    7 9 0  1  0 0 0  7
+    7 0 1  1  0 0 0  7
+    7 1 2  1  0 0 0  7
+    7 2 3  1  0 0 0  7
+    4 7 3  1  0 0 0  7
+endnode

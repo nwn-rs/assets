@@ -1,0 +1,61 @@
+#MAXDOOR ASCII
+# model: PLC_J02_pwk 
+filedependancy PlaceableObjects01.max
+node dummy J02_pwk_use02 
+  parent PLC_J02_pwk 
+  position -0.0416241 -1.51604 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode
+node dummy J02_pwk_use01 
+  parent PLC_J02_pwk 
+  position 0.143906 1.51371 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode
+node trimesh PLC_J02_wg 
+  parent PLC_J02_pwk 
+  position -0.08625 -0.0145901 -2.75294e-006
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.431373 0.0313726  
+  multimaterial 18 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+      NULL 
+    bitmap NULL
+    verts 10
+     0.523325 0.951631 2.75294e-006
+     -0.641357 0.374345 2.75294e-006
+     -0.651406 -0.312778 2.75294e-006
+     0.233027 -0.880014 -2.74022e-006
+     0.523325 -0.880015 -8.27154e-006
+     0.937627 -0.251583 2.75294e-006
+     0.937627 0.323199 2.75294e-006
+     0.233027 0.951631 2.75294e-006
+     -0.30276 0.384396 2.75294e-006
+     -0.302761 -0.312779 6.78685e-007
+    faces 8
+     6 4 5  1  0 0 0  1
+     7 6 0  1  0 0 0  1
+     2 8 1  1  0 0 0  1
+     3 4 7  1  0 0 0  1
+     7 4 6  1  0 0 0  1
+     9 3 7  1  0 0 0  1
+     2 9 8  1  0 0 0  1
+     8 9 7  1  0 0 0  1
+endnode

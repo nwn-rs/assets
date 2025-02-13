@@ -1,0 +1,22 @@
+# Exported from NWmax 0.8 b50 at 10/30/2005 11:43:05 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh NoWalk
+  parent fisrh09b_pwk
+  position 0.0 0.0 0.0
+  orientation -0.242536 0.0 -0.970142 -2.45756e-007
+  verts 4
+    1.46233 -0.601166 0.0
+    -0.590558 3.10848 0.0
+    -1.95821 0.278288 0.0
+    2.10451 2.92209 0.0
+  faces 2
+    0 1 2  0  0 1 2  7
+    0 3 1  0  0 3 1  7
+  tverts 4
+    0.25 0.5 0
+    0.75 0.5 0
+    0.0 0.5 0
+    0.5 0.5 0
+endnode
