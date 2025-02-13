@@ -1,0 +1,251 @@
+# Exported from NWmax 0.8 b61 at 03.09.2017 19:28:55
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: trs02_b22_02
+#local file: Unknown
+filedependancy Unknown
+newmodel trs02_b22_02
+setsupermodel trs02_b22_02 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom trs02_b22_02
+node dummy trs02_b22_02
+  parent NULL
+endnode
+node light trs02_b22_02ml1
+  parent trs02_b22_02
+  position -1.5 -1.5 8.5
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.87451 0.337255 
+  radius 14.0
+  multiplier 1.0
+  color 0.639216 0.639216 0.639216 
+  ambientonly 0
+  nDynamicType 0
+  affectDynamic 1
+  shadow 0
+  lightpriority 5
+  fadingLight 0
+endnode
+node light trs02_b22_02ml2
+  parent trs02_b22_02
+  position 1.5 1.5 9.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.87451 0.337255 
+  radius 5.0
+  multiplier 1.0
+  color 0.639216 0.639216 0.639216 
+  ambientonly 0
+  nDynamicType 0
+  affectDynamic 1
+  shadow 0
+  lightpriority 5
+  fadingLight 0
+endnode
+#Tile trimesh node
+node trimesh ground
+  parent trs02_b22_02
+  position 0.0 0.0 1.6
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.521569 0.231373 0.0313726 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 11
+  center 0.0 0.0 0.0 
+  bitmap trs02_gravel
+  verts 9
+    0.0 5.0 0.0
+    -5.0 5.0 0.0
+    0.0 0.0 0.0
+    -5.0 0.0 0.0
+    0.0 -5.0 0.0
+    -5.0 -5.0 0.0
+    5.0 5.0 0.0
+    5.0 0.0 0.0
+    5.0 -5.0 0.0
+  faces 8
+    0 1 2  1  0 1 2  1
+    3 2 1  1  3 2 1  1
+    2 3 4  1  2 3 4  1
+    5 4 3  1  5 4 3  1
+    6 0 7  1  6 0 7  1
+    2 7 0  1  2 7 0  1
+    7 2 8  1  7 2 8  1
+    4 8 2  1  4 8 2  1
+  tverts 9
+    0.0 1.0 0
+    -1.0 1.0 0
+    0.0 0.0 0
+    -1.0 0.0 0
+    0.0 -1.0 0
+    -1.0 -1.0 0
+    1.0 1.0 0
+    1.0 0.0 0
+    1.0 -1.0 0
+endnode
+node aabb wok
+  parent trs02_b22_02
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.694118 0.337255 0.101961 
+  bitmap NULL
+  verts 4
+    5.0 5.0 1.6
+    -5.0 5.0 1.6
+    5.0 -5.0 1.6
+    -5.0 -5.0 1.6
+  faces 2
+    0 1 2  1  0 0 0  17
+    3 2 1  1  0 0 0  17
+    aabb         -5.0 -5.0 1.6 5.0 5.0 1.6 -1
+        -5.0 -5.0 1.6 5.0 5.0 1.6 1
+        -5.0 -5.0 1.6 5.0 5.0 1.6 0
+endnode
+node dummy trs02_b22_02a
+  parent trs02_b22_02
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.882353 0.345098 0.780392 
+endnode
+node trimesh water01
+  parent trs02_b22_02a
+  position 0.0 0.0 4.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.694118 0.337255 0.101961 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1
+  center 0.0 0.0 0.0 
+  bitmap trs02_water01
+  verts 33
+    5.0 -5.0 0.0
+    -5.0 -5.0 0.0
+    5.0 5.0 0.0
+    -5.0 5.0 0.0
+    0.19 -0.35 0.0
+    0.38 -0.53 0.0
+    -0.01 -0.35 0.0
+    1.04 -1.04 0.0
+    1.7 -1.55 0.0
+    2.63 -3.42 0.0
+    2.69 -4.19 0.0
+    2.74 -5.0 0.0
+    1.86 -1.9 0.0
+    1.9 -2.01 0.0
+    1.92 -2.03 0.0
+    1.82 -1.82 0.0
+    2.02 -2.23 0.0
+    0.17 -0.35 0.0
+    -0.39 -0.53 0.0
+    -0.2 -0.35 0.0
+    -1.71 -1.55 0.0
+    -2.71 -4.19 0.0
+    -2.64 -3.42 0.0
+    -2.76 -5.0 0.0
+    -2.74 -4.76 0.0
+    -2.71 -4.26 0.0
+    -1.93 -2.03 0.0
+    -1.92 -2.01 0.0
+    -1.87 -1.9 0.0
+    -2.13 -2.43 0.0
+    -2.04 -2.24 0.0
+    -2.1 -2.37 0.0
+    -0.18 -0.35 0.0
+  faces 34
+    8 15 0  1  8 15 2  1
+    8 0 2  1  8 2 0  1
+    2 3 7  1  0 1 7  1
+    8 2 7  1  8 0 7  1
+    10 11 0  1  10 11 2  1
+    9 10 0  1  9 10 2  1
+    16 9 0  1  16 9 2  1
+    14 16 0  1  14 16 2  1
+    0 15 12  1  2 15 12  1
+    0 12 13  1  2 12 13  1
+    14 0 13  1  14 2 13  1
+    8 7 15  1  8 7 15  1
+    12 15 7  1  12 15 7  1
+    1 23 24  1  3 23 24  1
+    1 24 25  1  3 25 26  1
+    1 25 21  1  3 26 21  1
+    1 21 22  1  3 21 22  1
+    1 22 29  1  3 22 30  1
+    1 29 31  1  3 30 32  1
+    1 31 30  1  3 32 33  1
+    1 30 26  1  3 31 27  1
+    1 26 27  1  3 27 28  1
+    1 27 28  1  3 28 29  1
+    1 28 20  1  3 29 20  1
+    5 7 3  1  5 7 1  1
+    4 5 3  1  4 5 1  1
+    17 4 3  1  17 4 1  1
+    6 17 3  1  6 17 1  1
+    32 6 3  1  34 6 1  1
+    19 32 3  1  19 34 1  1
+    18 19 3  1  18 19 1  1
+    20 18 3  1  20 18 1  1
+    1 20 3  1  3 20 1  1
+    32 19 18  1  34 19 18  1
+  tverts 35
+    1.999 1.999 0
+    0.00099951 1.999 0
+    1.999 0.000999033 0
+    0.000999033 0.00099951 0
+    1.03777 0.929275 0
+    1.07541 0.894504 0
+    0.998836 0.929275 0
+    1.20875 0.791254 0
+    1.33932 0.690143 0
+    1.52537 0.316643 0
+    1.53816 0.162478 0
+    1.54842 0.000999141 0
+    1.37085 0.620633 0
+    1.38051 0.599343 0
+    1.38313 0.593561 0
+    1.36378 0.636219 0
+    1.40361 0.553697 0
+    1.03412 0.929276 0
+    0.922264 0.894505 0
+    0.9599 0.929276 0
+    0.658352 0.690144 0
+    0.459511 0.162478 0
+    0.472301 0.316643 0
+    0.449251 0.000999403 0
+    0.452263 0.0484047 0
+    0.452342 0.0496451 0
+    0.458691 0.149573 0
+    0.614541 0.593561 0
+    0.61656 0.598012 0
+    0.62663 0.620211 0
+    0.573432 0.513529 0
+    0.593252 0.552115 0
+    0.580498 0.527284 0
+    0.593105 0.551829 0
+    0.963551 0.929276 0
+endnode
+endmodelgeom trs02_b22_02
+donemodel trs02_b22_02
+
