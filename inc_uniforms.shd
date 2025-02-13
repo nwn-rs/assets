@@ -1,0 +1,60 @@
+//=============================================================================
+//
+// inc_uniforms.shd
+//
+//=============================================================================
+
+#ifndef INC_UNIFORMS
+#define INC_UNIFORMS
+///////////////////////////////////
+//
+// BEGIN INC_UNIFORMS
+//
+///////////////////////////////////
+
+uniform int sceneCurrentFrame;
+uniform int worldtimerTimeOfDay;
+uniform int moduleYear;
+uniform int moduleMonth;
+uniform int moduleDay;
+uniform int moduleHour;
+uniform int moduleDawnHour;
+uniform int moduleDuskHour;
+uniform int moduleMinutesPerHour;
+
+uniform highp vec3 playerPosition;
+uniform float playerCameraDist;
+uniform lowp int playerInCutscene;
+uniform highp vec3 cameraPosition;
+uniform float cameraPitch;
+uniform float cameraYaw;
+uniform vec3 cameraFocus;
+uniform float cameraViewAngle;
+uniform lowp int cameraDialogState;
+
+const int MAX_WINDS=32;
+uniform int windPointSourcesCount;
+uniform vec3 windPointSourcesPosition[MAX_WINDS];
+uniform float windPointSourcesRadius[MAX_WINDS];
+uniform float windPointSourcesDuration[MAX_WINDS];
+uniform float windPointSourcesIntensity[MAX_WINDS];
+uniform float windPointSourcesTimeRemaining[MAX_WINDS];
+
+uniform vec3 areaGlobalWind;
+uniform float areaWeatherDensity;
+#define NWAREA_FLAG_INTERIOR            0x0001
+#define NWAREA_FLAG_UNDERGROUND         0x0002
+#define NWAREA_FLAG_NATURAL             0x0004
+uniform int areaFlags;
+#define NWAREA_WEATHER_CLEAR            0
+#define NWAREA_WEATHER_RAIN             1
+#define NWAREA_WEATHER_SNOW             2
+uniform int areaWeatherType;
+
+///////////////////////////////////
+//
+// END INC_UNIFORMS
+//
+///////////////////////////////////
+
+#endif

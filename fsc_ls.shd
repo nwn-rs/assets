@@ -1,0 +1,39 @@
+/*
+
+fsc_ls.shd
+
+*/
+
+//
+// Fragment shader using color input with long-distance fog.
+// The long-distance fog is useful for shadows: it needs to fade out
+// unless it's on the top portion of the screen.
+//
+varying lowp vec4 vColorOut;
+varying mediump float fFogFragCoord;
+varying mediump vec4 vProjPos;
+
+uniform lowp vec4 fogColor;
+uniform int fogEnabled;
+uniform mediump float cameraPitch;
+uniform mediump float startFadePitch;
+
+const mediump float maxPitch = 90.0;
+
+void main() {
+
+	mediump float topAlpha = clamp(1.0-(cameraPitch-startFadePitch)/(maxPitch-startFadePitch), 0.0, 1.0);
+
+	// Ok, topAlpha will be the alpha for everything above posy=0.5, and we transition to
+	mediump float posY = (vProjPos.y/vProjPos.w)*0.5 + 0.5;
+	mediump float mixAlpha = clamp(posY*2, 0.0, 1.0);
+	mediump float fragmentAlpha = mix(1.0, topAlpha, mixAlpha);
+
+	lowp vec4 color;
+	color = vec4(vColorOut.r, vColorOut.g, vColorOut.b, vColorOut.a*fragmentAlpha);
+
+    if(fogEnabled != 0) color.rgb = mix(color.rgb, fogColor.rgb, clamp(fFogFragCoord, 0.0, 1.0));
+
+
+	gl_FragColor = color;
+}

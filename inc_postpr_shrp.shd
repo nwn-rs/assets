@@ -1,0 +1,151 @@
+////////////////////////////////////////////////////
+//--------------------------------------------------
+//
+//  Sharpen shader for NWN:EE
+//
+//--------------------------------------------------
+//
+//  Description:
+//
+//  Sharpens the image based on differences in luma.
+//
+////////////////////////////////////////////////////
+
+#if SHADER_TYPE == 1
+
+void VS_PostProcess_Sharpen()
+{
+	// Nothing.
+}
+
+#else
+
+const float fSharpenModifier = 0.065; //Regulates the amount of sharpening applied.
+const float fSharpenTreshold = 0.004; // Minimum color difference before sharpening an edge.
+const float fSharpenBrightness = 0.3; // Modifier to overall brightness to compensate for the fact that the sharpening only darkens.
+const float fSharpenRange = 0.15; // Only sharpens color differences within this range.
+
+//Note: this does not give the difference in overall luma, but luma weigthed per-color-channel delta.
+float GetColorLumaDelta(vec3 Color, vec3 Color2)
+{
+    Color-=Color2;
+    return ColorToLuma(Color);
+}
+
+void FS_PostProcess_Sharpen(inout vec4 Color)
+{
+    vec2 aOffsets[4];
+    aOffsets[0] = vec2(-vPixelSize.x, 0.0); // Left
+    aOffsets[1] = vec2(0.0, -vPixelSize.y);  // Down
+    aOffsets[2] = vec2(-vPixelSize.x, vPixelSize.y); // Up left
+    aOffsets[3] = -vPixelSize;  // Down left.
+
+
+    vec3 ColorAA = COLOR_BLACK.rgb;
+
+    //Find the adjacent pixels with highest luma delta (horizontally and vertically) for anti-aliasing.
+    float fLumaDeltaMaxH=0.0;
+    float fLumaDeltaMaxV=0.0;
+
+    float fLumaDeltaMax=0.0;
+
+    for(int i = 0; i < 4; i++)
+    {
+        vec4 ColorA = texture2D(texFBColor, vVertexTexCoords+aOffsets[i]);
+        vec4 ColorB = texture2D(texFBColor, vVertexTexCoords-aOffsets[i]);
+        float fDeltaA = GetColorLumaDelta(ColorA.rgb, Color.rgb);
+        float fDeltaB = GetColorLumaDelta(ColorB.rgb, Color.rgb);
+        
+        if(i==0)
+        {
+            ColorAA=ColorA.rgb;
+            fLumaDeltaMaxH=fDeltaA;
+            if(abs(fDeltaA)<abs(fDeltaB))
+            {
+                ColorAA=ColorB.rgb;
+                fLumaDeltaMaxH=fDeltaB;
+            }
+        }
+        else if(i==1)
+        {
+            fLumaDeltaMaxV=fDeltaA;
+            if(abs(fDeltaA)<abs(fDeltaB))
+            {
+                ColorAA+=ColorB.rgb;
+                fLumaDeltaMaxV=fDeltaB;
+            }
+            else
+            {
+                ColorAA+=ColorA.rgb;
+            }
+        }
+        float fDelta = 0.0;
+
+        //Don't sharpen shadow edges or other alpha stuff.
+        if(Color.a != ColorA.a)
+        {
+            fDeltaA=0.0;
+        }
+        if(Color.a != ColorB.a)
+        {
+            fDeltaB=0.0;
+        }
+
+        if(fDeltaA>fDeltaB)
+        {
+            //If opposite pixel is also brighter, don't sharpen as much since single pixel lines/spots will appear aliased.
+            //If opposite pixel is even darker, don't sharpen as much since this will reduce the contrast to that pixel.
+            fDelta=fDeltaA-abs(fDeltaB);
+        }
+        else
+        {
+            fDelta=fDeltaB-abs(fDeltaA);
+        }
+        // Diagonals
+        if(i>1)
+        {
+            fDelta*=0.707;
+        }
+        if(fLumaDeltaMax<fDelta)
+        {
+            fLumaDeltaMax=fDelta;
+        }
+    }
+
+
+	#ifndef MOBILE
+    float fDepth = GetDepth(vVertexTexCoords);
+    float fFogModifier = clamp(1.0 - (fDepth-fogStart) / (fogEnd - fogStart), 0.0, 1.0);
+    //Used to scale with distance.
+    float fSharpenDepthModifier = 1.0 / (1.0 + fDepth*0.075);
+	#else
+	const float fFogModifier = 1.0;
+	const float fSharpenDepthModifier = 0.75;
+	#endif
+	
+    float fModifier = 0.0;
+    float fAAModifier =  0.0;
+    if(sign(fLumaDeltaMaxH)==sign(fLumaDeltaMaxV))
+    {
+        //Apply some minimal performance impact AA.
+		ColorAA*=0.5;
+        float fEdgeModifier = abs(fLumaDeltaMaxH + fLumaDeltaMaxV); 
+        fAAModifier =  clamp(10.0 * fEdgeModifier - 3.0, 0.0, 0.333333);
+        Color.rgb = mix(Color.rgb, ColorAA, fAAModifier);
+    }
+    fLumaDeltaMax-=fSharpenTreshold;
+    //Only sharpen darker edges and within range.
+    if(sign(fLumaDeltaMax)==1.0 && fLumaDeltaMax < fSharpenRange)
+    {
+		const float fSharpenRangeInvMod = 2.0 / fSharpenRange;
+		fLumaDeltaMax = 1.0 - sqr(max(1.0- fLumaDeltaMax * fSharpenRangeInvMod, 0.0));
+		fModifier = - (1.0-2.0 * fAAModifier) * fLumaDeltaMax;
+    }
+    //Brighten everything slightly since we only sharpen by darkening.
+    fModifier += fSharpenBrightness * fFogModifier;
+    //Dividing by brightness provides a non-relative adjustment while still preserving hue and saturation. Cut-off at 0.2 to prevent precision issues.
+    fModifier /= max(ColorToLuma(Color), 0.2);
+    Color.rgb*=(1.0 + fSharpenDepthModifier * fSharpenModifier * fModifier);
+}
+
+#endif
