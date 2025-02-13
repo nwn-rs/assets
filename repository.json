@@ -1,0 +1,172 @@
+{
+  "format_version": 1,
+  "name": "Game News",
+  "description": "Base game documentation",
+  "contact": "Beamdog",
+  "header_image": "",
+  "campaigns": [
+
+  ],
+  "modules": [
+
+  ],
+  "news": [
+    {
+      "uuid": "9ba30aa6-275b-4d86-be12-9020e8e894a3",
+      "title": "88.8193.36-13",
+      "subtitle": "2024-04-13",
+      "timestamp": 1713009600,
+      "filename": "patchnotes/88.8193.36-13.md",
+      "build_specs": [
+        "88.8193.36"
+      ],
+      "platforms": [
+        1,
+        2,
+        10,
+        11,
+        12,
+        13,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "uuid": "663d3424-34ee-e501-9074-4cf5febf7aff",
+      "title": "88.8193.36-12",
+      "subtitle": "2024-02-23",
+      "timestamp": 1708689600,
+      "filename": "patchnotes/88.8193.36-12.md",
+      "build_specs": [
+        "88.8193.36"
+      ],
+      "platforms": [
+        1,
+        2,
+        10,
+        11,
+        12,
+        13,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "uuid": "e3e304f9-593e-684c-cada-6bfc890bf64a",
+      "title": "88.8193.36-11",
+      "subtitle": "2024-02-06",
+      "timestamp": 1707220800,
+      "filename": "patchnotes/88.8193.36.md",
+      "build_specs": [
+        "88.8193.36"
+      ],
+      "platforms": [
+        1,
+        2,
+        10,
+        11,
+        12,
+        13,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "uuid": "cc97cf44-c393-8380-371a-5225df709c99",
+      "title": "87.8193.35-40",
+      "subtitle": "2023-05-11",
+      "timestamp": 1683806400,
+      "filename": "patchnotes/87.8193.35.md",
+      "build_specs": [
+        "87.8193.35",
+        "88.8193.36"
+      ],
+      "platforms": [
+        1,
+        2,
+        10,
+        11,
+        12,
+        13,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "uuid": "2bd19d2f-d1f7-38e2-72d4-0e47f998e2d0",
+      "title": "86.8193.34.1",
+      "subtitle": "Greetings, Neverwinter Nights players and modders!",
+      "timestamp": 1638964800,
+      "filename": "patchnotes/86.8193.34.1.md",
+      "build_specs": [
+        "86.8193.34",
+        "87.8193.35",
+        "88.8193.36"
+      ],
+      "platforms": [
+        1,
+        2,
+        10,
+        11,
+        12,
+        13,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "uuid": "263f6cb4-299d-3077-5c93-5a587eab22f1",
+      "title": "85.8193.33",
+      "subtitle": "Greetings from the Neverwinter Nights team!",
+      "timestamp": 1633003200,
+      "filename": "patchnotes/85.8193.33.md",
+      "build_specs": [
+        "85.8193.33",
+        "86.8193.34",
+        "87.8193.35",
+        "88.8193.36"
+      ],
+      "platforms": [
+        1,
+        2,
+        10,
+        11,
+        12,
+        13,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "uuid": "1f55f4c9-6e87-6373-f582-a163dc931392",
+      "title": "85.8193.32",
+      "subtitle": "Greetings, Neverwinter Nights players and modders!",
+      "timestamp": 1632312000,
+      "filename": "patchnotes/85.8193.32.md",
+      "build_specs": [
+        "85.8193.32",
+        "85.8193.33",
+        "86.8193.34",
+        "87.8193.35",
+        "88.8193.36"
+      ],
+      "platforms": [
+        1,
+        2,
+        10,
+        11,
+        12,
+        13,
+        20,
+        21,
+        22
+      ]
+    }
+  ]
+}
