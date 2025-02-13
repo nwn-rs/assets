@@ -1,0 +1,13 @@
+2DA V2.0
+
+        Label           FeedbackStrref      ColorR  ColorG  ColorB
+0       Physical        5594                255     102     0
+1       Magical         5593                204     119     255
+2       Acid            10458               0       255     0
+3       Cold            10459               153     255     255
+4       Divine          10460               255     255     0
+5       Electrical      10461               0       102     255
+6       Fire            10462               255     0       0
+7       Negative        10463               153     153     153
+8       Positive        10464               255     255     255
+9       Sonic           10465               255     153     0

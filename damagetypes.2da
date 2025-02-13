@@ -1,0 +1,16 @@
+2DA V2.0
+
+        Label           CharsheetStrref     DamageTypeGroup   DamageRangedProjectile
+0       Bludgeoning     58345               0                 0
+1       Piercing        58341               0                 0
+2       Slashing        58344               0                 0
+3       Magical         58302               1                 0
+4       Acid            58303               2                 1
+5       Cold            58304               3                 2
+6       Divine          58305               4                 0
+7       Electrical      58306               5                 3
+8       Fire            58308               6                 4
+9       Negative        58309               7                 0
+10      Positive        58310               8                 0
+11      Sonic           58311               9                 5
+12      Base            58301               0                 0
