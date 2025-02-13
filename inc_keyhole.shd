@@ -1,0 +1,124 @@
+//=============================================================================
+//
+// inc_keyhole.shd
+//
+//=============================================================================
+
+#ifndef INC_KEYHOLE
+#define INC_KEYHOLE
+
+#if KEYHOLING == 1
+#include "inc_common"
+#include "inc_uniforms"
+#include "inc_random"
+///////////////////////////////////
+//
+// BEGIN INC_KEYHOLE
+//
+///////////////////////////////////
+
+const float GRAD_VECS_NUM = 12.0;
+const float WORLD_COORDS_MOD_LIMIT = 35.0;
+
+uniform lowp int keyholeCanDissolve;
+
+//varying highp vec3 vKeyholeNoiseBase;
+varying highp float fFragCamOffset;
+
+#if SHADER_TYPE == 1
+
+///////////////////////////////////
+//
+// VERTEX SHADER ONLY FUNCTIONS
+//
+///////////////////////////////////
+
+void SetupKeyholeFactors()
+{
+    if(keyholeCanDissolve == 1)
+    {    
+        fFragCamOffset = -vPosView.z - playerCameraDist + (90.0-cameraPitch)/45.0;
+    }
+	else
+	{
+		fFragCamOffset = 0.0;
+	}
+}
+
+#elif SHADER_TYPE == 2
+
+///////////////////////////////////
+//
+// FRAGMENT SHADER ONLY FUNCTIONS
+//
+///////////////////////////////////
+
+const float fKeyholeBlackness = 0.8;
+const float fKeyholeNoiseModifier = 0.35;
+const float fKeyholePunchthroughPoint = 0.3;
+uniform float keyholeDiameterMax; // Relative to least of resolution width and height.
+uniform float keyholeDiameterMin; // Relative to least of resolution width and height.
+uniform float keyholeMinZOffset; // Offset from position of character below which nothing will be dissolved
+
+const float fKeyholeSizeBase = 12.5;
+
+void ApplyKeyhole(inout vec4 ColorIO)
+{
+	#if NO_DISCARD != 1
+    if (keyholeCanDissolve == 1 && fFragCamOffset < 0.0)
+    {
+		//ColorIO.rgb = COLOR_MAGENTA.rgb; return;
+        highp float fKeyholeRadius_sq = sqr(clamp(-(keyholeDiameterMax-keyholeDiameterMin)*keyholeDiameterMin * fKeyholeSizeBase/vPosView.z + keyholeDiameterMin, keyholeDiameterMin, keyholeDiameterMax));
+        // Coordinates of fragment relative to the screen center
+        highp vec2 coordsVec = vec2(2.0 * float(gl_FragCoord.x) * invScreenWidth - 1.0, 2.0 * float(gl_FragCoord.y) * invScreenHeight - 1.0);
+	
+		if(invScreenWidth < invScreenHeight)
+		{
+			coordsVec.x *= fAspectRatio;
+		}
+		else
+		{
+			coordsVec.y /= fAspectRatio;
+		}
+		
+        highp float fragToCenterDist_sq = dot(coordsVec, coordsVec); 
+
+        if (fragToCenterDist_sq < fKeyholeRadius_sq)
+        {
+            // This function returns value from -1.0 to 1.0,  so we multiply return value by 0.5
+            // and add 0.5 to make it from 0.0 to 1.0
+			highp vec3 vPosWorld = (m_view_inv * vec4(vPosView, 1.0)).xyz;
+            float noise = NoiseSimplex3D(vPosWorld.xyz) * 0.5 + 0.5;
+            float fKeyholeLevel =    1.0
+                               - fragToCenterDist_sq / fKeyholeRadius_sq
+                               - noise * fKeyholeNoiseModifier
+                               + 0.5 / fFragCamOffset // 
+							   ;
+
+			fKeyholeLevel*=clamp(vPosWorld.z-keyholeMinZOffset-playerPosition.z, 0.0, 1.0);
+			
+            if (fKeyholeLevel >= fKeyholePunchthroughPoint)
+			{
+				discard;
+			}
+			else if(fKeyholeLevel > 0.0)
+			{
+				// Draw border
+                ColorIO.rgb *= (1.0 - fKeyholeBlackness*(fKeyholeLevel*fKeyholeLevel / (fKeyholePunchthroughPoint*fKeyholePunchthroughPoint))); 
+            }
+        }
+
+    }
+	#endif
+}
+#endif
+
+#endif
+
+///////////////////////////////////
+//
+// END INC_KEYHOLE
+//
+///////////////////////////////////
+
+#endif 

@@ -1,0 +1,20 @@
+//=============================================================================
+//
+// vsgrass.shd
+//
+//=============================================================================
+
+#define SHADER_TYPE 1
+
+#define FOG 1
+#define KEYHOLING 1
+
+#define LIGHTING 1
+#define FORCE_VERTEX_LIGHTING 1
+#define LIGHT_FORCE_INDIRECTIONAL 1
+#include "inc_standard"
+
+void main ()
+{
+    ApplyStandardShader();
+}

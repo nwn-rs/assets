@@ -1,0 +1,413 @@
+//=============================================================================
+//
+// inc_standard.shd
+//
+//=============================================================================
+
+#ifndef INC_STANDARD
+#define INC_STANDARD
+
+#include "inc_lighting"
+
+#if FOG == 1
+#include "inc_fog"
+#endif 
+
+#include "inc_transform"
+#include "inc_keyhole"
+#include "inc_displacement"
+#include "inc_target"
+#include "inc_tonemap"
+
+///////////////////////////////////
+//
+// BEGIN INC_STANDARD
+//
+///////////////////////////////////
+
+// Vertex shader
+#if SHADER_TYPE == 1
+void ApplyStandardShader()
+{
+	TransformMainCoordinates();
+
+	#if KEYHOLING == 1
+	SetupKeyholeFactors();
+	#endif 
+	// Used for both specular light and environment map.
+	#if ((ENVIRONMENT_MAP == 1 || SPECULAR_LIGHT == 1) && FRAGMENT_NORMAL != 1)
+		SetupViewToSurfaceNormal();
+	#endif
+
+	#if LIGHTING == 1
+
+		SetupLights();
+
+		// Sets initial vertex color. For vertex lighting, this is done as part of the ComputeLighting call instead.
+		#if FRAGMENT_LIGHTING == 1
+			// Nothing for now.
+		#elif FRAGMENT_NORMAL == 1
+
+			if(staticLighting == 1)
+			{
+				VertexStaticLighting = ApplyColorSpace(vColor.rgb);
+			}
+			else
+			{
+				VertexStaticLighting = COLOR_BLACK.rgb;
+			}	
+			
+		#else
+
+			VertexColor = COLOR_WHITE;
+			#if SPECULAR_LIGHT == 1
+				SetupSpecularity(materialFrontDiffuse.rgb);
+			#endif
+			ComputeLighting(VertexColor, vVertexNormal);
+			
+		#endif
+
+	#elif VERTEX_COLOR == 1
+	
+		VertexColor *= ApplyColorSpace(vColor);
+
+	#endif
+
+	#if (ENVIRONMENT_MAP == 1 || SPECULAR_LIGHT == 1) && FRAGMENT_NORMAL != 1
+		if(envMapCube == 1)
+		{
+			vVertexTexCoordsEnvironmentCube = CalculateEnvironmentTexCoordsCube(vVertexNormal);
+			vVertexTexCoordsEnvironment = vec2(0.0, 0.0);
+		}
+		else
+		{
+			vVertexTexCoordsEnvironment = CalculateEnvironmentTexCoords(vVertexNormal);
+			vVertexTexCoordsEnvironmentCube = vec3(0.0, 0.0, 0.0);
+		}
+	#endif
+
+	#if FOG == 1
+		SetupFog();
+	#endif
+}
+
+#elif SHADER_TYPE == 2
+
+void ApplyDebugModeOutput(inout vec4 ColorIO)
+{	
+	#if SHADER_DEBUG_MODE > 0
+	
+		#if LIGHTING == 1
+			#if SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_NORMALS
+				ColorIO.rgb = mat3(m_view_inv) * vFragmentNormal * 0.5 + 0.5;
+			#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_MATERIAL_AMBIENT
+				ColorIO.rgb = RevertColorSpace(materialFrontAmbient.rgb);
+			#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_MATERIAL_DIFFUSE
+				ColorIO.rgb = RevertColorSpace(materialFrontDiffuse.rgb);
+			#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_MATERIAL_EMISSIVE
+				ColorIO.rgb = RevertColorSpace(materialFrontEmissive.rgb);
+				#if SELF_ILLUMINATION_MAP == 1 
+					#if MATERIAL_READ_SELF_ILLUMINATION_FROM_SPECULAR_MAP == 1
+						if(texture2Bound != 0)
+						{
+							ColorIO.rgb += texture2D(texUnit2, vTexCoords).b * ApplyColorSpace(texture2D(texUnit0, vTexCoords).rgb);
+						}
+					#else
+						if(texture5Bound != 0)
+						{
+							ColorIO.rgb += texture2D(texUnit5, vTexCoords).rgb;
+						}
+					#endif
+				#endif
+			#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_MATERIAL_SPECULARITY
+				#if SPECULAR_LIGHT == 1
+					ColorIO.rgb = COLOR_WHITE.rgb * MATERIAL_SPECULARITY_VALUE;
+				#endif
+			#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_MATERIAL_ROUGHNESS
+				#if SPECULAR_LIGHT == 1
+					ColorIO.rgb = COLOR_WHITE.rgb * MATERIAL_ROUGHNESS_VALUE;
+				#endif
+			#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_MATERIAL_METALLICNESS
+				#if SPECULAR_LIGHT == 1
+					ColorIO.rgb = COLOR_WHITE.rgb * MATERIAL_METALLICNESS_VALUE;
+				#endif
+			#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_MATERIAL_SPECULAR_COLOR
+				#if SPECULAR_LIGHT == 1
+					ColorIO.rgb = RevertColorSpace(MATERIAL_SPECULAR_COLOR_VALUE);
+				#endif
+			#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_MATERIAL_LIGHT_OCCLUSION
+				#if HEIGHT_MAP == 1
+					ColorIO.rgb = COLOR_WHITE.rgb * fAmbientOcclusionModifier;
+				#else
+					ColorIO.rgb = COLOR_WHITE.rgb;
+				#endif
+			#endif
+		#endif
+		
+		#if NO_TEXTURE != 1 && NO_TEXTURE_COORDS != 1
+			#if SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_MATERIAL_BASE_TEXTURE
+				ColorIO.rgb = texture2D(texUnit0,vTexCoords.xy).rgb;
+			#endif
+			
+			#if NORMAL_MAP == 1 || HEIGHT_MAP == 1
+				#if SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_VERTEX_TANGENTS
+					ColorIO.rgb = mat3(m_view_inv) * vVertexTangent * 0.5 + 0.5;
+				#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_VERTEX_HANDEDNESS
+					ColorIO.rgb = vec3(1.0 - abs(fTextureHandedness), -fTextureHandedness, fTextureHandedness);
+				#endif
+			#endif
+		#endif
+		
+		#if SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_VERTEX_NORMALS && VERTEX_NORMAL == 1
+			ColorIO.rgb = mat3(m_view_inv) * vVertexNormal * 0.5 + 0.5;
+		#endif
+
+	#endif
+}
+
+void SetupStandardShaderInputs()
+{
+	#if LIGHTING == 1
+		FragmentColor.a *= materialFrontDiffuse.a;
+        FragmentColor.a = clamp(FragmentColor.a, 0.0, 1.0);
+	#endif
+
+	#if NO_TEXTURE == 1 || ENVIRONMENT_MAP == 1
+		AlphaDiscard(FragmentColor.a);
+	#endif
+
+	#if POSITION_VIEW == 1
+		#if VERTEX_NORMAL == 1
+			// We need to normalize due to interpolation etc.
+			vSurfaceNormal = normalize(gl_FrontFacing ? vVertexNormal : -vVertexNormal);
+			vFragmentNormal = vSurfaceNormal;
+		#endif
+		
+		// Used for both specular light, height and environment map.
+		#if HEIGHT_MAP == 1 || (ENVIRONMENT_MAP == 1 && FRAGMENT_NORMAL == 1) || LIGHTING == 1 || SPECULAR_LIGHT == 1
+			SetupViewToSurfaceNormal();
+		#endif
+		
+	#endif
+
+	#if NO_TEXTURE != 1
+
+		vec4 MainTextureColor;
+			
+		vTexCoords = vVertexTexCoords.xy;
+		// Setup tangent space basis.
+		#if NORMAL_MAP == 1 || HEIGHT_MAP == 1
+
+			if(
+			#if HEIGHT_MAP == 1
+				texture4Bound != 0 || 
+			#endif
+			#if NORMAL_MAP == 1
+				texture1Bound != 0 ||
+			#endif
+				false // allows adding the || operator in the above checks.
+				)
+			{
+				mat3 mTSB = SetupTSB();
+				
+				#if HEIGHT_MAP == 1
+					if(texture4Bound != 0)
+					{
+						DisplaceTextureCoords(vTexCoords, texUnit4, mTSB);
+					}
+				#endif
+
+				#if NORMAL_MAP == 1 && LIGHTING == 1
+					if(texture1Bound != 0)
+					{
+						vFragmentNormal.xy = texture2D(texUnit1, vTexCoords).rg * 2.0 - 1.0;
+						vFragmentNormal.z = sqrt(max(1.0 - dot(vFragmentNormal.xy, vFragmentNormal.xy),0.0));
+						vFragmentNormal.xy = transpose(mat2(m_texture)) * vFragmentNormal.xy;
+						vFragmentNormal = mTSB * vFragmentNormal;
+					}
+				#endif
+			}
+		#endif
+		
+		// Check for compatibility alone as texture0Bound is not set for certain elements.
+		if(texture0Bound == 0)
+		{ 
+			#if ENVIRONMENT_MAP == 1
+				MainTextureColor.rgb = vec3(0.666667, 0.666667, 0.666667);
+				fEnvMapLevel = 1.0;	
+			#else
+				MainTextureColor = COLOR_WHITE;
+			#endif
+		}
+		else
+		{
+			MainTextureColor = texture2D(texUnit0,vTexCoords.xy);
+		
+			#if ENVIRONMENT_MAP == 1
+
+				fEnvMapLevel = 1.0-MainTextureColor.a;
+
+				#if FRAGMENT_LIGHTING == 1 && LIGHTING == 1
+					MainTextureColor.rgb = mix(MainTextureColor.rgb, vec3(0.666667, 0.666667, 0.666667), fEnvMapLevel);									
+				#endif
+
+			#endif
+			
+			MainTextureColor = ApplyColorSpace(MainTextureColor);
+		}
+				
+		// Only do this for vertex lighting - otherwise we apply environment maps as specular light instead.
+		#if ENVIRONMENT_MAP == 1
+				
+			#if SPECULAR_LIGHT != 1
+			
+				vec3 vTexEnvironment;
+				// If not normal mapped, we can use the coordinates from the vertex shader instead.
+				#if FRAGMENT_NORMAL != 1
+					if(envMapCube == 1)
+					{
+						vTexEnvironment = SampleEnvironmentMapCube(vVertexTexCoordsEnvironmentCube, 0.0);
+					}
+					else
+					{
+						vTexEnvironment = SampleEnvironmentMap(vVertexTexCoordsEnvironment, 0.0);
+					}
+				#else
+					if(envMapCube == 1)
+					{
+						vTexEnvironment = SampleEnvironmentMapCube(CalculateEnvironmentTexCoordsCube(vFragmentNormal), 0.0);
+					}
+					else
+					{
+						vTexEnvironment = SampleEnvironmentMap(CalculateEnvironmentTexCoords(vFragmentNormal), 0.0);
+					}
+				#endif 
+			
+				MainTextureColor.rgb = mix(MainTextureColor.rgb, vTexEnvironment.rgb, fEnvMapLevel);
+
+			#endif
+
+			FragmentColor.rgb *= MainTextureColor.rgb;
+		
+		#else
+
+			FragmentColor *= MainTextureColor;
+
+			AlphaDiscard(FragmentColor.a);
+
+		#endif
+
+	#endif
+
+	#if LIGHTING == 1
+
+		#if HEIGHT_MAP == 1
+			if(texture4Bound!=0)
+			{
+				SetupOcclusionFromTexture(vTexCoords, texUnit4);
+			}
+			else
+			{
+				SetupOcclusionBase();
+			}
+		#endif 
+
+		#if (FRAGMENT_LIGHTING == 1 || NORMAL_MAP == 1) && SPECULAR_LIGHT == 1
+		
+			SetupSpecularity(FragmentColor.rgb * materialFrontDiffuse.rgb);
+				
+		#endif
+
+	#endif
+}
+
+void ApplyStandardShader()
+{
+	#if LIGHTING == 1
+
+		#if FRAGMENT_LIGHTING == 1 || FRAGMENT_NORMAL == 1
+					
+			// Lighting stress test.
+			/*
+			vec4 ColorOrig = FragmentColor;
+			ComputeLighting(FragmentColor, vFragmentNormal);
+			FragmentColor = mix(FragmentColor, ColorOrig, 0.5);
+			ComputeLighting(FragmentColor, vFragmentNormal);
+			FragmentColor = mix(FragmentColor, ColorOrig, 0.5);
+			ComputeLighting(FragmentColor, vFragmentNormal);
+			FragmentColor = mix(FragmentColor, ColorOrig, 0.5);
+			ComputeLighting(FragmentColor, vFragmentNormal);
+			FragmentColor = mix(FragmentColor, ColorOrig, 0.5);
+			ComputeLighting(FragmentColor, vFragmentNormal);
+			FragmentColor = mix(FragmentColor, ColorOrig, 0.5);
+			ComputeLighting(FragmentColor, vFragmentNormal);
+			FragmentColor = mix(FragmentColor, ColorOrig, 0.5);
+			ComputeLighting(FragmentColor, vFragmentNormal);
+			FragmentColor = mix(FragmentColor, ColorOrig, 0.5);
+			ComputeLighting(FragmentColor, vFragmentNormal);
+			FragmentColor = mix(FragmentColor, ColorOrig, 0.5);
+			ComputeLighting(FragmentColor, vFragmentNormal);
+			FragmentColor = mix(FragmentColor, ColorOrig, 0.5);
+			ComputeLighting(FragmentColor, vFragmentNormal);
+			FragmentColor = mix(FragmentColor, ColorOrig, 0.5);
+			ComputeLighting(FragmentColor, vFragmentNormal);
+			FragmentColor = mix(FragmentColor, ColorOrig, 0.5);
+			ComputeLighting(FragmentColor, vFragmentNormal);
+			FragmentColor = mix(FragmentColor, ColorOrig, 0.5);
+			*/		
+			
+			ComputeLighting(FragmentColor, vFragmentNormal);
+		#else
+		
+			#if SELF_ILLUMINATION_MAP == 1 				
+				#if MATERIAL_READ_SELF_ILLUMINATION_FROM_SPECULAR_MAP == 1
+					if(texture2Bound != 0)
+					{
+						FragmentColor.rgb *= FragmentColor.rgb * (VertexColor.rgb + texture2D(texUnit2, vTexCoords).b);
+						FragmentColor.a *= VertexColor.a;
+					}
+				#else
+					if(texture5Bound != 0)
+					{
+						FragmentColor.rgb *= FragmentColor.rgb * (VertexColor.rgb + texture2D(texUnit5, vTexCoords).r);
+						FragmentColor.a *= VertexColor.a;
+					}
+				#endif
+				else
+			#endif
+			{
+				FragmentColor *= VertexColor;
+			}
+
+		#endif
+
+	#endif
+    
+  	#if POSITION_WORLD == 1 || POSITION_VIEW == 1
+		ApplyTargetGroundHighlighting(FragmentColor);
+	#endif
+    
+	#if KEYHOLING == 1
+		ApplyKeyhole(FragmentColor);
+	#endif
+	
+	FragmentColor.rgb = RevertColorSpace(FragmentColor.rgb);
+
+	#if FOG == 1
+		ApplyFog(FragmentColor);
+	#endif
+	
+	// DEBUG
+	ApplyDebugModeOutput(FragmentColor);
+}
+
+#endif
+
+///////////////////////////////////
+//
+// END INC_STANDARD
+//
+///////////////////////////////////
+
+#endif
+

@@ -1,0 +1,98 @@
+//=============================================================================
+//
+// inc_displacement.shd
+//
+//=============================================================================
+
+#ifndef INC_DISPLACEMENT
+#define INC_DISPLACEMENT
+
+#include "inc_common"
+
+///////////////////////////////////
+//
+// BEGIN INC_DISPLACEMENT
+//
+///////////////////////////////////
+
+#if SHADER_TYPE == 2 && HEIGHT_MAP == 1
+
+uniform float DisplacementOffset;
+uniform float DisplacementMultiplier;
+
+const float fDisplacementMultiplierDefault =1.0; // Scales displacement. Also adjusts the amount of iterations. Can be increased beyond 1.0 but this is generally not recommended.
+const float fDisplacementBase = 0.05;
+
+const float fDisplacementAngleIterationsModifier = 0.5;
+const float fDisplacementDistanceIterationsModifier = 0.125; 
+
+#if SHADER_QUALITY_MODE > 1
+	const float fDisplacementMaximumIterations = 32.0;  
+#else
+	const float fDisplacementMaximumIterations = 16.0;  
+#endif
+
+const float fDisplacementTextureOffsetLimit = 10.0; // Deprecated.
+
+const float fDisplacementTextureMipmapOffset = 0.0;
+
+void DisplaceTextureCoords(inout vec2 vTexCoordsIO, sampler2D sHeightMap, mat3 mTSB)
+{
+	//float fMipMapOffset = 0.0;
+	float fDisplacementMultiplier = DisplacementMultiplier != 0.0 ? DisplacementMultiplier : fDisplacementMultiplierDefault;
+	float fDisplacementSurfaceModifier = 1.0 + fDisplacementAngleIterationsModifier * dot(vViewToSurface_n, vSurfaceNormal);
+	fDisplacementSurfaceModifier *= fDisplacementSurfaceModifier / (-vPosView.z * fDisplacementDistanceIterationsModifier);
+	float fIterations = fDisplacementMaximumIterations*fDisplacementMultiplier*clamp(fDisplacementSurfaceModifier * screenHeight / 1080.0, 0.0, 1.0);
+
+	if(fIterations>0.5)
+	{
+		vec3 vViewDisplacement = vec3(transpose(mTSB) * -vViewToSurface_n);
+		vViewDisplacement.xy = mat2(m_texture) * vViewDisplacement.xy;
+
+		fIterations = floor(fIterations + 0.5);
+		float fSegmentSize = 1.0 / fIterations;
+
+        // Vector for maximum displacement
+        // vec2 vTexDisplacement = vViewDisplacement.xy * fDisplacementBase * mix(1.0/(0.25 * sqr(vViewDisplacement.z + 1.0)), 1.0/vViewDisplacement.z, vViewDisplacement.z);
+        // This is equal to the following, which prevents infinitesimal issues. 
+		vec2 vTexDisplacement = vViewDisplacement.xy * fDisplacementBase * ((1.0-vViewDisplacement.z) / (sqr(0.5 * vViewDisplacement.z + 0.5)) + 1.0);
+
+        vec2 vTexCoordsDisplaced=vTexCoordsIO.xy + DisplacementOffset * vTexDisplacement;
+		vTexDisplacement*= fDisplacementMultiplier;
+		
+		float fDisplacementThis = 1.0-texture2D(sHeightMap, vTexCoordsDisplaced.xy, fDisplacementTextureMipmapOffset).r;
+		float fDisplacementDelta = fDisplacementThis;
+
+		float fCurrentDistance =  fDisplacementDelta * fSegmentSize;
+		
+		// More than 1 as we've already done our first iteration.
+		for(int i = int(fIterations); i > 1; i--)
+		{
+			fDisplacementThis = 1.0-texture2D(sHeightMap, vTexCoordsDisplaced.xy - vTexDisplacement * fCurrentDistance, fDisplacementTextureMipmapOffset).r; 
+			
+			fDisplacementDelta = fDisplacementThis - fCurrentDistance;
+			if(fDisplacementDelta<0.0)
+			{
+			
+				fDisplacementDelta /= fCurrentDistance;
+				fSegmentSize*=0.5;
+			}
+			else 
+			{
+				fDisplacementDelta /= 1.0-fCurrentDistance;
+			}
+			fCurrentDistance += fDisplacementDelta * fSegmentSize;
+		}
+		vTexCoordsIO=vTexCoordsDisplaced.xy - vTexDisplacement*(fCurrentDistance);
+	}
+}
+
+#endif
+
+///////////////////////////////////
+//
+// END INC_DISPLACEMENT
+//
+///////////////////////////////////
+
+#endif

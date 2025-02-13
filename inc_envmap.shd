@@ -1,0 +1,89 @@
+//=============================================================================
+//
+// inc_envmap.shd
+//
+//=============================================================================
+
+#ifndef INC_ENVMAP
+#define INC_ENVMAP
+#include "inc_common"
+///////////////////////////////////
+//
+// BEGIN INC_ENVMAP
+//
+///////////////////////////////////
+
+uniform sampler2D texUnitEnv; 
+uniform samplerCube texUnitEnvCube;
+		
+#if ENVIRONMENT_MAP == 1 || SPECULAR_LIGHT == 1
+
+	uniform lowp int envMapCube;
+	uniform lowp int texEnvCubeBound;
+	uniform lowp int texEnvBound;
+
+	#if ENVIRONMENT_MAP == 1
+		float fEnvMapLevel = 0.0;
+	#endif
+
+	vec3 CalculateEnvironmentTexCoordsCube(vec3 vNormalThis)
+	{
+		return mat3(m_view_inv) * reflect(vViewToSurface_n, vNormalThis);
+	}
+	
+	#if SHADER_TYPE == 2
+
+		vec3 SampleEnvironmentMapCube(vec3 vTexCoords, float fLODOffset)
+		{		
+			return ApplyColorSpace(textureCube(texUnitEnvCube, vTexCoords, fLODOffset).rgb);		
+		}
+		
+	#endif
+
+	#if FRAGMENT_NORMAL != 1 && POSTPROCESSING == 0
+		varying vec3 vVertexTexCoordsEnvironmentCube;
+	#endif
+
+	vec2 CalculateEnvironmentTexCoords(vec3 vNormalThis)
+	{
+		vec2 vEnvReflect = vNormalThis.xy / (1.0+abs(vNormalThis.z));
+
+		vEnvReflect+=0.5*(vPosView.xy /(-vPosView.z + 0.2));
+
+		vEnvReflect = 0.5*vEnvReflect+vec2(0.5, 0.25);
+	   
+		return vEnvReflect;
+	}		
+	
+	/*
+    vec2 CalculateEnvironmentTexCoords(vec3 vNormalThis)
+    {
+        vec3 vEnvReflect = reflect(vViewToSurface_n, vNormalThis);
+        vEnvReflect.z+= 1.0;
+        float fOffset= inversesqrt(dot(vEnvReflect, vEnvReflect));
+        return 0.5 * vEnvReflect.xy * fOffset + 0.5;
+    } 
+    */
+
+	#if SHADER_TYPE == 2
+
+		vec3 SampleEnvironmentMap(vec2 vTexCoords, float fLODOffset)
+		{
+			return ApplyColorSpace(texture2D(texUnitEnv, vTexCoords, fLODOffset).rgb);		
+		}		
+	
+	#endif
+
+	#if FRAGMENT_NORMAL != 1 && POSTPROCESSING == 0
+		varying vec2 vVertexTexCoordsEnvironment;
+	#endif
+
+#endif
+
+///////////////////////////////////
+//     
+// INC_ENVMAP
+//
+///////////////////////////////////
+
+#endif 

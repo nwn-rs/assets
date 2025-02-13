@@ -1,0 +1,723 @@
+//=============================================================================
+//
+// inc_lighting.shd
+//
+//=============================================================================
+
+#ifndef INC_LIGHTING
+#define INC_LIGHTING
+#include "inc_material"
+
+///////////////////////////////////////////////////////////////////////////////
+//=============================================================================
+//                                                                             
+// BEGIN INC_LIGHTING                                                          
+//                                                                             
+//=============================================================================
+///////////////////////////////////////////////////////////////////////////////
+
+#if LIGHTING == 1
+
+#if GAMMA_CORRECTION == 1
+uniform highp vec4 lightColor           [MAX_NUM_LIGHTS];
+uniform highp float lightMaxIntensityInv;
+uniform highp float lightFalloffFactor;	
+#else
+uniform highp vec4 lightAmbient           [MAX_NUM_LIGHTS];
+uniform highp vec4 lightDiffuse           [MAX_NUM_LIGHTS];
+uniform highp float lightQuadraticAtten   [MAX_NUM_LIGHTS];
+#endif
+uniform highp vec4 lightPosition          [MAX_NUM_LIGHTS];
+
+uniform lowp int numLights;
+uniform lowp int staticLighting;
+
+uniform vec3 lightAreaAmbient;
+uniform vec3 lightAreaDiffuse;
+uniform vec3 lightAreaDiffuseDirection;
+
+#if POSTPROCESSING != 1
+
+uniform mediump vec4 materialFrontAmbient;
+uniform mediump vec4 materialFrontDiffuse;
+uniform mediump vec4 materialFrontEmissive;
+
+uniform lowp vec4 frontLightModelProductSceneColor;
+
+#if FRAGMENT_LIGHTING == 0
+
+	#if NORMAL_MAP == 1
+	
+		varying vec3 vStaticLightDirOut;
+		
+	#endif
+	
+	#if FRAGMENT_NORMAL == 1
+
+		varying vec3 VertexStaticLighting;
+	
+	#endif
+	
+	lowp vec3 StaticLight;
+	
+#endif
+
+// Global variables
+
+highp vec3 AmbientLight;
+highp vec3 DiffuseLight;
+
+#ifndef LIGHT_SUBSURFACE_SCATTERING
+	#define LIGHT_SUBSURFACE_SCATTERING 0
+#endif
+
+#if LIGHT_SUBSURFACE_SCATTERING == 1
+	#ifndef LIGHT_SUBSURFACE_SCATTERING_WRAP
+		#define LIGHT_SUBSURFACE_SCATTERING_WRAP 0.5
+	#endif
+	highp vec3 SubsurfaceLight;
+#endif
+
+#ifndef LIGHT_TRANSLUCENCE_VALUE
+	#if SHADER_QUALITY_MODE > 1
+		highp float fTranslucenceValue;
+		#define LIGHT_TRANSLUCENCE_VALUE fTranslucenceValue
+		#define LIGHT_TRANSLUCENCE_GENERATE_VALUE
+	#endif
+#endif
+
+#ifndef LIGHT_FORCE_INDIRECTIONAL
+	#define LIGHT_FORCE_INDIRECTIONAL 0
+#endif
+
+// Polish / tuning.
+
+//=============================================================================
+//
+// Specular light specific functions
+//
+//=============================================================================
+
+#if SPECULAR_LIGHT == 1
+	
+highp float fNdotV;
+
+highp vec3 SpecularLight;
+
+highp float fRoughness_sq;
+
+highp float fRoughness_sq_inv;
+
+// Set geometric term remapping.
+// 0 - Schlick's R
+// 1 - Epic's Schlick R / 2
+// 2 - Epic's Disney-Schlick (R^0.5*0.5 + 0.5)^2 / 2
+// 3 - Alternative fit: R * 0.7
+// 4 - Alternative fit: R * 0.425  (Closest to actual)
+// 5 - Squared (old).
+#ifdef TEST_SPEC_COLOR
+	#define SPECULAR_GEOMETRIC_SHADOWING_TERM 4
+#else
+	#define SPECULAR_GEOMETRIC_SHADOWING_TERM 0
+#endif
+
+#if SPECULAR_GEOMETRIC_SHADOWING_TERM == 0
+	#define fGeomTerm MATERIAL_ROUGHNESS_VALUE
+	highp float fGeomTerm_inv;
+#elif SPECULAR_GEOMETRIC_SHADOWING_TERM == 5
+	#define fGeomTerm fRoughness_sq
+	highp float fGeomTerm_inv;
+#else
+	highp float fGeomTerm;
+	highp float fGeomTerm_inv;
+#endif
+
+// Blinn-Phong BRDF functions.
+#if SPECULAR_DISTRIBUTION_MODEL == 0
+
+	highp float fShininess;
+
+	float SpecularDistributionBlinnPhong(float fCosNormalFacet) 
+	{
+		//Latter is for energy-conservation.
+		return pow(fCosNormalFacet, fShininess) * (fShininess * 0.5 + 0.5);
+	}
+
+	float GetSpecularLightModifier(float fCosNormalFacet, float fCosNormalLight)
+	{
+	
+		float fModifier = pow(fCosNormalFacet, fShininess);
+
+		#if SPECULAR_GEOMETRIC_SHADOWING == 2
+			fDenominator *= (fCosNormalLight * fGeomTerm_inv + fGeomTerm);
+		#endif
+		return fModifier;
+	}
+
+	float GetSpecularBaseModifier()
+	{
+	
+		// Normalization factor.
+		float fModifier = fShininess * 0.125 + 0.25;
+		
+		#if SPECULAR_GEOMETRIC_SHADOWING == 2			
+			fModifier /= (fNdotV * fGeomTerm_inv + fGeomTerm);
+		#elif SPECULAR_GEOMETRIC_SHADOWING == 1
+			fModifier *= 0.25;
+		#endif
+
+		return fModifier;
+	}
+
+// GGX BRDF functions.
+
+#elif SPECULAR_DISTRIBUTION_MODEL == 1
+
+	float SpecularDistributionGGX(float fCosNormalFacet) 
+	{ 
+		float fFactor = fCosNormalFacet * fCosNormalFacet * -fRoughness_sq_inv + 1.0;
+		return fRoughness_sq / (fFactor * fFactor); 
+	}
+	
+	float GetSpecularLightModifier(float fCosNormalFacet, float fCosNormalLight)
+	{
+		float fDenominator = fCosNormalFacet * fCosNormalFacet * -fRoughness_sq_inv + 1.0;
+		fDenominator*= fDenominator;
+
+		#if SPECULAR_GEOMETRIC_SHADOWING == 2
+			fDenominator *= (fCosNormalLight * fGeomTerm_inv + fGeomTerm);
+		#endif		
+		return 1.0 / fDenominator;
+	}
+
+	float GetSpecularBaseModifier()
+	{
+	
+		// Normalization factor.
+		float fModifier = fRoughness_sq * 0.25;
+
+		#if SPECULAR_GEOMETRIC_SHADOWING == 2			
+			fModifier /= (fNdotV * fGeomTerm_inv + fGeomTerm);
+		#elif SPECULAR_GEOMETRIC_SHADOWING == 1
+			fModifier *= 0.25;
+		#endif
+
+		return fModifier;
+	}
+
+// Cook-Torrance / Beckmann BRDF functions.
+
+#else
+
+	float SpecularDistributionBeckmann(float fCosNormalFacet)
+	{
+		float fCosNormalFacet_sq = fCosNormalFacet*fCosNormalFacet; 
+		return (1.0 / (fRoughness_sq * fCosNormalFacet_sq*fCosNormalFacet_sq)) * exp((fCosNormalFacet_sq - 1.0)/(fRoughness_sq * fCosNormalFacet_sq));
+	} 
+
+	float GetSpecularLightModifier(float fCosNormalFacet, float fCosNormalLight)
+	{
+	
+		float fCosNormalFacet_sq = fCosNormalFacet*fCosNormalFacet; 
+		float fModifier = exp((fCosNormalFacet_sq - 1.0)/(fRoughness_sq * fCosNormalFacet_sq));
+		float fDenominator = (fCosNormalFacet_sq*fCosNormalFacet_sq);
+					
+		#if SPECULAR_GEOMETRIC_SHADOWING == 2
+			fDenominator *= (fCosNormalLight * fGeomTerm_inv + fGeomTerm);
+		#endif	
+		return fModifier / fDenominator;
+	}
+
+	float GetSpecularBaseModifier()
+	{
+		// Normalization factor.
+		float fModifier = 0.25 / (fRoughness_sq);
+
+		#if SPECULAR_GEOMETRIC_SHADOWING == 2			
+			fModifier /= (fNdotV * fGeomTerm_inv + fGeomTerm);
+		#elif SPECULAR_GEOMETRIC_SHADOWING == 1
+			fModifier *= 0.25;
+		#endif
+
+		return fModifier;
+	}
+
+#endif
+
+float GetFresnel(float fCosAngle)
+{
+	float fFresnel = 1.0 - fCosAngle;
+
+	#if SHADER_QUALITY_MODE > 1
+		// POW 5 (Schlick)
+		float fFresnelSq = fFresnel * fFresnel;
+		fFresnel*=fFresnelSq * fFresnelSq;
+	#else
+		// POW 4 (Slightly faster approximate)
+		fFresnel*=fFresnel;
+		fFresnel*=fFresnel;
+	#endif
+	return fFresnel;
+}
+
+
+// Note: In principle, we should use cosine of facet to light direction, but since incidence angle is reflected angle, it is effectively the same. 
+float GetFresnelSpecularity(float fSpecularity, float fCosViewFacet)
+{
+	return mix(fSpecularity, 1.0, GetFresnel(fCosViewFacet));
+}
+
+// Shared function for calculating specular BRDF.
+float GetSpecularIntensity(float fCosNormalFacet, float fCosViewFacet, float fCosNormalLight)
+{
+	float fDistribution = GetSpecularLightModifier(fCosNormalFacet, fCosNormalLight);
+	
+	#if SPECULAR_GEOMETRIC_SHADOWING == 1	
+		fDistribution /= fCosViewFacet * fCosViewFacet;		
+	#endif 
+
+	#if SPECULAR_FRESNEL == 1
+		fDistribution *= GetFresnelSpecularity(MATERIAL_SPECULARITY_VALUE, fCosViewFacet);
+#endif
+	
+	return fDistribution;
+}
+
+
+
+#endif  // Specular light only end.
+
+const float fLightSofteningModifierMix = LIGHT_SOFTENING_VALUE / (1.0 + LIGHT_SOFTENING_VALUE);
+const float fLightSofteningModifierMix_inv = 1.0 - LIGHT_SOFTENING_VALUE / (1.0 + LIGHT_SOFTENING_VALUE);
+		
+void ComputeDiffuseLighting(vec3 LightColor, vec3 vSurfaceToLightDirection, vec3 vNormalThis, float fAttenuation, bool bStaticLight)
+{
+	#if LIGHT_FORCE_INDIRECTIONAL == 1
+		DiffuseLight += LightColor * fAttenuation;
+		return;
+	#endif
+	#if LIGHT_SUBSURFACE_SCATTERING == 1 && SHADER_TYPE == 2
+		float fSNdotL = dot(vSurfaceNormal, vSurfaceToLightDirection);
+		SubsurfaceLight += LightColor * max(0.0, fAttenuation * (fSNdotL + LIGHT_SUBSURFACE_SCATTERING_WRAP));
+	#endif
+
+	float fNdotL = dot(vNormalThis, vSurfaceToLightDirection);
+	#ifdef LIGHT_TRANSLUCENCE_VALUE
+	if(LIGHT_TRANSLUCENCE_VALUE > 0.0 && fNdotL<0.0)
+	{
+		#if FRAGMENT_LIGHTING == 0 && SHADER_TYPE == 2 && NORMAL_MAP == 1
+		if(bStaticLight)
+		{
+			StaticLight += LightColor * (fAttenuation * -fNdotL * LIGHT_TRANSLUCENCE_VALUE);
+		}
+		else
+		#endif
+		{
+			DiffuseLight += LightColor * (fAttenuation * -fNdotL * LIGHT_TRANSLUCENCE_VALUE);
+		}		
+	}
+	#endif
+	
+	#if LIGHT_SUBSURFACE_SCATTERING == 1 && SHADER_TYPE != 2
+		SubsurfaceLight += LightColor * max(0.0, fAttenuation * (fNdotL + LIGHT_SUBSURFACE_SCATTERING_WRAP));
+	#endif
+	#if LIGHT_SOFTENING_ENABLED == 1 && SHADER_TYPE == 2 && FRAGMENT_NORMAL == 0
+
+	if(fNdotL > -LIGHT_SOFTENING_VALUE)
+	{
+	
+	#else
+
+	if(fNdotL > 0.0)
+	{
+	
+	#endif
+	
+		#if SHADER_TYPE == 2 && (NORMAL_MAP == 1 || HEIGHT_MAP == 1) && SHADER_QUALITY_MODE > 1
+			// Does occlusion as well as preventing this light source from affecting the fragment if the surface the point resides on faces away from the light.
+			#if LIGHT_SUBSURFACE_SCATTERING != 1
+			float fSNdotL = dot(vSurfaceNormal, vSurfaceToLightDirection);
+			#endif
+			fAttenuation *= clamp(fSNdotL * fSurfaceFadeModifier, 0.0, 1.0);
+
+		#endif
+
+		#if LIGHT_SOFTENING_ENABLED == 1 && SHADER_TYPE == 2
+			fAttenuation *= smoothstep(0.0, 2.0, fNdotL * fLightSofteningModifierMix_inv + fLightSofteningModifierMix) * 2.0;
+			fNdotL = max(fNdotL, 0.0);
+		#else
+			fAttenuation *= fNdotL;
+		#endif 
+
+		LightColor *= fAttenuation;
+		#if FRAGMENT_LIGHTING == 0 && SHADER_TYPE == 2 && NORMAL_MAP == 1
+		if(bStaticLight)
+		{
+			StaticLight += LightColor;
+		}
+		else
+		#endif
+		{
+			DiffuseLight += LightColor;
+		}	
+		
+		#if SPECULAR_LIGHT == 1
+		
+			// vec3 vHalfVector = normalize(vSurfaceToLightDirection - vViewToSurface_n);
+			// float fVdotH = dot(vHalfVector, -vViewToSurface_n);
+			// float fNdotH = max(0.0, dot(vNormalThis, vHalfVector));
+			// Above is the same as the following, except that this is slightly faster.
+			float fVdotH = sqrt(dot(-vViewToSurface_n, vSurfaceToLightDirection) * 0.5 + 0.5); // Half angle rule for cosine.
+			float fNdotH = clamp((fNdotL + fNdotV ) * 0.5 / fVdotH, 0.0, 1.0); //clamp((fNdotL + fNdotV ) * 0.5 / (fVdotH), 0.0, 1.0);  // (L + V) / 2 is unnormalized half angle vector, (fNdotL + fNdotV) / 2 is (N dot unnormalized half angle vector), dividing by fVdotH, it becomes normalized.
+			
+			SpecularLight += LightColor * GetSpecularIntensity(fNdotH, fVdotH, fNdotL);
+			
+		#endif
+		
+	
+	}
+}
+
+void ComputePointLightSource(vec3 LightColor, vec3 vLightOffset, float fLightAttenuationFactor, vec3 vNormalThis, bool bAmbientLight)
+{    
+	// Compute our squared distance between surface and light position
+	float fDistance_sq = dot(vLightOffset, vLightOffset);
+
+	#if GAMMA_CORRECTION == 1
+		
+		if(fLightAttenuationFactor<fDistance_sq ) return;
+
+		float fLightFalloff2 = fDistance_sq / fLightAttenuationFactor;
+		
+		float fAttenuation = 1.0-(fLightFalloff2); // Fade.
+
+		fAttenuation /= (lightMaxIntensityInv + lightFalloffFactor * fLightFalloff2);
+
+	#else
+
+		float fAttenuation = 1.0 / (1.0 + fLightAttenuationFactor * fDistance_sq); // Legacy.
+
+	#endif	
+	
+    if(bAmbientLight)
+    {
+        AmbientLight += LightColor * fAttenuation;
+    }
+    else
+    {
+		vLightOffset *= inversesqrt(fDistance_sq);
+		
+		ComputeDiffuseLighting(LightColor, vLightOffset, vNormalThis, fAttenuation, false);
+    }
+}
+
+void ComputeLighting(inout vec4 ColorIO, vec3 vNormalThis)
+{
+    AmbientLight = lightAreaAmbient;
+    DiffuseLight = COLOR_BLACK.rgb;
+    #if FRAGMENT_LIGHTING == 0
+		StaticLight = COLOR_BLACK.rgb;
+	#endif
+	
+	#if LIGHT_SUBSURFACE_SCATTERING == 1
+	SubsurfaceLight = COLOR_BLACK.rgb;
+	#endif
+	
+	#ifdef LIGHT_TRANSLUCENCE_GENERATE_VALUE
+		// Default is to scale back light with inverse transparency.
+		LIGHT_TRANSLUCENCE_VALUE = (1.0-ColorIO.a);
+	#endif
+			
+
+	#if SPECULAR_LIGHT == 1
+
+		SpecularLight = COLOR_BLACK.rgb;
+
+		fNdotV = dot(vNormalThis, -vViewToSurface_n);
+		if(fNdotV < 0.0)
+		{
+			vNormalThis = normalize(vNormalThis + fNdotV * vViewToSurface_n);
+			fNdotV = 0.0;
+		}
+		fRoughness_sq = MATERIAL_ROUGHNESS_VALUE * MATERIAL_ROUGHNESS_VALUE;		
+		
+		fRoughness_sq_inv = 1.0-fRoughness_sq;
+		
+		#if SPECULAR_GEOMETRIC_SHADOWING_TERM == 1
+			fGeomTerm = MATERIAL_ROUGHNESS_VALUE * 0.5;
+		#elif SPECULAR_GEOMETRIC_SHADOWING_TERM == 2
+			fGeomTerm = sqr(sqrt(MATERIAL_ROUGHNESS_VALUE)*0.5 + 0.5) * 0.5;
+		#elif SPECULAR_GEOMETRIC_SHADOWING_TERM == 3
+			fGeomTerm = MATERIAL_ROUGHNESS_VALUE * 0.65;
+		#elif SPECULAR_GEOMETRIC_SHADOWING_TERM == 4
+			fGeomTerm = MATERIAL_ROUGHNESS_VALUE * 0.425;
+		#endif
+		
+		fGeomTerm_inv = 1.0-fGeomTerm;
+		
+		#if SPECULAR_DISTRIBUTION_MODEL == 0
+
+			// Determine shininess for Blinn-Phong.
+			fShininess = 2.0 / (fRoughness_sq + 0.001) - 2.0;
+
+		#endif
+
+	#endif
+
+    #if FRAGMENT_LIGHTING == 0
+		#if SHADER_TYPE == 1
+
+			if(staticLighting == 1)
+			{
+				StaticLight = ApplyColorSpace(vColor.rgb);
+			}	
+			
+		#elif SHADER_TYPE == 2 && NORMAL_MAP == 1
+
+			if(staticLighting == 1)
+            {
+				ComputeDiffuseLighting(VertexStaticLighting.rgb, vStaticLightDirOut, vNormalThis, 1.0, true);
+            }
+
+        #endif
+
+    #endif
+	
+	ComputeDiffuseLighting(lightAreaDiffuse, lightAreaDiffuseDirection, vNormalThis, 1.0, false);
+	
+    for (int i = 0; i < numLights; i++) 
+    {		
+		#if GAMMA_CORRECTION == 1
+			if(lightColor[i].a < 0.0)
+			{
+				ComputePointLightSource(lightColor[i].rgb, lightPosition[i].xyz - vPosView, -lightColor[i].a, vNormalThis, true);	
+			}
+			else
+			{
+				ComputePointLightSource(lightColor[i].rgb, lightPosition[i].xyz - vPosView, lightColor[i].a, vNormalThis, false);	
+			}
+		#else
+			if(dot(lightAmbient[i].rgb, lightAmbient[i].rgb) == 0.0)
+			{
+				ComputePointLightSource(lightDiffuse[i].rgb, lightPosition[i].xyz - vPosView, lightQuadraticAtten[i], vNormalThis, false);	
+			}
+			else
+			{
+				ComputePointLightSource(lightAmbient[i].rgb, lightPosition[i].xyz - vPosView, lightQuadraticAtten[i], vNormalThis, true);	
+			}
+		#endif
+    }
+	
+		
+	AmbientLight *= materialFrontAmbient.rgb;
+				
+	DiffuseLight = 
+				#if LIGHT_FORCE_INDIRECTIONAL == 1
+				(1.0 / (PI) ) * 
+				#endif
+				(
+				DiffuseLight
+				#if FRAGMENT_LIGHTING == 0
+					+ StaticLight
+				#endif
+				) 
+				* materialFrontDiffuse.rgb;
+				
+	#if LIGHT_SUBSURFACE_SCATTERING == 1
+	SubsurfaceLight = materialFrontDiffuse.rgb * 
+						(
+							SubsurfaceLight
+							#if FRAGMENT_LIGHTING == 0
+							+ StaticLight
+							#endif
+						)
+						/ (1.0 + LIGHT_SUBSURFACE_SCATTERING_WRAP)
+						+ AmbientLight;
+	
+	const float fEnergyPreservation = (2.0 * (1.0+LIGHT_SUBSURFACE_SCATTERING_WRAP) / (2.0 + PI * LIGHT_SUBSURFACE_SCATTERING_WRAP));
+	SubsurfaceLight *= fEnergyPreservation;
+
+	#endif				
+
+	#if SPECULAR_LIGHT == 1 && LIGHT_FORCE_INDIRECTIONAL == 0
+		vec3 EnvironmentColor = AmbientLight + DiffuseLight;
+
+		SpecularLight *= GetSpecularBaseModifier();
+
+		#if SPECULAR_FRESNEL != 0 
+			// Naive implementation of Fresnel effect on GI.
+			float fEnvironmentSpecularity = mix(GetFresnelSpecularity(MATERIAL_SPECULARITY_VALUE, fNdotV), MATERIAL_SPECULARITY_VALUE, sqrt(MATERIAL_ROUGHNESS_VALUE));
+		#else
+			#define fEnvironmentSpecularity MATERIAL_SPECULARITY_VALUE
+		#endif
+		
+		#if SPECULAR_FRESNEL != 1
+			// Use environment fresnel for all lights.
+			SpecularLight *= fEnvironmentSpecularity;
+		#endif 		
+	
+	    #if SHADER_TYPE == 2
+
+			vec3 vTexEnvironment;
+			#if FRAGMENT_NORMAL != 1 && SHADER_QUALITY_MODE < 2
+				if(envMapCube == 1)
+				{
+					vTexEnvironment = SampleEnvironmentMapCube(vVertexTexCoordsEnvironmentCube,clamp(MATERIAL_ROUGHNESS_VALUE*fEnvironmentMapRoughnessLODModifier + fEnvironmentMapRoughnessLODOffset, 0.0, fEnvironmentMapCubeRoughnessLODMax));
+				}
+				else
+				{
+					vTexEnvironment = SampleEnvironmentMap(vVertexTexCoordsEnvironment,clamp(MATERIAL_ROUGHNESS_VALUE*fEnvironmentMapRoughnessLODModifier + fEnvironmentMapRoughnessLODOffset, 0.0, fEnvironmentMapRoughnessLODMax));
+				}
+			#else
+				if(envMapCube == 1)
+				{
+					vTexEnvironment = SampleEnvironmentMapCube(CalculateEnvironmentTexCoordsCube(vNormalThis),clamp(MATERIAL_ROUGHNESS_VALUE*fEnvironmentMapRoughnessLODModifier + fEnvironmentMapRoughnessLODOffset, 0.0, fEnvironmentMapCubeRoughnessLODMax));
+				}
+				else
+				{	
+					vTexEnvironment = SampleEnvironmentMap(CalculateEnvironmentTexCoords(vNormalThis),clamp(MATERIAL_ROUGHNESS_VALUE*fEnvironmentMapRoughnessLODModifier + fEnvironmentMapRoughnessLODOffset, 0.0, fEnvironmentMapRoughnessLODMax));
+				}
+			#endif
+				
+			EnvironmentColor *= vTexEnvironment.rgb;
+			
+        #else
+
+			float fGammaFactor = ApplyColorSpace(0.6667);
+
+			EnvironmentColor*= COLOR_WHITE.rgb * fGammaFactor; 
+			
+		#endif
+		
+		SpecularLight += EnvironmentColor 
+						#if HEIGHT_MAP == 1 && SHADER_TYPE == 2
+						* fAmbientOcclusionModifier
+						#endif
+						* fEnvironmentSpecularity;
+	#endif
+	
+	#if HEIGHT_MAP == 1 && SHADER_TYPE == 2
+		AmbientLight *= fAmbientOcclusionModifier;
+	#endif	
+	
+    vec3 TotalLight = materialFrontEmissive.rgb + 
+				#if SPECULAR_LIGHT == 1 && LIGHT_FORCE_INDIRECTIONAL == 0
+					(1.0 - fEnvironmentSpecularity) * 
+				#endif
+					(AmbientLight
+					+ DiffuseLight)
+				;               
+
+    // Backward compatibility, mainly needed for some GUI elements.
+    TotalLight = max(TotalLight, min(frontLightModelProductSceneColor.rgb * materialFrontDiffuse.rgb, COLOR_WHITE.rgb));
+
+    #if SHADER_TYPE == 2 && SELF_ILLUMINATION_MAP == 1 
+
+        // This approach takes the input color (usually the diffuse map) and apply it as lighting, 
+        // while subtracting this from the input color base for other light calculations.
+
+        #if MATERIAL_READ_SELF_ILLUMINATION_FROM_SPECULAR_MAP == 1
+			if(texture2Bound != 0)
+			{
+				TotalLight = mix(TotalLight, COLOR_WHITE.rgb, texture2D(texUnit2, vTexCoords).b);
+			}
+        #endif
+
+    #endif
+
+	#if GAMMA_CORRECTION == 0
+        TotalLight = clamp(TotalLight, 0.0, 1.0);
+	#endif
+
+    ColorIO.rgb*=TotalLight;
+
+    #if SHADER_TYPE == 2 && SELF_ILLUMINATION_MAP == 1 
+
+        #if MATERIAL_READ_SELF_ILLUMINATION_FROM_SPECULAR_MAP != 1
+			if(texture5Bound != 0)
+			{
+				ColorIO.rgb += ApplyColorSpace(texture2D(texUnit5, vTexCoords).rgb);
+			}
+        #endif
+
+    #endif
+	
+	#if SPECULAR_LIGHT == 1
+
+		if(ColorIO.a < 1.0 && ColorIO.a > 0.001)
+		{
+			// Specularity ignores material transparency. We emulate this by compensating.
+			SpecularLight /= max(ColorIO.a, 0.1);
+		}
+
+		ColorIO.rgb += MATERIAL_SPECULAR_COLOR_VALUE * SpecularLight;
+		
+	#endif
+
+	// Debugging outputs.
+	
+	#if SHADER_DEBUG_MODE > 0
+	
+		#if SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_LIGHT_TOTAL
+			ColorIO.rgb = TotalLight
+						#if SPECULAR_LIGHT == 1
+							+ MATERIAL_SPECULAR_COLOR_VALUE * SpecularLight
+						#endif
+							;
+		#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_LIGHT_STATIC
+			#if FRAGMENT_LIGHTING == 1
+				ColorIO.rgb = COLOR_BLACK.rgb;
+			#else
+				ColorIO.rgb = 
+					#if SPECULAR_LIGHT == 1
+					(1.0 - MATERIAL_SPECULARITY_VALUE) *
+					#endif
+					StaticLight * materialFrontDiffuse.rgb;		
+			#endif
+		#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_LIGHT_AMBIENT
+			ColorIO.rgb = AmbientLight;
+		#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_LIGHT_DIFFUSE
+			ColorIO.rgb = DiffuseLight;
+		#elif SHADER_DEBUG_MODE == SHADER_DEBUG_MODE_LIGHT_SPECULAR && SPECULAR_LIGHT == 1
+			ColorIO.rgb = MATERIAL_SPECULAR_COLOR_VALUE * SpecularLight;
+		#endif
+	
+	#endif
+}
+
+#if SHADER_TYPE == 1
+
+///////////////////////////////////
+//
+// VERTEX SHADER ONLY FUNCTIONS
+//
+///////////////////////////////////
+
+#if FRAGMENT_LIGHTING == 0 && NORMAL_MAP == 1
+
+	attribute vec3 vStaticLightDir;
+	
+#endif
+
+void SetupLights()
+{
+	#if FRAGMENT_LIGHTING == 0 && NORMAL_MAP == 1
+		if(staticLighting == 1)
+		{
+			vStaticLightDirOut = mat3(m_mv) * vStaticLightDir;
+		}
+		else
+		{
+			vStaticLightDirOut = vec3(0.0, 0.0, 0.0);
+		}
+    #endif
+}
+#endif // SHADER_TYPE == 1
+#endif
+#endif // POSTPROCESSING != 1
+#endif
+///////////////////////////////////
+//
+// END INC_LIGHTING
+//
+///////////////////////////////////

@@ -1,0 +1,141 @@
+////////////////////////////////////////////////////
+//--------------------------------------------------
+//
+//  Dynamic contrast shader for NWN:EE
+//
+//--------------------------------------------------
+//
+//  Description:
+//
+//  Adds contrast to the current scene with a 
+//  dynamic midpoint based on area lighting.
+//
+////////////////////////////////////////////////////
+
+uniform float DynamicContrastMidpoint;
+uniform float DynamicContrastIntensity;
+
+varying float fMidPoint;
+
+#if SHADER_TYPE == 1
+
+#if GAMMA_CORRECTION == 1
+	const float fAreaLightModifier = 0.5;
+#else
+	const float fAreaLightModifier = 0.6667;
+#endif
+
+vec4 GetAreaLightTotal()
+{
+    vec4 Color=vec4(0.0);
+	
+	Color.rgb += fAreaLightModifier*lightAreaAmbient;
+	
+	/*
+	#if GAMMA_CORRECTION == 1
+	if(lightColor[n].a >= 1000000.0)
+	{
+		vec4 lightPositionProj = m_proj * lightPosition[n];
+		lightPositionProj.xy /= lightPositionProj.w;
+
+		float fFactor = 1.0;
+		
+		fFactor /= 0.5+0.25*sqr(lightPosition[n].x/lightPosition[n].z) + 0.25*sqr(lightPosition[n].y/lightPosition[n].z);
+					
+		fFactor *= fFactor;
+		
+		fFactor /= 1.0+max(0.0, lightPosition[n].z);			
+		
+		//Only count diffuse lighting as half, given that it's only applying to roughly that amount in the scene.
+		Color+=0.5 * lightColor[n] * (1.0 + fFactor); //(lightPosition[n].z < 0.0 ? 1.0+fFactor: 0.0 );
+	}
+	#else
+	
+		Color.rgb+=lightAreaDiffuse*0.5;
+	
+	#endif
+	*/
+	
+	/*
+	if(lightAreaDiffuseDirection.z<0.0)
+	{
+		Color.rgb+=lightAreaDiffuse*(1.0-dot(lightAreaDiffuseDirection.xy, lightAreaDiffuseDirection.xy));
+	}
+	*/
+
+	Color.rgb+=fAreaLightModifier * lightAreaDiffuse*(0.5 + (lightAreaDiffuseDirection.z<0.0 ? (1.0-dot(lightAreaDiffuseDirection.xy, lightAreaDiffuseDirection.xy)) : 0.0));
+
+
+    for(int n = 0; n < numLights; n++)  
+    {
+		vec4 lightPositionProj = m_proj * lightPosition[n];
+		lightPositionProj.xy /= lightPositionProj.w;
+
+		#if GAMMA_CORRECTION == 1
+			float fFactor = 0.15;
+		#else
+			float fFactor = 0.2;
+		#endif
+		
+		#if GAMMA_CORRECTION == 1
+		if(lightColor[n].a > 0.0)
+		#else
+		if(dot(abs(lightAmbient[n].rgb), vec3(1.0, 1.0, 1.0)) == 0.0)
+		#endif
+		{
+			fFactor /= 0.25 * (1.0 + 0.5*lightPositionProj.x * lightPositionProj.x + 0.5*lightPositionProj.y * lightPositionProj.y);
+		}
+
+		fFactor *= fFactor;
+		
+		#if GAMMA_CORRECTION == 1
+			float fFallOff = inversesqrt(abs(lightColor[n].a));
+		#else
+			float fFallOff = lightQuadraticAtten[n];
+		#endif
+		
+		if(lightPosition[n].z < 0.0)
+		{
+			fFactor /= fFallOff * lightPosition[n].z * lightPosition[n].z + 1.0;
+		}
+		else
+		{
+			fFactor /= fFallOff * lightPosition[n].z * lightPosition[n].z * 100.0 + 1.0;
+		}
+
+		#if GAMMA_CORRECTION == 1
+			Color+=fFactor * lightColor[n];
+		#else
+			Color+=fFactor * (lightAmbient[n]+lightDiffuse[n]);
+		#endif
+
+    }
+
+	Color = DynamicContrastMidpoint * RevertColorSpace(Color);
+	Color = mix(Color, fogColor, 1.0 /(1.0+0.05*max(2.0*fogStart+fogEnd, 0.0)));
+    return Color;
+}
+
+void VS_PostProcess_DynamicContrast()
+{
+	fMidPoint = clamp(ColorToLuma(GetAreaLightTotal()), 0.0, 1.0);
+}
+
+#else
+
+void FS_PostProcess_DynamicContrast(inout vec4 Color)
+{
+	float fBrightness = ColorToBrightness(Color);
+
+    float fLuma = ColorToLuma(Color);
+
+    float fDelta = (fLuma-fMidPoint);
+
+    float fModifier = fDelta * DynamicContrastIntensity * max(0.0, 1.0-sqr(fBrightness));
+	
+	fModifier /= max(fBrightness, 0.2);
+	fModifier += 1.0;
+    Color.rgb *= (fModifier);
+}
+
+#endif

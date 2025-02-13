@@ -1,0 +1,26 @@
+//=============================================================================
+//
+// vsparticle.shd
+//
+//=============================================================================
+
+#define SHADER_TYPE 1
+
+#define FOG 1
+#define KEYHOLING 0
+
+#define NORMAL_MAP 0
+#define ENVIRONMENT_MAP 0
+
+#define VERTEX_COLOR 1
+#define POSITION_VIEW 1
+#include "inc_standard"
+
+void main ()
+{
+	VertexColor = vColor;
+	TransformMainCoordinates();
+	#if SHADER_QUALITY_MODE > 0
+		SetupFog();
+	#endif
+}
