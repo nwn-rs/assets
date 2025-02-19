@@ -1,0 +1,588 @@
+# Exported from NWmax 0.8 b35 at 05.02.2005 19:04:42
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tn_gdoor_08
+filedependancy gdoor_08-transition_01.max
+newmodel tn_gdoor_08
+setsupermodel tn_gdoor_08 NULL
+classification Door
+#NWmax GEOM  ASCII
+beginmodelgeom tn_gdoor_08
+node dummy tn_gdoor_08
+  parent NULL
+endnode
+node trimesh SAM
+  parent tn_gdoor_08
+  position 0.0 0.0 1.5
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 0.0
+  transparencyhint 1
+  selfillumcolor 0.0705882 0.0 1.0 
+  ambient 0.2 0.2 0.2 
+  Diffuse 0.8 0.8 0.8 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 0.0 0.0 0.0 
+  bitmap Standardmaterial
+  verts 8
+    -1.0 0.0 -1.5
+    1.0 0.0 -1.5
+    -1.0 0.0 1.5
+    1.0 0.0 1.5
+    -1.0 0.0 -1.5
+    1.0 0.0 -1.5
+    -1.0 0.0 1.5
+    1.0 0.0 1.5
+  faces 4
+    2 0 3  1  6 4 7  1
+    1 3 0  1  5 7 4  1
+    4 6 7  1  12 14 15  1
+    7 5 4  1  15 13 12  1
+  tverts 16
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+endnode
+node dummy tn_gdoor_08grnd
+  parent tn_gdoor_08
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.337255 0.337255 
+endnode
+node dummy tn_gdoor_08impc
+  parent tn_gdoor_08
+  position 0.0 0.0 1.75
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.337255 0.337255 
+endnode
+node dummy tn_gdoor_08hhit
+  parent tn_gdoor_08
+  position 0.0 0.0 2.25
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.337255 0.337255 
+endnode
+node dummy tn_gdoor_08head
+  parent tn_gdoor_08
+  position 0.0 0.0 2.5
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.337255 0.337255 
+endnode
+endmodelgeom tn_gdoor_08
+
+#NWmax ANIM ASCII
+newanim closed tn_gdoor_08
+  length 0.0333333
+  transtime 0.25
+animroot tn_gdoor_08
+    node dummy tn_gdoor_08
+        parent NULL
+    endnode
+    node dummy tn_gdoor_08_DWK
+        parent tn_gdoor_08
+    endnode
+    node dummy 08_DWK_dp_open1_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_open2_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_02
+        parent tn_gdoor_08_DWK
+    endnode
+    node trimesh SAM
+        parent tn_gdoor_08
+        alphakey
+            0.0 0.0 
+            0.0333333 0.0 
+        endlist
+    endnode
+    node dummy tn_gdoor_08grnd
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08impc
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08hhit
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08head
+        parent tn_gdoor_08
+    endnode
+doneanim closed tn_gdoor_08
+
+
+#NWmax ANIM ASCII
+newanim damage tn_gdoor_08
+  length 0.2
+  transtime 0.25
+animroot tn_gdoor_08
+    node dummy tn_gdoor_08
+        parent NULL
+    endnode
+    node dummy tn_gdoor_08_DWK
+        parent tn_gdoor_08
+    endnode
+    node dummy 08_DWK_dp_open1_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_open2_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_02
+        parent tn_gdoor_08_DWK
+    endnode
+    node trimesh SAM
+        parent tn_gdoor_08
+        alphakey
+            0.0 0.0 
+            0.2 0.0 
+        endlist
+    endnode
+    node dummy tn_gdoor_08grnd
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08impc
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08hhit
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08head
+        parent tn_gdoor_08
+    endnode
+doneanim damage tn_gdoor_08
+
+
+#NWmax ANIM ASCII
+newanim opening1 tn_gdoor_08
+  length 1.0
+  transtime 0.25
+animroot tn_gdoor_08
+    node dummy tn_gdoor_08
+        parent NULL
+    endnode
+    node dummy tn_gdoor_08_DWK
+        parent tn_gdoor_08
+    endnode
+    node dummy 08_DWK_dp_open1_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_open2_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_02
+        parent tn_gdoor_08_DWK
+    endnode
+    node trimesh SAM
+        parent tn_gdoor_08
+        alphakey
+            0.0 0.0 
+            1.0 0.0 
+        endlist
+    endnode
+    node dummy tn_gdoor_08grnd
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08impc
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08hhit
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08head
+        parent tn_gdoor_08
+    endnode
+doneanim opening1 tn_gdoor_08
+
+
+#NWmax ANIM ASCII
+newanim opened1 tn_gdoor_08
+  length 0.0333333
+  transtime 0.25
+animroot tn_gdoor_08
+    node dummy tn_gdoor_08
+        parent NULL
+    endnode
+    node dummy tn_gdoor_08_DWK
+        parent tn_gdoor_08
+    endnode
+    node dummy 08_DWK_dp_open1_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_open2_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_02
+        parent tn_gdoor_08_DWK
+    endnode
+    node trimesh SAM
+        parent tn_gdoor_08
+        alphakey
+            0.0 0.0 
+            0.0333333 0.0 
+        endlist
+    endnode
+    node dummy tn_gdoor_08grnd
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08impc
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08hhit
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08head
+        parent tn_gdoor_08
+    endnode
+doneanim opened1 tn_gdoor_08
+
+
+#NWmax ANIM ASCII
+newanim closing1 tn_gdoor_08
+  length 0.666667
+  transtime 0.25
+animroot tn_gdoor_08
+    node dummy tn_gdoor_08
+        parent NULL
+    endnode
+    node dummy tn_gdoor_08_DWK
+        parent tn_gdoor_08
+    endnode
+    node dummy 08_DWK_dp_open1_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_open2_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_02
+        parent tn_gdoor_08_DWK
+    endnode
+    node trimesh SAM
+        parent tn_gdoor_08
+        alphakey
+            0.0 0.0 
+            0.666667 0.0 
+        endlist
+    endnode
+    node dummy tn_gdoor_08grnd
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08impc
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08hhit
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08head
+        parent tn_gdoor_08
+    endnode
+doneanim closing1 tn_gdoor_08
+
+
+#NWmax ANIM ASCII
+newanim opening2 tn_gdoor_08
+  length 1.0
+  transtime 0.25
+animroot tn_gdoor_08
+    node dummy tn_gdoor_08
+        parent NULL
+    endnode
+    node dummy tn_gdoor_08_DWK
+        parent tn_gdoor_08
+    endnode
+    node dummy 08_DWK_dp_open1_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_open2_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_02
+        parent tn_gdoor_08_DWK
+    endnode
+    node trimesh SAM
+        parent tn_gdoor_08
+        alphakey
+            0.0 0.0 
+            1.0 0.0 
+        endlist
+    endnode
+    node dummy tn_gdoor_08grnd
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08impc
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08hhit
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08head
+        parent tn_gdoor_08
+    endnode
+doneanim opening2 tn_gdoor_08
+
+
+#NWmax ANIM ASCII
+newanim opened2 tn_gdoor_08
+  length 0.0333333
+  transtime 0.25
+animroot tn_gdoor_08
+    node dummy tn_gdoor_08
+        parent NULL
+    endnode
+    node dummy tn_gdoor_08_DWK
+        parent tn_gdoor_08
+    endnode
+    node dummy 08_DWK_dp_open1_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_open2_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_02
+        parent tn_gdoor_08_DWK
+    endnode
+    node trimesh SAM
+        parent tn_gdoor_08
+        alphakey
+            0.0 0.0 
+            0.0333333 0.0 
+        endlist
+    endnode
+    node dummy tn_gdoor_08grnd
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08impc
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08hhit
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08head
+        parent tn_gdoor_08
+    endnode
+doneanim opened2 tn_gdoor_08
+
+
+#NWmax ANIM ASCII
+newanim closing2 tn_gdoor_08
+  length 0.666667
+  transtime 0.25
+animroot tn_gdoor_08
+    node dummy tn_gdoor_08
+        parent NULL
+    endnode
+    node dummy tn_gdoor_08_DWK
+        parent tn_gdoor_08
+    endnode
+    node dummy 08_DWK_dp_open1_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_open2_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_02
+        parent tn_gdoor_08_DWK
+    endnode
+    node trimesh SAM
+        parent tn_gdoor_08
+        alphakey
+            0.0 0.0 
+            0.666667 0.0 
+        endlist
+    endnode
+    node dummy tn_gdoor_08grnd
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08impc
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08hhit
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08head
+        parent tn_gdoor_08
+    endnode
+doneanim closing2 tn_gdoor_08
+
+
+#NWmax ANIM ASCII
+newanim die tn_gdoor_08
+  length 0.666667
+  transtime 0.25
+animroot tn_gdoor_08
+    node dummy tn_gdoor_08
+        parent NULL
+    endnode
+    node dummy tn_gdoor_08_DWK
+        parent tn_gdoor_08
+    endnode
+    node dummy 08_DWK_dp_open1_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_open2_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_02
+        parent tn_gdoor_08_DWK
+    endnode
+    node trimesh SAM
+        parent tn_gdoor_08
+        alphakey
+            0.0 0.0 
+            0.666667 0.0 
+        endlist
+    endnode
+    node dummy tn_gdoor_08grnd
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08impc
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08hhit
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08head
+        parent tn_gdoor_08
+    endnode
+doneanim die tn_gdoor_08
+
+
+#NWmax ANIM ASCII
+newanim dead tn_gdoor_08
+  length 0.0333333
+  transtime 0.25
+animroot tn_gdoor_08
+    node dummy tn_gdoor_08
+        parent NULL
+    endnode
+    node dummy tn_gdoor_08_DWK
+        parent tn_gdoor_08
+    endnode
+    node dummy 08_DWK_dp_open1_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_open2_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_02
+        parent tn_gdoor_08_DWK
+    endnode
+    node trimesh SAM
+        parent tn_gdoor_08
+        alphakey
+            0.0 0.0 
+            0.0333333 0.0 
+        endlist
+    endnode
+    node dummy tn_gdoor_08grnd
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08impc
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08hhit
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08head
+        parent tn_gdoor_08
+    endnode
+doneanim dead tn_gdoor_08
+
+
+#NWmax ANIM ASCII
+newanim trans tn_gdoor_08
+  length 0.0333333
+  transtime 0.25
+animroot tn_gdoor_08
+    node dummy tn_gdoor_08
+        parent NULL
+    endnode
+    node dummy tn_gdoor_08_DWK
+        parent tn_gdoor_08
+    endnode
+    node dummy 08_DWK_dp_open1_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_open2_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_01
+        parent tn_gdoor_08_DWK
+    endnode
+    node dummy 08_DWK_dp_closed_02
+        parent tn_gdoor_08_DWK
+    endnode
+    node trimesh SAM
+        parent tn_gdoor_08
+        alphakey
+            0.0 0.25 
+            0.0333333 0.25 
+        endlist
+    endnode
+    node dummy tn_gdoor_08grnd
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08impc
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08hhit
+        parent tn_gdoor_08
+    endnode
+    node dummy tn_gdoor_08head
+        parent tn_gdoor_08
+    endnode
+doneanim trans tn_gdoor_08
+
+donemodel tn_gdoor_08
