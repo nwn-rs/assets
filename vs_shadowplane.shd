@@ -1,0 +1,48 @@
+//=============================================================================
+//
+// vs_shadowplane.shd
+//
+//=============================================================================
+
+#define SHADER_TYPE 1
+
+#define LIGHTING 0
+#define FOG 1
+#define KEYHOLING 0
+
+#define NO_TEXTURE_COORDS 1
+#define NORMAL_MAP 0
+#define ENVIRONMENT_MAP 0
+
+#define VERTEX_COLOR 1
+
+#include "inc_standard"
+
+varying float fShadowFadePoint;
+
+void main ()
+{
+	VertexColor = vec4(1.0,1.0,1.0,1.0);
+	
+    ApplyStandardShader();
+	
+
+	float fLimit;
+	
+	if(fogEnabled != 0.0)
+	{
+		fLimit = fogEnd;
+	}
+	else
+	{
+		fLimit = farClip;
+	}
+
+	// Yields the maximum view space Y offset for shadow plane before it hits fog end / clip. The last adjustment is to compensate for the fact that the shadow plane is lower than the camera. Note: all these calculations could be done prior to the shader stage, but left here for now to allow easy tweaking. The performance impact should be minimal.
+	
+	float fMaxY = (fLimit) * tan(radians(89.99-cameraPitch)) - (cameraPosition.z-cameraFocus.z) * sin(radians(cameraPitch));
+
+	// Find the maximum screen relative position. The multiplication by 2 is because of FOV of 45. It represents multiplying by fLimit / (0.5 * fLimit).
+
+	fShadowFadePoint = max((fMaxY / fLimit)+0.5, 0.01);// Equates: (2.0*(fMaxY / fLimit)* 0.5+0.5);	
+}
