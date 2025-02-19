@@ -1,0 +1,11 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: PLC_X0_GRW
+filedependancy plc_x0wdgrate.max
+node dummy x50_pwk_use01
+  parent PLC_X0_GRW_pwk
+  position 0.00949236 -1.09566 0
+  orientation 0 0 0 0
+  wirecolor 0.0273438 0.0273438 0.0273438
+endnode

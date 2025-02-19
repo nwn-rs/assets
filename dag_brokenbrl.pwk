@@ -1,0 +1,40 @@
+# Exported from NWmax 0.8 b50 at 1/10/2006 12:08:56 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh NoWalk
+  parent brokenbrl_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.839216 0.894118 0.6 
+  ambient 0.0 0.0 0.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 0.0
+  bitmap PLC_black00
+  verts 4
+    0.6 -0.42 0.0
+    -0.56 0.6 0.0
+    -0.56 -0.42 0.0
+    0.6 0.6 0.0
+  faces 2
+    0 1 2  0  0 1 2  7
+    3 1 0  0  3 1 0  7
+  tverts 4
+    0.491458 1.03053 0
+    0.491458 0.333031 0
+    0.556563 1.03053 0
+    0.556563 0.333031 0
+endnode
+node dummy tbd_pwk_use01
+  parent brokenbrl_pwk
+  position -0.0555896 0.734368 0.159263
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.776471 0.878431 0.341176 
+endnode
+node dummy tbd_pwk_use02
+  parent brokenbrl_pwk
+  position -0.117507 -0.564736 0.159263
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.776471 0.878431 0.341176 
+endnode

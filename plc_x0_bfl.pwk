@@ -1,0 +1,24 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x0_bfl
+filedependancy plc_x0brokleg.max
+node trimesh NoWalk
+  parent plc_x0_bfl_pwk
+  position 0.00750507 0.0084719 0
+  orientation 0 0 0 0
+  wirecolor 0.601563 0.601563 0.601563
+  ambient 0.597656 0.890625 0.835938
+  diffuse 0.597656 0.890625 0.835938
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 4
+    -0.068331 -0.437379 0
+    0.0669692 -0.430698 0
+    0.0644927 0.432804 0
+    -0.063131 0.435273 0
+  faces 2
+    3 0 1  1  0 0 0  0
+    3 1 2  1  0 0 0  0
+endnode

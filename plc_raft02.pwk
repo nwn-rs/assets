@@ -1,0 +1,30 @@
+#MAXDOOR ASCII
+# model: PLC_Raft02_pwk 
+filedependancy plc_raft.max
+node trimesh PLC_Raft02_wg 
+  parent PLC_Raft02_pwk 
+  position 0.0 -0.164623 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.694118 0.101961  
+    bitmap NULL
+    verts 4
+     -3.17111 -2.15293 0.0
+     3.17111 -2.15293 0.0
+     -3.36076 2.85356 0.0
+     3.17111 2.15293 0.0
+    faces 2
+     2 0 3  1  0 0 0  1
+     1 3 0  1  0 0 0  1
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Raft02_pwk 
+  position 4.43865 -0.063519 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_Raft02_pwk 
+  position -4.66998 -0.00151929 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0235294 0.52549 0.443137  
+endnode
