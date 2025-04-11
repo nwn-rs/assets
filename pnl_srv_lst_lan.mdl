@@ -1,0 +1,111 @@
+#MAXMODEL ASCII
+# model: PNL_SRV_LST_LAN
+filedependancy PNL_SRV_LST_LAN.max
+newmodel PNL_SRV_LST_LAN
+setsupermodel PNL_SRV_LST_LAN NULL
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom PNL_SRV_LST_LAN
+node dummy PNL_SRV_LST_LAN
+  parent NULL
+  #part-number 0
+endnode
+node trimesh Plane207_01
+  parent PNL_SRV_LST_LAN
+  #part-number 1
+  ambient 0 0 0
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 1
+  bitmap PNL_SRV_LST_LAN
+  verts 4
+    -2.55999994 2.55999994 0
+    -2.55999994 -2.55999994 0
+    2.55999994 2.55999994 0
+    2.55999994 -2.55999994 0
+  tverts 4
+    1.19208998e-007 1 0
+    -1.19208998e-007 1.49011996e-007 0
+    1 1 0
+    1 -1.19208998e-007 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position -1.44000995 0.26 -0.0500000007
+  orientation 0 0 0 0
+endnode
+node trimesh Plane206_01
+  parent Plane207_01
+  #part-number 2
+  ambient 0 0 0
+  diffuse 1 1 1
+  specular 0.0500000007 0.0500000007 0.0500000007
+  shininess 26
+  bitmap PNL_SRV_LST_LAN1
+  verts 4
+    -1.44000006 2.55999994 0
+    -1.44000006 -2.55999994 0
+    1.44000006 2.55999994 0
+    1.44000006 -2.55999994 0
+  tverts 4
+    1.00195003 0.962890983 0
+    0.00195372012 0.962890983 0
+    1.00195003 0.400391012 0
+    0.00195356994 0.400391012 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 4 2.44141006e-006 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane204
+  parent Plane206_01
+  #part-number 3
+  ambient 0 0 0
+  diffuse 1 1 1
+  specular 0.0500000007 0.0500000007 0.0500000007
+  shininess 26
+  bitmap PNL_SRV_LST_LAN1
+  verts 4
+    -1.44000006 0.439999998 0
+    -1.44000006 -0.439999998 0
+    1.44000006 0.439999998 0
+    1.44000006 -0.439999998 0
+  tverts 4
+    0.4375 0.380860001 0
+    0.4375 0.208985001 0
+    1 0.380860001 0
+    1 0.208985001 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 0 -2.64 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane205_01
+  parent Plane204
+  #part-number 4
+  ambient 0 0 0
+  diffuse 1 1 1
+  specular 0.0500000007 0.0500000007 0.0500000007
+  shininess 26
+  bitmap PNL_SRV_LST_LAN1
+  verts 4
+    -2.55999994 0.439999998 0
+    -2.55999994 -0.439999998 0
+    2.55999994 0.439999998 0
+    2.55999994 -0.439999998 0
+  tverts 4
+    0 0.171875 0
+    -1.19208998e-007 1.19208998e-007 0
+    1 0.171875 0
+    1 -1.19208998e-007 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position -4 -2.44141006e-006 0
+  orientation 0 0 0 0
+endnode
+endmodelgeom PNL_SRV_LST_LAN
+
+donemodel PNL_SRV_LST_LAN

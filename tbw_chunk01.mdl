@@ -1,0 +1,128 @@
+# Exported from NWmax 0.8 b60 at 07.03.2006 08:01:28
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tbw_chunk01
+#local file: E:\_Monkeys\wc-Barrows\by martin\Finale_04_05.max
+filedependancy Finale_04_05.max
+newmodel tbw_chunk01
+setsupermodel tbw_chunk01 NULL
+classification Effect
+#NWmax GEOM  ASCII
+beginmodelgeom tbw_chunk01
+node dummy tbw_chunk01
+  parent NULL
+endnode
+node trimesh chunk
+  parent tbw_chunk01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.6 0.721569 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tbw01_rock2
+  verts 5
+    -0.075 -0.075 0.0
+    0.075 -0.075 0.0
+    -0.075 0.075 0.0
+    0.075 0.075 0.0
+    0.0 0.0 0.15
+  faces 6
+    0 2 3  2  5 6 7  2
+    3 1 0  2  8 9 10  2
+    0 1 4  8  11 12 13  5
+    1 3 4  16  1 14 15  4
+    3 2 4  32  3 16 17  6
+    2 0 4  64  2 0 4  3
+  tverts 18
+    0.5375 0.4625 0
+    0.4625 0.4625 0
+    0.4625 0.4625 0
+    0.4625 0.4625 0
+    0.5 0.5375 0
+    0.5375 0.4625 0
+    0.5375 0.5375 0
+    0.4625 0.5375 0
+    0.4625 0.5375 0
+    0.4625 0.4625 0
+    0.5375 0.4625 0
+    0.4625 0.4625 0
+    0.5375 0.4625 0
+    0.5 0.5375 0
+    0.5375 0.4625 0
+    0.5 0.5375 0
+    0.5375 0.4625 0
+    0.5 0.5375 0
+endnode
+node emitter door_explosion
+  parent tbw_chunk01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.337255 0.337255 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 1
+  spawnType 0
+  xSize 30.0
+  ySize 30.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.439216 0.364706 
+  colorEnd 0.819608 0.796079 0.709804 
+  alphaStart 0.8
+  alphaEnd 0.0
+  sizeStart 1.0
+  sizeEnd 4.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 5
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 0.0
+  randvel 0.0
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 0
+  xgrid 4
+  ygrid 4
+  fps 10
+  framestart 0
+  frameend 24
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+endmodelgeom tbw_chunk01
+donemodel tbw_chunk01

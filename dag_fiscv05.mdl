@@ -1,0 +1,1183 @@
+# Exported from NWmax 0.8 b50 at 11/12/2005 8:45:37 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: dag_fiscv05
+#local file: Fissure_Cave.gmaxFissure_Cave.gmax
+filedependancy Fissure_Cave.gmax
+newmodel dag_fiscv05
+setsupermodel dag_fiscv05 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom dag_fiscv05
+node dummy dag_fiscv05
+  parent NULL
+endnode
+node trimesh damage_fiscv05
+  parent dag_fiscv05
+  position -0.00086731 -0.130659 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 0
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0
+  diffuse 1.0 0.501961 0.643137 
+  specular 0.0 0.0 0.0 
+  shininess 24
+  center 0.0 0.0 25.0 
+  bitmap NULL
+  verts 12
+    -0.195415 -0.186216 0.0
+    -0.195415 0.186216 0.0
+    0.195415 0.186216 0.0
+    0.195415 -0.186216 0.0
+    -0.195415 -0.186216 0.5
+    0.195415 -0.186216 0.5
+    0.195415 0.186216 0.5
+    -0.195415 0.186216 0.5
+    0.103944 -0.0990513 0.25
+    -0.103944 -0.0990513 0.25
+    0.103944 0.0990513 0.25
+    -0.103944 0.0990513 0.25
+  faces 20
+    0 1 2  1  0 1 2  0
+    2 3 0  1  0 1 2  0
+    4 5 6  1  0 1 2  0
+    6 7 4  1  0 1 2  0
+    0 3 8  1  0 1 2  0
+    8 9 0  1  0 1 2  0
+    9 8 5  1  0 1 2  0
+    5 4 9  1  0 1 2  0
+    3 2 10  1  0 1 2  0
+    10 8 3  1  0 1 2  0
+    8 10 6  1  0 1 2  0
+    6 5 8  1  0 1 2  0
+    2 1 11  1  0 1 2  0
+    11 10 2  1  0 1 2  0
+    10 11 7  1  0 1 2  0
+    7 6 10  1  0 1 2  0
+    1 0 9  1  0 1 2  0
+    9 11 1  1  0 1 2  0
+    11 9 4  1  0 1 2  0
+    4 7 11  1  0 1 2  0
+  tverts 3
+    0.0 0.0 0
+    0.0 0.0 0
+    0.0 0.0 0
+endnode
+node trimesh Wall
+  parent damage_fiscv05
+  position 0.0491491 0.114168 0.0
+  orientation 0.0 0.0 1.0 -3.14159
+  wirecolor 0.898039 0.603922 0.843137 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  center -11.185 -88.25 132.132 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 20.0
+  bitmap tdm01_rock01
+  verts 58
+    -1.26842 -1.07896 1.45903
+    -0.565992 -0.990732 2.0806
+    -0.633776 -0.775566 1.43568
+    -1.26842 -1.24073 2.08085
+    0.06 -1.02179 2.20024
+    -0.16 -0.765205 1.39258
+    0.729212 -0.775566 1.43237
+    0.36 -0.765918 1.40217
+    0.629212 -0.990732 2.08085
+    1.22842 -1.02896 1.45903
+    1.12842 -1.19073 2.08085
+    -1.26842 -0.884853 0.712855
+    -0.708986 -0.484854 0.720097
+    -1.26842 -0.695 0.0
+    -0.679212 -0.275 0.0
+    -0.2 -0.484854 0.712855
+    1.27842 -0.834853 0.712855
+    0.729212 -0.484854 0.712855
+    0.45 -0.484854 0.712855
+    0.629212 -0.095 0.0
+    0.14 -0.015 0.0
+    1.32842 -0.645 0.0
+    -0.34 -0.015 0.0
+    1.22842 -1.02896 1.45903
+    1.4763 -1.75 2.0806
+    1.5263 -1.75 1.43568
+    1.12842 -1.19073 2.08085
+    1.27842 -0.834853 0.712855
+    1.5763 -1.75 0.720097
+    1.32842 -0.645 0.0
+    1.7263 -1.75 0.0
+    -1.55 -1.75 2.03085
+    -1.26842 -1.07896 1.45903
+    -1.6 -1.75 1.43237
+    -1.26842 -1.24073 2.08085
+    -1.26842 -0.884853 0.712855
+    -1.7 -1.75 0.712855
+    -1.26842 -0.695 0.0
+    -1.95 -1.75 0.0
+    -0.519212 -1.75 2.49265
+    0.0434205 -1.20317 2.5
+    -0.554683 -1.21832 2.35
+    0.03 -1.75 2.64265
+    -1.16842 -1.40994 2.3
+    -1.16842 -1.75 2.44265
+    1.07842 -1.3916 2.5
+    0.529212 -1.75 2.64265
+    1.07842 -1.75 2.64265
+    0.565877 -1.21827 2.5
+    1.28 -1.75 2.59265
+    1.07842 -1.3916 2.5
+    1.07842 -1.75 2.64265
+    1.37864 -1.75 2.5
+    -1.16842 -1.40994 2.3
+    -1.35 -1.75 2.39265
+    -1.16842 -1.75 2.44265
+    -1.45 -1.75 2.3
+    -1.16842 -1.40994 2.3
+  faces 60
+    0 1 2  1  0 1 2  1
+    0 3 1  1  0 3 1  1
+    2 4 5  1  2 4 5  1
+    2 1 4  1  2 1 4  1
+    4 6 7  1  4 6 7  1
+    4 8 6  1  4 8 6  1
+    8 9 6  1  8 9 6  1
+    8 10 9  1  8 10 9  1
+    11 2 12  1  11 2 12  1
+    11 0 2  1  11 0 2  1
+    13 12 14  1  13 12 14  1
+    13 11 12  1  13 11 12  1
+    12 5 15  1  12 5 15  1
+    12 2 5  1  12 2 5  1
+    6 16 17  1  6 16 17  1
+    6 9 16  1  6 9 16  1
+    7 17 18  1  7 17 18  1
+    7 6 17  1  7 6 17  1
+    18 19 20  1  18 19 20  1
+    18 17 19  1  18 17 19  1
+    17 21 19  1  17 21 19  1
+    17 16 21  1  17 16 21  1
+    15 22 14  1  15 22 14  1
+    12 15 14  1  12 15 14  1
+    23 24 25  1  23 24 25  1
+    23 26 24  1  23 26 24  1
+    27 25 28  1  27 25 28  1
+    27 23 25  1  27 23 25  1
+    29 28 30  1  29 28 30  1
+    29 27 28  1  29 27 28  1
+    31 32 33  1  31 32 33  1
+    31 34 32  1  31 34 32  1
+    33 35 36  1  33 35 36  1
+    33 32 35  1  33 32 35  1
+    36 37 38  1  36 37 38  1
+    36 35 37  1  36 35 37  1
+    39 40 41  1  39 40 41  1
+    39 42 40  1  39 42 40  1
+    41 4 1  1  41 4 1  1
+    41 40 4  1  41 40 4  1
+    39 43 44  1  39 43 44  1
+    39 41 43  1  39 41 43  1
+    1 43 41  1  1 43 41  1
+    1 3 43  1  1 3 43  1
+    45 46 47  1  45 46 47  1
+    45 48 46  1  45 48 46  1
+    10 48 45  1  10 48 45  1
+    10 8 48  1  10 8 48  1
+    42 48 40  1  42 48 40  1
+    42 46 48  1  42 46 48  1
+    4 48 8  1  4 48 8  1
+    4 40 48  1  4 40 48  1
+    49 50 51  1  49 50 51  1
+    49 52 50  1  49 52 50  1
+    24 50 52  1  24 50 52  1
+    24 26 50  1  24 26 50  1
+    53 54 55  1  53 54 55  1
+    53 56 54  1  53 56 54  1
+    31 57 34  1  31 57 34  1
+    31 56 57  1  31 56 57  1
+  tverts 58
+    0.0 0.627273 0
+    0.25 0.813636 0
+    0.25 0.627273 0
+    0.0 0.813636 0
+    0.5 0.813636 0
+    0.5 0.627273 0
+    0.75 0.627273 0
+    0.5 0.627273 0
+    0.75 0.813636 0
+    1.0 0.627273 0
+    1.0 0.813636 0
+    0.0 0.403636 0
+    0.25 0.403636 0
+    0.0 0.18 0
+    0.25 0.18 0
+    0.5 0.403636 0
+    1.0 0.403636 0
+    0.75 0.403636 0
+    0.5 0.403636 0
+    0.75 0.18 0
+    0.5 0.18 0
+    1.0 0.18 0
+    0.5 0.18 0
+    0.0 0.627273 0
+    0.25 0.813636 0
+    0.25 0.627273 0
+    0.0 0.813636 0
+    0.0 0.403636 0
+    0.25 0.403636 0
+    0.0 0.18 0
+    0.25 0.18 0
+    0.75 0.813636 0
+    1.0 0.627273 0
+    0.75 0.627273 0
+    1.0 0.813636 0
+    1.0 0.403636 0
+    0.75 0.403636 0
+    1.0 0.18 0
+    0.75 0.18 0
+    0.25 1.0 0
+    0.5 0.91663 0
+    0.25 0.931696 0
+    0.5 1.0 0
+    0.0 0.93167 0
+    0.0 1.0 0
+    1.0 0.93167 0
+    0.75 1.0 0
+    1.0 1.0 0
+    0.75 0.93167 0
+    0.25 1.0 0
+    0.0 0.93167 0
+    0.0 1.0 0
+    0.25 0.931696 0
+    1.0 0.93167 0
+    0.75 1.0 0
+    1.0 1.0 0
+    0.75 0.93167 0
+    1.0 0.932629 0
+endnode
+node trimesh CrackWall
+  parent damage_fiscv05
+  position 0.0491491 0.114168 0.0
+  orientation 0.0 0.0 1.0 -3.14159
+  wirecolor 0.898039 0.603922 0.843137 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  center 20.5 -59.1866 110.019 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 20.0
+  bitmap pdag_rock01
+  verts 24
+    0.06 -1.04708 2.20039
+    0.12 -1.12751 1.38479
+    -0.108632 -0.951737 1.3931
+    0.22 -1.16873 2.17137
+    0.06 -1.02179 2.20024
+    -0.16 -0.765205 1.39258
+    0.08 -1.09194 0.705996
+    0.0169962 -0.872204 0.72714
+    -0.2 -0.484854 0.712855
+    0.02 -1.05298 0.248324
+    -0.03 -0.788262 0.2267
+    -0.34 -0.015 0.0
+    0.75 -1.09194 0.705996
+    0.59 -0.789309 0.246673
+    0.44 -1.04879 0.168434
+    0.713222 -0.873704 0.755771
+    0.14 -0.015 0.0
+    0.45 -0.484854 0.712855
+    0.5 -1.12906 1.41434
+    0.355338 -0.954773 1.4139
+    0.36 -0.765918 1.40217
+    0.22 -1.16873 2.17137
+    0.06 -1.04708 2.20039
+    0.06 -1.02179 2.20024
+  faces 24
+    0 1 2  1  0 1 2  1
+    0 3 1  1  0 3 1  1
+    4 2 5  1  4 2 5  1
+    4 0 2  1  4 0 2  1
+    2 6 7  1  2 6 7  1
+    2 1 6  1  2 1 6  1
+    5 7 8  1  5 7 8  1
+    5 2 7  1  5 2 7  1
+    7 9 10  1  7 9 10  1
+    7 6 9  1  7 6 9  1
+    8 10 11  1  8 10 11  1
+    8 7 10  1  8 7 10  1
+    12 13 14  1  12 13 14  1
+    12 15 13  1  12 15 13  1
+    15 16 13  1  15 16 13  1
+    15 17 16  1  15 17 16  1
+    18 15 12  1  18 15 12  1
+    18 19 15  1  18 19 15  1
+    19 17 15  1  19 17 15  1
+    19 20 17  1  19 20 17  1
+    21 19 18  1  21 19 18  1
+    21 22 19  1  21 22 19  1
+    22 20 19  1  22 20 19  1
+    22 23 20  1  22 23 20  1
+  tverts 24
+    0.08 1.0 0
+    0.272018 0.632922 0
+    0.142264 0.631324 0
+    0.18 1.0 0
+    0.0 1.0 0
+    0.0 0.632922 0
+    0.275321 0.32399 0
+    0.147519 0.327171 0
+    0.0 0.32399 0
+    0.286881 0.0 0
+    0.137615 0.0 0
+    0.0 0.0 0
+    0.69 0.33399 0
+    0.843211 0.0 0
+    0.69 0.0 0
+    0.846259 0.330202 0
+    1.0 0.0 0
+    1.0 0.32399 0
+    0.69 0.646372 0
+    0.847925 0.64084 0
+    1.0 0.636372 0
+    0.69 1.0 0
+    0.84 1.0 0
+    1.0 1.0 0
+endnode
+node trimesh Black
+  parent damage_fiscv05
+  position 0.0491491 0.114168 0.0
+  orientation 0.0 0.0 1.0 -3.14159
+  wirecolor 0.898039 0.603922 0.843137 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  center 38.5 -110.667 112.995 
+  ambient 0.0 0.0 0.0 
+  diffuse 0.0 0.0 0.0 
+  specular 0.0 0.0 0.0 
+  shininess 20.0
+  bitmap black
+  verts 8
+    0.22 -1.16873 2.17137
+    0.5 -1.12906 1.41434
+    0.12 -1.12751 1.38479
+    0.08 -1.09194 0.705996
+    0.75 -1.09194 0.705996
+    0.44 -1.04879 0.168434
+    0.02 -1.05298 0.248324
+    0.157333 -1.04461 0.0885435
+  faces 6
+    0 1 2  0  0 0 0  1
+    2 1 3  0  0 0 0  1
+    1 4 3  0  0 0 0  1
+    3 4 5  0  0 0 0  1
+    6 3 5  0  0 0 0  1
+    6 5 7  0  0 0 0  1
+endnode
+node trimesh Floor
+  parent damage_fiscv05
+  position 0.0491491 0.114168 0.0
+  orientation 0.0 0.0 1.0 -3.14159
+  wirecolor 0.898039 0.603922 0.843137 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  center 12.5 -53.3991 12.4162 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 20.0
+  bitmap pdag_floorf
+  verts 9
+    0.157333 -1.04461 0.0885435
+    0.59 -0.789309 0.246673
+    0.213027 -0.780629 0.081064
+    0.44 -1.04879 0.168434
+    -0.03 -0.788262 0.2267
+    0.02 -1.05298 0.248324
+    -0.122667 -0.015 0.0
+    0.14 -0.015 0.0
+    -0.34 -0.015 0.0
+  faces 8
+    0 1 2  1  0 1 2  1
+    0 3 1  1  0 3 1  1
+    4 0 2  1  4 0 2  1
+    4 5 0  1  4 5 0  1
+    1 6 2  1  1 6 2  1
+    1 7 6  1  1 7 6  1
+    8 2 6  1  8 2 6  1
+    8 4 2  1  8 4 2  1
+  tverts 9
+    0.465233 1.0 0
+    0.0 0.679736 0
+    0.362337 0.679736 0
+    0.16129 1.0 0
+    0.83871 0.679736 0
+    0.698925 1.0 0
+    0.766308 0.0 0
+    0.483871 0.0 0
+    1.0 0.0 0
+endnode
+node trimesh ShadowObject
+  parent damage_fiscv05
+  position 0.0247327 0.796254 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.431373 0.52549 
+  tilefade 0
+  scale 1.0
+  render 0
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  center 13.4373 16.6368 133.663 
+  bitmap NULL
+  verts 49
+    -1.33684 -0.0620182 0.0
+    -0.62937 -0.624776 0.0
+    -0.0666121 -0.737328 0.0
+    0.415752 -0.70517 0.0
+    1.34832 0.00229698 0.0
+    1.97539 1.0635 0.0
+    -1.70665 1.0635 0.0
+    -1.08151 0.260339 2.67325
+    -0.572543 -0.144523 2.67325
+    -0.167681 -0.225495 2.67325
+    0.179343 -0.20236 2.67325
+    0.850257 0.306609 2.67325
+    1.30139 1.07006 2.67325
+    -1.34756 1.07006 2.67325
+    -0.611136 -0.493335 0.735109
+    -1.07912 -0.121078 0.735109
+    -1.26019 0.0229562 0.735109
+    -0.0948449 -0.596594 0.735109
+    -0.467102 -0.522142 0.735109
+    0.347691 -0.567091 0.735109
+    0.0286131 -0.588363 0.735109
+    1.20326 0.0819609 0.735109
+    0.586376 -0.38602 0.735109
+    1.77856 1.05554 0.735109
+    1.36376 0.353569 0.735109
+    -1.59947 1.05554 0.735109
+    0.83616 1.05554 0.735109
+    -1.50481 0.767471 0.735109
+    -0.574287 -0.34432 2.09343
+    -0.695457 -0.247935 2.09343
+    -0.105322 -0.438113 2.09343
+    -0.201707 -0.418836 2.09343
+    0.296648 -0.411315 2.09343
+    0.214032 -0.416823 2.09343
+    1.07379 0.178241 2.09343
+    0.914066 0.0570705 2.09343
+    1.59635 1.06257 2.09343
+    1.48895 0.880819 2.09343
+    -1.47202 1.06257 2.09343
+    -0.841384 1.06257 2.09343
+    -1.16384 0.124645 2.09343
+    -1.22718 0.317415 2.09343
+    -1.11696 0.087351 2.09343
+    -0.536993 -0.351779 2.09343
+    -0.0733558 -0.435982 2.09343
+    0.358449 -0.364432 2.09343
+    1.11535 0.248565 2.09343
+    1.35234 1.06257 2.09343
+    -1.44751 0.987987 2.09343
+  faces 94
+    29 28 8  1  0 0 0  3
+    0 15 16  1  0 0 0  3
+    31 30 9  4  0 0 0  3
+    1 18 14  4  0 0 0  3
+    33 32 10  2  0 0 0  3
+    2 20 17  2  0 0 0  3
+    35 34 11  4  0 0 0  3
+    3 22 19  4  0 0 0  3
+    37 36 12  2  0 0 0  3
+    4 24 21  2  0 0 0  3
+    39 38 13  4  0 0 0  3
+    5 26 23  4  0 0 0  3
+    41 40 7  2  0 0 0  3
+    6 27 25  2  0 0 0  3
+    4 6 5  16  0 0 0  2
+    4 0 6  16  0 0 0  2
+    3 0 4  16  0 0 0  2
+    3 1 0  16  0 0 0  2
+    3 2 1  16  0 0 0  2
+    11 12 13  16  0 0 0  1
+    11 13 7  16  0 0 0  1
+    10 11 7  16  0 0 0  1
+    10 7 8  16  0 0 0  1
+    10 8 9  16  0 0 0  1
+    15 1 14  1  0 0 0  3
+    0 1 15  1  0 0 0  3
+    40 42 7  1  0 0 0  3
+    15 29 42  1  0 0 0  3
+    18 2 17  4  0 0 0  3
+    1 2 18  4  0 0 0  3
+    28 43 8  4  0 0 0  3
+    18 31 43  4  0 0 0  3
+    20 3 19  2  0 0 0  3
+    2 3 20  2  0 0 0  3
+    30 44 9  2  0 0 0  3
+    20 33 44  2  0 0 0  3
+    22 4 21  4  0 0 0  3
+    3 4 22  4  0 0 0  3
+    32 45 10  4  0 0 0  3
+    22 35 45  4  0 0 0  3
+    24 5 23  2  0 0 0  3
+    4 5 24  2  0 0 0  3
+    34 46 11  2  0 0 0  3
+    24 37 46  2  0 0 0  3
+    26 6 25  4  0 0 0  3
+    5 6 26  4  0 0 0  3
+    36 47 12  4  0 0 0  3
+    26 39 47  4  0 0 0  3
+    27 0 16  2  0 0 0  3
+    6 0 27  2  0 0 0  3
+    38 48 13  2  0 0 0  3
+    27 41 48  2  0 0 0  3
+    29 14 28  1  0 0 0  3
+    15 14 29  1  0 0 0  3
+    31 17 30  4  0 0 0  3
+    18 17 31  4  0 0 0  3
+    33 19 32  2  0 0 0  3
+    20 19 33  2  0 0 0  3
+    35 21 34  4  0 0 0  3
+    22 21 35  4  0 0 0  3
+    37 23 36  2  0 0 0  3
+    24 23 37  2  0 0 0  3
+    39 25 38  4  0 0 0  3
+    26 25 39  4  0 0 0  3
+    41 16 40  2  0 0 0  3
+    27 16 41  2  0 0 0  3
+    40 15 42  1  0 0 0  3
+    16 15 40  1  0 0 0  3
+    42 29 7  1  0 0 0  3
+    29 8 7  1  0 0 0  3
+    28 18 43  4  0 0 0  3
+    14 18 28  4  0 0 0  3
+    43 31 8  4  0 0 0  3
+    31 9 8  4  0 0 0  3
+    30 20 44  2  0 0 0  3
+    17 20 30  2  0 0 0  3
+    44 33 9  2  0 0 0  3
+    33 10 9  2  0 0 0  3
+    32 22 45  4  0 0 0  3
+    19 22 32  4  0 0 0  3
+    45 35 10  4  0 0 0  3
+    35 11 10  4  0 0 0  3
+    34 24 46  2  0 0 0  3
+    21 24 34  2  0 0 0  3
+    46 37 11  2  0 0 0  3
+    37 12 11  2  0 0 0  3
+    36 26 47  4  0 0 0  3
+    23 26 36  4  0 0 0  3
+    47 39 12  4  0 0 0  3
+    39 13 12  4  0 0 0  3
+    38 27 48  2  0 0 0  3
+    25 27 38  2  0 0 0  3
+    48 41 13  2  0 0 0  3
+    41 7 13  2  0 0 0  3
+endnode
+node emitter fire!90
+  parent dag_fiscv05
+  position -0.0566472 -0.206116 0.174662
+  orientation 1.0 0.0 0.0 -4.71239
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 100.0
+  ySize 99.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.454902 0.407843 
+  colorEnd 0.819608 0.803922 0.745098 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 1
+  xgrid 4
+  ygrid 4
+  fps 10
+  frameStart 0
+  frameEnd 24
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  drag 0.0
+endnode
+node dummy fiscv05_impact
+  parent dag_fiscv05
+  position 0.434459 0.46723 1.02259
+  orientation 0.0 0.0 1.0 -3.14159
+  wirecolor 0.839216 0.894118 0.6 
+endnode
+node dummy fiscv05_hand
+  parent dag_fiscv05
+  position 0.0481833 0.330676 0.268035
+  orientation 0.0 0.0 1.0 -3.14159
+  wirecolor 0.721569 0.607843 0.898039 
+endnode
+node dummy fiscv05_head_hit
+  parent dag_fiscv05
+  position 0.0481833 0.317378 1.01529
+  orientation 0.0 0.0 1.0 -3.14159
+  wirecolor 0.721569 0.607843 0.898039 
+endnode
+node dummy fiscv05_ground
+  parent dag_fiscv05
+  position -0.00141246 0.00497986 0.0268787
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.776471 0.878431 0.341176 
+endnode
+node dummy fiscv05_head
+  parent dag_fiscv05
+  position 0.0481833 0.338811 1.03239
+  orientation 0.0 0.0 1.0 -3.14159
+  wirecolor 0.776471 0.878431 0.341176 
+endnode
+node emitter ChunkyWood27
+  parent dag_fiscv05
+  position 0.0180057 -0.0205957 0.329926
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 5.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName PLC_Chunk_S01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  drag 0.0
+endnode
+node emitter ChunkyWood28
+  parent dag_fiscv05
+  position 0.0180057 -0.0205957 0.436147
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.482353 0.435294 0.317647 
+  colorEnd 0.584314 0.533333 0.407843 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 2.9
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 1
+  xgrid 5
+  ygrid 5
+  fps 0
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName PLC_Chunk_S02
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  drag 0.0
+endnode
+endmodelgeom dag_fiscv05
+#NWmax ANIM ASCII
+newanim damage dag_fiscv05
+  length 0.133333
+  transtime 0.0
+  animroot dag_fiscv05
+    node dummy dag_fiscv05
+        parent NULL
+    endnode
+    node trimesh damage_fiscv05
+        parent dag_fiscv05
+        positionkey
+            0.0 -0.00086731 -0.130659 0.0
+            0.0333333 -0.000867311 -0.146777 0.0
+            0.0666667 -0.000867311 -0.1306 0.0
+            0.133333 -0.00086731 -0.130659 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+            0.0666667 0.0 0.0 0.0 0.0
+            0.133333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Wall
+        parent damage_fiscv05
+    endnode
+    node trimesh CrackWall
+        parent damage_fiscv05
+    endnode
+    node trimesh Black
+        parent damage_fiscv05
+    endnode
+    node trimesh Floor
+        parent damage_fiscv05
+    endnode
+    node trimesh ShadowObject
+        parent damage_fiscv05
+    endnode
+    node emitter fire!90
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_impact
+        parent dag_fiscv05
+        positionkey
+            0.0 0.434459 0.46723 1.02259
+            0.133333 0.434459 0.46723 1.02259
+        endlist
+        orientationkey
+            0.0 0.0 0.0 1.0 -3.14159
+            0.133333 0.0 0.0 1.0 -3.14159
+        endlist
+    endnode
+    node dummy fiscv05_hand
+        parent dag_fiscv05
+        positionkey
+            0.0 0.0481833 0.330676 0.268035
+            0.133333 0.0481833 0.330676 0.268035
+        endlist
+        orientationkey
+            0.0 0.0 0.0 1.0 -3.14159
+            0.133333 0.0 0.0 1.0 -3.14159
+        endlist
+    endnode
+    node dummy fiscv05_head_hit
+        parent dag_fiscv05
+        positionkey
+            0.0 0.0481833 0.317378 1.01529
+            0.133333 0.0481833 0.317378 1.01529
+        endlist
+        orientationkey
+            0.0 0.0 0.0 1.0 -3.14159
+            0.133333 0.0 0.0 1.0 -3.14159
+        endlist
+    endnode
+    node dummy fiscv05_ground
+        parent dag_fiscv05
+        positionkey
+            0.0 -0.00141246 0.00497986 0.0268787
+            0.133333 -0.00141246 0.00497986 0.0268787
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.133333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node dummy fiscv05_head
+        parent dag_fiscv05
+        positionkey
+            0.0 0.0481833 0.338811 1.03239
+            0.133333 0.0481833 0.338811 1.03239
+        endlist
+        orientationkey
+            0.0 0.0 0.0 1.0 -3.14159
+            0.133333 0.0 0.0 1.0 -3.14159
+        endlist
+    endnode
+    node emitter ChunkyWood27
+        parent dag_fiscv05
+        positionkey
+            0.0 0.01801 -0.0205957 0.329926
+            0.0666667 0.0180057 -0.0205957 0.329926
+            0.133333 0.01801 -0.0205957 0.329926
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 -1.73776e-007
+            0.0666667 0.0 0.0 0.0 0.0
+            0.133333 0.0 0.0 0.0 -1.73776e-007
+        endlist
+    endnode
+    node emitter ChunkyWood28
+        parent dag_fiscv05
+        positionkey
+            0.0 0.01801 -0.0205957 0.436147
+            0.0666667 0.0180057 -0.0205957 0.436147
+            0.133333 0.01801 -0.0205957 0.436147
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 -1.73776e-007
+            0.0666667 0.0 0.0 0.0 0.0
+            0.133333 0.0 0.0 0.0 -1.73776e-007
+        endlist
+    endnode
+    node dummy fiscv05_pwk
+        parent dag_fiscv05
+    endnode
+    node trimesh NoWalk
+        parent fiscv05_pwk
+    endnode
+doneanim damage dag_fiscv05
+#NWmax ANIM ASCII
+newanim die dag_fiscv05
+  length 0.166667
+  transtime 0.0
+  animroot dag_fiscv05
+  event 0.0 detonate
+  event 0.0 detonate
+    node dummy dag_fiscv05
+        parent NULL
+    endnode
+    node trimesh damage_fiscv05
+        parent dag_fiscv05
+        positionkey
+            0.0 -0.00086731 -0.130659 0.0
+            0.166667 -0.00086731 -0.130659 -6.95145
+        endlist
+    endnode
+    node trimesh Wall
+        parent damage_fiscv05
+    endnode
+    node trimesh CrackWall
+        parent damage_fiscv05
+    endnode
+    node trimesh Black
+        parent damage_fiscv05
+    endnode
+    node trimesh Floor
+        parent damage_fiscv05
+    endnode
+    node trimesh ShadowObject
+        parent damage_fiscv05
+    endnode
+    node emitter fire!90
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_impact
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_hand
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_head_hit
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_ground
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_head
+        parent dag_fiscv05
+    endnode
+    node emitter ChunkyWood27
+        parent dag_fiscv05
+    endnode
+    node emitter ChunkyWood28
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_pwk
+        parent dag_fiscv05
+    endnode
+    node trimesh NoWalk
+        parent fiscv05_pwk
+    endnode
+doneanim die dag_fiscv05
+#NWmax ANIM ASCII
+newanim dead dag_fiscv05
+  length 0.0333333
+  transtime 0.0
+  animroot dag_fiscv05
+    node dummy dag_fiscv05
+        parent NULL
+    endnode
+    node trimesh damage_fiscv05
+        parent dag_fiscv05
+        positionkey
+            0.0 -0.00086731 -0.130659 -6.95145
+            0.0333333 -0.00086731 -0.130659 -6.95145
+        endlist
+    endnode
+    node trimesh Wall
+        parent damage_fiscv05
+    endnode
+    node trimesh CrackWall
+        parent damage_fiscv05
+    endnode
+    node trimesh Black
+        parent damage_fiscv05
+    endnode
+    node trimesh Floor
+        parent damage_fiscv05
+    endnode
+    node trimesh ShadowObject
+        parent damage_fiscv05
+    endnode
+    node emitter fire!90
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_impact
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_hand
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_head_hit
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_ground
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_head
+        parent dag_fiscv05
+    endnode
+    node emitter ChunkyWood27
+        parent dag_fiscv05
+        positionkey
+            0.0333333 0.0180057 -0.0205957 0.329926
+        endlist
+        orientationkey
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node emitter ChunkyWood28
+        parent dag_fiscv05
+        positionkey
+            0.0333333 0.0180057 -0.0205957 0.436147
+        endlist
+        orientationkey
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node dummy fiscv05_pwk
+        parent dag_fiscv05
+    endnode
+    node trimesh NoWalk
+        parent fiscv05_pwk
+    endnode
+doneanim dead dag_fiscv05
+#NWmax ANIM ASCII
+newanim default dag_fiscv05
+  length 0.0
+  transtime 0.25
+  animroot dag_fiscv05
+    node dummy dag_fiscv05
+        parent NULL
+    endnode
+    node trimesh damage_fiscv05
+        parent dag_fiscv05
+    endnode
+    node trimesh Wall
+        parent damage_fiscv05
+    endnode
+    node trimesh CrackWall
+        parent damage_fiscv05
+    endnode
+    node trimesh Black
+        parent damage_fiscv05
+    endnode
+    node trimesh Floor
+        parent damage_fiscv05
+    endnode
+    node trimesh ShadowObject
+        parent damage_fiscv05
+    endnode
+    node emitter fire!90
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_impact
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_hand
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_head_hit
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_ground
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_head
+        parent dag_fiscv05
+    endnode
+    node emitter ChunkyWood27
+        parent dag_fiscv05
+    endnode
+    node emitter ChunkyWood28
+        parent dag_fiscv05
+    endnode
+    node dummy fiscv05_pwk
+        parent dag_fiscv05
+    endnode
+    node trimesh NoWalk
+        parent fiscv05_pwk
+    endnode
+doneanim default dag_fiscv05
+donemodel dag_fiscv05

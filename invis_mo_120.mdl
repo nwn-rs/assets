@@ -1,0 +1,403 @@
+# Exported from NWmax 0.8 b61 at 2/20/2008 12:40:55 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: invis_mo_120
+#local file: D:\NWN\override\invis_mo_all.max
+filedependancy invis_mo_all.max
+newmodel invis_mo_120
+setsupermodel invis_mo_120 a_da
+classification Character
+setanimationscale 1.2
+#NWmax GEOM  ASCII
+beginmodelgeom invis_mo_120
+node dummy invis_mo_120
+  parent NULL
+endnode
+node dummy rootdummy
+  parent invis_mo_120
+  position -0.000486328 0.0240083 1.44864
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.776471 0.341176 
+endnode
+node dummy torso_g
+  parent rootdummy
+  position 0.000486328 0.0129947 0.000247192
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.776471 0.341176 
+endnode
+node dummy Lbicep_g
+  parent torso_g
+  position -0.361206 -0.0953884 0.551982
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.776471 0.341176 
+endnode
+node dummy lforearm_g
+  parent Lbicep_g
+  position -0.0708416 0.0254629 -0.494305
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.776471 0.341176 
+endnode
+node dummy lhand_g
+  parent lforearm_g
+  position -0.0553079 0.0424723 -0.476116
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.776471 0.341176 
+endnode
+node dummy lhand
+  parent lhand_g
+  position -0.018403 -2.49743e-007 -0.113421
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.898039 0.65098 0.843137 
+endnode
+node dummy lforearm
+  parent lforearm_g
+  position -0.0362194 -2.74181e-007 -0.224441
+  orientation 1.50038e-006 -1.0 -5.04775e-005 -0.069811
+  wirecolor 0.898039 0.65098 0.843137 
+endnode
+node dummy Lshoulder_g
+  parent Lbicep_g
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.898039 0.65098 0.843137 
+endnode
+node dummy neck_g
+  parent torso_g
+  position 0.0 -0.0972635 0.71874
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.898039 0.65098 0.843137 
+endnode
+node dummy head_g
+  parent neck_g
+  position 0.0 0.0224396 0.104059
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.898039 0.65098 0.843137 
+endnode
+node dummy head
+  parent head_g
+  position 0.0 0.00669474 0.288863
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.333333 0.109804 0.694118 
+endnode
+node dummy Rbicep_g
+  parent torso_g
+  position 0.361212 -0.0953884 0.551983
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.333333 0.109804 0.694118 
+endnode
+node dummy Rshoulder_g
+  parent Rbicep_g
+  position -3.8147e-007 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.333333 0.109804 0.694118 
+endnode
+node dummy rforearm_g
+  parent Rbicep_g
+  position 0.0708358 0.0254629 -0.494305
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.333333 0.109804 0.694118 
+endnode
+node dummy rhand_g
+  parent rforearm_g
+  position 0.0553079 0.0424723 -0.476114
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.333333 0.109804 0.694118 
+endnode
+node dummy rhand
+  parent rhand_g
+  position 0.0132841 1.68085e-007 -0.115356
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.584314 0.694118 
+endnode
+node dummy Impact
+  parent torso_g
+  position 0.0 0.19705 0.231271
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.584314 0.694118 
+endnode
+node dummy wings
+  parent torso_g
+  position -0.0150065 -0.277336 0.445157
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.584314 0.694118 
+endnode
+node dummy Cloak_g
+  parent torso_g
+  position 0.0 -0.188389 0.719496
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.584314 0.694118 
+endnode
+node dummy CL1_fg
+  parent Cloak_g
+  position -0.42021 0.00648632 0.0423843
+  orientation 1.0 0.0 0.0 -2.52881e-007
+  wirecolor 0.109804 0.584314 0.694118 
+endnode
+node dummy CR1_fg
+  parent Cloak_g
+  position 0.42021 0.00648632 0.0423843
+  orientation 1.0 0.0 0.0 -2.10734e-007
+  wirecolor 0.0235294 0.52549 0.0235294 
+endnode
+node dummy cloak_shL
+  parent Cloak_g
+  position -0.186354 0.0 0.0594862
+  orientation 1.0 0.0 0.0 -6.67732e-007
+  wirecolor 0.0235294 0.52549 0.0235294 
+endnode
+node dummy cloak_shR
+  parent Cloak_g
+  position 0.186354 0.0 0.0594862
+  orientation 1.0 0.0 0.0 -5.09262e-007
+  wirecolor 0.0235294 0.52549 0.0235294 
+endnode
+node dummy CL1_g
+  parent Cloak_g
+  position -0.42021 0.00648634 0.0172511
+  orientation 1.0 0.0 0.0 -1.46001e-007
+  wirecolor 0.0235294 0.52549 0.0235294 
+endnode
+node dummy CL2_g
+  parent CL1_g
+  position -0.03654 -0.162655 -0.579681
+  orientation 1.0 0.0 0.0 -1.46001e-007
+  wirecolor 0.0235294 0.52549 0.0235294 
+endnode
+node dummy CL3_g
+  parent CL2_g
+  position -0.027405 -0.0153818 -0.427629
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.839216 0.6 
+endnode
+node dummy CL4_g
+  parent CL3_g
+  position -0.045675 -0.0305206 -0.599869
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.839216 0.6 
+endnode
+node dummy CM1_g
+  parent Cloak_g
+  position 0.0 -0.169259 -0.0647821
+  orientation 1.0 0.0 0.0 -1.26441e-007
+  wirecolor 0.894118 0.839216 0.6 
+endnode
+node dummy CM2_g
+  parent CM1_g
+  position 0.0 -0.00898713 -0.527495
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.839216 0.6 
+endnode
+node dummy CM3_g
+  parent CM2_g
+  position 0.0 -0.0404884 -0.415751
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.337255 0.337255 
+endnode
+node dummy CM4_g
+  parent CM3_g
+  position 0.0 -0.0440824 -0.599145
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.337255 0.337255 
+endnode
+node dummy CR1_g
+  parent Cloak_g
+  position 0.42021 0.00648638 0.0172511
+  orientation 1.0 0.0 0.0 -1.26441e-007
+  wirecolor 0.337255 0.337255 0.337255 
+endnode
+node dummy CR2_g
+  parent CR1_g
+  position 0.03654 -0.162655 -0.579681
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.337255 0.337255 
+endnode
+node dummy CR3_g
+  parent CR2_g
+  position 0.0274049 -0.0153826 -0.42763
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.337255 0.337255 
+endnode
+node dummy CR4_g
+  parent CR3_g
+  position 0.045675 -0.0305206 -0.599869
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.835294 0.603922 0.898039 
+endnode
+node dummy pelvis_g
+  parent rootdummy
+  position 0.000486328 0.0129947 0.000247192
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.835294 0.603922 0.898039 
+endnode
+node dummy lthigh_g
+  parent pelvis_g
+  position -0.165683 -0.0281311 -0.254929
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.835294 0.603922 0.898039 
+endnode
+node dummy lshin_g
+  parent lthigh_g
+  position 0.0367459 -0.0197652 -0.553123
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.835294 0.603922 0.898039 
+endnode
+node dummy lfoot_g
+  parent lshin_g
+  position 0.0335123 -0.0799519 -0.51289
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.835294 0.603922 0.898039 
+endnode
+node dummy rthigh_g
+  parent pelvis_g
+  position 0.165684 -0.0281311 -0.254929
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.780392 0.882353 
+endnode
+node dummy rshin_g
+  parent rthigh_g
+  position -0.0353489 -0.0197652 -0.553123
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.780392 0.882353 
+endnode
+node dummy rfoot_g
+  parent rshin_g
+  position -0.0349112 -0.0799519 -0.51289
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.780392 0.882353 
+endnode
+node dummy belt_g1
+  parent rootdummy
+  position 0.000486328 0.0124063 0.0372078
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.341176 0.878431 0.341176 
+endnode
+node dummy belt_g
+  parent belt_g1
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.341176 0.878431 0.341176 
+endnode
+node dummy FB1_g01
+  parent belt_g1
+  position -0.000285575 -0.247997 -0.135834
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.341176 0.878431 0.341176 
+endnode
+node dummy FB2_g01
+  parent FB1_g01
+  position 0.0 -0.0187472 -0.249122
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.341176 0.878431 0.341176 
+endnode
+node dummy FB4_g01
+  parent FB2_g01
+  position 0.0 -0.00833208 -0.320812
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.694118 0.345098 0.101961 
+endnode
+node dummy TF1_g
+  parent belt_g1
+  position -0.00028554 0.164128 -0.135152
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.694118 0.345098 0.101961 
+endnode
+node dummy TF1L_g
+  parent TF1_g
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.694118 0.345098 0.101961 
+endnode
+node dummy TF2_g
+  parent TF1_g
+  position 0.0 0.0105255 -0.383011
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.694118 0.345098 0.101961 
+endnode
+node dummy TF3_g01
+  parent TF2_g
+  position 0.0 -0.0274261 -0.192391
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.694118 0.345098 0.101961 
+endnode
+node dummy TF1R_g
+  parent TF1_g
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.552941 0.027451 0.227451 
+endnode
+node dummy headconjure
+  parent invis_mo_120
+  position 0.0 -0.268583 3.32179
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.552941 0.027451 0.227451 
+endnode
+node dummy handconjure
+  parent invis_mo_120
+  position 0.0 0.5921 2.02535
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.552941 0.027451 0.227451 
+endnode
+node dummy tail
+  parent invis_mo_120
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.780392 0.882353 
+endnode
+node trimesh selbox
+  parent invis_mo_120
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.6 0.721569 
+  tilefade 0
+  scale 1.0
+  render 0
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center undefined
+  bitmap NULL
+  verts 8
+    -0.6 -0.6 0.0
+    0.6 -0.6 0.0
+    -0.6 0.6 0.0
+    0.6 0.6 0.0
+    -0.6 -0.6 2.16
+    0.6 -0.6 2.16
+    -0.6 0.6 2.16
+    0.6 0.6 2.16
+  faces 12
+    0 2 3  2  9 11 10  2
+    3 1 0  2  10 8 9  2
+    4 5 7  4  8 9 11  1
+    7 6 4  4  11 10 8  1
+    0 1 5  8  4 5 7  5
+    5 4 0  8  7 6 4  5
+    1 3 7  16  0 1 3  4
+    7 5 1  16  3 2 0  4
+    3 2 6  32  4 5 7  6
+    6 7 3  32  7 6 4  6
+    2 0 4  64  0 1 3  3
+    4 6 2  64  3 2 0  3
+  tverts 12
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+endnode
+endmodelgeom invis_mo_120
+donemodel invis_mo_120

@@ -1,0 +1,2227 @@
+# Exported from NWmax 0.8 c00 at 1/5/2020 9:27:37 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tn_sdoor_32
+#local file: M:\BD Tile Fixes\Source Files\TNO01_NWMax_2017.max
+filedependancy TNO01_NWMax_2017.max
+newmodel tn_sdoor_32
+setsupermodel tn_sdoor_32 NULL
+classification Door
+#NWmax GEOM  ASCII
+beginmodelgeom tn_sdoor_32
+node dummy tn_sdoor_32
+  parent NULL
+endnode
+node dummy tn_sdoor_12impc
+  parent tn_sdoor_32
+  position 0.0 0.0 2.45
+  orientation 0.0 0.0 -1.0 -3.1416
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy tn_sdoor_12hhit
+  parent tn_sdoor_32
+  position 0.0 0.0 3.15
+  orientation 0.0 0.0 -1.0 -3.1416
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy tn_sdoor_12head
+  parent tn_sdoor_32
+  position 0.0 0.0 3.5
+  orientation 0.0 0.0 -1.0 -3.1416
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy tn_sdoor_12grnd
+  parent tn_sdoor_32
+  position 0.0 0.0 6.10352e-07
+  orientation 0.0 0.0 -1.0 -3.1416
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node trimesh SAM
+  parent tn_sdoor_32
+  position 0.0 0.05 2.24
+  orientation 0.0 0.0 -1.0 -3.14159
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 0.0
+  transparencyhint 1
+  selfillumcolor 0.00784314 0.0431373 0.752941 
+  ambient 0.2 0.2 0.2 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 0
+  center 0.0 0.000244141 0.0 
+  bitmap standardmaterial
+  verts 8
+    0.75 0.0 2.1
+    1.45 0.0 1.26
+    1.45 0.0 -2.24
+    0.0 0.0 -2.24
+    0.0 0.0 2.24
+    -0.75 0.0 2.1
+    -1.45 0.0 -2.24
+    -1.45 0.0 1.26
+  faces 6
+    0 1 2  1  0 1 2  0
+    2 3 4  1  3 4 5  0
+    0 2 4  1  0 1 4  0
+    5 4 3  1  6 4 5  0
+    3 6 7  1  4 7 8  0
+    5 3 7  1  6 4 9  0
+  tverts 10
+    1.0 -0.203024 0
+    1.0 -0.507215 0
+    1.0 -0.507215 0
+    1.0 0.429996 0
+    1.0 0.0 0
+    1.0 0.0 0
+    1.0 0.258259 0
+    1.0 0.471182 0
+    1.0 0.471182 0
+    1.16836 0.739271 0
+endnode
+node emitter em_explosion
+  parent tn_sdoor_32
+  position 0.0 0.0 1.4
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType -1
+  xSize 100.0
+  ySize 100.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.784314 0.717647 0.6 
+  colorEnd 0.921569 0.847059 0.72549 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 4.0
+  sizeEnd_y 1.0
+  birthrate 10
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.0
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 1
+  xgrid 4
+  ygrid 4
+  fps 10
+  framestart 0
+  frameend 24
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node dummy anim_left12
+  parent tn_sdoor_32
+  position -1.45 -0.15 6.10352e-07
+  orientation 0.0 0.0 -1.0 -3.14159
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node trimesh doors_12l
+  parent anim_left12
+  position 0.0 -0.15 0.0
+  orientation -1.0 0.0 0.0 -6.28318
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center -72.5 -7.50146 224.0 
+  bitmap tno01_metal01
+  verts 37
+    -1.45 0.15 4.48
+    -0.7 0.15 4.34
+    -1.3 0.15 4.24
+    -0.76 0.15 4.14
+    -1.45 0.15 0.0
+    -1.25 0.15 1.89
+    -1.3 0.15 0.21
+    -1.25 0.15 2.31
+    0.0 0.15 0.0
+    -0.15 0.15 0.21
+    0.0 0.15 3.5
+    -0.2 0.15 2.31
+    -0.15 0.15 3.4
+    -0.2 0.15 1.89
+    -0.2 -0.1 1.89
+    -0.15 -0.1 0.21
+    -1.25 -0.1 1.89
+    -1.3 -0.1 0.21
+    -1.3 -0.1 4.24
+    -0.76 -0.1 4.14
+    -1.25 -0.1 2.31
+    -0.15 -0.1 3.4
+    -0.2 -0.1 2.31
+    -0.7 -0.3 4.34
+    -1.45 -0.3 4.48
+    -1.3 -0.3 4.24
+    -0.76 -0.3 4.14
+    -1.25 -0.3 1.89
+    -1.45 -0.3 0.0
+    -1.3 -0.3 0.21
+    -1.25 -0.3 2.31
+    0.0 -0.3 0.0
+    -0.15 -0.3 0.21
+    -0.2 -0.3 2.31
+    0.0 -0.3 3.5
+    -0.15 -0.3 3.4
+    -0.2 -0.3 1.89
+  faces 60
+    0 1 2  1  0 1 2  0
+    3 2 1  1  3 2 1  0
+    4 5 6  1  4 5 6  0
+    4 7 5  1  4 7 5  0
+    4 0 7  1  4 0 7  0
+    7 0 2  1  7 0 2  0
+    8 4 9  1  8 4 9  0
+    6 9 4  1  6 9 4  0
+    10 11 12  1  10 11 12  0
+    10 13 11  1  10 13 11  0
+    10 8 13  1  10 8 13  0
+    13 8 9  1  13 8 9  0
+    1 10 3  1  1 10 3  0
+    12 3 10  1  12 3 10  0
+    7 11 5  1  7 11 5  0
+    13 5 11  1  13 5 11  0
+    13 9 14  2  14 15 16  0
+    15 14 9  2  17 16 15  0
+    5 13 16  4  18 19 20  0
+    14 16 13  4  21 20 19  0
+    6 5 17  2  22 23 24  0
+    16 17 5  2  25 24 23  0
+    9 6 15  4  26 27 28  0
+    17 15 6  4  29 28 27  0
+    2 3 18  2  26 30 28  0
+    19 18 3  2  31 28 30  0
+    7 2 20  4  32 33 34  0
+    18 20 2  4  35 34 33  0
+    12 11 21  2  36 37 38  0
+    22 21 11  2  39 38 37  0
+    3 12 19  4  30 27 31  0
+    21 19 12  4  29 31 27  0
+    11 7 22  8  18 19 20  0
+    20 22 7  8  21 20 19  0
+    23 24 25  1  40 41 42  0
+    25 26 23  1  42 43 40  0
+    27 28 29  1  13 8 9  0
+    24 28 27  1  41 8 13  0
+    24 27 30  1  41 13 11  0
+    24 30 25  1  41 11 42  0
+    28 31 32  1  8 4 6  0
+    32 29 28  1  6 9 8  0
+    33 34 35  1  7 44 45  0
+    31 34 33  1  4 44 7  0
+    31 33 36  1  4 7 5  0
+    31 36 32  1  4 5 6  0
+    34 23 26  1  44 40 43  0
+    26 35 34  1  43 45 44  0
+    33 30 27  1  7 11 13  0
+    27 36 33  1  13 5 7  0
+    1 0 24  2  46 47 48  0
+    24 23 1  2  48 49 46  0
+    0 4 28  4  50 51 52  0
+    28 24 0  4  52 53 50  0
+    4 8 31  2  54 47 48  0
+    31 28 4  2  48 55 54  0
+    8 10 34  4  52 56 57  0
+    34 31 8  4  57 51 52  0
+    10 1 23  8  54 46 49  0
+    23 34 10  8  49 55 54  0
+  tverts 58
+    0.21 1.25819 0
+    0.51 1.21819 0
+    0.27 1.18966 0
+    0.484449 1.16107 0
+    0.21 -0.021808 0
+    0.29 0.518192 0
+    0.27 0.038192 0
+    0.29 0.638192 0
+    0.79 -0.021808 0
+    0.73 0.038192 0
+    0.79 0.978192 0
+    0.71 0.638192 0
+    0.73 0.950596 0
+    0.71 0.518192 0
+    0.56 0.518192 0
+    0.56 0.038192 0
+    0.52 0.518192 0
+    0.52 0.038192 0
+    0.29 0.56 0
+    0.71 0.56 0
+    0.29 0.52 0
+    0.71 0.52 0
+    0.44 0.038192 0
+    0.44 0.518192 0
+    0.48 0.038192 0
+    0.48 0.518192 0
+    0.27 0.56 0
+    0.73 0.56 0
+    0.27 0.52 0
+    0.73 0.52 0
+    0.484449 0.56 0
+    0.484449 0.52 0
+    0.44 0.638192 0
+    0.44 1.18966 0
+    0.48 0.638192 0
+    0.48 1.18966 0
+    0.56 0.950596 0
+    0.56 0.638192 0
+    0.52 0.950596 0
+    0.52 0.638192 0
+    0.49 1.21819 0
+    0.79 1.25819 0
+    0.73 1.18966 0
+    0.515551 1.16107 0
+    0.21 0.978192 0
+    0.27 0.950596 0
+    0.49 0.56 0
+    0.79 0.56 0
+    0.79 0.44 0
+    0.49 0.44 0
+    0.56 1.25819 0
+    0.56 -0.021808 0
+    0.44 -0.021808 0
+    0.44 1.25819 0
+    0.21 0.56 0
+    0.21 0.44 0
+    0.44 0.978192 0
+    0.56 0.978192 0
+endnode
+node trimesh brace2_12l
+  parent anim_left12
+  position -1.025 1.46484e-05 1.89
+  orientation 0.0 0.0 1.0 -3.1416
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center -1.00024 -6.9978 13.5 
+  bitmap tno01_metal01
+  verts 14
+    -0.07 -0.24 0.08
+    -0.07 -0.13 -0.06
+    0.04 -0.13 -0.06
+    0.04 -0.24 0.08
+    -0.07 0.1 -0.14
+    0.04 0.1 -0.14
+    -0.07 -0.24 0.38
+    0.04 -0.24 0.38
+    0.04 -0.13 0.41
+    -0.07 -0.13 0.41
+    0.04 -0.13 0.17
+    0.04 0.1 0.17
+    -0.07 -0.13 0.17
+    -0.07 0.1 0.17
+  faces 22
+    0 1 2  1  0 1 2  2
+    2 3 0  1  2 3 0  2
+    1 4 5  1  1 4 5  2
+    5 2 1  1  5 2 1  2
+    6 7 8  1  6 7 8  1
+    8 9 6  1  8 9 6  1
+    0 3 7  2  10 11 12  5
+    7 6 0  2  12 13 10  5
+    3 2 10  4  14 15 16  4
+    2 5 11  4  15 17 18  4
+    11 10 2  4  18 16 15  4
+    3 10 8  4  14 16 19  4
+    8 7 3  4  19 20 14  4
+    4 1 12  4  21 22 23  3
+    12 13 4  4  23 24 21  3
+    0 12 1  4  25 23 22  3
+    12 0 6  4  23 25 26  3
+    6 9 12  4  26 27 23  3
+    11 13 12  1  28 29 9  1
+    11 12 10  1  28 9 8  1
+    10 12 9  2  30 31 32  1
+    10 9 8  2  30 32 33  1
+  tverts 34
+    0.475976 0.386667 0
+    0.475976 0.46 0
+    0.402643 0.46 0
+    0.402643 0.386667 0
+    0.475976 0.613333 0
+    0.402643 0.613333 0
+    0.524024 0.386667 0
+    0.597357 0.386667 0
+    0.597357 0.46 0
+    0.524024 0.46 0
+    0.524024 0.505963 0
+    0.597357 0.505963 0
+    0.597357 0.645963 0
+    0.524024 0.645963 0
+    0.386667 0.505963 0
+    0.46 0.439297 0
+    0.46 0.545963 0
+    0.613333 0.399297 0
+    0.613333 0.545963 0
+    0.46 0.659297 0
+    0.386667 0.645963 0
+    0.386667 0.399297 0
+    0.54 0.439297 0
+    0.54 0.545963 0
+    0.386667 0.545963 0
+    0.613333 0.505963 0
+    0.613333 0.645963 0
+    0.54 0.659297 0
+    0.597357 0.613333 0
+    0.524024 0.613333 0
+    0.402643 0.545963 0
+    0.475976 0.545963 0
+    0.475976 0.659297 0
+    0.402643 0.659297 0
+endnode
+node trimesh brace1_12l
+  parent anim_left12
+  position -0.425 0.0 1.89
+  orientation 0.0 0.0 1.0 -3.1416
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center -1.00024 -7.0 13.5 
+  bitmap tno01_metal01
+  verts 14
+    -0.07 -0.24 0.08
+    -0.07 -0.13 -0.06
+    0.04 -0.13 -0.06
+    0.04 -0.24 0.08
+    -0.07 0.1 -0.14
+    0.04 0.1 -0.14
+    -0.07 -0.24 0.38
+    0.04 -0.24 0.38
+    0.04 -0.13 0.41
+    -0.07 -0.13 0.41
+    0.04 -0.13 0.17
+    0.04 0.1 0.17
+    -0.07 -0.13 0.17
+    -0.07 0.1 0.17
+  faces 22
+    0 1 2  1  0 1 2  2
+    2 3 0  1  2 3 0  2
+    1 4 5  1  1 4 5  2
+    5 2 1  1  5 2 1  2
+    6 7 8  1  6 7 8  1
+    8 9 6  1  8 9 6  1
+    0 3 7  2  10 11 12  5
+    7 6 0  2  12 13 10  5
+    3 2 10  4  14 15 16  4
+    2 5 11  4  15 17 18  4
+    11 10 2  4  18 16 15  4
+    3 10 8  4  14 16 19  4
+    8 7 3  4  19 20 14  4
+    4 1 12  4  21 22 23  3
+    12 13 4  4  23 24 21  3
+    0 12 1  4  25 23 22  3
+    12 0 6  4  23 25 26  3
+    6 9 12  4  26 27 23  3
+    11 13 12  1  28 29 9  1
+    11 12 10  1  28 9 8  1
+    10 12 9  2  30 31 32  1
+    10 9 8  2  30 32 33  1
+  tverts 34
+    0.402556 0.386667 0
+    0.402556 0.46 0
+    0.329223 0.46 0
+    0.329223 0.386667 0
+    0.402556 0.613333 0
+    0.329223 0.613333 0
+    0.597444 0.386667 0
+    0.670777 0.386667 0
+    0.670777 0.46 0
+    0.597444 0.46 0
+    0.597444 0.498565 0
+    0.670777 0.498565 0
+    0.670777 0.638565 0
+    0.597444 0.638565 0
+    0.386667 0.498565 0
+    0.46 0.431898 0
+    0.46 0.538565 0
+    0.613333 0.391898 0
+    0.613333 0.538565 0
+    0.46 0.651898 0
+    0.386667 0.638565 0
+    0.386667 0.391898 0
+    0.54 0.431898 0
+    0.54 0.538565 0
+    0.386667 0.538565 0
+    0.613333 0.498565 0
+    0.613333 0.638565 0
+    0.54 0.651898 0
+    0.670777 0.613333 0
+    0.597444 0.613333 0
+    0.329223 0.538565 0
+    0.402556 0.538565 0
+    0.402556 0.651898 0
+    0.329223 0.651898 0
+endnode
+node trimesh wood_12l
+  parent anim_left12
+  position -1.52588e-07 -0.3 0.0
+  orientation -1.0 0.0 0.0 -6.28318
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center -72.5 7.49871 222.5 
+  bitmap tno01_wood011
+  verts 18
+    -0.2 0.05 1.89
+    -0.15 0.3 0.21
+    -1.25 0.3 1.89
+    -1.3 0.3 0.21
+    -0.76 0.3 4.14
+    -0.15 0.3 3.4
+    -1.3 0.3 4.24
+    -1.25 0.3 2.31
+    -0.2 0.3 2.31
+    -1.25 -0.15 2.31
+    -0.2 -0.15 2.31
+    -1.3 -0.15 4.24
+    -0.76 -0.15 4.14
+    -0.15 -0.15 3.4
+    -0.15 -0.15 0.21
+    -0.2 -0.15 1.89
+    -1.3 -0.15 0.21
+    -1.25 -0.15 1.89
+  faces 10
+    0 1 2  1  0 1 2  0
+    3 2 1  1  3 2 1  0
+    4 5 6  1  4 5 6  0
+    6 5 7  1  6 5 7  0
+    5 8 7  1  5 8 7  0
+    9 10 11  1  8 7 9  2
+    11 10 12  1  9 7 10  2
+    12 10 13  1  10 7 11  2
+    14 15 16  1  3 2 1  2
+    16 15 17  1  1 2 0  2
+  tverts 12
+    0.71 0.4 0
+    0.73 -0.08 0
+    0.29 0.4 0
+    0.27 -0.08 0
+    0.484449 1.04288 0
+    0.73 0.832404 0
+    0.27 1.07147 0
+    0.29 0.52 0
+    0.71 0.52 0
+    0.73 1.07147 0
+    0.515551 1.04288 0
+    0.27 0.832404 0
+endnode
+node dummy anim_right12
+  parent tn_sdoor_32
+  position 1.45 -0.15 6.10352e-07
+  orientation 0.0 0.0 -1.0 -3.14159
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node trimesh doors_12r
+  parent anim_right12
+  position 0.0 -0.15 0.0
+  orientation -1.0 0.0 0.0 -6.28318
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center 72.5 -7.50122 224.0 
+  bitmap tno01_metal01
+  verts 37
+    0.7 0.15 4.34
+    1.45 0.15 4.48
+    1.3 0.15 4.24
+    0.76 0.15 4.14
+    1.25 0.15 1.89
+    1.45 0.15 0.0
+    1.3 0.15 0.21
+    1.25 0.15 2.31
+    0.0 0.15 0.0
+    0.15 0.15 0.21
+    0.2 0.15 2.31
+    0.0 0.15 3.5
+    0.15 0.15 3.4
+    0.2 0.15 1.89
+    0.2 -0.1 1.89
+    0.15 -0.1 0.21
+    1.25 -0.1 1.89
+    1.3 -0.1 0.21
+    1.3 -0.1 4.24
+    0.76 -0.1 4.14
+    1.25 -0.1 2.31
+    0.15 -0.1 3.4
+    0.2 -0.1 2.31
+    1.45 -0.3 4.48
+    0.7 -0.3 4.34
+    1.3 -0.3 4.24
+    0.76 -0.3 4.14
+    1.45 -0.3 0.0
+    1.25 -0.3 1.89
+    1.3 -0.3 0.21
+    1.25 -0.3 2.31
+    0.0 -0.3 0.0
+    0.15 -0.3 0.21
+    0.0 -0.3 3.5
+    0.2 -0.3 2.31
+    0.15 -0.3 3.4
+    0.2 -0.3 1.89
+  faces 60
+    0 1 2  1  0 1 2  0
+    2 3 0  1  2 3 0  0
+    4 5 6  1  4 5 6  0
+    7 5 4  1  7 5 4  0
+    1 5 7  1  1 5 7  0
+    1 7 2  1  1 7 2  0
+    5 8 9  1  5 8 9  0
+    9 6 5  1  9 6 5  0
+    10 11 12  1  10 11 12  0
+    13 11 10  1  13 11 10  0
+    8 11 13  1  8 11 13  0
+    8 13 9  1  8 13 9  0
+    11 0 3  1  11 0 3  0
+    3 12 11  1  3 12 11  0
+    10 7 4  1  10 7 4  0
+    4 13 10  1  4 13 10  0
+    9 13 14  2  14 15 16  0
+    14 15 9  2  16 17 14  0
+    13 4 16  4  18 19 20  0
+    16 14 13  4  20 21 18  0
+    4 6 17  2  22 23 24  0
+    17 16 4  2  24 25 22  0
+    6 9 15  4  26 27 28  0
+    15 17 6  4  28 29 26  0
+    3 2 18  2  30 31 32  0
+    18 19 3  2  32 33 30  0
+    2 7 20  4  34 35 36  0
+    20 18 2  4  36 37 34  0
+    10 12 21  2  38 39 40  0
+    21 22 10  2  40 41 38  0
+    12 3 19  4  42 30 33  0
+    19 21 12  4  33 43 42  0
+    7 10 22  8  44 45 46  0
+    22 20 7  8  46 47 44  0
+    23 24 25  1  48 49 50  0
+    26 25 24  1  51 50 49  0
+    27 28 29  1  52 53 54  0
+    27 23 28  1  52 48 53  0
+    28 23 30  1  53 48 55  0
+    30 23 25  1  55 48 50  0
+    31 27 32  1  56 52 57  0
+    29 32 27  1  54 57 52  0
+    33 34 35  1  58 59 60  0
+    33 31 34  1  58 56 59  0
+    34 31 36  1  59 56 61  0
+    36 31 32  1  61 56 57  0
+    24 33 26  1  49 58 51  0
+    35 26 33  1  60 51 58  0
+    30 34 28  1  55 59 53  0
+    36 28 34  1  61 53 59  0
+    1 0 23  2  62 63 64  0
+    24 23 0  2  65 64 63  0
+    5 1 27  4  66 67 68  0
+    23 27 1  4  69 68 67  0
+    8 5 31  2  70 71 72  0
+    27 31 5  2  73 72 71  0
+    11 8 33  4  74 68 75  0
+    31 33 8  4  66 75 68  0
+    0 11 24  8  63 76 65  0
+    33 24 11  8  77 65 76  0
+  tverts 78
+    0.315262 0.898899 0
+    0.0152619 0.938899 0
+    0.0752619 0.870368 0
+    0.289711 0.841774 0
+    0.0952619 0.198899 0
+    0.0152619 -0.341101 0
+    0.0752619 -0.281101 0
+    0.0952619 0.318899 0
+    0.595262 -0.341101 0
+    0.535262 -0.281101 0
+    0.515262 0.318899 0
+    0.595262 0.658899 0
+    0.535262 0.631303 0
+    0.515262 0.198899 0
+    0.56 -0.281101 0
+    0.56 0.198899 0
+    0.52 0.198899 0
+    0.52 -0.281101 0
+    0.515262 0.56 0
+    0.0952619 0.56 0
+    0.0952619 0.52 0
+    0.515262 0.52 0
+    0.44 0.198899 0
+    0.44 -0.281101 0
+    0.48 -0.281101 0
+    0.48 0.198899 0
+    0.924738 0.56 0
+    0.464738 0.56 0
+    0.464738 0.52 0
+    0.924738 0.52 0
+    0.289711 0.56 0
+    0.0752619 0.56 0
+    0.0752619 0.52 0
+    0.289711 0.52 0
+    0.44 0.870368 0
+    0.44 0.318899 0
+    0.48 0.318899 0
+    0.48 0.870368 0
+    0.56 0.318899 0
+    0.56 0.631303 0
+    0.52 0.631303 0
+    0.52 0.318899 0
+    0.535262 0.56 0
+    0.535262 0.52 0
+    0.904738 0.56 0
+    0.484738 0.56 0
+    0.484738 0.52 0
+    0.904738 0.52 0
+    0.984738 0.938899 0
+    0.684738 0.898899 0
+    0.924738 0.870368 0
+    0.710289 0.841774 0
+    0.984738 -0.341101 0
+    0.904738 0.198899 0
+    0.924738 -0.281101 0
+    0.904738 0.318899 0
+    0.404738 -0.341101 0
+    0.464738 -0.281101 0
+    0.404738 0.658899 0
+    0.484738 0.318899 0
+    0.464738 0.631303 0
+    0.484738 0.198899 0
+    0.984738 0.56 0
+    0.684738 0.56 0
+    0.984738 0.44 0
+    0.684738 0.44 0
+    0.56 -0.341101 0
+    0.56 0.938899 0
+    0.44 -0.341101 0
+    0.44 0.938899 0
+    0.595262 0.56 0
+    0.0152619 0.56 0
+    0.595262 0.44 0
+    0.0152619 0.44 0
+    0.44 0.658899 0
+    0.56 0.658899 0
+    0.404738 0.56 0
+    0.404738 0.44 0
+endnode
+node trimesh brace2_12r
+  parent anim_right12
+  position 1.025 -1.46484e-05 1.89
+  orientation 0.0 0.0 1.0 -3.1416
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center -1.00024 -7.00195 13.5 
+  bitmap tno01_metal01
+  verts 14
+    -0.07 -0.24 0.08
+    -0.07 -0.13 -0.06
+    0.04 -0.13 -0.06
+    0.04 -0.24 0.08
+    -0.07 0.1 -0.14
+    0.04 0.1 -0.14
+    -0.07 -0.24 0.38
+    0.04 -0.24 0.38
+    0.04 -0.13 0.41
+    -0.07 -0.13 0.41
+    0.04 -0.13 0.17
+    0.04 0.1 0.17
+    -0.07 -0.13 0.17
+    -0.07 0.1 0.17
+  faces 22
+    0 1 2  1  0 1 2  2
+    2 3 0  1  2 3 0  2
+    1 4 5  1  1 4 5  2
+    5 2 1  1  5 2 1  2
+    6 7 8  1  3 0 1  1
+    8 9 6  1  1 2 3  1
+    0 3 7  2  6 7 8  5
+    7 6 0  2  8 9 6  5
+    3 2 10  4  10 11 12  4
+    2 5 11  4  11 13 14  4
+    11 10 2  4  14 12 11  4
+    3 10 8  4  10 12 15  4
+    8 7 3  4  15 16 10  4
+    4 1 12  4  17 18 19  3
+    12 13 4  4  19 20 17  3
+    0 12 1  4  21 19 18  3
+    12 0 6  4  19 21 22  3
+    6 9 12  4  22 23 19  3
+    11 13 12  1  4 5 2  1
+    11 12 10  1  4 2 1  1
+    10 12 9  2  24 25 26  1
+    10 9 8  2  24 26 27  1
+  tverts 28
+    0.536667 0.386667 0
+    0.536667 0.46 0
+    0.463333 0.46 0
+    0.463333 0.386667 0
+    0.536667 0.613333 0
+    0.463333 0.613333 0
+    0.463333 0.476667 0
+    0.536667 0.476667 0
+    0.536667 0.616667 0
+    0.463333 0.616667 0
+    0.386667 0.476667 0
+    0.46 0.41 0
+    0.46 0.516667 0
+    0.613333 0.37 0
+    0.613333 0.516667 0
+    0.46 0.63 0
+    0.386667 0.616667 0
+    0.386667 0.37 0
+    0.54 0.41 0
+    0.54 0.516667 0
+    0.386667 0.516667 0
+    0.613333 0.476667 0
+    0.613333 0.616667 0
+    0.54 0.63 0
+    0.463333 0.516667 0
+    0.536667 0.516667 0
+    0.536667 0.63 0
+    0.463333 0.63 0
+endnode
+node trimesh brace1_12r
+  parent anim_right12
+  position 0.425 0.0 1.89
+  orientation 0.0 0.0 1.0 -3.1416
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center -1.00024 -7.0 13.5 
+  bitmap tno01_metal01
+  verts 14
+    -0.07 -0.24 0.08
+    -0.07 -0.13 -0.06
+    0.04 -0.13 -0.06
+    0.04 -0.24 0.08
+    -0.07 0.1 -0.14
+    0.04 0.1 -0.14
+    -0.07 -0.24 0.38
+    0.04 -0.24 0.38
+    0.04 -0.13 0.41
+    -0.07 -0.13 0.41
+    0.04 -0.13 0.17
+    0.04 0.1 0.17
+    -0.07 -0.13 0.17
+    -0.07 0.1 0.17
+  faces 22
+    0 1 2  1  0 1 2  2
+    2 3 0  1  2 3 0  2
+    1 4 5  1  1 4 5  2
+    5 2 1  1  5 2 1  2
+    6 7 8  1  6 7 8  1
+    8 9 6  1  8 9 6  1
+    0 3 7  2  10 11 12  5
+    7 6 0  2  12 13 10  5
+    3 2 10  4  14 15 16  4
+    2 5 11  4  15 17 18  4
+    11 10 2  4  18 16 15  4
+    3 10 8  4  14 16 19  4
+    8 7 3  4  19 20 14  4
+    4 1 12  4  21 22 23  3
+    12 13 4  4  23 24 21  3
+    0 12 1  4  25 23 22  3
+    12 0 6  4  23 25 26  3
+    6 9 12  4  26 27 23  3
+    11 13 12  1  28 29 9  1
+    11 12 10  1  28 9 8  1
+    10 12 9  2  30 31 32  1
+    10 9 8  2  30 32 33  1
+  tverts 34
+    0.630776 0.386667 0
+    0.630776 0.46 0
+    0.557443 0.46 0
+    0.557443 0.386667 0
+    0.630776 0.613333 0
+    0.557443 0.613333 0
+    0.369224 0.386667 0
+    0.442557 0.386667 0
+    0.442557 0.46 0
+    0.369224 0.46 0
+    0.369224 0.387194 0
+    0.442557 0.387194 0
+    0.442557 0.527194 0
+    0.369224 0.527194 0
+    0.386667 0.387194 0
+    0.46 0.320527 0
+    0.46 0.427194 0
+    0.613333 0.280527 0
+    0.613333 0.427194 0
+    0.46 0.540527 0
+    0.386667 0.527194 0
+    0.386667 0.280527 0
+    0.54 0.320527 0
+    0.54 0.427194 0
+    0.386667 0.427194 0
+    0.613333 0.387194 0
+    0.613333 0.527194 0
+    0.54 0.540527 0
+    0.442557 0.613333 0
+    0.369224 0.613333 0
+    0.557443 0.427194 0
+    0.630776 0.427194 0
+    0.630776 0.540527 0
+    0.557443 0.540527 0
+endnode
+node trimesh wood_12r
+  parent anim_right12
+  position 0.0 -0.15 0.0
+  orientation -1.0 0.0 0.0 -6.28318
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center undefined
+  bitmap tno01_wood011
+  verts 18
+    0.15 0.15 0.21
+    0.2 0.15 1.89
+    1.25 0.15 1.89
+    1.3 0.15 0.21
+    0.15 0.15 3.4
+    0.76 0.15 4.14
+    1.3 0.15 4.24
+    1.25 0.15 2.31
+    0.2 0.15 2.31
+    0.2 -0.3 2.31
+    1.25 -0.3 2.31
+    1.3 -0.3 4.24
+    0.76 -0.3 4.14
+    0.15 -0.3 3.4
+    0.2 -0.3 1.89
+    0.15 -0.3 0.21
+    1.3 -0.3 0.21
+    1.25 -0.3 1.89
+  faces 10
+    0 1 2  1  0 1 2  0
+    2 3 0  1  2 3 0  0
+    4 5 6  1  4 5 6  0
+    4 6 7  1  4 6 7  0
+    8 4 7  1  8 4 7  0
+    9 10 11  1  9 10 11  2
+    9 11 12  1  9 11 12  2
+    9 12 13  1  9 12 13  2
+    14 15 16  1  14 15 16  2
+    14 16 17  1  14 16 17  2
+  tverts 18
+    0.607684 -0.08 0
+    0.587685 0.4 0
+    0.167684 0.4 0
+    0.147684 -0.08 0
+    0.607684 0.832404 0
+    0.362134 1.04288 0
+    0.147684 1.07147 0
+    0.167684 0.52 0
+    0.587685 0.52 0
+    0.412315 0.52 0
+    0.832316 0.52 0
+    0.852316 1.07147 0
+    0.637866 1.04288 0
+    0.392316 0.832404 0
+    0.412315 0.4 0
+    0.392316 -0.08 0
+    0.852316 -0.08 0
+    0.832316 0.4 0
+endnode
+node trimesh bar_12
+  parent tn_sdoor_32
+  position -0.0397119 -0.23 2.18719
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 0.9
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 10
+  center undefined
+  bitmap tno01_wood02
+  verts 10
+    -1.39 -0.05 -0.13
+    -1.39 0.05 -0.13
+    1.39 0.05 -0.13
+    1.39 -0.05 -0.13
+    -1.39 -0.05 0.12
+    -0.1 -0.05 0.07
+    -0.05 0.05 0.08
+    -1.39 0.05 0.12
+    1.39 -0.05 0.08
+    1.39 0.05 0.12
+  faces 16
+    0 1 2  1  0 1 2  2
+    2 3 0  1  2 3 0  2
+    4 5 6  1  1 4 5  1
+    6 7 4  1  5 0 1  1
+    0 3 8  2  6 7 8  5
+    5 4 0  2  9 10 6  5
+    3 2 9  4  11 12 13  4
+    9 8 3  4  13 14 11  4
+    2 1 7  2  15 16 17  6
+    7 6 2  2  17 18 15  6
+    1 0 4  4  19 20 21  3
+    4 7 1  4  21 22 19  3
+    5 8 9  1  4 2 3  1
+    8 5 0  2  8 9 6  5
+    9 6 5  1  3 5 4  1
+    6 9 2  2  18 23 15  6
+  tverts 24
+    0.525 1.195 0
+    0.475 1.195 0
+    0.475 -0.195 0
+    0.525 -0.195 0
+    0.475 0.55 0
+    0.525 0.525 0
+    0.735599 1.195 0
+    0.735599 -0.195 0
+    0.810599 -0.195 0
+    0.805599 0.55 0
+    0.825599 1.195 0
+    0.264401 0.475 0
+    0.264401 0.525 0
+    0.174401 0.525 0
+    0.189401 0.475 0
+    0.264401 -0.195 0
+    0.264401 1.195 0
+    0.174401 1.195 0
+    0.189401 0.525 0
+    0.735599 0.525 0
+    0.735599 0.475 0
+    0.825599 0.475 0
+    0.825599 0.525 0
+    0.174401 -0.195 0
+endnode
+endmodelgeom tn_sdoor_32
+
+#NWmax ANIM ASCII
+newanim closed tn_sdoor_32
+  length 0.0333333
+  transtime 0.25
+  animroot tn_sdoor_32
+    node dummy tn_sdoor_32
+        parent NULL
+    endnode
+    node dummy tn_sdoor_32_DWK
+        parent tn_sdoor_32
+    endnode
+    node trimesh 32_DWK_wg_open2
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_open1
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_closed
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open2_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open1_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy tn_sdoor_12impc
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12hhit
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12head
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12grnd
+        parent tn_sdoor_32
+    endnode
+    node trimesh SAM
+        parent tn_sdoor_32
+    endnode
+    node emitter em_explosion
+        parent tn_sdoor_32
+    endnode
+    node dummy anim_left12
+        parent tn_sdoor_32
+        positionkey
+            0.0 -1.45 -0.15 6.10352e-07
+            0.0333333 -1.45 -0.15 6.10352e-07
+        endlist
+        orientationkey
+            0.0 0.0 0.0 -1.0 -3.14159
+            0.0333333 0.0 0.0 -1.0 -3.14159
+        endlist
+    endnode
+    node trimesh doors_12l
+        parent anim_left12
+    endnode
+    node trimesh brace2_12l
+        parent anim_left12
+    endnode
+    node trimesh brace1_12l
+        parent anim_left12
+    endnode
+    node trimesh wood_12l
+        parent anim_left12
+    endnode
+    node dummy anim_right12
+        parent tn_sdoor_32
+        positionkey
+            0.0 1.45 -0.15 6.10352e-07
+            0.0333333 1.45 -0.15 6.10352e-07
+        endlist
+        orientationkey
+            0.0 0.0 0.0 -1.0 -3.14159
+            0.0333333 0.0 0.0 -1.0 -3.14159
+        endlist
+    endnode
+    node trimesh doors_12r
+        parent anim_right12
+    endnode
+    node trimesh brace2_12r
+        parent anim_right12
+    endnode
+    node trimesh brace1_12r
+        parent anim_right12
+    endnode
+    node trimesh wood_12r
+        parent anim_right12
+    endnode
+    node trimesh bar_12
+        parent tn_sdoor_32
+        positionkey
+            0.0  -0.0397119 -0.23 2.18719
+            0.0333333 -0.0397119 -0.23 2.18719
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+         endlist
+        alphakey
+            0.0 1.0 
+            0.0333333 1.0 
+        endlist
+    endnode
+doneanim closed tn_sdoor_32
+
+
+#NWmax ANIM ASCII
+newanim opening1 tn_sdoor_32
+  length 1.66667
+  transtime 0.25
+  animroot tn_sdoor_32
+    node dummy tn_sdoor_32
+        parent NULL
+    endnode
+    node dummy tn_sdoor_32_DWK
+        parent tn_sdoor_32
+    endnode
+    node trimesh 32_DWK_wg_open2
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_open1
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_closed
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open2_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open1_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy tn_sdoor_12impc
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12hhit
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12head
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12grnd
+        parent tn_sdoor_32
+    endnode
+    node trimesh SAM
+        parent tn_sdoor_32
+    endnode
+    node emitter em_explosion
+        parent tn_sdoor_32
+    endnode
+    node dummy anim_left12
+        parent tn_sdoor_32
+        orientationkey
+            0.0 0.0 0.0 -1.0 -3.14159
+            1.66667 0.0 0.0 -1.0 -1.74533
+        endlist
+    endnode
+    node trimesh doors_12l
+        parent anim_left12
+    endnode
+    node trimesh brace2_12l
+        parent anim_left12
+    endnode
+    node trimesh brace1_12l
+        parent anim_left12
+    endnode
+    node trimesh wood_12l
+        parent anim_left12
+    endnode
+    node dummy anim_right12
+        parent tn_sdoor_32
+        orientationkey
+            0.0 0.0 0.0 -1.0 -3.14159
+            1.66667 0.0 0.0 -1.0 -4.53786
+        endlist
+    endnode
+    node trimesh doors_12r
+        parent anim_right12
+    endnode
+    node trimesh brace2_12r
+        parent anim_right12
+    endnode
+    node trimesh brace1_12r
+        parent anim_right12
+    endnode
+    node trimesh wood_12r
+        parent anim_right12
+    endnode
+    node trimesh bar_12
+        parent tn_sdoor_32
+        positionkey
+            0.0 -0.0397119 -0.23 2.22678
+            0.333333 -0.0397119 -0.23 3.88719
+            1.66667 -0.0397119 -0.23 3.88719
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            1.66667 0.0 0.0 0.0 0.0
+        endlist
+        alphakey
+            0.0 0.9 
+            0.333333 0.0 
+            1.66667 0.0 
+        endlist
+    endnode
+doneanim opening1 tn_sdoor_32
+
+
+#NWmax ANIM ASCII
+newanim opening2 tn_sdoor_32
+  length 1.66667
+  transtime 0.25
+  animroot tn_sdoor_32
+    node dummy tn_sdoor_32
+        parent NULL
+    endnode
+    node dummy tn_sdoor_32_DWK
+        parent tn_sdoor_32
+    endnode
+    node trimesh 32_DWK_wg_open2
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_open1
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_closed
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open2_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open1_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy tn_sdoor_12impc
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12hhit
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12head
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12grnd
+        parent tn_sdoor_32
+    endnode
+    node trimesh SAM
+        parent tn_sdoor_32
+    endnode
+    node emitter em_explosion
+        parent tn_sdoor_32
+    endnode
+    node dummy anim_left12
+        parent tn_sdoor_32
+        orientationkey
+            0.0 0.0 0.0 -1.0 -3.14159
+            1.66667 0.0 0.0 -1.0 -1.74533
+        endlist
+    endnode
+    node trimesh doors_12l
+        parent anim_left12
+    endnode
+    node trimesh brace2_12l
+        parent anim_left12
+    endnode
+    node trimesh brace1_12l
+        parent anim_left12
+    endnode
+    node trimesh wood_12l
+        parent anim_left12
+    endnode
+    node dummy anim_right12
+        parent tn_sdoor_32
+        orientationkey
+            0.0 0.0 0.0 -1.0 -3.14159
+            1.66667 0.0 0.0 -1.0 -4.53786
+        endlist
+    endnode
+    node trimesh doors_12r
+        parent anim_right12
+    endnode
+    node trimesh brace2_12r
+        parent anim_right12
+    endnode
+    node trimesh brace1_12r
+        parent anim_right12
+    endnode
+    node trimesh wood_12r
+        parent anim_right12
+    endnode
+    node trimesh bar_12
+        parent tn_sdoor_32
+        positionkey
+            0.0 -0.0397119 -0.23 2.22678
+            0.333333 -0.0397119 -0.23 3.88719
+            1.66667 -0.0397119 -0.23 3.88719
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            1.66667 0.0 0.0 0.0 0.0
+        endlist
+        alphakey
+            0.0 0.9 
+            0.333333 0.0 
+            1.66667 0.0 
+        endlist
+    endnode
+doneanim opening2 tn_sdoor_32
+
+
+#NWmax ANIM ASCII
+newanim opened1 tn_sdoor_32
+  length 0.0333333
+  transtime 0.25
+  animroot tn_sdoor_32
+    node dummy tn_sdoor_32
+        parent NULL
+    endnode
+    node dummy tn_sdoor_32_DWK
+        parent tn_sdoor_32
+    endnode
+    node trimesh 32_DWK_wg_open2
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_open1
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_closed
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open2_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open1_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy tn_sdoor_12impc
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12hhit
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12head
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12grnd
+        parent tn_sdoor_32
+    endnode
+    node trimesh SAM
+        parent tn_sdoor_32
+    endnode
+    node emitter em_explosion
+        parent tn_sdoor_32
+    endnode
+    node dummy anim_left12
+        parent tn_sdoor_32
+        positionkey
+            0.0 -1.45 -0.15 6.10352e-07
+            0.0333333 -1.45 -0.15 6.10352e-07
+        endlist
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.74533
+            0.0333333 0.0 0.0 -1.0 -1.74533
+        endlist
+    endnode
+    node trimesh doors_12l
+        parent anim_left12
+    endnode
+    node trimesh brace2_12l
+        parent anim_left12
+    endnode
+    node trimesh brace1_12l
+        parent anim_left12
+    endnode
+    node trimesh wood_12l
+        parent anim_left12
+    endnode
+    node dummy anim_right12
+        parent tn_sdoor_32
+        positionkey
+            0.0 1.45 -0.15 6.10352e-07
+            0.0333333 1.45 -0.15 6.10352e-07
+        endlist
+        orientationkey
+            0.0 0.0 0.0 -1.0 -4.53786
+            0.0333333 0.0 0.0 -1.0 -4.53786
+        endlist
+    endnode
+    node trimesh doors_12r
+        parent anim_right12
+    endnode
+    node trimesh brace2_12r
+        parent anim_right12
+    endnode
+    node trimesh brace1_12r
+        parent anim_right12
+    endnode
+    node trimesh wood_12r
+        parent anim_right12
+    endnode
+    node trimesh bar_12
+        parent tn_sdoor_32
+        positionkey
+            0.0 -0.0397119 -0.23 3.88719
+            0.0333333 -0.0397119 -0.23 3.88719
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+        alphakey
+            0.0 0.0 
+            0.0333333 0.0 
+        endlist
+    endnode
+doneanim opened1 tn_sdoor_32
+
+
+#NWmax ANIM ASCII
+newanim opened2 tn_sdoor_32
+  length 0.0333333
+  transtime 0.25
+  animroot tn_sdoor_32
+    node dummy tn_sdoor_32
+        parent NULL
+    endnode
+    node dummy tn_sdoor_32_DWK
+        parent tn_sdoor_32
+    endnode
+    node trimesh 32_DWK_wg_open2
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_open1
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_closed
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open2_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open1_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy tn_sdoor_12impc
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12hhit
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12head
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12grnd
+        parent tn_sdoor_32
+    endnode
+    node trimesh SAM
+        parent tn_sdoor_32
+    endnode
+    node emitter em_explosion
+        parent tn_sdoor_32
+    endnode
+    node dummy anim_left12
+        parent tn_sdoor_32
+        positionkey
+            0.0 -1.45 -0.15 6.10352e-07
+            0.0333333 -1.45 -0.15 6.10352e-07
+        endlist
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.74533
+            0.0333333 0.0 0.0 -1.0 -1.74533
+        endlist
+    endnode
+    node trimesh doors_12l
+        parent anim_left12
+    endnode
+    node trimesh brace2_12l
+        parent anim_left12
+    endnode
+    node trimesh brace1_12l
+        parent anim_left12
+    endnode
+    node trimesh wood_12l
+        parent anim_left12
+    endnode
+    node dummy anim_right12
+        parent tn_sdoor_32
+        positionkey
+            0.0 1.45 -0.15 6.10352e-07
+            0.0333333 1.45 -0.15 6.10352e-07
+        endlist
+        orientationkey
+            0.0 0.0 0.0 -1.0 -4.53786
+            0.0333333 0.0 0.0 -1.0 -4.53786
+        endlist
+    endnode
+    node trimesh doors_12r
+        parent anim_right12
+    endnode
+    node trimesh brace2_12r
+        parent anim_right12
+    endnode
+    node trimesh brace1_12r
+        parent anim_right12
+    endnode
+    node trimesh wood_12r
+        parent anim_right12
+    endnode
+    node trimesh bar_12
+        parent tn_sdoor_32
+        positionkey
+            0.0 -0.0397119 -0.23 3.88719
+            0.0333333 -0.0397119 -0.23 3.88719
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+        alphakey
+            0.0 0.0 
+            0.0333333 0.0 
+        endlist
+    endnode
+doneanim opened2 tn_sdoor_32
+
+
+#NWmax ANIM ASCII
+newanim closing1 tn_sdoor_32
+  length 2.0
+  transtime 0.25
+  animroot tn_sdoor_32
+    node dummy tn_sdoor_32
+        parent NULL
+    endnode
+    node dummy tn_sdoor_32_DWK
+        parent tn_sdoor_32
+    endnode
+    node trimesh 32_DWK_wg_open2
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_open1
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_closed
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open2_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open1_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy tn_sdoor_12impc
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12hhit
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12head
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12grnd
+        parent tn_sdoor_32
+    endnode
+    node trimesh SAM
+        parent tn_sdoor_32
+    endnode
+    node emitter em_explosion
+        parent tn_sdoor_32
+    endnode
+    node dummy anim_left12
+        parent tn_sdoor_32
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.74533
+            2.0 0.0 0.0 -1.0 -3.14159
+        endlist
+    endnode
+    node trimesh doors_12l
+        parent anim_left12
+    endnode
+    node trimesh brace2_12l
+        parent anim_left12
+    endnode
+    node trimesh brace1_12l
+        parent anim_left12
+    endnode
+    node trimesh wood_12l
+        parent anim_left12
+    endnode
+    node dummy anim_right12
+        parent tn_sdoor_32
+        orientationkey
+            0.0 0.0 0.0 -1.0 -4.53786
+            2.0 0.0 0.0 -1.0 -3.14159
+        endlist
+    endnode
+    node trimesh doors_12r
+        parent anim_right12
+    endnode
+    node trimesh brace2_12r
+        parent anim_right12
+    endnode
+    node trimesh brace1_12r
+        parent anim_right12
+    endnode
+    node trimesh wood_12r
+        parent anim_right12
+    endnode
+    node trimesh bar_12
+        parent tn_sdoor_32
+        positionkey
+            0.0 -0.0397119 -0.23 3.88719
+            1.63333 -0.0397119 -0.23 3.88719
+            2.0 -0.0397119 -0.23 2.18719
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            1.63333 0.0 0.0 0.0 0.0
+            2.0 0.0 0.0 0.0 0.0
+        endlist
+        alphakey
+            0.0 0.0 
+            1.63333 0.0 
+            2.0 1.0 
+        endlist
+    endnode
+doneanim closing1 tn_sdoor_32
+
+
+#NWmax ANIM ASCII
+newanim closing2 tn_sdoor_32
+  length 2.0
+  transtime 0.25
+  animroot tn_sdoor_32
+    node dummy tn_sdoor_32
+        parent NULL
+    endnode
+    node dummy tn_sdoor_32_DWK
+        parent tn_sdoor_32
+    endnode
+    node trimesh 32_DWK_wg_open2
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_open1
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_closed
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open2_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open1_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy tn_sdoor_12impc
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12hhit
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12head
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12grnd
+        parent tn_sdoor_32
+    endnode
+    node trimesh SAM
+        parent tn_sdoor_32
+    endnode
+    node emitter em_explosion
+        parent tn_sdoor_32
+    endnode
+    node dummy anim_left12
+        parent tn_sdoor_32
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.74533
+            2.0 0.0 0.0 -1.0 -3.14159
+        endlist
+    endnode
+    node trimesh doors_12l
+        parent anim_left12
+    endnode
+    node trimesh brace2_12l
+        parent anim_left12
+    endnode
+    node trimesh brace1_12l
+        parent anim_left12
+    endnode
+    node trimesh wood_12l
+        parent anim_left12
+    endnode
+    node dummy anim_right12
+        parent tn_sdoor_32
+        orientationkey
+            0.0 0.0 0.0 -1.0 -4.53786
+            2.0 0.0 0.0 -1.0 -3.14159
+        endlist
+    endnode
+    node trimesh doors_12r
+        parent anim_right12
+    endnode
+    node trimesh brace2_12r
+        parent anim_right12
+    endnode
+    node trimesh brace1_12r
+        parent anim_right12
+    endnode
+    node trimesh wood_12r
+        parent anim_right12
+    endnode
+    node trimesh bar_12
+        parent tn_sdoor_32
+        positionkey
+            0.0 -0.0397119 -0.23 3.88719
+            1.63333 -0.0397119 -0.23 3.88719
+            2.0 -0.0397119 -0.23 2.18719
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            1.63333 0.0 0.0 0.0 0.0
+            2.0 0.0 0.0 0.0 0.0
+        endlist
+        alphakey
+            0.0 0.0 
+            1.63333 0.0 
+            2.0 1.0 
+        endlist
+    endnode
+doneanim closing2 tn_sdoor_32
+
+
+#NWmax ANIM ASCII
+newanim trans tn_sdoor_32
+  length 0.0333333
+  transtime 0.25
+  animroot tn_sdoor_32
+    node dummy tn_sdoor_32
+        parent NULL
+    endnode
+    node dummy tn_sdoor_32_DWK
+        parent tn_sdoor_32
+    endnode
+    node trimesh 32_DWK_wg_open2
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_open1
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_closed
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open2_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open1_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy tn_sdoor_12impc
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12hhit
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12head
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12grnd
+        parent tn_sdoor_32
+    endnode
+    node trimesh SAM
+        parent tn_sdoor_32
+        alphakey
+            0.0 0.25 
+            0.0333333 0.25 
+        endlist
+    endnode
+    node emitter em_explosion
+        parent tn_sdoor_32
+    endnode
+    node dummy anim_left12
+        parent tn_sdoor_32
+    endnode
+    node trimesh doors_12l
+        parent anim_left12
+    endnode
+    node trimesh brace2_12l
+        parent anim_left12
+    endnode
+    node trimesh brace1_12l
+        parent anim_left12
+    endnode
+    node trimesh wood_12l
+        parent anim_left12
+    endnode
+    node dummy anim_right12
+        parent tn_sdoor_32
+    endnode
+    node trimesh doors_12r
+        parent anim_right12
+    endnode
+    node trimesh brace2_12r
+        parent anim_right12
+    endnode
+    node trimesh brace1_12r
+        parent anim_right12
+    endnode
+    node trimesh wood_12r
+        parent anim_right12
+    endnode
+    node trimesh bar_12
+        parent tn_sdoor_32
+        alphakey
+            0.0 0.0 
+            0.0333333 0.0 
+        endlist
+    endnode
+doneanim trans tn_sdoor_32
+
+
+#NWmax ANIM ASCII
+newanim die tn_sdoor_32
+  length 1.0
+  transtime 0.25
+  animroot tn_sdoor_32
+  event 0.0333333 detonate
+    node dummy tn_sdoor_32
+        parent NULL
+    endnode
+    node dummy tn_sdoor_32_DWK
+        parent tn_sdoor_32
+    endnode
+    node trimesh 32_DWK_wg_open2
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_open1
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_closed
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open2_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open1_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy tn_sdoor_12impc
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12hhit
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12head
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12grnd
+        parent tn_sdoor_32
+    endnode
+    node trimesh SAM
+        parent tn_sdoor_32
+    endnode
+    node emitter em_explosion
+        parent tn_sdoor_32
+    endnode
+    node dummy anim_left12
+        parent tn_sdoor_32
+        positionkey
+            0.0 -1.45 -0.15 6.10352e-07
+            0.666667 -1.45 0.45 0.300001
+            1.0 -1.45 0.45 0.300001
+        endlist
+        orientationkey
+            0.0 0.0 -4.00056e-07 -1.0 -3.14159
+            0.666667 0.0 -0.707107 -0.707107 -3.14159
+            1.0 0.0 -0.707107 -0.707107 -3.14159
+        endlist
+    endnode
+    node trimesh doors_12l
+        parent anim_left12
+    endnode
+    node trimesh brace2_12l
+        parent anim_left12
+    endnode
+    node trimesh brace1_12l
+        parent anim_left12
+    endnode
+    node trimesh wood_12l
+        parent anim_left12
+    endnode
+    node dummy anim_right12
+        parent tn_sdoor_32
+        positionkey
+            0.0 1.45 -0.15 6.10352e-07
+            0.333333 1.45 -0.15 6.10352e-07
+            1.0 1.45 0.15 0.300001
+        endlist
+        orientationkey
+            0.0 0.0 -1.27704e-07 -1.0 -3.14159
+            0.333333 0.0 -2.06554e-07 -1.0 -3.14159
+            1.0 0.0 -0.707107 -0.707107 -3.14159
+        endlist
+    endnode
+    node trimesh doors_12r
+        parent anim_right12
+    endnode
+    node trimesh brace2_12r
+        parent anim_right12
+    endnode
+    node trimesh brace1_12r
+        parent anim_right12
+    endnode
+    node trimesh wood_12r
+        parent anim_right12
+    endnode
+    node trimesh bar_12
+        parent tn_sdoor_32
+        positionkey
+            0.0 -0.0397119 -0.23 2.18719
+            1.0 -0.0397119 -0.23 -3.81281
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            1.0 0.0 0.0 0.0 0.0
+        endlist
+        alphakey
+            0.0 1.0 
+            0.333333 0.0 
+            1.0 0.0 
+        endlist
+    endnode
+doneanim die tn_sdoor_32
+
+
+#NWmax ANIM ASCII
+newanim dead tn_sdoor_32
+  length 0.0333333
+  transtime 0.25
+  animroot tn_sdoor_32
+    node dummy tn_sdoor_32
+        parent NULL
+    endnode
+    node dummy tn_sdoor_32_DWK
+        parent tn_sdoor_32
+    endnode
+    node trimesh 32_DWK_wg_open2
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_open1
+        parent tn_sdoor_32_DWK
+    endnode
+    node trimesh 32_DWK_wg_closed
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open2_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_open1_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_02
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy 32_DWK_dp_closed_01
+        parent tn_sdoor_32_DWK
+    endnode
+    node dummy tn_sdoor_12impc
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12hhit
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12head
+        parent tn_sdoor_32
+    endnode
+    node dummy tn_sdoor_12grnd
+        parent tn_sdoor_32
+    endnode
+    node trimesh SAM
+        parent tn_sdoor_32
+    endnode
+    node emitter em_explosion
+        parent tn_sdoor_32
+    endnode
+    node dummy anim_left12
+        parent tn_sdoor_32
+    endnode
+    node trimesh doors_12l
+        parent anim_left12
+    endnode
+    node trimesh brace2_12l
+        parent anim_left12
+    endnode
+    node trimesh brace1_12l
+        parent anim_left12
+    endnode
+    node trimesh wood_12l
+        parent anim_left12
+    endnode
+    node dummy anim_right12
+        parent tn_sdoor_32
+        positionkey
+            0.0 1.45 0.15 -5.7
+            0.0333333 1.45 0.15 -5.7
+        endlist
+        orientationkey
+            0.0 0.0 -0.737277 -0.67559 -3.14159
+            0.0333333 0.0 -0.737277 -0.67559 -3.14159
+        endlist
+    endnode
+    node trimesh doors_12r
+        parent anim_right12
+    endnode
+    node trimesh brace2_12r
+        parent anim_right12
+    endnode
+    node trimesh brace1_12r
+        parent anim_right12
+    endnode
+    node trimesh wood_12r
+        parent anim_right12
+    endnode
+    node trimesh bar_12
+        parent tn_sdoor_32
+        positionkey
+            0.0 1.45 0.15 -5.7
+            0.0333333 1.45 0.15 -5.7
+        endlist
+        orientationkey
+            0.0 0.0 -0.737277 -0.67559 -3.14159
+            0.0333333 0.0 -0.737277 -0.67559 -3.14159
+        endlist
+    endnode
+doneanim dead tn_sdoor_32
+
+donemodel tn_sdoor_32

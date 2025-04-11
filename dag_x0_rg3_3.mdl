@@ -1,0 +1,209 @@
+#MAXMODEL ASCII
+# model: Dag_X0_RG3_3
+filedependancy Dag_X0_RG3_3.max
+newmodel Dag_X0_RG3_3
+setsupermodel Dag_X0_RG3_3 NULL
+classification character
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom Dag_X0_RG3_3
+node dummy Dag_X0_RG3_3
+  parent NULL
+  #part-number 0
+endnode
+node emitter fire!78
+  parent Dag_X0_RG3_3
+  #part-number 1
+  p2p 0
+  p2p_sel 1
+  affectedByWind 0
+  m_isTinted 1
+  bounce 0
+  random 0
+  inherit 1
+  inheritvel 0
+  inherit_local 0
+  splat 0
+  inherit_part 0
+  renderorder 0
+  spawntype 0
+  update Explosion
+  render Normal
+  blend Normal
+  texture fxpa_smoke01
+  xgrid 4
+  ygrid 4
+  loop 0
+  deadspace 0
+  twosidedtex 1
+  blastRadius 0.200000003
+  blastLength 1
+  position 0.00370824011 0.0440756008 0.104378998
+  orientation -1 0 0 -1.57079995
+  colorStart 0.474510014 0.454901993 0.407842994
+  colorEnd 0.819607973 0.803921998 0.745097995
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 4
+  sizeEnd 1
+  sizeStart_y 0
+  sizeEnd_y 0
+  frameStart 0
+  frameEnd 24
+  birthrate 10
+  lifeExp 2.5
+  mass 0.0900000036
+  spread 2.96706009
+  particleRot 0.5
+  velocity 2
+  randvel 0.5
+  fps 10
+  xsize 100
+  ysize 99
+  bounce_co 0
+  blurlength 10
+  lightningDelay 0
+  lightningRadius 0
+  lightningScale 0
+  p2p_bezier2 0
+  p2p_bezier3 0
+  combinetime 0
+  drag 0
+  grav 0
+  threshold 0
+endnode
+node trimesh Rectangle03
+  parent Dag_X0_RG3_3
+  #part-number 2
+  ambient 1 1 1
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 1
+  shadow 0
+  transparencyhint 1
+  bitmap plc_fabric3
+  verts 4
+    -3.70000005 -2.93000007 0.00999999978
+    0.689999998 -2.93000007 0.00999999978
+    0.689999998 2.92000008 0.00999999978
+    -3.70000005 2.92000008 0.00999999978
+  tverts 4
+    0.000499486981 0.000499785005 0
+    0.999499977 0.000499486981 0
+    0.99950099 2.20082998 0
+    0.000499666028 2.20082998 0
+  faces 2
+    0 1 2 1 0 1 2 0
+    0 2 3 1 0 2 3 0
+  position 1.53606999 0.0211821999 0.00999999978
+  orientation 0 0 0 0
+endnode
+endmodelgeom Dag_X0_RG3_3
+
+#MAXANIM ASCII
+newanim damage Dag_X0_RG3_3
+  length 0.56666702
+  transtime 0
+  animroot Dag_X0_RG3_3
+  event 0.200000003 detonate
+node dummy Dag_X0_RG3_3
+  parent NULL
+  #part-number 0
+endnode
+node emitter fire!78
+  parent Dag_X0_RG3_3
+  #part-number 1
+endnode
+node trimesh Rectangle03
+  parent Dag_X0_RG3_3
+  #part-number 2
+  ambient 0.200000003 0.200000003 0.200000003
+  diffuse 0.800000012 0.800000012 0.800000012
+  specular 0 0 0
+  shininess 1
+endnode
+doneanim damage Dag_X0_RG3_3
+
+#MAXANIM ASCII
+newanim die Dag_X0_RG3_3
+  length 0.166666999
+  transtime 0
+  animroot Dag_X0_RG3_3
+node dummy Dag_X0_RG3_3
+  parent NULL
+  #part-number 0
+endnode
+node emitter fire!78
+  parent Dag_X0_RG3_3
+  #part-number 1
+endnode
+node trimesh Rectangle03
+  parent Dag_X0_RG3_3
+  #part-number 2
+  ambient 0.200000003 0.200000003 0.200000003
+  diffuse 0.800000012 0.800000012 0.800000012
+  specular 0 0 0
+  shininess 1
+  positionkey 3
+    0 1.53606999 0.0211821999 0.00999999978
+    0.0333333015 1.53606999 0.0211821999 -10.0167999
+    0.166666999 1.53606999 0.0211821999 -10.0167999
+  orientationkey 2
+    0 0 0 0 0
+    0.0333333015 0 0 0 0
+endnode
+doneanim die Dag_X0_RG3_3
+
+#MAXANIM ASCII
+newanim dead Dag_X0_RG3_3
+  length 0.0333333015
+  transtime 0
+  animroot Dag_X0_RG3_3
+node dummy Dag_X0_RG3_3
+  parent NULL
+  #part-number 0
+endnode
+node emitter fire!78
+  parent Dag_X0_RG3_3
+  #part-number 1
+endnode
+node trimesh Rectangle03
+  parent Dag_X0_RG3_3
+  #part-number 2
+  ambient 0.200000003 0.200000003 0.200000003
+  diffuse 0.800000012 0.800000012 0.800000012
+  specular 0 0 0
+  shininess 1
+  positionkey 2
+    0 1.53606999 0.0211821999 -10.0167999
+    0.0333333015 1.53606999 0.0211821999 -10.0167999
+  orientationkey 2
+    0 0 0 0 0
+    0.0333333015 0 0 0 0
+endnode
+doneanim dead Dag_X0_RG3_3
+
+#MAXANIM ASCII
+newanim default Dag_X0_RG3_3
+  length 0
+  transtime 0.25
+  animroot Dag_X0_RG3_3
+node dummy Dag_X0_RG3_3
+  parent NULL
+  #part-number 0
+endnode
+node emitter fire!78
+  parent Dag_X0_RG3_3
+  #part-number 1
+endnode
+node trimesh Rectangle03
+  parent Dag_X0_RG3_3
+  #part-number 2
+  ambient 0.200000003 0.200000003 0.200000003
+  diffuse 0.800000012 0.800000012 0.800000012
+  specular 0 0 0
+  shininess 1
+endnode
+doneanim default Dag_X0_RG3_3
+
+donemodel Dag_X0_RG3_3

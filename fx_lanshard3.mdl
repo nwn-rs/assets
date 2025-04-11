@@ -1,0 +1,61 @@
+# Exported from NWmax 0.8 b47 at 02/02/2006 6:16:49 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: fx_lanshard3
+filedependancy lanshat.max
+newmodel fx_lanshard3
+setsupermodel fx_lanshard3 NULL
+classification Other
+#NWmax GEOM  ASCII
+beginmodelgeom fx_lanshard3
+node dummy fx_lanshard3
+  parent NULL
+endnode
+node trimesh Box01
+  parent fx_lanshard3
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.568627 0.109804 0.694118 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center undefined
+  bitmap plc_fabric
+  verts 4
+    -0.015 0.025 0.0125
+    0.015 -0.025 -0.0125
+    -0.015 0.025 -0.0125
+    -0.015 -0.025 0.0125
+  faces 4
+    3 1 0  1  4 5 6  1
+    1 2 0  1  7 8 9  4
+    2 1 3  1  10 1 11  1
+    3 0 2  1  3 0 2  1
+  tverts 12
+    0.000499517 0.999501 0
+    0.999501 0.000499517 0
+    0.000499517 0.000499517 0
+    0.9995 0.999501 0
+    0.000499755 0.999501 0
+    0.000499517 0.000499517 0
+    0.999501 0.999501 0
+    0.000499517 0.000499517 0
+    0.999501 0.000499517 0
+    0.999501 0.999501 0
+    0.000499517 0.000499517 0
+    0.9995 0.999501 0
+endnode
+endmodelgeom fx_lanshard3
+donemodel fx_lanshard3

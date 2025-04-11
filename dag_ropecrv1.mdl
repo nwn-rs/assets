@@ -1,0 +1,651 @@
+# Exported from NWmax 0.8 b50 at 10/30/2005 11:23:03 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: dag_ropecrv1
+#local file: RopeCurved_Short.gmaxRopeCurved_Short.gmax
+filedependancy RopeCurved_Short.gmax
+newmodel dag_ropecrv1
+setsupermodel dag_ropecrv1 NULL
+classification Character
+setanimationscale 0.81
+#NWmax GEOM  ASCII
+beginmodelgeom dag_ropecrv1
+node dummy dag_ropecrv1
+  parent NULL
+endnode
+node dummy ropecrv1_impact
+  parent dag_ropecrv1
+  position 7.97263e-005 -0.00330753 0.309472
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.6 0.894118 0.839216 
+endnode
+node dummy ropecrv1_hand
+  parent dag_ropecrv1
+  position 7.97273e-005 0.0015241 0.165629
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.6 0.894118 0.839216 
+endnode
+node dummy ropecrv1_head_hit
+  parent dag_ropecrv1
+  position 7.97273e-005 0.0166914 0.453997
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.898039 0.65098 0.843137 
+endnode
+node dummy ropecrv1_ground
+  parent dag_ropecrv1
+  position -0.00114409 0.00403369 0.0217717
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.898039 0.65098 0.843137 
+endnode
+node dummy ropecrv1_head
+  parent dag_ropecrv1
+  position 7.97267e-005 -0.000668987 0.504119
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.101961 0.694118 0.580392 
+endnode
+node trimesh damage_ropecrv1
+  parent dag_ropecrv1
+  position -0.0219262 -0.00196172 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 0
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0
+  diffuse 1.0 0.501961 0.643137 
+  specular 0.0 0.9 0.105882 
+  shininess 24
+  center 0.0 0.0 20.25 
+  bitmap NULL
+  verts 12
+    -0.158286 -0.150835 0.0
+    -0.158286 0.150835 0.0
+    0.158286 0.150835 0.0
+    0.158286 -0.150835 0.0
+    -0.158286 -0.150835 0.405
+    0.158286 -0.150835 0.405
+    0.158286 0.150835 0.405
+    -0.158286 0.150835 0.405
+    0.0841946 -0.0802315 0.2025
+    -0.0841946 -0.0802315 0.2025
+    0.0841946 0.0802315 0.2025
+    -0.0841946 0.0802315 0.2025
+  faces 20
+    0 1 2  1  0 0 0  2
+    2 3 0  1  0 0 0  2
+    4 5 6  1  0 0 0  1
+    6 7 4  1  0 0 0  1
+    0 3 8  2  0 0 0  5
+    8 9 0  2  0 0 0  5
+    9 8 5  2  0 0 0  5
+    5 4 9  2  0 0 0  5
+    3 2 10  4  0 0 0  4
+    10 8 3  4  0 0 0  4
+    8 10 6  4  0 0 0  4
+    6 5 8  4  0 0 0  4
+    2 1 11  2  0 0 0  6
+    11 10 2  2  0 0 0  6
+    10 11 7  2  0 0 0  6
+    7 6 10  2  0 0 0  6
+    1 0 9  4  0 0 0  3
+    9 11 1  4  0 0 0  3
+    11 9 4  4  0 0 0  3
+    4 7 11  4  0 0 0  3
+endnode
+node trimesh Top
+  parent damage_ropecrv1
+  position 0.0219262 0.00196172 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.341176 0.878431 0.560784 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 20.0
+  bitmap tin01_flood
+  verts 24
+    -0.0504063 1.14354 0.00233138
+    -0.06164 0.574794 0.178655
+    -0.0504063 0.568812 0.156329
+    -0.06164 1.14952 0.0246576
+    -0.07508 0.569141 0.157559
+    -0.07508 1.14587 0.0025618
+    -0.07508 1.14587 0.0025618
+    -0.07508 0.569141 0.157559
+    -0.0504063 0.568812 0.156329
+    -0.06164 0.00682964 0.330841
+    -0.0504063 0.000847352 0.308514
+    -0.06164 0.574794 0.178655
+    -0.07508 0.00117704 0.309745
+    -0.07508 0.569141 0.157559
+    -0.07508 0.569141 0.157559
+    -0.07508 0.00117704 0.309745
+    -0.0504063 1.14838 -0.00354544
+    -0.06164 1.14952 0.0246576
+    -0.0504063 1.14354 0.00233138
+    -0.06164 1.17149 -0.00333175
+    -0.07508 1.14587 0.0025618
+    -0.07508 1.14922 -0.00353766
+    -0.06164 1.17149 -0.00333175
+    -0.07508 1.14922 -0.00353766
+  faces 18
+    0 1 2  0  0 1 2  1
+    0 3 1  0  0 3 1  1
+    4 0 2  0  4 0 2  1
+    4 5 0  0  4 5 0  1
+    1 6 7  0  1 6 7  1
+    1 3 6  0  1 3 6  1
+    8 9 10  0  8 9 10  1
+    8 11 9  0  8 11 9  1
+    12 8 10  0  12 8 10  1
+    12 13 8  0  12 13 8  1
+    9 14 15  0  9 14 15  1
+    9 11 14  0  9 11 14  1
+    16 17 18  0  16 17 18  1
+    16 19 17  0  16 19 17  1
+    20 16 18  0  20 16 18  1
+    20 21 16  0  20 21 16  1
+    22 20 17  0  22 20 17  1
+    22 23 20  0  22 23 20  1
+  tverts 24
+    0.982622 0.70144 0
+    0.530222 0.72944 0
+    0.530222 0.70144 0
+    0.982622 0.72944 0
+    0.530222 0.72944 0
+    0.982622 0.72944 0
+    0.982622 0.70144 0
+    0.530222 0.70144 0
+    0.982622 0.70144 0
+    0.530222 0.72944 0
+    0.530222 0.70144 0
+    0.982622 0.72944 0
+    0.530222 0.72944 0
+    0.982622 0.72944 0
+    0.982622 0.70144 0
+    0.530222 0.70144 0
+    0.546982 0.70144 0
+    0.530222 0.72944 0
+    0.530222 0.70144 0
+    0.546823 0.72944 0
+    0.530222 0.70144 0
+    0.545401 0.72944 0
+    0.546823 0.726563 0
+    0.545401 0.70144 0
+endnode
+node trimesh bend1
+  parent damage_ropecrv1
+  position 0.0219262 0.00196172 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.341176 0.878431 0.560784 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 20.0
+  bitmap tin01_flood
+  verts 17
+    -0.0504063 1.1996 -1.30081
+    -0.06164 1.17364 -0.610897
+    -0.0504063 1.15054 -0.61142
+    -0.06164 1.22255 -1.29806
+    -0.07508 1.15181 -0.611391
+    -0.07508 1.20087 -1.30066
+    -0.07508 1.20087 -1.30066
+    -0.07508 1.15181 -0.611391
+    -0.0504063 1.14838 -0.00354544
+    -0.06164 1.17364 -0.610897
+    -0.06164 1.17149 -0.00333175
+    -0.0504063 1.15054 -0.61142
+    -0.07508 1.14922 -0.00353766
+    -0.07508 1.15181 -0.611391
+    -0.06164 1.17364 -0.610897
+    -0.07508 1.14922 -0.00353766
+    -0.07508 1.15181 -0.611391
+  faces 12
+    0 1 2  0  0 1 2  1
+    0 3 1  0  0 3 1  1
+    4 0 2  0  4 0 2  1
+    4 5 0  0  4 5 0  1
+    1 6 7  0  1 6 7  1
+    1 3 6  0  1 3 6  1
+    8 9 10  0  8 9 10  1
+    8 11 9  0  8 11 9  1
+    11 12 13  0  11 12 13  1
+    11 8 12  0  11 8 12  1
+    14 15 10  0  14 15 10  1
+    14 16 15  0  14 16 15  1
+  tverts 17
+    0.982622 0.70144 0
+    0.530222 0.72944 0
+    0.530222 0.70144 0
+    0.982622 0.72944 0
+    0.530222 0.72944 0
+    0.982622 0.72944 0
+    0.982622 0.70144 0
+    0.530222 0.70144 0
+    0.546982 0.70144 0
+    0.982622 0.72944 0
+    0.546823 0.72944 0
+    0.982622 0.70144 0
+    0.545401 0.72944 0
+    0.982622 0.72944 0
+    0.982622 0.730149 0
+    0.545401 0.70144 0
+    0.982622 0.70144 0
+endnode
+node trimesh bend2
+  parent damage_ropecrv1
+  position 0.0219262 0.00196172 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.341176 0.878431 0.560784 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 20.0
+  bitmap tin01_flood
+  verts 18
+    -0.0504063 1.4935 -2.64154
+    -0.06164 1.33596 -1.96935
+    -0.0504063 1.31338 -1.97429
+    -0.06164 1.5155 -2.63444
+    -0.07508 1.31462 -1.97401
+    -0.0504063 1.4935 -2.64154
+    -0.07508 1.49507 -2.64371
+    -0.07508 1.49507 -2.64371
+    -0.07508 1.31462 -1.97401
+    -0.0504063 1.31338 -1.97429
+    -0.06164 1.22255 -1.29806
+    -0.0504063 1.1996 -1.30081
+    -0.06164 1.33596 -1.96935
+    -0.07508 1.20087 -1.30066
+    -0.07508 1.31462 -1.97401
+    -0.06164 1.22255 -1.29806
+    -0.07508 1.31462 -1.97401
+    -0.07508 1.20087 -1.30066
+  faces 12
+    0 1 2  0  0 1 2  1
+    0 3 1  0  0 3 1  1
+    4 5 2  0  4 5 2  1
+    4 6 5  0  4 6 5  1
+    1 7 8  0  1 7 8  1
+    1 3 7  0  1 3 7  1
+    9 10 11  0  9 10 11  1
+    9 12 10  0  9 12 10  1
+    13 9 11  0  13 9 11  1
+    13 14 9  0  13 14 9  1
+    15 16 17  0  15 16 17  1
+    15 12 16  0  15 12 16  1
+  tverts 18
+    0.530222 0.70144 0
+    0.530222 0.72944 0
+    0.530222 0.70144 0
+    0.982622 0.72944 0
+    0.530222 0.72944 0
+    0.982622 0.70144 0
+    0.530222 0.70144 0
+    0.982622 0.70144 0
+    0.530222 0.70144 0
+    0.982622 0.70144 0
+    0.530222 0.72944 0
+    0.530222 0.70144 0
+    0.982622 0.72944 0
+    0.530222 0.72944 0
+    0.982622 0.72944 0
+    0.530222 0.728672 0
+    0.982622 0.70144 0
+    0.530222 0.70144 0
+endnode
+node trimesh bend3
+  parent damage_ropecrv1
+  position 0.0219262 0.00196172 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.341176 0.878431 0.560784 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 20.0
+  bitmap tin01_flood
+  verts 17
+    -0.0504063 2.03861 -3.90122
+    -0.06164 1.75531 -3.27161
+    -0.0504063 1.73409 -3.28078
+    -0.06164 2.05884 -3.89004
+    -0.07508 1.73526 -3.28027
+    -0.07508 2.04056 -3.90305
+    -0.07508 2.04056 -3.90305
+    -0.07508 1.73526 -3.28027
+    -0.0504063 1.73409 -3.28078
+    -0.06164 1.5155 -2.63444
+    -0.0504063 1.4935 -2.64154
+    -0.06164 1.75531 -3.27161
+    -0.07508 1.49471 -2.64115
+    -0.07508 1.73526 -3.28027
+    -0.06164 1.5155 -2.63444
+    -0.07508 1.73526 -3.28027
+    -0.07508 1.49471 -2.64115
+  faces 12
+    0 1 2  0  0 1 2  1
+    0 3 1  0  0 3 1  1
+    4 0 2  0  4 0 2  1
+    4 5 0  0  4 5 0  1
+    1 6 7  0  1 6 7  1
+    1 3 6  0  1 3 6  1
+    8 9 10  0  8 9 10  1
+    8 11 9  0  8 11 9  1
+    12 8 10  0  12 8 10  1
+    12 13 8  0  12 13 8  1
+    14 15 16  0  14 15 16  1
+    14 11 15  0  14 11 15  1
+  tverts 17
+    0.982622 0.70144 0
+    0.530222 0.72944 0
+    0.530222 0.70144 0
+    0.982622 0.72944 0
+    0.530222 0.72944 0
+    0.982622 0.72944 0
+    0.982622 0.70144 0
+    0.530222 0.70144 0
+    0.982622 0.70144 0
+    0.530222 0.72944 0
+    0.530222 0.70144 0
+    0.982622 0.72944 0
+    0.530222 0.72944 0
+    0.982622 0.72944 0
+    0.530222 0.727993 0
+    0.982622 0.70144 0
+    0.530222 0.70144 0
+endnode
+node trimesh bend4
+  parent damage_ropecrv1
+  position 0.0219262 0.00196172 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.341176 0.878431 0.560784 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 20.0
+  bitmap tin01_flood
+  verts 16
+    -0.0504063 2.81475 -5.03326
+    -0.06164 2.41618 -4.46952
+    -0.0504063 2.3971 -4.48258
+    -0.06164 2.83247 -5.01841
+    -0.07508 2.39816 -4.48186
+    -0.07508 2.81702 -5.03468
+    -0.07508 2.81702 -5.03468
+    -0.07508 2.39816 -4.48186
+    -0.0504063 2.3971 -4.48258
+    -0.06164 2.05884 -3.89004
+    -0.0504063 2.03861 -3.90122
+    -0.06164 2.41618 -4.46952
+    -0.07508 2.03972 -3.9006
+    -0.07508 2.39816 -4.48186
+    -0.07508 2.39816 -4.48186
+    -0.07508 2.03972 -3.9006
+  faces 12
+    0 1 2  0  0 1 2  1
+    0 3 1  0  0 3 1  1
+    4 0 2  0  4 0 2  1
+    4 5 0  0  4 5 0  1
+    1 6 7  0  1 6 7  1
+    1 3 6  0  1 3 6  1
+    8 9 10  0  8 9 10  1
+    8 11 9  0  8 11 9  1
+    12 8 10  0  12 8 10  1
+    12 13 8  0  12 13 8  1
+    9 14 15  0  9 14 15  1
+    9 11 14  0  9 11 14  1
+  tverts 16
+    0.982622 0.70144 0
+    0.530222 0.72944 0
+    0.530222 0.70144 0
+    0.982622 0.72944 0
+    0.530222 0.72944 0
+    0.982622 0.72944 0
+    0.982622 0.70144 0
+    0.530222 0.70144 0
+    0.982622 0.70144 0
+    0.530222 0.72944 0
+    0.530222 0.70144 0
+    0.982622 0.72944 0
+    0.530222 0.72944 0
+    0.982622 0.72944 0
+    0.982622 0.70144 0
+    0.530222 0.70144 0
+endnode
+endmodelgeom dag_ropecrv1
+#NWmax ANIM ASCII
+newanim damage dag_ropecrv1
+  length 0.133333
+  transtime 0.0
+  animroot dag_ropecrv1
+    node dummy dag_ropecrv1
+        parent NULL
+    endnode
+    node dummy ropecrv1_impact
+        parent dag_ropecrv1
+        positionkey
+            0.0 7.97263e-005 -0.00330753 0.309472
+            0.133333 0.000256632 -0.00330753 0.309472
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node dummy ropecrv1_hand
+        parent dag_ropecrv1
+        positionkey
+            0.0 7.97273e-005 0.0015241 0.165629
+            0.133333 0.000256632 0.0015241 0.165629
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node dummy ropecrv1_head_hit
+        parent dag_ropecrv1
+        positionkey
+            0.0 7.97273e-005 0.0166914 0.453997
+            0.133333 0.000256632 0.0166914 0.453997
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node dummy ropecrv1_ground
+        parent dag_ropecrv1
+        positionkey
+            0.0 -0.00114409 0.00403369 0.0217717
+            0.133333 -0.000964929 0.00403369 0.0217717
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node dummy ropecrv1_head
+        parent dag_ropecrv1
+        positionkey
+            0.0 7.97267e-005 -0.000668987 0.504119
+            0.133333 0.000256632 -0.000668987 0.504119
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh damage_ropecrv1
+        parent dag_ropecrv1
+        positionkey
+            0.0 -0.0219262 -0.00196172 0.0
+            0.0333333 -0.0219262 -0.00196172 0.0198111
+            0.1 -0.0219262 -0.00196172 0.0
+            0.133333 -0.0219262 -0.00196172 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.371336 -0.928463 0.00810258 -0.0469939
+            0.0666667 -0.59995 0.799969 0.0104722 -0.0436324
+            0.1 0.0 0.0 0.0 0.0
+            0.133333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Top
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend1
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend2
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend3
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend4
+        parent damage_ropecrv1
+    endnode
+doneanim damage dag_ropecrv1
+#NWmax ANIM ASCII
+newanim die dag_ropecrv1
+  length 0.166667
+  transtime 0.0
+  animroot dag_ropecrv1
+  event 0.0333333 detonate
+  event 0.0333333 detonate
+  event 0.0333333 detonate
+    node dummy dag_ropecrv1
+        parent NULL
+    endnode
+    node dummy ropecrv1_impact
+        parent dag_ropecrv1
+    endnode
+    node dummy ropecrv1_hand
+        parent dag_ropecrv1
+    endnode
+    node dummy ropecrv1_head_hit
+        parent dag_ropecrv1
+    endnode
+    node dummy ropecrv1_ground
+        parent dag_ropecrv1
+    endnode
+    node dummy ropecrv1_head
+        parent dag_ropecrv1
+    endnode
+    node trimesh damage_ropecrv1
+        parent dag_ropecrv1
+        positionkey
+            0.0 -0.0219262 -0.00196172 0.0
+            0.166667 -0.0219262 -0.00196172 -3.06179
+        endlist
+    endnode
+    node trimesh Top
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend1
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend2
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend3
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend4
+        parent damage_ropecrv1
+    endnode
+doneanim die dag_ropecrv1
+#NWmax ANIM ASCII
+newanim dead dag_ropecrv1
+  length 0.0333333
+  transtime 0.0
+  animroot dag_ropecrv1
+    node dummy dag_ropecrv1
+        parent NULL
+    endnode
+    node dummy ropecrv1_impact
+        parent dag_ropecrv1
+    endnode
+    node dummy ropecrv1_hand
+        parent dag_ropecrv1
+    endnode
+    node dummy ropecrv1_head_hit
+        parent dag_ropecrv1
+    endnode
+    node dummy ropecrv1_ground
+        parent dag_ropecrv1
+    endnode
+    node dummy ropecrv1_head
+        parent dag_ropecrv1
+    endnode
+    node trimesh damage_ropecrv1
+        parent dag_ropecrv1
+        positionkey
+            0.0 -0.0219262 -0.00196172 -3.06179
+            0.0333333 -0.0219262 -0.00196172 -3.06179
+        endlist
+    endnode
+    node trimesh Top
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend1
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend2
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend3
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend4
+        parent damage_ropecrv1
+    endnode
+doneanim dead dag_ropecrv1
+#NWmax ANIM ASCII
+newanim default dag_ropecrv1
+  length 0.0
+  transtime 0.25
+  animroot dag_ropecrv1
+    node dummy dag_ropecrv1
+        parent NULL
+    endnode
+    node dummy ropecrv1_impact
+        parent dag_ropecrv1
+    endnode
+    node dummy ropecrv1_hand
+        parent dag_ropecrv1
+    endnode
+    node dummy ropecrv1_head_hit
+        parent dag_ropecrv1
+    endnode
+    node dummy ropecrv1_ground
+        parent dag_ropecrv1
+    endnode
+    node dummy ropecrv1_head
+        parent dag_ropecrv1
+    endnode
+    node trimesh damage_ropecrv1
+        parent dag_ropecrv1
+    endnode
+    node trimesh Top
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend1
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend2
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend3
+        parent damage_ropecrv1
+    endnode
+    node trimesh bend4
+        parent damage_ropecrv1
+    endnode
+doneanim default dag_ropecrv1
+donemodel dag_ropecrv1

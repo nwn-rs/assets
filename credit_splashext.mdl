@@ -1,0 +1,111 @@
+#MAXMODEL ASCII
+# model: credit_splashext
+filedependancy credit_splashext.max
+newmodel credit_splashext
+setsupermodel credit_splashext NULL
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom credit_splashext
+node dummy credit_splashext
+  parent NULL
+  #part-number 0
+endnode
+node trimesh Plane59
+  parent credit_splashext
+  #part-number 1
+  ambient 0.100000001 0.100000001 0.100000001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap extCredits_s_0
+  verts 4
+    -1.44000006 2.55999994 0
+    -1.44000006 -2.55999994 0
+    1.44000006 2.55999994 0
+    1.44000006 -2.55999994 0
+  tverts 4
+    1 1 0
+    1.19208998e-007 1 0
+    1 0.4375 0
+    0 0.4375 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 2.55999994 0.439999998 0.0500000007
+  orientation 0 0 0 0
+endnode
+node trimesh Plane65
+  parent credit_splashext
+  #part-number 2
+  ambient 0.100000001 0.100000001 0.100000001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap extCredits_s_0
+  verts 4
+    -2.55999994 0.439999998 0
+    -2.55999994 -0.439999998 0
+    2.55999994 0.439999998 0
+    2.55999994 -0.439999998 0
+  tverts 4
+    0 0.171875 0
+    -1.19208998e-007 1.19208998e-007 0
+    1 0.171875 0
+    1 -1.19208998e-007 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position -1.44000006 -2.55999994 0.0500000007
+  orientation 0 0 0 0
+endnode
+node trimesh Plane66
+  parent credit_splashext
+  #part-number 3
+  ambient 0.100000001 0.100000001 0.100000001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap extCredits_s_0
+  verts 4
+    -1.44000006 0.439999998 0
+    -1.44000006 -0.439999998 0
+    1.44000006 0.439999998 0
+    1.44000006 -0.439999998 0
+  tverts 4
+    0.4375 0.359375 0
+    0.4375 0.1875 0
+    1 0.359375 0
+    1 0.1875 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 2.55999994 -2.55999994 0.0500000007
+  orientation 0 0 0 0
+endnode
+node trimesh Plane67
+  parent credit_splashext
+  #part-number 4
+  ambient 0.100000001 0.100000001 0.100000001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap extCredits_f_0
+  verts 4
+    -2.55999994 2.55999994 0
+    -2.55999994 -2.55999994 0
+    2.55999994 2.55999994 0
+    2.55999994 -2.55999994 0
+  tverts 4
+    0 1 0
+    0 0 0
+    1 1 0
+    1 0 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position -1.44000006 0.439999998 0.0500000007
+  orientation 0 0 0 0
+endnode
+endmodelgeom credit_splashext
+
+donemodel credit_splashext

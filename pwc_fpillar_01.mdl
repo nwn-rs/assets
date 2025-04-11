@@ -1,0 +1,1312 @@
+# Exported from NWmax 0.8 b60 at 07.03.2006 08:54:32
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pwc_fpillar_01
+#local file: E:\_Monkeys\wc-Barrows\by martin\Finale_04_06.max
+filedependancy Finale_04_06.max
+newmodel pwc_fpillar_01
+setsupermodel pwc_fpillar_01 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom pwc_fpillar_01
+node dummy pwc_fpillar_01
+  parent NULL
+endnode
+node dummy animate_me_01
+  parent pwc_fpillar_01
+  position 0.0 0.0 0.2
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.345098 0.882353 
+endnode
+node emitter em_chunks02
+  parent animate_me_01
+  position 2.8076 0.623936 -0.429935
+  orientation 0.0 -1.0 0.0 -0.698132
+  wirecolor 0.0235294 0.52549 0.0235294 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 1
+  spawnType 0
+  xSize 50.0
+  ySize 300.0
+  inherit 0
+  inherit_local 0
+  inheritvel 1
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.0 0.0 0.0 
+  colorEnd 0.0 0.0 0.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 1.0
+  sizeEnd 1.0
+  sizeStart_y 1.0
+  sizeEnd_y 1.0
+  birthrate 0
+  lifeExp 2.0
+  mass 0.8
+  spread 0.523599
+  particleRot 0.5
+  velocity 1.0
+  randvel 0.2
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture null
+  twosidedtex 0
+  xgrid 0
+  ygrid 0
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  chunkName tbw_chunk01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node trimesh Plane48
+  parent animate_me_01
+  position 0.59834 1.79159 -0.19
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.584314 0.694118 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.46566 0.0852585 -1.90735e-006 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap plc_moss_tex
+  verts 4
+    -0.35671 1.72914 0.0
+    -1.72363 -0.352133 0.0
+    1.73295 0.356763 0.0
+    0.352186 -1.72744 0.0
+  faces 2
+    2 0 3  1  2 0 3  1
+    1 3 0  1  1 3 0  1
+  tverts 4
+    0.00332573 1.00403 0
+    0.000290722 0.551304 0
+    0.502548 1.00344 0
+    0.499513 0.550717 0
+endnode
+node trimesh Object289
+  parent animate_me_01
+  position -0.136875 0.213125 -4.99
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.882353 0.345098 0.780392 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tbw01_rock3
+  verts 32
+    1.48 0.03 -5.01
+    1.41 0.26 -5.01
+    0.99 0.72 -5.01
+    0.67 1.03 -5.01
+    -0.13 1.11 -5.01
+    -0.4 0.8 -5.01
+    -1.02 0.43 -5.01
+    -1.08 0.26 -5.01
+    -1.02 -0.52 -5.01
+    -0.87 -0.85 -5.01
+    -0.53 -1.24 -5.01
+    -0.3 -1.38 -5.01
+    0.11 -1.33 -5.01
+    0.38 -1.22 -5.01
+    1.14 -0.88 -5.01
+    1.33 -0.65 -5.01
+    1.84 0.1 -0.01
+    1.75 0.38 -0.01
+    1.22 0.97 -0.01
+    0.81 1.36 -0.01
+    -0.2 1.46 -0.01
+    -0.54 1.07 -0.01
+    -1.32 0.6 -0.01
+    -1.4 0.38 -0.01
+    -1.32 -0.6 -0.01
+    -1.14 -1.02 -0.01
+    -0.7 -1.51 -0.01
+    -0.42 -1.69 -0.01
+    0.1 -1.62 -0.01
+    0.45 -1.48 -0.01
+    1.41 -1.05 -0.01
+    1.65 -0.76 -0.01
+  faces 32
+    0 17 16  1  0 17 16  1
+    0 1 17  1  0 1 17  1
+    1 18 17  1  1 18 17  1
+    1 2 18  1  1 2 18  1
+    2 19 18  1  2 19 18  1
+    2 3 19  1  2 3 19  1
+    3 20 19  2  32 20 33  1
+    3 4 20  2  34 4 20  1
+    4 21 20  1  4 21 20  1
+    4 5 21  1  4 5 21  1
+    5 22 21  1  5 22 21  1
+    5 6 22  1  5 6 22  1
+    6 23 22  2  6 23 22  1
+    6 7 23  2  6 7 23  1
+    7 24 23  2  7 24 23  1
+    7 8 24  2  7 8 24  1
+    8 25 24  2  8 25 24  1
+    8 9 25  2  8 9 25  1
+    9 26 25  2  9 26 25  1
+    9 10 26  2  9 10 26  1
+    10 27 26  2  10 27 26  1
+    10 11 27  2  10 11 27  1
+    11 28 27  4  11 28 27  1
+    11 12 28  4  11 12 28  1
+    12 29 28  4  12 29 28  1
+    12 13 29  4  12 13 29  1
+    13 30 29  4  13 30 29  1
+    13 14 30  4  13 14 30  1
+    14 31 30  4  14 31 30  1
+    14 15 31  4  14 15 31  1
+    15 16 31  4  15 16 31  1
+    15 0 16  4  15 0 16  1
+  tverts 35
+    1.50776 0.0 0
+    1.57019 0.0 0
+    1.74564 0.0 0
+    1.87676 0.0 0
+    0.10499 0.0 0
+    0.217188 0.0 0
+    0.396082 0.0 0
+    0.438549 0.0 0
+    0.623703 0.0 0
+    0.706644 0.0 0
+    0.821271 0.0 0
+    0.879279 0.0 0
+    0.966617 0.0 0
+    1.03379 0.0 0
+    1.2518 0.0 0
+    1.32755 0.0 0
+    1.51999 1.0 0
+    1.57898 1.0 0
+    1.75 1.0 0
+    1.87567 1.0 0
+    0.0951683 1.0 0
+    0.20244 1.0 0
+    0.383805 1.0 0
+    0.427949 1.0 0
+    0.616195 1.0 0
+    0.701509 1.0 0
+    0.821247 1.0 0
+    0.879856 1.0 0
+    0.970611 1.0 0
+    1.04276 1.0 0
+    1.26583 1.0 0
+    1.34169 1.0 0
+    -0.123245 0.0 0
+    -0.124334 1.0 0
+    -0.123245 0.0 0
+endnode
+node trimesh Object37
+  parent animate_me_01
+  position -0.076875 0.213125 -0.5
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.694118 0.580392 0.101961 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tbw01_rock1
+  verts 36
+    2.81 0.22 -0.22
+    2.97 0.7 -0.17
+    2.41 2.28 -0.52
+    -2.48 1.23 -0.42
+    -2.83 0.88 -0.42
+    -2.97 -0.8 -0.57
+    -2.43 -1.63 -0.28
+    -2.08 -2.42 -0.27
+    -1.36 -3.05 -0.52
+    -0.15 -3.37 -0.32
+    0.59 -2.66 -0.27
+    2.42 -2.03 -0.52
+    2.69 -1.52 -0.47
+    2.79 0.21 0.3
+    2.95 0.69 0.3
+    2.41 2.33 0.3
+    -2.45 1.22 0.3
+    -2.81 0.88 0.3
+    -2.94 -0.8 0.3
+    -2.41 -1.6 0.3
+    -2.07 -2.4 0.3
+    -1.35 -3.03 0.3
+    -0.16 -3.35 0.3
+    0.58 -2.64 0.3
+    2.4 -2.02 0.3
+    2.67 -1.51 0.3
+    1.97 3.1 -0.32
+    1.33 3.38 -0.32
+    1.96 3.07 0.3
+    1.32 3.35 0.3
+    -0.87 3.35 -0.27
+    -0.86 3.33 0.3
+    -1.4 2.83 -0.27
+    -1.39 2.81 0.3
+    -1.6 1.96 -0.52
+    -1.59 1.94 0.3
+  faces 36
+    0 14 13  1  0 14 13  1
+    0 1 14  1  0 1 14  1
+    1 15 14  2  1 15 14  1
+    1 2 15  2  1 2 15  1
+    3 17 16  1  3 17 16  1
+    3 4 17  1  3 4 17  1
+    4 18 17  2  4 18 17  1
+    4 5 18  2  4 5 18  1
+    5 19 18  1  5 19 18  1
+    5 6 19  1  5 6 19  1
+    6 20 19  1  6 20 19  1
+    6 7 20  1  6 7 20  1
+    7 21 20  1  7 21 20  1
+    7 8 21  1  7 8 21  1
+    8 22 21  1  8 22 21  1
+    8 9 22  1  8 9 22  1
+    9 23 22  2  9 23 22  1
+    9 10 23  2  9 10 23  1
+    10 24 23  2  10 24 23  1
+    10 11 24  2  10 11 24  1
+    11 25 24  1  11 25 24  1
+    11 12 25  1  11 12 25  1
+    12 13 25  1  12 13 25  1
+    12 0 13  1  12 0 13  1
+    26 29 28  1  26 29 28  1
+    26 27 29  1  26 27 29  1
+    2 28 15  2  2 28 15  1
+    2 26 28  2  2 26 28  1
+    27 31 29  1  36 31 37  1
+    27 30 31  1  38 30 31  1
+    30 33 31  2  30 33 31  1
+    30 32 33  2  30 32 33  1
+    32 35 33  4  32 35 33  1
+    32 34 35  4  32 34 35  1
+    34 16 35  1  34 16 35  1
+    34 3 16  1  34 3 16  1
+  tverts 39
+    2.28646 0.483 0
+    2.35976 0.493 0
+    2.61125 0.423 0
+    0.53094 0.443 0
+    0.606825 0.443 0
+    0.876377 0.413 0
+    1.03279 0.471 0
+    1.16149 0.473 0
+    1.30002 0.423 0
+    1.47879 0.463 0
+    1.60403 0.473 0
+    1.91616 0.423 0
+    2.00375 0.433 0
+    2.28502 0.587 0
+    2.35894 0.587 0
+    2.61643 0.587 0
+    0.530186 0.587 0
+    0.605867 0.587 0
+    0.877607 0.587 0
+    1.03052 0.587 0
+    1.16068 0.587 0
+    1.30017 0.587 0
+    1.47725 0.587 0
+    1.60307 0.587 0
+    1.91537 0.587 0
+    2.00357 0.587 0
+    2.72936 0.463 0
+    2.82077 0.463 0
+    2.72835 0.587 0
+    2.82054 0.587 0
+    0.121492 0.473 0
+    0.120846 0.587 0
+    0.219682 0.473 0
+    0.21967 0.587 0
+    0.327478 0.423 0
+    0.328418 0.587 0
+    -0.179235 0.463 0
+    -0.179459 0.587 0
+    -0.179235 0.463 0
+endnode
+node trimesh Plane49
+  parent animate_me_01
+  position -0.566875 -1.21118 -0.19
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.584314 0.694118 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.5 -0.0695801 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap plc_moss_tex
+  verts 4
+    0.82 1.5643 0.0
+    -1.56 0.814304 0.0
+    1.57 -0.815696 0.0
+    -0.82 -1.5657 0.0
+  faces 2
+    2 0 3  1  2 0 3  1
+    1 3 0  1  1 3 0  1
+  tverts 4
+    0.00332573 0.449792 0
+    0.000290722 -0.00292963 0
+    0.502548 0.449205 0
+    0.499513 -0.00351727 0
+endnode
+node trimesh pill1_top
+  parent animate_me_01
+  position -0.086875 0.213125 -0.3
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.882353 0.345098 0.780392 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tbw01_earthflr1
+  verts 19
+    2.8 0.21 0.1
+    2.96 0.69 0.1
+    2.42 2.33 0.1
+    -2.44 1.22 0.1
+    -2.8 0.88 0.1
+    -2.93 -0.8 0.1
+    -2.4 -1.6 0.1
+    -2.06 -2.4 0.1
+    -1.34 -3.03 0.1
+    -0.15 -3.35 0.1
+    0.59 -2.64 0.1
+    2.41 -2.02 0.1
+    2.68 -1.51 0.1
+    0.09 -0.35 0.1
+    1.97 3.07 0.1
+    1.33 3.35 0.1
+    -0.85 3.33 0.1
+    -1.38 2.81 0.1
+    -1.58 1.94 0.1
+  faces 18
+    0 1 13  16  0 1 13  1
+    1 2 13  16  1 2 13  1
+    3 4 13  16  3 4 13  1
+    4 5 13  16  4 5 13  1
+    5 6 13  16  5 6 13  1
+    6 7 13  16  6 7 13  1
+    7 8 13  16  7 8 13  1
+    8 9 13  16  8 9 13  1
+    9 10 13  16  9 10 13  1
+    10 11 13  16  10 11 13  1
+    11 12 13  16  11 12 13  1
+    12 0 13  16  12 0 13  1
+    14 15 13  16  14 15 13  1
+    2 14 13  16  2 14 13  1
+    15 16 13  16  15 16 13  1
+    16 17 13  16  16 17 13  1
+    17 18 13  16  17 18 13  1
+    18 3 13  16  18 3 13  1
+  tverts 19
+    1.057 0.542 0
+    1.089 0.638 0
+    0.981 0.966 0
+    0.00900003 0.744 0
+    -0.063 0.676 0
+    -0.089 0.34 0
+    0.0169999 0.18 0
+    0.0849999 0.0200001 0
+    0.229 -0.106 0
+    0.467 -0.17 0
+    0.615 -0.028 0
+    0.979 0.0959999 0
+    1.033 0.198 0
+    0.515 0.43 0
+    0.891 1.114 0
+    0.763 1.17 0
+    0.327 1.166 0
+    0.221 1.062 0
+    0.181 0.888 0
+endnode
+node trimesh pill1_base
+  parent animate_me_01
+  position -0.136875 0.213125 -2.85
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.882353 0.345098 0.780392 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap tbw01_rock2
+  verts 66
+    1.84 0.1 -2.15
+    1.75 0.38 -2.15
+    1.22 0.97 -2.15
+    0.81 1.36 -2.15
+    -0.2 1.46 -2.15
+    -0.54 1.07 -2.15
+    -1.32 0.6 -2.15
+    -1.4 0.38 -2.15
+    -1.32 -0.6 -2.15
+    -1.14 -1.02 -2.15
+    -0.7 -1.51 -2.15
+    -0.42 -1.69 -2.15
+    0.1 -1.62 -2.15
+    0.45 -1.48 -2.15
+    1.41 -1.05 -2.15
+    1.65 -0.76 -2.15
+    1.78 0.1 -0.76
+    1.7 0.36 -0.76
+    1.34 1.07 -0.76
+    0.82 1.62 -0.76
+    -0.19 1.59 -0.89
+    -0.55 1.11 -0.8
+    -1.28 0.58 -0.76
+    -1.36 0.36 -0.76
+    -1.43 -0.64 -0.84
+    -1.22 -1.05 -0.76
+    -0.82 -1.45 -0.76
+    -0.56 -1.68 -0.76
+    0.17 -1.7 -1.02
+    0.42 -1.55 -0.98
+    1.41 -1.06 -0.76
+    1.66 -0.75 -0.76
+    2.35 0.21 0.51
+    2.22 0.57 0.41
+    1.73 1.48 0.66
+    1.1 2.39 0.66
+    -0.42 2.35 0.51
+    -0.85 1.8 0.61
+    -1.91 0.95 0.56
+    -2.02 0.59 0.51
+    -1.98 -0.78 0.51
+    -1.7 -1.27 0.66
+    -1.23 -1.91 0.66
+    -0.85 -2.26 0.66
+    0.07 -2.23 0.41
+    0.46 -2.09 0.46
+    1.92 -1.56 0.66
+    2.12 -0.95 0.66
+    2.87 0.22 2.13
+    3.03 0.7 2.18
+    2.47 2.28 1.83
+    -2.42 1.23 1.93
+    -2.77 0.88 1.93
+    -2.91 -0.8 1.78
+    -2.37 -1.63 2.07
+    -2.02 -2.42 2.08
+    -1.3 -3.05 1.83
+    -0.09 -3.37 2.03
+    0.65 -2.66 2.08
+    2.48 -2.03 1.83
+    2.75 -1.52 1.88
+    2.03 3.1 2.03
+    1.39 3.38 2.03
+    -0.81 3.35 2.08
+    -1.34 2.83 2.08
+    -1.54 1.96 1.83
+  faces 98
+    0 17 16  1  0 17 16  1
+    0 1 17  1  0 1 17  1
+    1 18 17  1  1 18 17  1
+    1 2 18  1  1 2 18  1
+    2 19 18  1  2 19 18  1
+    2 3 19  1  2 3 19  1
+    3 20 19  1  66 20 67  1
+    3 4 20  1  68 4 20  1
+    4 21 20  1  4 21 20  1
+    4 5 21  1  4 5 21  1
+    5 22 21  1  5 22 21  1
+    5 6 22  1  5 6 22  1
+    6 23 22  1  6 23 22  1
+    6 7 23  1  6 7 23  1
+    7 24 23  1  7 24 23  1
+    7 8 24  1  7 8 24  1
+    8 25 24  1  8 25 24  1
+    8 9 25  1  8 9 25  1
+    9 26 25  1  9 26 25  1
+    9 10 26  1  9 10 26  1
+    10 27 26  1  10 27 26  1
+    10 11 27  1  10 11 27  1
+    11 28 27  1  11 28 27  1
+    11 12 28  1  11 12 28  1
+    12 29 28  1  12 29 28  1
+    12 13 29  1  12 13 29  1
+    13 30 29  1  13 30 29  1
+    13 14 30  1  13 14 30  1
+    14 31 30  1  14 31 30  1
+    14 15 31  1  14 15 31  1
+    15 16 31  1  15 16 31  1
+    15 0 16  1  15 0 16  1
+    16 33 32  1  16 33 32  1
+    16 17 33  1  16 17 33  1
+    17 34 33  1  17 34 33  1
+    17 18 34  1  17 18 34  1
+    18 35 34  1  18 35 34  1
+    18 19 35  1  18 19 35  1
+    19 36 35  1  69 36 70  1
+    19 20 36  1  71 20 36  1
+    20 37 36  1  20 37 36  1
+    20 21 37  1  20 21 37  1
+    21 38 37  1  21 38 37  1
+    21 22 38  1  21 22 38  1
+    22 39 38  1  22 39 38  1
+    22 23 39  1  22 23 39  1
+    23 40 39  1  23 40 39  1
+    23 24 40  1  23 24 40  1
+    24 41 40  1  24 41 40  1
+    24 25 41  1  24 25 41  1
+    25 42 41  1  25 42 41  1
+    25 26 42  1  25 26 42  1
+    26 43 42  1  26 43 42  1
+    26 27 43  1  26 27 43  1
+    27 44 43  1  27 44 43  1
+    27 28 44  1  27 28 44  1
+    28 45 44  1  28 45 44  1
+    28 29 45  1  28 29 45  1
+    29 46 45  1  29 46 45  1
+    29 30 46  1  29 30 46  1
+    30 47 46  1  30 47 46  1
+    30 31 47  1  30 31 47  1
+    31 32 47  1  31 32 47  1
+    31 16 32  1  31 16 32  1
+    32 49 48  1  32 49 48  1
+    32 33 49  1  32 33 49  1
+    33 50 49  1  33 50 49  1
+    33 34 50  1  33 34 50  1
+    38 52 51  1  38 52 51  1
+    38 39 52  1  38 39 52  1
+    39 53 52  1  39 53 52  1
+    39 40 53  1  39 40 53  1
+    40 54 53  1  40 54 53  1
+    40 41 54  1  40 41 54  1
+    41 55 54  1  41 55 54  1
+    41 42 55  1  41 42 55  1
+    42 56 55  1  42 56 55  1
+    42 43 56  1  42 43 56  1
+    43 57 56  1  43 57 56  1
+    43 44 57  1  43 44 57  1
+    44 58 57  1  44 58 57  1
+    44 45 58  1  44 45 58  1
+    45 59 58  1  45 59 58  1
+    45 46 59  1  45 46 59  1
+    46 60 59  1  46 60 59  1
+    46 47 60  1  46 47 60  1
+    47 48 60  1  47 48 60  1
+    47 32 48  1  47 32 48  1
+    35 62 61  1  35 62 61  1
+    34 61 50  1  34 61 50  1
+    34 35 61  1  34 35 61  1
+    35 63 62  1  72 63 73  1
+    35 36 63  1  74 36 63  1
+    36 64 63  1  36 64 63  1
+    36 65 64  1  36 65 64  1
+    36 37 65  1  36 37 65  1
+    37 51 65  1  37 51 65  1
+    37 38 51  1  37 38 51  1
+  tverts 75
+    1.51999 0.0 0
+    1.57898 0.0 0
+    1.75 0.0 0
+    1.87567 0.0 0
+    0.0951683 0.0 0
+    0.202439 0.0 0
+    0.383805 0.0 0
+    0.427949 0.0 0
+    0.616195 0.0 0
+    0.701509 0.0 0
+    0.821247 0.0 0
+    0.879856 0.0 0
+    0.970611 0.0 0
+    1.04276 0.0 0
+    1.26583 0.0 0
+    1.34169 0.0 0
+    1.52077 0.278 0
+    1.57746 0.278 0
+    1.74705 0.278 0
+    1.89231 0.278 0
+    0.0859352 0.252 0
+    0.198784 0.27 0
+    0.384661 0.278 0
+    0.429977 0.278 0
+    0.615858 0.262 0
+    0.697431 0.278 0
+    0.79764 0.278 0
+    0.856996 0.278 0
+    0.985032 0.226 0
+    1.03477 0.234 0
+    1.26433 0.278 0
+    1.34439 0.278 0
+    1.53173 0.532 0
+    1.58965 0.512 0
+    1.75 0.562 0
+    1.89123 0.562 0
+    0.0884066 0.532 0
+    0.174609 0.552 0
+    0.368108 0.542 0
+    0.419058 0.532 0
+    0.607103 0.532 0
+    0.683753 0.562 0
+    0.790161 0.562 0
+    0.855815 0.562 0
+    0.974362 0.512 0
+    1.03188 0.522 0
+    1.26084 0.562 0
+    1.35038 0.562 0
+    1.52667 0.856 0
+    1.57852 0.866 0
+    1.75424 0.796 0
+    0.362587 0.816 0
+    0.409746 0.816 0
+    0.578926 0.786 0
+    0.677152 0.844 0
+    0.760177 0.846 0
+    0.850336 0.796 0
+    0.967994 0.836 0
+    1.04751 0.846 0
+    1.26493 0.796 0
+    1.32611 0.806 0
+    1.83409 0.836 0
+    1.89645 0.836 0
+    0.0975461 0.846 0
+    0.162938 0.846 0
+    0.23558 0.796 0
+    -0.124334 0.0 0
+    -0.107692 0.278 0
+    -0.124334 0.0 0
+    -0.107692 0.278 0
+    -0.108766 0.562 0
+    -0.107692 0.278 0
+    -0.108766 0.562 0
+    -0.103545 0.836 0
+    -0.108766 0.562 0
+endnode
+node emitter em_chunks10
+  parent animate_me_01
+  position 0.168271 3.5336 -0.429935
+  orientation 0.287968 -0.287968 -0.913318 -1.66134
+  wirecolor 0.898039 0.603922 0.843137 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 1
+  spawnType 0
+  xSize 50.0
+  ySize 300.0
+  inherit 0
+  inherit_local 0
+  inheritvel 1
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.0 0.0 0.0 
+  colorEnd 0.0 0.0 0.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 1.0
+  sizeEnd 1.0
+  sizeStart_y 1.0
+  sizeEnd_y 1.0
+  birthrate 0
+  lifeExp 2.0
+  mass 0.8
+  spread 0.523599
+  particleRot 0.5
+  velocity 1.0
+  randvel 0.2
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture null
+  twosidedtex 0
+  xgrid 0
+  ygrid 0
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  chunkName tbw_chunk01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter em_chunks18
+  parent animate_me_01
+  position 0.539219 -2.4405 -0.429935
+  orientation -0.307318 -0.438896 0.84435 -1.38469
+  wirecolor 0.898039 0.603922 0.843137 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 1
+  spawnType 0
+  xSize 50.0
+  ySize 300.0
+  inherit 0
+  inherit_local 0
+  inheritvel 1
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.0 0.0 0.0 
+  colorEnd 0.0 0.0 0.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 1.0
+  sizeEnd 1.0
+  sizeStart_y 1.0
+  sizeEnd_y 1.0
+  birthrate 0
+  lifeExp 2.0
+  mass 0.8
+  spread 0.523599
+  particleRot 0.5
+  velocity 1.0
+  randvel 0.2
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture null
+  twosidedtex 0
+  xgrid 0
+  ygrid 0
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  chunkName tbw_chunk01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter em_chunks19
+  parent animate_me_01
+  position -2.73886 0.291089 -0.429935
+  orientation 0.173648 0.0 -0.984808 -3.14159
+  wirecolor 0.898039 0.603922 0.843137 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 1
+  spawnType 0
+  xSize 50.0
+  ySize 300.0
+  inherit 0
+  inherit_local 0
+  inheritvel 1
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.0 0.0 0.0 
+  colorEnd 0.0 0.0 0.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 1.0
+  sizeEnd 1.0
+  sizeStart_y 1.0
+  sizeEnd_y 1.0
+  birthrate 0
+  lifeExp 2.0
+  mass 0.8
+  spread 0.523599
+  particleRot 0.5
+  velocity 1.0
+  randvel 0.2
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture null
+  twosidedtex 0
+  xgrid 0
+  ygrid 0
+  fps 0
+  framestart 0
+  frameend 0
+  random 0
+  chunkName tbw_chunk01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node trimesh grabme_01
+  parent pwc_fpillar_01
+  position 0.0 0.0 0.2
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.65098 0.898039 0.898039 
+  tilefade 0
+  scale 1.0
+  render 0
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.0 0.0 25.0 
+  bitmap NULL
+  verts 8
+    -1.0 -1.0 0.0
+    1.0 -1.0 0.0
+    -1.0 1.0 0.0
+    1.0 1.0 0.0
+    -0.7 -0.7 0.5
+    0.7 -0.7 0.5
+    -0.7 0.7 0.5
+    0.7 0.7 0.5
+  faces 10
+    4 5 7  4  8 9 11  1
+    7 6 4  4  11 10 8  1
+    0 1 5  8  4 5 7  5
+    5 4 0  8  7 6 4  5
+    1 3 7  16  0 1 3  4
+    7 5 1  16  3 2 0  4
+    3 2 6  32  4 5 7  6
+    6 7 3  32  7 6 4  6
+    2 0 4  64  0 1 3  3
+    4 6 2  64  3 2 0  3
+  tverts 12
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+endnode
+endmodelgeom pwc_fpillar_01
+
+#NWmax ANIM ASCII
+newanim default pwc_fpillar_01
+  length 0.0
+  transtime 0.0
+  animroot pwc_fpillar_01
+    node dummy pwc_fpillar_01
+        parent NULL
+    endnode
+    node dummy animate_me_01
+        parent pwc_fpillar_01
+        positionkey
+            0.0 0.0 0.0 0.2
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node emitter em_chunks02
+        parent animate_me_01
+        birthratekey
+            0.0 0 
+        endlist
+    endnode
+    node trimesh Plane48
+        parent animate_me_01
+    endnode
+    node trimesh Object289
+        parent animate_me_01
+    endnode
+    node trimesh Object37
+        parent animate_me_01
+    endnode
+    node trimesh Plane49
+        parent animate_me_01
+    endnode
+    node trimesh pill1_top
+        parent animate_me_01
+    endnode
+    node trimesh pill1_base
+        parent animate_me_01
+    endnode
+    node emitter em_chunks10
+        parent animate_me_01
+        birthratekey
+            0.0 0 
+        endlist
+    endnode
+    node emitter em_chunks18
+        parent animate_me_01
+        birthratekey
+            0.0 0 
+        endlist
+    endnode
+    node emitter em_chunks19
+        parent animate_me_01
+        birthratekey
+            0.0 0 
+        endlist
+    endnode
+    node trimesh grabme_01
+        parent pwc_fpillar_01
+    endnode
+doneanim default pwc_fpillar_01
+
+
+#NWmax ANIM ASCII
+newanim off pwc_fpillar_01
+  length 0.0
+  transtime 0.0
+  animroot pwc_fpillar_01
+    node dummy pwc_fpillar_01
+        parent NULL
+    endnode
+    node dummy animate_me_01
+        parent pwc_fpillar_01
+        positionkey
+            0.0 0.0 0.0 -10.8
+        endlist
+    endnode
+    node emitter em_chunks02
+        parent animate_me_01
+    endnode
+    node trimesh Plane48
+        parent animate_me_01
+    endnode
+    node trimesh Object289
+        parent animate_me_01
+    endnode
+    node trimesh Object37
+        parent animate_me_01
+    endnode
+    node trimesh Plane49
+        parent animate_me_01
+    endnode
+    node trimesh pill1_top
+        parent animate_me_01
+    endnode
+    node trimesh pill1_base
+        parent animate_me_01
+    endnode
+    node emitter em_chunks10
+        parent animate_me_01
+    endnode
+    node emitter em_chunks18
+        parent animate_me_01
+    endnode
+    node emitter em_chunks19
+        parent animate_me_01
+    endnode
+    node trimesh grabme_01
+        parent pwc_fpillar_01
+    endnode
+doneanim off pwc_fpillar_01
+
+
+#NWmax ANIM ASCII
+newanim off2on pwc_fpillar_01
+  length 6.33333
+  transtime 0.0
+  animroot pwc_fpillar_01
+    node dummy pwc_fpillar_01
+        parent NULL
+    endnode
+    node dummy animate_me_01
+        parent pwc_fpillar_01
+        positionkey
+            0.0 0.0 0.0 -10.8
+            2.0 0.0 0.0 0.2
+            6.33333 0.0 0.0 0.2
+        endlist
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.5708
+            2.0 0.0 0.0 0.0 0.0
+            6.33333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node emitter em_chunks02
+        parent animate_me_01
+        birthratekey
+            0.0 0 
+            0.133333 15 
+            2.0 15 
+            2.03333 8 
+            4.33333 0 
+            6.33333 0 
+        endlist
+    endnode
+    node trimesh Plane48
+        parent animate_me_01
+    endnode
+    node trimesh Object289
+        parent animate_me_01
+    endnode
+    node trimesh Object37
+        parent animate_me_01
+    endnode
+    node trimesh Plane49
+        parent animate_me_01
+    endnode
+    node trimesh pill1_top
+        parent animate_me_01
+    endnode
+    node trimesh pill1_base
+        parent animate_me_01
+    endnode
+    node emitter em_chunks10
+        parent animate_me_01
+        birthratekey
+            0.0 0 
+            0.133333 15 
+            2.0 15 
+            2.03333 8 
+            4.33333 0 
+            6.33333 0 
+        endlist
+    endnode
+    node emitter em_chunks18
+        parent animate_me_01
+        birthratekey
+            0.0 0 
+            0.133333 15 
+            2.0 15 
+            2.03333 8 
+            4.33333 0 
+            6.33333 0 
+        endlist
+    endnode
+    node emitter em_chunks19
+        parent animate_me_01
+        birthratekey
+            0.0 0 
+            0.133333 15 
+            2.0 15 
+            2.03333 8 
+            4.33333 0 
+            6.33333 0 
+        endlist
+    endnode
+    node trimesh grabme_01
+        parent pwc_fpillar_01
+    endnode
+doneanim off2on pwc_fpillar_01
+
+
+#NWmax ANIM ASCII
+newanim on pwc_fpillar_01
+  length 0.0
+  transtime 0.0
+  animroot pwc_fpillar_01
+    node dummy pwc_fpillar_01
+        parent NULL
+    endnode
+    node dummy animate_me_01
+        parent pwc_fpillar_01
+        positionkey
+            0.0 0.0 0.0 0.2
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node emitter em_chunks02
+        parent animate_me_01
+        birthratekey
+            0.0 0 
+        endlist
+    endnode
+    node trimesh Plane48
+        parent animate_me_01
+    endnode
+    node trimesh Object289
+        parent animate_me_01
+    endnode
+    node trimesh Object37
+        parent animate_me_01
+    endnode
+    node trimesh Plane49
+        parent animate_me_01
+    endnode
+    node trimesh pill1_top
+        parent animate_me_01
+    endnode
+    node trimesh pill1_base
+        parent animate_me_01
+    endnode
+    node emitter em_chunks10
+        parent animate_me_01
+        birthratekey
+            0.0 0 
+        endlist
+    endnode
+    node emitter em_chunks18
+        parent animate_me_01
+        birthratekey
+            0.0 0 
+        endlist
+    endnode
+    node emitter em_chunks19
+        parent animate_me_01
+        birthratekey
+            0.0 0 
+        endlist
+    endnode
+    node trimesh grabme_01
+        parent pwc_fpillar_01
+    endnode
+doneanim on pwc_fpillar_01
+
+
+#NWmax ANIM ASCII
+newanim on2off pwc_fpillar_01
+  length 3.33333
+  transtime 0.0
+  animroot pwc_fpillar_01
+    node dummy pwc_fpillar_01
+        parent NULL
+    endnode
+    node dummy animate_me_01
+        parent pwc_fpillar_01
+        positionkey
+            0.0 0.0 0.0 0.2
+            3.33333 0.0 0.0 -10.8
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            3.33333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node emitter em_chunks02
+        parent animate_me_01
+    endnode
+    node trimesh Plane48
+        parent animate_me_01
+    endnode
+    node trimesh Object289
+        parent animate_me_01
+    endnode
+    node trimesh Object37
+        parent animate_me_01
+    endnode
+    node trimesh Plane49
+        parent animate_me_01
+    endnode
+    node trimesh pill1_top
+        parent animate_me_01
+    endnode
+    node trimesh pill1_base
+        parent animate_me_01
+    endnode
+    node emitter em_chunks10
+        parent animate_me_01
+    endnode
+    node emitter em_chunks18
+        parent animate_me_01
+    endnode
+    node emitter em_chunks19
+        parent animate_me_01
+    endnode
+    node trimesh grabme_01
+        parent pwc_fpillar_01
+    endnode
+doneanim on2off pwc_fpillar_01
+
+donemodel pwc_fpillar_01

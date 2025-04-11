@@ -1,0 +1,166 @@
+# Exported from NWmax 0.7 at 9/22/2005 4:27:26 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: dag_grnwater2x2
+filedependancy water_2x2.gmax
+newmodel dag_grnwater2x2
+setsupermodel dag_grnwater2x2 NULL
+classification Other
+#NWmax GEOM  ASCII
+beginmodelgeom dag_grnwater2x2
+node dummy dag_grnwater2x2
+  parent NULL
+endnode
+node dummy dag_grnwater2x2a
+  parent dag_grnwater2x2
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.580392 0.694118 0.101961 
+endnode
+node trimesh Plane687
+  parent dag_grnwater2x2a
+  position 5.0 5.0 1.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  selfillumcolor 0.0 0.0 0.0 
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  center 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 2.0
+  selfillumcolor 0.0 0.0 0.0 
+  bitmap TDS01_water01
+  verts 4
+    -5.0 5.0 0.0
+    -5.0 -5.0 0.0
+    5.0 5.0 0.0
+    5.0 -5.0 0.0
+  faces 2
+    0 1 2  1  0 1 2  1
+    3 2 1  1  3 2 1  1
+  tverts 4
+    6.00004 -56.0006 0
+    6.00004 -59.0006 0
+    9.00007 -56.0006 0
+    9.00007 -59.0006 0
+endnode
+node trimesh Plane688
+  parent dag_grnwater2x2a
+  position -5.0 5.0 1.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  selfillumcolor 0.0 0.0 0.0 
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  center 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 2.0
+  selfillumcolor 0.0 0.0 0.0 
+  bitmap TDS01_water01
+  verts 4
+    -5.0 5.0 0.0
+    -5.0 -5.0 0.0
+    5.0 5.0 0.0
+    5.0 -5.0 0.0
+  faces 2
+    0 1 2  1  0 1 2  1
+    3 2 1  1  3 2 1  1
+  tverts 4
+    6.00004 -56.0006 0
+    6.00004 -59.0006 0
+    9.00007 -56.0006 0
+    9.00007 -59.0006 0
+endnode
+node trimesh Plane688
+  parent dag_grnwater2x2a
+  position -5.0 -5.0 1.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  selfillumcolor 0.0 0.0 0.0 
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  center 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 2.0
+  selfillumcolor 0.0 0.0 0.0 
+  bitmap TDS01_water01
+  verts 4
+    -5.0 5.0 0.0
+    -5.0 -5.0 0.0
+    5.0 5.0 0.0
+    5.0 -5.0 0.0
+  faces 2
+    0 1 2  1  0 1 2  1
+    3 2 1  1  3 2 1  1
+  tverts 4
+    6.00004 -56.0006 0
+    6.00004 -59.0006 0
+    9.00007 -56.0006 0
+    9.00007 -59.0006 0
+endnode
+node trimesh Plane688
+  parent dag_grnwater2x2a
+  position 5.0 -5.0 1.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  selfillumcolor 0.0 0.0 0.0 
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  center 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 2.0
+  selfillumcolor 0.0 0.0 0.0 
+  bitmap TDS01_water01
+  verts 4
+    -5.0 5.0 0.0
+    -5.0 -5.0 0.0
+    5.0 5.0 0.0
+    5.0 -5.0 0.0
+  faces 2
+    0 1 2  1  0 1 2  1
+    3 2 1  1  3 2 1  1
+  tverts 4
+    6.00004 -56.0006 0
+    6.00004 -59.0006 0
+    9.00007 -56.0006 0
+    9.00007 -59.0006 0
+endnode
+endmodelgeom dag_grnwater2x2
+donemodel dag_grnwater2x2

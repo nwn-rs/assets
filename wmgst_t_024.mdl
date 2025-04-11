@@ -1,0 +1,944 @@
+#MAXMODEL ASCII
+# model: WMgSt_t_024 
+filedependancy WMgSt.max
+newmodel WMgSt_t_024 
+setsupermodel WMgSt_t_024 NULL
+classification Item
+#MAXGEOM  ASCII
+beginmodelgeom WMgSt_t_024 
+node dummy WMgSt_t_024 
+  parent NULL 
+endnode
+node trimesh g_WMgSt_t_024 
+  parent WMgSt_t_024 
+  position 0.000230996 0.0 -0.000126672
+  orientation  -0.57735 -0.57735 0.57735  -2.0944
+  wirecolor 0.101961 0.694118 0.345098  
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 1.0 
+    bitmap W_metal_tex
+    verts 101
+     0.0261135 0.0 -0.9
+     0.0 0.0261114 -0.9
+     -0.0261115 0.0 -0.9
+     0.0 -0.0261113 -0.9
+     0.0261124 1.39106e-007 -1.41071
+     0.0 0.0261115 -1.41071
+     -0.0261115 1.36824e-007 -1.41071
+     0.0 -0.0261112 -1.41071
+     2.59876e-007 2.09844e-007 -1.44139
+     0.00104233 -0.204078 -1.33963
+     0.0198272 -0.204078 -1.33963
+     0.00104233 -0.204078 -1.35842
+     -0.0177425 -0.204078 -1.33963
+     0.00104233 -0.204078 -1.32085
+     0.0198272 0.20932 -1.33963
+     0.00104233 0.20932 -1.35842
+     -0.0177425 0.20932 -1.33963
+     0.00104233 0.20932 -1.32085
+     0.00104233 0.20932 -1.33963
+     0.000215075 0.0690467 -1.20556
+     -0.00936088 0.0422623 -1.27379
+     0.00979103 0.0422623 -1.27379
+     -0.00936089 0.095831 -1.27379
+     0.00979103 0.095831 -1.27379
+     0.000215071 0.0690467 -1.34203
+     0.000215075 -0.0704498 -1.20556
+     -0.00936088 -0.0972341 -1.27379
+     0.00979103 -0.0972341 -1.27379
+     -0.00936089 -0.0436654 -1.27379
+     0.00979103 -0.0436654 -1.27379
+     0.000215071 -0.0704498 -1.34203
+     0.000215075 -0.136363 -1.20556
+     -0.00936088 -0.163147 -1.27379
+     0.00979103 -0.163147 -1.27379
+     -0.00936089 -0.109579 -1.27379
+     0.00979103 -0.109579 -1.27379
+     0.000215071 -0.136363 -1.34203
+     0.000215082 -0.136363 -1.0409
+     -0.00936088 -0.163147 -1.10914
+     0.00979104 -0.163147 -1.10914
+     -0.00936088 -0.109579 -1.10914
+     0.00979104 -0.109579 -1.10914
+     0.000215078 -0.136363 -1.17738
+     0.000215069 -0.136363 -1.12353
+     0.0355704 -0.143617 -1.19177
+     0.0355704 -0.129108 -1.19177
+     -0.0351403 -0.143617 -1.19177
+     -0.0351403 -0.129108 -1.19177
+     0.000215073 -0.136363 -1.26
+     0.000215075 0.142577 -1.20556
+     -0.00936088 0.115792 -1.27379
+     0.00979103 0.115792 -1.27379
+     -0.00936089 0.169361 -1.27379
+     0.00979103 0.169361 -1.27379
+     0.000215071 0.142577 -1.34203
+     0.000215082 0.142577 -1.0409
+     -0.00936088 0.115792 -1.10914
+     0.00979104 0.115792 -1.10914
+     -0.00936088 0.169361 -1.10914
+     0.00979104 0.169361 -1.10914
+     0.000215078 0.142577 -1.17738
+     0.000215069 0.142577 -1.12353
+     0.0355704 0.135322 -1.19177
+     0.0355704 0.149831 -1.19177
+     -0.0351403 0.135322 -1.19177
+     -0.0351403 0.149831 -1.19177
+     0.000215073 0.142577 -1.26
+     0.000215063 -0.136363 -1.26852
+     0.0355704 -0.143617 -1.33675
+     0.0355704 -0.129108 -1.33675
+     -0.0351403 -0.143617 -1.33675
+     -0.0351403 -0.129108 -1.33675
+     0.000215066 -0.136363 -1.38118
+     0.000215063 0.142577 -1.26852
+     0.0355704 0.135322 -1.33675
+     0.0355704 0.149831 -1.33675
+     -0.0351403 0.135322 -1.33675
+     -0.0351403 0.149831 -1.33675
+     0.000215066 0.142577 -1.38118
+     0.000215063 0.0707075 -1.26852
+     0.0355704 0.063453 -1.33675
+     0.0355704 0.077962 -1.33675
+     -0.0351403 0.063453 -1.33675
+     -0.0351403 0.077962 -1.33675
+     0.000215066 0.0707075 -1.38118
+     0.000215063 -0.0705352 -1.26852
+     0.0355704 -0.0777897 -1.33675
+     0.0355704 -0.0632807 -1.33675
+     -0.0351403 -0.0777897 -1.33675
+     -0.0351403 -0.0632807 -1.33675
+     0.000215066 -0.0705352 -1.38118
+     -0.000102539 -2.90217e-005 -0.927305
+     -0.000102541 0.0362649 -0.927305
+     0.0361914 -2.90217e-005 -0.927305
+     -0.0363964 -2.90249e-005 -0.927305
+     -0.000102534 -0.0363229 -0.927305
+     -0.000102541 0.0362649 -0.899705
+     0.0361914 -2.90219e-005 -0.899705
+     -0.0363964 -2.90251e-005 -0.899705
+     -0.000102534 -0.0363229 -0.899705
+     -0.000102539 -2.90219e-005 -0.899705
+    faces 142
+     0 1 2  1  131 123 124  2
+     0 2 3  1  122 124 125  2
+     0 4 5  8  132 133 127  3
+     0 5 1  8  134 127 123  3
+     1 5 6  8  123 127 128  3
+     1 6 2  8  123 128 124  3
+     2 6 7  8  124 128 129  3
+     2 7 3  8  124 129 125  3
+     3 7 4  8  125 129 126  3
+     3 4 0  8  125 126 122  3
+     5 4 8  1  127 135 130  1
+     6 5 8  1  128 127 130  1
+     7 6 8  1  129 128 130  1
+     4 7 8  1  126 129 130  1
+     9 11 10  1  82 83 84  2
+     9 12 11  1  85 86 87  2
+     9 13 12  1  88 89 90  2
+     9 10 13  1  72 91 92  2
+     10 15 14  8  74 77 78  3
+     10 11 15  8  93 73 94  3
+     11 16 15  8  73 79 95  3
+     11 12 16  8  73 75 79  3
+     12 17 16  8  75 80 79  3
+     12 13 17  8  75 76 80  3
+     13 14 17  8  76 78 80  3
+     13 10 14  8  76 74 78  3
+     18 14 15  1  96 97 98  1
+     18 15 16  1  99 100 101  1
+     18 16 17  1  102 103 104  1
+     18 17 14  1  81 105 106  1
+     19 20 21  2  0 1 2  2
+     22 23 24  4  3 4 5  1
+     23 22 19  8  4 3 0  5
+     23 21 24  16  4 2 5  4
+     21 23 19  16  2 4 0  4
+     21 20 24  32  2 1 5  6
+     20 19 22  64  1 0 3  3
+     22 24 20  64  3 5 1  3
+     25 26 27  2  6 7 8  2
+     28 29 30  4  9 10 11  1
+     29 28 25  8  10 9 6  5
+     29 27 30  16  10 8 11  4
+     27 29 25  16  8 10 6  4
+     27 26 30  32  8 7 11  6
+     26 25 28  64  7 6 9  3
+     28 30 26  64  9 11 7  3
+     31 32 33  2  12 13 14  2
+     34 35 36  4  15 16 17  1
+     35 34 31  8  16 15 12  5
+     35 33 36  16  16 14 17  4
+     33 35 31  16  14 16 12  4
+     33 32 36  32  14 13 17  6
+     32 31 34  64  13 12 15  3
+     34 36 32  64  15 17 13  3
+     37 38 39  2  18 19 20  2
+     40 41 42  4  21 22 23  1
+     41 40 37  8  22 21 18  5
+     41 39 42  16  22 20 23  4
+     39 41 37  16  20 22 18  4
+     39 38 42  32  20 19 23  6
+     38 37 40  64  19 18 21  3
+     40 42 38  64  21 23 19  3
+     43 44 45  2  24 25 26  2
+     46 47 48  4  27 28 29  1
+     47 46 43  8  28 27 24  5
+     47 45 48  16  28 26 29  4
+     45 47 43  16  26 28 24  4
+     45 44 48  32  26 25 29  6
+     44 43 46  64  25 24 27  3
+     46 48 44  64  27 29 25  3
+     49 50 51  2  30 31 32  2
+     52 53 54  4  33 34 35  1
+     53 52 49  8  34 33 30  5
+     53 51 54  16  34 32 35  4
+     51 53 49  16  32 34 30  4
+     51 50 54  32  32 31 35  6
+     50 49 52  64  31 30 33  3
+     52 54 50  64  33 35 31  3
+     55 56 57  2  36 37 38  2
+     58 59 60  4  39 40 41  1
+     59 58 55  8  40 39 36  5
+     59 57 60  16  40 38 41  4
+     57 59 55  16  38 40 36  4
+     57 56 60  32  38 37 41  6
+     56 55 58  64  37 36 39  3
+     58 60 56  64  39 41 37  3
+     61 62 63  2  42 43 44  2
+     64 65 66  4  45 46 47  1
+     65 64 61  8  46 45 42  5
+     65 63 66  16  46 44 47  4
+     63 65 61  16  44 46 42  4
+     63 62 66  32  44 43 47  6
+     62 61 64  64  43 42 45  3
+     64 66 62  64  45 47 43  3
+     67 68 69  2  48 49 50  2
+     70 71 72  4  51 52 53  1
+     71 70 67  8  52 51 48  5
+     71 69 72  16  52 50 53  4
+     69 71 67  16  50 52 48  4
+     69 68 72  32  50 49 53  6
+     68 67 70  64  49 48 51  3
+     70 72 68  64  51 53 49  3
+     73 74 75  2  54 55 56  2
+     76 77 78  4  57 58 59  1
+     77 76 73  8  58 57 54  5
+     77 75 78  16  58 56 59  4
+     75 77 73  16  56 58 54  4
+     75 74 78  32  56 55 59  6
+     74 73 76  64  55 54 57  3
+     76 78 74  64  57 59 55  3
+     79 80 81  2  60 61 62  2
+     82 83 84  4  63 64 65  1
+     83 82 79  8  64 63 60  5
+     83 81 84  16  64 62 65  4
+     81 83 79  16  62 64 60  4
+     81 80 84  32  62 61 65  6
+     80 79 82  64  61 60 63  3
+     82 84 80  64  63 65 61  3
+     85 86 87  2  66 67 68  2
+     88 89 90  4  69 70 71  1
+     89 88 85  8  70 69 66  5
+     89 87 90  16  70 68 71  4
+     87 89 85  16  68 70 66  4
+     87 86 90  32  68 67 71  6
+     86 85 88  64  67 66 69  3
+     88 90 86  64  69 71 67  3
+     91 92 93  1  107 108 109  2
+     91 94 92  1  107 110 111  2
+     91 95 94  1  107 112 110  2
+     91 93 95  1  107 109 112  2
+     93 96 97  8  109 113 114  3
+     93 92 96  8  109 108 113  3
+     92 98 96  8  115 116 117  3
+     92 94 98  8  118 110 116  3
+     94 99 98  8  110 119 116  3
+     94 95 99  8  110 112 119  3
+     95 97 99  8  112 114 119  3
+     95 93 97  8  112 109 114  3
+     100 97 96  1  120 114 113  1
+     100 96 98  1  120 121 116  1
+     100 98 99  1  120 116 119  1
+     100 99 97  1  120 119 114  1
+    tverts 136
+     0.0598974 0.128692 0 
+     0.000184029 0.188406 0 
+     0.000184029 0.188406 0 
+     0.119611 0.188406 0 
+     0.119611 0.188406 0 
+     0.0598974 0.248119 0 
+     0.0598974 0.128692 0 
+     0.000184029 0.188406 0 
+     0.000184029 0.188406 0 
+     0.119611 0.188406 0 
+     0.119611 0.188406 0 
+     0.0598974 0.248119 0 
+     0.0598974 0.128692 0 
+     0.000184029 0.188406 0 
+     0.000184029 0.188406 0 
+     0.119611 0.188406 0 
+     0.119611 0.188406 0 
+     0.0598974 0.248119 0 
+     0.0598974 0.128692 0 
+     0.000184029 0.188406 0 
+     0.000184029 0.188406 0 
+     0.119611 0.188406 0 
+     0.119611 0.188406 0 
+     0.0598974 0.248119 0 
+     0.0598974 0.128692 0 
+     0.000184029 0.188406 0 
+     0.000184029 0.188406 0 
+     0.119611 0.188406 0 
+     0.119611 0.188406 0 
+     0.0598974 0.248119 0 
+     0.0598974 0.128692 0 
+     0.000184029 0.188406 0 
+     0.000184029 0.188406 0 
+     0.119611 0.188406 0 
+     0.119611 0.188406 0 
+     0.0598974 0.248119 0 
+     0.0598974 0.128692 0 
+     0.000184029 0.188406 0 
+     0.000184029 0.188406 0 
+     0.119611 0.188406 0 
+     0.119611 0.188406 0 
+     0.0598974 0.248119 0 
+     0.0598974 0.128692 0 
+     0.000184029 0.188406 0 
+     0.000184029 0.188406 0 
+     0.119611 0.188406 0 
+     0.119611 0.188406 0 
+     0.0598974 0.248119 0 
+     0.0598974 0.128692 0 
+     0.000184029 0.188406 0 
+     0.000184029 0.188406 0 
+     0.119611 0.188406 0 
+     0.119611 0.188406 0 
+     0.0598974 0.248119 0 
+     0.0598974 0.128692 0 
+     0.000184029 0.188406 0 
+     0.000184029 0.188406 0 
+     0.119611 0.188406 0 
+     0.119611 0.188406 0 
+     0.0598974 0.248119 0 
+     0.0598974 0.128692 0 
+     0.000184029 0.188406 0 
+     0.000184029 0.188406 0 
+     0.119611 0.188406 0 
+     0.119611 0.188406 0 
+     0.0598974 0.248119 0 
+     0.0598974 0.128692 0 
+     0.000184029 0.188406 0 
+     0.000184029 0.188406 0 
+     0.119611 0.188406 0 
+     0.119611 0.188406 0 
+     0.0598974 0.248119 0 
+     0.147365 0.873045 0 
+     0.0663284 0.792089 0 
+     0.187884 0.792089 0 
+     0.106847 0.792089 0 
+     0.147366 0.792089 0 
+     0.228403 0.954002 0 
+     0.187884 0.954002 0 
+     0.106847 0.954002 0 
+     0.147366 0.954002 0 
+     0.147365 0.873046 0 
+     0.147365 0.873045 0 
+     0.0664099 0.873045 0 
+     0.147365 0.954 0 
+     0.147365 0.873045 0 
+     0.147365 0.79209 0 
+     0.0664099 0.873045 0 
+     0.147365 0.873045 0 
+     0.22832 0.873045 0 
+     0.147365 0.79209 0 
+     0.147365 0.954 0 
+     0.22832 0.873045 0 
+     0.0258099 0.792089 0 
+     0.0663283 0.954002 0 
+     0.0663283 0.954002 0 
+     0.147365 0.873046 0 
+     0.147365 0.954001 0 
+     0.0664099 0.873046 0 
+     0.147365 0.873046 0 
+     0.0664099 0.873046 0 
+     0.147365 0.79209 0 
+     0.147365 0.873046 0 
+     0.147365 0.79209 0 
+     0.228321 0.873046 0 
+     0.228321 0.873046 0 
+     0.147365 0.954001 0 
+     0.123987 0.765129 0 
+     0.233958 0.765129 0 
+     0.178973 0.765129 0 
+     0.0690021 0.765129 0 
+     0.0140167 0.765129 0 
+     0.123987 0.765129 0 
+     0.233958 0.984851 0 
+     0.178973 0.984851 0 
+     0.0140167 0.765129 0 
+     0.0690021 0.984851 0 
+     0.0140167 0.984851 0 
+     0.0140167 0.765129 0 
+     0.123987 0.984851 0 
+     0.123987 0.984851 0 
+     0.0140167 0.984851 0 
+     0.601066 0.213838 0 
+     0.557285 0.213838 0 
+     0.515303 0.213838 0 
+     0.558183 0.213838 0 
+     0.601066 0.0971375 0 
+     0.557285 0.0971375 0 
+     0.515303 0.0971375 0 
+     0.558183 0.0971375 0 
+     0.558185 0.0424824 0 
+     0.516376 0.213838 0 
+     0.516376 0.213838 0 
+     0.516376 0.0971375 0 
+     0.516376 0.213838 0 
+     0.516376 0.0971375 0 
+endnode
+node emitter Gravity03 
+  parent g_WMgSt_t_024 
+  position -0.000569 0.00581194 -1.46198
+  orientation  0.57735 -0.57735 0.57735  -2.0944
+  wirecolor 0.109804 0.109804 0.694118  
+    colorStart 1.0 1.0 1.0  
+    colorEnd 0.952941 0.4 0.184314  
+    alphaStart 1.0 
+    alphaEnd 1.0 
+    sizeStart 0.1 
+    sizeEnd 0.13 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 3 
+    birthrate 10 
+    spawnType 0 
+    lifeExp 2.0 
+    mass 0.0 
+    spread 6.28319 
+    particleRot 0.0 
+    velocity 0.5 
+    randvel 0.5 
+    fps 4 
+    random 1 
+    inherit 0 
+    inherit_local 1 
+    inherit_part 0 
+    inheritvel 0 
+    xsize 50 
+    ysize 5 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Fountain 
+    render Normal 
+    Blend Lighten 
+    update_sel 1 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 1.0 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 1 
+    p2p_sel 2 
+    p2p_type Gravity 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 1.0 
+    grav 3.0 
+    threshold 0.0 
+    texture fxpa_StarBnW 
+    xgrid 2 
+    ygrid 2 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node reference OmenRef04 
+  parent Gravity03 
+  position 0.00608166 -0.308802 -0.0110849
+  orientation  -1.0 0.0 0.0  -2.54818
+  wirecolor 0.878431 0.337255 0.337255  
+  refModel fx_ref 
+  reattachable 0 
+endnode
+node emitter star29 
+  parent g_WMgSt_t_024 
+  position -0.000747986 0.141916 -1.11522
+  orientation  0.57735 -0.57735 0.57735  -2.0944
+  wirecolor 0.890196 0.596078 0.596078  
+    colorStart 0.894118 0.505882 0.0  
+    colorEnd 0.929412 0.580392 0.34902  
+    alphaStart 1.0 
+    alphaEnd 1.0 
+    sizeStart 0.3 
+    sizeEnd 0.3 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 0 
+    birthrate 1 
+    spawnType 0 
+    lifeExp -1.0 
+    mass 0.0 
+    spread 0.0 
+    particleRot -0.1 
+    velocity 0.0 
+    randvel 0.0 
+    fps 0 
+    random 0 
+    inherit 1 
+    inherit_local 0 
+    inherit_part 0 
+    inheritvel 0 
+    xsize 0 
+    ysize 0 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Single 
+    render Normal 
+    Blend Lighten 
+    update_sel 3 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_flare 
+    xgrid 1 
+    ygrid 1 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node emitter Ring08 
+  parent g_WMgSt_t_024 
+  position -0.000747986 0.141916 -1.11522
+  orientation  0.57735 -0.57735 0.57735  -2.0944
+  wirecolor 0.890196 0.596078 0.596078  
+    colorStart 1.0 1.0 1.0  
+    colorEnd 1.0 1.0 1.0  
+    alphaStart 1.0 
+    alphaEnd 1.0 
+    sizeStart 0.3 
+    sizeEnd 0.3 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 0 
+    birthrate 1 
+    spawnType 0 
+    lifeExp 1.0 
+    mass 0.0 
+    spread 0.0 
+    particleRot 0.0 
+    velocity 0.0 
+    randvel 0.0 
+    fps 0 
+    random 0 
+    inherit 1 
+    inherit_local 0 
+    inherit_part 0 
+    inheritvel 0 
+    xsize 0 
+    ysize 0 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Single 
+    render Normal 
+    Blend Lighten 
+    update_sel 3 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture FXPA_LENSRING 
+    xgrid 1 
+    ygrid 1 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node emitter star30 
+  parent g_WMgSt_t_024 
+  position -0.000747986 0.141916 -1.11522
+  orientation  0.57735 -0.57735 0.57735  -2.0944
+  wirecolor 0.890196 0.596078 0.596078  
+    colorStart 0.94902 0.733333 0.545098  
+    colorEnd 0.964706 0.827451 0.701961  
+    alphaStart 1.0 
+    alphaEnd 1.0 
+    sizeStart 0.4 
+    sizeEnd 0.4 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 0 
+    birthrate 1 
+    spawnType 0 
+    lifeExp -1.0 
+    mass 0.0 
+    spread 0.0 
+    particleRot 0.4 
+    velocity 0.0 
+    randvel 0.0 
+    fps 0 
+    random 0 
+    inherit 1 
+    inherit_local 0 
+    inherit_part 0 
+    inheritvel 0 
+    xsize 0 
+    ysize 0 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Single 
+    render Normal 
+    Blend Lighten 
+    update_sel 3 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_flare 
+    xgrid 1 
+    ygrid 1 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node emitter Ring09 
+  parent g_WMgSt_t_024 
+  position -0.000747983 -0.141343 -1.05372
+  orientation  0.57735 -0.57735 0.57735  -2.0944
+  wirecolor 0.890196 0.596078 0.596078  
+    colorStart 1.0 1.0 1.0  
+    colorEnd 1.0 1.0 1.0  
+    alphaStart 1.0 
+    alphaEnd 1.0 
+    sizeStart 0.2 
+    sizeEnd 0.2 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 0 
+    birthrate 1 
+    spawnType 0 
+    lifeExp 1.0 
+    mass 0.0 
+    spread 0.0 
+    particleRot 0.0 
+    velocity 0.0 
+    randvel 0.0 
+    fps 0 
+    random 0 
+    inherit 1 
+    inherit_local 0 
+    inherit_part 0 
+    inheritvel 0 
+    xsize 0 
+    ysize 0 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Single 
+    render Normal 
+    Blend Lighten 
+    update_sel 3 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture FXPA_LENSRING 
+    xgrid 1 
+    ygrid 1 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node emitter star31 
+  parent g_WMgSt_t_024 
+  position -0.000747983 -0.141343 -1.05372
+  orientation  0.57735 -0.57735 0.57735  -2.0944
+  wirecolor 0.890196 0.596078 0.596078  
+    colorStart 0.886275 0.396078 0.0  
+    colorEnd 0.886275 0.396078 0.0  
+    alphaStart 1.0 
+    alphaEnd 1.0 
+    sizeStart 0.2 
+    sizeEnd 0.2 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 0 
+    birthrate 1 
+    spawnType 0 
+    lifeExp -1.0 
+    mass 0.0 
+    spread 0.0 
+    particleRot 0.4 
+    velocity 0.0 
+    randvel 0.0 
+    fps 0 
+    random 0 
+    inherit 1 
+    inherit_local 0 
+    inherit_part 0 
+    inheritvel 0 
+    xsize 0 
+    ysize 0 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Single 
+    render Normal 
+    Blend Lighten 
+    update_sel 3 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_flare 
+    xgrid 1 
+    ygrid 1 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node emitter star32 
+  parent g_WMgSt_t_024 
+  position -0.000747983 -0.141343 -1.05372
+  orientation  0.57735 -0.57735 0.57735  -2.0944
+  wirecolor 0.890196 0.596078 0.596078  
+    colorStart 0.894118 0.419608 0.0  
+    colorEnd 0.929412 0.552941 0.34902  
+    alphaStart 1.0 
+    alphaEnd 1.0 
+    sizeStart 0.3 
+    sizeEnd 0.3 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 0 
+    birthrate 1 
+    spawnType 0 
+    lifeExp -1.0 
+    mass 0.0 
+    spread 0.0 
+    particleRot -0.1 
+    velocity 0.0 
+    randvel 0.0 
+    fps 0 
+    random 0 
+    inherit 1 
+    inherit_local 0 
+    inherit_part 0 
+    inheritvel 0 
+    xsize 0 
+    ysize 0 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Single 
+    render Normal 
+    Blend Lighten 
+    update_sel 3 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_flare 
+    xgrid 1 
+    ygrid 1 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node emitter star33 
+  parent g_WMgSt_t_024 
+  position -0.00074799 0.0730313 -1.21487
+  orientation  0.57735 -0.57735 0.57735  -2.0944
+  wirecolor 0.890196 0.596078 0.596078  
+    colorStart 0.894118 0.713726 0.0  
+    colorEnd 0.929412 0.811765 0.34902  
+    alphaStart 1.0 
+    alphaEnd 1.0 
+    sizeStart 0.1 
+    sizeEnd 0.1 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 0 
+    birthrate 2 
+    spawnType 0 
+    lifeExp 0.1 
+    mass 0.0 
+    spread 0.0 
+    particleRot -0.1 
+    velocity 0.0 
+    randvel 0.0 
+    fps 0 
+    random 0 
+    inherit 1 
+    inherit_local 0 
+    inherit_part 0 
+    inheritvel 0 
+    xsize 0 
+    ysize 0 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Single 
+    render Normal 
+    Blend Lighten 
+    update_sel 3 
+    render_sel 1 
+    blend_sel 3 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 0 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_flare 
+    xgrid 1 
+    ygrid 1 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+endmodelgeom WMgSt_t_024 
+
+donemodel WMgSt_t_024 
+

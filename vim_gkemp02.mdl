@@ -1,0 +1,238 @@
+# Exported from NWmax 0.8 b47 at 25/04/2006 1:24:16 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: vim_gkemp02
+filedependancy kemper.max
+newmodel vim_gkemp02
+setsupermodel vim_gkemp02 NULL
+classification Effect
+#NWmax GEOM  ASCII
+beginmodelgeom vim_gkemp02
+node dummy vim_gkemp02
+  parent NULL
+endnode
+node emitter AuroraEmitter01
+  parent vim_gkemp02
+  position 0 0 0
+  orientation 1 0 0 -6.28319
+  wirecolor 0.223529 0.0313726 0.533333 
+  update_sel 3
+  update Explosion
+  render_sel 4
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 0
+  ySize 0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 1 1 1 
+  colorEnd 0.533333004 0 0
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 2.0
+  sizeEnd 0.5
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 1
+  lifeExp 0.6
+  mass 0
+  spread 0
+  particleRot 0.5
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_mov
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter02
+  parent vim_gkemp02
+  position 0 0 0
+  orientation 1 0 0 -6.28319
+  wirecolor 0.223529 0.0313726 0.533333 
+  update_sel 3
+  update Explosion
+  render_sel 4
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 0
+  ySize 0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.533333004 0 0
+  colorEnd 0.952941 0.329412013 0.329412013
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.5
+  sizeEnd 2.5
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 1
+  lifeExp 0.5
+  mass 0
+  spread 0
+  particleRot -0.5
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_mov
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter03
+  parent vim_gkemp02
+  position 0 0 0
+  orientation 1 0 0 -6.28319
+  wirecolor 0.223529 0.0313726 0.533333 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 100.0
+  ySize 100.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.952941 0.329412013 0.329412013
+  colorEnd 0.533333004 0 0
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.075
+  sizeEnd 0.075
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 12
+  lifeExp 1
+  mass 0
+  spread 6.28319
+  particleRot 0
+  velocity 0.2
+  randvel 0.1
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_dot01
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+endmodelgeom vim_gkemp02
+
+#NWmax ANIM ASCII
+newanim impact vim_gkemp02
+  length 0.0333333
+  transtime 0.25
+  animroot vim_gkemp02
+  event 0 detonate
+    node dummy vim_gkemp02
+        parent NULL
+    endnode
+    node emitter AuroraEmitter01
+        parent vim_gkemp02
+    endnode
+    node emitter AuroraEmitter02
+        parent vim_gkemp02
+    endnode
+    node emitter AuroraEmitter03
+        parent vim_gkemp02
+    endnode
+doneanim impact vim_gkemp02
+
+donemodel vim_gkemp02

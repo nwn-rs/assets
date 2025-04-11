@@ -1,0 +1,532 @@
+#MAXMODEL ASCII
+# model: PLC_Strfsh1 
+filedependancy plc_strfsh1.max
+newmodel PLC_Strfsh1 
+setsupermodel PLC_Strfsh1 NULL
+classification Character
+setanimationscale 1.0
+#MAXGEOM  ASCII
+beginmodelgeom PLC_Strfsh1 
+node dummy PLC_Strfsh1 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Strfsh1 
+  position 0.0 0.0137917 0.504806
+  orientation  1.0 0.0 0.0  -1.5708
+  wirecolor 0.690196 0.101961 0.101961  
+    colorStart 0.47451 0.45098 0.392157  
+    colorEnd 0.760784 0.74902 0.694118  
+    alphaStart 1.0 
+    alphaEnd 0.0 
+    sizeStart 2.0 
+    sizeEnd 0.5 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 24 
+    birthrate 10 
+    spawnType 0 
+    lifeExp 2.5 
+    mass 0.09 
+    spread 2.96706 
+    particleRot 0.5 
+    velocity 2.0 
+    randvel 0.5 
+    fps 10 
+    random 0 
+    inherit 0 
+    inherit_local 1 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 400 
+    ySize 400 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Explosion 
+    render Normal 
+    Blend Normal 
+    update_sel 2 
+    render_sel 1 
+    blend_sel 1 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.2 
+    blastLength 1.0 
+    twosidedtex 1 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_smoke01 
+    xgrid 4 
+    ygrid 4 
+    affectedByWind false 
+    m_isTinted 1 
+    renderorder 0 
+    Splat 0 
+endnode
+node dummy Strfsh1_ground 
+  parent PLC_Strfsh1 
+  position 0.00363281 -0.0069873 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.0235294 0.0235294  
+endnode
+node dummy Strfsh1_hand 
+  parent PLC_Strfsh1 
+  position -0.0039892 -0.682472 0.934402
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.878431 0.337255 0.337255  
+endnode
+node dummy Strfsh1_head 
+  parent PLC_Strfsh1 
+  position -0.00398921 -0.000218643 2.1763
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.768628 0.345098 0.882353  
+endnode
+node dummy Strfsh1_head_hit 
+  parent PLC_Strfsh1 
+  position -0.00398926 -0.0108252 1.69482
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.101961 0.694118 0.580392  
+endnode
+node dummy Strfsh1_impact 
+  parent PLC_Strfsh1 
+  position -0.00398926 -0.011001 0.868134
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+node trimesh damage 
+  parent PLC_Strfsh1 
+  position 0.000867307 0.0348657 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.603922 0.843137 0.898039  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 0
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 25.0 
+     gizmo SubAnim:Gizmo
+  ambient 0.0705882 0.0 1.0  
+  diffuse 1.0 0.501961 0.643137  
+  specular 0.0 0.0 0.0  
+  shininess 25.0 
+    bitmap NULL
+    verts 12
+     0.195415 0.186216 0.0
+     0.195415 -0.186216 0.0
+     -0.195415 -0.186216 0.0
+     -0.195415 0.186216 0.0
+     0.195415 0.186216 0.5
+     -0.195415 0.186216 0.5
+     -0.195415 -0.186216 0.5
+     0.195415 -0.186216 0.5
+     -0.103944 0.0990513 0.25
+     0.103944 0.0990513 0.25
+     -0.103944 -0.0990513 0.25
+     0.103944 -0.0990513 0.25
+    faces 20
+     0 1 2  1  0 0 0  1
+     2 3 0  1  0 0 0  1
+     4 5 6  1  0 0 0  1
+     6 7 4  1  0 0 0  1
+     0 3 8  1  0 0 0  1
+     8 9 0  1  0 0 0  1
+     9 8 5  1  0 0 0  1
+     5 4 9  1  0 0 0  1
+     3 2 10  1  0 0 0  1
+     10 8 3  1  0 0 0  1
+     8 10 6  1  0 0 0  1
+     6 5 8  1  0 0 0  1
+     2 1 11  1  0 0 0  1
+     11 10 2  1  0 0 0  1
+     10 11 7  1  0 0 0  1
+     7 6 10  1  0 0 0  1
+     1 0 9  1  0 0 0  1
+     9 11 1  1  0 0 0  1
+     11 9 4  1  0 0 0  1
+     4 7 11  1  0 0 0  1
+    tverts 1
+     0.0 0.0 0 
+endnode
+node trimesh starfish 
+  parent damage 
+  position -0.000867307 -0.0348657 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.721569 0.607843 0.898039  
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 1.0 
+    bitmap plc_palmbark01
+    verts 31
+     -0.280845 -0.260033 0.0
+     0.0511139 -0.292765 0.0
+     -0.0308465 0.0102259 0.328049
+     0.302108 -0.0390751 0.0
+     0.180659 0.345554 0.0
+     -0.370738 0.0818373 0.0
+     -0.127947 0.348765 0.0
+     -0.251454 -0.611947 0.0
+     0.0155768 -0.616397 0.0
+     -0.157193 -0.531465 0.193153
+     -0.644296 -0.311813 0.0
+     -0.591553 -0.176735 0.195628
+     -0.726636 -0.057309 0.0
+     -0.487103 0.425498 0.19882
+     -0.523321 0.240152 0.000884433
+     -0.34367 0.544558 0.000884433
+     0.137 0.716102 0.193153
+     0.217077 0.775988 0.0
+     -0.0623783 0.741055 0.0
+     0.336842 -0.471581 0.0
+     0.386745 -0.311892 0.193153
+     0.531465 -0.227057 0.0
+     0.441637 0.29193 0.193153
+     0.581365 0.167174 0.0
+     0.486552 0.481561 0.0
+     -0.179572 -1.14967 -0.0046564
+     -1.13682 -0.311112 -0.00483644
+     -0.952482 0.838985 0.000884433
+     0.072359 1.32991 0.0
+     0.792155 -0.732927 -0.00478635
+     1.0072 0.492295 -0.00464553
+    faces 36
+     1 2 9  1  1 4 5  1
+     9 8 1  1  5 2 1  1
+     2 0 7  1  4 0 3  1
+     7 9 2  1  3 5 4  1
+     2 5 12  1  7 8 9  1
+     12 11 2  1  9 10 7  1
+     0 2 11  1  11 7 10  1
+     11 10 0  1  10 12 11  1
+     5 2 13  1  15 18 19  1
+     13 14 5  1  19 16 15  1
+     2 6 15  1  18 14 17  1
+     15 13 2  1  17 19 18  1
+     2 4 17  1  21 22 23  1
+     17 16 2  1  23 24 21  1
+     6 2 16  1  25 21 24  1
+     16 18 6  1  24 26 25  1
+     3 2 20  1  36 39 40  1
+     20 21 3  1  40 37 36  1
+     2 1 19  1  39 35 38  1
+     19 20 2  1  38 40 39  1
+     4 2 22  1  29 32 33  1
+     22 24 4  1  33 30 29  1
+     2 3 23  1  32 28 31  1
+     23 22 2  1  31 33 32  1
+     8 9 25  1  2 5 6  1
+     9 7 25  1  5 3 6  1
+     21 20 29  1  37 40 41  1
+     20 19 29  1  40 38 41  1
+     24 22 30  1  30 33 34  1
+     22 23 30  1  33 31 34  1
+     14 13 27  1  16 19 20  1
+     13 15 27  1  19 17 20  1
+     10 11 26  1  12 10 13  1
+     11 12 26  1  10 9 13  1
+     18 16 28  1  26 24 27  1
+     16 17 28  1  24 23 27  1
+    tverts 42
+     0.999501 0.116634 0 
+     0.000499517 0.130731 0 
+     0.107445 0.270101 0 
+     0.91105 0.268184 0 
+     0.247152 0.000249743 0 
+     0.627381 0.233525 0 
+     0.694727 0.49975 0 
+     0.618518 0.000249758 0 
+     0.999501 0.139746 0 
+     0.802814 0.303424 0 
+     0.398374 0.255466 0 
+     0.000499576 0.129414 0 
+     0.0508631 0.289136 0 
+     0.316235 0.49975 0 
+     0.9995 0.121387 0 
+     0.000499576 0.12064 0 
+     0.0373785 0.209091 0 
+     0.994489 0.238796 0 
+     0.491288 0.000249758 0 
+     0.483068 0.24889 0 
+     0.45411 0.49975 0 
+     0.718349 0.49975 0 
+     0.105945 0.372828 0 
+     0.000499547 0.209909 0 
+     0.232358 0.232575 0 
+     0.9995 0.371613 0 
+     0.809648 0.223131 0 
+     0.419522 0.000249773 0 
+     0.9995 0.125993 0 
+     0.0176227 0.142106 0 
+     0.000499606 0.288277 0 
+     0.79885 0.273312 0 
+     0.573328 0.000249773 0 
+     0.385433 0.238135 0 
+     0.46895 0.49975 0 
+     0.9995 0.118655 0 
+     0.0340529 0.12696 0 
+     0.000499606 0.260429 0 
+     0.845761 0.268325 0 
+     0.53477 0.000249803 0 
+     0.432954 0.237217 0 
+     0.553074 0.49975 0 
+endnode
+endmodelgeom PLC_Strfsh1 
+
+#MAXANIM ASCII
+newanim damage PLC_Strfsh1 
+ length 0.133333
+ transtime 0.0
+animroot PLC_Strfsh1
+node dummy PLC_Strfsh1 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_ground 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_hand 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_head 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_head_hit 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_impact 
+  parent PLC_Strfsh1 
+endnode
+node dummy PLC_Strfsh1_pwk 
+  parent PLC_Strfsh1 
+endnode
+node dummy PLC_Strfsh1_wg 
+  parent PLC_Strfsh1_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Strfsh1_pwk 
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_Strfsh1_pwk 
+endnode
+node trimesh damage 
+  parent PLC_Strfsh1 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0244581
+      0.133333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.371336 -0.928463 -0.00810258  0.0469942
+      0.1   -0.599949 0.799969 -0.0104721  0.0436326
+      0.133333   0.0 0.0 0.0  3.57628e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy starfish 
+  parent damage 
+endnode
+doneanim damage PLC_Strfsh1 
+
+#MAXANIM ASCII
+newanim die PLC_Strfsh1 
+ length 0.166667
+ transtime 0.0
+animroot PLC_Strfsh1
+node dummy PLC_Strfsh1 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_ground 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_hand 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_head 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_head_hit 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_impact 
+  parent PLC_Strfsh1 
+endnode
+event 0.0  detonate 
+event 0.0  detonate 
+node dummy PLC_Strfsh1_pwk 
+  parent PLC_Strfsh1 
+endnode
+node dummy PLC_Strfsh1_wg 
+  parent PLC_Strfsh1_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Strfsh1_pwk 
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_Strfsh1_pwk 
+endnode
+node trimesh damage 
+  parent PLC_Strfsh1 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.166667  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  5.67028e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy starfish 
+  parent damage 
+endnode
+doneanim die PLC_Strfsh1 
+
+#MAXANIM ASCII
+newanim dead PLC_Strfsh1 
+ length 0.0333333
+ transtime 0.0
+animroot PLC_Strfsh1
+node dummy PLC_Strfsh1 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_ground 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_hand 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_head 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_head_hit 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_impact 
+  parent PLC_Strfsh1 
+endnode
+node dummy PLC_Strfsh1_pwk 
+  parent PLC_Strfsh1 
+endnode
+node dummy PLC_Strfsh1_wg 
+  parent PLC_Strfsh1_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Strfsh1_pwk 
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_Strfsh1_pwk 
+endnode
+node trimesh damage 
+  parent PLC_Strfsh1 
+    positionkey 
+      0.0  0.000867307 0.0348657 -6.95145
+      0.0333333  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy starfish 
+  parent damage 
+endnode
+doneanim dead PLC_Strfsh1 
+
+#MAXANIM ASCII
+newanim default PLC_Strfsh1 
+ length 0.0
+ transtime 0.25
+animroot PLC_Strfsh1
+node dummy PLC_Strfsh1 
+  parent NULL 
+endnode
+node emitter fire! 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_ground 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_hand 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_head 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_head_hit 
+  parent PLC_Strfsh1 
+endnode
+node dummy Strfsh1_impact 
+  parent PLC_Strfsh1 
+endnode
+node dummy PLC_Strfsh1_pwk 
+  parent PLC_Strfsh1 
+endnode
+node dummy PLC_Strfsh1_wg 
+  parent PLC_Strfsh1_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Strfsh1_pwk 
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_Strfsh1_pwk 
+endnode
+node trimesh damage 
+  parent PLC_Strfsh1 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  3.03925e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy starfish 
+  parent damage 
+endnode
+doneanim default PLC_Strfsh1 
+
+donemodel PLC_Strfsh1 
+

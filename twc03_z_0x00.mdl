@@ -1,0 +1,58 @@
+# Exported from NWmax 0.8 b60 at 16.01.2006 10:56:18
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: twc03_z_0x00
+#local file: E:\3dsmax7\scenes\twc03\edge_tiles_01.max
+filedependancy edge_tiles_01.max
+newmodel twc03_z_0x00
+setsupermodel twc03_z_0x00 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom twc03_z_0x00
+node dummy twc03_z_0x00
+  parent NULL
+endnode
+#Tile trimesh node
+node trimesh Plane01
+  parent twc03_z_0x00
+  position 0.0 0.0 3.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.835294 0.603922 0.898039 
+  ambient 0.862745 0.862745 0.862745 
+  diffuse 0.862745 0.862745 0.862745 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap twc03_black
+  verts 9
+    -5.0 -5.0 0.0
+    0.0 -5.0 0.0
+    5.0 -5.0 0.0
+    -5.0 0.0 0.0
+    0.0 0.0 0.0
+    5.0 0.0 0.0
+    -5.0 5.0 0.0
+    0.0 5.0 0.0
+    5.0 5.0 0.0
+  faces 8
+    3 0 4  1  3 0 4  1
+    1 4 0  1  1 4 0  1
+    4 1 5  1  4 1 5  1
+    2 5 1  1  2 5 1  1
+    6 3 7  1  6 3 7  1
+    4 7 3  1  4 7 3  1
+    7 4 8  1  7 4 8  1
+    5 8 4  1  5 8 4  1
+  tverts 9
+    0.000499517 0.000499755 0
+    0.5 0.000499636 0
+    0.9995 0.000499517 0
+    0.000499636 0.5 0
+    0.5 0.5 0
+    0.9995 0.5 0
+    0.000499755 0.999501 0
+    0.5 0.9995 0
+    0.999501 0.9995 0
+endnode
+endmodelgeom twc03_z_0x00
+donemodel twc03_z_0x00

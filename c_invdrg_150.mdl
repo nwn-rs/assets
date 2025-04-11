@@ -1,0 +1,102 @@
+# Exported from NWmax 0.8 b61 at 2/19/2008 1:03:58 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: c_invdrg_150
+#local file: D:\NWN\override\c_invdrg.max
+filedependancy c_invdrg.max
+newmodel c_invdrg_150
+setsupermodel c_invdrg_150 c_drgblack
+classification Character
+setanimationscale 1.5
+#NWmax GEOM  ASCII
+beginmodelgeom c_invdrg_150
+node dummy c_invdrg_150
+  parent NULL
+endnode
+node dummy Dragon_rootdummy
+  parent c_invdrg_150
+  position -4.03449e-007 0.025293 3.22461
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.6 0.894118 0.839216 
+endnode
+node dummy Dragon_chest
+  parent Dragon_rootdummy
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.341176 0.560784 
+endnode
+node dummy impact
+  parent Dragon_chest
+  position 0.0 0.34846 -1.3912
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.423529 0.0313726 0.533333 
+endnode
+node dummy Dragon_midneckB
+  parent Dragon_chest
+  position -4.53165e-007 2.32741 0.303035
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.341176 0.560784 
+endnode
+node dummy Dragon_midneckA
+  parent Dragon_midneckB
+  position -2.59742e-007 1.45902 -0.204142
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.341176 0.560784 
+endnode
+node dummy Dragon_topneckC
+  parent Dragon_midneckA
+  position 0.0 0.733629 -0.00662048
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.341176 0.560784 
+endnode
+node dummy Dragon_topneckB
+  parent Dragon_topneckC
+  position 0.0 0.679292 0.0597998
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.341176 0.560784 
+endnode
+node dummy Dragon_topneckA
+  parent Dragon_topneckB
+  position 0.000505145 0.763398 0.0285614
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.341176 0.560784 
+endnode
+node dummy Dragon_head
+  parent Dragon_topneckA
+  position 0.0 0.730541 0.0625134
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.341176 0.560784 
+endnode
+node dummy head
+  parent Dragon_head
+  position -4.10805e-005 1.05444 1.15862
+  orientation 1.0 0.0 0.0 -0.314159
+  wirecolor 0.341176 0.878431 0.560784 
+endnode
+node dummy handconjure
+  parent c_invdrg_150
+  position 0.0102958 4.25446 4.28519
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.839216 0.6 
+endnode
+node dummy headconjure
+  parent c_invdrg_150
+  position 0.185821 1.81314 9.26794
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.839216 0.6 
+endnode
+node dummy tail
+  parent c_invdrg_150
+  position -4.03449e-007 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.6 0.894118 0.839216 
+endnode
+node dummy wings
+  parent c_invdrg_150
+  position -4.03449e-007 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.6 0.894118 0.839216 
+endnode
+endmodelgeom c_invdrg_150
+donemodel c_invdrg_150

@@ -1,0 +1,491 @@
+#MAXMODEL ASCII
+# model: CTL_BTN_SRV_LAN 
+filedependancy gui_connection.max
+newmodel CTL_BTN_SRV_LAN 
+setsupermodel CTL_BTN_SRV_LAN NULL
+classification GUI
+#MAXGEOM  ASCII
+beginmodelgeom CTL_BTN_SRV_LAN 
+node dummy CTL_BTN_SRV_LAN 
+  parent NULL 
+endnode
+node dummy text 
+  parent CTL_BTN_SRV_LAN 
+  position 0.97 0.1 0.05
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode
+node animmesh Plane251 
+  parent CTL_BTN_SRV_LAN 
+  position 0.97 0.1 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.101961 0.694118 0.101961  
+  ambient 0.0 0.0 0.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.05 0.05 0.05  
+  shininess 26.0 
+    bitmap CT_BTN_SRV_LAN1
+    verts 4
+     -0.97 -0.1 0.0
+     0.97 -0.1 0.0
+     -0.97 0.1 0.0
+     0.97 0.1 0.0
+    faces 2
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+    tverts 4
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+     0.121094 0.964109 0 
+     0.878906 0.964109 0 
+    bitmap CT_BTN_SRV_LAN1
+    verts 4
+     -0.97 -0.1 0.0
+     0.97 -0.1 0.0
+     -0.97 0.1 0.0
+     0.97 0.1 0.0
+    faces 2
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+    tverts 4
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+     0.121094 0.964109 0 
+     0.878906 0.964109 0 
+endnode
+endmodelgeom CTL_BTN_SRV_LAN 
+
+#MAXANIM ASCII
+newanim up CTL_BTN_SRV_LAN 
+ length 1.0
+ transtime 0.0
+animroot CTL_BTN_SRV_LS1
+node dummy CTL_BTN_SRV_LAN 
+  parent NULL 
+endnode
+node dummy text 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+      0.0  0.97 0.1 0.05
+      1.0  0.97 0.1 0.05
+    endlist 
+endnode
+node animmesh Plane251 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+    endlist 
+    orientationkey 
+    endlist 
+    bitmap CT_BTN_SRV_LAN1
+    verts 4
+     -0.97 -0.1 0.0
+     0.97 -0.1 0.0
+     -0.97 0.1 0.0
+     0.97 0.1 0.0
+    faces 2
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+    tverts 4
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+     0.121094 0.964109 0 
+     0.878906 0.964109 0 
+    sampleperiod 1.#INF 
+    animverts 4 
+      -0.97 -0.1 0.0 
+      0.97 -0.1 0.0 
+      -0.97 0.1 0.0 
+      0.97 0.1 0.0 
+clipu 0.0
+clipv 0.0
+clipw 1.0
+cliph 1.0
+    animtverts 4 
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+     0.121094 0.964109 0 
+     0.878906 0.964109 0 
+    endlist 
+endnode
+doneanim up CTL_BTN_SRV_LAN 
+
+#MAXANIM ASCII
+newanim down CTL_BTN_SRV_LAN 
+ length 1.0
+ transtime 0.0
+animroot CTL_BTN_SRV_LS1
+node dummy CTL_BTN_SRV_LAN 
+  parent NULL 
+endnode
+node dummy text 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+      0.0  0.97 0.09 0.05
+      1.0  0.97 0.09 0.05
+    endlist 
+endnode
+node animmesh Plane251 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+    endlist 
+    orientationkey 
+    endlist 
+    bitmap CT_BTN_SRV_LAN1
+    verts 4
+     -0.97 -0.1 0.0
+     0.97 -0.1 0.0
+     -0.97 0.1 0.0
+     0.97 0.1 0.0
+    faces 2
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+    tverts 4
+     0.121094 0.345297 0 
+     0.878906 0.345297 0 
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+    sampleperiod 1.#INF 
+    animverts 4 
+      -0.97 -0.1 0.0 
+      0.97 -0.1 0.0 
+      -0.97 0.1 0.0 
+      0.97 0.1 0.0 
+clipu 0.0
+clipv 0.0
+clipw 1.0
+cliph 1.0
+    animtverts 4 
+     0.121094 0.345297 0 
+     0.878906 0.345297 0 
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+    endlist 
+endnode
+doneanim down CTL_BTN_SRV_LAN 
+
+#MAXANIM ASCII
+newanim checkedup CTL_BTN_SRV_LAN 
+ length 1.0
+ transtime 0.0
+animroot CTL_BTN_SRV_LS1
+node dummy CTL_BTN_SRV_LAN 
+  parent NULL 
+endnode
+node dummy text 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+      0.0  0.97 0.1 0.05
+      1.0  0.97 0.1 0.05
+    endlist 
+endnode
+node animmesh Plane251 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+    endlist 
+    orientationkey 
+    endlist 
+    bitmap CT_BTN_SRV_LAN1
+    verts 4
+     -0.97 -0.1 0.0
+     0.97 -0.1 0.0
+     -0.97 0.1 0.0
+     0.97 0.1 0.0
+    faces 2
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+    tverts 4
+     0.121094 0.345297 0 
+     0.878906 0.345297 0 
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+    sampleperiod 1.#INF 
+    animverts 4 
+      -0.97 -0.1 0.0 
+      0.97 -0.1 0.0 
+      -0.97 0.1 0.0 
+      0.97 0.1 0.0 
+clipu 0.0
+clipv 0.0
+clipw 1.0
+cliph 1.0
+    animtverts 4 
+     0.121094 0.345297 0 
+     0.878906 0.345297 0 
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+    endlist 
+endnode
+doneanim checkedup CTL_BTN_SRV_LAN 
+
+#MAXANIM ASCII
+newanim checkeddown CTL_BTN_SRV_LAN 
+ length 1.0
+ transtime 0.0
+animroot CTL_BTN_SRV_LS1
+node dummy CTL_BTN_SRV_LAN 
+  parent NULL 
+endnode
+node dummy text 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+      0.0  0.97 0.09 0.05
+      1.0  0.97 0.09 0.05
+    endlist 
+endnode
+node animmesh Plane251 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+    endlist 
+    orientationkey 
+    endlist 
+    bitmap CT_BTN_SRV_LAN1
+    verts 4
+     -0.97 -0.1 0.0
+     0.97 -0.1 0.0
+     -0.97 0.1 0.0
+     0.97 0.1 0.0
+    faces 2
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+    tverts 4
+     0.121094 0.345297 0 
+     0.878906 0.345297 0 
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+    sampleperiod 1.#INF 
+    animverts 4 
+      -0.97 -0.1 0.0 
+      0.97 -0.1 0.0 
+      -0.97 0.1 0.0 
+      0.97 0.1 0.0 
+clipu 0.0
+clipv 0.0
+clipw 1.0
+cliph 1.0
+    animtverts 4 
+     0.121094 0.345297 0 
+     0.878906 0.345297 0 
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+    endlist 
+endnode
+doneanim checkeddown CTL_BTN_SRV_LAN 
+
+#MAXANIM ASCII
+newanim uncheckedup CTL_BTN_SRV_LAN 
+ length 1.0
+ transtime 0.0
+animroot CTL_BTN_SRV_LS1
+node dummy CTL_BTN_SRV_LAN 
+  parent NULL 
+endnode
+node dummy text 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+      0.0  0.97 0.1 0.05
+      1.0  0.97 0.1 0.05
+    endlist 
+endnode
+node animmesh Plane251 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+    endlist 
+    orientationkey 
+    endlist 
+    bitmap CT_BTN_SRV_LAN1
+    verts 4
+     -0.97 -0.1 0.0
+     0.97 -0.1 0.0
+     -0.97 0.1 0.0
+     0.97 0.1 0.0
+    faces 2
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+    tverts 4
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+     0.121094 0.964109 0 
+     0.878906 0.964109 0 
+    sampleperiod 1.#INF 
+    animverts 4 
+      -0.97 -0.1 0.0 
+      0.97 -0.1 0.0 
+      -0.97 0.1 0.0 
+      0.97 0.1 0.0 
+clipu 0.0
+clipv 0.0
+clipw 1.0
+cliph 1.0
+    animtverts 4 
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+     0.121094 0.964109 0 
+     0.878906 0.964109 0 
+    endlist 
+endnode
+doneanim uncheckedup CTL_BTN_SRV_LAN 
+
+#MAXANIM ASCII
+newanim uncheckeddown CTL_BTN_SRV_LAN 
+ length 1.0
+ transtime 0.0
+animroot CTL_BTN_SRV_LS1
+node dummy CTL_BTN_SRV_LAN 
+  parent NULL 
+endnode
+node dummy text 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+      0.0  0.97 0.09 0.05
+      1.0  0.97 0.09 0.05
+    endlist 
+endnode
+node animmesh Plane251 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+    endlist 
+    orientationkey 
+    endlist 
+    bitmap CT_BTN_SRV_LAN1
+    verts 4
+     -0.97 -0.1 0.0
+     0.97 -0.1 0.0
+     -0.97 0.1 0.0
+     0.97 0.1 0.0
+    faces 2
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+    tverts 4
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+     0.121094 0.964109 0 
+     0.878906 0.964109 0 
+    sampleperiod 1.#INF 
+    animverts 4 
+      -0.97 -0.1 0.0 
+      0.97 -0.1 0.0 
+      -0.97 0.1 0.0 
+      0.97 0.1 0.0 
+clipu 0.0
+clipv 0.0
+clipw 1.0
+cliph 1.0
+    animtverts 4 
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+     0.121094 0.964109 0 
+     0.878906 0.964109 0 
+    endlist 
+endnode
+doneanim uncheckeddown CTL_BTN_SRV_LAN 
+
+#MAXANIM ASCII
+newanim disabled CTL_BTN_SRV_LAN 
+ length 1.0
+ transtime 0.0
+animroot CTL_BTN_SRV_LS1
+node dummy CTL_BTN_SRV_LAN 
+  parent NULL 
+endnode
+node dummy text 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+    endlist 
+endnode
+node animmesh Plane251 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+    endlist 
+    orientationkey 
+    endlist 
+    bitmap CT_BTN_SRV_LAN1
+    verts 4
+     -0.97 -0.1 0.0
+     0.97 -0.1 0.0
+     -0.97 0.1 0.0
+     0.97 0.1 0.0
+    faces 2
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+    tverts 4
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+     0.121094 0.964109 0 
+     0.878906 0.964109 0 
+    sampleperiod 1.#INF 
+    animverts 4 
+      -0.97 -0.1 0.0 
+      0.97 -0.1 0.0 
+      -0.97 0.1 0.0 
+      0.97 0.1 0.0 
+clipu 0.0
+clipv 0.0
+clipw 1.0
+cliph 1.0
+    animtverts 4 
+     0.121094 0.654703 0 
+     0.878906 0.654703 0 
+     0.121094 0.964109 0 
+     0.878906 0.964109 0 
+    endlist 
+endnode
+doneanim disabled CTL_BTN_SRV_LAN 
+
+#MAXANIM ASCII
+newanim hilite CTL_BTN_SRV_LAN 
+ length 1.0
+ transtime 0.0
+animroot CTL_BTN_SRV_LS1
+node dummy CTL_BTN_SRV_LAN 
+  parent NULL 
+endnode
+node dummy text 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+    endlist 
+endnode
+node animmesh Plane251 
+  parent CTL_BTN_SRV_LAN 
+    positionkey 
+      0.0  0.97 0.1 0.0
+      1.0  0.97 0.1 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      1.0   0.0 0.0 0.0  0.0
+    endlist 
+    bitmap CT_BTN_SRV_LAN1
+    verts 4
+     -0.97 -0.1 0.0
+     0.97 -0.1 0.0
+     -0.97 0.1 0.0
+     0.97 0.1 0.0
+    faces 2
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+    tverts 4
+     0.121094 -1.95978 0 
+     0.878906 -1.95978 0 
+     0.121094 -1.65037 0 
+     0.878906 -1.65037 0 
+    sampleperiod 1.#INF 
+    animverts 4 
+      -0.97 -0.1 0.0 
+      0.97 -0.1 0.0 
+      -0.97 0.1 0.0 
+      0.97 0.1 0.0 
+clipu 0.0
+clipv 0.0
+clipw 1.0
+cliph 1.0
+    animtverts 4 
+     0.121094 -1.95978 0 
+     0.878906 -1.95978 0 
+     0.121094 -1.65037 0 
+     0.878906 -1.65037 0 
+    endlist 
+endnode
+doneanim hilite CTL_BTN_SRV_LAN 
+
+donemodel CTL_BTN_SRV_LAN 
+

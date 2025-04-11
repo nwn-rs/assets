@@ -1,0 +1,103 @@
+# Exported from NWmax 0.8 b61 at 2/20/2008 12:50:08 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: invis_cr_010
+#local file: D:\NWN\override\invis_cr_all.max
+filedependancy invis_cr_all.max
+newmodel invis_cr_010
+setsupermodel invis_cr_010 NULL
+classification Character
+setanimationscale 0.1
+#NWmax GEOM  ASCII
+beginmodelgeom invis_cr_010
+node dummy invis_cr_010
+  parent NULL
+endnode
+node dummy handconjure
+  parent invis_cr_010
+  position 0.0 0.04 0.15
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.541176 0.0313726 0.431373 
+endnode
+node dummy head
+  parent invis_cr_010
+  position 0.0 -0.003 0.2
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.603922 0.843137 0.898039 
+endnode
+node dummy headconjure
+  parent invis_cr_010
+  position 0.0 -0.014 0.24
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.541176 0.0313726 0.431373 
+endnode
+node dummy Impact
+  parent invis_cr_010
+  position 0.0 0.0 0.145
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.541176 0.0313726 0.431373 
+endnode
+node dummy tail
+  parent invis_cr_010
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.541176 0.0313726 0.431373 
+endnode
+node trimesh selbox
+  parent invis_cr_010
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.6 0.721569 
+  tilefade 0
+  scale 1.0
+  render 0
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center undefined
+  bitmap NULL
+  verts 8
+    -0.05 -0.05 0.0
+    0.05 -0.05 0.0
+    -0.05 0.05 0.0
+    0.05 0.05 0.0
+    -0.05 -0.05 0.1
+    0.05 -0.05 0.1
+    -0.05 0.05 0.1
+    0.05 0.05 0.1
+  faces 12
+    0 2 3  2  9 11 10  2
+    3 1 0  2  10 8 9  2
+    4 5 7  4  8 9 11  1
+    7 6 4  4  11 10 8  1
+    0 1 5  8  4 5 7  5
+    5 4 0  8  7 6 4  5
+    1 3 7  16  0 1 3  4
+    7 5 1  16  3 2 0  4
+    3 2 6  32  4 5 7  6
+    6 7 3  32  7 6 4  6
+    2 0 4  64  0 1 3  3
+    4 6 2  64  3 2 0  3
+  tverts 12
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+endnode
+endmodelgeom invis_cr_010
+donemodel invis_cr_010

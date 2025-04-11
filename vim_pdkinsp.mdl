@@ -1,0 +1,838 @@
+# gaoneng
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: vim_pdkinsp
+filedependancy vfx_inspcour.max
+newmodel vim_pdkinsp
+setsupermodel vim_pdkinsp NULL
+classification Effect
+#NWmax GEOM  ASCII
+beginmodelgeom vim_pdkinsp
+node dummy vim_pdkinsp
+  parent NULL
+endnode
+node emitter AuroraEmitter01
+  parent vim_pdkinsp
+  position 0 0 0.4
+  orientation -1 0 0 0
+  wirecolor 0.52549 0.431373 0.0313726 
+  update_sel 1
+  update Fountain
+  render_sel 5
+  render Aligned_to_World_Z
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 0
+  ySize 0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.533333004 0.329412013 0.952941
+  colorEnd 0.329412013 0.952941 1
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.7
+  sizeEnd 0.3
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 24
+  lifeExp 0.8
+  mass 0
+  spread 0
+  particleRot 0
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_symbl_001
+  twosidedtex 0
+  xgrid 2
+  ygrid 2
+  fps 0
+  frameStart 2
+  frameEnd 2
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node dummy DummyA
+  parent vim_pdkinsp
+  position 0 0 0.6
+  orientation 0 0 -1 -1.5708
+  wirecolor 0.337255 0.337255 0.337255 
+endnode
+node dummy Dummy01
+  parent DummyA
+  position 0.4 0 0
+  orientation 1 0 0 0
+  wirecolor 0.552941 0.027451 0.227451 
+endnode
+node emitter AuroraEmitter02
+  parent Dummy01
+  position 0 0.05 0
+  orientation -1 0 0 0
+  wirecolor 0.0235294 0.52549 0.227451 
+  update_sel 1
+  update Fountain
+  render_sel 7
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 10
+  ySize 10
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.533333004 0.329412013 0.952941
+  colorEnd 0.329412013 0.533333004 0.952941
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.05
+  sizeEnd 0.05
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 36
+  lifeExp 0.8
+  mass 0
+  spread 0
+  particleRot 0
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_flare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter03
+  parent Dummy01
+  position 0 -0.05 0
+  orientation -1 0 0 0
+  wirecolor 0.0235294 0.52549 0.227451 
+  update_sel 1
+  update Fountain
+  render_sel 7
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 10
+  ySize 10
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.329412013 0.952941 1
+  colorEnd 0.329412013 0.952941 0.372548997
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.05
+  sizeEnd 0.05
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 36
+  lifeExp 0.8
+  mass 0
+  spread 0
+  particleRot 0
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_flare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter08
+  parent Dummy01
+  position 0 0 0
+  orientation 0 0 -1 -4.71239
+  wirecolor 0.603922 0.843137 0.898039 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 20.0
+  ySize 20.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 1 1 1 
+  colorEnd 0.952941 0.952941 0.329412013
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.2
+  sizeEnd 0.2
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 36
+  lifeExp 1
+  mass -0.01
+  spread 6.28319
+  particleRot 0
+  velocity 0.4
+  randvel 0.1
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_lensflare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node dummy Dummy02
+  parent DummyA
+  position -0.2 0.34641 0
+  orientation 0 0 -1 -2.0944
+  wirecolor 0.552941 0.027451 0.227451 
+endnode
+node emitter AuroraEmitter09
+  parent Dummy02
+  position 0 0.05 0
+  orientation 1 1.19754e-007 0 -6.28319
+  wirecolor 0.0235294 0.52549 0.227451 
+  update_sel 1
+  update Fountain
+  render_sel 7
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 10
+  ySize 10
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.533333004 0.329412013 0.952941
+  colorEnd 0.329412013 0.533333004 0.952941
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.05
+  sizeEnd 0.05
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 36
+  lifeExp 0.8
+  mass 0
+  spread 0
+  particleRot 0
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_flare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter10
+  parent Dummy02
+  position 0 -0.05 0
+  orientation 1 1.19754e-007 0 -6.28319
+  wirecolor 0.0235294 0.52549 0.227451 
+  update_sel 1
+  update Fountain
+  render_sel 7
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 10
+  ySize 10
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.329412013 0.952941 1
+  colorEnd 0.329412013 0.952941 0.372548997
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.05
+  sizeEnd 0.05
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 36
+  lifeExp 0.8
+  mass 0
+  spread 0
+  particleRot 0
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_flare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter11
+  parent Dummy02
+  position 0 0 0
+  orientation 0 0 1 -1.5708
+  wirecolor 0.603922 0.843137 0.898039 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 20.0
+  ySize 20.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 1 1 1 
+  colorEnd 0.952941 0.952941 0.329412013
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.2
+  sizeEnd 0.2
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 36
+  lifeExp 1
+  mass -0.01
+  spread 6.28319
+  particleRot 0
+  velocity 0.4
+  randvel 0.1
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_lensflare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node dummy Dummy03
+  parent DummyA
+  position -0.2 -0.34641 0
+  orientation 0 0 1 -2.0944
+  wirecolor 0.552941 0.027451 0.227451 
+endnode
+node emitter AuroraEmitter12
+  parent Dummy03
+  position 0 0.05 0
+  orientation -1 0 0 0
+  wirecolor 0.0235294 0.52549 0.227451 
+  update_sel 1
+  update Fountain
+  render_sel 7
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 10
+  ySize 10
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.533333004 0.329412013 0.952941
+  colorEnd 0.329412013 0.533333004 0.952941
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.05
+  sizeEnd 0.05
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 36
+  lifeExp 0.8
+  mass 0
+  spread 0
+  particleRot 0
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_flare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter13
+  parent Dummy03
+  position 0 -0.05 0
+  orientation -1 0 0 0
+  wirecolor 0.0235294 0.52549 0.227451 
+  update_sel 1
+  update Fountain
+  render_sel 7
+  render Linked
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 10
+  ySize 10
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.329412013 0.952941 1
+  colorEnd 0.329412013 0.952941 0.372548997
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.05
+  sizeEnd 0.05
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 36
+  lifeExp 0.8
+  mass 0
+  spread 0
+  particleRot 0
+  velocity 0
+  randvel 0
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_flare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter14
+  parent Dummy03
+  position 0 0 0
+  orientation 0 0 -1 -4.71239
+  wirecolor 0.603922 0.843137 0.898039 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 20.0
+  ySize 20.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 1 1 1 
+  colorEnd 0.952941 0.952941 0.329412013
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.2
+  sizeEnd 0.2
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 36
+  lifeExp 1
+  mass -0.01
+  spread 6.28319
+  particleRot 0
+  velocity 0.4
+  randvel 0.1
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_lensflare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+endmodelgeom vim_pdkinsp
+
+#NWmax ANIM ASCII
+newanim impact vim_pdkinsp
+  length 1
+  transtime 0.25
+  animroot vim_pdkinsp
+    node dummy vim_pdkinsp
+        parent NULL
+    endnode
+    node emitter AuroraEmitter01
+        parent vim_pdkinsp
+        birthratekey
+            0 24 
+            0.966667 24 
+            1 0 
+        endlist
+    endnode
+    node dummy DummyA
+        parent vim_pdkinsp
+        positionkey
+            0 0 0 0.6
+            1 0 0 0
+        endlist
+        orientationkey
+            0 0 0 -1 -1.5708
+            0.333333 0 0 -1 -3.66519
+            0.666667 0 0 -1 -5.75959
+            1 0 0 1 -4.71239
+        endlist
+    endnode
+    node dummy Dummy01
+        parent DummyA
+        positionkey
+            0 0.4 0 0
+            0.333333 0.35 1.51273e-007 0
+            1 0 3.41604e-007 0
+        endlist
+    endnode
+    node emitter AuroraEmitter02
+        parent Dummy01
+        birthratekey
+            0 48 
+            0.966667 48 
+            1 0 
+        endlist
+    endnode
+    node emitter AuroraEmitter03
+        parent Dummy01
+        birthratekey
+            0 48 
+            0.966667 48 
+            1 0 
+        endlist
+    endnode
+    node emitter AuroraEmitter08
+        parent Dummy01
+        birthratekey
+            0 36 
+            0.966667 36 
+            1 0 
+        endlist
+    endnode
+    node dummy Dummy02
+        parent DummyA
+        positionkey
+            0 -0.2 0.34641 0
+            0.333333 -0.175 0.303109 0
+            1 -2.95838e-007 -1.70802e-007 0
+        endlist
+    endnode
+    node emitter AuroraEmitter09
+        parent Dummy02
+        birthratekey
+            0 48
+            0.966667 48
+            1 0 
+        endlist
+    endnode
+    node emitter AuroraEmitter10
+        parent Dummy02
+        birthratekey
+            0 48
+            0.966667 48 
+            1 0 
+        endlist
+    endnode
+    node emitter AuroraEmitter11
+        parent Dummy02
+        birthratekey
+            0 36 
+            0.966667 36 
+            1 0 
+        endlist
+    endnode
+    node dummy Dummy03
+        parent DummyA
+        positionkey
+            0 -0.2 -0.34641 0
+            0.333333 -0.175 -0.303109 0
+            1 2.95838e-007 -1.70802e-007 0
+        endlist
+    endnode
+    node emitter AuroraEmitter12
+        parent Dummy03
+        birthratekey
+            0 48
+            0.966667 48
+            1 0 
+        endlist
+    endnode
+    node emitter AuroraEmitter13
+        parent Dummy03
+        birthratekey
+            0 48
+            0.966667 48
+            1 0 
+        endlist
+    endnode
+    node emitter AuroraEmitter14
+        parent Dummy03
+        birthratekey
+            0 36 
+            0.966667 36 
+            1 0 
+        endlist
+    endnode
+doneanim impact vim_pdkinsp
+
+donemodel vim_pdkinsp

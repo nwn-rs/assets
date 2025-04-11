@@ -1,0 +1,474 @@
+# Exported from NWmax 0.8 b60 at 3/17/2006 5:11:11 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: pmd8
+#local file: Unknown
+filedependancy Unknown
+newmodel pmd8
+setsupermodel pmd8 j_ba
+classification Character
+setanimationscale 0.82
+#NWmax GEOM  ASCII
+beginmodelgeom pmd8
+node dummy pmd8
+  parent NULL
+endnode
+node dummy rootdummy_h
+  parent pmd8
+  position 0.0 -0.4284 1.19952
+  orientation -1.0 1.40571e-005 -0.000663258 -0.000441648
+  wirecolor 0.878431 0.776471 0.341176
+endnode
+node dummy torso_h
+  parent rootdummy_h
+  position 0.0 0.0856801 5.56387e-006
+  orientation 0.999998 -1.49739e-005 0.00195312 0.0
+  wirecolor 0.878431 0.776471 0.341176
+endnode
+node dummy torso1_h
+  parent torso_h
+  position 7.37303e-007 0.685438 -2.11566e-006
+  orientation 1.0 0.0 0.0 -0.000832162
+  wirecolor 0.878431 0.776471 0.341176
+endnode
+node dummy lclavicle_h
+  parent torso1_h
+  position -0.12852 1.57536e-006 0.0856726
+  orientation -1.0 2.69879e-006 6.97349e-006 -0.00257906
+  wirecolor 0.878431 0.776471 0.341176
+endnode
+node dummy lshoulder_h
+  parent lclavicle_h
+  position 4.72598e-007 0.183946 -0.310629
+  orientation -1.0 0.0 0.0 -0.00245693
+  wirecolor 0.898039 0.65098 0.843137
+endnode
+node dummy lbicep_h
+  parent lshoulder_h
+  position -5.57144e-007 -0.12891 -0.206982
+  orientation 1.0 -1.25831e-005 -1.91238e-005 -0.000408371
+  wirecolor 0.898039 0.65098 0.843137
+endnode
+node dummy lforearm_h
+  parent lbicep_h
+  position 7.65105e-006 0.0348369 -0.357233
+  orientation -1.0 0.0 0.0 -2.73389e-005
+  wirecolor 0.898039 0.65098 0.843137
+endnode
+node dummy lwrist_h
+  parent lforearm_h
+  position 3.03304e-006 -0.00164892 -0.254012
+  orientation 1.0 -2.82606e-005 -1.11242e-005 -0.000762621
+  wirecolor 0.898039 0.65098 0.843137
+endnode
+node dummy lhand_h
+  parent lwrist_h
+  position 6.12523e-007 0.0350239 -0.0548434
+  orientation -1.0 0.000308153 0.000181125 -0.00181675
+  wirecolor 0.898039 0.65098 0.843137
+endnode
+node dummy rclavicle_h
+  parent torso1_h
+  position 0.12852 9.65414e-007 0.0856742
+  orientation 1.0 0.0 -2.48917e-007 -0.000513925
+  wirecolor 0.898039 0.65098 0.843137
+endnode
+node dummy rshoulder_h
+  parent rclavicle_h
+  position 0.0 0.183947 -0.310631
+  orientation 1.0 0.0 0.0 -0.000276175
+  wirecolor 0.333333 0.109804 0.694118
+endnode
+node dummy rbicep_h
+  parent rshoulder_h
+  position 3.11971e-007 -0.128911 -0.206979
+  orientation 1.0 0.0 -2.79786e-007 -0.000674196
+  wirecolor 0.333333 0.109804 0.694118
+endnode
+node dummy rforearm_h
+  parent rbicep_h
+  position 7.02416e-006 0.0348369 -0.357233
+  orientation -1.0 0.0 0.0 -0.000158122
+  wirecolor 0.333333 0.109804 0.694118
+endnode
+node dummy rwrist_h
+  parent rforearm_h
+  position 3.04513e-006 -0.00164939 -0.254012
+  orientation 1.0 -2.12577e-006 2.20219e-006 -0.000206801
+  wirecolor 0.333333 0.109804 0.694118
+endnode
+node dummy rhand_h
+  parent rwrist_h
+  position 6.03827e-007 0.0350231 -0.0548431
+  orientation 1.0 0.000252358 0.000115689 -0.00178989
+  wirecolor 0.0313726 0.431373 0.52549
+endnode
+node dummy neck_h
+  parent torso1_h
+  position 1.86768e-007 0.257038 -6.48945e-006
+  orientation 1.0 0.0 0.0 -0.00102126
+  wirecolor 0.0313726 0.431373 0.52549
+endnode
+node dummy head_h
+  parent neck_h
+  position 0.0 0.257046 0.428404
+  orientation 0.999375 -0.0351796 -0.00349792 -0.000865633
+  wirecolor 0.0313726 0.431373 0.52549
+endnode
+node dummy lear_h
+  parent head_h
+  position -0.0502835 0.119178 0.0775104
+  orientation -1.0 0.0 0.0 -0.00151589
+  wirecolor 0.0313726 0.431373 0.52549
+endnode
+node dummy rear_h
+  parent head_h
+  position 0.0507689 0.119178 0.0775111
+  orientation -1.0 0.0 0.0 -0.00151589
+  wirecolor 0.0313726 0.431373 0.52549
+endnode
+node dummy nose_h
+  parent head_h
+  position -8.61312e-007 0.492121 -0.326781
+  orientation 1.0 4.094e-006 1.15016e-006 -9.52743e-007
+  wirecolor 0.0313726 0.431373 0.52549
+endnode
+node dummy lrein_h
+  parent nose_h
+  position -0.14688 -0.243171 -0.0022778
+  orientation 3.52525e-006 0.992419 -0.122905 0.0
+  wirecolor 0.6 0.894118 0.6
+endnode
+node dummy lrein1_h
+  parent lrein_h
+  position -0.05712 -0.245978 -0.0598319
+  orientation -0.999968 0.00781167 0.00194674 0.0
+  wirecolor 0.6 0.894118 0.6
+endnode
+node dummy rrein_h
+  parent nose_h
+  position 0.14688 -0.243172 -0.0022777
+  orientation 3.52525e-006 0.992419 -0.122905 0.0
+  wirecolor 0.6 0.894118 0.6
+endnode
+node dummy rrein1_h
+  parent rrein_h
+  position 0.05712 -0.245978 -0.0598317
+  orientation -0.999968 0.00781167 0.00194674 0.0
+  wirecolor 0.6 0.894118 0.6
+endnode
+node dummy lstirrup_h
+  parent torso_h
+  position -0.2856 0.46512 -0.359046
+  orientation 1.0 -1.46463e-007 0.0 0.0
+  wirecolor 0.6 0.894118 0.6
+endnode
+node dummy IK_Chain07
+  parent lstirrup_h
+  position 0.0137353 -0.069112 0.0950288
+  orientation 1.0 -1.15906e-005 0.0 0.0
+  wirecolor 0.6 0.894118 0.6
+endnode
+node dummy rstirrup_h
+  parent torso_h
+  position 0.2856 0.46512 -0.359046
+  orientation 0.0 0.0 -1.0 -0.610865
+  wirecolor 0.894118 0.839216 0.6
+endnode
+node dummy IK
+  parent rstirrup_h
+  position -0.0581232 -0.0436712 0.0898096
+  orientation 0.998173 -0.0604171 -0.000115502 0.0
+  wirecolor 0.894118 0.839216 0.6
+endnode
+node dummy skirt_helper
+  parent torso_h
+  position -7.4736e-005 0.254677 -0.547197
+  orientation 1.0 -1.46463e-007 0.0 0.0
+  wirecolor 0.894118 0.839216 0.6
+endnode
+node dummy pelvis_h
+  parent rootdummy_h
+  position 0.0 1.46875e-006 1.28939e-006
+  orientation -0.868373 -0.276758 -0.411502 -0.000236227
+  wirecolor 0.894118 0.839216 0.6
+endnode
+node dummy lhip_h
+  parent pelvis_h
+  position -0.12852 -0.244444 -0.129406
+  orientation 0.246479 -0.968928 0.0206321 -4.13514e-005
+  wirecolor 0.894118 0.839216 0.6
+endnode
+node dummy lthigh_h
+  parent lhip_h
+  position -2.80875e-007 0.0481452 -0.331344
+  orientation -1.0 0.0 -2.09901e-007 -0.000267178
+  wirecolor 0.894118 0.839216 0.6
+endnode
+node dummy lshin_h
+  parent lthigh_h
+  position 4.35401e-006 -0.177428 -0.297702
+  orientation 1.0 0.0 0.0 -0.000231507
+  wirecolor 0.337255 0.337255 0.337255
+endnode
+node dummy lankle_h
+  parent lshin_h
+  position 2.32e-006 0.0462773 -0.27663
+  orientation 0.555007 0.324762 0.765831 -0.00126908
+  wirecolor 0.337255 0.337255 0.337255
+endnode
+node dummy lfoot_h
+  parent lankle_h
+  position 5.29328e-007 0.0651763 -0.0654617
+  orientation 0.999701 0.0182369 0.0162645 -0.000263976
+  wirecolor 0.337255 0.337255 0.337255
+endnode
+node dummy rhip_h
+  parent pelvis_h
+  position 0.128519 -0.244445 -0.129403
+  orientation 0.615375 -0.107906 0.780813 -7.41821e-005
+  wirecolor 0.337255 0.337255 0.337255
+endnode
+node dummy rthigh_h
+  parent rhip_h
+  position 6.31671e-007 0.048145 -0.331347
+  orientation 1.0 -1.22723e-007 0.0 -0.000141182
+  wirecolor 0.337255 0.337255 0.337255
+endnode
+node dummy rshin_h
+  parent rthigh_h
+  position 4.22793e-006 -0.177428 -0.297701
+  orientation 1.0 0.0 0.0 -0.00016538
+  wirecolor 0.337255 0.337255 0.337255
+endnode
+node dummy rankle_h
+  parent rshin_h
+  position 2.29581e-006 0.0462777 -0.27663
+  orientation 0.292396 -0.884671 -0.363128 -0.000344527
+  wirecolor 0.54902 0.345098 0.882353
+endnode
+node dummy rfoot_h
+  parent rankle_h
+  position 5.19926e-007 0.0651769 -0.0654617
+  orientation -0.999846 -0.0125316 -0.012322 -0.000105007
+  wirecolor 0.54902 0.345098 0.882353
+endnode
+node dummy tail_h
+  parent pelvis_h
+  position -6.97508e-007 -0.397244 0.085681
+  orientation -1.0 0.0 -2.32007e-007 -0.820305
+  wirecolor 0.54902 0.345098 0.882353
+endnode
+node dummy tail1_h
+  parent tail_h
+  position 0.0 -0.330678 0.0
+  orientation -1.0 1.54479e-007 -4.95373e-007 -0.575957
+  wirecolor 0.54902 0.345098 0.882353
+endnode
+node dummy tail2_h
+  parent tail1_h
+  position 0.0 -0.224266 0.0
+  orientation -1.0 2.5132e-006 5.47053e-006 -0.0174491
+  wirecolor 0.54902 0.345098 0.882353
+endnode
+node dummy rein_lhand_h
+  parent rootdummy_h
+  position 0.00866371 0.0151564 0.0243147
+  orientation 0.579339 -0.210956 -0.787314 -2.26741
+  wirecolor 0.345098 0.780392 0.882353
+endnode
+node dummy lrein2_h
+  parent rein_lhand_h
+  position -0.261156 0.298145 -0.276181
+  orientation -0.999383 0.0236624 -0.0259433 -6.28318
+  wirecolor 0.345098 0.780392 0.882353
+endnode
+node dummy rrein2_h
+  parent rein_lhand_h
+  position 0.261084 0.298145 -0.276182
+  orientation -0.999383 0.0236624 -0.0259433 -6.28318
+  wirecolor 0.345098 0.780392 0.882353
+endnode
+node dummy IK
+  parent rootdummy_h
+  position -0.0454679 0.647651 0.399229
+  orientation 0.999998 -1.49739e-005 0.00195312 0.0
+  wirecolor 0.345098 0.780392 0.882353
+endnode
+node dummy handconjure
+  parent pmd8
+  position 0.00581977 0.75092 1.93204
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.780392 0.882353
+endnode
+node dummy headconjure
+  parent pmd8
+  position -7.4861e-005 -0.0880423 2.29046
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.101961 0.694118 0.101961
+endnode
+node dummy tail
+  parent pmd8
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.101961 0.694118 0.101961
+endnode
+node dummy rootdummy
+  parent pmd8
+  position -3.14024e-006 -0.011318 1.5786
+  orientation -1.0 1.40571e-005 -0.000663258 -0.000441648
+  wirecolor 0.101961 0.694118 0.101961
+endnode
+node dummy pelvis_g
+  parent rootdummy
+  position 0.000405121 0.00742891 0.00020614
+  orientation -0.999926 0.00252209 -0.0118917 -0.000451134
+  wirecolor 0.101961 0.694118 0.101961
+endnode
+node dummy lthigh_g
+  parent pelvis_g
+  position -0.103069 -0.0170426 -0.139441
+  orientation -0.764965 -0.427715 -0.481548 -1.29561
+  wirecolor 0.52549 0.231373 0.0313726
+endnode
+node dummy lshin_g
+  parent lthigh_g
+  position 0.0206218 -0.0134711 -0.304436
+  orientation 0.994021 -0.100127 0.0435475 -1.38732
+  wirecolor 0.52549 0.231373 0.0313726
+endnode
+node dummy lfoot_g
+  parent lshin_g
+  position 0.0184271 -0.0576266 -0.283908
+  orientation -0.200903 0.0873207 0.975712 -0.846573
+  wirecolor 0.52549 0.231373 0.0313726
+endnode
+node dummy rthigh_g
+  parent pelvis_g
+  position 0.10307 -0.0170426 -0.139441
+  orientation -0.767058 0.417548 0.487109 -1.2772
+  wirecolor 0.52549 0.231373 0.0313726
+endnode
+node dummy rshin_g
+  parent rthigh_g
+  position -0.0194574 -0.013471 -0.304436
+  orientation 0.993995 0.100345 -0.0436534 -1.3797
+  wirecolor 0.52549 0.231373 0.0313726
+endnode
+node dummy rfoot_g
+  parent rshin_g
+  position -0.0185927 -0.0576266 -0.283908
+  orientation -0.205889 -0.0790861 -0.975374 -0.83215
+  wirecolor 0.52549 0.231373 0.0313726
+endnode
+node dummy belt_g
+  parent pelvis_g
+  position 0.0 0.0 0.0
+  orientation -1.30595e-007 -0.242103 0.970251 0.0
+  wirecolor 0.101961 0.694118 0.101961
+endnode
+node dummy torso_g
+  parent rootdummy
+  position 0.000405121 0.00742891 0.00020614
+  orientation 1.0 0.000178159 0.000144988 -0.0909871
+  wirecolor 0.552941 0.027451 0.227451
+endnode
+node dummy Lbicep_g
+  parent torso_g
+  position -0.206005 -0.0550903 0.315485
+  orientation -0.932902 -0.10207 -0.345363 -0.57674
+  wirecolor 0.552941 0.027451 0.227451
+endnode
+node dummy lforearm_g
+  parent Lbicep_g
+  position -0.0410346 0.0162191 -0.283421
+  orientation -0.549351 0.364488 0.751906 -1.76023
+  wirecolor 0.552941 0.027451 0.227451
+endnode
+node dummy lhand_g
+  parent lforearm_g
+  position -0.0320899 0.0268936 -0.271762
+  orientation 0.43345 -0.88057 0.19162 -0.908959
+  wirecolor 0.552941 0.027451 0.227451
+endnode
+node dummy lhand
+  parent lhand_g
+  position -0.0153356 -1.49405e-007 -0.0866728
+  orientation 0.990995 -0.0559257 -0.121658 -2.98023e-007
+  wirecolor 0.552941 0.027451 0.227451
+endnode
+node dummy lforearm
+  parent lforearm_g
+  position -0.0282081 -2.09162e-007 -0.174798
+  orientation 4.09212e-006 -1.0 -5.02302e-005 -0.0698108
+  wirecolor 0.721569 0.607843 0.898039
+endnode
+node dummy Lshoulder_g
+  parent Lbicep_g
+  position 0.0 0.0 0.0
+  orientation 0.91398 -0.378132 -0.147162 0.0
+  wirecolor 0.721569 0.607843 0.898039
+endnode
+node dummy neck_g
+  parent torso_g
+  position 0.0 -0.0616529 0.41095
+  orientation 0.999998 0.0021408 -0.000602597 -0.0150849
+  wirecolor 0.721569 0.607843 0.898039
+endnode
+node dummy head_g
+  parent neck_g
+  position 0.0 0.0226997 0.0637158
+  orientation 0.999999 0.00042759 -0.00162883 -0.0373984
+  wirecolor 0.721569 0.607843 0.898039
+endnode
+node dummy head
+  parent head_g
+  position -9.17746e-005 0.00605443 0.190153
+  orientation -1.0 2.55205e-005 5.45351e-005 0.0
+  wirecolor 0.721569 0.607843 0.898039
+endnode
+node dummy Rbicep_g
+  parent torso_g
+  position 0.20601 -0.0550903 0.315486
+  orientation -0.0179109 0.884494 0.466207 -0.371946
+  wirecolor 0.603922 0.843137 0.898039
+endnode
+node dummy Rshoulder_g
+  parent Rbicep_g
+  position 1.87929e-007 0.0 0.0
+  orientation -0.187182 -0.973743 -0.129567 0.0
+  wirecolor 0.603922 0.843137 0.898039
+endnode
+node dummy rforearm_g
+  parent Rbicep_g
+  position 0.0410301 0.0162191 -0.283421
+  orientation -0.991239 -0.118158 0.0590178 -0.671433
+  wirecolor 0.603922 0.843137 0.898039
+endnode
+node dummy rhand_g
+  parent rforearm_g
+  position 0.0320902 0.0268936 -0.271763
+  orientation 0.0828091 0.973533 -0.213016 -0.167878
+  wirecolor 0.603922 0.843137 0.898039
+endnode
+node dummy rhand
+  parent rhand_g
+  position 0.01107 1.56269e-007 -0.0882857
+  orientation -0.0217133 -0.994821 -0.0992958 -0.374951
+  wirecolor 0.603922 0.843137 0.898039
+endnode
+node dummy Impact
+  parent torso_g
+  position 0.0 0.117452 0.229259
+  orientation 1.0 -0.000149971 -4.11599e-005 0.0
+  wirecolor 0.6 0.894118 0.6
+endnode
+node dummy wings
+  parent torso_g
+  position 0.000339327 -0.120155 0.248746
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.341176 0.560784
+endnode
+endmodelgeom pmd8
+donemodel pmd8

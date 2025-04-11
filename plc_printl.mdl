@@ -1,0 +1,224 @@
+#MAXMODEL ASCII
+# model: PLC_PrintL 
+filedependancy IoP-Footprint_Left.max
+newmodel PLC_PrintL 
+setsupermodel PLC_PrintL NULL
+classification Character
+setanimationscale 1.0
+#MAXGEOM  ASCII
+beginmodelgeom PLC_PrintL 
+node dummy PLC_PrintL 
+  parent NULL 
+endnode
+node trimesh Plane01 
+  parent PLC_PrintL 
+  position 0.0 0.0 -0.127
+  orientation  0.0 0.0 1.0  -3.14159
+  wirecolor 0.541176 0.0313726 0.431373  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 1
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 0.0 
+     gizmo SubAnim:Gizmo
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 1.0 
+    bitmap PLC_Ftprnt01
+    verts 4
+     -0.191402 -0.191402 0.0
+     0.191402 -0.191402 0.0
+     -0.191402 0.191402 0.0
+     0.191402 0.191402 0.0
+    faces 2
+     2 0 3  1  6 4 7  1
+     1 3 0  1  5 7 4  1
+    tverts 8
+     0.0 0.0 0 
+     1.0 0.0 0 
+     0.0 0.0 0 
+     1.0 0.0 0 
+     0.0 0.0 0 
+     1.0 0.0 0 
+     0.0 1.0 0 
+     1.0 1.0 0 
+endnode
+node trimesh Plane02 
+  parent PLC_PrintL 
+  position 0.0 0.0 0.0149562
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.541176 0.0313726 0.431373  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 1
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 0.0 
+     gizmo SubAnim:Gizmo
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 1.0 
+    bitmap PLC_Ftprnt02
+    verts 4
+     0.191402 0.191402 0.0
+     -0.191402 0.191402 0.0
+     0.191402 -0.191402 0.0
+     -0.191402 -0.191402 0.0
+    faces 2
+     2 0 3  1  2 0 3  1
+     1 3 0  1  1 3 0  1
+    tverts 4
+     0.000499487 0.000499725 0 
+     0.9995 0.000499487 0 
+     0.000499725 0.999501 0 
+     0.999501 0.9995 0 
+endnode
+endmodelgeom PLC_PrintL 
+
+#MAXANIM ASCII
+newanim default PLC_PrintL 
+ length 0.0333333
+ transtime 0.25
+animroot PLC_PrintL
+node dummy PLC_PrintL 
+  parent NULL 
+endnode
+node trimesh Plane01 
+  parent PLC_PrintL 
+    positionkey 
+      0.0  0.0 0.0 -0.127
+      0.0333333  0.0 0.0 -0.127
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 -1.0  3.14159
+      0.0333333   0.0 0.0 -1.0  3.14159
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Plane02 
+  parent PLC_PrintL 
+    positionkey 
+      0.0  0.0 0.0 0.0149562
+      0.0333333  0.0 0.0 0.0149562
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+doneanim default PLC_PrintL 
+
+#MAXANIM ASCII
+newanim on PLC_PrintL 
+ length 0.0333333
+ transtime 0.25
+animroot PLC_PrintL
+node dummy PLC_PrintL 
+  parent NULL 
+endnode
+node trimesh Plane01 
+  parent PLC_PrintL 
+    positionkey 
+      0.0  0.0 0.0 -0.127
+      0.0333333  0.0 0.0 -0.127
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 -1.0  3.14159
+      0.0333333   0.0 0.0 -1.0  3.14159
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Plane02 
+  parent PLC_PrintL 
+    positionkey 
+      0.0  0.0 0.0 0.0149562
+      0.0333333  0.0 0.0 0.0149562
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+doneanim on PLC_PrintL 
+
+#MAXANIM ASCII
+newanim off PLC_PrintL 
+ length 0.0333333
+ transtime 0.25
+animroot PLC_PrintL
+node dummy PLC_PrintL 
+  parent NULL 
+endnode
+node trimesh Plane01 
+  parent PLC_PrintL 
+    positionkey 
+      0.0  0.0 0.0 0.0149562
+      0.0333333  0.0 0.0 0.0149562
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 -1.0  3.14159
+      0.0333333   0.0 0.0 -1.0  3.14159
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node trimesh Plane02 
+  parent PLC_PrintL 
+    positionkey 
+      0.0  0.0 0.0 -0.127
+      0.0333333  0.0 0.0 -0.127
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.0 0.0 0.0  0.0
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+doneanim off PLC_PrintL 
+
+donemodel PLC_PrintL 
+

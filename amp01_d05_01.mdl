@@ -1,0 +1,135 @@
+# Exported from NWmax 0.8 b61 at 10/6/2007 9:19:14 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: amp01_d05_01
+#local file: D:\NWN\override\amp_export.max
+filedependancy amp_export.max
+newmodel amp01_d05_01
+setsupermodel amp01_d05_01 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom amp01_d05_01
+node dummy amp01_d05_01
+  parent NULL
+endnode
+#Tile trimesh node
+node trimesh Ground_D05
+  parent amp01_d05_01
+  position 0.0 0.0 1.49
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0313726 0.0313726 0.529412 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 0
+  center 0.0 0.0 101.0 
+  bitmap tcn01_sand
+  verts 4
+    -5.0 -5.0 1.01
+    5.0 -5.0 1.01
+    -5.0 5.0 1.01
+    5.0 5.0 1.01
+  faces 2
+    0 1 3  0  0 1 3  1
+    2 0 3  0  2 0 3  1
+  tverts 4
+    0.999999 -2.0 0
+    3.0 -2.0 0
+    1.0 -2.38419e-007 0
+    3.0 -7.15256e-007 0
+endnode
+node aabb Walkmesh_D05
+  parent amp01_d05_01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.6 0.721569 
+  multimaterial 20
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+  ambient 0.588 0.588 0.588 
+  diffuse 0.705882 0.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap Nonwalk
+  verts 6
+    5.0 -5.0 6.5
+    4.31 -5.0 2.5
+    5.0 -4.08 2.5
+    -5.0 -5.0 2.5
+    5.0 5.0 2.5
+    -5.0 5.0 2.5
+  faces 4
+    2 1 0  0  19 18 20  7
+    2 4 1  0  22 21 23  20
+    1 4 3  0  25 24 26  20
+    3 4 5  0  28 27 29  20
+  tverts 30
+    0.378421 0.626815 0
+    0.383184 0.645858 0
+    0.376301 0.645798 0
+    0.376301 0.645798 0
+    0.376235 0.631095 0
+    0.378421 0.626815 0
+    0.38488 0.65081 0
+    0.376416 0.671013 0
+    0.376301 0.645798 0
+    0.376301 0.645798 0
+    0.383184 0.645858 0
+    0.38488 0.65081 0
+    0.48255 0.56105 0
+    0.493502 0.561318 0
+    0.416177 0.650244 0
+    0.416177 0.650244 0
+    0.37141 0.697477 0
+    0.48255 0.56105 0
+    0.378421 0.626815 0
+    0.376235 0.631095 0
+    0.376349 0.627021 0
+    0.48734 0.839712 0
+    0.493502 0.561318 0
+    0.48255 0.56105 0
+    0.48734 0.839712 0
+    0.48255 0.56105 0
+    0.475539 0.571805 0
+    0.48734 0.839712 0
+    0.475539 0.571805 0
+    0.492081 0.571542 0
+    aabb         -5.0 -5.0 2.5 5.0 5.0 6.5 -1
+        -5.0 -5.0 2.5 5.0 5.0 2.5 -1
+        -5.0 -5.0 2.5 5.0 5.0 2.5 3
+        -5.0 -5.0 2.5 5.0 5.0 2.5 2
+        4.31 -5.0 2.5 5.0 5.0 6.5 -1
+        4.31 -5.0 2.5 5.0 -4.08 6.5 0
+        4.31 -5.0 2.5 5.0 5.0 2.5 1
+endnode
+endmodelgeom amp01_d05_01
+donemodel amp01_d05_01

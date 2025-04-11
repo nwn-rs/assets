@@ -1,0 +1,202 @@
+#MAXMODEL ASCII
+# model: CTL_SERVERLIST
+filedependancy CTL_SERVERLIST.max
+newmodel CTL_SERVERLIST
+setsupermodel CTL_SERVERLIST NULL
+classification character
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom CTL_SERVERLIST
+node dummy CTL_SERVERLIST
+  parent NULL
+  #part-number 0
+endnode
+node dummy scrollpane
+  parent CTL_SERVERLIST
+  #part-number 1
+  position 0 0 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane276
+  parent scrollpane
+  #part-number 2
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.904999971 2.20000005 0
+    -0.904999971 -2.20000005 0
+    0.904999971 2.20000005 0
+    0.904999971 -2.20000005 0
+  tverts 4
+    0.0194876008 10.9918003 0
+    0.0194876008 -11.0081997 0
+    0.0273873992 10.9918003 0
+    0.0273873992 -11.0081997 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 0.904999971 -2.20000005 -0.0500000007
+  orientation 0 0 0 0
+endnode
+node trimesh Plane73
+  parent Plane276
+  #part-number 3
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.340000004 2.20000005 0
+    -0.340000004 -2.20000005 0
+    0.340000004 2.20000005 0
+    0.340000004 -2.20000005 0
+  tverts 4
+    0.0194128994 10.9917002 0
+    0.0194128994 -11.0082998 0
+    0.0274621006 10.9917002 0
+    0.0274621006 -11.0082998 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 3.05500007 0 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane74
+  parent Plane276
+  #part-number 4
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.305000007 2.20000005 0
+    -0.305000007 -2.20000005 0
+    0.305000007 2.20000005 0
+    0.305000007 -2.20000005 0
+  tverts 4
+    0.0193987992 10.9917002 0
+    0.0193987992 -11.0082998 0
+    0.0274762008 10.9917002 0
+    0.0274762008 -11.0082998 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 3.70000005 0 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane75
+  parent Plane276
+  #part-number 5
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.305000007 2.20000005 0
+    -0.305000007 -2.20000005 0
+    0.305000007 2.20000005 0
+    0.305000007 -2.20000005 0
+  tverts 4
+    0.0193987992 10.9917002 0
+    0.0193987992 -11.0082998 0
+    0.0274762008 10.9917002 0
+    0.0274762008 -11.0082998 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 4.30999994 0 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane76
+  parent Plane276
+  #part-number 6
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.275000006 2.20000005 0
+    -0.275000006 -2.20000005 0
+    0.275000006 2.20000005 0
+    0.275000006 -2.20000005 0
+  tverts 4
+    0.0193837993 10.9917002 0
+    0.0193837993 -11.0082998 0
+    0.0274912007 10.9917002 0
+    0.0274912007 -11.0082998 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 4.88999987 0 0
+  orientation 0 0 0 0
+endnode
+node trimesh Plane72
+  parent Plane276
+  #part-number 7
+  ambient 0.0666659996 0.184312001 0.0588229001
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap gui_boxes_ingame
+  verts 4
+    -0.904999971 2.20000005 0
+    -0.904999971 -2.20000005 0
+    0.904999971 2.20000005 0
+    0.904999971 -2.20000005 0
+  tverts 4
+    0.0194876008 10.9918003 0
+    0.0194876008 -11.0081997 0
+    0.0273873992 10.9918003 0
+    0.0273873992 -11.0081997 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 2 1 1 3 2 1 1
+  position 1.80999994 0 0
+  orientation 0 0 0 0
+endnode
+node dummy text0
+  parent CTL_SERVERLIST
+  #part-number 8
+  position 0.0500000007 -0.00999999978 0.100000001
+  orientation 0 0 0 0
+endnode
+node dummy text1
+  parent CTL_SERVERLIST
+  #part-number 9
+  position 1.77999997 -3.72999987 0.100000001
+  orientation 0 0 0 0
+endnode
+node dummy scrollmax
+  parent CTL_SERVERLIST
+  #part-number 10
+  position 6.0999999 -3.45999989 0
+  orientation 0 0 0 0
+endnode
+node dummy scrollmin
+  parent CTL_SERVERLIST
+  #part-number 11
+  position 6.0999999 -0.159999996 0
+  orientation 0 0 0 0
+endnode
+node dummy Viewport1
+  parent CTL_SERVERLIST
+  #part-number 12
+  position 6.25 0 0
+  orientation 0 0 0 0
+endnode
+node dummy Viewport0
+  parent CTL_SERVERLIST
+  #part-number 13
+  position 0 -3.65999979 0
+  orientation 0 0 0 0
+endnode
+endmodelgeom CTL_SERVERLIST
+
+donemodel CTL_SERVERLIST

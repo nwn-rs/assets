@@ -1,0 +1,1184 @@
+# Exported from NWmax 0.8 c00 at 10/12/2019 2:42:47 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tdr_udoor_06
+#local file: M:\BD Tile Fixes\Source Files\Doors\TDR_UDOOR_06.max
+filedependancy TDR_UDOOR_06.max
+newmodel tdr_udoor_06
+setsupermodel tdr_udoor_06 NULL
+classification Door
+#NWmax GEOM  ASCII
+beginmodelgeom tdr_udoor_06
+node dummy tdr_udoor_06
+  parent NULL
+endnode
+node trimesh Box1359
+  parent tdr_udoor_06
+  position -1.50736 -0.0778307 0.2
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center undefined
+  bitmap tdr01_copper00
+  verts 8
+    0.03 -0.12 0.0
+    0.03 0.13 0.0
+    1.53 0.13 0.0
+    1.53 -0.12 0.0
+    0.03 -0.12 5.0
+    1.53 -0.12 5.0
+    1.53 0.13 5.0
+    0.03 0.13 5.0
+  faces 12
+    0 1 2  1  0 1 2  2
+    2 3 0  1  2 3 0  2
+    4 5 6  1  3 0 1  1
+    6 7 4  1  1 2 3  1
+    0 3 5  2  3 0 1  5
+    5 4 0  2  1 2 3  5
+    3 2 6  4  3 0 1  4
+    6 5 3  4  1 2 3  4
+    2 1 7  2  3 0 1  6
+    7 6 2  2  1 2 3  6
+    1 0 4  4  3 0 1  3
+    4 7 1  4  1 2 3  3
+  tverts 4
+    1.0 0.0 0
+    1.0 1.5314 0
+    0.0 1.5314 0
+    0.0 0.0 0
+endnode
+node trimesh Box20
+  parent tdr_udoor_06
+  position 1.53264 -0.0778307 0.2
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center undefined
+  bitmap tdr01_copper00
+  verts 8
+    -1.51 -0.12 0.0
+    -1.51 0.13 0.0
+    -0.01 0.13 0.0
+    -0.01 -0.12 0.0
+    -1.51 -0.12 5.0
+    -0.01 -0.12 5.0
+    -0.01 0.13 5.0
+    -1.51 0.13 5.0
+  faces 12
+    0 1 2  1  0 1 2  2
+    2 3 0  1  2 3 0  2
+    4 5 6  1  3 0 1  1
+    6 7 4  1  1 2 3  1
+    0 3 5  2  3 0 1  5
+    5 4 0  2  1 2 3  5
+    3 2 6  4  3 0 1  4
+    6 5 3  4  1 2 3  4
+    2 1 7  2  3 0 1  6
+    7 6 2  2  1 2 3  6
+    1 0 4  4  3 0 1  3
+    4 7 1  4  1 2 3  3
+  tverts 4
+    1.0 0.0 0
+    1.0 1.52899 0
+    0.0 1.52899 0
+    0.0 0.0 0
+endnode
+node emitter ChunkyWood13
+  parent tdr_udoor_06
+  position 0.0257819 -0.0870554 1.59565
+  orientation 0.0 0.0 -1.0 -3.14159
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType -1
+  xSize 162.0
+  ySize 50.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.482353 0.435294 0.317647 
+  colorEnd 0.584314 0.533333 0.407843 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 2
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 2.9
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 1
+  xgrid 5
+  ygrid 5
+  fps 0
+  framestart 0
+  frameend 24
+  random 0
+  chunkName PLC_Chunk_S02
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fire!13
+  parent tdr_udoor_06
+  position 0.0257819 -0.0870554 1.22649
+  orientation 0.0 -0.707107 -0.707107 -3.14159
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType -1
+  xSize 190.0
+  ySize 130.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.439216 0.364706 
+  colorEnd 0.819608 0.796079 0.709804 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 30
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 1
+  xgrid 4
+  ygrid 4
+  fps 10
+  framestart 0
+  frameend 24
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter ChunkyWood14
+  parent tdr_udoor_06
+  position 0.0257819 -0.0870554 0.935374
+  orientation 0.0 0.0 -1.0 -3.14159
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType -1
+  xSize 158.0
+  ySize 72.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 2
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 5.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  framestart 0
+  frameend 24
+  random 0
+  chunkName PLC_Chunk_S01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node dummy tdr_udoor_06grnd
+  parent tdr_udoor_06
+  position 6.10352e-07 0.332169 0.218575
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy tdr_udoor_06hhit
+  parent tdr_udoor_06
+  position 6.10352e-07 0.332169 2.33446
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy tdr_udoor_06head
+  parent tdr_udoor_06
+  position 6.10352e-07 0.332169 2.67404
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy tdr_udoor_06impc
+  parent tdr_udoor_06
+  position 6.10352e-07 0.332169 1.48996
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node trimesh sam
+  parent tdr_udoor_06
+  position 0.00999998 -0.08 2.675
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 0.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.2 0.2 0.2 
+  Diffuse 0.8 0.8 0.8 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center undefined
+  bitmap NULL
+  verts 8
+    1.55 -0.06 2.53
+    -1.55 -0.06 2.53
+    1.55 -0.06 -2.54
+    -1.55 -0.06 -2.54
+    -1.55 0.06 2.53
+    1.55 0.06 2.53
+    1.55 0.06 -2.54
+    -1.55 0.06 -2.54
+  faces 4
+    0 1 2  1  0 0 0  18
+    3 2 1  1  0 0 0  18
+    4 5 6  1  0 0 0  18
+    6 7 4  1  0 0 0  18
+endnode
+endmodelgeom tdr_udoor_06
+
+#NWmax ANIM ASCII
+newanim opening2 tdr_udoor_06
+  length 0.966667
+  transtime 0.25
+  animroot tdr_udoor_06
+    node dummy tdr_udoor_06
+        parent NULL
+    endnode
+    node trimesh Box1359
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.966667 0.0 0.0 -1.0 -1.50098
+        endlist
+    endnode
+    node trimesh Box20
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.966667 0.0 0.0 1.0 -1.51844
+        endlist
+    endnode
+    node emitter ChunkyWood13
+        parent tdr_udoor_06
+    endnode
+    node emitter fire!13
+        parent tdr_udoor_06
+    endnode
+    node emitter ChunkyWood14
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06grnd
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06hhit
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06head
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06impc
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_UDoor_06_DWK
+        parent tdr_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh sam
+        parent tdr_udoor_06
+        alphakey
+            0.0 0.0 
+            0.966667 0.0 
+        endlist
+    endnode
+doneanim opening2 tdr_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim opening1 tdr_udoor_06
+  length 1.0
+  transtime 0.25
+  animroot tdr_udoor_06
+    node dummy tdr_udoor_06
+        parent NULL
+    endnode
+    node trimesh Box1359
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            1.0 0.0 0.0 1.0 -1.48353
+        endlist
+    endnode
+    node trimesh Box20
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            1.0 0.0 0.0 -1.0 -1.50971
+        endlist
+    endnode
+    node emitter ChunkyWood13
+        parent tdr_udoor_06
+    endnode
+    node emitter fire!13
+        parent tdr_udoor_06
+    endnode
+    node emitter ChunkyWood14
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06grnd
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06hhit
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06head
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06impc
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_UDoor_06_DWK
+        parent tdr_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh sam
+        parent tdr_udoor_06
+        alphakey
+            0.0 0.0 
+            1.0 0.0 
+        endlist
+    endnode
+doneanim opening1 tdr_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim opened1 tdr_udoor_06
+  length 0.0333333
+  transtime 0.25
+  animroot tdr_udoor_06
+    node dummy tdr_udoor_06
+        parent NULL
+    endnode
+    node trimesh Box1359
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 1.0 -1.48353
+            0.0333333 0.0 0.0 1.0 -1.48353
+        endlist
+    endnode
+    node trimesh Box20
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.50971
+            0.0333333 0.0 0.0 -1.0 -1.50971
+        endlist
+    endnode
+    node emitter ChunkyWood13
+        parent tdr_udoor_06
+    endnode
+    node emitter fire!13
+        parent tdr_udoor_06
+    endnode
+    node emitter ChunkyWood14
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06grnd
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06hhit
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06head
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06impc
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_UDoor_06_DWK
+        parent tdr_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh sam
+        parent tdr_udoor_06
+        alphakey
+            0.0 0.0 
+            0.0333333 0.0 
+        endlist
+    endnode
+doneanim opened1 tdr_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim opened2 tdr_udoor_06
+  length 0.0333333
+  transtime 0.25
+  animroot tdr_udoor_06
+    node dummy tdr_udoor_06
+        parent NULL
+    endnode
+    node trimesh Box1359
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.50098
+            0.0333333 0.0 0.0 -1.0 -1.50098
+        endlist
+    endnode
+    node trimesh Box20
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 1.0 -1.51844
+            0.0333333 0.0 0.0 1.0 -1.51844
+        endlist
+    endnode
+    node emitter ChunkyWood13
+        parent tdr_udoor_06
+    endnode
+    node emitter fire!13
+        parent tdr_udoor_06
+    endnode
+    node emitter ChunkyWood14
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06grnd
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06hhit
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06head
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06impc
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_UDoor_06_DWK
+        parent tdr_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh sam
+        parent tdr_udoor_06
+        alphakey
+            0.0 0.0 
+            0.0333333 0.0 
+        endlist
+    endnode
+doneanim opened2 tdr_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim closed tdr_udoor_06
+  length 0.0333333
+  transtime 0.25
+  animroot tdr_udoor_06
+    node dummy tdr_udoor_06
+        parent NULL
+    endnode
+    node trimesh Box1359
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Box20
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node emitter ChunkyWood13
+        parent tdr_udoor_06
+    endnode
+    node emitter fire!13
+        parent tdr_udoor_06
+    endnode
+    node emitter ChunkyWood14
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06grnd
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06hhit
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06head
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06impc
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_UDoor_06_DWK
+        parent tdr_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh sam
+        parent tdr_udoor_06
+        alphakey
+            0.0 0.0 
+            0.0333333 0.0 
+        endlist
+    endnode
+doneanim closed tdr_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim closing2 tdr_udoor_06
+  length 0.966667
+  transtime 0.25
+  animroot tdr_udoor_06
+    node dummy tdr_udoor_06
+        parent NULL
+    endnode
+    node trimesh Box1359
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.50098
+            0.966667 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Box20
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 1.0 -1.51844
+            0.966667 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node emitter ChunkyWood13
+        parent tdr_udoor_06
+    endnode
+    node emitter fire!13
+        parent tdr_udoor_06
+    endnode
+    node emitter ChunkyWood14
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06grnd
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06hhit
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06head
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06impc
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_UDoor_06_DWK
+        parent tdr_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh sam
+        parent tdr_udoor_06
+        alphakey
+            0.0 0.0 
+            0.966667 0.0 
+        endlist
+    endnode
+doneanim closing2 tdr_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim closing1 tdr_udoor_06
+  length 0.966667
+  transtime 0.25
+  animroot tdr_udoor_06
+    node dummy tdr_udoor_06
+        parent NULL
+    endnode
+    node trimesh Box1359
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 1.0 -1.48353
+            0.966667 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Box20
+        parent tdr_udoor_06
+        orientationkey
+            0.0 0.0 0.0 -1.0 -1.50971
+            0.966667 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node emitter ChunkyWood13
+        parent tdr_udoor_06
+    endnode
+    node emitter fire!13
+        parent tdr_udoor_06
+    endnode
+    node emitter ChunkyWood14
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06grnd
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06hhit
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06head
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06impc
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_UDoor_06_DWK
+        parent tdr_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh sam
+        parent tdr_udoor_06
+        alphakey
+            0.0 0.0 
+            0.966667 0.0 
+        endlist
+    endnode
+doneanim closing1 tdr_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim trans tdr_udoor_06
+  length 0.0333333
+  transtime 0.25
+  animroot tdr_udoor_06
+    node dummy tdr_udoor_06
+        parent NULL
+    endnode
+    node trimesh Box1359
+        parent tdr_udoor_06
+    endnode
+    node trimesh Box20
+        parent tdr_udoor_06
+    endnode
+    node emitter ChunkyWood13
+        parent tdr_udoor_06
+    endnode
+    node emitter fire!13
+        parent tdr_udoor_06
+    endnode
+    node emitter ChunkyWood14
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06grnd
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06hhit
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06head
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06impc
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_UDoor_06_DWK
+        parent tdr_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh sam
+        parent tdr_udoor_06
+        alphakey
+            0.0 0.25 
+            0.0333333 0.25 
+        endlist
+    endnode
+doneanim trans tdr_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim die tdr_udoor_06
+  length 0.266667
+  transtime 0.25
+  animroot tdr_udoor_06
+  event 0.0333333 detonate
+  event 0.0333333 detonate
+  event 0.0333333 detonate
+    node dummy tdr_udoor_06
+        parent NULL
+    endnode
+    node trimesh Box1359
+        parent tdr_udoor_06
+        positionkey
+            0.0 -1.50736 -0.0778307 0.2
+            0.266667 -1.50736 -0.0778307 -6.18674
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.266667 0.658907 -0.0059288 0.752201 -0.552493
+        endlist
+    endnode
+    node trimesh Box20
+        parent tdr_udoor_06
+        positionkey
+            0.0 1.53264 -0.0778307 0.2
+            0.266667 1.53264 -0.0778307 -6.18674
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.266667 0.869744 0.18487 -0.457569 -0.86975
+        endlist
+    endnode
+    node emitter ChunkyWood13
+        parent tdr_udoor_06
+    endnode
+    node emitter fire!13
+        parent tdr_udoor_06
+    endnode
+    node emitter ChunkyWood14
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06grnd
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06hhit
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06head
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06impc
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_UDoor_06_DWK
+        parent tdr_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh sam
+        parent tdr_udoor_06
+    endnode
+doneanim die tdr_udoor_06
+
+
+#NWmax ANIM ASCII
+newanim dead tdr_udoor_06
+  length 0.0333333
+  transtime 0.25
+  animroot tdr_udoor_06
+    node dummy tdr_udoor_06
+        parent NULL
+    endnode
+    node trimesh Box1359
+        parent tdr_udoor_06
+        positionkey
+            0.0 -1.50736 -0.0778307 -6.18674
+            0.0333333 -1.50736 -0.0778307 -6.18674
+        endlist
+        orientationkey
+            0.0 0.658907 -0.0059288 0.752201 -0.552493
+            0.0333333 0.658907 -0.0059288 0.752201 -0.552493
+        endlist
+    endnode
+    node trimesh Box20
+        parent tdr_udoor_06
+        positionkey
+            0.0 1.53264 -0.0778307 -6.18674
+            0.0333333 1.53264 -0.0778307 -6.18674
+        endlist
+        orientationkey
+            0.0 0.869744 0.18487 -0.457569 -0.86975
+            0.0333333 0.869744 0.18487 -0.457569 -0.86975
+        endlist
+    endnode
+    node emitter ChunkyWood13
+        parent tdr_udoor_06
+    endnode
+    node emitter fire!13
+        parent tdr_udoor_06
+    endnode
+    node emitter ChunkyWood14
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06grnd
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06hhit
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06head
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_udoor_06impc
+        parent tdr_udoor_06
+    endnode
+    node dummy tdr_UDoor_06_DWK
+        parent tdr_udoor_06
+    endnode
+    node dummy 06_DWK_dp_open2_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open2_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_closed_02
+        parent tdr_UDoor_06_DWK
+    endnode
+    node dummy 06_DWK_dp_open1_01
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open2
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_open1
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh 06_DWK_wg_closed
+        parent tdr_UDoor_06_DWK
+    endnode
+    node trimesh sam
+        parent tdr_udoor_06
+    endnode
+doneanim dead tdr_udoor_06
+
+donemodel tdr_udoor_06

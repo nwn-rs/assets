@@ -1,0 +1,153 @@
+# Exported from NWmax 0.8 b47 at 22/03/2006 3:39:23 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: vdr_garrowe
+filedependancy arrows.max
+newmodel vdr_garrowe
+setsupermodel vdr_garrowe NULL
+classification Effect
+#NWmax GEOM  ASCII
+beginmodelgeom vdr_garrowe
+node dummy vdr_garrowe
+  parent NULL
+endnode
+node trimesh Cylinder05
+  parent vdr_garrowe
+  position 0.0548541 0.0137425 -0.108213
+  orientation 0.648818 0.760763 -0.0165701 -3.4442
+  wirecolor 0.552941 0.027451 0.227451 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center undefined
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 1.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 1.0
+  bitmap fxpa_garrow
+  verts 21
+    -0.0108 0.45 0.0
+    0.00540002 0.45 -0.00935312
+    0.00540002 0.45 0.00935303
+    -0.0108 -0.2775 -1.77502e-007
+    0.00539995 -0.2775 -0.00935325
+    0.00539995 -0.2775 0.0093529
+    -0.00840005 -0.3275 -1.4924e-007
+    0.00419996 -0.3275 -0.00727476
+    0.00419996 -0.3275 0.00727446
+    -0.00756005 -0.3575 0.0130942
+    -0.00756004 -0.3575 -0.0130945
+    0.01512 -0.3575 -1.54744e-007
+    0.0 -0.4225 -1.61529e-007
+    0.0 0.308455 0.0
+    -0.0175 0.336544 0.0303108
+    0.0 0.4325 0.0
+    -0.02 0.446911 0.034641
+    -0.0175 0.336544 -0.030311
+    -0.02 0.446911 -0.0346411
+    0.035 0.336544 0.0
+    0.04 0.446911 0.0
+  faces 34
+    0 2 1  0  19 20 18  2
+    0 4 3  1  16 11 17  3
+    0 1 4  1  16 13 11  3
+    1 5 4  1  13 14 11  3
+    1 2 5  1  13 15 14  3
+    2 3 5  1  15 12 14  3
+    2 0 3  1  15 10 12  3
+    3 7 6  2  21 4 5  3
+    3 4 7  2  21 22 4  3
+    4 8 7  2  21 4 5  3
+    4 5 8  2  21 22 4  3
+    5 6 8  2  21 4 5  3
+    5 3 6  2  21 22 4  3
+    6 7 10  2  5 4 3  1
+    10 9 6  4  2 1 0  1
+    7 8 11  2  5 4 3  1
+    11 10 7  16  2 1 0  1
+    8 6 9  2  5 4 3  1
+    9 11 8  8  2 1 0  1
+    9 10 12  4  1 2 3  1
+    10 11 12  16  1 2 3  1
+    11 9 12  8  1 2 3  1
+    15 16 14  2  8 9 7  2
+    14 13 15  2  7 6 8  2
+    15 18 17  2  8 9 7  2
+    17 13 15  2  7 6 8  2
+    15 20 19  2  8 9 7  2
+    19 13 15  2  7 6 8  2
+    13 19 15  0  6 7 8  1
+    19 20 15  0  7 9 8  1
+    13 17 15  0  6 7 8  1
+    15 17 18  0  8 7 9  1
+    13 14 15  0  6 7 8  1
+    15 14 16  0  8 7 9  1
+  tverts 23
+    0.0 0.75 0
+    0.15 1.0 0
+    0.15 0.5 0
+    0.5 0.75 0
+    0.3 0.6 0
+    0.3 0.9 0
+    0.501 0.501 0
+    0.999 0.501 0
+    0.501 0.999 0
+    0.999 0.999 0
+    -0.01 0.005 0
+    1.04 0.333333 0
+    1.04 0.005 0
+    -0.01 0.333333 0
+    1.04 0.166667 0
+    -0.01 0.166667 0
+    -0.01 0.495 0
+    1.04 0.495 0
+    -0.200334 0.495 0
+    0.0996661 0.005 0
+    0.399666 0.495 0
+    -0.01 1.0 0
+    -0.01 0.5 0
+endnode
+endmodelgeom vdr_garrowe
+
+#NWmax ANIM ASCII
+newanim duration vdr_garrowe
+  length 0.0333333
+  transtime 0.25
+  animroot vdr_garrowe
+    node dummy vdr_garrowe
+        parent NULL
+    endnode
+    node trimesh Cylinder05
+        parent vdr_garrowe
+    endnode
+doneanim duration vdr_garrowe
+
+
+#NWmax ANIM ASCII
+newanim cessation vdr_garrowe
+  length 1.0
+  transtime 0.25
+  animroot vdr_garrowe
+    node dummy vdr_garrowe
+        parent NULL
+    endnode
+    node trimesh Cylinder05
+        parent vdr_garrowe
+        alphakey
+            0.0 1.0 
+            1.0 0.0 
+        endlist
+    endnode
+doneanim cessation vdr_garrowe
+
+donemodel vdr_garrowe

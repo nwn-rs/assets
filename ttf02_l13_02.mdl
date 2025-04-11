@@ -1,0 +1,54 @@
+# Exported from NWmax 0.8 c00 at 8/7/2020 9:31:51 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: ttf02_L13_02
+#local file: M:\Forest Job\TTF02_reimport_exporter-002.max
+filedependancy TTF02_reimport_exporter-002.max
+newmodel ttf02_L13_02
+setsupermodel ttf02_L13_02 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom ttf02_L13_02
+node dummy ttf02_L13_02
+  parent NULL
+endnode
+#Tile trimesh node
+node trimesh Object592
+  parent ttf02_L13_02
+  position 0.0 2.64 -9.97
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 1.0 1.0 1.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.05 0.05 0.05 
+  shininess 26
+  center 0.0 -264.0 -3.0 
+  bitmap ttf01_black
+  verts 4
+    -5.0 2.36 -0.03
+    -5.0 -7.64 -0.03
+    5.0 -7.64 -0.03
+    5.0 2.36 -0.03
+  faces 2
+    0 1 2  1  0 1 2  3
+    2 3 0  1  2 3 4  3
+  tverts 5
+    0.0371594 0.892078 0
+    0.0530787 0.85676 0
+    0.0530787 0.928115 0
+    0.0267892 0.928115 0
+    0.0252858 0.91304 0
+endnode
+endmodelgeom ttf02_L13_02
+donemodel ttf02_L13_02

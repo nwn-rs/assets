@@ -1,0 +1,1670 @@
+# Exported from NWmax 0.8 b61 at 5/13/2008 11:25:41 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: PLC_Palm01
+#local file: Unknown
+filedependancy Unknown
+newmodel PLC_Palm01
+setsupermodel PLC_Palm01 NULL
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom PLC_Palm01
+node dummy PLC_Palm01
+  parent NULL
+endnode
+node emitter ChunkyWood
+  parent PLC_Palm01
+  position 0.0265528 0.0133384 1.26017
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.87451 0.776471 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType 0
+  xSize 15.0
+  ySize 7.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.482353 0.435294 0.317647 
+  colorEnd 0.584314 0.533333 0.407843 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 0.15
+  sizeEnd 0.15
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 4
+  lifeExp 1.5
+  mass 2.5
+  spread 1.5708
+  particleRot 1.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 1
+  xgrid 5
+  ygrid 5
+  fps 0
+  framestart 0
+  frameend 24
+  random 0
+  chunkName PLC_Chunk_W01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter fire!
+  parent PLC_Palm01
+  position 0.0 0.0137917 0.504806
+  orientation 1.0 0.0 0.0 -1.5708
+  wirecolor 0.686275 0.101961 0.101961 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType 0
+  xSize 400.0
+  ySize 400.0
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.45098 0.392157 
+  colorEnd 0.760784 0.74902 0.694118 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 1
+  xgrid 4
+  ygrid 4
+  fps 10
+  framestart 0
+  frameend 24
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node trimesh damage
+  parent PLC_Palm01
+  position 0.000867307 0.0348657 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.603922 0.839216 0.894118 
+  tilefade 0
+  scale 1.0
+  render 0
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.0705882 0.0 1.0 
+  Diffuse 1.0 0.501961 0.643137 
+  Specular 0.0 0.0 0.0 
+  shininess 25
+  center 0.0 0.0 25.0 
+  bitmap NULL
+  verts 12
+    0.195415 0.186216 0.0
+    0.195415 -0.186216 0.0
+    -0.195415 -0.186216 0.0
+    -0.195415 0.186216 0.0
+    0.195415 0.186216 0.5
+    -0.195415 0.186216 0.5
+    -0.195415 -0.186216 0.5
+    0.195415 -0.186216 0.5
+    -0.103944 0.0990513 0.25
+    0.103944 0.0990513 0.25
+    -0.103944 -0.0990513 0.25
+    0.103944 -0.0990513 0.25
+  faces 20
+    0 1 2  1  0 0 0  1
+    2 3 0  1  0 0 0  1
+    4 5 6  1  0 0 0  1
+    6 7 4  1  0 0 0  1
+    0 3 8  1  0 0 0  1
+    8 9 0  1  0 0 0  1
+    9 8 5  1  0 0 0  1
+    5 4 9  1  0 0 0  1
+    3 2 10  1  0 0 0  1
+    10 8 3  1  0 0 0  1
+    8 10 6  1  0 0 0  1
+    6 5 8  1  0 0 0  1
+    2 1 11  1  0 0 0  1
+    11 10 2  1  0 0 0  1
+    10 11 7  1  0 0 0  1
+    7 6 10  1  0 0 0  1
+    1 0 9  1  0 0 0  1
+    9 11 1  1  0 0 0  1
+    11 9 4  1  0 0 0  1
+    4 7 11  1  0 0 0  1
+  tverts 1
+    0.0 0.0 0
+endnode
+node trimesh Trunk01
+  parent damage
+  position -0.000867307 -0.0348657 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.87451 0.337255 0.337255 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 0.0 0.0 109.954 
+  bitmap plc_palmbark01
+  verts 24
+    0.33717 0.0 0.0
+    0.238415 0.257094 0.0
+    0.0 0.363586 0.0
+    -0.238415 0.257094 0.0
+    -0.33717 0.0 0.0
+    -0.238415 -0.257094 0.0
+    0.0 -0.363586 0.0
+    0.238415 -0.257094 0.0
+    0.309164 0.0 1.06144
+    0.227742 0.19657 1.06144
+    0.0311719 0.277992 1.06144
+    -0.165398 0.19657 1.06144
+    -0.246821 0.0 1.06144
+    -0.165398 -0.19657 1.06144
+    0.0311719 -0.277992 1.06144
+    0.227742 -0.19657 1.06144
+    0.281452 0.047394 2.19908
+    0.213621 0.228385 2.19908
+    0.0498633 0.303355 2.19908
+    -0.113894 0.228385 2.19908
+    -0.181725 0.047394 2.19908
+    -0.113894 -0.133597 2.19908
+    0.0498633 -0.208567 2.19908
+    0.213621 -0.133597 2.19908
+  faces 32
+    0 9 8  1  0 9 8  1
+    0 1 9  1  0 1 9  1
+    1 10 9  1  1 10 9  1
+    1 2 10  1  1 2 10  1
+    2 11 10  1  33 11 34  1
+    2 3 11  1  33 3 11  1
+    3 12 11  1  3 12 11  1
+    3 4 12  1  3 4 12  1
+    4 13 12  1  4 13 12  1
+    4 5 13  1  4 5 13  1
+    5 14 13  1  5 14 13  1
+    5 6 14  1  5 6 14  1
+    6 15 14  1  6 15 14  1
+    6 7 15  1  6 7 15  1
+    7 8 15  1  7 8 15  1
+    7 0 8  1  7 0 8  1
+    8 17 16  1  8 17 16  1
+    8 9 17  1  8 9 17  1
+    9 18 17  1  9 18 17  1
+    9 10 18  1  9 10 18  1
+    10 19 18  1  34 19 35  1
+    10 11 19  1  34 11 19  1
+    11 20 19  1  11 20 19  1
+    11 12 20  1  11 12 20  1
+    12 21 20  1  12 21 20  1
+    12 13 21  1  12 13 21  1
+    13 22 21  1  13 22 21  1
+    13 14 22  1  13 14 22  1
+    14 23 22  1  14 23 22  1
+    14 15 23  1  14 15 23  1
+    15 16 23  1  15 16 23  1
+    15 8 16  1  15 8 16  1
+  tverts 45
+    2.25 0.00199807 0
+    2.66088 0.00199807 0
+    3.0 0.00199807 0
+    0.339121 0.00199807 0
+    0.75 0.00199807 0
+    1.16088 0.00199807 0
+    1.5 0.00199807 0
+    1.83912 0.00199807 0
+    2.25 1.36331 0
+    2.60788 1.36331 0
+    2.95053 1.36331 0
+    0.316371 1.36331 0
+    0.75 1.36331 0
+    1.18363 1.36331 0
+    1.54947 1.36331 0
+    1.89212 1.36331 0
+    2.33577 2.64086 0
+    2.65885 2.64086 0
+    2.92778 2.64086 0
+    0.206823 2.64086 0
+    0.619102 2.64086 0
+    1.18059 2.64086 0
+    1.60417 2.64086 0
+    1.9667 2.64086 0
+    2.25 3.998 0
+    2.67624 3.998 0
+    3.0 3.998 0
+    0.323756 3.998 0
+    0.75 3.998 0
+    1.17624 3.998 0
+    1.5 3.998 0
+    1.82376 3.998 0
+    1.5 3.91503 0
+    0.0 0.00199807 0
+    -0.0494716 1.36331 0
+    -0.0722244 2.64086 0
+    0.0 3.998 0
+    0.999501 0.5 0
+    0.8532 0.8532 0
+    0.5 0.9995 0
+    0.1468 0.8532 0
+    0.000499517 0.5 0
+    0.1468 0.1468 0
+    0.5 0.000499576 0
+    0.8532 0.1468 0
+endnode
+node trimesh Shadow01
+  parent damage
+  position -0.000867307 -0.0348657 3.44515
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.686275 0.101961 0.101961 
+  tilefade 1
+  scale 1.0
+  render 0
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.0 0.0 0.0 
+  Diffuse 0.0 0.0 0.0 
+  Specular 0.0 0.0 0.0 
+  shininess 11
+  center -14.688 -4.71349 28.5726 
+  bitmap NULL
+  verts 25
+    -0.0616456 2.35656 0.638753
+    1.69336 1.54336 0.530626
+    1.70979 0.293081 0.718542
+    1.38807 -0.957902 0.544253
+    0.585781 -2.45083 0.773745
+    -1.23885 -1.7476 0.71858
+    -2.00355 -0.341164 0.612005
+    -1.99912 0.571785 0.308443
+    -0.612546 0.92727 0.410724
+    0.222117 1.09425 0.410734
+    0.953256 0.627235 0.37245
+    0.970678 -0.237947 0.34412
+    0.287473 -0.78904 0.173048
+    0.000151863 -1.22823 0.264756
+    -1.07538 -0.896789 0.408221
+    -1.02927 0.0469932 0.172521
+    0.000128659 -0.000154319 -0.202292
+    0.385689 1.02362 0.410734
+    0.717769 0.366471 0.295951
+    0.708927 -0.189842 0.142625
+    0.7129 -1.13022 0.267862
+    -0.568492 -1.09536 0.238876
+    -0.808037 -0.626756 0.408221
+    -0.955573 0.684959 0.410724
+    -1.13818 0.0791473 0.411008
+  faces 16
+    9 0 8  1  9 0 8  3
+    10 1 17  1  10 1 17  3
+    11 2 18  1  11 2 18  3
+    12 3 19  1  12 3 19  3
+    13 4 20  1  13 4 20  3
+    14 5 21  1  14 5 21  3
+    15 6 22  1  15 6 22  3
+    23 7 24  1  23 7 24  3
+    8 16 9  1  25 16 26  1
+    17 16 10  1  27 16 28  1
+    18 16 11  1  29 16 30  1
+    19 16 12  1  31 16 32  1
+    20 16 13  1  33 16 34  1
+    21 16 14  1  35 16 36  1
+    22 16 15  1  37 16 38  1
+    24 16 23  1  39 16 40  1
+  tverts 41
+    0.121565 0.15102 0
+    -0.0433511 0.520828 0
+    0.110021 0.878435 0
+    0.491837 1.01436 0
+    0.878435 0.84898 0
+    1.04335 0.479172 0
+    0.889979 0.121565 0
+    0.508163 -0.0143605 0
+    0.335419 0.348229 0
+    0.258996 0.51366 0
+    0.323793 0.671129 0
+    0.491853 0.728392 0
+    0.664727 0.651906 0
+    0.73377 0.489242 0
+    0.670257 0.334894 0
+    0.505529 0.278766 0
+    0.489681 0.510132 0
+    0.258996 0.51366 0
+    0.323793 0.671129 0
+    0.491853 0.728392 0
+    0.664727 0.651906 0
+    0.73377 0.489242 0
+    0.670257 0.334894 0
+    0.335419 0.348229 0
+    0.505529 0.278766 0
+    0.335419 0.348229 0
+    0.258996 0.51366 0
+    0.258996 0.51366 0
+    0.323793 0.671129 0
+    0.323793 0.671129 0
+    0.491853 0.728392 0
+    0.491853 0.728392 0
+    0.664727 0.651906 0
+    0.664727 0.651906 0
+    0.73377 0.489242 0
+    0.73377 0.489242 0
+    0.670257 0.334894 0
+    0.670257 0.334894 0
+    0.505529 0.278766 0
+    0.505529 0.278766 0
+    0.335419 0.348229 0
+endnode
+node trimesh Cap
+  parent damage
+  position -0.000867307 -0.0348657 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.87451 0.337255 0.337255 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.0 0.0 0.0 
+  Diffuse 0.0 0.0 0.0 
+  Specular 0.0 0.0 0.0 
+  shininess 11
+  center 4.98635 4.7394 219.908 
+  bitmap NULL
+  verts 8
+    0.281452 0.047394 2.19908
+    0.213621 0.228385 2.19908
+    0.0498633 0.303355 2.19908
+    -0.113894 0.228385 2.19908
+    -0.181725 0.047394 2.19908
+    -0.113894 -0.133597 2.19908
+    0.0498633 -0.208567 2.19908
+    0.213621 -0.133597 2.19908
+  faces 6
+    5 6 7  2  5 6 7  2
+    5 7 0  2  5 7 0  2
+    5 0 1  2  5 0 1  2
+    5 1 2  2  5 1 2  2
+    5 2 3  2  5 2 3  2
+    5 3 4  2  5 3 4  2
+  tverts 8
+    0.999501 0.5 0
+    0.8532 0.8532 0
+    0.5 0.9995 0
+    0.1468 0.8532 0
+    0.000499517 0.5 0
+    0.1468 0.1468 0
+    0.5 0.000499576 0
+    0.8532 0.1468 0
+endnode
+node trimesh Trunk02
+  parent damage
+  position 0.0489962 0.0125283 2.75759
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.109804 0.584314 0.694118 
+  tilefade 1
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 0.0 0.0 0.0 
+  bitmap plc_palmbark01
+  verts 17
+    0.231588 0.0 -0.5585
+    0.163757 0.180991 -0.5585
+    -2.3365e-007 0.255961 -0.5585
+    -0.163758 0.180991 -0.5585
+    -0.231588 0.0 -0.5585
+    -0.163757 -0.180991 -0.5585
+    -1.90735e-007 -0.255961 -0.5585
+    0.163758 -0.180991 -0.5585
+    0.126974 -0.047394 0.5585
+    0.0751805 0.096568 0.5585
+    -0.0498635 0.156199 0.5585
+    -0.174908 0.096568 0.5585
+    -0.226701 -0.047394 0.5585
+    -0.174907 -0.191356 0.5585
+    -0.0498635 -0.250987 0.5585
+    0.0751805 -0.191356 0.5585
+    -0.0498635 -0.047394 0.46938
+  faces 24
+    0 9 8  1  0 9 8  3
+    0 1 9  1  0 1 9  3
+    1 10 9  1  1 10 9  3
+    1 2 10  1  1 2 10  3
+    2 11 10  1  17 11 18  3
+    2 3 11  1  17 3 11  3
+    3 12 11  1  3 12 11  3
+    3 4 12  1  3 4 12  3
+    4 13 12  1  4 13 12  3
+    4 5 13  1  4 5 13  3
+    5 14 13  1  5 14 13  3
+    5 6 14  1  5 6 14  3
+    6 15 14  1  6 15 14  3
+    6 7 15  1  6 7 15  3
+    7 8 15  1  7 8 15  3
+    7 0 8  1  7 0 8  3
+    16 8 9  1  16 8 9  1
+    16 9 10  1  16 9 10  1
+    16 10 11  1  16 18 11  1
+    16 11 12  1  16 11 12  1
+    16 12 13  1  16 12 13  1
+    16 13 14  1  16 13 14  1
+    16 14 15  1  16 14 15  1
+    16 15 8  1  16 15 8  1
+  tverts 19
+    2.33577 2.64086 0
+    2.65885 2.64086 0
+    2.92778 2.64086 0
+    0.206823 2.64086 0
+    0.619102 2.64086 0
+    1.18059 2.64086 0
+    1.60417 2.64086 0
+    1.9667 2.64086 0
+    2.25 3.998 0
+    2.67624 3.998 0
+    3.0 3.998 0
+    0.323756 3.998 0
+    0.75 3.998 0
+    1.17624 3.998 0
+    1.5 3.998 0
+    1.82376 3.998 0
+    1.5 3.91503 0
+    -0.0722244 2.64086 0
+    0.0 3.998 0
+endnode
+node danglymesh Leaves00
+  parent damage
+  position -0.000867307 -0.0348657 3.54051
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.686275 0.101961 0.101961 
+  tilefade 1
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center -0.0240021 -7.06149 38.7956 
+  period 1.0
+  tightness 1.0
+  displacement 0.1
+  showdispl true
+  displtype 1
+  center -0.0240021 -7.06149 38.7956 
+  bitmap plc_TreeFern01
+  verts 17
+    -2.52855 -0.0706119 0.475816
+    -1.78803 1.80498 0.89752
+    -0.000242921 2.58187 0.731629
+    1.78754 1.80498 0.604008
+    2.52807 -0.0706122 0.496924
+    1.78754 -1.9462 1.04001
+    -0.000243362 -2.7231 0.61573
+    -1.78803 -1.9462 0.683439
+    -1.0998 -0.0706117 0.69921
+    -0.777605 0.777199 0.699222
+    0.000245194 1.12837 0.699253
+    0.778096 0.772846 0.532823
+    1.10029 -0.0706118 0.699297
+    0.762585 -0.884021 0.695971
+    0.000151885 -1.22823 0.695941
+    -0.762282 -0.884021 0.695911
+    0.00017758 0.0 -0.264098
+  faces 24
+    9 0 8  1  9 0 8  3
+    1 0 9  1  1 0 9  3
+    10 1 9  1  10 1 9  3
+    2 1 10  1  2 1 10  3
+    11 2 10  1  11 2 10  3
+    3 2 11  1  3 2 11  3
+    12 3 11  1  12 3 11  3
+    4 3 12  1  4 3 12  3
+    13 4 12  1  13 4 12  3
+    5 4 13  1  5 4 13  3
+    14 5 13  1  14 5 13  3
+    6 5 14  1  6 5 14  3
+    15 6 14  1  15 6 14  3
+    7 6 15  1  7 6 15  3
+    8 7 15  1  8 7 15  3
+    0 7 8  1  0 7 8  3
+    8 16 9  1  8 16 9  1
+    9 16 10  1  9 16 10  1
+    10 16 11  1  10 16 11  1
+    11 16 12  1  11 16 12  1
+    12 16 13  1  12 16 13  1
+    13 16 14  1  13 16 14  1
+    14 16 15  1  14 16 15  1
+    15 16 8  1  15 16 8  1
+  tverts 17
+    0.121565 0.15102 0
+    -0.0433511 0.520828 0
+    0.110021 0.878435 0
+    0.491837 1.01436 0
+    0.878435 0.84898 0
+    1.04335 0.479172 0
+    0.889979 0.121565 0
+    0.508163 -0.0143605 0
+    0.335419 0.348229 0
+    0.258996 0.51366 0
+    0.323793 0.671129 0
+    0.491853 0.728392 0
+    0.664727 0.651906 0
+    0.73377 0.489242 0
+    0.670257 0.334894 0
+    0.505529 0.278766 0
+    0.489681 0.510132 0
+  constraints 17
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+endnode
+node danglymesh Leaves01
+  parent damage
+  position -0.000867307 -0.0348657 3.44515
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.686275 0.101961 0.101961 
+  tilefade 1
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center -6.20099 -5.1335 1.7218 
+  period 1.0
+  tightness 1.0
+  displacement 0.2
+  showdispl true
+  displtype 1
+  center -6.20099 -5.1335 1.7218 
+  bitmap plc_TreeFern01
+  verts 17
+    -1.8938 2.14579 0.0945666
+    0.285059 2.87152 -0.0595891
+    2.26061 1.88507 0.208323
+    2.87559 -0.2357 0.208377
+    1.76978 -2.24847 -0.230639
+    -0.409071 -2.97419 0.208377
+    -2.38462 -1.98775 0.0564331
+    -2.99961 0.133018 -0.376356
+    -0.858649 0.90419 0.410724
+    0.117158 1.24313 0.410734
+    0.988222 0.823539 0.410758
+    1.24428 -0.108793 0.410782
+    0.735347 -1.00772 0.410792
+    -0.221577 -1.38804 0.238876
+    -1.07538 -0.896789 0.408221
+    -1.32636 0.0170652 0.172521
+    0.000128659 -0.000154319 -0.202292
+  faces 24
+    9 0 8  1  9 0 8  3
+    1 0 9  1  1 0 9  3
+    10 1 9  1  10 1 9  3
+    2 1 10  1  2 1 10  3
+    11 2 10  1  11 2 10  3
+    3 2 11  1  3 2 11  3
+    12 3 11  1  12 3 11  3
+    4 3 12  1  4 3 12  3
+    13 4 12  1  13 4 12  3
+    5 4 13  1  5 4 13  3
+    14 5 13  1  14 5 13  3
+    6 5 14  1  6 5 14  3
+    15 6 14  1  15 6 14  3
+    7 6 15  1  7 6 15  3
+    8 7 15  1  8 7 15  3
+    0 7 8  1  0 7 8  3
+    8 16 9  1  8 16 9  1
+    9 16 10  1  9 16 10  1
+    10 16 11  1  10 16 11  1
+    11 16 12  1  11 16 12  1
+    12 16 13  1  12 16 13  1
+    13 16 14  1  13 16 14  1
+    14 16 15  1  14 16 15  1
+    15 16 8  1  15 16 8  1
+  tverts 17
+    0.121565 0.15102 0
+    -0.0433511 0.520828 0
+    0.110021 0.878435 0
+    0.491837 1.01436 0
+    0.878435 0.84898 0
+    1.04335 0.479172 0
+    0.889979 0.121565 0
+    0.508163 -0.0143605 0
+    0.335419 0.348229 0
+    0.258996 0.51366 0
+    0.323793 0.671129 0
+    0.491853 0.728392 0
+    0.664727 0.651906 0
+    0.73377 0.489242 0
+    0.670257 0.334894 0
+    0.505529 0.278766 0
+    0.489681 0.510132 0
+  constraints 17
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+endnode
+node danglymesh Leaves02
+  parent damage
+  position -0.000867307 -0.0348657 3.63321
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.431373 0.521569 
+  tilefade 1
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 5.33749 0.660492 52.3727 
+  period 1.0
+  tightness 1.0
+  displacement 0.05
+  showdispl true
+  displtype 1
+  center 5.33749 0.660492 52.3727 
+  bitmap plc_TreeFern01
+  verts 17
+    0.296488 -1.90357 1.38893
+    -1.19176 -1.52445 1.17433
+    -1.95062 -0.24845 1.36499
+    -1.53558 1.17695 1.40611
+    -0.189744 1.91678 0.968541
+    1.2985 1.53766 1.17452
+    2.05737 0.261663 1.35132
+    1.64232 -1.16374 1.17433
+    0.159103 -0.824128 0.879771
+    -0.512413 -0.662227 0.654594
+    -0.852529 -0.108317 0.879831
+    -0.662006 0.513131 0.879873
+    -0.0524533 0.838079 0.633296
+    0.594564 0.661151 0.628779
+    0.927937 0.118219 0.875332
+    0.741192 -0.490911 0.875291
+    -1.70757e-005 0.000134165 -0.358657
+  faces 24
+    9 0 8  1  9 0 8  3
+    1 0 9  1  1 0 9  3
+    10 1 9  1  10 1 9  3
+    2 1 10  1  2 1 10  3
+    11 2 10  1  11 2 10  3
+    3 2 11  1  3 2 11  3
+    12 3 11  1  12 3 11  3
+    4 3 12  1  4 3 12  3
+    13 4 12  1  13 4 12  3
+    5 4 13  1  5 4 13  3
+    14 5 13  1  14 5 13  3
+    6 5 14  1  6 5 14  3
+    15 6 14  1  15 6 14  3
+    7 6 15  1  7 6 15  3
+    8 7 15  1  8 7 15  3
+    0 7 8  1  0 7 8  3
+    8 16 9  1  8 16 9  1
+    9 16 10  1  9 16 10  1
+    10 16 11  1  10 16 11  1
+    11 16 12  1  11 16 12  1
+    12 16 13  1  12 16 13  1
+    13 16 14  1  13 16 14  1
+    14 16 15  1  14 16 15  1
+    15 16 8  1  15 16 8  1
+  tverts 17
+    0.121565 0.15102 0
+    -0.0433511 0.520828 0
+    0.110021 0.878435 0
+    0.491837 1.01436 0
+    0.878435 0.84898 0
+    1.04335 0.479172 0
+    0.889979 0.121565 0
+    0.508163 -0.0143605 0
+    0.335419 0.348229 0
+    0.258996 0.51366 0
+    0.323793 0.671129 0
+    0.491853 0.728392 0
+    0.664727 0.651906 0
+    0.73377 0.489242 0
+    0.670257 0.334894 0
+    0.505529 0.278766 0
+    0.489681 0.510132 0
+  constraints 17
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+endnode
+node danglymesh Leaves03
+  parent damage
+  position -0.000867307 -0.0348657 3.54051
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.686275 0.101961 0.101961 
+  tilefade 1
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center -0.0240021 -7.06149 38.7956 
+  period 1.0
+  tightness 1.0
+  displacement 0.1
+  showdispl true
+  displtype 1
+  center -0.0240021 -7.06149 38.7956 
+  bitmap plc_TreeFern01
+  verts 17
+    -2.52855 -0.0706119 0.475816
+    -1.78803 1.80498 0.89752
+    -0.000242921 2.58187 0.731629
+    1.78754 1.80498 0.604008
+    2.52807 -0.0706122 0.496924
+    1.78754 -1.9462 1.04001
+    -0.000243362 -2.7231 0.61573
+    -1.78803 -1.9462 0.683439
+    -1.0998 -0.0706117 0.69921
+    -0.777605 0.777199 0.699222
+    0.000245194 1.12837 0.699253
+    0.778096 0.772846 0.532823
+    1.10029 -0.0706118 0.699297
+    0.762585 -0.884021 0.695971
+    0.000151885 -1.22823 0.695941
+    -0.762282 -0.884021 0.695911
+    0.00017758 0.0 -0.264098
+  faces 24
+    0 9 8  1  0 9 8  3
+    0 1 9  1  0 1 9  3
+    1 10 9  1  1 10 9  3
+    1 2 10  1  1 2 10  3
+    2 11 10  1  2 11 10  3
+    2 3 11  1  2 3 11  3
+    3 12 11  1  3 12 11  3
+    3 4 12  1  3 4 12  3
+    4 13 12  1  4 13 12  3
+    4 5 13  1  4 5 13  3
+    5 14 13  1  5 14 13  3
+    5 6 14  1  5 6 14  3
+    6 15 14  1  6 15 14  3
+    6 7 15  1  6 7 15  3
+    7 8 15  1  7 8 15  3
+    7 0 8  1  7 0 8  3
+    16 8 9  1  16 8 9  1
+    16 9 10  1  16 9 10  1
+    16 10 11  1  16 10 11  1
+    16 11 12  1  16 11 12  1
+    16 12 13  1  16 12 13  1
+    16 13 14  1  16 13 14  1
+    16 14 15  1  16 14 15  1
+    16 15 8  1  16 15 8  1
+  tverts 17
+    0.121565 0.15102 0
+    -0.0433511 0.520828 0
+    0.110021 0.878435 0
+    0.491837 1.01436 0
+    0.878435 0.84898 0
+    1.04335 0.479172 0
+    0.889979 0.121565 0
+    0.508163 -0.0143605 0
+    0.335419 0.348229 0
+    0.258996 0.51366 0
+    0.323793 0.671129 0
+    0.491853 0.728392 0
+    0.664727 0.651906 0
+    0.73377 0.489242 0
+    0.670257 0.334894 0
+    0.505529 0.278766 0
+    0.489681 0.510132 0
+  constraints 17
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+endnode
+node danglymesh Leaves04
+  parent damage
+  position -0.000867307 -0.0348657 3.44515
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.686275 0.101961 0.101961 
+  tilefade 1
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center -6.20099 -5.1335 1.7218 
+  period 1.0
+  tightness 1.0
+  displacement 0.2
+  showdispl true
+  displtype 1
+  center -6.20099 -5.1335 1.7218 
+  bitmap plc_TreeFern01
+  verts 17
+    -1.8938 2.14579 0.0945666
+    0.285059 2.87152 -0.0595891
+    2.26061 1.88507 0.208323
+    2.87559 -0.2357 0.208377
+    1.76978 -2.24847 -0.230639
+    -0.409071 -2.97419 0.208377
+    -2.38462 -1.98775 0.0564331
+    -2.99961 0.133018 -0.376356
+    -0.858649 0.90419 0.410724
+    0.117158 1.24313 0.410734
+    0.988222 0.823539 0.410758
+    1.24428 -0.108793 0.410782
+    0.735347 -1.00772 0.410792
+    -0.221577 -1.38804 0.238876
+    -1.07538 -0.896789 0.408221
+    -1.32636 0.0170652 0.172521
+    0.000128659 -0.000154319 -0.202292
+  faces 24
+    0 9 8  1  0 9 8  3
+    0 1 9  1  0 1 9  3
+    1 10 9  1  1 10 9  3
+    1 2 10  1  1 2 10  3
+    2 11 10  1  2 11 10  3
+    2 3 11  1  2 3 11  3
+    3 12 11  1  3 12 11  3
+    3 4 12  1  3 4 12  3
+    4 13 12  1  4 13 12  3
+    4 5 13  1  4 5 13  3
+    5 14 13  1  5 14 13  3
+    5 6 14  1  5 6 14  3
+    6 15 14  1  6 15 14  3
+    6 7 15  1  6 7 15  3
+    7 8 15  1  7 8 15  3
+    7 0 8  1  7 0 8  3
+    16 8 9  1  16 8 9  1
+    16 9 10  1  16 9 10  1
+    16 10 11  1  16 10 11  1
+    16 11 12  1  16 11 12  1
+    16 12 13  1  16 12 13  1
+    16 13 14  1  16 13 14  1
+    16 14 15  1  16 14 15  1
+    16 15 8  1  16 15 8  1
+  tverts 17
+    0.121565 0.15102 0
+    -0.0433511 0.520828 0
+    0.110021 0.878435 0
+    0.491837 1.01436 0
+    0.878435 0.84898 0
+    1.04335 0.479172 0
+    0.889979 0.121565 0
+    0.508163 -0.0143605 0
+    0.335419 0.348229 0
+    0.258996 0.51366 0
+    0.323793 0.671129 0
+    0.491853 0.728392 0
+    0.664727 0.651906 0
+    0.73377 0.489242 0
+    0.670257 0.334894 0
+    0.505529 0.278766 0
+    0.489681 0.510132 0
+  constraints 17
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+endnode
+node danglymesh Leaves05
+  parent damage
+  position -0.000867307 -0.0348657 3.63321
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.431373 0.521569 
+  tilefade 1
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 5.33749 0.660492 52.3727 
+  period 1.0
+  tightness 1.0
+  displacement 0.05
+  showdispl true
+  displtype 1
+  center 5.33749 0.660492 52.3727 
+  bitmap plc_TreeFern01
+  verts 17
+    0.296488 -1.90357 1.38893
+    -1.19176 -1.52445 1.17433
+    -1.95062 -0.24845 1.36499
+    -1.53558 1.17695 1.40611
+    -0.189744 1.91678 0.968541
+    1.2985 1.53766 1.17452
+    2.05737 0.261663 1.35132
+    1.64232 -1.16374 1.17433
+    0.159103 -0.824128 0.879771
+    -0.512413 -0.662227 0.654594
+    -0.852529 -0.108317 0.879831
+    -0.662006 0.513131 0.879873
+    -0.0524533 0.838079 0.633296
+    0.594564 0.661151 0.628779
+    0.927937 0.118219 0.875332
+    0.741192 -0.490911 0.875291
+    -1.70757e-005 0.000134165 -0.358657
+  faces 24
+    0 9 8  1  0 9 8  3
+    0 1 9  1  0 1 9  3
+    1 10 9  1  1 10 9  3
+    1 2 10  1  1 2 10  3
+    2 11 10  1  2 11 10  3
+    2 3 11  1  2 3 11  3
+    3 12 11  1  3 12 11  3
+    3 4 12  1  3 4 12  3
+    4 13 12  1  4 13 12  3
+    4 5 13  1  4 5 13  3
+    5 14 13  1  5 14 13  3
+    5 6 14  1  5 6 14  3
+    6 15 14  1  6 15 14  3
+    6 7 15  1  6 7 15  3
+    7 8 15  1  7 8 15  3
+    7 0 8  1  7 0 8  3
+    16 8 9  1  16 8 9  1
+    16 9 10  1  16 9 10  1
+    16 10 11  1  16 10 11  1
+    16 11 12  1  16 11 12  1
+    16 12 13  1  16 12 13  1
+    16 13 14  1  16 13 14  1
+    16 14 15  1  16 14 15  1
+    16 15 8  1  16 15 8  1
+  tverts 17
+    0.121565 0.15102 0
+    -0.0433511 0.520828 0
+    0.110021 0.878435 0
+    0.491837 1.01436 0
+    0.878435 0.84898 0
+    1.04335 0.479172 0
+    0.889979 0.121565 0
+    0.508163 -0.0143605 0
+    0.335419 0.348229 0
+    0.258996 0.51366 0
+    0.323793 0.671129 0
+    0.491853 0.728392 0
+    0.664727 0.651906 0
+    0.73377 0.489242 0
+    0.670257 0.334894 0
+    0.505529 0.278766 0
+    0.489681 0.510132 0
+  constraints 17
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    128.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+endnode
+node dummy Palm01_ground
+  parent PLC_Palm01
+  position 0.00363281 -0.0069873 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.603922 0.843137 0.898039 
+endnode
+node dummy Palm01_hand
+  parent PLC_Palm01
+  position -0.00398926 0.71005 0.934402
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.603922 0.843137 0.898039 
+endnode
+node dummy Palm01_head
+  parent PLC_Palm01
+  position 0.0225571 0.0258809 2.1763
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.6 0.894118 0.6 
+endnode
+node dummy Palm01_head_hit
+  parent PLC_Palm01
+  position -0.00398926 -0.0108252 1.69482
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.6 0.894118 0.6 
+endnode
+node dummy Palm01_impact
+  parent PLC_Palm01
+  position -0.00398926 -0.011001 0.868134
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.6 0.894118 0.6 
+endnode
+node emitter ChunkyWood02
+  parent PLC_Palm01
+  position 0.0265528 0.0133384 0.647676
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.337255 0.87451 0.776471 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawntype_sel 0
+  spawnType 0
+  xSize 15.0
+  ySize 7.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.482353 0.435294 0.317647 
+  colorEnd 0.584314 0.533333 0.407843 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 1.5
+  mass 2.5
+  spread 1.22173
+  particleRot 1.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud02
+  twosidedtex 1
+  xgrid 5
+  ygrid 5
+  fps 0
+  framestart 0
+  frameend 24
+  random 0
+  chunkName PLC_Chunk_W02
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+endmodelgeom PLC_Palm01
+
+#NWmax ANIM ASCII
+newanim damage PLC_Palm01
+  length 0.133333
+  transtime 0.0
+  animroot PLC_Palm01
+    node dummy PLC_Palm01
+        parent NULL
+    endnode
+    node emitter ChunkyWood
+        parent PLC_Palm01
+    endnode
+    node emitter fire!
+        parent PLC_Palm01
+    endnode
+    node trimesh damage
+        parent PLC_Palm01
+        positionkey
+            0.0 0.000867307 0.0348657 0.0
+            0.0333333 0.000867307 0.0348657 0.0244581
+            0.133333 0.000867307 0.0348657 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+            0.0333333 -0.371336 0.928463 0.00810258 -0.0469942
+            0.1 0.599949 -0.79997 0.0104721 -0.0436326
+            0.133333 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Trunk01
+        parent damage
+    endnode
+    node trimesh Shadow01
+        parent damage
+    endnode
+    node trimesh Cap
+        parent damage
+    endnode
+    node trimesh Trunk02
+        parent damage
+    endnode
+    node danglymesh Leaves00
+        parent damage
+    endnode
+    node danglymesh Leaves01
+        parent damage
+    endnode
+    node danglymesh Leaves02
+        parent damage
+    endnode
+    node danglymesh Leaves03
+        parent damage
+    endnode
+    node danglymesh Leaves04
+        parent damage
+    endnode
+    node danglymesh Leaves05
+        parent damage
+    endnode
+    node dummy Palm01_ground
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_hand
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_head
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_head_hit
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_impact
+        parent PLC_Palm01
+    endnode
+    node emitter ChunkyWood02
+        parent PLC_Palm01
+    endnode
+    node dummy PLC_Palm01_pwk
+        parent PLC_Palm01
+    endnode
+    node trimesh PLC_Palm01_wg
+        parent PLC_Palm01_pwk
+    endnode
+    node dummy IoP_pwk_use01
+        parent PLC_Palm01_pwk
+    endnode
+    node dummy IoP_pwk_use02
+        parent PLC_Palm01_pwk
+    endnode
+doneanim damage PLC_Palm01
+
+
+#NWmax ANIM ASCII
+newanim die PLC_Palm01
+  length 0.166667
+  transtime 0.0
+  animroot PLC_Palm01
+  event 0.0 detonate
+  event 0.0 detonate
+  event 0.0333333 detonate
+    node dummy PLC_Palm01
+        parent NULL
+    endnode
+    node emitter ChunkyWood
+        parent PLC_Palm01
+    endnode
+    node emitter fire!
+        parent PLC_Palm01
+    endnode
+    node trimesh damage
+        parent PLC_Palm01
+        positionkey
+            0.0 0.000867307 0.0348657 0.0
+            0.166667 0.000867307 0.0348657 -6.95145
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Trunk01
+        parent damage
+    endnode
+    node trimesh Shadow01
+        parent damage
+    endnode
+    node trimesh Cap
+        parent damage
+    endnode
+    node trimesh Trunk02
+        parent damage
+    endnode
+    node danglymesh Leaves00
+        parent damage
+    endnode
+    node danglymesh Leaves01
+        parent damage
+    endnode
+    node danglymesh Leaves02
+        parent damage
+    endnode
+    node danglymesh Leaves03
+        parent damage
+    endnode
+    node danglymesh Leaves04
+        parent damage
+    endnode
+    node danglymesh Leaves05
+        parent damage
+    endnode
+    node dummy Palm01_ground
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_hand
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_head
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_head_hit
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_impact
+        parent PLC_Palm01
+    endnode
+    node emitter ChunkyWood02
+        parent PLC_Palm01
+    endnode
+    node dummy PLC_Palm01_pwk
+        parent PLC_Palm01
+    endnode
+    node trimesh PLC_Palm01_wg
+        parent PLC_Palm01_pwk
+    endnode
+    node dummy IoP_pwk_use01
+        parent PLC_Palm01_pwk
+    endnode
+    node dummy IoP_pwk_use02
+        parent PLC_Palm01_pwk
+    endnode
+doneanim die PLC_Palm01
+
+
+#NWmax ANIM ASCII
+newanim dead PLC_Palm01
+  length 0.0333333
+  transtime 0.0
+  animroot PLC_Palm01
+    node dummy PLC_Palm01
+        parent NULL
+    endnode
+    node emitter ChunkyWood
+        parent PLC_Palm01
+    endnode
+    node emitter fire!
+        parent PLC_Palm01
+    endnode
+    node trimesh damage
+        parent PLC_Palm01
+        positionkey
+            0.0 0.000867307 0.0348657 -6.95145
+            0.0333333 0.000867307 0.0348657 -6.95145
+        endlist
+    endnode
+    node trimesh Trunk01
+        parent damage
+    endnode
+    node trimesh Shadow01
+        parent damage
+    endnode
+    node trimesh Cap
+        parent damage
+    endnode
+    node trimesh Trunk02
+        parent damage
+    endnode
+    node danglymesh Leaves00
+        parent damage
+    endnode
+    node danglymesh Leaves01
+        parent damage
+    endnode
+    node danglymesh Leaves02
+        parent damage
+    endnode
+    node danglymesh Leaves03
+        parent damage
+    endnode
+    node danglymesh Leaves04
+        parent damage
+    endnode
+    node danglymesh Leaves05
+        parent damage
+    endnode
+    node dummy Palm01_ground
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_hand
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_head
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_head_hit
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_impact
+        parent PLC_Palm01
+    endnode
+    node emitter ChunkyWood02
+        parent PLC_Palm01
+    endnode
+    node dummy PLC_Palm01_pwk
+        parent PLC_Palm01
+    endnode
+    node trimesh PLC_Palm01_wg
+        parent PLC_Palm01_pwk
+    endnode
+    node dummy IoP_pwk_use01
+        parent PLC_Palm01_pwk
+    endnode
+    node dummy IoP_pwk_use02
+        parent PLC_Palm01_pwk
+    endnode
+doneanim dead PLC_Palm01
+
+
+#NWmax ANIM ASCII
+newanim default PLC_Palm01
+  length 0.0
+  transtime 0.25
+  animroot PLC_Palm01
+    node dummy PLC_Palm01
+        parent NULL
+    endnode
+    node emitter ChunkyWood
+        parent PLC_Palm01
+    endnode
+    node emitter fire!
+        parent PLC_Palm01
+    endnode
+    node trimesh damage
+        parent PLC_Palm01
+        positionkey
+            0.0 0.000867307 0.0348657 0.0
+        endlist
+        orientationkey
+            0.0 0.0 0.0 0.0 0.0
+        endlist
+    endnode
+    node trimesh Trunk01
+        parent damage
+    endnode
+    node trimesh Shadow01
+        parent damage
+    endnode
+    node trimesh Cap
+        parent damage
+    endnode
+    node trimesh Trunk02
+        parent damage
+    endnode
+    node danglymesh Leaves00
+        parent damage
+    endnode
+    node danglymesh Leaves01
+        parent damage
+    endnode
+    node danglymesh Leaves02
+        parent damage
+    endnode
+    node danglymesh Leaves03
+        parent damage
+    endnode
+    node danglymesh Leaves04
+        parent damage
+    endnode
+    node danglymesh Leaves05
+        parent damage
+    endnode
+    node dummy Palm01_ground
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_hand
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_head
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_head_hit
+        parent PLC_Palm01
+    endnode
+    node dummy Palm01_impact
+        parent PLC_Palm01
+    endnode
+    node emitter ChunkyWood02
+        parent PLC_Palm01
+    endnode
+    node dummy PLC_Palm01_pwk
+        parent PLC_Palm01
+    endnode
+    node trimesh PLC_Palm01_wg
+        parent PLC_Palm01_pwk
+    endnode
+    node dummy IoP_pwk_use01
+        parent PLC_Palm01_pwk
+    endnode
+    node dummy IoP_pwk_use02
+        parent PLC_Palm01_pwk
+    endnode
+doneanim default PLC_Palm01
+
+donemodel PLC_Palm01

@@ -1,0 +1,568 @@
+# Exported from NWmax 0.8 b40 at 7/4/2005 5:09:11 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tnp_flag_c11
+filedependancy C_flags_01_12.max
+newmodel tnp_flag_c11
+setsupermodel tnp_flag_c11 tnp_flag_c01
+classification Character
+setanimationscale 1.0
+#NWmax GEOM  ASCII
+beginmodelgeom tnp_flag_c11
+node dummy tnp_flag_c11
+  parent NULL
+endnode
+node dummy flag_c11_ground
+  parent tnp_flag_c11
+  position -0.00363281 0.0069873 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.0 0.0 
+endnode
+node dummy flag_c11_head
+  parent tnp_flag_c11
+  position 0.0 0.722848 3.55164
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.0 0.0 
+endnode
+node dummy flag_c11_head_hit
+  parent tnp_flag_c11
+  position 0.0 0.728265 5.29905
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.0 0.0 
+endnode
+node dummy flag_c11_impact
+  parent tnp_flag_c11
+  position 0.0 0.724033 3.47
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.0 0.0 
+endnode
+node trimesh pole
+  parent tnp_flag_c11
+  position 0.0 0.75 5.04993
+  orientation 0.0 0.0 1.0 -3.14159
+  wirecolor 0.47451 0.294118 0.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 0.0 0.0 1.00136e-005 
+  bitmap tno01_wood011
+  verts 10
+    1.0 0.00854107 -0.0380422
+    1.0 -0.0361803 -0.0235115
+    1.0 -0.0361803 0.0235113
+    1.0 0.00854107 0.0380424
+    1.0 0.0361803 -1.33514e-007
+    -1.0 0.00854107 -0.0380422
+    -1.0 -0.0361803 -0.0235115
+    -1.0 -0.0361803 0.0235113
+    -1.0 0.00854107 0.0380424
+    -1.0 0.0361803 -1.33514e-007
+  faces 10
+    0 1 5  0  0 1 2  1
+    1 6 5  0  1 3 2  1
+    1 2 6  0  1 4 3  1
+    2 7 6  0  4 5 3  1
+    2 3 7  0  4 6 5  1
+    3 8 7  0  6 7 5  1
+    3 4 8  0  6 8 7  1
+    4 9 8  0  8 9 7  1
+    4 0 9  0  8 10 9  1
+    0 5 9  0  10 11 9  1
+  tverts 12
+    0.253627 0.997376 0
+    0.203426 0.997376 0
+    0.253623 0.000150884 0
+    0.203423 0.000151606 0
+    0.153226 0.997377 0
+    0.153222 0.000152329 0
+    0.103025 0.997378 0
+    0.103022 0.000153051 0
+    0.0528249 0.997378 0
+    0.0528213 0.000153773 0
+    0.00262447 0.997379 0
+    0.00262086 0.000154495 0
+endnode
+node danglymesh banner
+  parent pole
+  position 0.0 -0.565576 -2.04993
+  orientation -1.0 0.0 0.0 -6.28318
+  wirecolor 0.0313726 0.0313726 0.529412 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 1.0245 59.0817 25.9885 
+  period 1.5
+  tightness 1.0
+  displacement 0.2
+  showdispl true
+  displtype 1
+  center 1.0245 59.0817 25.9885 
+  bitmap tno01_flag_11
+  verts 25
+    -0.875 0.601757 2.04993
+    -0.4375 0.601757 2.04993
+    0.0 0.601757 2.04993
+    0.4375 0.601757 2.04993
+    0.875 0.601757 2.04993
+    -0.873228 0.594985 1.49845
+    -0.00491112 0.593068 1.47189
+    0.885245 0.594093 1.50245
+    -0.871457 0.588214 0.31052
+    -0.00982285 0.58438 0.2574
+    0.89549 0.58643 0.318529
+    -0.869436 0.583337 -0.863709
+    -0.00982285 0.58438 -0.920256
+    0.883762 0.575015 -0.891675
+    -0.867415 0.57846 -1.43263
+    -0.4375 0.567553 -1.49011
+    -0.0144501 0.618034 -1.45752
+    0.422482 0.567553 -1.53016
+    0.872036 0.563601 -1.49657
+    0.888356 0.591766 0.938131
+    -0.00619232 0.590224 0.895815
+    -0.872734 0.593096 0.960642
+    0.889304 0.580409 -0.319781
+    -0.00982285 0.58438 -0.365876
+    -0.870438 0.585755 -0.281484
+  faces 28
+    6 5 1  1  6 5 1  1
+    1 5 0  1  1 5 0  1
+    6 1 2  1  6 1 2  1
+    3 6 2  1  3 6 2  1
+    6 3 7  1  6 3 7  1
+    7 3 4  1  7 3 4  1
+    6 20 5  1  6 20 5  1
+    20 6 19  1  20 6 19  1
+    19 6 7  1  19 6 7  1
+    8 9 23  1  8 9 23  1
+    10 22 9  1  10 22 9  1
+    9 22 23  1  9 22 23  1
+    11 12 15  1  11 12 15  1
+    14 11 15  1  14 11 15  1
+    12 16 15  1  12 16 15  1
+    17 12 13  1  17 12 13  1
+    17 13 18  1  17 13 18  1
+    17 16 12  1  17 16 12  1
+    10 9 19  1  10 9 19  1
+    9 20 19  1  9 20 19  1
+    9 8 20  1  9 8 20  1
+    20 21 5  1  20 21 5  1
+    20 8 21  1  20 8 21  1
+    22 13 12  1  22 13 12  1
+    23 22 12  1  23 22 12  1
+    11 23 12  1  11 23 12  1
+    8 23 24  1  8 23 24  1
+    24 23 11  1  24 23 11  1
+  tverts 25
+    0.494537 0.996776 0
+    0.372334 0.996776 0
+    0.25013 0.996776 0
+    0.127927 0.996776 0
+    0.00572321 0.996776 0
+    0.494042 0.836284 0
+    0.251179 0.828692 0
+    0.00286148 0.837403 0
+    0.493547 0.514143 0
+    0.251179 0.494407 0
+    0.0 0.51638 0
+    0.492983 0.176482 0
+    0.251179 0.17191 0
+    0.00327569 0.168671 0
+    0.492418 0.0143472 0
+    0.372334 -0.00171064 0
+    0.254166 0.0073923 0
+    0.132122 0.00322421 0
+    0.00655113 0.0126082 0
+    0.00199254 0.689449 0
+    0.251179 0.670138 0
+    0.493904 0.695736 0
+    0.00172773 0.338086 0
+    0.251179 0.315422 0
+    0.493263 0.348783 0
+  constraints 25
+    0.0
+    0.0
+    0.0
+    0.0
+    0.0
+    219.0
+    219.0
+    219.0
+    160.0
+    160.0
+    160.0
+    130.0
+    130.0
+    130.0
+    121.0
+    121.0
+    121.0
+    121.0
+    121.0
+    183.0
+    183.0
+    183.0
+    140.0
+    140.0
+    140.0
+endnode
+node trimesh mount1
+  parent pole
+  position -1.0 -0.328429 6.53076e-005
+  orientation -1.0 0.0 0.0 -6.28318
+  wirecolor 0.313726 0.176471 0.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 0.0 0.0 -1.50204e-005 
+  bitmap tno01_wood011
+  verts 8
+    -0.0500001 -0.371731 -0.05
+    0.0500001 -0.371731 -0.0500001
+    -0.0500001 -0.371731 0.0499998
+    0.0500001 -0.371731 0.0499998
+    -0.0500001 0.371731 0.0499998
+    0.0500001 0.371731 0.0499998
+    -0.0500001 0.371731 -0.05
+    0.0500001 0.371731 -0.0500001
+  faces 12
+    2 3 4  0  0 1 2  1
+    3 5 4  0  1 3 2  1
+    4 5 6  0  4 5 6  1
+    5 7 6  0  5 7 6  1
+    6 7 0  0  8 9 10  1
+    7 1 0  0  9 11 10  1
+    1 7 3  0  11 9 1  1
+    7 5 3  0  9 3 1  1
+    6 0 4  0  12 13 2  1
+    0 2 4  0  13 0 2  1
+    2 0 3  0  14 15 16  1
+    0 1 3  0  15 17 16  1
+  tverts 18
+    0.411324 0.0782688 0
+    0.543596 0.0782688 0
+    0.411324 0.921731 0
+    0.543596 0.921731 0
+    0.423199 0.667413 0
+    0.669911 0.667413 0
+    0.423199 0.914126 0
+    0.669911 0.914126 0
+    0.808138 0.921731 0
+    0.675866 0.921731 0
+    0.808138 0.0782688 0
+    0.675866 0.0782688 0
+    0.279053 0.921731 0
+    0.279053 0.0782688 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+endnode
+node trimesh mount
+  parent pole
+  position 1.0 -0.328429 6.53076e-005
+  orientation -1.0 0.0 0.0 -6.28318
+  wirecolor 0.313726 0.176471 0.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 0.0 0.0 -1.50204e-005 
+  bitmap tno01_wood011
+  verts 8
+    -0.0500001 -0.371731 -0.05
+    0.0500001 -0.371731 -0.0500001
+    -0.0500001 -0.371731 0.0499998
+    0.0500001 -0.371731 0.0499998
+    -0.0500001 0.371731 0.0499998
+    0.0500001 0.371731 0.0499998
+    -0.0500001 0.371731 -0.05
+    0.0500001 0.371731 -0.0500001
+  faces 12
+    2 3 4  0  0 1 2  1
+    3 5 4  0  1 3 2  1
+    4 5 6  0  4 5 6  1
+    5 7 6  0  5 7 6  1
+    6 7 0  0  8 9 10  1
+    7 1 0  0  9 11 10  1
+    1 7 3  0  11 9 1  1
+    7 5 3  0  9 3 1  1
+    6 0 4  0  12 13 2  1
+    0 2 4  0  13 0 2  1
+    1 3 0  0  14 15 16  1
+    3 2 0  0  15 17 16  1
+  tverts 18
+    0.411324 0.0782688 0
+    0.543596 0.0782688 0
+    0.411324 0.921731 0
+    0.543596 0.921731 0
+    0.423199 0.667413 0
+    0.669911 0.667413 0
+    0.423199 0.914126 0
+    0.669911 0.914126 0
+    0.808138 0.921731 0
+    0.675866 0.921731 0
+    0.808138 0.0782688 0
+    0.675866 0.0782688 0
+    0.279053 0.921731 0
+    0.279053 0.0782688 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+endnode
+node emitter echunkywood11
+  parent tnp_flag_c11
+  position 0.00845306 -0.0221301 0.568524
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.482353 0.435294 0.317647 
+  colorEnd 0.584314 0.533333 0.407843 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 2.9
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud11
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName PLC_Chunk_W02
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter echunkywood01
+  parent tnp_flag_c11
+  position 0.00845306 -0.0221301 0.462303
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 89.0
+  ySize 40.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 1.0
+  sizeStart 0.1
+  sizeEnd 0.1
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 3
+  lifeExp 0.75
+  mass 3.0
+  spread 1.22173
+  particleRot 5.0
+  velocity 8.0
+  randvel 0.3
+  bounce_co 0.5
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_cloud11
+  twosidedtex 0
+  xgrid 5
+  ygrid 5
+  fps 0
+  frameStart 0
+  frameEnd 24
+  random 0
+  chunkName PLC_Chunk_W01
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter esmoke
+  parent tnp_flag_c11
+  position 0.00845306 -0.0221301 0.388259
+  orientation 1.0 0.0 0.0 -4.71239
+  wirecolor 1.0 1.0 1.0 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 100.0
+  ySize 99.0
+  inherit 1
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.47451 0.439216 0.364706 
+  colorEnd 0.819608 0.796079 0.709804 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 4.0
+  sizeEnd 1.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 2.5
+  mass 0.09
+  spread 2.96706
+  particleRot 0.5
+  velocity 2.0
+  randvel 0.5
+  bounce_co 0.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 1
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 0
+  xgrid 4
+  ygrid 4
+  fps 10
+  frameStart 0
+  frameEnd 24
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.2
+  blastLength 1.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node dummy flag_c11_hand
+  parent tnp_flag_c11
+  position 0.00398437 0.65961 1.55951
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.0 0.0 
+endnode
+endmodelgeom tnp_flag_c11
+donemodel tnp_flag_c11

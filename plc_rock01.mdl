@@ -1,0 +1,1013 @@
+#MAXMODEL ASCII
+# model: plc_rock01 
+filedependancy plc_rocks.max
+newmodel plc_rock01 
+setsupermodel plc_rock01 NULL
+classification Character
+setanimationscale 1.0
+#MAXGEOM  ASCII
+beginmodelgeom plc_rock01 
+node dummy plc_rock01 
+  parent NULL 
+endnode
+node emitter ChunkyRock 
+  parent plc_rock01 
+  position 0.00528414 0.0133384 0.713518
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.341176 0.878431 0.776471  
+    colorStart 0.482353 0.482353 0.482353  
+    colorEnd 0.584314 0.584314 0.584314  
+    alphaStart 1.0 
+    alphaEnd 1.0 
+    sizeStart 0.1 
+    sizeEnd 0.1 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 24 
+    birthrate 3 
+    spawnType 0 
+    lifeExp 0.75 
+    mass 3.0 
+    spread 1.22173 
+    particleRot 1.0 
+    velocity 8.0 
+    randvel 0.3 
+    fps 0 
+    random 0 
+    inherit 1 
+    inherit_local 0 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 15 
+    ySize 7 
+    bounce 1 
+    bounce_co 0.5 
+    loop 0 
+    update Explosion 
+    render Normal 
+    Blend Normal 
+    update_sel 2 
+    render_sel 1 
+    blend_sel 1 
+    deadspace 0.0 
+    chunkName PLC_Chunk_S01 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.0 
+    blastLength 0.0 
+    twosidedtex 1 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_cloud02 
+    xgrid 5 
+    ygrid 5 
+    affectedByWind false 
+    m_isTinted 0 
+    renderorder 0 
+    Splat 0 
+endnode
+node emitter fire! 
+  parent plc_rock01 
+  position 0.0 0.0137917 0.504806
+  orientation  1.0 0.0 0.0  -1.5708
+  wirecolor 0.690196 0.101961 0.101961  
+    colorStart 0.47451 0.45098 0.392157  
+    colorEnd 0.760784 0.74902 0.694118  
+    alphaStart 1.0 
+    alphaEnd 0.0 
+    sizeStart 4.0 
+    sizeEnd 1.0 
+    sizeStart_y 0.0 
+    sizeEnd_y 0.0 
+    frameStart 0 
+    frameEnd 24 
+    birthrate 10 
+    spawnType 0 
+    lifeExp 2.5 
+    mass 0.09 
+    spread 2.96706 
+    particleRot 0.5 
+    velocity 2.0 
+    randvel 0.5 
+    fps 10 
+    random 0 
+    inherit 0 
+    inherit_local 1 
+    inherit_part 0 
+    inheritvel 0 
+    xSize 400 
+    ySize 400 
+    bounce 0 
+    bounce_co 0.0 
+    loop 0 
+    update Explosion 
+    render Normal 
+    Blend Normal 
+    update_sel 2 
+    render_sel 1 
+    blend_sel 1 
+    deadspace 0.0 
+    opacity 0.5 
+    blurlength 10.0 
+    lightningDelay 0.0 
+    lightningRadius 0.0 
+    lightningScale 0.0 
+    blastRadius 0.2 
+    blastLength 1.0 
+    twosidedtex 1 
+    p2p 0 
+    p2p_sel 1 
+    p2p_type Bezier 
+    p2p_bezier2 0.0 
+    p2p_bezier3 0.0 
+    combinetime 0.0 
+    Drag 0.0 
+    grav 0.0 
+    threshold 0.0 
+    texture fxpa_smoke01 
+    xgrid 4 
+    ygrid 4 
+    affectedByWind false 
+    m_isTinted 1 
+    renderorder 0 
+    Splat 0 
+endnode
+node trimesh damage 
+  parent plc_rock01 
+  position 0.000867307 0.0348657 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.603922 0.843137 0.898039  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     Alpha 1.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 0
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 0.0 
+     rotatetexture 0
+     center 0.0 0.0 25.0 
+     gizmo SubAnim:Gizmo
+  ambient 0.0705882 0.0 1.0  
+  diffuse 1.0 0.501961 0.643137  
+  specular 0.0 0.0 0.0  
+  shininess 25.0 
+    bitmap NULL
+    verts 12
+     0.195415 0.186216 0.0
+     0.195415 -0.186216 0.0
+     -0.195415 -0.186216 0.0
+     -0.195415 0.186216 0.0
+     0.195415 0.186216 0.5
+     -0.195415 0.186216 0.5
+     -0.195415 -0.186216 0.5
+     0.195415 -0.186216 0.5
+     -0.103944 0.0990513 0.25
+     0.103944 0.0990513 0.25
+     -0.103944 -0.0990513 0.25
+     0.103944 -0.0990513 0.25
+    faces 20
+     0 1 2  1  0 0 0  1
+     2 3 0  1  0 0 0  1
+     4 5 6  1  0 0 0  1
+     6 7 4  1  0 0 0  1
+     0 3 8  1  0 0 0  1
+     8 9 0  1  0 0 0  1
+     9 8 5  1  0 0 0  1
+     5 4 9  1  0 0 0  1
+     3 2 10  1  0 0 0  1
+     10 8 3  1  0 0 0  1
+     8 10 6  1  0 0 0  1
+     6 5 8  1  0 0 0  1
+     2 1 11  1  0 0 0  1
+     11 10 2  1  0 0 0  1
+     10 11 7  1  0 0 0  1
+     7 6 10  1  0 0 0  1
+     1 0 9  1  0 0 0  1
+     9 11 1  1  0 0 0  1
+     11 9 4  1  0 0 0  1
+     4 7 11  1  0 0 0  1
+    tverts 1
+     0.0 0.0 0 
+endnode
+node trimesh Rock17 
+  parent damage 
+  position -0.0696871 -0.0931098 0.0
+  orientation  0.0 0.0 1.0  -0.33855
+  wirecolor 0.0313726 0.0313726 0.533333  
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 32.0 
+    bitmap plc_rock01
+    verts 41
+     -0.16103 -0.154027 0.540986
+     0.0710715 0.0679805 0.473146
+     -0.0353731 0.12025 0.476292
+     -0.189675 0.0690358 0.481373
+     -0.355332 -0.0989161 0.477562
+     -0.395089 -0.230476 0.472254
+     -0.33666 -0.322018 0.468453
+     0.231241 0.221184 0.355928
+     0.0653038 0.295445 0.357875
+     -0.162491 0.245764 0.320963
+     -0.344828 0.0627287 0.320321
+     -0.423112 -0.16304 0.320285
+     -0.361012 -0.345311 0.320385
+     0.342953 0.328038 0.220137
+     0.188483 0.398763 0.219358
+     0.0142279 0.377156 0.207688
+     -0.266334 0.187837 0.1613
+     -0.341035 -0.0665945 0.157072
+     -0.28239 -0.270108 0.16311
+     0.334139 0.318452 0.0
+     0.221136 0.355242 0.0
+     0.0820098 0.319434 0.0
+     -0.106579 0.213052 0.0
+     -0.184088 0.0137833 0.0
+     -0.137184 -0.131217 0.0
+     0.11856 -0.0406816 0.476292
+     0.0605393 -0.192555 0.481373
+     -0.114608 -0.350585 0.477562
+     -0.247805 -0.384457 0.472254
+     0.298055 0.0521108 0.357875
+     0.238301 -0.173251 0.320963
+     0.047344 -0.347275 0.320321
+     -0.181681 -0.415449 0.320285
+     0.406744 0.170578 0.219358
+     0.377415 -0.00254542 0.207688
+     0.175817 -0.274418 0.1613
+     -0.081683 -0.337739 0.157072
+     0.364717 0.205132 0.0
+     0.322763 0.0677344 0.0
+     0.208106 -0.115941 0.0
+     0.0055896 -0.184518 0.0
+    faces 70
+     0 1 2  1  0 1 2  2
+     0 2 3  1  0 2 3  2
+     0 3 4  1  0 3 4  2
+     0 4 5  1  0 4 5  2
+     0 5 6  1  0 5 6  2
+     1 7 8  1  1 7 8  2
+     1 8 2  1  1 8 2  2
+     2 8 9  1  2 8 9  2
+     2 9 3  1  2 9 3  2
+     3 9 10  1  3 9 10  2
+     3 10 4  1  3 10 4  2
+     4 10 11  1  4 10 11  2
+     4 11 5  1  4 11 5  2
+     5 11 12  1  5 11 12  2
+     5 12 6  1  5 12 6  2
+     7 13 14  1  7 13 14  2
+     7 14 8  1  7 14 8  2
+     8 14 15  1  8 14 15  2
+     8 15 9  1  8 15 9  2
+     9 15 16  1  9 15 16  2
+     9 16 10  1  9 16 10  2
+     10 16 17  1  10 16 17  2
+     10 17 11  1  10 17 11  2
+     11 17 18  1  11 17 18  2
+     11 18 12  1  11 18 12  2
+     13 19 20  1  13 19 20  2
+     13 20 14  1  13 20 14  2
+     14 20 21  1  14 20 21  2
+     14 21 15  1  14 21 15  2
+     15 21 22  1  15 21 22  2
+     15 22 16  1  15 22 16  2
+     16 22 23  1  16 22 23  2
+     16 23 17  1  16 23 17  2
+     17 23 24  1  17 23 24  2
+     17 24 18  1  17 24 18  2
+     0 25 1  1  0 2 1  2
+     0 26 25  1  0 3 2  2
+     0 27 26  1  0 4 3  2
+     0 28 27  1  0 5 4  2
+     0 6 28  1  0 6 5  2
+     1 29 7  1  1 8 7  2
+     1 25 29  1  1 2 8  2
+     25 30 29  1  2 9 8  2
+     25 26 30  1  2 3 9  2
+     26 31 30  1  3 10 9  2
+     26 27 31  1  3 4 10  2
+     27 32 31  1  4 11 10  2
+     27 28 32  1  4 5 11  2
+     28 12 32  1  5 12 11  2
+     28 6 12  1  5 6 12  2
+     7 33 13  1  7 14 13  2
+     7 29 33  1  7 8 14  2
+     29 34 33  1  8 15 14  2
+     29 30 34  1  8 9 15  2
+     30 35 34  1  9 16 15  2
+     30 31 35  1  9 10 16  2
+     31 36 35  1  10 17 16  2
+     31 32 36  1  10 11 17  2
+     32 18 36  1  11 18 17  2
+     32 12 18  1  11 12 18  2
+     13 37 19  1  13 20 19  2
+     13 33 37  1  13 14 20  2
+     33 38 37  1  14 21 20  2
+     33 34 38  1  14 15 21  2
+     34 39 38  1  15 22 21  2
+     34 35 39  1  15 16 22  2
+     35 40 39  1  16 23 22  2
+     35 36 40  1  16 17 23  2
+     36 24 40  1  17 24 23  2
+     36 18 24  1  17 18 24  2
+    tverts 25
+     0.239497 0.91983 0 
+     0.139496 0.842609 0 
+     0.178029 0.818248 0 
+     0.239399 0.830345 0 
+     0.316635 0.877488 0 
+     0.380321 0.910607 0 
+     0.40751 0.945315 0 
+     0.0647325 0.781592 0 
+     0.128678 0.742975 0 
+     0.223533 0.739306 0 
+     0.312148 0.784421 0 
+     0.390376 0.841201 0 
+     0.468469 0.857849 0 
+     0.0316888 0.657829 0 
+     0.0907473 0.656133 0 
+     0.159737 0.669024 0 
+     0.299229 0.702285 0 
+     0.389 0.761945 0 
+     0.467349 0.784272 0 
+     0.118421 0.536938 0 
+     0.147872 0.551211 0 
+     0.194467 0.58098 0 
+     0.302786 0.618403 0 
+     0.399283 0.671705 0 
+     0.456283 0.685278 0 
+endnode
+node trimesh Rock18 
+  parent damage 
+  position -0.538576 0.0099992 0.0
+  orientation  0.0 0.0 1.0  -0.33855
+  wirecolor 0.0313726 0.0313726 0.533333  
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 32.0 
+    bitmap plc_rock01
+    verts 25
+     0.0 0.0 0.124451
+     -0.0937455 -0.0896683 0.119461
+     0.0115846 -0.119607 0.096801
+     0.0640295 -0.0669408 0.106803
+     -0.0872585 0.091226 0.144185
+     -0.126962 0.00924762 0.136542
+     -0.0225778 -0.185954 0.0606974
+     -0.115311 -0.110296 0.0595182
+     0.113066 -0.118207 0.0595182
+     -0.113066 0.118207 0.0595182
+     -0.159228 0.0120554 0.0606974
+     -0.0238572 -0.163623 -0.00249698
+     -0.087846 -0.0840255 0.0
+     0.0940123 -0.0982869 0.0
+     -0.0940123 0.0982869 0.0
+     -0.140065 0.00683026 0.0
+     0.118974 -0.016888 0.096801
+     0.0937455 0.0896683 0.119461
+     -0.00359679 0.127248 0.136542
+     0.186774 0.0142924 0.0606974
+     0.115311 0.110296 0.0595182
+     -0.00496802 0.159606 0.0606974
+     0.164521 0.0165629 -0.00249698
+     0.087846 0.0840255 0.0
+     -0.000599588 0.14023 0.0
+    faces 40
+     0 1 2  1  0 1 2  1
+     0 2 3  1  0 2 3  1
+     0 4 5  1  0 4 5  1
+     0 5 1  1  0 5 1  1
+     2 1 6  1  2 1 6  1
+     1 7 6  1  1 7 6  1
+     2 6 8  1  2 6 8  1
+     2 8 3  1  2 8 3  1
+     5 9 10  1  5 9 10  1
+     4 9 5  1  4 9 5  1
+     5 10 7  1  5 10 7  1
+     5 7 1  1  5 7 1  1
+     6 7 11  1  6 7 11  1
+     7 12 11  1  7 12 11  1
+     6 11 13  1  6 11 13  1
+     6 13 8  1  6 13 8  1
+     10 14 15  1  10 14 15  1
+     9 14 10  1  9 14 10  1
+     7 15 12  1  7 15 12  1
+     10 15 7  1  10 15 7  1
+     0 16 17  1  0 2 1  1
+     0 3 16  1  0 3 2  1
+     0 18 4  1  0 5 4  1
+     0 17 18  1  0 1 5  1
+     16 19 17  1  2 6 1  1
+     17 19 20  1  1 6 7  1
+     16 8 19  1  2 8 6  1
+     16 3 8  1  2 3 8  1
+     18 21 9  1  5 10 9  1
+     4 18 9  1  4 5 9  1
+     18 20 21  1  5 7 10  1
+     18 17 20  1  5 1 7  1
+     19 22 20  1  6 11 7  1
+     20 22 23  1  7 11 12  1
+     19 13 22  1  6 13 11  1
+     19 8 13  1  6 8 13  1
+     21 24 14  1  10 15 14  1
+     9 21 14  1  9 10 14  1
+     20 23 24  1  7 12 15  1
+     21 20 24  1  10 7 15  1
+    tverts 16
+     0.374215 0.647976 0 
+     0.291011 0.713874 0 
+     0.276386 0.623628 0 
+     0.325369 0.586767 0 
+     0.423398 0.776741 0 
+     0.357814 0.76592 0 
+     0.191006 0.651963 0 
+     0.239987 0.733509 0 
+     0.215007 0.549983 0 
+     0.346014 0.900538 0 
+     0.296283 0.823663 0 
+     0.142409 0.710306 0 
+     0.197756 0.772858 0 
+     0.0816115 0.590966 0 
+     0.272984 0.92232 0 
+     0.247601 0.842543 0 
+endnode
+node trimesh Rock19 
+  parent damage 
+  position -0.494917 0.472767 0.0
+  orientation  0.0 0.0 1.0  -0.33855
+  wirecolor 0.0313726 0.0313726 0.533333  
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 32.0 
+    bitmap plc_rock01
+    verts 17
+     0.00352459 0.0033713 0.19348
+     -0.170975 -0.163539 0.108335
+     -0.0177511 -0.20757 0.108335
+     0.132173 -0.127788 0.108335
+     0.194146 -0.00542054 0.108335
+     0.138516 0.132491 0.108335
+     -0.0438175 -0.296479 0.0
+     -0.249043 -0.238212 0.0
+     0.181907 -0.176362 0.0
+     0.251709 -0.0182975 0.0
+     0.19265 0.184272 0.0
+     -0.208154 -0.00851001 0.108335
+     -0.121789 0.137721 0.108335
+     0.00321193 0.194196 0.108335
+     -0.298133 -0.0305999 0.0
+     -0.168105 0.189564 0.0
+     -0.00709446 0.252273 0.0
+    faces 24
+     0 1 2  1  0 1 2  2
+     0 2 3  1  0 2 3  2
+     0 3 4  1  0 3 4  2
+     0 4 5  1  0 4 5  2
+     2 1 6  1  2 1 6  2
+     1 7 6  1  1 7 6  2
+     3 2 8  1  3 2 8  2
+     2 6 8  1  2 6 8  2
+     4 3 9  1  4 3 9  2
+     3 8 9  1  3 8 9  2
+     4 9 10  1  4 9 10  2
+     4 10 5  1  4 10 5  2
+     0 11 1  1  0 11 1  2
+     0 12 11  1  0 12 11  2
+     0 13 12  1  0 13 12  2
+     0 5 13  1  0 5 13  2
+     11 14 1  1  11 14 1  2
+     1 14 7  1  1 14 7  2
+     12 15 11  1  12 15 11  2
+     11 15 14  1  11 15 14  2
+     13 16 12  1  13 16 12  2
+     12 16 15  1  12 16 15  2
+     13 10 16  1  13 10 16  2
+     13 5 10  1  13 5 10  2
+    tverts 17
+     0.283183 0.778326 0 
+     0.352121 0.898613 0 
+     0.235846 0.899364 0 
+     0.18061 0.822239 0 
+     0.165998 0.746202 0 
+     0.225901 0.678377 0 
+     0.210106 0.975731 0 
+     0.391492 0.967308 0 
+     0.118226 0.856429 0 
+     0.102115 0.739709 0 
+     0.189467 0.614806 0 
+     0.407069 0.790857 0 
+     0.368022 0.703471 0 
+     0.310913 0.654366 0 
+     0.483307 0.802598 0 
+     0.425913 0.661441 0 
+     0.335295 0.591937 0 
+endnode
+node trimesh Rock20 
+  parent damage 
+  position 0.62089 0.539527 0.0
+  orientation  0.0 0.0 1.0  -0.33855
+  wirecolor 0.0313726 0.0313726 0.533333  
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 32.0 
+    bitmap plc_rock01
+    verts 25
+     0.0 0.0 0.277623
+     0.179733 0.171917 0.254188
+     0.0332768 0.219643 0.254188
+     -0.132673 0.138705 0.210198
+     -0.195997 0.000340564 0.193484
+     -0.312406 -0.0332113 0.0990951
+     -0.228411 -0.218477 0.0990951
+     -0.120673 -0.115425 0.198949
+     -0.346784 -0.100438 0.0
+     -0.257888 -0.246672 0.0
+     0.0470604 0.310622 0.0990951
+     -0.187628 0.196159 0.0990951
+     0.0332768 0.219643 0.0
+     -0.169299 0.132791 0.0
+     0.254182 0.243127 0.0990951
+     0.179733 0.171917 0.0
+     0.220905 0.0234838 0.254188
+     0.132673 -0.138705 0.210198
+     -0.00836911 -0.195819 0.193484
+     -0.0470606 -0.310622 0.0990951
+     -0.115749 -0.341979 0.0
+     0.187628 -0.196159 0.0990951
+     0.312406 0.0332111 0.0990951
+     0.125136 -0.175032 0.0
+     0.220905 0.0234838 0.0
+    faces 40
+     0 1 2  1  0 1 2  2
+     0 2 3  1  0 2 3  2
+     0 3 4  1  0 3 4  2
+     3 5 4  1  3 5 4  2
+     4 6 7  1  4 6 7  2
+     6 8 9  1  6 8 9  2
+     2 10 11  1  2 10 11  2
+     2 11 3  1  2 11 3  2
+     3 11 5  1  3 11 5  2
+     10 12 13  1  10 12 13  2
+     10 13 11  1  10 13 11  2
+     11 13 8  1  11 13 8  2
+     11 8 5  1  11 8 5  2
+     1 14 10  1  1 14 10  2
+     1 10 2  1  1 10 2  2
+     14 15 12  1  14 15 12  2
+     14 12 10  1  14 12 10  2
+     0 4 7  1  0 4 7  2
+     4 5 6  1  4 5 6  2
+     5 8 6  1  5 8 6  2
+     0 16 1  1  0 2 1  2
+     0 17 16  1  0 3 2  2
+     0 18 17  1  0 4 3  2
+     17 18 19  1  3 4 5  2
+     18 7 6  1  4 7 6  2
+     6 9 20  1  6 9 8  2
+     16 21 22  1  2 11 10  2
+     16 17 21  1  2 3 11  2
+     17 19 21  1  3 5 11  2
+     22 23 24  1  10 13 12  2
+     22 21 23  1  10 11 13  2
+     21 20 23  1  11 8 13  2
+     21 19 20  1  11 5 8  2
+     1 22 14  1  1 10 14  2
+     1 16 22  1  1 2 10  2
+     14 24 15  1  14 12 15  2
+     14 22 24  1  14 10 12  2
+     0 7 18  1  0 7 4  2
+     18 6 19  1  4 6 5  2
+     19 6 20  1  5 6 8  2
+    tverts 16
+     0.07444 0.834733 0 
+     0.0442804 0.704755 0 
+     0.112315 0.738426 0 
+     0.147274 0.788757 0 
+     0.163595 0.844534 0 
+     0.230379 0.867162 0 
+     0.187893 0.942044 0 
+     0.129422 0.888182 0 
+     0.282417 0.898952 0 
+     0.235613 0.975777 0 
+     0.184397 0.677925 0 
+     0.206947 0.769501 0 
+     0.236962 0.669859 0 
+     0.253722 0.767136 0 
+     0.150366 0.607092 0 
+     0.232138 0.621698 0 
+endnode
+node trimesh Sphere05 
+  parent damage 
+  position 0.583231 -0.0392618 0.0
+  orientation  0.0 0.0 1.0  -0.33855
+  wirecolor 0.0313726 0.0313726 0.533333  
+  ambient 1.0 1.0 1.0  
+  diffuse 1.0 1.0 1.0  
+  specular 0.0 0.0 0.0  
+  shininess 32.0 
+    bitmap plc_rock01
+    verts 15
+     0.0 0.0 0.103644
+     -0.080823 -0.0773079 0.0664117
+     0.0100495 -0.111391 0.0664117
+     0.0933545 -0.061594 0.0664117
+     0.106362 0.0345842 0.0664117
+     0.0392764 0.10472 0.0664117
+     -0.0573848 0.0959992 0.0664117
+     -0.110834 0.0149893 0.0664117
+     -0.114436 -0.109459 0.0
+     0.0142288 -0.157716 0.0
+     0.132179 -0.0872099 0.0
+     0.150596 0.0489672 0.0
+     0.0556107 0.148271 0.0
+     -0.0812502 0.135924 0.0
+     -0.156928 0.0212231 0.0
+    faces 21
+     0 1 2  1  0 1 2  2
+     0 2 3  1  0 2 3  2
+     0 3 4  1  0 3 4  2
+     0 4 5  1  0 4 5  2
+     0 5 6  1  0 5 6  2
+     0 6 7  1  0 6 7  2
+     0 7 1  1  0 7 1  2
+     1 8 9  1  1 8 9  2
+     1 9 2  1  1 9 2  2
+     2 9 10  1  2 9 10  2
+     2 10 3  1  2 10 3  2
+     3 10 11  1  3 10 11  2
+     3 11 4  1  3 11 4  2
+     4 11 12  1  4 11 12  2
+     4 12 5  1  4 12 5  2
+     5 12 13  1  5 12 13  2
+     5 13 6  1  5 13 6  2
+     6 13 14  1  6 13 14  2
+     6 14 7  1  6 14 7  2
+     7 14 8  1  7 14 8  2
+     7 8 1  1  7 8 1  2
+    tverts 15
+     0.252207 0.768472 0 
+     0.260262 0.883669 0 
+     0.167165 0.846594 0 
+     0.138106 0.750691 0 
+     0.194967 0.668178 0 
+     0.294932 0.661188 0 
+     0.362723 0.734985 0 
+     0.347294 0.833998 0 
+     0.252606 0.987553 0 
+     0.0813103 0.905062 0 
+     0.0390043 0.719705 0 
+     0.157544 0.57106 0 
+     0.347668 0.57106 0 
+     0.466208 0.719705 0 
+     0.423901 0.905062 0 
+endnode
+node dummy Rock01_ground 
+  parent plc_rock01 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.52549 0.0235294 0.0235294  
+endnode
+node dummy Rock01_hand 
+  parent plc_rock01 
+  position 0.0 0.0 0.5
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.878431 0.337255 0.337255  
+endnode
+node dummy Rock01_head 
+  parent plc_rock01 
+  position 0.0 0.0 0.5
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.768628 0.345098 0.882353  
+endnode
+node dummy Rock01_head_hit 
+  parent plc_rock01 
+  position 0.0 0.0 0.5
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.101961 0.694118 0.580392  
+endnode
+node dummy Rock01_impact 
+  parent plc_rock01 
+  position 0.0 0.0 0.5
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+endmodelgeom plc_rock01 
+
+#MAXANIM ASCII
+newanim damage plc_rock01 
+ length 0.133333
+ transtime 0.0
+animroot plc_rock01 
+node dummy plc_rock01 
+  parent NULL 
+endnode
+node emitter ChunkyRock 
+  parent plc_rock01 
+endnode
+node emitter fire! 
+  parent plc_rock01 
+endnode
+node trimesh damage 
+  parent plc_rock01 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.0333333  0.000867307 0.0348657 0.0244581
+      0.133333  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  0.0
+      0.0333333   0.371336 -0.928463 -0.00810258  0.0469942
+      0.1   -0.599949 0.799969 -0.0104721  0.0436326
+      0.133333   0.0 0.0 0.0  3.57628e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy Rock17 
+  parent damage 
+endnode
+node dummy Rock18 
+  parent damage 
+endnode
+node dummy Rock19 
+  parent damage 
+endnode
+node dummy Rock20 
+  parent damage 
+endnode
+node dummy Sphere05 
+  parent damage 
+endnode
+node dummy Rock01_ground 
+  parent plc_rock01 
+endnode
+node dummy Rock01_hand 
+  parent plc_rock01 
+endnode
+node dummy Rock01_head 
+  parent plc_rock01 
+endnode
+node dummy Rock01_head_hit 
+  parent plc_rock01 
+endnode
+node dummy Rock01_impact 
+  parent plc_rock01 
+endnode
+node dummy PLC_Rock01_pwk 
+  parent plc_rock01 
+endnode
+node dummy PLC_Rock01_wg 
+  parent PLC_Rock01_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Rock01_pwk 
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_Rock01_pwk 
+endnode
+doneanim damage plc_rock01 
+
+#MAXANIM ASCII
+newanim die plc_rock01 
+ length 0.166667
+ transtime 0.0
+animroot plc_rock01 
+node dummy plc_rock01 
+  parent NULL 
+endnode
+node emitter ChunkyRock 
+  parent plc_rock01 
+endnode
+node emitter fire! 
+  parent plc_rock01 
+endnode
+node trimesh damage 
+  parent plc_rock01 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+      0.166667  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  5.67028e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy Rock17 
+  parent damage 
+endnode
+node dummy Rock18 
+  parent damage 
+endnode
+node dummy Rock19 
+  parent damage 
+endnode
+node dummy Rock20 
+  parent damage 
+endnode
+node dummy Sphere05 
+  parent damage 
+endnode
+node dummy Rock01_ground 
+  parent plc_rock01 
+endnode
+node dummy Rock01_hand 
+  parent plc_rock01 
+endnode
+node dummy Rock01_head 
+  parent plc_rock01 
+endnode
+node dummy Rock01_head_hit 
+  parent plc_rock01 
+endnode
+node dummy Rock01_impact 
+  parent plc_rock01 
+endnode
+event 0.0  detonate 
+event 0.0  detonate 
+node dummy PLC_Rock01_pwk 
+  parent plc_rock01 
+endnode
+node dummy PLC_Rock01_wg 
+  parent PLC_Rock01_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Rock01_pwk 
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_Rock01_pwk 
+endnode
+doneanim die plc_rock01 
+
+#MAXANIM ASCII
+newanim dead plc_rock01 
+ length 0.0333333
+ transtime 0.0
+animroot plc_rock01 
+node dummy plc_rock01 
+  parent NULL 
+endnode
+node emitter ChunkyRock 
+  parent plc_rock01 
+endnode
+node emitter fire! 
+  parent plc_rock01 
+endnode
+node trimesh damage 
+  parent plc_rock01 
+    positionkey 
+      0.0  0.000867307 0.0348657 -6.95145
+      0.0333333  0.000867307 0.0348657 -6.95145
+    endlist 
+    orientationkey 
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy Rock17 
+  parent damage 
+endnode
+node dummy Rock18 
+  parent damage 
+endnode
+node dummy Rock19 
+  parent damage 
+endnode
+node dummy Rock20 
+  parent damage 
+endnode
+node dummy Sphere05 
+  parent damage 
+endnode
+node dummy Rock01_ground 
+  parent plc_rock01 
+endnode
+node dummy Rock01_hand 
+  parent plc_rock01 
+endnode
+node dummy Rock01_head 
+  parent plc_rock01 
+endnode
+node dummy Rock01_head_hit 
+  parent plc_rock01 
+endnode
+node dummy Rock01_impact 
+  parent plc_rock01 
+endnode
+node dummy PLC_Rock01_pwk 
+  parent plc_rock01 
+endnode
+node dummy PLC_Rock01_wg 
+  parent PLC_Rock01_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Rock01_pwk 
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_Rock01_pwk 
+endnode
+doneanim dead plc_rock01 
+
+#MAXANIM ASCII
+newanim default plc_rock01 
+ length 0.0
+ transtime 0.25
+animroot plc_rock01 
+node dummy plc_rock01 
+  parent NULL 
+endnode
+node emitter ChunkyRock 
+  parent plc_rock01 
+endnode
+node emitter fire! 
+  parent plc_rock01 
+endnode
+node trimesh damage 
+  parent plc_rock01 
+    positionkey 
+      0.0  0.000867307 0.0348657 0.0
+    endlist 
+    orientationkey 
+      0.0   0.0 0.0 0.0  3.03925e-007
+    endlist 
+    centerkey
+    endlist
+    gizmokey
+    endlist
+endnode
+node dummy Rock17 
+  parent damage 
+endnode
+node dummy Rock18 
+  parent damage 
+endnode
+node dummy Rock19 
+  parent damage 
+endnode
+node dummy Rock20 
+  parent damage 
+endnode
+node dummy Sphere05 
+  parent damage 
+endnode
+node dummy Rock01_ground 
+  parent plc_rock01 
+endnode
+node dummy Rock01_hand 
+  parent plc_rock01 
+endnode
+node dummy Rock01_head 
+  parent plc_rock01 
+endnode
+node dummy Rock01_head_hit 
+  parent plc_rock01 
+endnode
+node dummy Rock01_impact 
+  parent plc_rock01 
+endnode
+node dummy PLC_Rock01_pwk 
+  parent plc_rock01 
+endnode
+node dummy PLC_Rock01_wg 
+  parent PLC_Rock01_pwk 
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Rock01_pwk 
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_Rock01_pwk 
+endnode
+doneanim default plc_rock01 
+
+donemodel plc_rock01 
+

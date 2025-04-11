@@ -1,0 +1,390 @@
+# Exported from NWmax 0.8 b61 at 2/19/2008 1:26:55 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: tdt01_B04_01
+#local file: Unknown
+filedependancy Unknown
+newmodel tdt01_B04_01
+setsupermodel tdt01_B04_01 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom tdt01_B04_01
+node dummy tdt01_B04_01
+  parent NULL
+endnode
+node light tdt01_B04_01ml1
+  parent tdt01_B04_01
+  position 1.52588e-007 1.52588e-007 5.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  radius 14.0
+  multiplier 1.0
+  color 0.639216 0.639216 0.639216 
+  ambientonly 0
+  nDynamicType 0
+  affectDynamic 1
+  shadow 0
+  lightpriority 5
+  fadingLight 1
+endnode
+node light tdt01_B04_01ml2
+  parent tdt01_B04_01
+  position -3.6257 2.31522 4.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  radius 5.0
+  multiplier 1.0
+  color 0.639216 0.639216 0.639216 
+  ambientonly 0
+  nDynamicType 0
+  affectDynamic 1
+  shadow 0
+  lightpriority 5
+  fadingLight 1
+endnode
+#Tile trimesh node
+node trimesh tdt01_B04_01_mesh_1
+  parent tdt01_B04_01
+  position -5.0 5.0 1.5
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center undefined
+  bitmap tdt01_rock01
+  verts 24
+    0.0 -1.6 -1.25
+    0.56 -1.41 -1.27
+    0.56 -1.41 0.0
+    0.0 -1.2 0.0
+    1.14 -1.29 -1.27
+    0.98 -1.14 0.0
+    1.46 -0.83 -1.27
+    1.3 -0.68 0.0
+    1.44 -0.33 -1.27
+    1.44 -0.33 0.0
+    1.6 0.0 -1.25
+    1.2 0.0 0.0
+    0.56 -1.41 1.5
+    0.0 -1.6 1.5
+    1.14 -1.29 1.5
+    1.46 -0.83 1.5
+    1.44 -0.33 1.5
+    1.6 0.0 1.5
+    0.0 -1.77 -2.5
+    0.69 -1.85 -2.51
+    1.39 -1.63 -2.51
+    1.84 -1.21 -2.51
+    1.99 -0.55 -2.51
+    1.77 0.0 -2.5
+  faces 30
+    0 1 2  1  0 1 2  1
+    0 2 3  1  0 2 3  1
+    1 4 5  1  1 4 5  1
+    1 5 2  1  1 5 2  1
+    4 6 7  1  6 7 8  1
+    4 7 5  1  6 8 9  1
+    6 8 9  1  7 10 11  1
+    6 9 7  1  7 11 8  1
+    8 10 11  1  10 12 13  1
+    8 11 9  1  10 13 11  1
+    3 2 12  1  3 2 14  1
+    3 12 13  1  3 14 15  1
+    2 5 14  1  2 5 16  1
+    2 14 12  1  2 16 14  1
+    5 7 15  1  9 8 17  1
+    5 15 14  1  9 17 18  1
+    7 9 16  1  8 11 19  1
+    7 16 15  1  8 19 17  1
+    9 11 17  1  11 13 20  1
+    9 17 16  1  11 20 19  1
+    18 19 1  1  21 22 1  1
+    1 0 18  1  1 0 21  1
+    19 20 4  1  22 23 4  1
+    4 1 19  1  4 1 22  1
+    20 21 6  1  23 24 25  1
+    6 4 20  1  7 6 26  1
+    21 22 8  1  27 28 10  1
+    8 6 21  1  10 7 27  1
+    22 23 10  1  28 29 12  1
+    10 8 22  1  12 10 28  1
+  tverts 30
+    0.000249863 0.314142 0
+    0.140948 0.309165 0
+    0.140948 0.626212 0
+    0.000249892 0.626212 0
+    0.285159 0.309165 0
+    0.246274 0.626212 0
+    0.157633 0.309165 0
+    0.273202 0.309165 0
+    0.312598 0.626212 0
+    0.19703 0.626212 0
+    0.399105 0.309165 0
+    0.399105 0.626212 0
+    0.482449 0.314142 0
+    0.482449 0.626212 0
+    0.140948 0.9995 0
+    0.000249878 0.9995 0
+    0.285159 0.9995 0
+    0.273202 0.9995 0
+    0.157633 0.9995 0
+    0.399105 0.9995 0
+    0.482449 0.9995 0
+    0.000249818 0.00406325 0
+    0.172323 0.000499606 0
+    0.349423 0.000499576 0
+    0.46213 0.000499606 0
+    0.366326 0.309165 0
+    0.0728985 0.000499576 0
+    0.179861 0.000499606 0
+    0.344207 0.000499606 0
+    0.48245 0.00406322 0
+endnode
+#Tile trimesh node
+node trimesh tdt01_B04_01_mesh_2
+  parent tdt01_B04_01
+  position -5.0 5.0 -2.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center undefined
+  bitmap tdt01_rockwat
+  verts 10
+    0.0 -2.33 -4.0
+    1.36 -2.25 -4.0
+    0.69 -1.85 0.99
+    0.0 -1.77 1.0
+    1.39 -1.63 0.99
+    2.3 -1.24 -4.0
+    1.84 -1.21 0.99
+    1.99 -0.55 0.99
+    2.33 0.0 -4.0
+    1.77 0.0 1.0
+  faces 8
+    0 1 2  1  0 1 2  1
+    2 3 0  1  2 3 0  1
+    4 2 1  1  4 2 1  1
+    4 5 6  1  4 5 6  1
+    5 4 1  1  5 4 1  1
+    7 6 5  1  7 8 9  1
+    7 8 9  1  7 10 11  1
+    8 7 5  1  10 7 9  1
+  tverts 12
+    0.000249803 0.002 0
+    0.197047 0.002 0
+    0.148435 0.997 0
+    0.000249878 0.997 0
+    0.281857 0.997 0
+    0.398049 0.002 0
+    0.402546 0.997 0
+    0.851418 0.997 0
+    0.684782 0.997 0
+    0.679723 0.002 0
+    0.986607 0.002 0
+    0.986606 0.997 0
+endnode
+#Tile trimesh node
+node trimesh tdt01_B04_01_mesh_3
+  parent tdt01_B04_01
+  position 0.96 0.97 -6.12
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.0 0.0 0.0 
+  Diffuse 0.0 0.0 0.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center undefined
+  bitmap tdt01_black
+  verts 7
+    -3.66 2.79 0.12
+    4.04 4.03 0.12
+    -3.63 4.03 0.12
+    4.04 -5.97 0.12
+    -4.6 1.78 0.12
+    -5.96 -5.97 0.12
+    -5.96 1.7 0.12
+  faces 5
+    0 1 2  1  0 1 2  1
+    1 0 3  1  1 3 4  1
+    0 4 3  1  3 5 4  1
+    4 5 3  1  6 7 8  1
+    5 4 6  1  7 6 9  1
+  tverts 10
+    0.26686 0.998607 0
+    0.000499547 0.000499666 0
+    0.000500739 0.9995 0
+    0.474231 0.997912 0
+    0.854478 0.238546 0
+    0.649009 0.997326 0
+    0.944179 0.996337 0
+    0.9995 0.756955 0
+    0.810039 0.488352 0
+    0.947667 0.86494 0
+endnode
+#Tile trimesh node
+node trimesh tdt01_B04_01_mesh_4
+  parent tdt01_B04_01
+  position -4.24 4.24 3.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 0.0 0.0 0.0 
+  Diffuse 0.0 0.0 0.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center undefined
+  bitmap tdt01_black
+  verts 7
+    -0.2 -0.65 0.0
+    0.38 -0.53 0.0
+    0.7 -0.07 0.0
+    0.84 0.76 0.0
+    -0.76 0.76 0.0
+    -0.76 -0.84 0.0
+    0.68 0.43 0.0
+  faces 5
+    0 1 2  1  0 1 2  1
+    3 4 5  1  3 4 5  1
+    2 6 0  1  2 6 0  1
+    6 3 5  1  6 3 5  1
+    5 0 6  1  5 0 6  1
+  tverts 7
+    6.0 -4.56144 0
+    6.0 -6.0 0
+    7.1583 -6.0 0
+    9.0 -6.0 0
+    9.0 -3.0 0
+    6.0 -3.0 0
+    8.16737 -6.0 0
+endnode
+#Tile trimesh node
+node trimesh tdt01_B04_01_water
+  parent tdt01_B04_01
+  position 0.0 0.0 -1.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center undefined
+  bitmap tdt01_water01
+  verts 4
+    -5.0 5.0 0.0
+    -5.0 -5.0 0.0
+    5.0 5.0 0.0
+    5.0 -5.0 0.0
+  faces 2
+    0 1 2  1  0 1 2  1
+    3 2 1  1  3 2 1  1
+  tverts 4
+    6.0 -6.0 0
+    6.0 -9.0 0
+    9.0 -6.0 0
+    9.0 -9.0 0
+endnode
+node aabb tdt01_B04_01_wm
+  parent tdt01_B04_01
+  position 2.47836e-006 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+  bitmap NULL
+  verts 10
+    -5.0 2.67 -6.0
+    -3.05 2.9 -6.0
+    -3.52 3.58 3.0
+    -5.0 3.48 3.0
+    -2.67 5.0 -6.0
+    -3.48 5.0 3.0
+    5.0 5.0 -6.0
+    5.0 -5.0 -6.0
+    -5.0 -5.0 -6.0
+    -5.0 5.0 3.0
+  faces 10
+    0 1 2  1  0 0 0  2
+    2 3 0  1  0 0 0  2
+    2 4 5  1  0 0 0  2
+    4 2 1  1  0 0 0  2
+    1 6 4  1  0 0 0  17
+    6 1 7  1  0 0 0  17
+    1 8 7  1  0 0 0  17
+    8 1 0  1  0 0 0  17
+    5 9 3  1  0 0 0  2
+    2 5 3  1  0 0 0  2
+    aabb         -5.0 -5.0 -6.0 5.0 5.0 3.0 -1
+        -5.0 -5.0 -6.0 -2.67 5.0 3.0 -1
+        -5.0 -5.0 -6.0 -3.05 3.58 3.0 -1
+        -5.0 -5.0 -6.0 -3.05 2.9 -6.0 7
+        -5.0 2.67 -6.0 -3.05 3.58 3.0 -1
+        -5.0 2.67 -6.0 -3.05 3.58 3.0 0
+        -5.0 2.67 -6.0 -3.52 3.58 3.0 1
+        -5.0 2.9 -6.0 -2.67 5.0 3.0 -1
+        -3.52 2.9 -6.0 -2.67 5.0 3.0 -1
+        -3.52 2.9 -6.0 -2.67 5.0 3.0 3
+        -3.52 3.58 -6.0 -2.67 5.0 3.0 2
+        -5.0 3.48 3.0 -3.48 5.0 3.0 -1
+        -5.0 3.48 3.0 -3.48 5.0 3.0 8
+        -5.0 3.48 3.0 -3.48 5.0 3.0 9
+        -5.0 -5.0 -6.0 5.0 5.0 -6.0 -1
+        -5.0 -5.0 -6.0 5.0 5.0 -6.0 -1
+        -5.0 -5.0 -6.0 5.0 2.9 -6.0 6
+        -3.05 2.9 -6.0 5.0 5.0 -6.0 4
+        -3.05 -5.0 -6.0 5.0 5.0 -6.0 5
+endnode
+endmodelgeom tdt01_B04_01
+donemodel tdt01_B04_01

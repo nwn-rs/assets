@@ -1,0 +1,382 @@
+# Exported from NWmax 0.8 b47 at 27/01/2006 4:10:34 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: vim_lanshatc
+filedependancy Unknown
+newmodel vim_lanshatc
+setsupermodel vim_lanshatc NULL
+classification Effect
+#NWmax GEOM  ASCII
+beginmodelgeom vim_lanshatc
+node dummy vim_lanshatc
+  parent NULL
+endnode
+node emitter AuroraEmitter01
+  parent vim_lanshatc
+  position -0.608819 0.0159259 0.0
+  orientation 0.0 0.0 -1.0 -0.261799
+  wirecolor 0.890196 0.592157 0.592157 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 20.0
+  ySize 90.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 0.5
+  sizeEnd 0.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 4
+  mass 0.1
+  spread 6.28319
+  particleRot 3.0
+  velocity 1.6
+  randvel 0.5
+  bounce_co 1
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture NULL
+  twosidedtex 0
+  xgrid 0
+  ygrid 0
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  chunkName fx_lanshard0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter AuroraEmitter02
+  parent vim_lanshatc
+  position -0.608819 0.0159259 0.0
+  orientation 0.0 0.0 -1.0 -0.261799
+  wirecolor 0.87451 0.337255 0.556863 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 20.0
+  ySize 90.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 0.5
+  sizeEnd 0.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 4
+  mass 0.2
+  spread 6.28319
+  particleRot 5.0
+  velocity 2.1
+  randvel 0.5
+  bounce_co 1
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture NULL
+  twosidedtex 0
+  xgrid 0
+  ygrid 0
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  chunkName fx_lanshard1
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter AuroraEmitter03
+  parent vim_lanshatc
+  position -0.608819 0.0159259 0.0
+  orientation 9.10434e-007 1.19273e-007 -1.0 -0.261799
+  wirecolor 0.337255 0.87451 0.556863 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 20.0
+  ySize 90.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 0.5
+  sizeEnd 0.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 10
+  lifeExp 4
+  mass 0.2
+  spread 6.28319
+  particleRot -3.0
+  velocity 1.6
+  randvel 0.5
+  bounce_co 1
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture NULL
+  twosidedtex 0
+  xgrid 0
+  ygrid 0
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  chunkName fx_lanshard2
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter AuroraEmitter04
+  parent vim_lanshatc
+  position -0.608819 0.0159259 0.0
+  orientation 0.0 0.0 -1.0 -0.261799
+  wirecolor 0.6 0.894118 0.6 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 40.0
+  ySize 100.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 0.25 0.22 0.17 
+  colorEnd 0.65098 0.584314 0.513726 
+  alphaStart 0.2
+  alphaEnd 0.0
+  sizeStart 0.75
+  sizeEnd 1.25
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 20
+  lifeExp 2.0
+  mass 0.0
+  spread 6.28319
+  particleRot 0.0
+  velocity 0.2
+  randvel 0.1
+  bounce_co 1.0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 0
+  xgrid 4
+  ygrid 4
+  fps 12
+  frameStart 0
+  frameEnd 15
+  random 0
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+node emitter AuroraEmitter05
+  parent vim_lanshatc
+  position -0.608819 0.0159259 0.0
+  orientation 9.10434e-007 1.19273e-007 -1.0 -0.261799
+  wirecolor 0.337255 0.87451 0.556863 
+  update_sel 3
+  update Explosion
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 20.0
+  ySize 90.0
+  inherit 0
+  inherit_local 0
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0.0
+  combinetime 0.0
+  deadspace 0.0
+  opacity 0.5
+  colorStart 1.0 1.0 1.0 
+  colorEnd 1.0 1.0 1.0 
+  alphaStart 1.0
+  alphaEnd 0.0
+  sizeStart 0.5
+  sizeEnd 0.0
+  sizeStart_y 0.0
+  sizeEnd_y 0.0
+  birthrate 30
+  lifeExp 4
+  mass 0.1
+  spread 6.28319
+  particleRot 5.0
+  velocity 1.45
+  randvel 0.25
+  bounce_co 1
+  blurlength 10.0
+  loop 0
+  bounce 1
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture NULL
+  twosidedtex 0
+  xgrid 0
+  ygrid 0
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  chunkName fx_lanshard3
+  lightningDelay 0.0
+  lightningRadius 0.0
+  lightningSubDiv 0
+  lightningScale 0.0
+  blastRadius 0.0
+  blastLength 0.0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0.0
+  p2p_bezier3 0.0
+  grav 0.0
+  Drag 0.0
+endnode
+endmodelgeom vim_lanshatc
+
+#NWmax ANIM ASCII
+newanim impact vim_lanshatc
+  length 0.0333333
+  transtime 0.0
+  animroot vim_lanshatc
+  event 0.0 detonate
+    node dummy vim_lanshatc
+        parent NULL
+    endnode
+    node emitter AuroraEmitter01
+        parent vim_lanshatc
+    endnode
+    node emitter AuroraEmitter02
+        parent vim_lanshatc
+    endnode
+    node emitter AuroraEmitter03
+        parent vim_lanshatc
+    endnode
+    node emitter AuroraEmitter04
+        parent vim_lanshatc
+    endnode
+    node emitter AuroraEmitter05
+        parent vim_lanshatc
+    endnode
+doneanim default vim_lanshatc
+
+donemodel vim_lanshatc

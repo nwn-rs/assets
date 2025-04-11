@@ -1,0 +1,203 @@
+# Exported from NWmax 0.8 b47 at 11/05/2006 5:54:58 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: vim_nmsmoke
+filedependancy Unknown
+newmodel vim_nmsmoke
+setsupermodel vim_nmsmoke NULL
+classification Effect
+#NWmax GEOM  ASCII
+beginmodelgeom vim_nmsmoke
+node dummy vim_nmsmoke
+  parent NULL
+endnode
+node dummy Dummy01
+  parent vim_nmsmoke
+  position 0 0 0
+  orientation 1 0 0 0
+  wirecolor 0.890196 0.596078 0.596078 
+endnode
+node emitter AuroraEmitter01
+  parent Dummy01
+  position 0 0.5 0
+  orientation 1 0 0 -6.28319
+  wirecolor 0.603922 0.603922 0.898039 
+  update_sel 1
+  update Fountain
+  render_sel 1
+  render Normal
+  blend_sel 1
+  Blend Normal
+  spawnType 0
+  xSize 0
+  ySize 0
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 0.67451 0.596078 0.545098 
+  colorEnd 0.631373 0.627451 0.494118
+  alphaStart 0.6
+  alphaEnd 0.2
+  sizeStart 0
+  sizeEnd 1
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 12
+  lifeExp 1
+  mass -0.01
+  spread 3.14159
+  particleRot 0.15
+  velocity 0.015
+  randvel 0.05
+  bounce_co 0
+  blurlength 10.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_smoke01
+  twosidedtex 0
+  xgrid 4
+  ygrid 4
+  fps 16
+  frameStart 0
+  frameEnd 15
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Bezier
+  p2p_sel 1
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 0
+  Drag 0
+endnode
+node emitter AuroraEmitter02
+  parent Dummy01
+  position 0 0.5 0
+  orientation 1 0 0 -6.28319
+  wirecolor 0.239216 0.52549 0.0235294 
+  update_sel 1
+  update Fountain
+  render_sel 2
+  render Motion_Blur
+  blend_sel 3
+  Blend Lighten
+  spawnType 0
+  xSize 0
+  ySize 0
+  inherit 0
+  inherit_local 1
+  inheritvel 0
+  inherit_part 0
+  renderorder 0
+  threshold 0
+  combinetime 0
+  deadspace 0
+  opacity 0.5
+  colorStart 1 0.847059 0
+  colorEnd 1 0.235294 0
+  alphaStart 1
+  alphaEnd 0
+  sizeStart 0.05
+  sizeEnd 0.3
+  sizeStart_y 0
+  sizeEnd_y 0
+  birthrate 32
+  lifeExp 1
+  mass -0.02
+  spread 6.28319
+  particleRot 0.5
+  velocity 0.2
+  randvel 0.5
+  bounce_co 0
+  blurlength 20.0
+  loop 0
+  bounce 0
+  m_isTinted 0
+  Splat 0
+  affectedByWind false
+  texture fxpa_flare
+  twosidedtex 0
+  xgrid 1
+  ygrid 1
+  fps 0
+  frameStart 0
+  frameEnd 0
+  random 0
+  lightningDelay 0
+  lightningRadius 0
+  lightningSubDiv 0
+  lightningScale 0
+  blastRadius 0
+  blastLength 0
+  p2p 0
+  p2p_type Gravity
+  p2p_sel 2
+  p2p_bezier2 0
+  p2p_bezier3 0
+  grav 1
+  Drag 1
+endnode
+endmodelgeom vim_nmsmoke
+
+#NWmax ANIM ASCII
+newanim impact vim_nmsmoke
+  length 1
+  transtime 0.25
+  animroot vim_nmsmoke
+    node dummy vim_nmsmoke
+        parent NULL
+    endnode
+    node dummy Dummy01
+        parent vim_nmsmoke
+        orientationkey
+            0 0 0 0 0
+            0.166667 0 0 -1 -2.0944
+            0.333333 0 0 -1 -4.18879
+            0.5 0 0 1 -6.28319
+            0.666667 0 0 1 -4.18879
+            0.833333 0 0 1 -2.09439
+            1 0 0 1 -5.49528e-007
+        endlist
+    endnode
+    node emitter AuroraEmitter01
+        parent Dummy01
+        positionkey
+            0 0 0.3 0
+            1 0 0 0
+        endlist
+        birthratekey
+            0 16 
+            0.9 16 
+            1 0 
+        endlist
+    endnode
+    node emitter AuroraEmitter02
+        parent Dummy01
+        positionkey
+            0 0 0.3 0
+            1 0 0 0
+        endlist
+        birthratekey
+            0 32 
+            0.9 32
+            1 0 
+        endlist
+    endnode
+doneanim impact vim_nmsmoke
+
+donemodel vim_nmsmoke

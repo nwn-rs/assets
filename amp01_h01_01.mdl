@@ -1,0 +1,156 @@
+# Exported from NWmax 0.8 b61 at 10/6/2007 9:19:49 AM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: amp01_h01_01
+#local file: D:\NWN\override\amp_export.max
+filedependancy amp_export.max
+newmodel amp01_h01_01
+setsupermodel amp01_h01_01 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom amp01_h01_01
+node dummy amp01_h01_01
+  parent NULL
+endnode
+#Tile trimesh node
+node trimesh road_h01
+  parent amp01_h01_01
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0313726 0.0313726 0.529412 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 0
+  center 0.0 0.0 0.0 
+  bitmap tcn01_cobb03
+  verts 4
+    -5.0 -5.0 0.0
+    5.0 -5.0 0.0
+    -5.0 5.0 0.0
+    5.0 5.0 0.0
+  faces 2
+    1 3 2  0  0 1 2  1
+    2 0 1  0  3 4 5  1
+  tverts 6
+    -5.5 5.5 0
+    -5.5 7.5 0
+    -7.5 7.5 0
+    -7.5 7.5 0
+    -7.5 5.5 0
+    -5.5 5.5 0
+endnode
+node aabb Walkmesh_H01
+  parent amp01_h01_01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.6 0.721569 
+  multimaterial 20
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+  ambient 0.588 0.588 0.588 
+  diffuse 0.5 0.5 0.5 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap Stone
+  verts 10
+    -5.0 5.0 0.0
+    -5.0 -5.0 0.0
+    5.0 5.0 0.0
+    5.0 -5.0 0.66
+    5.0 -3.76 0.22
+    5.0 -2.68 0.22
+    5.0 -2.34 0.0
+    3.13 -5.0 0.0
+    3.37 -5.0 0.22
+    4.13 -5.0 0.22
+  faces 8
+    9 4 8  0  1 0 2  4
+    8 4 5  0  7 6 8  4
+    6 2 7  0  13 12 14  4
+    6 7 5  0  16 15 17  4
+    8 5 7  0  19 18 20  4
+    2 0 7  0  25 24 26  4
+    1 7 0  0  28 27 29  4
+    4 9 3  0  31 30 32  4
+  tverts 33
+    0.15204 0.351041 0
+    0.163949 0.325155 0
+    0.115085 0.451158 0
+    0.115085 0.451158 0
+    0.111637 0.460078 0
+    0.109379 0.457479 0
+    0.15204 0.351041 0
+    0.115085 0.451158 0
+    0.109379 0.457479 0
+    0.158212 0.307019 0
+    0.160363 0.306156 0
+    0.102197 0.454341 0
+    0.102197 0.454341 0
+    0.0961772 0.36513 0
+    0.158212 0.307019 0
+    0.105198 0.45276 0
+    0.104006 0.453388 0
+    0.149238 0.279266 0
+    0.149238 0.279266 0
+    0.162253 0.30483 0
+    0.107468 0.443999 0
+    0.105198 0.45276 0
+    0.149238 0.279266 0
+    0.107468 0.443999 0
+    0.0021094 0.453248 0
+    0.0 0.0158457 0
+    0.123939 0.229936 0
+    0.123939 0.229936 0
+    0.102197 0.454341 0
+    0.0021094 0.453248 0
+    0.146392 0.492333 0
+    0.139362 0.485813 0
+    0.13817 0.506279 0
+    aabb         -5.0 -5.0 0.0 5.0 5.0 0.66 -1
+        -5.0 -5.0 0.0 5.0 5.0 0.0 -1
+        -5.0 -5.0 0.0 3.13 5.0 0.0 6
+        -5.0 -5.0 0.0 5.0 5.0 0.0 5
+        3.13 -5.0 0.0 5.0 5.0 0.66 -1
+        3.13 -5.0 0.0 5.0 -2.68 0.66 -1
+        3.37 -5.0 0.22 5.0 -3.76 0.66 -1
+        3.37 -5.0 0.22 5.0 -3.76 0.22 0
+        4.13 -5.0 0.22 5.0 -3.76 0.66 7
+        3.13 -5.0 0.0 5.0 -2.68 0.22 -1
+        3.13 -5.0 0.0 5.0 -2.68 0.22 4
+        3.37 -5.0 0.22 5.0 -2.68 0.22 1
+        3.13 -5.0 0.0 5.0 5.0 0.22 -1
+        3.13 -5.0 0.0 5.0 -2.34 0.22 3
+        3.13 -5.0 0.0 5.0 5.0 0.0 2
+endnode
+endmodelgeom amp01_h01_01
+donemodel amp01_h01_01

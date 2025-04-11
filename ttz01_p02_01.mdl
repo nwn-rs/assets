@@ -1,0 +1,553 @@
+# Exported from NWmax 0.8 b61 at 2/3/2008 10:50:50 PM
+# mdl file
+#
+#NWmax MODEL ASCII
+# model: TTZ01_P02_01
+#local file: Unknown
+filedependancy Unknown
+newmodel TTZ01_P02_01
+setsupermodel TTZ01_P02_01 NULL
+classification Tile
+#NWmax GEOM  ASCII
+beginmodelgeom TTZ01_P02_01
+node dummy TTZ01_P02_01
+  parent NULL
+endnode
+#Tile trimesh node
+node trimesh A15_167
+  parent TTZ01_P02_01
+  position 0.0 0.0 1.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0156863 0.521569 0.0156863 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 1
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 0.0 0.0 0.0 
+  bitmap ttz01_grass02
+  verts 25
+    5.0 -5.0 0.0
+    5.0 -2.5 0.0
+    5.0 0.0 0.0
+    5.0 2.5 0.0
+    5.0 5.0 0.0
+    2.5 -5.0 0.0
+    2.5 -2.5 0.0
+    2.5 0.0 0.0
+    2.5 2.5 0.0
+    2.5 5.0 0.0
+    0.0 -5.0 0.0
+    0.0 -2.5 0.0
+    0.0 0.0 0.0
+    0.0 2.5 0.0
+    0.0 5.0 0.0
+    -2.5 -5.0 0.0
+    -2.5 -2.5 0.0
+    -2.5 0.0 0.0
+    -2.5 2.5 0.0
+    -2.5 5.0 0.0
+    -5.0 -5.0 0.0
+    -5.0 -2.5 0.0
+    -5.0 0.0 0.0
+    -5.0 2.5 0.0
+    -5.0 5.0 0.0
+  faces 32
+    5 0 6  1  5 0 6  1
+    1 6 0  1  1 6 0  1
+    6 1 7  1  6 1 7  1
+    2 7 1  1  2 7 1  1
+    7 2 8  1  7 2 8  1
+    3 8 2  1  3 8 2  1
+    8 3 9  1  8 3 9  1
+    4 9 3  1  4 9 3  1
+    10 5 11  1  10 5 11  1
+    6 11 5  1  6 11 5  1
+    11 6 12  1  11 6 12  1
+    7 12 6  1  7 12 6  1
+    12 7 13  1  12 7 13  1
+    8 13 7  1  8 13 7  1
+    13 8 14  1  13 8 14  1
+    9 14 8  1  9 14 8  1
+    15 10 16  1  15 10 16  1
+    11 16 10  1  11 16 10  1
+    16 11 17  1  16 11 17  1
+    12 17 11  1  12 17 11  1
+    17 12 18  1  17 12 18  1
+    13 18 12  1  13 18 12  1
+    18 13 19  1  18 13 19  1
+    14 19 13  1  14 19 13  1
+    20 15 21  1  20 15 21  1
+    16 21 15  1  16 21 15  1
+    21 16 22  1  21 16 22  1
+    17 22 16  1  17 22 16  1
+    22 17 23  1  22 17 23  1
+    18 23 17  1  18 23 17  1
+    23 18 24  1  23 18 24  1
+    19 24 18  1  19 24 18  1
+  tverts 25
+    13.5 16.5 0
+    13.5 17.0 0
+    13.5 17.5 0
+    13.5 18.0 0
+    13.5 18.5 0
+    13.0 16.5 0
+    13.0 17.0 0
+    13.0 17.5 0
+    13.0 18.0 0
+    13.0 18.5 0
+    12.5 16.5 0
+    12.5 17.0 0
+    12.5 17.5 0
+    12.5 18.0 0
+    12.5 18.5 0
+    12.0 16.5 0
+    12.0 17.0 0
+    12.0 17.5 0
+    12.0 18.0 0
+    12.0 18.5 0
+    11.5 16.5 0
+    11.5 17.0 0
+    11.5 17.5 0
+    11.5 18.0 0
+    11.5 18.5 0
+endnode
+#Tile trimesh node
+node trimesh TTZRectangle147
+  parent TTZ01_P02_01
+  position 1.8 -0.53 1.01
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0 0.0 0.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 1
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 0.5 -1.0 0.0 
+  bitmap TTR01_splotch01
+  verts 4
+    -1.01 -1.46 0.0
+    1.45 -1.02 0.0
+    1.02 1.44 0.0
+    -1.44 1.01 0.0
+  faces 2
+    2 3 0  1  2 3 0  1
+    1 2 0  1  1 2 0  1
+  tverts 4
+    0.731422 0.979344 0
+    0.52509 0.979344 0
+    0.52509 0.768241 0
+    0.731422 0.768241 0
+endnode
+#Tile trimesh node
+node trimesh TTZLine896
+  parent TTZ01_P02_01
+  position -2.37 2.45 1.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0156863 0.521569 0.0156863 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center -33.0 -1.0 32.0 
+  bitmap ttr01_leaf01
+  verts 9
+    -0.01 0.05 0.0
+    -0.03 -0.03 -0.01
+    -0.11 0.02 0.22
+    -0.12 -0.02 0.21
+    -0.08 -0.02 0.24
+    -0.44 0.03 0.55
+    -0.44 -0.03 0.54
+    -0.42 -0.07 0.57
+    -0.65 -0.06 0.65
+  faces 14
+    0 1 3  1  0 1 3  3
+    0 3 2  1  0 3 9  3
+    1 4 3  1  1 4 3  3
+    1 0 2  1  1 0 10  3
+    1 2 4  1  1 11 4  3
+    2 3 6  1  12 3 6  3
+    2 6 5  1  13 6 14  3
+    3 4 7  1  3 4 7  3
+    3 7 6  1  3 7 6  3
+    4 2 5  1  4 2 5  3
+    4 5 7  1  4 5 7  3
+    5 6 8  1  15 6 8  3
+    6 7 8  1  6 7 8  3
+    7 5 8  1  7 5 8  3
+  tverts 16
+    0.00107657 0.00149864 0
+    0.116792 0.00149864 0
+    0.296195 0.776669 0
+    0.119477 0.776669 0
+    0.188309 0.776669 0
+    0.297731 2.22333 0
+    0.103736 2.22333 0
+    0.164911 2.22333 0
+    0.162896 2.9985 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00226858 2.22333 0
+    -0.00226858 2.22333 0
+endnode
+#Tile trimesh node
+node trimesh TTZLine897
+  parent TTZ01_P02_01
+  position -2.28 2.53 1.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0156863 0.521569 0.0156863 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center -6.5 30.0 15.5 
+  bitmap ttr01_leaf01
+  verts 9
+    0.05 0.02 -0.01
+    -0.03 0.02 -0.01
+    0.01 0.11 0.15
+    -0.03 0.11 0.14
+    -0.02 0.08 0.18
+    -0.04 0.43 0.29
+    -0.1 0.41 0.29
+    -0.14 0.39 0.32
+    -0.18 0.58 0.27
+  faces 14
+    0 1 3  1  0 1 3  3
+    0 3 2  1  0 3 9  3
+    1 4 3  1  1 4 3  3
+    1 0 2  1  1 0 10  3
+    1 2 4  1  1 11 4  3
+    2 3 6  1  12 3 6  3
+    2 6 5  1  13 6 14  3
+    3 4 7  1  3 4 7  3
+    3 7 6  1  3 7 6  3
+    4 2 5  1  4 2 5  3
+    4 5 7  1  4 5 7  3
+    5 6 8  1  15 6 8  3
+    6 7 8  1  6 7 8  3
+    7 5 8  1  7 5 8  3
+  tverts 16
+    0.00107657 0.00149864 0
+    0.116792 0.00149864 0
+    0.296195 0.776669 0
+    0.119477 0.776669 0
+    0.188309 0.776669 0
+    0.297731 2.22333 0
+    0.103736 2.22333 0
+    0.164911 2.22333 0
+    0.162896 2.9985 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00226858 2.22333 0
+    -0.00226858 2.22333 0
+endnode
+#Tile trimesh node
+node trimesh TTZLine898
+  parent TTZ01_P02_01
+  position -2.34 2.5 1.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0156863 0.521569 0.0156863 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center -11.5 -42.0 38.5 
+  bitmap ttr01_leaf01
+  verts 9
+    -0.05 0.0 -0.01
+    0.02 -0.04 -0.01
+    -0.09 -0.15 0.26
+    -0.05 -0.17 0.26
+    -0.05 -0.13 0.29
+    -0.25 -0.55 0.64
+    -0.2 -0.57 0.64
+    -0.15 -0.56 0.67
+    -0.25 -0.84 0.78
+  faces 14
+    0 1 3  1  0 1 3  3
+    0 3 2  1  0 3 9  3
+    1 4 3  1  1 4 3  3
+    1 0 2  1  1 0 10  3
+    1 2 4  1  1 11 4  3
+    2 3 6  1  12 3 6  3
+    2 6 5  1  13 6 14  3
+    3 4 7  1  3 4 7  3
+    3 7 6  1  3 7 6  3
+    4 2 5  1  4 2 5  3
+    4 5 7  1  4 5 7  3
+    5 6 8  1  15 6 8  3
+    6 7 8  1  6 7 8  3
+    7 5 8  1  7 5 8  3
+  tverts 16
+    0.00107657 0.00149864 0
+    0.116792 0.00149864 0
+    0.296195 0.776669 0
+    0.119477 0.776669 0
+    0.188309 0.776669 0
+    0.297731 2.22333 0
+    0.103736 2.22333 0
+    0.164911 2.22333 0
+    0.162896 2.9985 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00226858 2.22333 0
+    -0.00226858 2.22333 0
+endnode
+#Tile trimesh node
+node trimesh TTZRectangle148
+  parent TTZ01_P02_01
+  position -2.28 2.53 1.01
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0 0.0 0.0 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 1
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 1
+  center 1.0 -0.5 0.0 
+  bitmap TTR01_splotch01
+  verts 4
+    0.25 1.39 0.0
+    -1.38 0.24 0.0
+    -0.24 -1.4 0.0
+    1.4 -0.25 0.0
+  faces 2
+    2 3 0  1  2 3 0  1
+    1 2 0  1  1 2 0  1
+  tverts 4
+    0.991932 0.776445 0
+    0.805335 0.776445 0
+    0.805335 0.517033 0
+    0.991932 0.517033 0
+endnode
+#Tile trimesh node
+node trimesh TTZLine899
+  parent TTZ01_P02_01
+  position -2.22 2.52 1.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0156863 0.521569 0.0156863 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  ambient 1.0 1.0 1.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  shininess 2
+  center 5.5 -7.5 47.0 
+  bitmap ttr01_leaf01
+  verts 9
+    -0.01 -0.06 0.0
+    0.04 0.0 -0.01
+    0.05 -0.06 0.24
+    0.08 -0.04 0.24
+    0.03 -0.01 0.25
+    0.09 -0.15 0.7
+    0.12 -0.1 0.7
+    0.12 -0.04 0.7
+    0.12 -0.1 0.95
+  faces 14
+    0 1 3  1  0 1 3  3
+    0 3 2  1  0 3 9  3
+    1 4 3  1  1 4 3  3
+    1 0 2  1  1 0 10  3
+    1 2 4  1  1 11 4  3
+    2 3 6  1  12 3 6  3
+    2 6 5  1  13 6 14  3
+    3 4 7  1  3 4 7  3
+    3 7 6  1  3 7 6  3
+    4 2 5  1  4 2 5  3
+    4 5 7  1  4 5 7  3
+    5 6 8  1  15 6 8  3
+    6 7 8  1  6 7 8  3
+    7 5 8  1  7 5 8  3
+  tverts 16
+    0.00107657 0.00149864 0
+    0.116792 0.00149864 0
+    0.296195 0.776669 0
+    0.119477 0.776669 0
+    0.188309 0.776669 0
+    0.297731 2.22333 0
+    0.103736 2.22333 0
+    0.164911 2.22333 0
+    0.162896 2.9985 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00380523 0.776669 0
+    -0.00226858 2.22333 0
+    -0.00226858 2.22333 0
+endnode
+node aabb WOK
+  parent TTZ01_P02_01
+  position 0.0 0.0 1.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.87451 0.337255 0.556863 
+  multimaterial 20
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+  ambient 0.588 0.588 0.588 
+  diffuse 0.0 0.501961 0.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap Grass
+  verts 9
+    -5.0 -5.0 0.0
+    0.0 -5.0 0.0
+    5.0 -5.0 0.0
+    -5.0 0.0 0.0
+    0.0 0.0 0.0
+    5.0 0.0 0.0
+    -5.0 5.0 0.0
+    0.0 5.0 0.0
+    5.0 5.0 0.0
+  faces 8
+    3 0 4  0  0 0 0  3
+    1 4 0  0  0 0 0  3
+    4 1 5  0  0 0 0  3
+    2 5 1  0  0 0 0  3
+    4 7 6  0  0 0 0  3
+    7 4 8  0  0 0 0  3
+    5 8 4  0  0 0 0  3
+    4 6 3  0  0 0 0  3
+    aabb         -5.0 -5.0 0.0 5.0 5.0 0.0 -1
+        -5.0 -5.0 0.0 0.0 5.0 0.0 -1
+        -5.0 -5.0 0.0 0.0 0.0 0.0 -1
+        -5.0 -5.0 0.0 0.0 0.0 0.0 0
+        -5.0 -5.0 0.0 0.0 0.0 0.0 1
+        -5.0 0.0 0.0 0.0 5.0 0.0 -1
+        -5.0 0.0 0.0 0.0 5.0 0.0 7
+        -5.0 0.0 0.0 0.0 5.0 0.0 4
+        0.0 -5.0 0.0 5.0 5.0 0.0 -1
+        0.0 -5.0 0.0 5.0 0.0 0.0 -1
+        0.0 -5.0 0.0 5.0 0.0 0.0 2
+        0.0 -5.0 0.0 5.0 0.0 0.0 3
+        0.0 0.0 0.0 5.0 5.0 0.0 -1
+        0.0 0.0 0.0 5.0 5.0 0.0 5
+        0.0 0.0 0.0 5.0 5.0 0.0 6
+endnode
+node light TTZ01_P02_01ml1
+  parent TTZ01_P02_01
+  position 2.0 2.0 9.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.101961 0.694118 0.580392 
+  radius 10.0
+  multiplier 1.0
+  color 1.0 1.0 1.0 
+  ambientonly 0
+  nDynamicType 0
+  affectDynamic 0
+  shadow 0
+  lightpriority 5
+  fadingLight 0
+endnode
+node light TTZ01_P02_01ml2
+  parent TTZ01_P02_01
+  position -3.0 -3.0 5.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.101961 0.694118 0.580392 
+  radius 10.0
+  multiplier 1.0
+  color 1.0 1.0 1.0 
+  ambientonly 0
+  nDynamicType 0
+  affectDynamic 0
+  shadow 0
+  lightpriority 5
+  fadingLight 0
+endnode
+endmodelgeom TTZ01_P02_01
+donemodel TTZ01_P02_01
