@@ -1,0 +1,305 @@
+//=============================================================================
+//
+// inc_material.shd
+//
+//=============================================================================
+
+#ifndef INC_MATERIAL
+#define INC_MATERIAL
+#include "inc_common"
+
+///////////////////////////////////////////////////////////////////////////////
+//=============================================================================
+//                                                                             
+// BEGIN INC_MATERIAL                                               
+//                                                                             
+//=============================================================================
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef MATERIAL_ROUGHNESS_OVERRIDE
+	#define MATERIAL_ROUGHNESS_OVERRIDE 0
+#endif
+#ifndef MATERIAL_SPECULARITY_OVERRIDE
+	#define MATERIAL_SPECULARITY_OVERRIDE 0
+#endif
+#ifndef MATERIAL_METALICNESS_OVERRIDE
+	#define MATERIAL_METALICNESS_OVERRIDE 0
+#endif
+#ifndef MATERIAL_SPECULAR_COLOR_OVERRIDE
+	#define MATERIAL_SPECULAR_COLOR_OVERRIDE 0
+#endif
+
+// Set to one to read roughness from specular map green channel.
+#ifndef MATERIAL_READ_ROUGHNESS_FROM_SPECULAR_MAP
+	#define MATERIAL_READ_ROUGHNESS_FROM_SPECULAR_MAP 0
+#endif
+
+// Set to one to read self illumination from specular map blue channel.
+#ifndef MATERIAL_READ_SELF_ILLUMINATION_FROM_SPECULAR_MAP
+	#define MATERIAL_READ_SELF_ILLUMINATION_FROM_SPECULAR_MAP 0
+#endif
+
+// Values for automatic generation of roughness values.
+#if SPECULAR_GEOMETRIC_SHADOWING == 2
+	#define fGeneratedRoughnessMax 0.6
+#else
+	#define fGeneratedRoughnessMax 0.65
+#endif
+
+#if SPECULAR_DISTRIBUTION_MODEL == 1
+	#define fGeneratedRoughnessMin 0.125	
+#else
+	#define fGeneratedRoughnessMin 0.175
+#endif
+
+#if ENVIRONMENT_MAP == 1
+	
+	// Adjusts how much the pressence of an environment map affects specularity level for content without specular maps. Note that end values will be clamped to 1.
+	#define fLegacyEnvMapSpecularityModifier 8.0
+	#define fLegacyEnvMapSpecularityMax 0.98
+	#define fLegacyEnvMapRoughnessModifier 3.0
+		
+#endif
+
+#define fEnvironmentMapRoughnessLODModifier 30.0
+#define fEnvironmentMapRoughnessLODOffset -1.0
+#define fEnvironmentMapRoughnessLODMax 10.0
+
+// For now, this is set to 0 due to not being able to sample cubemap seamless.
+#define fEnvironmentMapCubeRoughnessLODMax 0.0
+
+// For generating metallicness when no metallicness uniform is supplied.
+
+
+// Sets the minimum specularity value for content without specularity maps.
+#define fSpecularityMin 0.04
+
+
+// Specularity values below this will not have any level of metallicness.
+#if SPECULAR_MAP == 1
+	#define fGeneratedMetallicnessOffset 0.2
+#else
+	#define fGeneratedMetallicnessOffset fSpecularityMin
+#endif
+
+// Scaling factor of metallicness.
+#if SPECULAR_MAP == 1
+	#define fMetallicnessModifier 3.0 
+#else
+	#define fMetallicnessModifier 10.0 
+#endif
+
+#if SPECULAR_LIGHT == 1
+lowp vec3 SpecularColor;
+
+uniform lowp float Specularity;
+uniform lowp float Roughness;
+uniform lowp float Metallicness;
+
+uniform lowp vec4 CustomSpecularColor; 
+
+lowp float fSpecularity;
+highp float fRoughness;
+
+lowp float fMetallicness;
+#endif
+
+#if SHADER_TYPE == 2
+
+///////////////////////////////////
+//
+// FRAGMENT SHADER ONLY FUNCTIONS
+//
+///////////////////////////////////
+
+#if SPECULAR_LIGHT == 1
+
+const float fMetallicnessMod = (fMetallicnessModifier * fGeneratedMetallicnessOffset
+	);
+
+void SetupSpecularity(vec3 Albedo)
+{
+	// Determine specularity.
+    #if MATERIAL_SPECULARITY_OVERRIDE == 0
+	if(Specularity>0.0)
+    {
+        fSpecularity = Specularity;
+    }
+    else
+    {
+        #if SPECULAR_MAP == 1 			
+			if(texture2Bound != 0)
+			{
+				fSpecularity = texture2D(texUnit2, vTexCoords.xy).r;
+			}
+			else
+			{
+		#endif
+
+		#if ENVIRONMENT_MAP == 1
+					
+			// This is mainly for the sake of enabling specularity on legacy content.
+			fSpecularity = mix(fSpecularityMin, fLegacyEnvMapSpecularityMax, min(fEnvMapLevel*fLegacyEnvMapSpecularityModifier, 1.0));
+			
+		#else
+			fSpecularity = fSpecularityMin;
+		#endif
+		
+		#if SPECULAR_MAP == 1
+			}
+		#endif
+			
+    }
+	#endif
+    
+    // Determine roughness.
+
+	#if MATERIAL_ROUGHNESS_OVERRIDE == 0
+    if(Roughness>0.0)
+    {
+        fRoughness = Roughness;
+    }
+    else
+    {
+        #if ROUGHNESS_MAP == 1 && MATERIAL_READ_ROUGHNESS_FROM_SPECULAR_MAP == 1
+			if(texture2Bound != 0)
+			{
+				fRoughness = texture2D(texUnit2, vTexCoords.xy).g;
+			}
+			else
+		#else
+            #if ROUGHNESS_MAP == 1
+				if(texture3Bound != 0)
+				{
+					fRoughness = texture2D(texUnit3, vTexCoords.xy).r;
+				}
+				else
+			#endif
+			#if SPECULAR_MAP == 1
+				if(texture2Bound != 0)
+				{
+					// If we have a specular map without a roughness map, we assume that our input isn't geared for our PBR lighting model. Therefore, we translate it PBR values.
+					fRoughness = mix(fGeneratedRoughnessMin, fGeneratedRoughnessMax, sqr(1.0-fSpecularity));
+
+					#if ENVIRONMENT_MAP == 1
+						fRoughness = min(fRoughness, mix(fGeneratedRoughnessMax, fGeneratedRoughnessMin, min(fEnvMapLevel * fLegacyEnvMapRoughnessModifier, 1.0)));
+					#endif 
+				}
+			#endif
+			#if ROUGHNESS_MAP == 1 || SPECULAR_MAP == 1
+				else
+			#endif
+		#endif
+		{
+			#if ENVIRONMENT_MAP == 1
+				fRoughness =  mix(fGeneratedRoughnessMax, fGeneratedRoughnessMin, min(fEnvMapLevel * fLegacyEnvMapRoughnessModifier, 1.0));
+			#else
+		
+				fRoughness = fGeneratedRoughnessMax;
+			#endif
+		}
+    }
+	#endif
+		
+	#if MATERIAL_METALICNESS_OVERRIDE == 0
+		// Determine metallicness. This affects the color of specular light and diffuse light level.
+		if(Metallicness>0.0)
+		{
+			fMetallicness = Metallicness;
+		}
+		else
+		{
+			fMetallicness = clamp(fMetallicnessModifier * fSpecularity - fMetallicnessMod, 0.0, 1.0);
+		}
+	#endif	
+	
+	#if MATERIAL_SPECULAR_COLOR_OVERRIDE == 0
+		if(CustomSpecularColor.rgb == COLOR_BLACK.rgb)
+		{
+		#if GAMMA_CORRECTION == 1
+			#if HEIGHT_MAP == 1
+			if(texture4Bound != 0)
+			{
+				SpecularColor = mix(COLOR_WHITE.rgb, Albedo.rgb, fMetallicness);
+			}
+			else
+			#endif
+			{
+				// In principle, non-metallic should be white, but since dark colours in diffuse textures are usually used to simulate crevices etc., we scale with max color channel value.
+				SpecularColor = mix(vec3(min(1.0, max(Albedo.r, max(Albedo.g, Albedo.b))/ApplyColorSpace(0.5))), Albedo.rgb, fMetallicness);
+			}
+		#else
+			SpecularColor = Albedo.rgb;
+		#endif
+		}
+		else
+		{
+			SpecularColor = ApplyColorSpace(CustomSpecularColor.rgb);
+		}
+	#endif
+}
+
+#endif 
+
+// SURFACE OCCLUSION
+
+#if (HEIGHT_MAP == 1 || NORMAL_MAP) && LIGHTING == 1
+
+// Will fade light when cosine of light incidence angle to parent surface normal is below this to prevent light moving around corners. Also handles directional occlusion.
+float fSurfaceFadePoint;
+
+#define SURFACE_FADE_POINT_MIN 0.1
+
+#if HEIGHT_MAP == 1
+
+	#define fOcclusionBase 1.0
+	
+	// Default occlusion at 0. -1 is no occlusion.
+	#define fOcclusionModifier 0.0 
+
+	// Mipmap offset for local comparison for determining occlusion. Once we can do explicit LOD lookups, we may want to increase this.
+	#define fOcclusionVicinityRange 2.0
+	
+	float fAmbientOcclusionModifier;
+
+	float GetOcclusionFromPoint(vec2 vPointSample)
+	{
+		// Compare with difference to local average height.
+		float fOcclusion = texture2D(texUnit4, vPointSample.xy, fOcclusionVicinityRange).r - texture2D(texUnit4, vPointSample.xy).r;
+		fOcclusion = clamp(fOcclusion * (1.0+fOcclusionModifier) * fOcclusionBase, 0.0, 0.99);
+		return fOcclusion;
+	}
+
+#endif
+
+void SetupOcclusion()
+{
+	fSurfaceFadePoint = SURFACE_FADE_POINT_MIN;
+	
+	#if HEIGHT_MAP == 1
+	if(texture4Bound!=0)
+	{
+		float fOcclusion = GetOcclusionFromPoint(vTexCoords);
+	
+		fAmbientOcclusionModifier = 1.0 - fOcclusion;
+		fSurfaceFadePoint = mix(1.0, fSurfaceFadePoint, sqr(fAmbientOcclusionModifier));
+	}
+	else
+	{
+		fAmbientOcclusionModifier = 1.0;
+	}
+	#endif
+}
+#endif
+
+#endif 
+
+#endif 
+
+///////////////////////////////////
+//
+// END INC_MATERIAL
+//
+///////////////////////////////////

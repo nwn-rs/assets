@@ -1,0 +1,176 @@
+//----------------------------------------
+//Sharpen shader.
+//
+//Version 1.1
+//
+//By Søren Møller (Zarathustra217)
+//soerenpm@gmail.com
+//
+//----------------------------------------
+//Description:
+//
+//Sharpens the image based on differences in luma.
+//
+//Version history:
+//
+//1.0:
+// - Initial release
+//
+//1.1
+// - Improved overall quality.
+
+const float fSharpenModifier = 7.0; //Regulates the amount of sharpening applied.
+const float fAntiAliasModifier = 1.0; //Applies some anti-aliasing.
+uniform int screenWidth = 1920;
+uniform int screenHeight = 1080;
+
+varying mediump vec2 vTcOut;
+uniform sampler2D texUnit0;
+uniform sampler2D texUnit1; // Depth buffer
+
+//Notice that distance is relative to character, not just camera. Ideally we would use fFogFragCoord to determine fog, but this is not accessible in FBO shaders.)
+uniform mediump float fogEnd; // Distance where fog is 100%
+uniform mediump float fogStart;
+
+uniform float nearClip = 0.1;
+uniform float farClip = 45.0; // Normally this is fogEnd, but whenever there's a skybox it'll be further away.
+
+const vec4 COLOR_BLACK = vec4(0.0, 0.0, 0.0, 1.0);
+
+vec2 vPixelSize = vec2(1.0/float(screenWidth), 1.0/float(screenHeight));
+
+//Modifier used for calculating distance.
+float fDepthModifier = 1.0 - nearClip/farClip;
+
+float GetDepth(vec2 vCoords)
+{
+    vCoords = clamp(vCoords, 0.0, 1.0);
+    float fDepth = texture2D(texUnit1, vCoords).x;
+    fDepth = nearClip / (1.0 - fDepth*fDepthModifier);
+    return fDepth;
+}
+
+float ColorToBrightness(vec4 vColor)
+{
+    return dot(vColor.rgb, vec3(0.3333333, 0.3333333, 0.3333333));    
+}
+
+float ColorToLuma(vec4 vColor)
+{
+    return dot(vColor.rgb, vec3(0.299, 0.587, 0.114)); //Quick formula. 
+    /*
+    return sqrt(0.299 * vColor.r * vColor.r + 
+       0.587 * vColor.g * vColor.g + 
+       0.114 * vColor.b * vColor.b);
+    */
+}
+
+float GetColorLumaDelta(vec4 vColor, vec4 vColor2)
+{
+    vColor-=vColor2;
+    return ColorToLuma(vColor);
+}
+
+vec4 Sharpen(vec4 vColor, vec2 vCoords)
+{
+    //Don't waste time on things that are already black.
+    if(all(equal(vColor.xyz, COLOR_BLACK.xyz)))
+    {
+        return vColor;
+    }
+    vec4 vColorLeft = texture2D(texUnit0, vCoords-vec2(vPixelSize.x, 0.0));
+    vec4 vColorRight = texture2D(texUnit0, vCoords+vec2(vPixelSize.x, 0.0));
+    vec4 vColorUp = texture2D(texUnit0, vCoords+vec2(0.0, vPixelSize.y));
+    vec4 vColorDown = texture2D(texUnit0, vCoords-vec2(0.0, vPixelSize.y));
+
+    float fLumaDeltaLeft = GetColorLumaDelta(vColor, vColorLeft);
+    float fLumaDeltaRight = GetColorLumaDelta(vColor, vColorRight);
+    float fLumaDeltaUp = GetColorLumaDelta(vColor, vColorUp);
+    float fLumaDeltaDown = GetColorLumaDelta(vColor, vColorDown);
+
+    vec4 vColorAA = vec4(0.0);
+
+    //Find the adjacent pixels with highest luma delta (horizontally and vertically).
+    float fLumaDeltaMaxH=fLumaDeltaLeft;
+    float fLumaDeltaMinH=fLumaDeltaRight;
+    if(abs(fLumaDeltaMaxH)<abs(fLumaDeltaRight))
+    {
+        fLumaDeltaMaxH=fLumaDeltaRight;
+        fLumaDeltaMinH=fLumaDeltaLeft;
+        vColorAA = vColorRight;
+    }
+    else
+    {
+        vColorAA = vColorLeft;
+
+    }
+
+    float fLumaDeltaMaxV=fLumaDeltaUp;
+    float fLumaDeltaMinV=fLumaDeltaDown;
+    if(abs(fLumaDeltaMaxV)<abs(fLumaDeltaDown))
+    {
+        fLumaDeltaMaxV=fLumaDeltaDown;
+        fLumaDeltaMinV=fLumaDeltaUp;
+        vColorAA += vColorDown;
+    }
+    else
+    {
+        vColorAA += vColorUp;
+
+    }
+    vColorAA*=0.5;
+
+    float fDepth = GetDepth(vCoords);
+    float fFogModifier = clamp(1.0 - (fDepth-fogStart) / (fogEnd - fogStart), 0.0, 1.0);
+    //Used to scale with distance.
+    float fDepthModifier = 1.0 / (1.0 + fDepth*0.05);
+
+    float fModifier = 0.0;
+    if(fLumaDeltaMaxH != 0.0 || fLumaDeltaMaxV != 0.0)
+    {
+        //Compare difference in luma between our two adjacent pixels.
+        float fEdgeModifier = abs(fLumaDeltaMaxH + fLumaDeltaMaxV); 
+        float fAAModifier =  clamp(fAntiAliasModifier * fEdgeModifier-0.25, 0.0, 0.25);
+        //Apply some minimal performance impact AA.
+        vColor = mix(vColor, vColorAA, fAAModifier);
+
+        float fLumaDelta = 0.0;
+        //Use the highest contrast.
+        if(fLumaDeltaMaxV<fLumaDeltaMaxH)
+        {
+            //If opposite pixel is also brighter, don't sharpen as much since single pixel lines/spots will appear aliased.
+            //If opposite pixel is even darker, don't sharpen as much since this will reduce the contrast to that pixel.
+            fLumaDelta=fLumaDeltaMaxV + abs(fLumaDeltaMinV);
+        }
+        else
+        {
+            fLumaDelta=fLumaDeltaMaxH + abs(fLumaDeltaMinH);
+        }
+        //Only sharpen darker edges.
+        if(sign(fLumaDelta)==-1.0)
+        {
+            fLumaDelta /= 1.0 + 100.0*abs(fLumaDelta); //Set limit to 1/100.
+            fModifier = (1.0-2.0 * fAAModifier) * fLumaDelta;
+        }
+    }
+
+    //Brighten everything slightly since we only sharpen by darkening.
+    fModifier += 0.003;
+    //Dividing by brightness provides a non-relative adjustment while still preserving hue and saturation. Cut-off at 0.2 to prevent precision issues.
+    fModifier /= max(ColorToBrightness(vColor), 0.2);
+    vColor*=(1.0 + fDepthModifier * fFogModifier * fSharpenModifier * fModifier * clamp(1.0-10.0*abs(vColor.a-vColorAA.a), 0.0, 1.0));
+
+    return clamp(vColor, 0.0, 1.0);
+}
+
+
+void main()
+{    
+    vec4 vColor = texture2D(texUnit0, vTcOut);
+    float fAlpha = vColor.a;
+    
+    vColor = Sharpen (vColor, vTcOut);
+
+    vColor.a = max(fAlpha, 0.21); // This should always be preserved as other shaders might need it - unless if below 0.21 as this will result in only displaying fog color.
+    gl_FragColor = vColor;
+}

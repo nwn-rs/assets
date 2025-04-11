@@ -1,0 +1,86 @@
+//=============================================================================
+//
+// vs_beamvol.shd
+//
+//=============================================================================
+
+uniform mat4 m_m;
+
+uniform mat4 m_proj;
+uniform mat4 m_view;
+
+attribute vec4 vPos;
+
+attribute float fProjectionFrontal;
+
+uniform vec4 projectionSource;
+uniform float projectionWorldZClip;
+
+uniform vec4 fogParams;
+#define fogEnabled (fogParams.x)
+#define fogStart (fogParams.y)
+#define fogEnd (fogParams.z)
+#define fogInvEndMinusStart (fogParams.w)
+
+// Constant value inherited from old NWN.
+const float fMinOffset = 0.1;
+
+varying float fFogFragCoord;
+
+float GetFog(float fDistance)
+{
+    //Make sure to not to clamp this in the vertex stage as we need to be able to get within boundaries through interpolation.
+    //Taking absolute value of distance is important for some GUI elements.
+
+    return (fogEnabled == 0.0) ? 0.0 : (fDistance - fogStart) * fogInvEndMinusStart;
+}
+
+void main()
+{
+	vec3 vPosWorld = (m_m * vPos).xyz;
+	vec3 vPosView = vec3(m_view * vec4(vPosWorld.xyz, 1.0));
+	vec3 vProjection;
+	float fOffset;
+	if(projectionSource.w < 0.0)
+	{
+		vProjection = projectionSource.xyz;
+		
+		if(fProjectionFrontal > 0.0)
+		{
+			fOffset = fMinOffset;
+		}
+		else
+		{
+			fOffset = (projectionWorldZClip-vPosWorld.z) / vProjection.z;
+			fOffset = max(fMinOffset, fOffset);
+		}
+	}
+	else
+	{
+		vProjection = vPosWorld-projectionSource.xyz;
+		if(fProjectionFrontal > 0.0)
+		{
+			fOffset = fMinOffset;
+			vProjection = normalize(vProjection);
+		}
+		else
+		{
+			float fLength = length(vProjection);
+			// For point lighting, we clip with radius. 
+			// NB: Clipping -both- with world Z and radius at once will cause issues.
+			fOffset = projectionSource.w - fLength;
+			fOffset = max(fMinOffset, fOffset);
+			// Normalize. 
+			vProjection/= fLength;
+		}
+	}
+
+	vProjection = mat3(m_view) * vProjection;
+
+	float fZOffset = vPosView.z + vProjection.z * fOffset;
+
+	vPosView += fOffset * vProjection;
+	fFogFragCoord = GetFog(-vPosView.z);
+
+    gl_Position = m_proj * vec4(vPosView, 1.0);
+}

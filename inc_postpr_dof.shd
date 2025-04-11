@@ -1,0 +1,194 @@
+////////////////////////////////////////////////////
+//--------------------------------------------------
+//
+//  Depth of Field shader for NWN:EE
+//
+//--------------------------------------------------
+//
+//  Description:
+//
+//  Blurs the image based on distance to focus.
+//
+////////////////////////////////////////////////////
+
+#if SHADER_TYPE == 1
+
+void VS_PostProcess_DepthOfField()
+{
+	// Nothing.
+}
+
+#else
+
+uniform float DOFAmount;
+uniform float DOFDeadZone; 
+uniform float DOFVignette; //Adds a vignette, increasing blur at the edge of the screen. Not realistic but looks nice.
+uniform int DOFNeverBlurPC;
+
+#define DOF_FOCUS_TYPE_PLAYER 0
+#define DOF_FOCUS_TYPE_CAMERA_PITCH 1
+#define DOF_FOCUS_TYPE_DYNAMIC 2
+#define DOF_FOCUS_TYPE_MOUSE 3
+
+uniform int DOFFocusType = DOF_FOCUS_TYPE_CAMERA_PITCH;
+
+const float fDOFWidth = 5.0; // Pixel distance of blur. Scales to resolution.
+
+const float fDOFModifier = 1.0;
+const float fDOFMinDistance = 5.0;
+const float fDOFMaxDistance = 45.0; // Maximum distance for focus. Also sets the maximum distance of a pixel in terms of depth calculations.
+const float fDOFCameraDistanceHorizontalOffset = 2.5; // Offset of focus at horizontal view (meters).
+const float fDOFCameraDistanceVerticalOffset = -1.0; // Offset of focus at vertical view (meters).
+const float fDOFDynamicFocusOffset = -1.0; // Offset of dynamic focus (meters).
+
+const float fDOFConfusionMax = 1.0; // Upper limit to amount of confusion. Reduces visual noise (vs blur) at high levels of confusion.
+
+float fFocusDepthNear;
+
+float fFocusDepthFar;
+
+float GetPixelConfusion(float fDepth, float fConfusionModifier) 
+{
+	float fDepthDelta = fDepth - (fDepth > fFocusDepthFar ? fFocusDepthFar : (fDepth < fFocusDepthNear ? fFocusDepthNear : fDepth));
+
+    fDepthDelta*= fConfusionModifier;
+    return min(1.0, abs(fDepthDelta));
+}
+
+void FS_PostProcess_DepthOfField(inout vec4 Color) 
+{
+    float fRandom = Random(vVertexTexCoords) * 0.333333 * PI;
+    fRandom = cos(fRandom);
+    float fWidth = fDOFWidth * float(screenHeight) / 1080.0;
+    vec2 vRandomX = vec2 (fRandom, sqrt(1.0 - fRandom * fRandom)) * fWidth;
+    vec2 vRandomY = vRandomX.yx;
+    vRandomX.y = -vRandomX.y;
+    vRandomX*=vPixelSize.x; //Because all cases where we'll use it later have to multiply by this.
+    vRandomY*=vPixelSize.y;
+    float fDepth = clamp(GetDepth(vVertexTexCoords), fDOFMinDistance, fDOFMaxDistance);
+    float fDepthTolerance = fDepth; 
+
+	float fEdgeModifier = 0.5*(pow(2.0*(vVertexTexCoords.x)-1.0,2.0)+pow((2.0*(vVertexTexCoords.y)-1.0),2.0));
+
+    float fVignetteModifier = DOFVignette * fEdgeModifier + 1.0;
+	
+    float fConfusionModifier = fDOFModifier * DOFAmount * fVignetteModifier ;
+	float fCameraPitchModifier = abs(cos(radians(float(cameraPitch)))); 
+
+
+	// Camera distance pushed away at horizontal view. If view is vertical, we pull it a little nearer instead.
+	float fCameraDistance = playerCameraDist + fDOFCameraDistanceHorizontalOffset * sqrt(1.0-fCameraPitchModifier * fCameraPitchModifier) + fCameraPitchModifier * fDOFCameraDistanceVerticalOffset;
+
+	if(cameraDialogState != 0 || (DOFFocusType == DOF_FOCUS_TYPE_PLAYER && playerInCutscene == 0))
+	{
+		fFocusDepthFar = fCameraDistance;
+	}	
+	else if(DOFFocusType == DOF_FOCUS_TYPE_CAMERA_PITCH || playerInCutscene != 0)
+	{
+		fFocusDepthFar = min(fDOFMaxDistance, fCameraDistance / clamp((fCameraPitchModifier*1.15-0.15) * 1.414, 0.01, 1.0)); 
+	}
+	else if(DOFFocusType == DOF_FOCUS_TYPE_MOUSE)
+    {
+        fFocusDepthFar = GetDepth(vPixelSize * vec2 (float(userinputMousePosition.x), float(userinputMousePosition.y)))-fDOFDynamicFocusOffset;
+    }
+    else if(DOFFocusType == DOF_FOCUS_TYPE_DYNAMIC)
+    {
+		float fCameraDistanceModifier = (0.5 + 0.5 * fCameraPitchModifier) / fCameraDistance;
+		float fVerticalOffset = 0.9 * fCameraDistanceModifier;
+		float fHorizontalOffset = 0.05 * fCameraDistanceModifier;
+		
+		float fFocusDepthU = GetDepth(vec2(0.49, 0.53) + vec2(-fHorizontalOffset, fVerticalOffset));
+		float fFocusDepthL = GetDepth(vec2(0.5, 0.53) + vec2(0, fVerticalOffset));
+		float fFocusDepthR = GetDepth(vec2(0.51, 0.53) + vec2(fHorizontalOffset, fVerticalOffset));
+		fFocusDepthFar = max(max(min(fFocusDepthL, fFocusDepthR), fFocusDepthU)+fDOFDynamicFocusOffset, fCameraDistance);
+    }
+
+	fFocusDepthNear = fFocusDepthFar;
+
+	fFocusDepthNear -= 0.5 * DOFDeadZone * (1.0 - fEdgeModifier);
+	fFocusDepthFar += DOFDeadZone*0.5 * (1.0 - fEdgeModifier);
+	
+	if(DOFNeverBlurPC == 1 || playerInCutscene != 0)
+	{	
+		fFocusDepthNear = min(fFocusDepthNear, fCameraDistance);
+		fFocusDepthFar = max(fFocusDepthFar, fCameraDistance);
+		
+		fConfusionModifier /= mix(fFocusDepthFar, fFocusDepthNear, 0.5);
+	}
+	else
+	{
+		fConfusionModifier /= fFocusDepthFar;
+	}
+	
+
+    fFocusDepthFar = clamp(fFocusDepthFar, fDOFMinDistance, fDOFMaxDistance);
+    fFocusDepthNear = clamp(fFocusDepthNear, fDOFMinDistance, fDOFMaxDistance);
+
+    //Hexagon bokeh.
+    vec2 vHalf0 = vec2( 0.500, 0.000);
+    vHalf0 = vec2(dot(vHalf0, vRandomX), dot(vHalf0, vRandomY));
+    vec2 vHalf60 = vec2( 0.250, 0.433);
+    vHalf60 = vec2(dot(vHalf60, vRandomX), dot(vHalf60, vRandomY));
+    vec2 vHalf120 = vec2( -0.250, 0.433);
+    vHalf120 = vec2(dot(vHalf120, vRandomX), dot(vHalf120, vRandomY));
+    vec2 vFull30 = vHalf0 + vHalf60;
+    vec2 vFull90 = vHalf60 + vHalf120;
+    vec2 vFull150 = vHalf120 - vHalf0;
+    
+    vec2 focal_blur[12];
+    focal_blur[0]  = vHalf0;
+    focal_blur[1]  = vHalf60;
+    focal_blur[2]  = vHalf120;
+    focal_blur[3]  = -vHalf0;
+    focal_blur[4]  = -vHalf60;
+    focal_blur[5]  = -vHalf120;
+    focal_blur[6]  = vFull30;
+    focal_blur[7]  = vFull90;
+    focal_blur[8]  = vFull150;
+    focal_blur[9]  = -vFull30;
+    focal_blur[10] = -vFull90;
+    focal_blur[11] = -vFull150;
+
+
+    float fConfusionThis = GetPixelConfusion(fDepth, fConfusionModifier);
+
+    vec2 vHalfPixel = vPixelSize * 0.5;
+
+    for (int i = 0; i < 12; i++) 
+    {
+        vec2 vOffset = focal_blur[i];
+        float fBlurDepth = clamp(GetDepth(vVertexTexCoords + vOffset), fDOFMinDistance, fDOFMaxDistance);
+        float fConfusion = fConfusionThis;
+        // Only blur from other objects that are closer to us (with some tolerance). Otherwise we just use our own confusion to blur.
+        if(fBlurDepth<fDepthTolerance) 
+        {
+            fConfusion=GetPixelConfusion(fBlurDepth, fConfusionModifier);
+        }
+        fConfusion=min(fDOFConfusionMax, fConfusion);
+
+		Color.rgb+= texture2D(texFBColor, vVertexTexCoords + vOffset * fConfusion,0.0).rgb;
+    }
+	Color.rgb *= 0.07692308; // 1 / 13.
+
+	// DEBUG	
+	
+	/*
+	
+	Color.rgb = vec3(
+						(fDepth < fFocusDepthFar ? 
+							(fDepth> fFocusDepthNear ? 0.0 : fFocusDepthNear-fDepth)
+							:
+							(fDepth-fFocusDepthFar)
+						)
+						/fDOFMaxDistance
+					);
+					
+	*/
+	
+	//Color.rgb = vec3(fEdgeModifier);
+	
+	//Color.rgb = vec3(fVignetteModifier-1);
+	
+}
+
+#endif

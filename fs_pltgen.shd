@@ -1,0 +1,21 @@
+//=============================================================================
+//
+// fs_pltgen.shd
+//
+//=============================================================================
+
+varying vec2 vTexCoordOut;
+
+uniform sampler2D texUnit0;
+uniform sampler2D texUnit1;
+
+uniform float PLTscheme[15];
+
+
+void main() 
+{
+	vec4 ColorPLT = texture2D(texUnit0, vTexCoordOut);
+	ColorPLT.g = PLTscheme[int(ColorPLT.g * 255.0 + 0.5)];
+	ColorPLT = texture2D(texUnit1, ColorPLT.rg);
+	gl_FragColor = ColorPLT;
+}
