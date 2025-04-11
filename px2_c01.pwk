@@ -1,0 +1,15 @@
+#MAXDOOR ASCII
+# model: PX2_C01_pwk 
+filedependancy PX2_placeables01.max
+node dummy C01_pwk_use01 
+  parent PX2_C01_pwk 
+  position 0.0737317 1.16305 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode
+node dummy C01_pwk_use02 
+  parent PX2_C01_pwk 
+  position 0.0737317 -1.14557 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode

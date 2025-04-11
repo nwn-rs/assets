@@ -1,0 +1,9 @@
+#MAXDOOR ASCII
+# model: PLC_Pud01_pwk 
+filedependancy IoP-Puddle_01.max
+node dummy IoP_pwk_use01 
+  parent PLC_Pud01_pwk 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode

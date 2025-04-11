@@ -1,0 +1,43 @@
+# Exported from NWmax 0.8 c00 at 2/20/2019 11:00:35 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh tabl_001_pwk
+  parent pwc_tabl_001_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.537255 0.0313726 0.431373 
+  bitmap NULL
+  verts 4
+    -2.55 -0.9 0.0
+    2.55 -0.9 0.0
+    -2.55 0.9 0.0
+    2.55 0.9 0.0
+  faces 2
+    2 0 3  1  0 0 0  7
+    1 3 0  1  0 0 0  7
+endnode
+node dummy 001_pwk_use01
+  parent pwc_tabl_001_pwk
+  position 0.0 -1.00246 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.470588 0.0 0.0 
+endnode
+node dummy 001_pwk_use02
+  parent pwc_tabl_001_pwk
+  position -2.66776 0.00115341 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.470588 0.0 0.0 
+endnode
+node dummy 001_pwk_use03
+  parent pwc_tabl_001_pwk
+  position 2.6883 -0.0167213 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.470588 0.0 0.0 
+endnode
+node dummy 001_pwk_use04
+  parent pwc_tabl_001_pwk
+  position -0.011698 0.983279 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.470588 0.0 0.0 
+endnode

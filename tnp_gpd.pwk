@@ -1,0 +1,65 @@
+# Exported from NWmax 0.8 b47 at 12/03/2006 8:23:50 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy gpd_pwk_use01
+  parent tnp_gpd_pwk
+  position 0.0 0.375 0.625
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.776471 0.341176 
+endnode
+node dummy gpd_pwk_use02
+  parent tnp_gpd_pwk
+  position 0.0 -0.375 0.625
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.776471 0.341176 
+endnode
+node trimesh tnp_gpd_pwk
+  parent tnp_gpd_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.768628 0.345098 0.882353 
+  multimaterial 20
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+  ambient 0.588 0.588 0.588 
+  diffuse 0.705882 0.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap Nonwalk
+  verts 4
+    -0.2625 -0.2625 0.0
+    0.2625 -0.2625 0.0
+    -0.2625 0.2625 0.0
+    0.2625 0.2625 0.0
+  faces 2
+    2 0 3  1  6 4 7  7
+    1 3 0  1  5 7 4  7
+  tverts 8
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 0.0 0
+    1.0 0.0 0
+    0.0 1.0 0
+    1.0 1.0 0
+endnode

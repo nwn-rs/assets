@@ -1,0 +1,30 @@
+#MAXDOOR ASCII
+# model: PLC_rope01_pwk 
+filedependancy plc_rope.max
+node trimesh PLC_rope01_wg 
+  parent PLC_rope01_pwk 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.694118 0.101961  
+    bitmap NULL
+    verts 4
+     -0.605355 -0.54101 0.0
+     0.508966 -0.528056 0.0
+     -0.597346 0.537637 0.0
+     0.512984 0.540979 0.0
+    faces 2
+     2 0 3  1  0 0 0  1
+     1 3 0  1  0 0 0  1
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_rope01_pwk 
+  position 0.616359 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_rope01_pwk 
+  position -0.720387 0.0470999 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0235294 0.52549 0.443137  
+endnode

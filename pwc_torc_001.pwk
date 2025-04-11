@@ -1,0 +1,10 @@
+# Exported from NWmax 0.8 b60 at 14.01.2006 21:53:14
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy 001_pwk_use01
+  parent pwc_torc_001_pwk
+  position 0.0 -0.7 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.776471 0.878431 0.341176 
+endnode

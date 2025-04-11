@@ -1,0 +1,15 @@
+#MAXDOOR ASCII
+# model: PLC_Net_pwk 
+filedependancy IoP-Net.max
+node dummy IoP_pwk_use01 
+  parent PLC_Net_pwk 
+  position 0.81278 0.0286131 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_Net_pwk 
+  position -0.804929 0.0470999 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0235294 0.52549 0.443137  
+endnode

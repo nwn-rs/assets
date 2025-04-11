@@ -1,0 +1,48 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x0_bfn
+filedependancy plc_x0lrgbed.max
+node trimesh NoWalkArea
+  parent plc_x0_bfn_pwk
+  position 0.0134528 -0.126575 0
+  orientation 0 0 -1 -3.13982
+  wirecolor 0.605469 0.605469 0.605469
+  ambient 0.71875 0.890625 0.597656
+  diffuse 0.71875 0.890625 0.597656
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 8
+    -1.94207 -2.10048 0
+    1.94207 -2.10048 0
+    -1.94207 2.10048 0
+    1.94207 2.10048 0
+    -1.94207 -2.10048 0.66
+    1.94207 -2.10048 0.66
+    -1.94207 2.10048 0.66
+    1.94207 2.10048 0.66
+  faces 10
+    6 4 7  1  0 0 0  2
+    5 7 4  1  0 0 0  2
+    2 0 4  0  0 0 0  2
+    4 6 2  0  0 0 0  2
+    3 2 6  0  0 0 0  2
+    6 7 3  0  0 0 0  2
+    1 3 7  0  0 0 0  2
+    7 5 1  0  0 0 0  2
+    0 1 5  0  0 0 0  2
+    5 4 0  0  0 0 0  2
+endnode
+node dummy bfn_pwk_use01
+  parent plc_x0_bfn_pwk
+  position -0.0240069 -2.40904 0
+  orientation 0 0 0 0
+  wirecolor 0.769531 0.769531 0.769531
+endnode
+node dummy bfn_pwk_use02
+  parent plc_x0_bfn_pwk
+  position -0.0240065 2.39212 0
+  orientation 0 0 0 0
+  wirecolor 0.769531 0.769531 0.769531
+endnode

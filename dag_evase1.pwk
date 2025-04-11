@@ -1,0 +1,35 @@
+# Exported from NWmax 0.8 b50 at 2/19/2006 7:24:02 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh NoWalk
+  parent evase1_pwk
+  position -0.00307046 -0.00801611 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.423529 0.0313726 0.533333 
+  tilefade 0
+  scale 1.0
+  render 1
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  center 1.76149 0.0 0.0 
+  bitmap NULL
+  verts 6
+    0.0 0.0 0.0
+    0.184466 0.0 0.0
+    0.0570031 0.175438 0.0
+    -0.149236 0.108426 0.0
+    -0.149236 -0.108426 0.0
+    0.0570032 -0.175438 0.0
+  faces 5
+    2 0 1  1  0 0 0  7
+    3 0 2  1  0 0 0  7
+    4 0 3  1  0 0 0  7
+    5 0 4  1  0 0 0  7
+    1 0 5  1  0 0 0  7
+endnode

@@ -1,0 +1,30 @@
+#MAXDOOR ASCII
+# model: dag_obelisk_pwk 
+filedependancy IoP-Obelisk.max
+node trimesh dag_obelisk_wg 
+  parent dag_obelisk_pwk 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.694118 0.101961  
+    bitmap NULL
+    verts 4
+     -0.406395 -0.409429 0.0
+     0.412106 -0.413357 0.0
+     -0.412806 0.406148 0.0
+     0.413008 0.407499 0.0
+    faces 2
+     2 0 3  1  0 0 0  1
+     1 3 0  1  0 0 0  1
+endnode
+node dummy IoP_pwk_use01 
+  parent dag_obelisk_pwk 
+  position 0.000111384 -0.752004 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+node dummy IoP_pwk_use02 
+  parent dag_obelisk_pwk 
+  position 0.0 0.757735 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode

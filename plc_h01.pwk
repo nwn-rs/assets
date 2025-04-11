@@ -1,0 +1,66 @@
+# Exported from NWmax 0.8 c00 at 4/28/2020 10:35:06 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy H01_pwk_use01
+  parent PLC_H01_pwk
+  position 0.00440125 -0.96518 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
+node dummy H01_pwk_use02
+  parent PLC_H01_pwk
+  position 0.00440125 1.01162 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.105882 0.694118 0.105882 
+endnode
+node trimesh PLC_H01_wg
+  parent PLC_H01_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.537255 0.0313726 0.431373 
+  multimaterial 18
+    w_Dirt
+    n_Obscuring
+    w_Grass
+    w_Stone
+    w_Wood
+    w_Water
+    n_Nonwalk
+    n_Transparent
+    w_Carpet
+    w_Metal
+    w_Puddles
+    w_Swamp
+    w_Mud
+    w_Leaves
+    n_Lava
+    n_Bottomless
+    n_Deepwater
+    w_Areatansition
+  ambient 1.0 1.0 1.0 
+  diffuse 1.0 0.0 0.0 
+  specular 0.0 0.0 0.0 
+  shininess 0.0
+  bitmap n_Nonwalk
+  verts 8
+    -1.03 -0.52 0.0
+    1.03 -0.52 0.0
+    -1.03 0.53 0.0
+    1.03 0.53 0.0
+    -1.03 -0.52 0.9
+    1.03 -0.52 0.9
+    -1.03 0.53 0.9
+    1.03 0.53 0.9
+  faces 10
+    6 4 7  1  0 0 0  7
+    5 7 4  1  0 0 0  7
+    4 6 2  0  0 0 0  7
+    2 0 4  0  0 0 0  7
+    6 7 3  0  0 0 0  7
+    3 2 6  0  0 0 0  7
+    7 5 1  0  0 0 0  7
+    1 3 7  0  0 0 0  7
+    5 4 0  0  0 0 0  7
+    0 1 5  0  0 0 0  7
+endnode

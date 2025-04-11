@@ -1,0 +1,38 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x0girn
+filedependancy plc_x0goliron.max
+node trimesh NoWalk
+  parent plc_x0girn_pwk
+  position 0.0588471 -0.0507835 0.00405505
+  orientation 0 0 0 0
+  wirecolor 0.652344 0.652344 0.652344
+  ambient 0.648438 0.894531 0.894531
+  diffuse 0.648438 0.894531 0.894531
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 11
+    0.511348 0.768538 0
+    0.128459 0.69406 0
+    -0.0277182 0.427957 0
+    -0.365339 0.433054 0
+    -0.455474 0.0219434 0
+    -0.318635 -0.0914566 0
+    -0.483187 -0.601953 0
+    -0.351912 -0.913802 0
+    0.14207 -0.910425 0
+    0.44694 -0.193097 0
+    0.773448 0.36518 0
+  faces 9
+    10 0 1  1  0 0 0  0
+    2 3 4  1  0 0 0  0
+    2 4 5  1  0 0 0  0
+    6 7 8  1  0 0 0  0
+    5 6 8  1  0 0 0  0
+    5 8 9  1  0 0 0  0
+    2 5 9  1  0 0 0  0
+    1 2 9  1  0 0 0  0
+    10 1 9  1  0 0 0  0
+endnode

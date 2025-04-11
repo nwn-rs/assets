@@ -1,0 +1,17 @@
+# Exported from NWmax 0.8 b50 at 10/30/2005 11:37:16 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh NoWalk
+  parent vase2blu_pwk
+  position -2.09967 -0.564867 0.0
+  orientation 1.0 0.0 0.0 0.0
+  verts 4
+    2.3906 0.108977 0.0
+    1.61774 0.936044 0.0
+    1.61703 0.108977 0.0
+    2.3906 0.93756 0.0
+  faces 2
+    0 1 2  0  0 0 0  7
+    0 3 1  0  0 0 0  7
+endnode

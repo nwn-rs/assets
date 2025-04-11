@@ -1,0 +1,41 @@
+#MAXDOOR ASCII
+# model: tnp_fire_001_pwk 
+filedependancy firecage_03.max
+node trimesh pwk 
+  parent tnp_fire_001_pwk 
+  position 0.0 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.541176 0.0313726 0.431373  
+    bitmap NULL
+    verts 9
+     -0.4 -0.39 0.0
+     0.0 -0.5 0.0
+     0.4 -0.39 0.0
+     -0.5 0.0 0.0
+     0.0 0.0 0.0
+     0.5 0.0 0.0
+     -0.41 0.4 0.0
+     0.0 0.5 0.0
+     0.39 0.39 0.0
+    faces 8
+     3 0 4  1  0 0 0  1
+     1 4 0  1  0 0 0  1
+     4 1 5  1  0 0 0  1
+     2 5 1  1  0 0 0  1
+     6 3 7  1  0 0 0  1
+     4 7 3  1  0 0 0  1
+     7 4 8  1  0 0 0  1
+     5 8 4  1  0 0 0  1
+endnode
+node dummy 001_pwk_use01 
+  parent tnp_fire_001_pwk 
+  position 0.55 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.239216 0.52549 0.0235294  
+endnode
+node dummy 001_pwk_use02 
+  parent tnp_fire_001_pwk 
+  position -0.55 0.0 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.239216 0.52549 0.0235294  
+endnode

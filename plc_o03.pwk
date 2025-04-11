@@ -1,0 +1,15 @@
+#MAXDOOR ASCII
+# model: PLC_O03_pwk 
+filedependancy PlaceableObjects01.max
+node dummy O03_pwk_use02 
+  parent PLC_O03_pwk 
+  position -0.776745 0.921426 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.694118 0.580392 0.101961  
+endnode
+node dummy O03_pwk_use01 
+  parent PLC_O03_pwk 
+  position 0.682004 -0.487725 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.694118 0.580392 0.101961  
+endnode

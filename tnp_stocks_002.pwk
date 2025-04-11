@@ -1,0 +1,24 @@
+#MAXDOOR ASCII
+# model: tnp_stocks_002_pwk 
+filedependancy stocks_05.max
+node dummy 002_pwk_use01 
+  parent tnp_stocks_002_pwk 
+  position 0.75 -0.0879633 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.694118 0.101961 0.345098  
+endnode
+node trimesh pwk 
+  parent tnp_stocks_002_pwk 
+  position 0.00789795 -0.0705635 5e-007
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.541176 0.0313726 0.431373  
+    bitmap NULL
+    verts 4
+     -0.659018 -0.119152 -5e-007
+     0.659019 -0.119152 -5e-007
+     -0.659018 0.111727 -5e-007
+     0.659019 0.119152 -5e-007
+    faces 2
+     2 0 1  1  0 0 0  1
+     3 2 1  1  0 0 0  1
+endnode

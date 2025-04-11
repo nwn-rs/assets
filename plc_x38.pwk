@@ -1,0 +1,46 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x38
+filedependancy plc_x0desrock02.max
+node trimesh NoWalk
+  parent plc_x38_pwk
+  position 0.125609 0.0102933 0
+  orientation 0 0 0 0
+  wirecolor 0.605469 0.605469 0.605469
+  ambient 0.601563 0.601563 0.894531
+  diffuse 0.601563 0.601563 0.894531
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 9
+    -1.61132 0.153229 0
+    -0.785353 -1.06734 0
+    -0.330186 -1.32084 0
+    0.562551 -1.24159 0
+    1.19432 -0.505506 0
+    1.14324 0.51226 0
+    0.911413 1.19635 0
+    0.127003 1.38783 0
+    -1.21168 0.885602 0
+  faces 7
+    8 0 1  1  0 0 0  0
+    7 8 1  1  0 0 0  0
+    6 7 1  1  0 0 0  0
+    5 6 1  1  0 0 0  0
+    4 5 1  1  0 0 0  0
+    3 4 1  1  0 0 0  0
+    2 3 1  1  0 0 0  0
+endnode
+node dummy x38_pwk_use01
+  parent plc_x38_pwk
+  position -0.0103923 -1.64422 0
+  orientation 0 0 0 0
+  wirecolor 0.722656 0.722656 0.722656
+endnode
+node dummy x38_pwk_use02
+  parent plc_x38_pwk
+  position -0.010392 1.51342 0
+  orientation 0 0 0 0
+  wirecolor 0.722656 0.722656 0.722656
+endnode

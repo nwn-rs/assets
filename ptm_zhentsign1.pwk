@@ -1,0 +1,38 @@
+# Exported from NWmax 0.8 c00 at 11/9/2018 8:44:51 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh zhentsign1_wg
+  parent ptm_zhentsign1_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.521569 0.431373 0.0313726 
+  tilefade 0
+  scale 1.0
+  render 0
+  Shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1.0
+  transparencyhint 0
+  selfillumcolor 0.0 0.0 0.0 
+  Diffuse 1.0 1.0 1.0 
+  Specular 0.0 0.0 0.0 
+  center 0.288467 -0.933098 0.0 
+  bitmap NULL
+  verts 4
+    -0.299663 -0.0862489 0.0
+    0.305432 -0.0862489 0.0
+    -0.299663 0.067587 0.0
+    0.305432 0.067587 0.0
+  faces 2
+    2 0 3  0  0 0 0  7
+    1 3 0  0  0 0 0  7
+endnode
+node dummy gn1_pwk_use01
+  parent ptm_zhentsign1_pwk
+  position 0.0 -0.345778 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.337255 0.337255 
+endnode

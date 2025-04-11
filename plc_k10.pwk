@@ -1,0 +1,15 @@
+#MAXDOOR ASCII
+# model: PLC_K10_pwk 
+filedependancy PlaceableObjects01.max
+node dummy K10_pwk_use01 
+  parent PLC_K10_pwk 
+  position -0.00941818 1.09769 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode
+node dummy K10_pwk_use02 
+  parent PLC_K10_pwk 
+  position -0.00941818 -1.06787 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.54902 0.345098 0.882353  
+endnode

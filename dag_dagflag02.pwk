@@ -1,0 +1,32 @@
+# Exported from NWmax 0.8 b34 at 7/5/2005 2:04:53 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy e24_pwk_use01
+  parent dag_dagflag02_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.694118 0.580392 0.101961 
+endnode
+node trimesh nowalk
+  parent dag_dagflag02_pwk
+  position 0.00706726 0.456754 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+  bitmap NULL
+  verts 4
+    -0.47 -0.25 0.0
+    0.47 -0.25 0.0
+    -0.47 0.25 0.0
+    0.47 0.25 0.0
+  faces 2
+    2 0 3  1  0 1 2  7
+    1 3 0  1  3 4 5  7
+  tverts 6
+    0.0 1.0 0
+    0.0 0.0 0
+    1.0 1.0 0
+    1.0 0.0 0
+    1.0 1.0 0
+    0.0 0.0 0
+endnode

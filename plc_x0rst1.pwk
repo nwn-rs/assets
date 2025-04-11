@@ -1,0 +1,32 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x0rst1
+filedependancy plc_runestone.max
+node trimesh dont-wok-01
+  parent plc_x0rst1_pwk
+  position -0.0364536 -0.0258487 0.01
+  orientation 0 0 -1 -1.5708
+  wirecolor 0.0351563 0.0351563 0.0351563
+  ambient 0.03125 0.03125 0.53125
+  diffuse 0.03125 0.03125 0.53125
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 8
+    -0.0451026 -0.689225 0
+    0.2086 -0.627209 0
+    0.38901 0.128261 0
+    0.231151 0.551098 0
+    -0.0112756 0.663855 0
+    -0.236789 0.584925 0
+    -0.310081 -0.0183229 0
+    -0.225513 -0.593382 0
+  faces 6
+    4 5 6  1  0 0 0  0
+    3 4 6  1  0 0 0  0
+    2 3 6  1  0 0 0  0
+    1 2 6  1  0 0 0  0
+    1 6 7  1  0 0 0  0
+    0 1 7  1  0 0 0  0
+endnode

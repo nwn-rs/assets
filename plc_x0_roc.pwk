@@ -1,0 +1,50 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x0_roc
+filedependancy plc_x0desrocks.max
+node trimesh NoWalk
+  parent plc_x0_roc_pwk
+  position -0.223414 -0.285746 0
+  orientation 0 0 0 0
+  wirecolor 0.878906 0.878906 0.878906
+  ambient 0.875 0.558594 0.339844
+  diffuse 0.875 0.558594 0.339844
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 11
+    -1.04498 0.0654843 0
+    -0.779446 -0.437061 0
+    -0.353955 -0.267077 0
+    0.125711 -0.309814 0
+    0.491428 -0.178214 0
+    0.740071 -0.405234 0
+    1.2332 -0.184687 0
+    0.768598 0.545191 0
+    0.0434269 0.431244 0
+    -0.31583 0.192994 0
+    -0.908217 0.547175 0
+  faces 9
+    9 10 0  1  0 0 0  0
+    9 0 1  1  0 0 0  0
+    9 1 2  1  0 0 0  0
+    5 6 7  1  0 0 0  0
+    4 5 7  1  0 0 0  0
+    4 7 8  1  0 0 0  0
+    3 4 8  1  0 0 0  0
+    3 8 9  1  0 0 0  0
+    2 3 9  1  0 0 0  0
+endnode
+node dummy roc_pwk_use01
+  parent plc_x0_roc_pwk
+  position -0.129406 -0.808455 0.00419909
+  orientation 0 0 0 0
+  wirecolor 0.582031 0.582031 0.582031
+endnode
+node dummy roc_pwk_use02
+  parent plc_x0_roc_pwk
+  position -0.129406 0.311993 0.00419909
+  orientation 0 0 0 0
+  wirecolor 0.582031 0.582031 0.582031
+endnode

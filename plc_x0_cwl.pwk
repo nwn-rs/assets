@@ -1,0 +1,24 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x0_cwl
+filedependancy plc_x0cagewall.max
+node trimesh NoWalk
+  parent plc_x0_cwl_pwk
+  position 0.0277698 -0.0258262 0
+  orientation 0 0 0 0
+  wirecolor 0.105469 0.105469 0.105469
+  ambient 0.101563 0.691406 0.101563
+  diffuse 0.101563 0.691406 0.101563
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 4
+    1.08172 0.0605347 0
+    -1.08172 0.0605349 0
+    -1.08172 -0.0605347 0
+    1.08172 -0.0605349 0
+  faces 2
+    1 2 0  1  0 0 0  0
+    3 0 2  1  0 0 0  0
+endnode

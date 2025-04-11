@@ -1,0 +1,62 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: PLC_X30
+filedependancy plc_x0rubble2.max
+node trimesh NoWalk
+  parent PLC_X30_pwk
+  position 0.716083 -0.392673 0
+  orientation 0 0 0 0
+  wirecolor 0.839844 0.839844 0.839844
+  ambient 0.835938 0.890625 0.597656
+  diffuse 0.835938 0.890625 0.597656
+  specular 0 0 0
+  shininess 1
+  bitmap NULL
+  verts 17
+    1.68122 0.312277 0
+    2.09066 -0.530714 0
+    2.35549 -0.349681 0
+    2.30021 0.272103 0
+    1.70554 0.385707 0
+    0.673188 0.933987 0
+    0.114854 -0.0983228 0
+    -0.612003 1.72913 0
+    -1.64908 1.42826 0
+    -1.32167 0.12804 0
+    -2.45374 0.369768 0
+    -2.64149 -0.749468 0
+    -1.43214 -1.04496 0
+    -1.11274 -0.145453 0
+    -0.832504 -0.829921 0
+    0.154684 -0.441387 0
+    1.09822 -0.749524 0
+  faces 15
+    4 5 6  1  0 0 0  0
+    11 12 13  1  0 0 0  0
+    10 11 13  1  0 0 0  0
+    9 10 13  1  0 0 0  0
+    6 7 8  1  0 0 0  0
+    6 8 9  1  0 0 0  0
+    6 9 13  1  0 0 0  0
+    6 13 14  1  0 0 0  0
+    6 14 15  1  0 0 0  0
+    2 3 4  1  0 0 0  0
+    1 2 4  1  0 0 0  0
+    0 1 4  1  0 0 0  0
+    0 4 6  1  0 0 0  0
+    16 0 6  1  0 0 0  0
+    15 16 6  1  0 0 0  0
+endnode
+node dummy x30_pwk_use01
+  parent PLC_X30_pwk
+  position 0.54262 -1.17585 0
+  orientation 0 0 0 0
+  wirecolor 0.582031 0.582031 0.582031
+endnode
+node dummy x30_pwk_use02
+  parent PLC_X30_pwk
+  position 0.662355 1.18432 0
+  orientation 0 0 0 0
+  wirecolor 0.582031 0.582031 0.582031
+endnode

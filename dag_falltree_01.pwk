@@ -1,0 +1,45 @@
+# Exported from NWmax 0.8 b50 at 1/10/2006 12:28:39 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh NoWalk
+  parent falltree_01_pwk
+  position 2.03787 -0.186917 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.341176 0.878431 0.341176 
+  bitmap NULL
+  verts 11
+    -3.74375 1.41101 0.0
+    -3.7914 -1.18928 0.0
+    -2.07803 -0.282202 0.0
+    0.0586394 -0.601907 0.0
+    0.764143 -3.00288 0.0
+    1.38902 -3.02304 0.0
+    2.83519 -0.0961927 0.0
+    2.89566 0.710097 0.0
+    1.22776 2.58706 0.0
+    0.139268 2.44596 0.0
+    -0.745608 0.58456 0.0
+  faces 9
+    0 1 2  1  0 0 0  7
+    10 0 2  1  0 0 0  7
+    10 2 3  1  0 0 0  7
+    3 4 5  1  0 0 0  7
+    3 5 6  1  0 0 0  7
+    10 3 6  1  0 0 0  7
+    9 10 6  1  0 0 0  7
+    8 9 6  1  0 0 0  7
+    7 8 6  1  0 0 0  7
+endnode
+node dummy tbd_pwk_use01
+  parent falltree_01_pwk
+  position 0.904936 0.696009 0.159263
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.776471 0.878431 0.341176 
+endnode
+node dummy tbd_pwk_use02
+  parent falltree_01_pwk
+  position 0.170735 -0.792034 0.159263
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.776471 0.878431 0.341176 
+endnode

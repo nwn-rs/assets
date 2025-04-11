@@ -1,0 +1,104 @@
+# Exported from NWmax 0.8 b47 at 03/05/2006 8:06:27 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh tnp_wyv_pwk
+  parent tnp_wyv_pwk
+  position 0.0343936 -0.321841 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.341176 0.560784 
+  multimaterial 20
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+  ambient 0.588 0.588 0.588 
+  diffuse 0.705882 0.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap Nonwalk
+  verts 10
+    -0.0835205 -1.89646 0.0
+    0.420657 -1.94953 0.0
+    -1.22114 -0.445974 0.0
+    -0.437259 -0.29868 0.0
+    0.419588 0.00413315 0.0
+    1.44172 0.0419121 0.0
+    -3.36269 0.853726 0.0
+    -1.67974 1.30319 0.0
+    1.08071 1.89683 0.0
+    2.71079 2.13478 0.0
+  faces 8
+    3 0 4  1  26 21 27  7
+    1 4 0  1  22 27 21  7
+    6 2 7  1  30 25 31  7
+    3 7 2  1  26 31 25  7
+    7 3 8  1  31 26 32  7
+    4 8 3  1  27 32 26  7
+    8 4 9  1  32 27 33  7
+    5 9 4  1  28 33 27  7
+  tverts 35
+    0.0 0.0 0
+    0.25 0.0 0
+    0.5 0.0 0
+    0.75 0.0 0
+    1.0 0.0 0
+    0.0 0.0 0
+    0.25 0.0 0
+    0.5 0.0 0
+    0.75 0.0 0
+    1.0 0.0 0
+    0.0 0.0 0
+    0.25 0.0 0
+    0.5 0.0 0
+    0.75 0.0 0
+    1.0 0.0 0
+    0.0 0.25 0
+    0.25 0.25 0
+    0.5 0.25 0
+    0.75 0.25 0
+    1.0 0.25 0
+    0.0 0.5 0
+    0.25 0.5 0
+    0.5 0.5 0
+    0.75 0.5 0
+    1.0 0.5 0
+    0.0 0.75 0
+    0.25 0.75 0
+    0.5 0.75 0
+    0.75 0.75 0
+    1.0 0.75 0
+    0.0 1.0 0
+    0.25 1.0 0
+    0.5 1.0 0
+    0.75 1.0 0
+    1.0 1.0 0
+endnode
+node dummy wyv_pwk_use01
+  parent tnp_wyv_pwk
+  position 0.0 1.45 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.6 0.721569 
+endnode
+node dummy wyv_pwk_use02
+  parent tnp_wyv_pwk
+  position 0.0 -2.25 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.894118 0.6 0.721569 
+endnode

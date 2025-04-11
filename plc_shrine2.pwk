@@ -1,0 +1,30 @@
+#MAXDOOR ASCII
+# model: PLC_Shrine2_pwk 
+filedependancy plc_shrines.max
+node trimesh PLC_Shrine2_wg 
+  parent PLC_Shrine2_pwk 
+  position 0.0 -0.172704 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.345098 0.694118 0.101961  
+    bitmap NULL
+    verts 4
+     -0.947241 -0.86437 0.0
+     0.947241 -0.86437 0.0
+     -0.947241 1.24285 0.0
+     0.947241 1.24285 0.0
+    faces 2
+     2 0 3  1  0 0 0  1
+     1 3 0  1  0 0 0  1
+endnode
+node dummy IoP_pwk_use01 
+  parent PLC_Shrine2_pwk 
+  position 1.28696 -0.159358 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.109804 0.584314 0.694118  
+endnode
+node dummy IoP_pwk_use02 
+  parent PLC_Shrine2_pwk 
+  position -1.32447 -0.209338 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0235294 0.52549 0.443137  
+endnode

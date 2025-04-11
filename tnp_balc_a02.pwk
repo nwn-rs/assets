@@ -1,0 +1,10 @@
+# Exported from NWmax 0.8 b50 at 7/8/2005 3:47:25 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy a02_pwk_use01
+  parent tnp_balc_a02_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.333333 0.109804 0.694118 
+endnode

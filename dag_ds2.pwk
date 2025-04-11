@@ -1,0 +1,24 @@
+# Exported from NWmax 0.8 b54 at 10/26/2005 11:44:24 AM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node trimesh dag_ds2_wg
+  parent dag_ds2_pwk
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.345098 0.560784 0.882353 
+  verts 4
+    -1.1 -0.7 0.0
+    1.1 -0.7 0.0
+    -1.1 0.7 0.0
+    1.1 0.7 0.0
+  faces 2
+    2 0 3  1  0 0 0  7
+    1 3 0  1  0 0 0  7
+endnode
+node dummy ds2_pwk_use01
+  parent dag_ds2_pwk
+  position 0.0 -0.974566 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.52549 0.0235294 0.0235294 
+endnode

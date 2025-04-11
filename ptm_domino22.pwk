@@ -1,0 +1,16 @@
+# Exported from NWmax 0.8 c00 at 1/10/2019 8:11:59 PM
+# pwk file
+#
+#NWmax PWKMESH  ASCII
+node dummy o22_pwk_use01
+  parent ptm_domino22_pwk
+  position 0.0 -0.107036 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.65098 0.898039 0.898039 
+endnode
+node dummy o22_pwk_use02
+  parent ptm_domino22_pwk
+  position 0.0 0.154872 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.529412 0.431373 0.0313726 
+endnode

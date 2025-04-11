@@ -1,0 +1,24 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: plc_x0_jar
+filedependancy PLC_x0_Jar.max
+node trimesh Line01
+  parent plc_x0_jar_pwk
+  position 0.00794989 0.0116191 0
+  orientation 0 0 0 0
+  wirecolor 0.695313 0.695313 0.695313
+  ambient 0 0 0
+  diffuse 0 0 0
+  specular 0 0 0
+  shininess 0
+  bitmap NULL
+  verts 4
+    -0.234153 -0.225581 0
+    0.211552 -0.223712 0
+    0.211728 0.210109 0
+    -0.236017 0.209804 0
+  faces 2
+    2 3 0  1  0 0 0  1
+    2 0 1  1  0 0 0  1
+endnode
