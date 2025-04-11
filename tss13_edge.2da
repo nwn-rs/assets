@@ -1,0 +1,11 @@
+2DA V2.0
+
+  Corner1  Edge Corner2  Height Model        
+0 Castle   **** Castle   0      tss13_z01_01 
+1 Castle   **** ****     0      tss13_z01_01 
+0 City     **** City     0      tss13_z02_01 
+1 City     **** ****     0      tss13_z02_01 
+0 Rural    **** Rural    0      tss13_z03_01 
+1 Rural    **** ****     0      tss13_z03_01 
+0 Tropical **** Tropical 0      tss13_z04_01 
+1 Tropical **** ****     0      tss13_z04_01 

@@ -1,0 +1,9 @@
+2DA V2.0
+
+      LABEL        RESREF           STRREF
+
+0     ****         ****             ****
+1     blue         gi_waypoint01    67281
+2     red          gi_waypoint02    67282
+3     green        gi_waypoint03    67284
+4     yellow       gi_waypoint04    67285

@@ -1,0 +1,15 @@
+2DA V2.0                                                        
+                                                                
+           LABEL         ReqType   ReqParam1        ReqParam2   
+0          Hide          SKILL     5                5           
+1          Cleave        FEAT      6                ****        
+2          Base_Attack   BAB       6                ****        
+3          ScriptVar     VAR       X1_AllowBlkGrd   0           
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
