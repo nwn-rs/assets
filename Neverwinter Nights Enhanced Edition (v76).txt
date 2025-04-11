@@ -1,0 +1,44 @@
+Neverwinter Nights: Enhanced Edition v1.76
+
+Client Changes
+-=-=-=-=-=-=-=
+
+Features:
+
+* We added a new experimental full screen shader effect: Sharpen. It’s disabled by default, so you have to go into Options, Advanced Effects to try it out.
+* MacOS now defaults to “Desktop” style fullscreen mode (Borderless Fullscreen). This allows you to switch spaces. To make use of it on existing setups, set FullScreenDesktopMode=1 in nwn.ini.
+* The name generator tables for all races (including custom) are now configurable in racialtypes.2da.
+* We turned Depth Of Field off by default (only for new installs). This will be re-enabled once it works better in conversations.
+* The SSAO FBO has been updated to use 25% fewer GPU cycles.
+
+Fixes:
+
+* We addressed one of the major crashes people were seeing on Intel GPUs. Matters should now be much improved for some players, however we are continuing to work on Intel-related issues.
+* The high contrast shader has been tweaked so that the fog colour is not impacted anymore.
+* Issues with playing Premium Modules in multiplayer have been addressed.
+* We fixed a resource management issue when entering areas; resulting in crashes on area load screens.
+* Loading save games now works with encrypted premium module saves.
+* We fixed where object visual transforms would not apply immediately when spawning or loading objects into an area.
+* Text bubbles now move alongside any applied visual transforms.
+* Some people were seeing “Could not translate address” when attempting to connect to servers, especially when attempting to connect via icon shortcuts. This has been fixed.
+* Area Transitions clickable state is now sent to clients indiscriminately, which previously resulted in them turning into the wrong colour, hiding them from DMs, and making transitioning harder.
+* We’re making it so that door boxes now again don’t have a highlight when mousing over them. (This was a very sneaky regression introduced by making the script call SetTransitionTarget work).
+* We fixed a crash when area of effect VFXes would attempt to animate in an area that was just unloaded on the client.
+* We fixed a game crash that happened in updating a creature without a valid animation base.
+* The chat window sizes now load properly for all users.
+* We allow server admins to disable relay functionality if they so desire. (nwnplayer.ini: “Network Relays Enabled”)
+* We fixed a game crash while updating the appearance of a creature without a valid body appearance.
+* The game client doesn’t hang or crash anymore when receiving a very large data packet; such as character files, area data, or DM palettes.
+* We fixed the game hanging or lagging when no audio device is available.
+* We fixed a crash when a dedicated server would save a game, where a logged-out player was in Defensive Stance mode.
+* We fixed a crash when exiting from a module with HAKs loaded.
+* The UI scale for Dialogues with scroll bars has been fixed.
+* We excluded localhost (127.0.0.1) from ever being relayed in order to fix a confusing error message for users.
+
+Content Creation Changes
+-=-=-=-=-=-=-=-=-=-=-=-=
+
+Fixes:
+
+* Script Compiler: We now allow escaping backslashes (“\\”).
+

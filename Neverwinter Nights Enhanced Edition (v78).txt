@@ -1,0 +1,37 @@
+Neverwinter Nights: Enhanced Edition v1.78
+
+New Feature: NWSync
+-=-=-=-=-=-=-=-=-=-
+
+This update contains a major new feature called NWSync, which will allow players to easily download required content data as they join servers, without having to manually manage HAK and TLK files. In this first iteration, this will mostly benefit persistent worlds, as it requires special setup on the server owner's part.
+
+For details on this feature, please see the source repository that contains all the needed tooling and links to the most up to date documentation, here: https://github.com/Beamdog/nwsync.
+
+Client Changes
+-=-=-=-=-=-=-=
+
+Features:
+
+* We added a new console variable that enables a over-time FPS display. Type "fpstrace 1" into the game console to enable.
+* You can type `Gamma x` in the console, where x is a floating point value larger than 0. The default is 2.2. This value is persisted to nwn.ini (under a new configuration key). Gamma only affects the rendered ingame scenery, not menus or UI, as it is applied through a FBO shader, not GL/system-wide gamma correction. T
+* The game now supports normal DDS textures without having to mangle the header.
+* The game now supports KTX texture containers.
+* The game now writes out all Aliases to nwn.ini even if the file already existed.
+* We bumped the default maximum texture memory to 256MB. Previous settings of 64MB are rewritten to this value. The new minimum is 96MB. The bigger-by-default texture memory should improve stability in some situations.
+
+Fixes:
+
+* We fixed lighting uniforms not assigning properly on some GPU drivers. This should address some flickering and maybe improve stability.
+* Premium Modules don't show in "Other Modules" anymore.
+* Yet another crash for creature appearances with PERSPACE=0 has been addressed.
+* The multiplayer server browser now shows a progress window when downloading the server list. It also switched over to libcurl, which should prove to be much more reliable than the previous solution.
+* The chat window will not capture mouse clicks anymore, only scroll events. This means you can once again click through it to action the game world.
+
+Server Changes
+-=-=-=-=-=-=-=
+
+Fixes:
+
+* Greater Sanctuary interacting incorrectly with True Seeing has been fixed.
+* A rare server hang when a relayed player suddenly regains direct connectivity has been fixed.
+* A bug in RetrieveCampaignObject has been fixed that resulted in a double free issue, crashing the game. This was another 1.69 issue that was unearthed by us switching to VS2017 for the Windows build.

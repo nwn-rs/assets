@@ -1,0 +1,140 @@
+Neverwinter Nights: Enhanced Edition v1.75
+
+Server Changes
+-=-=-=-=-=-=-=
+
+Features:
+
+* The player cap for a single server has been increased to 255 (from 96).(Hint: You can still reserve DM slots by setting a lower limit.)
+* Increased the maximum player name length from 32 characters to 127.
+
+Fixes:
+
+* NWScript: Fixed a crash in GetAreaSize() when it was called with the module as the area.
+* We added some basic protection against packet flooding that was seen recently.
+* Player name checks are now case-insensitive for purposes of locking names to public keys.
+* Translations/LocStrings: We’ve made it so that when looking up translated strings (for example, in object descriptions), we first consider the opposite gender before falling back to english.
+* Networking: We fixed some issues with masterserver DNS resolving that would, in rare circumstances, drop servers from the master list.
+* The Whirlwind attack feat has been fixed.
+* We fixed an issue with some creatures not spawning lootable corpses.
+* We fixed the following script events for player characters: OnDamaged, OnSpellCastAt, OnMeleeAttacked, OnPerception, and OnCombatRoundEnd.
+* We fixed a crash where ActionTakeItem would fail to deposit an item in a full inventory.
+* We fixed the server time getting stuck if the module had many areas.
+* We fixed a very rare crash when removing many areas via DestroyArea() in one script.
+* We fixed SetTransitionTarget() not propagating to clients in all cases.
+* Doors can now once again initiate conversations with players (via nw_g0_conversat).
+* Also, the game engine does not assign this script to doors, placeables and creatures with no script set anymore, instead just defaulting to it as a temporary override.
+
+Client Changes
+-=-=-=-=-=-=-=
+
+Features:
+
+* The race selection UI in character generation is now a list (instead of pre-defined buttons) just like class selection.
+* Races can now have an icon; defined in the new “Icon” column in racialtypes.2da. This is up to custom content, as we do not currently ship icons for the builtin races.
+* New dynamic contrast shader by Søren Møller (Zarathustra217).
+* New SSAO shader by Søren Møller (Zarathustra217).
+* New Depth Of Field shader by Søren Møller (Zarathustra217).
+* Materials: .mtr files can now specify “renderhint”; mesh-specific definitions overrides this.
+* Materials: Meshes don’t require a texture if a .mtr was set.
+* Materials: In the mesh definition, “bitmap”/”texture0” can be used to define the material instead of “materialname”.
+* The Chat Log and Combat Log UI now remember their size between play sessions (in the .ini); they also remember split mode/combined mode.
+* UI: All-metallic colours are now animated in the character creation colour picker UI.
+* NWN:EE can now accept cyrillic key input again; and display as well, if a suitable (community-made) font override is provided. This is a stopgap measure to support our russian friends while we work on proper UTF-8 support.
+* Linux Fullscreen Mode is now properly supported.
+
+Fixes:
+
+* SDL has been updated.
+* A crash when joining a server with haks was fixed.
+* The multiplayer server browser UI has been fixed to work properly on 1080x2.
+* The multiplayer server browser now default-sorts by player count, descending.
+* Steam Workshop now logs to the player log for activity (like progress).
+* Movie playback on case-sensitive file systems (Linux) and languages with mismatching case movie files has been fixed.
+* Garbled sound issues have been fixed.
+* We fixed stopping/resuming audio playback when a audio device is (re)connected.
+* UI: We fixed the flickering text on loading screens.
+* Saving and loading ShadowGuard premium module savegames has been fixed.
+* UI: We fixed Escape not working on some main menu panels.
+* Renderer: We fixed rendering animated meshes without animations as static (for example, seen as disappearing water on tno01_v20_02).
+* Death Attack now shows properly in feat messages in the combat log.
+* Incorrectly rendered armour part colours in character generation have been fixed.
+* We added a workaround for an issue where servers would get confused by multiple clients behind NAT on on the same port.
+* Crash handlers have been improved to address issues with people not seeing the crash message, or not finding the right files to attach to a report.
+* We’re now applying FBOs (full-screen post processing effects) in a predefined order to avoid visual corruption when un/checking them in the UI.
+* We fixed the Connect button on the Server Details pane not working properly.
+* We also fixed the Previous/Next buttons not greying out the Connect button as required.
+* HAK and TLK preloading is now checked immediately upon connection; not after character creation. This fixes an issue where players would attempt to join a server with missing haks, only to be kicked after character creation.
+* The polish high-res font has been amended to include all needed special characters.
+* We fixed a crash in the 2D sound system.
+* We fixed an issue in the 3D sound system that would sometimes stutter or hang the game.
+* A client crash that would happen when the server sent a visual effect while the client was on a loading screen was addressed.
+* A client crash that would happen when the server sent a invalid placeable update was fixed.
+* We fixed inventory PLT icons sometimes displaying the wrong colours.
+* We addressed some issues with the builtin texture cache sometimes returning the wrong or no image, resulting in visual corruption on layered textures.
+* We fixed a crash issue with saving games when the thumbnail could not be generated.
+* We fixed the game crashing while exiting a module/game with a floating popup bubble active.
+
+Content Creation Changes
+-=-=-=-=-=-=-=-=-=-=-=-=
+
+Features:
+
+* Object Visual Transformations: You can now scale, translate, rotate the following game objects: Creatures (including players), Items (including held/wielded), Placeables (dynamic only), Doors. You can also adjust the animation speed independently from object scale. This transformation is visual only and has no effect on walkmesh or personal space. (See Scripting Commands below.)
+* Materials: We’ve added script calls that allow overriding shader uniforms on materials.
+* Double quotes (“) can now be escaped in nwscript (\”).
+* The toolset can now open unpacked modules: You need to have it unpacked in a directory the same name as the .mod file (without the .mod extension).
+* Toolset: You can now move objects along the Z axis by holding down the Alt key and moving the mouse.
+* We added the livestream contest winner portrait (po_exornova).
+
+Fixes:
+
+* A crash in the script compiler has been fixed when many includes were nested.
+* Utils: We’ve re-added nwhak.exe and gffeditor.exe to the torrent. nwhak.exe now understands all new res types (like .mtr).
+* An issue where custom content tiles could not be laid down in the toolset (notably, Seasonal Forest) was fixed.
+* We fixed “Stereo WAV in 3D Positional Sound” popping up erroneously in the toolset.
+* We fixed the toolset not displaying spells or feats on character sheets.
+* We fixed "sqrt DOMAIN error" showing up on binary models without valid tangent data.
+
+New Scripting Commands
+-=-=-=-=-=-=-=-=-=-=-=
+
+int OBJECT_VISUAL_TRANSFORM_SCALE                        = 10;
+int OBJECT_VISUAL_TRANSFORM_ROTATE_X                     = 21;
+int OBJECT_VISUAL_TRANSFORM_ROTATE_Y                     = 22;
+int OBJECT_VISUAL_TRANSFORM_ROTATE_Z                     = 23;
+int OBJECT_VISUAL_TRANSFORM_TRANSLATE_X                  = 31;
+int OBJECT_VISUAL_TRANSFORM_TRANSLATE_Y                  = 32;
+int OBJECT_VISUAL_TRANSFORM_TRANSLATE_Z                  = 33;
+int OBJECT_VISUAL_TRANSFORM_ANIMATION_SPEED              = 40;
+
+// Gets a visual transform on the given object.
+// - oObject can be any valid Creature, Placeable, Item or Door.
+// - nTransform is one of OBJECT_VISUAL_TRANSFORM_*
+// Returns the current (or default) value.
+float GetObjectVisualTransform(object oObject, int nTransform);
+
+// Sets a visual transform on the given object.
+// - oObject can be any valid Creature, Placeable, Item or Door.
+// - nTransform is one of OBJECT_VISUAL_TRANSFORM_*
+// - fValue depends on the transformation to apply.
+// Returns the old/previous value.
+float SetObjectVisualTransform(object oObject, int nTransform, float fValue);
+
+// Sets an integer material shader uniform override.
+// - sMaterial needs to be a material on that object.
+// - sParam needs to be a valid shader parameter already defined on the material.
+void SetMaterialShaderUniformInt(object oObject, string sMaterial, string sParam, int nValue);
+
+// Sets a vec4 material shader uniform override.
+// - sMaterial needs to be a material on that object.
+// - sParam needs to be a valid shader parameter already defined on the material.
+// - You can specify a single float value to set just a float, instead of a vec4.
+void SetMaterialShaderUniformVec4(object oObject, string sMaterial, string sParam, float fValue1, float fValue2 = 0.0, float fValue3 = 0.0, float fValue4 = 0.0);
+
+// Resets material shader parameters on the given object:
+// - Supply a material to only reset shader uniforms for meshes with that material.
+// - Supply a parameter to only reset shader uniforms of that name.
+// - Supply both to only reset shader uniforms of that name on meshes with that material.
+void ResetMaterialShaderUniforms(object oObject, string sMaterial = "", string sParam = "");
+

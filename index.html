@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>CHANGELOG.md</title>
+    <script src="www/moment.min.js"></script>
+    <script src="www/marked.min.js"></script>
+    <script src="www/tocbot.min.js"></script>
+    <link rel="stylesheet" href="www/tocbot.css">
+    <script src="www/handlebars.js"></script>
+    <style type="text/css">
+        body {
+            line-height: 1.6;
+            font-size: 18px;
+            color: #444;
+            padding: 0 10px;
+            overflow-y: scroll;
+        }
+        h1, h2, h3 {
+            line-height: 1.2
+        }
+        img {
+            max-width: 100%;
+        }
+        code {
+            white-space : pre-wrap !important;
+        }
+        div#content {
+            margin: 40px auto;
+        }
+        div#menu {
+            font-size: 0.9em;
+            position: fixed;
+            right: 1em; top: 1em;
+            width: 250px;
+        }
+        @media (min-width: 767px) {
+            body {
+                margin-right: 250px;
+            }
+            div#content {
+                max-width: 650px;
+            }
+        }
+        /* Hide toc on small screens */
+        @media (max-width: 767px) {
+            div#menu {
+                /* position: relative; */
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="main">
+    <div id="menu">
+        {{#if repository}}
+        <div id="filelist">
+            <ul>
+                <!-- <li><a href="#" onclick="show_md('CHANGELOG.md')">CHANGELOG.md (combined view)</a></li> -->
+                {{#each repository.news}}
+                    <li><a href="#" onclick="show_md('{{this.filename}}')">{{this.title}} - {{dateFormat "YYYY-MM-DD" this.timestamp}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/if}}
+
+        <nav class="js-toc">
+        </div>
+    </div>
+    <div id="content">
+        {{{markdown}}}
+    </div>
+</div>
+
+<script>
+    var repository = {};
+    var template = Handlebars.compile(document.getElementById('main').innerHTML);
+
+    function update()
+    {
+        var bindings = {
+            repository: repository
+        };
+        document.getElementById('main').innerHTML = template(bindings);
+    }
+
+    function show_md(file)
+    {
+        fetch(file)
+            .then(data => data.text())
+            .then((data) =>
+            {
+                var parsed = marked.parse(data);
+                document.getElementById("content").innerHTML = parsed;
+                tocbot.refresh();
+            });
+    }
+
+    function load()
+    {
+        fetch("repository.json")
+            .then(data => data.json())
+            .then((data) => {
+                repository = data;
+                update();
+                document.title = repository.name;
+                // Show the very first news item by default
+                show_md(repository.news[0].filename);
+                // show_md("CHANGELOG.md")
+            });
+    }
+
+    Handlebars.registerHelper("dateFormat", function(fmt, ts) {
+        return moment.unix(ts).format(fmt);
+    });
+
+    tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '.js-toc',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '#content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h1, h2, h3',
+        // For headings inside relative or absolute positioned containers within content.
+        hasInnerContainers: true,
+    });
+
+    // Only show single CHANGELOG.md for now
+    // load();
+    update();
+    show_md("CHANGELOG.md");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+Neverwinter Nights: Enhanced Edition v1.77
+
+Client Changes
+-=-=-=-=-=-=-=
+
+Features:
+
+* Three new player-selectable portraits; Heavyline, Skandii, and Lanteri.
+* GOG Galaxy Overlay and game language selection support.
+
+Fixes:
+
+* We fixed certain armour pads (specifically, belts and shoulder pads) disappearing when re-equipping a item.
+* We fixed a floating point inaccuracy that made the player character skew aside ever so slightly when WASDing.
+* The conversation UI has been fixed to not shift off screen when using UI scaling and having the Inventory/Char sheet open at the same time.
+* We fixed a double-free in the PLT system, which has lead to crashes when multiple objects with the same texture would show.
+* We fixed held equipment not becoming transparent when the character model did so (for example, when casting Invisibility.)
+* The game now asks you for a CD key, instead of erroring with a confusing message, when Steam CD key retrieval fails for any reason.
+* HW Mouse is now the default on Linux, as to avoid WindowManager-related mouse click point offset issues resulting from UI scaling.
+* We made all DLC portraits now show up for character creation in all modules, regardless of portrait.2da entries.
+
+Content Creation Changes
+-=-=-=-=-=-=-=-=-=-=-=-=
+
+Features:
+
+* Toolset: The script editor now shows variables and constant declarations on double click.
+* Toolset: The recent modules list has been expanded to 10 entries.
+* Toolset: The compiler include limit has been bumped to 128.
+
+Fixes:
+
+* Toolset: Area ambient sounds and music has been brought back to life.
+* Toolset: We removed the requirement that the mouse be over an object to translate it on the Z-axis (with Alt+Left Mouse Button).
+* Toolset: The tile properties light select color UI is no longer truncated when using windows-native screen scaling.
+
+Server Changes
+-=-=-=-=-=-=-=
+
+Fixes:
+
+* Server resource management on Linux in certain memory configurations has been fixed.
+* Crashes in nwscript functions resulting from bad parameters have been addressed: CopyItemAndModify, GetNearestCreatureToLocation
+* A crash when reloading LTRs was fixed.
+* Linux only: Database names are now case-insensitive, so DestroyCampaignDatabase() now works as expected.
+* Linux/Mac only: We fixed the server spinning a thread needlessly if stdin gets closed.
