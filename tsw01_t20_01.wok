@@ -1,0 +1,24 @@
+# Exported from NWmax 0.8 b36 at 15.02.2005 12:05:39
+# wok file
+#
+#NWmax WALKMESH  ASCII
+beginwalkmeshgeom tsw01_t20_01
+node aabb Rectangle35
+  parent tsw01_t20_01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 1.0 0.0 
+  bitmap NULL
+  verts 4
+    -5.0 -5.0 0.0
+    5.0 -5.0 0.0
+    5.0 5.0 0.0
+    -5.0 5.0 0.0
+  faces 2
+    0 1 2  1  0 0 0  4
+    3 0 2  1  0 0 0  4
+    aabb         -5.0 -5.0 0.0 5.0 5.0 0.0 -1
+        -5.0 -5.0 0.0 5.0 5.0 0.0 1
+        -5.0 -5.0 0.0 5.0 5.0 0.0 0
+endnode
+endwalkmeshgeom tsw01_t20_01

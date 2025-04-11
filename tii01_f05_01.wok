@@ -1,0 +1,21 @@
+#MAXWALKMESH  ASCII
+beginwalkmeshgeom TII01_f05_01 
+node aabb Object152 
+  parent TII01_f05_01 
+  position 0.0 0.0 3.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.0313726 0.431373 0.52549  
+    verts 4
+     -5.0 5.0 0.0
+     -5.0 -5.0 0.0
+     5.0 -5.0 0.0
+     5.0 5.0 0.0
+    faces 2
+     2 3 0  0  4 5 2  7
+     0 1 2  0  2 3 4  7
+aabb    -5.00 -5.00  0.00   5.00  5.00  0.00  -1
+    -5.00 -5.00  0.00   5.00  5.00  0.00  1
+    -5.00 -5.00  0.00   5.00  5.00  0.00  0
+endnode
+endwalkmeshgeom TII01_f05_01 
+

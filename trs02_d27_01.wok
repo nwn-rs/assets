@@ -1,0 +1,29 @@
+# Rewritten by CleanModels 3 Version 3.5.1 Thu Aug 31 20:08:26 2017
+#MAXWALKMESH  ASCII
+beginwalkmeshgeom trs02_d27_01
+node aabb wok01
+  parent trs02_d27_01
+  position 0 0 0
+  bitmap NULL
+  orientation 0 0 0 0
+  wirecolor 1 0 0
+  ambient 0 0 0
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 10
+  render 0
+  shadow 0
+  verts 4
+    -5 5 9
+    -5 -5 9
+    5 5 9
+    5 -5 9
+  faces 2
+    0 1 2 1 0 0 0 2
+    3 2 1 1 0 0 0 2
+  aabb     -5 -5 9 5 5 9 -1
+    -5 -5 9 5 5 9 0
+    -5 -5 9 5 5 9 1
+endnode
+endwalkmeshgeom trs02_d27_01
+

@@ -1,0 +1,25 @@
+# Rewritten by CleanModels 3 Version 3.5.1 Fri Aug 02 18:43:25 2013
+#MAXWALKMESH  ASCII
+beginwalkmeshgeom tcm02_c23_01
+node aabb box1270
+  parent tcm02_c23_01
+  position 0 0 0
+  orientation 0 0 0 0
+  wirecolor 1 1 1
+  bitmap NULL
+  render 0
+  shadow 0
+  verts 4
+    -5 -5 8.2
+    5 -5 8.2
+    5 5 8.2
+    -5 5 8.2
+  faces 2
+    0 1 2 1 0 0 0 2
+    2 3 0 1 0 0 0 2
+  aabb     -5 -5 8.2 5 5 8.2 -1
+    -5 -5 8.2 5 5 8.2 1
+    -5 -5 8.2 5 5 8.2 0
+endnode
+endwalkmeshgeom tcm02_c23_01
+

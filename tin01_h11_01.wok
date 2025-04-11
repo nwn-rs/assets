@@ -1,0 +1,21 @@
+#MAXWALKMESH  ASCII
+beginwalkmeshgeom TIN01_H11_01 
+node aabb Line251 
+  parent TIN01_H11_01 
+  position -0.37 -0.38 0.0
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.690196 0.101961 0.101961  
+    verts 4
+     5.37 -4.62 0.0
+     5.37 5.38 0.0
+     -4.63 5.38 0.0
+     -4.63 -4.62 0.0
+    faces 2
+     2 3 0  1  0 0 0  9
+     1 2 0  1  0 0 0  9
+aabb    -4.63 -4.62  0.00   5.37  5.38  0.00  -1
+    -4.63 -4.62  0.00   5.37  5.38  0.00  0
+    -4.63 -4.62  0.00   5.37  5.38  0.00  1
+endnode
+endwalkmeshgeom TIN01_H11_01 
+

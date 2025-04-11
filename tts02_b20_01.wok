@@ -1,0 +1,79 @@
+# Exported from NWmax 0.8 c00 at 8/17/2020 8:33:15 AM
+# wok file
+#
+#NWmax WALKMESH  ASCII
+beginwalkmeshgeom tts02_b20_01
+node aabb wm_tts02_b20_01
+  parent tts02_b20_01
+  position 0.0 0.0 -3.4
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 1.0 1.0 1.0 
+  multimaterial 20
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+  ambient 0.588 0.588 0.588 
+  diffuse 0.0 0.0 0.376471 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap DeepWater
+  verts 9
+    -5.0 0.0 0.0
+    -5.0 -5.0 0.0
+    0.0 0.0 0.0
+    0.0 -5.0 0.0
+    5.0 0.0 0.0
+    5.0 -5.0 0.0
+    -5.0 5.0 0.0
+    0.0 5.0 0.0
+    5.0 5.0 0.0
+  faces 8
+    0 1 2  1  0 1 2  17
+    3 2 1  1  1 0 3  17
+    2 3 4  1  0 1 2  17
+    5 4 3  1  1 0 3  17
+    6 0 7  1  4 0 5  17
+    2 7 0  1  0 4 2  17
+    7 2 8  1  4 0 5  17
+    4 8 2  1  0 4 2  17
+  tverts 6
+    0.5 0.05 0
+    0.0004995 0.05 0
+    0.5 0.05 0
+    0.0004995 0.05 0
+    0.999501 0.05 0
+    0.999501 0.05 0
+    aabb         -5.0 -5.0 0.0 5.0 5.0 0.0 -1
+        -5.0 -5.0 0.0 0.0 5.0 0.0 -1
+        -5.0 -5.0 0.0 0.0 0.0 0.0 -1
+        -5.0 -5.0 0.0 0.0 0.0 0.0 0
+        -5.0 -5.0 0.0 0.0 0.0 0.0 1
+        -5.0 0.0 0.0 0.0 5.0 0.0 -1
+        -5.0 0.0 0.0 0.0 5.0 0.0 4
+        -5.0 0.0 0.0 0.0 5.0 0.0 5
+        0.0 -5.0 0.0 5.0 5.0 0.0 -1
+        0.0 -5.0 0.0 5.0 0.0 0.0 -1
+        0.0 -5.0 0.0 5.0 0.0 0.0 2
+        0.0 -5.0 0.0 5.0 0.0 0.0 3
+        0.0 0.0 0.0 5.0 5.0 0.0 -1
+        0.0 0.0 0.0 5.0 5.0 0.0 6
+        0.0 0.0 0.0 5.0 5.0 0.0 7
+endnode
+endwalkmeshgeom tts02_b20_01
