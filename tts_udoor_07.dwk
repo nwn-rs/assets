@@ -1,0 +1,45 @@
+# Exported from NWmax 0.8 c00 at 10/13/2019 12:53:42 PM
+# dwk file
+#
+#NWmax DWKMESH  ASCII
+node dummy 07_DWK_dp_closed_01
+  parent TTS_UDoor_07_DWK
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node dummy 07_DWK_dp_closed_02
+  parent TTS_UDoor_07_DWK
+  position 0.00422714 -1.42395 -0.53597
+  orientation 0.0 0.0 -1.0 -3.14159
+  wirecolor 0.0313726 0.0313726 0.533333 
+endnode
+node trimesh 07_DWK_wg_closed
+  parent TTS_UDoor_07_DWK
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0313726 0.0313726 0.529412 
+  bitmap NULL
+  verts 8
+    -2.40617 0.377603 -1.13939
+    3.04357 0.377623 -1.13939
+    3.04357 0.377623 3.50974
+    -2.40617 0.377603 3.50974
+    3.04357 -0.318243 -1.13939
+    -2.40616 -0.318263 -1.13939
+    3.04357 -0.318243 3.50974
+    -2.40616 -0.318263 3.50974
+  faces 12
+    1 0 2  64  0 0 0  7
+    3 2 0  64  0 0 0  7
+    4 5 0  64  0 0 0  7
+    0 1 4  64  0 0 0  7
+    6 4 1  64  0 0 0  7
+    1 2 6  64  0 0 0  7
+    7 6 2  64  0 0 0  7
+    2 3 7  64  0 0 0  7
+    5 7 3  64  0 0 0  7
+    3 0 5  64  0 0 0  7
+    5 4 6  64  0 0 0  7
+    6 7 5  64  0 0 0  7
+endnode

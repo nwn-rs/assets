@@ -1,0 +1,62 @@
+#MAXDOOR ASCII
+# model: TDM_UDoor_10_DWK 
+filedependancy TDM01.max
+node dummy 10_DWK_dp_closed_02 
+  parent TDM_UDoor_10_DWK 
+  position -1.78828e-005 -1.18225 1.21091e-007
+  orientation  0.0 0.0 1.0  -3.14159
+  wirecolor 0.839216 0.898039 0.65098  
+endnode
+node dummy 10_DWK_dp_closed_01 
+  parent TDM_UDoor_10_DWK 
+  position -1.78785e-005 -1.16843 1.21091e-007
+  orientation  0.0 0.0 1.0  -3.14159
+  wirecolor 0.839216 0.898039 0.65098  
+endnode
+node trimesh 10_DWK_wg_closed 
+  parent TDM_UDoor_10_DWK 
+  position -0.00565398 0.181692 2.676
+  orientation  0.0 0.0 0.0  0.0
+  wirecolor 0.568627 0.109804 0.694118  
+     danglymesh 0
+     period 1.0
+     tightness 1.0
+     displacement 0.025
+     showdispl true
+     displtype 1
+     alpha 0.0
+     transparencyhint 0
+     tilefade 0
+     scale 1.0
+     render 1
+     Shadow 0
+     beaming 0
+     inheritcolor 0
+     selfillumcolor 0.0 0.0 1.0 
+     rotatetexture 0
+     center 0.0 -56.0059 -132.8 
+     gizmo SubAnim:Gizmo
+    bitmap NULL
+    verts 8
+     -1.99794 -0.560059 2.58211
+     1.99794 -0.560059 2.58211
+     -1.99794 -0.560059 -2.656
+     1.99794 -0.560059 -2.656
+     1.99794 0.231153 2.58211
+     -1.99794 0.231153 2.58211
+     1.99794 0.231153 -2.656
+     -1.99794 0.231153 -2.656
+    faces 12
+     1 0 3  8  0 0 0  5
+     2 3 0  8  0 0 0  5
+     4 5 0  8  0 0 0  5
+     0 1 4  8  0 0 0  5
+     6 4 1  8  0 0 0  5
+     1 3 6  8  0 0 0  5
+     7 6 3  8  0 0 0  5
+     3 2 7  8  0 0 0  5
+     5 7 2  8  0 0 0  5
+     2 0 5  8  0 0 0  5
+     6 7 5  8  0 0 0  5
+     5 4 6  8  0 0 0  5
+endnode

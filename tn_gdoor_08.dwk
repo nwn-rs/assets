@@ -1,0 +1,28 @@
+# Exported from NWmax 0.8 b35 at 05.02.2005 19:04:42
+# dwk file
+#
+#NWmax DWKMESH  ASCII
+node dummy 08_DWK_dp_open1_01
+  parent tn_gdoor_08_DWK
+  position 0.0 -1.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.337255 0.337255 
+endnode
+node dummy 08_DWK_dp_open2_01
+  parent tn_gdoor_08_DWK
+  position 0.0 1.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.337255 0.337255 
+endnode
+node dummy 08_DWK_dp_closed_01
+  parent tn_gdoor_08_DWK
+  position 0.0 -0.4 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.337255 0.337255 
+endnode
+node dummy 08_DWK_dp_closed_02
+  parent tn_gdoor_08_DWK
+  position 0.0 0.4 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.878431 0.337255 0.337255 
+endnode
